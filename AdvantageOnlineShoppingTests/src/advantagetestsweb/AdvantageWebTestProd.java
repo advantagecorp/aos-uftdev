@@ -1,4 +1,4 @@
-package junitAdvantageAppModel;
+package advantagetestsweb;
 
 import static org.junit.Assert.*;
 
@@ -23,12 +23,13 @@ import com.hp.lft.sdk.WaitUntilTestObjectState.WaitUntilEvaluator;
 import com.hp.lft.sdk.web.*;
 import com.hp.lft.verifications.Verify;
 
+import junitAdvantageAppModel.AdvantageAppModel;
 import unittesting.*;
 
 // Make sure the tests run at the ascending alphabet name order (JUnit 4.11 and above)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class LeanFtTestJUnitAdvantageAM extends UnitTestClassBase {
+public class AdvantageWebTestProd extends UnitTestClassBase {
 
 	public static final String USERNAME = "johnhpe1";
 	public static final String PASSWORD = "HPEsw123";
@@ -42,13 +43,13 @@ public class LeanFtTestJUnitAdvantageAM extends UnitTestClassBase {
     
     AdvantageAppModel appModel;
     
-    public LeanFtTestJUnitAdvantageAM() {
+    public AdvantageWebTestProd() {
     }
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-    	instance = new LeanFtTestJUnitAdvantageAM();
-        globalSetup(LeanFtTestJUnitAdvantageAM.class);
+    	instance = new AdvantageWebTestProd();
+        globalSetup(AdvantageWebTestProd.class);
     }
 
     @AfterClass

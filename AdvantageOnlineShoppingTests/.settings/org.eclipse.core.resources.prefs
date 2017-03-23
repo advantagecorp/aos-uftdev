@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//appmodels/advantageappmodels/AdvantageAppModel.java=UTF-8
+encoding//appmodels/advantageappmodels/AdvantageMobileAppModel.java=UTF-8
+encoding//appmodels/advantageappmodels/AdvantageStagingAppModel.java=UTF-8
+encoding//appmodels/junitAdvantageAppModel/AdvantageAppModel.java=UTF-8
+encoding//appmodels/junitAdvantageMobileApp/AdvantageMobileAppModel.java=UTF-8
+encoding//appmodels/junitAdvantageStagingAppModel/AdvantageStagingAppModel.java=UTF-8
+encoding//src/advantageappmodels/AdvantageAppModel.tsrx=UTF-8
+encoding//src/advantageappmodels/AdvantageMobileAppModel.tsrx=UTF-8
+encoding//src/advantageappmodels/AdvantageStagingAppModel.tsrx=UTF-8
+encoding//src/advantagetestsmobile/AdvantageMobileTest.java=UTF-8
+encoding//src/advantagetestsweb/AdvantageWebTestProd.java=UTF-8
+encoding//src/unittesting/UnitTestClassBase.java=UTF-8

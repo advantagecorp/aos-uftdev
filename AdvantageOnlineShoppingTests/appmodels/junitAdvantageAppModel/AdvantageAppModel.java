@@ -700,6 +700,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -960,6 +966,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -984,6 +996,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1064,6 +1082,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1088,6 +1112,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1194,6 +1224,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1298,6 +1334,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1322,6 +1364,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1350,6 +1398,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1374,6 +1428,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1402,6 +1462,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1428,6 +1494,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1452,6 +1524,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1506,6 +1584,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1532,6 +1616,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -1556,6 +1646,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -1946,6 +2042,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
@@ -2471,6 +2573,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 			return description;
 		}
 
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
+		}
+
 				
 			}
 
@@ -2605,6 +2713,12 @@ public class AdvantageAppModel extends AppModelBase {		private AdvantageShopping
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
 			return description;
+		}
+
+		@Override
+		public void submit() throws GeneralLeanFtException {
+			// TODO Auto-generated method stub
+			
 		}
 
 				
