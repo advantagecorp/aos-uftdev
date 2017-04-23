@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hp.lft:report:14.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/report/14.1.0-SNAPSHOT/report-14.1.0-20170420.111743-445.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/report/14.1.0-SNAPSHOT/report-14.1.0-20170420.111743-445-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/report/14.1.0-SNAPSHOT/report-14.1.0-20170420.111743-445-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

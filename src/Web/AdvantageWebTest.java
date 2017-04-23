@@ -1,19 +1,15 @@
 package Web;
 
 import static org.junit.Assert.*;
-import static unittesting.UnitTestClassBase.globalTearDown;
+
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
+import com.hp.lft.sdk.wpf.UiObjectBase;
+import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import com.hp.lft.report.ReportException;
@@ -162,7 +158,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	Thread.sleep(2000);
 	    	
 	    	isSignedIn = isSignedIn();
-	    	Verify.isTrue(isSignedIn,"Verification - Sign In", "Verify that the user " + USERNAME + " signed in properly.");
+	    	Assert.assertTrue("Verification - Sign In  Verify that the user " + USERNAME + " signed in properly.",isSignedIn);
 	    	
 	    	
     	}
@@ -851,7 +847,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         
     // This test starts a chat with the support of the site 
     @Test
-    public void contactUsChat() throws GeneralLeanFtException, ReportException, InterruptedException
+    public void contactUsChatTest() throws GeneralLeanFtException, ReportException, InterruptedException
     {
     	
     	// Sign in to the store
@@ -930,9 +926,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
     	browser.sync();
     	
-    	BrowserDescription desc;
-    	String brURL;
-    	String title = "";
+
+    	String brURL="";
+
+    	String Facebooktitle = "HP Application Lifecycle Management | Facebook";
+		String Twittertitle  = "HPE ALM (@HPE_ALM) | Twitter";
+		String Linkedintitle = "HPE Software | LinkedIn";
     	
     	try
     	{
@@ -941,42 +940,38 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Clicking te link opens a new browser tab
     		// We attach to it and verify its title and URL are ads expected, then close it
     		appModel.AdvantageShoppingPage().FacebookImage().click();
-	    	desc = new BrowserDescription();
-	    	//desc.setTitle(new RegExpProperty(".*Facebook.*"));
-	    	//title = "HP Application Lifecycle Management | Facebook";
-	    	title = getBrowserRegExTitleFromBrowsersList(".*Facebook.*");
-	    	desc.setTitle(title);
-	    	Browser fbBrowser = BrowserFactory.attach(desc);
+			Thread.sleep(2000);
+
+	    	Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
+	    	fbBrowser.sync();
 	    	brURL = fbBrowser.getURL();
 	    	Verify.isTrue(brURL.matches(".*facebook\\.com.*"),"Verification - Verify Social Media","Verify that the Facebook site was launched properly.");
 	    	fbBrowser.close();
 	    	
 	    	// Verify the Twitter link
 	    	appModel.AdvantageShoppingPage().TwitterImage().click();
-	    	desc = new BrowserDescription();
-	    	//title = "HPE ALM (@HPE_ALM) | Twitter";
-	    	title = getBrowserRegExTitleFromBrowsersList(".*Twitter.*");;
-	    	desc.setTitle(title);
-	    	Browser tweetBrowser = BrowserFactory.attach(desc);
+			Thread.sleep(2000);
+
+	    	Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
+	    	tweetBrowser.sync();
 	    	brURL = tweetBrowser.getURL();
 	    	Verify.isTrue(brURL.matches(".*twitter\\.com.*"),"Verification - Verify Social Media","Verify that the Twitter site was launched properly.");
 	    	tweetBrowser.close();
 	    	
 	    	// Verify the LinkedIn link
-	    	appModel.AdvantageShoppingPage().LinkedInImage().click();
-	    	desc = new BrowserDescription();
-	    	//title = "HPE Software | LinkedIn";
-	    	title = getBrowserRegExTitleFromBrowsersList(".*LinkedIn.*");;
-	    	desc.setTitle(title);
-	    	Browser linkedinBrowser = BrowserFactory.attach(desc);
+			appModel.AdvantageShoppingPage().LinkedInImage().click();
+			Thread.sleep(2000);
+
+	    	Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
+	    	linkedinBrowser.sync();
 	    	brURL = linkedinBrowser.getURL();
 	    	Verify.isTrue(brURL.matches(".*linkedin\\.com.*"),"Verification - Verify Social Media","Verify that the LinkedIn site was launched properly.");
 	    	linkedinBrowser.close();
     	}
     	catch (Exception e)
     	{
-    		Reporter.reportEvent("verifySocialMedia", "Could not locate the browser with the title: " + title , Status.Failed);
-    		Verify.isTrue(false, "Verification - Verify Social Media", "Could not locate the browser with the title: " + title + ". Social Media check failed.");
+    		Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching title: " + brURL , Status.Failed);
+    		Verify.isTrue(false, "Verification - Verify Social Media", "Could not locate the browser with the matching title - Social Media check failed.");
     	}
     	
     }
@@ -1028,13 +1023,27 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     	appModel.AdvantageShoppingPage().SignOutWebElement().click();
-    	browser.sync();
 
-    	boolean signin = isSignedIn();
+    	browser.refresh();
+		browser.sync();
 
-    	Verify.isFalse(signin,"Verification - Verify User Links","Verify that the user links navigations work - Sign Out.");
+
+    	Verify.isFalse(isSignedIn(),"Verification - Verify User Links","Verify that the user links navigations work - Sign Out.");
 
     }
+
+
+    public void socialMedia(){
+
+    	String facebook = "https://www.facebook.com/pages/HP-Application-Lifecycle-Management/142893435778219?fref=ts";
+		String twiter = "https://twitter.com/HPE_ALM";
+		String linkedin = "https://www.linkedin.com/company/1024?trk=tyah&trkInfo=clickedVertical%3Ashowcase%2CclickedEntityId%3A1024%2Cidx%3A2-1-2%2CtarId%3A1454314829327%2Ctas%3Ahewlett%20packard%20enterprise%20software";
+
+
+
+
+
+	}
    
     // This internal method strips the search parameter from the Search result page title and returns it 
     public String getSearchParameterFromSearchResultsTitle() throws GeneralLeanFtException
@@ -1241,7 +1250,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	signIn();
     	browser.sync();
     	signOut();
-    	browser.sync();
+    	browser.refresh();
     	Verify.isFalse(isSignedIn(),"Verification - Verify logout","Verify that the is realy logout from the site' .");	
     	
     	
