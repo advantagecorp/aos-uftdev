@@ -20,8 +20,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/RunResults/Resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/appmodels" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/appmodels" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
@@ -40,20 +40,19 @@
     <orderEntry type="library" name="com.hp.lft.unittesting" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.11" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:sdk:14.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.lft:sdk:14.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.7" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.tyrus.bundles:tyrus-standalone-client:1.13" level="project" />
     <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.10" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.19.0-GA" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:annotations:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:common:14.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.lft:common:14.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna-platform:4.2.2" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna:4.2.2" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:report:14.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:reportbuilder:14.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:unittesting:14.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.hp.lft:verifications:14.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.lft:report:14.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.lft:unittesting:14.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.lft:verifications:14.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: pl.pragmatists:JUnitParams:1.0.4" level="project" />
   </component>
 </module>

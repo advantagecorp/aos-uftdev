@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hp.lft:unittesting:14.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/unittesting/14.0.0-SNAPSHOT/unittesting-14.0.0-20170216.135324-1504.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/unittesting/14.0.0-SNAPSHOT/unittesting-14.0.0-20170216.135324-1504-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/unittesting/14.0.0-SNAPSHOT/unittesting-14.0.0-20170216.135324-1504-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

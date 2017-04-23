@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hp.lft:verifications:14.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/verifications/14.0.0-SNAPSHOT/verifications-14.0.0-20170216.135332-1501.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/verifications/14.0.0-SNAPSHOT/verifications-14.0.0-20170216.135332-1501-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hp/lft/verifications/14.0.0-SNAPSHOT/verifications-14.0.0-20170216.135332-1501-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

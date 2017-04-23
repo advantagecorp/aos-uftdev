@@ -8,7 +8,7 @@ import java.security.SecureRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.hp.lft.sdk.wpf.UiObjectBase;
+
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 
