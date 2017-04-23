@@ -277,6 +277,9 @@ public class androidTests extends UnitTestClassBase {
     	/// need to verify an error msg - not support
     	 waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail());
     	appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
+		appModel.AdvantageShoppingApplication().CartAccess().tap();
     	
     	CheckOut(); // use safepay
     	
@@ -501,10 +504,10 @@ public class androidTests extends UnitTestClassBase {
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
 	   
-	   waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
+	   /*waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
 	   appModel.AdvantageShoppingApplication().CartAccess().tap();
 	  
-	   waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartItem());
+	   waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartItem());*/
 	   appModel.AdvantageShoppingApplication().CHECKOUT().tap();
 	  
 	   //pay with safepay and don't save details

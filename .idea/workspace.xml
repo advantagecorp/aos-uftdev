@@ -2,26 +2,231 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9776a76-5e06-496a-abfd-87467e9af381" name="Default" comment="add maven jar">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_common_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_report_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_reportbuilder_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_sdk_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_unittesting_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_hp_lft_verifications_14_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/appmodels/Mobile/AdvantageAndroidApp.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/appmodels/Mobile/AdvantageIOSApp.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/appmodels/Web/AdvantageStagingAppModel.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest$1.class" afterPath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest.class" afterPath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/AdvantageOnlineShoppingTests-14.0.0-SNAPSHOT-jar-with-dependencies.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/AdvantageOnlineShoppingTests-14.0.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ADDTOCARTButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$APPLYChangeLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$AccountDetails.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$BYMANUFACTURERLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$BYOPERATINGSYSTEMLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$CHECKOUT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$CVVMasterCreditEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$CartAccess.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$CartQuantityLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$CartRemove.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ChangePasswordLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ConfirmNewPassEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$DonTHaveAnAccountLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$EditShippingUiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$FirstCartItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$HEADPHONESLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$HOME.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$HOMELabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$HPLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ImageViewFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ImageViewMasterCredit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ImageViewSafePay.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$InvalidUserNameOrPasLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LAPTOPSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LOGINButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LaptopFilter2UiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LaptopItem2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LaptopItemUiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$Login.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$LoginObj.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$MICELabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$MonthMasterCreditLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$NewPassEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$OldPassEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$PAYNOWButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$PassEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$PaymentDetails.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ProductColor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ProductDetail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ProductQuantity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ProductQuantityEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$QuantityLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$REGISTERButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SIGNOUTLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SOLDout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SPEAKERSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SafePayPassFieldEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SafePayUserfieldEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SaveSafePayCredentialsCheckBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ScrollViewCartProducts.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$SignUpUiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$TABLETSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$UPDATEAccountButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$UPDATEPRODUCTButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$UserNameEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$VerifyReceiptWindowUiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$Windows10Label.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$YEARMasterCreditLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$YESButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$ZIPEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$colorObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication$tabletItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$AdvantageShoppingApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$ApplicationNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$ButtonNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$CheckBoxNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$EditFieldNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$LabelNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$UiObjectNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp$ViewNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageAndroidApp.tsrx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$HEADPHONESLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$LAPTOPSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$LOGIN.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$LOGINButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$LOGINObjUiObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$MenuButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$SPEAKERSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$TABLETSLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication$UserNameEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$AdvantageShoppingApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$ApplicationNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$ButtonNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$EditFieldNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$LabelNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp$UiObjectNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/AdvantageIOSApp.tsrx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/IOSTests.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/androidTests$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Mobile/androidTests.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage$ChatSendImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage$RespondChatWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage$ServerConnectWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage$ServerConnectmsg.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage$TypeAMessageEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageOnlineShoppingDemoSupportChatPage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ADDTOCARTButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$AdvantageDEMOHomeLink.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$AdvantageIncCopyrightVersionWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$BoseSoundlinkImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CHECKOUTHoverButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CONTACTUSMainWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CREATENEWACCOUNTLink.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CartIcon.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CartTable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ChatLogoImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CloseSignInPopUpBtnWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ColorSelectorFirstWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ContactUsSubject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountAddressEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountAgreeToTermsCheckBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountCityEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountCountrySelectListBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountEmailEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountFirstNameEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountLastNameEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountPasswordConfirmEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountPasswordEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountPhoneNumberEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountPostalCodeEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountREGISTERNotValidWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountReceiveOffersCheckBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$CreateAccountUsernameWebEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$DISPLAYLink.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$EXPLORENOWButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$EmailContactUsWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$FacebookImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$FirstItemInSearchFilterResultTableImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$FirstRemoveItemFromCartLinkWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$GOUPImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HEADPHONESShopNowWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HEADPHONESShopNowWebElement1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPBeatsStudioHeadphonesImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPChromebookEnergyStarImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPENVY17tTouchLaptop.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPEliteTablet1011Image.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPH2310InEarHeadset.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPProTablet608G1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$HPUsbOpticalMouseImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$InvalidUserMessageWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LAPTOPSShopNowWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LAPTOPSWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LaptopFilterSearchCheckbox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LaptopName.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LinkCartIcon.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LinkedInImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$LogitechG502ProteusCore7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$MICEShopNowWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$MyAccountHeaderLabelWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$MyAccountWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$MyOrdersHeaderLabelWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$MyOrdersWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$NEXTButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$OURPRODUCTSMainWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$OrderNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$OrderSearchWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$PAYNOWButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$POPULARITEMSMainWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$PasswordLoginEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$QuantityContainerLanelWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$QuantityOfProductWebEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$REGISTERButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$RememberMeCheckBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$RemoveFromOrderValidate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SEEOFFERButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SENDContactUsButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SHIPPINGCostWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SIGNINButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SPEAKERSWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SPECIALOFFERMainWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SafePayPasswordEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SafePayUsernameEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SafepayImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SaveChangesInProfileForFutureUse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SearchEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SearchIconWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SearchOrderEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SearchPreviewTOPRESULTSFORWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SearchResultTitleWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SelectProductLineContactUsListBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SelectProductListBox2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SignOutMainIconWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SignOutWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SoldOutHeadphonesWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SpeakersFilterSearchCheckbox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SpeakersImgWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SpecialOfferImageItem1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$SpecialOfferViewDetailsItem1Link.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$TabletsImgWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ThankYouForBuyingWithAdvantageWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$ThankYouForContactingAdvantageSupportWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$TwitterImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$UserNameAlreadyExistsWebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$UsernameLoginEditField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$WebElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$YesNoButtonsRemoveOrderSearch.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage$laptopFororderService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$AdvantageShoppingPage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$ButtonNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$CheckBoxNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$EditFieldNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$ImageNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$LinkNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$ListBoxNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$PageNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$TableNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel$WebElementNodeBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageStagingAppModel.tsrx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Web/AdvantageWebTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/unittesting/UnitTestClassBase$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/unittesting/UnitTestClassBase$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/unittesting/UnitTestClassBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdvantageShoppingTests.iml" afterPath="$PROJECT_DIR$/AdvantageShoppingTests.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" afterPath="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mobile/androidTests.java" afterPath="$PROJECT_DIR$/src/Mobile/androidTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,22 +257,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdvantageStagingAppModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appmodels/Web/AdvantageStagingAppModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="androidTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="androidTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="422">
+              <caret line="281" column="67" lean-forward="false" selection-start-line="281" selection-start-column="67" selection-end-line="281" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,17 +284,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="8" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvantageAndroidApp.tsrx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdvantageAndroidApp.tsrx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Mobile/AdvantageAndroidApp.tsrx">
           <provider selected="true" editor-type-id="appmodels">
             <state />
@@ -119,6 +306,7 @@
       <find>CartIconwithTxt</find>
       <find>cartli</find>
       <find>compile</find>
+      <find>checkout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,11 +324,11 @@
         <option value="$PROJECT_DIR$/bin/Web/AdvantageStagingAppModel.tsrx" />
         <option value="$PROJECT_DIR$/RunResults/runresults.html" />
         <option value="$PROJECT_DIR$/AdvantageShoppingTests.iml" />
-        <option value="$PROJECT_DIR$/src/Mobile/androidTests.java" />
         <option value="$PROJECT_DIR$/src/Web/AdvantageStagingAppModel.tsrx" />
         <option value="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" />
         <option value="$PROJECT_DIR$/appmodels/Web/AdvantageStagingAppModel.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Mobile/androidTests.java" />
       </list>
     </option>
   </component>
@@ -377,7 +565,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.androidTests">
+  <component name="RunManager" selected="JUnit.androidTests.PurchaseHugeQuantityTest">
     <configuration default="false" name="AdvantageWebTest.LogOutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -404,84 +592,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AdvantageWebTest.verifyUserLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AdvantageShoppingTests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Web" />
-      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
-      <option name="METHOD_NAME" value="verifyUserLinks" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AdvantageWebTest.verifySocialMedia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AdvantageShoppingTests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Web" />
-      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
-      <option name="METHOD_NAME" value="verifySocialMedia" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AdvantageWebTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AdvantageShoppingTests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Web" />
-      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="androidTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -496,6 +606,84 @@
       <option name="MAIN_CLASS_NAME" value="Mobile.androidTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="androidTests.UpdateCartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Mobile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AdvantageShoppingTests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Mobile" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.androidTests" />
+      <option name="METHOD_NAME" value="UpdateCartTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="androidTests.PayButtonRegExTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Mobile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AdvantageShoppingTests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Mobile" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.androidTests" />
+      <option name="METHOD_NAME" value="PayButtonRegExTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="androidTests.PurchaseHugeQuantityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Mobile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AdvantageShoppingTests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Mobile" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.androidTests" />
+      <option name="METHOD_NAME" value="PurchaseHugeQuantityTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -714,18 +902,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.LogOutTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyUserLinks" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifySocialMedia" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.androidTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.androidTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.androidTests.UpdateCartTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.androidTests.PayButtonRegExTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.androidTests.PurchaseHugeQuantityTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.androidTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.LogOutTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifySocialMedia" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyUserLinks" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.androidTests.PurchaseHugeQuantityTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.androidTests.PayButtonRegExTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.androidTests.UpdateCartTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.androidTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.LogOutTest" />
       </list>
     </recent_temporary>
   </component>
@@ -773,23 +961,23 @@
     <history-entry file="AdvantageWebTest_LogOutTest - 2017.04.23 at 14h 59m 01s.xml">
       <configuration name="AdvantageWebTest.LogOutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvantageWebTest_verifySocialMedia - 2017.04.23 at 13h 42m 15s.xml">
-      <configuration name="AdvantageWebTest.verifySocialMedia" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifySocialMedia - 2017.04.23 at 13h 44m 06s.xml">
-      <configuration name="AdvantageWebTest.verifySocialMedia" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifySocialMedia - 2017.04.23 at 13h 50m 26s.xml">
-      <configuration name="AdvantageWebTest.verifySocialMedia" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifySocialMedia - 2017.04.23 at 13h 51m 42s.xml">
-      <configuration name="AdvantageWebTest.verifySocialMedia" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AdvantageWebTest_verifySocialMedia - 2017.04.23 at 15h 09m 01s.xml">
       <configuration name="AdvantageWebTest.verifySocialMedia" configurationId="JUnit" />
     </history-entry>
     <history-entry file="androidTests - 2017.04.23 at 15h 07m 26s.xml">
       <configuration name="androidTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="androidTests - 2017.04.23 at 15h 35m 37s.xml">
+      <configuration name="androidTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="androidTests_PayButtonRegExTest - 2017.04.23 at 15h 44m 32s.xml">
+      <configuration name="androidTests.PayButtonRegExTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="androidTests_PurchaseHugeQuantityTest - 2017.04.23 at 15h 47m 12s.xml">
+      <configuration name="androidTests.PurchaseHugeQuantityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="androidTests_UpdateCartTest - 2017.04.23 at 15h 41m 20s.xml">
+      <configuration name="androidTests.UpdateCartTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -813,13 +1001,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5021322" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.2920354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1137" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1924307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1924307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -935,11 +1123,19 @@
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
+          <line>228</line>
+          <properties class="Mobile.androidTests" method="PurchaseHugeQuantityTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="44" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -971,7 +1167,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1316,6 +1514,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="281" column="67" lean-forward="false" selection-start-line="281" selection-start-column="67" selection-end-line="281" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mobile/AdvantageAndroidApp.tsrx">
       <provider selected="true" editor-type-id="appmodels">
         <state />
@@ -1323,14 +1531,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
       </provider>
