@@ -1,0 +1,1198 @@
+<Results>
+    <GeneralInfo>
+        <Name/>
+        <RunStartTime>2017-04-23 11:00:22</RunStartTime>
+        <Timezone>Jerusalem Standard Time</Timezone>
+        <OrchestrationToolName>JUnit</OrchestrationToolName>
+        <OrchestrationToolVersion/>
+        <ReportTitle>LeanFT Report</ReportTitle>
+        <CustomFields name="Mobile Center Server:" value="http://16.59.19.157:8080"/>
+    </GeneralInfo>
+    <ReportNode type="Run">
+        <Data>
+            <Name>Run Results</Name>
+            <Description><![CDATA[ ]]></Description>
+            <StartTime>2017-04-23 11:00:22</StartTime>
+            <Result>Failed</Result>
+            <Links/>
+            <Duration>9</Duration>
+            <Extension>
+                <Any>
+                    <IconKey>Run</IconKey>
+                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                </Any>
+            </Extension>
+            <Environment>
+                <OSInfo><![CDATA[Microsoft Windows NT 6.2.9200.0]]></OSInfo>
+                <HostName>AIBD1CIMVB</HostName>
+                <NumberOfCores>8</NumberOfCores>
+                <CpuInfo/>
+                <TotalMemory>16041</TotalMemory>
+                <Locale><![CDATA[he-IL]]></Locale>
+                <Timezone>Jerusalem Standard Time</Timezone>
+                <User>gadian</User>
+            </Environment>
+            <TestedApplication/>
+            <ToolName>LeanFT</ToolName>
+            <ToolVersion><![CDATA[14.0]]></ToolVersion>
+        </Data>
+        <ReportNode type="Package">
+            <Data>
+                <Name>Web</Name>
+                <Description><![CDATA[Version: N/A]]></Description>
+                <StartTime>2017-04-23 11:00:22</StartTime>
+                <Result>Failed</Result>
+                <Links/>
+                <Duration>9</Duration>
+                <Extension>
+                    <Any>
+                        <IconKey>Package</IconKey>
+                        <IsHtmlErrorText>true</IsHtmlErrorText>
+                    </Any>
+                </Extension>
+            </Data>
+            <ReportNode type="Class">
+                <Data>
+                    <Name><![CDATA[Web.AdvantageWebTest]]></Name>
+                    <Description/>
+                    <StartTime>2017-04-23 11:00:22</StartTime>
+                    <Result>Failed</Result>
+                    <Links/>
+                    <Duration>9</Duration>
+                    <Extension>
+                        <Any>
+                            <IconKey>Class</IconKey>
+                            <IsHtmlErrorText>true</IsHtmlErrorText>
+                        </Any>
+                    </Extension>
+                </Data>
+                <ReportNode type="Test">
+                    <Data>
+                        <Name>verifyUserLinks</Name>
+                        <Description/>
+                        <StartTime>2017-04-23 11:00:22</StartTime>
+                        <Result>Failed</Result>
+                        <Links/>
+                        <Duration>9</Duration>
+                        <Extension>
+                            <Any>
+                                <IconKey>Test</IconKey>
+                                <IsHtmlErrorText>true</IsHtmlErrorText>
+                            </Any>
+                        </Extension>
+                    </Data>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[Browser.launch]]></Name>
+                            <Description><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;CHROME&quot;</td></tr></table>]]></Description>
+                            <StartTime>2017-04-23 11:00:22</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>0</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path/>
+                                        <Operation>launch</Operation>
+                                        <OperationData><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;CHROME&quot;</td></tr></table>]]></OperationData>
+                                        <Properties/>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>Browser</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                        <FlowTreeNodeCaption><![CDATA[Browser.<span class='emphasis'>launch("Chrome")</span>]]></FlowTreeNodeCaption>
+                                        <FlowTreeNodeTooltip><![CDATA[Browser.launch("Chrome")]]></FlowTreeNodeTooltip>
+                                    </CustomUIElements>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[Browser.navigate]]></Name>
+                            <Description><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;http://52.32.172.3:8080&quot;</td></tr></table>]]></Description>
+                            <StartTime>2017-04-23 11:00:22</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[Browser]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>navigate</Operation>
+                                        <OperationData><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;http://52.32.172.3:8080&quot;</td></tr></table>]]></OperationData>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[type]]></Name>
+                                                <Value><![CDATA[Chrome]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[version]]></Name>
+                                                <Value><![CDATA[57.0]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>Browser</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <Descriptive>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[Browser]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </Descriptive>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[SingInOutIcon.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:23</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[SingInOutIcon]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[RegExp("(.*)My account My Orders Sign out ")]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[A]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[SingInOutIcon]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[userNameTxtField.setValue]]></Name>
+                            <Description><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;johnhpe1&quot;</td></tr></table>]]></Description>
+                            <StartTime>2017-04-23 11:00:23</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.EditField</Type>
+                                                <Name><![CDATA[userNameTxtField]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>setValue</Operation>
+                                        <OperationData><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;johnhpe1&quot;</td></tr></table>]]></OperationData>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[type]]></Name>
+                                                <Value><![CDATA[text]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[name]]></Name>
+                                                <Value><![CDATA[userNameTxtField]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[INPUT]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>EditField</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.EditField</Type>
+                                                    <Name><![CDATA[userNameTxtField]]></Name>
+                                                    <IconKey>EditField</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[Password.setValue]]></Name>
+                            <Description><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;HPEsw123&quot;</td></tr></table>]]></Description>
+                            <StartTime>2017-04-23 11:00:23</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.EditField</Type>
+                                                <Name><![CDATA[Password]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>setValue</Operation>
+                                        <OperationData><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>&quot;HPEsw123&quot;</td></tr></table>]]></OperationData>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[type]]></Name>
+                                                <Value><![CDATA[password]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[name]]></Name>
+                                                <Value><![CDATA[WebEdit]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[INPUT]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>EditField</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.EditField</Type>
+                                                    <Name><![CDATA[Password]]></Name>
+                                                    <IconKey>EditField</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[remember_me.set]]></Name>
+                            <Description><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>true</td></tr></table>]]></Description>
+                            <StartTime>2017-04-23 11:00:24</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.CheckBox</Type>
+                                                <Name><![CDATA[remember_me]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>set</Operation>
+                                        <OperationData><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td><td class='ex-value'>true</td></tr></table>]]></OperationData>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[type]]></Name>
+                                                <Value><![CDATA[checkbox]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[name]]></Name>
+                                                <Value><![CDATA[remember_me]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[INPUT]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>CheckBox</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.CheckBox</Type>
+                                                    <Name><![CDATA[remember_me]]></Name>
+                                                    <IconKey>CheckBox</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[sign_in_btn.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:24</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Button</Type>
+                                                <Name><![CDATA[sign_in_btn]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[buttonType]]></Name>
+                                                <Value><![CDATA[button]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[name]]></Name>
+                                                <Value><![CDATA[SIGN IN]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[BUTTON]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>Button</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Button</Type>
+                                                    <Name><![CDATA[sign_in_btn]]></Name>
+                                                    <IconKey>Button</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name><![CDATA[Verification - Sign In]]></Name>
+                            <Description><![CDATA[Verify that the user johnhpe1 signed in properly.]]></Description>
+                            <StartTime>2017-04-23 11:00:26</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>isTrue</Operation>
+                                        <Data><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td></tr><tr><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><tr><td class='ex-value'><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'>true</table></td></tr></tr></table>]]></Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifySuccess</IconKey>
+                                    <CustomUIElements>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifySuccess</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[Advantage DEMO.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:26</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Link</Type>
+                                                <Name><![CDATA[Advantage DEMO]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[dvantage DEMO ]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[A]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>Link</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Link</Type>
+                                                    <Name><![CDATA[Advantage DEMO]]></Name>
+                                                    <IconKey>Link</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[SingInOutIcon.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:26</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[SingInOutIcon]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[RegExp("(.*)My account My Orders Sign out ")]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[A]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[SingInOutIcon]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[My account.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:26</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[My account]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[className]]></Name>
+                                                <Value><![CDATA[option roboto-medium ng-scope]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[My account]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[LABEL]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[My account]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name><![CDATA[Verification - Verify User Links]]></Name>
+                            <Description><![CDATA[Verify that the user links navigations work - My Account.]]></Description>
+                            <StartTime>2017-04-23 11:00:28</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>isTrue</Operation>
+                                        <Data><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td></tr><tr><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><tr><td class='ex-value'><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'>true</table></td></tr></tr></table>]]></Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifySuccess</IconKey>
+                                    <CustomUIElements>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifySuccess</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[SingInOutIcon.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:28</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[SingInOutIcon]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[RegExp("(.*)My account My Orders Sign out ")]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[A]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[SingInOutIcon]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[My Orders.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:28</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[My Orders]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[accessibilityName]]></Name>
+                                                <Value/>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[className]]></Name>
+                                                <Value><![CDATA[option ng-scope]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[My Orders]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[LABEL]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[index]]></Name>
+                                                <Value><![CDATA[1]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[My Orders]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name><![CDATA[Verification - Verify User Links]]></Name>
+                            <Description><![CDATA[Verify that the user links navigations work - My Orders.]]></Description>
+                            <StartTime>2017-04-23 11:00:29</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>isTrue</Operation>
+                                        <Data><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td></tr><tr><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><tr><td class='ex-value'><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'>true</table></td></tr></tr></table>]]></Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifySuccess</IconKey>
+                                    <CustomUIElements>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifySuccess</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[SingInOutIcon.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:29</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[SingInOutIcon]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[RegExp("(.*)My account My Orders Sign out ")]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[A]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[SingInOutIcon]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[Sign out.click]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:29</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.Page</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                            <Object>
+                                                <Type>Web.WebElement</Type>
+                                                <Name><![CDATA[Sign out]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>click</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[className]]></Name>
+                                                <Value><![CDATA[option roboto-medium ng-scope]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[innerText]]></Name>
+                                                <Value><![CDATA[Sign out]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[tagName]]></Name>
+                                                <Value><![CDATA[LABEL]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>WebElement</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <ApplicationModel>
+                                        <LogicalName>AdvantageStagingAppModel</LogicalName>
+                                        <ClassName><![CDATA[Web.AdvantageStagingAppModel]]></ClassName>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.Page</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Page</IconKey>
+                                                </Object>
+                                                <Object>
+                                                    <Type>Web.WebElement</Type>
+                                                    <Name><![CDATA[Sign out]]></Name>
+                                                    <IconKey>WebElement</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </ApplicationModel>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name><![CDATA[Verification - Verify User Links]]></Name>
+                            <Description><![CDATA[Verify that the user links navigations work - Sign Out.]]></Description>
+                            <StartTime>2017-04-23 11:00:29</StartTime>
+                            <Result>Failed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>isFalse</Operation>
+                                        <Data><![CDATA[<style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'><tr><td class='ex-name'>arg0</td></tr><tr><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><tr><td class='ex-value'><font color='red'><style>.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}</style><table class='ex-table'>true</table></font></td></tr></tr></table>]]></Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifyFailure</IconKey>
+                                    <CustomUIElements>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifyFailure</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Step">
+                        <Data>
+                            <Name><![CDATA[ Advantage Shopping.close]]></Name>
+                            <Description/>
+                            <StartTime>2017-04-23 11:00:29</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>1</Duration>
+                            <Extension>
+                                <Any>
+                                    <TestObject>
+                                        <Path>
+                                            <Object>
+                                                <Type>Web.Browser</Type>
+                                                <Name><![CDATA[ Advantage Shopping]]></Name>
+                                            </Object>
+                                        </Path>
+                                        <Operation>close</Operation>
+                                        <OperationData/>
+                                        <Properties>
+                                            <Property>
+                                                <Name><![CDATA[type]]></Name>
+                                                <Value><![CDATA[Chrome]]></Value>
+                                            </Property>
+                                            <Property>
+                                                <Name><![CDATA[version]]></Name>
+                                                <Value><![CDATA[57.0]]></Value>
+                                            </Property>
+                                        </Properties>
+                                    </TestObject>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>Browser</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                    </CustomUIElements>
+                                    <Descriptive>
+                                        <TestObject>
+                                            <Path>
+                                                <Object>
+                                                    <Type>Web.Browser</Type>
+                                                    <Name><![CDATA[ Advantage Shopping]]></Name>
+                                                    <IconKey>Browser</IconKey>
+                                                </Object>
+                                            </Path>
+                                        </TestObject>
+                                    </Descriptive>
+                                    <HideContextInfo>true</HideContextInfo>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                </ReportNode>
+            </ReportNode>
+        </ReportNode>
+    </ReportNode>
+</Results>
