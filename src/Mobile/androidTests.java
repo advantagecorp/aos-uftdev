@@ -38,12 +38,10 @@ public class androidTests extends UnitTestClassBase {
 	protected static Device device;
 	protected static Application app;
 	
-	private int count =1 ;
+	static String UNAME = "AndroidUser";
+	String         PASS = "Userpass1";
 	
-	static String UNAME = "Mercury";
-	String PASS = "Mercury";
-	
-    static String appURL = "http://156.152.164.67:8080"; 
+    static String appURL = "52.32.172.3:8080";
 
 	
 	
@@ -57,24 +55,26 @@ public class androidTests extends UnitTestClassBase {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
+
         instance = new androidTests();
         globalSetup(androidTests.class);
-       
-        //device = MobileLab.lockDeviceById("QHC0216114003497");// ID For Hawawii
-        //device = MobileLab.lockDeviceById("04cbab13");// ID For Nexus 7
-        //device = MobileLab.lockDeviceById("140882a2");// ID For GT-19515
-        device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
-        
-    	
-        // Describe the AUT.
-         app = device.describe(Application.class, new ApplicationDescription.Builder()
-         .identifier("com.Advantage.aShopping").build());
-         
-         //connect between the appModel and the device
-         appModel = new AdvantageAndroidApp(device);
-   
-       
-    }
+
+		//device = MobileLab.lockDeviceById("QHC0216114003497");// ID For Hawawii
+		//device = MobileLab.lockDeviceById("04cbab13");// ID For Nexus 7
+		//device = MobileLab.lockDeviceById("140882a2");// ID For GT-19515
+		device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
+
+
+		// Describe the AUT.
+		app = device.describe(Application.class, new ApplicationDescription.Builder()
+				.identifier("com.Advantage.aShopping").build());
+
+		//connect between the appModel and the device
+		appModel = new AdvantageAndroidApp(device);
+
+
+
+	}
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
@@ -95,6 +95,81 @@ public class androidTests extends UnitTestClassBase {
     	//SignOut();
     
     }
+
+
+
+    public  void InitSetUP() throws GeneralLeanFtException, InterruptedException {
+
+
+		//change the setting of the server
+		//setting();
+		//create a new user for testing if not exists
+
+		CreateNewUser();
+
+	}
+
+    public void setting() throws GeneralLeanFtException, InterruptedException {
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
+
+		String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+
+		if(!server.equals(appURL)){ // check if the setting already set up
+
+			appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
+
+			appModel.AdvantageShoppingApplication().ConnectButton().tap();
+			Thread.sleep(2000);
+
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
+
+			appModel.AdvantageShoppingApplication().OKButton().tap();
+
+		}
+
+
+       app.restart();
+
+
+	}
+
+    public void  CreateNewUser() throws GeneralLeanFtException , InterruptedException{
+    	// create new user if not exists to run all tests
+
+		if(!SignIn(false)){
+
+
+			appModel.AdvantageShoppingApplication().SignUp().tap();
+
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject());
+
+			appModel.AdvantageShoppingApplication().UserNameSignUp().setText(UNAME);
+			appModel.AdvantageShoppingApplication().EmailSignUp().setText(UNAME + "@default.com");
+			appModel.AdvantageShoppingApplication().PasswordSignUp().setText(PASS);
+			appModel.AdvantageShoppingApplication().ConfirmPassSignUp().setText(PASS);
+
+
+
+			appModel.AdvantageShoppingApplication().REGISTERButton().tap();
+
+			Verification(Verify.isTrue(SignIn(true) , "New User creation" , "verify that the creation of new user for testing  succeeds"));
+
+
+
+		}
+
+
+	}
+
+	@Test
+	public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
+
+    	InitSetUP();
+	}
+
 
     @Test
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
@@ -155,7 +230,7 @@ public class androidTests extends UnitTestClassBase {
     }
   
     
-   /* @Test
+   @Test
     public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
     	
     	/*
@@ -170,10 +245,9 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 * 
     	 * 
-    	 * 
-    	 
-    	
-    	
+    	 */
+
+    	String Oldpass =  PASS;
  	   
  	  if(SignIn(true))
  	    	SignOut();
@@ -183,34 +257,43 @@ public class androidTests extends UnitTestClassBase {
    	appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
    	appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
    	appModel.AdvantageShoppingApplication().LOGINButton().tap();
-   	Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPasLabel().exists(),"Verification - Change Password", "Verify that the user NOT login with incorrect password");
-   	
-   	app.restart();
-   	SignIn(false);
-   	appModel.AdvantageShoppingApplication().MainMenu().tap();
-   	appModel.AdvantageShoppingApplication().AccountDetails().tap();
-   	Thread.sleep(2000);
-   	
-   	//change to another password
-   	appModel.AdvantageShoppingApplication().ChangePasswordLabel().tap();
-   	appModel.AdvantageShoppingApplication().OldPassEditField().setText(PASS);
-   	appModel.AdvantageShoppingApplication().NewPassEditField().setText(PASS + UNAME);
-   	appModel.AdvantageShoppingApplication().ConfirmNewPassEditField().setText(PASS + UNAME);
-   	appModel.AdvantageShoppingApplication().UPDATEAccountButton().tap();
-   	
-   	SignOut();
-   	
-   	 this.PASS = this.PASS + UNAME;
-   	
-   	SignIn(false);
-   	Verify.isTrue(SignIn(true),"Verification - Change Password", "Verify that the user login with the new password");
-   	
-   	
+   	Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Change Password", "Verify that the user NOT login with incorrect password"));
+
+   	//step 1 - change to new pass
+   	changepassword("Password1");
+   	Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 1 - change to new pass", "Verify that the user login with the new password"));
+
+
+   	//step 2 -  change back to the default pass
+	   changepassword(Oldpass);
+	   Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
    	
    	
     	   
  	   
-    }*/
+    }
+
+    public void changepassword(String newpass) throws GeneralLeanFtException, InterruptedException {
+
+		SignIn(false);
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().AccountDetails().tap();
+		Thread.sleep(2000);
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().ChangePasswordObject());
+
+		//change to another password
+		appModel.AdvantageShoppingApplication().ChangePasswordLabel().tap();
+		appModel.AdvantageShoppingApplication().OldPassEditField().setText(PASS);
+		appModel.AdvantageShoppingApplication().NewPassEditField().setText(newpass);
+		appModel.AdvantageShoppingApplication().ConfirmNewPassEditField().setText(newpass);
+		appModel.AdvantageShoppingApplication().UPDATEAccountButton().tap();
+
+		app.restart();
+		SignOut();
+
+		PASS = newpass;
+
+	}
     
     @Test
     public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
@@ -456,9 +539,15 @@ public class androidTests extends UnitTestClassBase {
 	    	appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
 	    	appModel.AdvantageShoppingApplication().PassEdit().setText(PASS);
 	    	appModel.AdvantageShoppingApplication().LOGINButton().tap();
-	    	
-	    	System.out.println(UNAME + "  Login Success");
-	    	Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
+
+	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists())
+			{
+				System.out.println(UNAME + "  Login Success");
+				Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
+				return true;
+			}
+				return false;
+
 		    }
 	    	
 	    	return false;
@@ -593,14 +682,12 @@ public class androidTests extends UnitTestClassBase {
    		   }				
    		  });
    }
+
+	public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
+
+		if(!VerifyMethod)
+			throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+	}
    
-   public  boolean CreateNewUser(){
-	   
-	   
-	   //TODO: implement creation of new random user for each run  of tests
-	   
-	    return true;
-	   
-   }
-  
+
 }
