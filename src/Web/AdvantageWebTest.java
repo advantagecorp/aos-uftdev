@@ -30,8 +30,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String USERNAME = "johnhpe1";
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
-	//public static String appURL = System.getProperty("url", "defaultvalue");
-	public static String appURL = "http://35.162.69.22:8080";//"http://52.32.172.3:8080";//"http://156.152.164.67:8080";
+	public static String appURL = System.getProperty("url", "defaultvalue");
+	//public static String appURL = "http://52.32.172.3:8080";//"http://35.162.69.22:8080";//"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -338,7 +338,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	}
 		
     	waitUntilElementExists(appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit());
+    	Thread.sleep(2000);
     	appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit().setValue(username);
+
     	// Fill the Create Account form
     	
     	if(!isNegativeTest) // Do not fill the mail field in a negative test
@@ -356,11 +358,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().CreateAccountCityEditField().setValue("Yehud");
     	appModel.AdvantageShoppingPage().CreateAccountAddressEditField().setValue("Shabazi 19");
     	appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField().setValue("56100");
-    	appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
+    	//appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
     	appModel.AdvantageShoppingPage().CreateAccountAgreeToTermsCheckBox().set(true);
     	
     	if(!isNegativeTest)
     	{
+
 	    	waitUntilElementExists(appModel.AdvantageShoppingPage().REGISTERButton());
 	    	// Click the Register button
 	    	appModel.AdvantageShoppingPage().REGISTERButton().click();
@@ -1043,7 +1046,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		browser.sync();
 
 
-    	Verification(Verify.isTrue(isSignedIn(),"Verification - Verify User Links"," Verify that the user links navigations work - Sign Out." ));
+    	Verification(Verify.isTrue(!isSignedIn(),"Verification - Verify User Links"," Verify that the user links navigations work - Sign Out." ));
 
     }
 
@@ -1152,7 +1155,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     		appModel.AdvantageShoppingPage().MyOrdersWebElement().click();
     		appModel.AdvantageShoppingPage().OrderSearchWebElement().click();
-    		appModel.AdvantageShoppingPage().SearchEditField().setValue(ProductName);
+    		appModel.AdvantageShoppingPage().SearchOrderEditField().setValue(ProductName);
     		appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
     		
     		

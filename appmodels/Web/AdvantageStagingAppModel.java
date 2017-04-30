@@ -55,7 +55,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private CHECKOUTHoverButton CHECKOUTHoverButton;
 	private HEADPHONESShopNowWebElement1 HEADPHONESShopNowWebElement1;
 	private SelectProductListBox2 SelectProductListBox2;
-	private PasswordLoginEditField PasswordLoginEditField;
 	private NEXTButton NEXTButton;
 	private SafepayImage SafepayImage;
 	private SafePayPasswordEditField SafePayPasswordEditField;
@@ -75,7 +74,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private CreateAccountPostalCodeEditField CreateAccountPostalCodeEditField;
 	private CreateAccountCityEditField CreateAccountCityEditField;
 	private CreateAccountReceiveOffersCheckBox CreateAccountReceiveOffersCheckBox;
-	private CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox;
 	private UserNameAlreadyExistsWebElement UserNameAlreadyExistsWebElement;
 	private ChatLogoImage ChatLogoImage;
 	private FacebookImage FacebookImage;
@@ -109,9 +107,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private REGISTERButton REGISTERButton;
 	private SENDContactUsButton SENDContactUsButton;
 	private PAYNOWButton PAYNOWButton;
-	private UsernameLoginEditField UsernameLoginEditField;
 	private SIGNINButton SIGNINButton;
-	private laptopFororderService laptopFororderService;
 	private DISPLAYLink DISPLAYLink;
 	private LaptopName LaptopName;
 	private OrderSearchWebElement OrderSearchWebElement;
@@ -125,7 +121,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private ContactUsSubject ContactUsSubject;
 	private RememberMeCheckBox RememberMeCheckBox;
 	private CloseSignInPopUpBtnWebElement CloseSignInPopUpBtnWebElement;
-	private BoseSoundlinkImage BoseSoundlinkImage;
 	private LinkCartIcon LinkCartIcon;
 	private CartIcon CartIcon;
 	private SafePayUsernameEditField SafePayUsernameEditField;
@@ -136,6 +131,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private HPProTablet608G1 HPProTablet608G1;
 	private LaptopFilterSearchCheckbox LaptopFilterSearchCheckbox;
 	private SpeakersFilterSearchCheckbox SpeakersFilterSearchCheckbox;
+	private UsernameLoginEditField UsernameLoginEditField;
+	private PasswordLoginEditField PasswordLoginEditField;
+	private CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox;
+	private BoseSoundlinkImage BoseSoundlinkImage;
+	private laptopFororderService laptopFororderService;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -160,7 +160,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		CHECKOUTHoverButton = new CHECKOUTHoverButton(this, applicationModel);
 		HEADPHONESShopNowWebElement1 = new HEADPHONESShopNowWebElement1(this, applicationModel);
 		SelectProductListBox2 = new SelectProductListBox2(this, applicationModel);
-		PasswordLoginEditField = new PasswordLoginEditField(this, applicationModel);
 		NEXTButton = new NEXTButton(this, applicationModel);
 		SafepayImage = new SafepayImage(this, applicationModel);
 		SafePayPasswordEditField = new SafePayPasswordEditField(this, applicationModel);
@@ -180,7 +179,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		CreateAccountPostalCodeEditField = new CreateAccountPostalCodeEditField(this, applicationModel);
 		CreateAccountCityEditField = new CreateAccountCityEditField(this, applicationModel);
 		CreateAccountReceiveOffersCheckBox = new CreateAccountReceiveOffersCheckBox(this, applicationModel);
-		CreateAccountAgreeToTermsCheckBox = new CreateAccountAgreeToTermsCheckBox(this, applicationModel);
 		UserNameAlreadyExistsWebElement = new UserNameAlreadyExistsWebElement(this, applicationModel);
 		ChatLogoImage = new ChatLogoImage(this, applicationModel);
 		FacebookImage = new FacebookImage(this, applicationModel);
@@ -214,9 +212,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		REGISTERButton = new REGISTERButton(this, applicationModel);
 		SENDContactUsButton = new SENDContactUsButton(this, applicationModel);
 		PAYNOWButton = new PAYNOWButton(this, applicationModel);
-		UsernameLoginEditField = new UsernameLoginEditField(this, applicationModel);
 		SIGNINButton = new SIGNINButton(this, applicationModel);
-		laptopFororderService = new laptopFororderService(this, applicationModel);
 		DISPLAYLink = new DISPLAYLink(this, applicationModel);
 		LaptopName = new LaptopName(this, applicationModel);
 		OrderSearchWebElement = new OrderSearchWebElement(this, applicationModel);
@@ -230,7 +226,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		ContactUsSubject = new ContactUsSubject(this, applicationModel);
 		RememberMeCheckBox = new RememberMeCheckBox(this, applicationModel);
 		CloseSignInPopUpBtnWebElement = new CloseSignInPopUpBtnWebElement(this, applicationModel);
-		BoseSoundlinkImage = new BoseSoundlinkImage(this, applicationModel);
 		LinkCartIcon = new LinkCartIcon(this, applicationModel);
 		CartIcon = new CartIcon(this, applicationModel);
 		SafePayUsernameEditField = new SafePayUsernameEditField(this, applicationModel);
@@ -241,6 +236,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		HPProTablet608G1 = new HPProTablet608G1(this, applicationModel);
 		LaptopFilterSearchCheckbox = new LaptopFilterSearchCheckbox(this, applicationModel);
 		SpeakersFilterSearchCheckbox = new SpeakersFilterSearchCheckbox(this, applicationModel);
+		UsernameLoginEditField = new UsernameLoginEditField(this, applicationModel);
+		PasswordLoginEditField = new PasswordLoginEditField(this, applicationModel);
+		CreateAccountAgreeToTermsCheckBox = new CreateAccountAgreeToTermsCheckBox(this, applicationModel);
+		BoseSoundlinkImage = new BoseSoundlinkImage(this, applicationModel);
+		laptopFororderService = new laptopFororderService(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -276,7 +276,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public CHECKOUTHoverButton CHECKOUTHoverButton() { return CHECKOUTHoverButton; }
 		public HEADPHONESShopNowWebElement1 HEADPHONESShopNowWebElement1() { return HEADPHONESShopNowWebElement1; }
 		public SelectProductListBox2 SelectProductListBox2() { return SelectProductListBox2; }
-		public PasswordLoginEditField PasswordLoginEditField() { return PasswordLoginEditField; }
 		public NEXTButton NEXTButton() { return NEXTButton; }
 		public SafepayImage SafepayImage() { return SafepayImage; }
 		public SafePayPasswordEditField SafePayPasswordEditField() { return SafePayPasswordEditField; }
@@ -296,7 +295,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public CreateAccountPostalCodeEditField CreateAccountPostalCodeEditField() { return CreateAccountPostalCodeEditField; }
 		public CreateAccountCityEditField CreateAccountCityEditField() { return CreateAccountCityEditField; }
 		public CreateAccountReceiveOffersCheckBox CreateAccountReceiveOffersCheckBox() { return CreateAccountReceiveOffersCheckBox; }
-		public CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox() { return CreateAccountAgreeToTermsCheckBox; }
 		public UserNameAlreadyExistsWebElement UserNameAlreadyExistsWebElement() { return UserNameAlreadyExistsWebElement; }
 		public ChatLogoImage ChatLogoImage() { return ChatLogoImage; }
 		public FacebookImage FacebookImage() { return FacebookImage; }
@@ -330,9 +328,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public REGISTERButton REGISTERButton() { return REGISTERButton; }
 		public SENDContactUsButton SENDContactUsButton() { return SENDContactUsButton; }
 		public PAYNOWButton PAYNOWButton() { return PAYNOWButton; }
-		public UsernameLoginEditField UsernameLoginEditField() { return UsernameLoginEditField; }
 		public SIGNINButton SIGNINButton() { return SIGNINButton; }
-		public laptopFororderService laptopFororderService() { return laptopFororderService; }
 		public DISPLAYLink DISPLAYLink() { return DISPLAYLink; }
 		public LaptopName LaptopName() { return LaptopName; }
 		public OrderSearchWebElement OrderSearchWebElement() { return OrderSearchWebElement; }
@@ -346,7 +342,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public ContactUsSubject ContactUsSubject() { return ContactUsSubject; }
 		public RememberMeCheckBox RememberMeCheckBox() { return RememberMeCheckBox; }
 		public CloseSignInPopUpBtnWebElement CloseSignInPopUpBtnWebElement() { return CloseSignInPopUpBtnWebElement; }
-		public BoseSoundlinkImage BoseSoundlinkImage() { return BoseSoundlinkImage; }
 		public LinkCartIcon LinkCartIcon() { return LinkCartIcon; }
 		public CartIcon CartIcon() { return CartIcon; }
 		public SafePayUsernameEditField SafePayUsernameEditField() { return SafePayUsernameEditField; }
@@ -357,6 +352,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public HPProTablet608G1 HPProTablet608G1() { return HPProTablet608G1; }
 		public LaptopFilterSearchCheckbox LaptopFilterSearchCheckbox() { return LaptopFilterSearchCheckbox; }
 		public SpeakersFilterSearchCheckbox SpeakersFilterSearchCheckbox() { return SpeakersFilterSearchCheckbox; }
+		public UsernameLoginEditField UsernameLoginEditField() { return UsernameLoginEditField; }
+		public PasswordLoginEditField PasswordLoginEditField() { return PasswordLoginEditField; }
+		public CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox() { return CreateAccountAgreeToTermsCheckBox; }
+		public BoseSoundlinkImage BoseSoundlinkImage() { return BoseSoundlinkImage; }
+		public laptopFororderService laptopFororderService() { return laptopFororderService; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -878,32 +878,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class PasswordLoginEditField extends EditFieldNodeBase
-	{
-
-		
-								public PasswordLoginEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Password");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.EditFieldDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").tagName("INPUT").name("WebEdit").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class NEXTButton extends ButtonNodeBase
 	{
 
@@ -972,7 +946,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("WebEdit").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("safepay_password").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1102,7 +1076,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userName").index(2).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("username").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1128,7 +1102,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("userPassword").index(0).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("password").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1154,7 +1128,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("userEmail").index(3).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("email").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1180,7 +1154,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("userPassword").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("confirm_password").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1206,7 +1180,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userFirstName").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("first_name").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1232,7 +1206,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userLastName").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("last_name").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1258,7 +1232,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userPhone").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("phone_number").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1310,7 +1284,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userAdress").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("address").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1336,7 +1310,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userPostalCode").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("postal_code").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1362,7 +1336,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userCity").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("city").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1389,32 +1363,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.CheckBoxDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.CheckBoxDescription.Builder().type("checkbox").tagName("INPUT").name("allowOffersPromotion").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class CreateAccountAgreeToTermsCheckBox extends CheckBoxNodeBase
-	{
-
-		
-								public CreateAccountAgreeToTermsCheckBox(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Create Account Agree To Terms");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.CheckBoxDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.CheckBoxDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.CheckBoxDescription.Builder().type("checkbox").tagName("INPUT").name("registrationAgreement").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2282,32 +2230,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class UsernameLoginEditField extends EditFieldNodeBase
-	{
-
-		
-								public UsernameLoginEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("userNameTxtField");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.EditFieldDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("userNameTxtField").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class SIGNINButton extends ButtonNodeBase
 	{
 
@@ -2325,32 +2247,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").tagName("BUTTON").name("SIGN IN").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class laptopFororderService extends LinkNodeBase
-	{
-
-		
-								public laptopFororderService(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Order Service Item");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.LinkDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.LinkDescription.Builder().role("link").accessibilityName("").tagName("IMG").innerText("").index(9).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2610,7 +2506,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("WebEdit").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("email").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2698,32 +2594,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class BoseSoundlinkImage extends LinkNodeBase
-	{
-
-		
-								public BoseSoundlinkImage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("BoseSound Image");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.LinkDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.LinkDescription.Builder().role("link").accessibilityName("").tagName("IMG").innerText("").index(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class LinkCartIcon extends WebElementNodeBase
 	{
 
@@ -2792,7 +2662,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("WebEdit").index(8).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("safepay_username").index(8).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2975,6 +2845,136 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.CheckBoxDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.CheckBoxDescription.Builder().type("checkbox").role("").accessibilityName("").tagName("INPUT").name("category").index(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UsernameLoginEditField extends EditFieldNodeBase
+	{
+
+		
+								public UsernameLoginEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("username login");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("username").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PasswordLoginEditField extends EditFieldNodeBase
+	{
+
+		
+								public PasswordLoginEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("password");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").tagName("INPUT").name("password").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CreateAccountAgreeToTermsCheckBox extends CheckBoxNodeBase
+	{
+
+		
+								public CreateAccountAgreeToTermsCheckBox(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("i_agree check box");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.CheckBoxDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.CheckBoxDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.CheckBoxDescription.Builder().type("checkbox").tagName("INPUT").name("i_agree").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class BoseSoundlinkImage extends WebElementNodeBase
+	{
+
+		
+								public BoseSoundlinkImage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BoseSoundlinkImage");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LI").innerText("SOLD OUT SHOP NOW Bose SoundLink Wireless Speaker $129.00 ").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class laptopFororderService extends WebElementNodeBase
+	{
+
+		
+								public laptopFororderService(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("laptopFororderService ");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LI").innerText("SOLD OUT SHOP NOW HP Pavilion x360 - 11t Touch Laptop $319.99 ").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

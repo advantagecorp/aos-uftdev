@@ -45,7 +45,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private YESButton YESButton;
 	private Login Login;
 	private CartAccess CartAccess;
-	private LaptopItemUiObject LaptopItemUiObject;
+	private LaptopItem LaptopItem;
 	private ADDTOCARTButton ADDTOCARTButton;
 	private ProductQuantity ProductQuantity;
 	private ProductColor ProductColor;
@@ -84,11 +84,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private BYMANUFACTURERLabel BYMANUFACTURERLabel;
 	private HPLabel HPLabel;
 	private SOLDout SOLDout;
-	private BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel;
-	private Windows10Label Windows10Label;
 	private LaptopFilter2UiObject LaptopFilter2UiObject;
 	private EditShippingUiObject EditShippingUiObject;
-	private ZIPEditField ZIPEditField;
 	private CVVMasterCreditEditField CVVMasterCreditEditField;
 	private MonthMasterCreditLabel MonthMasterCreditLabel;
 	private YEARMasterCreditLabel YEARMasterCreditLabel;
@@ -107,6 +104,20 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private ButtonPanelSettingUiObject ButtonPanelSettingUiObject;
 	private SignUpObject SignUpObject;
 	private ChangePasswordObject ChangePasswordObject;
+	private LaptopitemWin10 LaptopitemWin10;
+	private CardHolderMasterCreditEditField CardHolderMasterCreditEditField;
+	private AdvantageObjectUiObject AdvantageObjectUiObject;
+	private ZIPmyAccauntEditField ZIPmyAccauntEditField;
+	private BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel;
+	private Windows10Label Windows10Label;
+	private CardNumderMasterCreditEditField CardNumderMasterCreditEditField;
+	private SaveMasterCreditCredenCheckBox SaveMasterCreditCredenCheckBox;
+	private ShippingCheckBox ShippingCheckBox;
+	private ZIPshippingDetaildEditField ZIPshippingDetaildEditField;
+	private StateSignUpEditField StateSignUpEditField;
+	private AddressSignUpEditField AddressSignUpEditField;
+	private CitySignUpEditField CitySignUpEditField;
+	private ZIPSignUpEditField ZIPSignUpEditField;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -125,7 +136,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		YESButton = new YESButton(this, applicationModel);
 		Login = new Login(this, applicationModel);
 		CartAccess = new CartAccess(this, applicationModel);
-		LaptopItemUiObject = new LaptopItemUiObject(this, applicationModel);
+		LaptopItem = new LaptopItem(this, applicationModel);
 		ADDTOCARTButton = new ADDTOCARTButton(this, applicationModel);
 		ProductQuantity = new ProductQuantity(this, applicationModel);
 		ProductColor = new ProductColor(this, applicationModel);
@@ -164,11 +175,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		BYMANUFACTURERLabel = new BYMANUFACTURERLabel(this, applicationModel);
 		HPLabel = new HPLabel(this, applicationModel);
 		SOLDout = new SOLDout(this, applicationModel);
-		BYOPERATINGSYSTEMLabel = new BYOPERATINGSYSTEMLabel(this, applicationModel);
-		Windows10Label = new Windows10Label(this, applicationModel);
 		LaptopFilter2UiObject = new LaptopFilter2UiObject(this, applicationModel);
 		EditShippingUiObject = new EditShippingUiObject(this, applicationModel);
-		ZIPEditField = new ZIPEditField(this, applicationModel);
 		CVVMasterCreditEditField = new CVVMasterCreditEditField(this, applicationModel);
 		MonthMasterCreditLabel = new MonthMasterCreditLabel(this, applicationModel);
 		YEARMasterCreditLabel = new YEARMasterCreditLabel(this, applicationModel);
@@ -187,6 +195,20 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		ButtonPanelSettingUiObject = new ButtonPanelSettingUiObject(this, applicationModel);
 		SignUpObject = new SignUpObject(this, applicationModel);
 		ChangePasswordObject = new ChangePasswordObject(this, applicationModel);
+		LaptopitemWin10 = new LaptopitemWin10(this, applicationModel);
+		CardHolderMasterCreditEditField = new CardHolderMasterCreditEditField(this, applicationModel);
+		AdvantageObjectUiObject = new AdvantageObjectUiObject(this, applicationModel);
+		ZIPmyAccauntEditField = new ZIPmyAccauntEditField(this, applicationModel);
+		BYOPERATINGSYSTEMLabel = new BYOPERATINGSYSTEMLabel(this, applicationModel);
+		Windows10Label = new Windows10Label(this, applicationModel);
+		CardNumderMasterCreditEditField = new CardNumderMasterCreditEditField(this, applicationModel);
+		SaveMasterCreditCredenCheckBox = new SaveMasterCreditCredenCheckBox(this, applicationModel);
+		ShippingCheckBox = new ShippingCheckBox(this, applicationModel);
+		ZIPshippingDetaildEditField = new ZIPshippingDetaildEditField(this, applicationModel);
+		StateSignUpEditField = new StateSignUpEditField(this, applicationModel);
+		AddressSignUpEditField = new AddressSignUpEditField(this, applicationModel);
+		CitySignUpEditField = new CitySignUpEditField(this, applicationModel);
+		ZIPSignUpEditField = new ZIPSignUpEditField(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -216,7 +238,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public YESButton YESButton() { return YESButton; }
 		public Login Login() { return Login; }
 		public CartAccess CartAccess() { return CartAccess; }
-		public LaptopItemUiObject LaptopItemUiObject() { return LaptopItemUiObject; }
+		public LaptopItem LaptopItem() { return LaptopItem; }
 		public ADDTOCARTButton ADDTOCARTButton() { return ADDTOCARTButton; }
 		public ProductQuantity ProductQuantity() { return ProductQuantity; }
 		public ProductColor ProductColor() { return ProductColor; }
@@ -255,11 +277,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public BYMANUFACTURERLabel BYMANUFACTURERLabel() { return BYMANUFACTURERLabel; }
 		public HPLabel HPLabel() { return HPLabel; }
 		public SOLDout SOLDout() { return SOLDout; }
-		public BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel() { return BYOPERATINGSYSTEMLabel; }
-		public Windows10Label Windows10Label() { return Windows10Label; }
 		public LaptopFilter2UiObject LaptopFilter2UiObject() { return LaptopFilter2UiObject; }
 		public EditShippingUiObject EditShippingUiObject() { return EditShippingUiObject; }
-		public ZIPEditField ZIPEditField() { return ZIPEditField; }
 		public CVVMasterCreditEditField CVVMasterCreditEditField() { return CVVMasterCreditEditField; }
 		public MonthMasterCreditLabel MonthMasterCreditLabel() { return MonthMasterCreditLabel; }
 		public YEARMasterCreditLabel YEARMasterCreditLabel() { return YEARMasterCreditLabel; }
@@ -278,6 +297,20 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public ButtonPanelSettingUiObject ButtonPanelSettingUiObject() { return ButtonPanelSettingUiObject; }
 		public SignUpObject SignUpObject() { return SignUpObject; }
 		public ChangePasswordObject ChangePasswordObject() { return ChangePasswordObject; }
+		public LaptopitemWin10 LaptopitemWin10() { return LaptopitemWin10; }
+		public CardHolderMasterCreditEditField CardHolderMasterCreditEditField() { return CardHolderMasterCreditEditField; }
+		public AdvantageObjectUiObject AdvantageObjectUiObject() { return AdvantageObjectUiObject; }
+		public ZIPmyAccauntEditField ZIPmyAccauntEditField() { return ZIPmyAccauntEditField; }
+		public BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel() { return BYOPERATINGSYSTEMLabel; }
+		public Windows10Label Windows10Label() { return Windows10Label; }
+		public CardNumderMasterCreditEditField CardNumderMasterCreditEditField() { return CardNumderMasterCreditEditField; }
+		public SaveMasterCreditCredenCheckBox SaveMasterCreditCredenCheckBox() { return SaveMasterCreditCredenCheckBox; }
+		public ShippingCheckBox ShippingCheckBox() { return ShippingCheckBox; }
+		public ZIPshippingDetaildEditField ZIPshippingDetaildEditField() { return ZIPshippingDetaildEditField; }
+		public StateSignUpEditField StateSignUpEditField() { return StateSignUpEditField; }
+		public AddressSignUpEditField AddressSignUpEditField() { return AddressSignUpEditField; }
+		public CitySignUpEditField CitySignUpEditField() { return CitySignUpEditField; }
+		public ZIPSignUpEditField ZIPSignUpEditField() { return ZIPSignUpEditField; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -643,11 +676,11 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class LaptopItemUiObject extends UiObjectNodeBase
+	public class LaptopItem extends UiObjectNodeBase
 	{
 
 		
-								public LaptopItemUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public LaptopItem(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -1657,58 +1690,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class BYOPERATINGSYSTEMLabel extends LabelNodeBase
-	{
-
-		
-								public BYOPERATINGSYSTEMLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("BY OPERATING SYSTEM");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.LabelDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("BY OPERATING SYSTEM").className("Label").container("Table[0][2][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class Windows10Label extends LabelNodeBase
-	{
-
-		
-								public Windows10Label(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Windows 10");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.LabelDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][4][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class LaptopFilter2UiObject extends UiObjectNodeBase
 	{
 
@@ -1752,32 +1733,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(8).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class ZIPEditField extends EditFieldNodeBase
-	{
-
-		
-								public ZIPEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("ZIP");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(6).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2212,7 +2167,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			super(parent, applicationModel);
 
 			
-			setDisplayName("SisnUpObject");
+			setDisplayName("SignUpObject");
 		}
 
 		@Override
@@ -2246,6 +2201,370 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").container("").mobileCenterIndex(26).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class LaptopitemWin10 extends UiObjectNodeBase
+	{
+
+		
+								public LaptopitemWin10(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("laptopitemWin10");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").container("Table[0][3][0]").resourceId("imageViewProduct").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CardHolderMasterCreditEditField extends EditFieldNodeBase
+	{
+
+		
+								public CardHolderMasterCreditEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CardHolderMasterCredit");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class AdvantageObjectUiObject extends UiObjectNodeBase
+	{
+
+		
+								public AdvantageObjectUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("AdvantageObject");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").resourceId("RelativeLayoutMenu").mobileCenterIndex(14).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ZIPmyAccauntEditField extends EditFieldNodeBase
+	{
+
+		
+								public ZIPmyAccauntEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ZIPmyAccaunt");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(7).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class BYOPERATINGSYSTEMLabel extends LabelNodeBase
+	{
+
+		
+								public BYOPERATINGSYSTEMLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BY OPERATING SYSTEM");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("BY OPERATING SYSTEM").className("Label").container("Table[0][6][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class Windows10Label extends LabelNodeBase
+	{
+
+		
+								public Windows10Label(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Windows 10");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][8][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CardNumderMasterCreditEditField extends EditFieldNodeBase
+	{
+
+		
+								public CardNumderMasterCreditEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CardNumderMasterCreditEditField");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SaveMasterCreditCredenCheckBox extends CheckBoxNodeBase
+	{
+
+		
+								public SaveMasterCreditCredenCheckBox(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Save MasterCredit creden");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.CheckBoxDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.CheckBoxDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.CheckBoxDescription.Builder().className("CheckBox").container("").checkable(true).resourceId("checkBoxPrefferedShipping").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ShippingCheckBox extends CheckBoxNodeBase
+	{
+
+		
+								public ShippingCheckBox(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Use this address as pref");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.CheckBoxDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.CheckBoxDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.CheckBoxDescription.Builder().className("CheckBox").container("").checkable(true).resourceId("checkBoxPrefferedShipping").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ZIPshippingDetaildEditField extends EditFieldNodeBase
+	{
+
+		
+								public ZIPshippingDetaildEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ZIPshippingDetaild");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(6).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class StateSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public StateSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("StateSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(11).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class AddressSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public AddressSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("AddressSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CitySignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public CitySignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CitySignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(9).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ZIPSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public ZIPSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ZIPSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(10).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -30,7 +31,7 @@ import unittesting.*;
 
 
 //Make sure the tests run at the ascending alphabet name order (JUnit 4.11 and above)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class androidTests extends UnitTestClassBase {
 	
@@ -38,8 +39,8 @@ public class androidTests extends UnitTestClassBase {
 	protected static Device device;
 	protected static Application app;
 	
-	static String UNAME = "AndroidUser";
-	String         PASS = "Userpass1";
+	static String UNAME = "androidUser";
+	String         PASS = "Password1";
 	
     static String appURL = "52.32.172.3:8080";
 
@@ -102,10 +103,10 @@ public class androidTests extends UnitTestClassBase {
 
 
 		//change the setting of the server
-		//setting();
+		setting();
 		//create a new user for testing if not exists
 
-		CreateNewUser();
+		CreateNewUser(false);
 
 	}
 
@@ -136,11 +137,41 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-    public void  CreateNewUser() throws GeneralLeanFtException , InterruptedException{
+    public void  CreateNewUser(boolean isTest) throws GeneralLeanFtException , InterruptedException{
     	// create new user if not exists to run all tests
+        if (!isTest){ // create a new user
+			if(!SignIn(false)) {
 
-		if(!SignIn(false)){
 
+				appModel.AdvantageShoppingApplication().SignUp().tap();
+
+				waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject());
+
+				appModel.AdvantageShoppingApplication().UserNameSignUp().setText(UNAME);
+				appModel.AdvantageShoppingApplication().EmailSignUp().setText(UNAME + "@default.com");
+				appModel.AdvantageShoppingApplication().PasswordSignUp().setText(PASS);
+				appModel.AdvantageShoppingApplication().ConfirmPassSignUp().setText(PASS);
+				device.swipe(SwipeDirection.UP);
+				device.swipe(SwipeDirection.UP);
+
+				//set up address details
+				appModel.AdvantageShoppingApplication().AddressSignUpEditField().setText("Altalef 5");
+				appModel.AdvantageShoppingApplication().CitySignUpEditField().setText("Yahud");
+				appModel.AdvantageShoppingApplication().ZIPSignUpEditField().setText("454545");
+
+				appModel.AdvantageShoppingApplication().REGISTERButton().tap();
+				waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject());
+
+				Verification(Verify.isTrue(SignIn(true), "New User creation", "verify that the creation of new user for testing  succeeds"));
+
+
+				}
+		}
+		else{ // create existing user test
+			SignOut();
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+			appModel.AdvantageShoppingApplication().MainMenu().tap();
+			appModel.AdvantageShoppingApplication().Login().tap();
 
 			appModel.AdvantageShoppingApplication().SignUp().tap();
 
@@ -150,12 +181,13 @@ public class androidTests extends UnitTestClassBase {
 			appModel.AdvantageShoppingApplication().EmailSignUp().setText(UNAME + "@default.com");
 			appModel.AdvantageShoppingApplication().PasswordSignUp().setText(PASS);
 			appModel.AdvantageShoppingApplication().ConfirmPassSignUp().setText(PASS);
-
-
+			device.swipe(SwipeDirection.UP);
+			device.swipe(SwipeDirection.UP);
 
 			appModel.AdvantageShoppingApplication().REGISTERButton().tap();
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject());
 
-			Verification(Verify.isTrue(SignIn(true) , "New User creation" , "verify that the creation of new user for testing  succeeds"));
+			Verification(Verify.isFalse(SignIn(true), "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
 
 
 
@@ -163,6 +195,11 @@ public class androidTests extends UnitTestClassBase {
 
 
 	}
+
+
+	/////////////////////////////////////  Start of tests  //////////////////////////////////////////////////////
+
+
 
 	@Test
 	public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
@@ -194,7 +231,7 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 * 
     	 */
-    	
+    	//Todo: edit shipping address
     	
     	//System.out.println(appModel.AdvantageShoppingApplication().SIGNOUTLabel().exists());
     	   SignIn(false);
@@ -230,48 +267,7 @@ public class androidTests extends UnitTestClassBase {
     }
   
     
-   @Test
-    public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
-    	
-    	/*
-    	 *
-    	 *  Try to login with incorrect credentials
-���� 		Verify that correct message appears
-������ 		Login with correct credentials
-���� 		Click setting
-����� 		Click change password
-����� 		Change the password
-������ 		Logout and login again with the new password
-    	 * 
-    	 * 
-    	 * 
-    	 */
 
-    	String Oldpass =  PASS;
- 	   
- 	  if(SignIn(true))
- 	    	SignOut();
- 	
- 	appModel.AdvantageShoppingApplication().MainMenu().tap();    
- 	appModel.AdvantageShoppingApplication().Login().tap();
-   	appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
-   	appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
-   	appModel.AdvantageShoppingApplication().LOGINButton().tap();
-   	Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Change Password", "Verify that the user NOT login with incorrect password"));
-
-   	//step 1 - change to new pass
-   	changepassword("Password1");
-   	Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 1 - change to new pass", "Verify that the user login with the new password"));
-
-
-   	//step 2 -  change back to the default pass
-	   changepassword(Oldpass);
-	   Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
-   	
-   	
-    	   
- 	   
-    }
 
     public void changepassword(String newpass) throws GeneralLeanFtException, InterruptedException {
 
@@ -286,12 +282,14 @@ public class androidTests extends UnitTestClassBase {
 		appModel.AdvantageShoppingApplication().OldPassEditField().setText(PASS);
 		appModel.AdvantageShoppingApplication().NewPassEditField().setText(newpass);
 		appModel.AdvantageShoppingApplication().ConfirmNewPassEditField().setText(newpass);
+		device.swipe(SwipeDirection.UP);
+		device.swipe(SwipeDirection.UP);
 		appModel.AdvantageShoppingApplication().UPDATEAccountButton().tap();
 
-		app.restart();
+		PASS = newpass;
 		SignOut();
 
-		PASS = newpass;
+
 
 	}
     
@@ -395,16 +393,20 @@ public class androidTests extends UnitTestClassBase {
     	
     	
     }
-    
-    
+
+	@Test
+	public void CreateExsitingUser() throws GeneralLeanFtException, InterruptedException{
+
+    	CreateNewUser(true);
+
+	}
+
     /*@Test
     public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException{
     	
+
     	
-    	
-    	
-    	
-    	    Login if not logged in
+/*    	    Login if not logged in
 ���         Select Laptops category
 ����        Select Operating system filter - Win 10
 ����� 		Select a laptop
@@ -414,7 +416,7 @@ public class androidTests extends UnitTestClassBase {
 ���� 		Open cart menu
 � 			Verify price correctness
 � 			Click Checkout, verify shipping cost is not free(?)
-� 			Click �Edit shipping details�
+� 			Click 'Edit shipping details'
 � 			Change shipping �postal code�
 �		    Un-Check �Save changes in profile for future use�(?)
 � 			Click next
@@ -425,18 +427,45 @@ public class androidTests extends UnitTestClassBase {
 � 			Verify receipt
 � 			Validate shipping details didn�t changed (via my account)
 �			 Validate MasterCredit details didn�t changed (via my account)
+*/
     	 
     	
     	
-    	SignIn(false);
+    	/*SignIn(false);
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
     	appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
-    	
-    	
-    	
-    }*/
+
+
+    	//apply filter- Win 10
+		appModel.AdvantageShoppingApplication().BYOPERATINGSYSTEMLabel().tap();
+		appModel.AdvantageShoppingApplication().Windows10Label().tap();
+
+		appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+		appModel.AdvantageShoppingApplication().LaptopitemWin10().tap();
+
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+		appModel.AdvantageShoppingApplication().ProductColor().tap();
+		appModel.AdvantageShoppingApplication().colorObject().tap();
+		appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+
+        //check out and pay with master credit the card number nedded to 12 digits
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+		checkOutMasterCredit("123456789123","001",UNAME,false,true);
+
+		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
+
+
+
+
+
+
+
+	}*/
     
   
     
@@ -506,26 +535,111 @@ public class androidTests extends UnitTestClassBase {
         
     	
     }
-    public void checkOutMasterCredit(String cardnum ,String CVV,String HolderName, boolean save ) throws GeneralLeanFtException{
+
+
+
+	@Test
+	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
+
+    	/*
+    	 *
+    	 *  Try to login with incorrect credentials
+���� 		Verify that correct message appears
+������ 		Login with correct credentials
+���� 		Click setting
+����� 		Click change password
+����� 		Change the password
+������ 		Logout and login again with the new password
+    	 *
+    	 *
+    	 *
+    	 */
+
+		String Oldpass =  PASS;
+
+		if(SignIn(true))
+			SignOut();
+
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().Login().tap();
+		appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
+		appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
+		appModel.AdvantageShoppingApplication().LOGINButton().tap();
+		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Change Password", "Verify that the user NOT login with incorrect password"));
+
+
+		//step 1 - change to new pass
+		changepassword("Password23");
+		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 1 - change to new pass", "Verify that the user login with the new password"));
+
+
+		//step 2 -  change back to the default pass
+
+		changepassword(Oldpass);
+		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
+
+
+
+
+	}
+
+    /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
+
+
+    public void checkOutMasterCredit(String cardnum ,String CVV,String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException, InterruptedException {
     	
     	appModel.AdvantageShoppingApplication().CartAccess().tap();
   	    appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-  	    
-  	  appModel.AdvantageShoppingApplication().PaymentDetails().tap();
-  	  appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
+  	    Thread.sleep(2000);
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+  	    //waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
+
+  	    if(changeShipping){
+			appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
+			appModel.AdvantageShoppingApplication().ZIPshippingDetaildEditField().setText("12345");
+			appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();
+			appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+		}
+
+  	   appModel.AdvantageShoppingApplication().PaymentDetails().tap();
+  	   appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
   	  
      //set the details
-  	  appModel.AdvantageShoppingApplication().PaymentDetails().tap();
+        /*char[] numbers = cardnum.toCharArray();
+        String temp = "";
+		for (char c :numbers){
+			temp = appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().getText();
+			temp  = temp+ c;
+			appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
+
+		}*/
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
   	  appModel.AdvantageShoppingApplication().CVVMasterCreditEditField().setText(CVV);
+  	  appModel.AdvantageShoppingApplication().CardHolderMasterCreditEditField().setText(HolderName);
+
+  	  if(!savedetails){ // by default it save the details
+
+		  appModel.AdvantageShoppingApplication().SaveMasterCreditCredenCheckBox().tap();
+
+	  }
+
+	  appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+
+
+
+
+
+
   	
     	
     }
     
     
    public boolean SignIn(Boolean quiet ) throws GeneralLeanFtException, InterruptedException{
-	   
-	   
-	   
+
+
+	   app.restart();
 	  
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   appModel.AdvantageShoppingApplication().MainMenu().tap();
@@ -583,12 +697,21 @@ public class androidTests extends UnitTestClassBase {
 	   appModel.AdvantageShoppingApplication().MainMenu().tap(); 
    	  
 	   appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
-	   appModel.AdvantageShoppingApplication().LaptopItem2().tap();
-	   waitUntilElementExists( appModel.AdvantageShoppingApplication().ProductColor());
+	   appModel.AdvantageShoppingApplication().LaptopitemWin10().tap();
+	   waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
 	   appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap(); 
 	   
 	   
    }
+
+	public void EditShipping() throws GeneralLeanFtException, InterruptedException{
+
+    	waitUntilElementExists(appModel.AdvantageShoppingApplication().EditShippingUiObject());
+		appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
+
+
+
+	}
    
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
@@ -674,7 +797,7 @@ public class androidTests extends UnitTestClassBase {
    	return WaitUntilTestObjectState.waitUntil(appElem,new WaitUntilEvaluator<UiObject>(){				
    		   public boolean evaluate(UiObject we){				
    		    try{				
-   		     return we.exists();                                    				
+   		     return we.exists();
    		    }				
    		    catch(Exception e){				
    		     return false;				
