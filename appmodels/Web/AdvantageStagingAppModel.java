@@ -136,6 +136,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox;
 	private BoseSoundlinkImage BoseSoundlinkImage;
 	private laptopFororderService laptopFororderService;
+	private MobileBtnWeb MobileBtnWeb;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -241,6 +242,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		CreateAccountAgreeToTermsCheckBox = new CreateAccountAgreeToTermsCheckBox(this, applicationModel);
 		BoseSoundlinkImage = new BoseSoundlinkImage(this, applicationModel);
 		laptopFororderService = new laptopFororderService(this, applicationModel);
+		MobileBtnWeb = new MobileBtnWeb(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -357,6 +359,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox() { return CreateAccountAgreeToTermsCheckBox; }
 		public BoseSoundlinkImage BoseSoundlinkImage() { return BoseSoundlinkImage; }
 		public laptopFororderService laptopFororderService() { return laptopFororderService; }
+		public MobileBtnWeb MobileBtnWeb() { return MobileBtnWeb; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -2975,6 +2978,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LI").innerText("SOLD OUT SHOP NOW HP Pavilion x360 - 11t Touch Laptop $319.99 ").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class MobileBtnWeb extends WebElementNodeBase
+	{
+
+		
+								public MobileBtnWeb(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("mobile-btn");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("mobile-btn-handler").tagName("DIV").innerText("").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

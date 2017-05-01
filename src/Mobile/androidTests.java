@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+import Web.AdvantageStagingAppModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,7 +21,7 @@ import com.hp.lft.sdk.web.*;
 import com.hp.lft.sdk.mobile.*;
 import com.hp.lft.sdk.internal.mobile.*;
 import com.hp.lft.verifications.*;
-
+import Web.AdvantageWebTest.*;
 
 
 import com.hp.lft.unittesting.*;
@@ -147,6 +148,7 @@ public class androidTests extends UnitTestClassBase {
 
 				waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject());
 
+				//Set up private details
 				appModel.AdvantageShoppingApplication().UserNameSignUp().setText(UNAME);
 				appModel.AdvantageShoppingApplication().EmailSignUp().setText(UNAME + "@default.com");
 				appModel.AdvantageShoppingApplication().PasswordSignUp().setText(PASS);
@@ -231,7 +233,7 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 * 
     	 */
-    	//Todo: edit shipping address
+
     	
     	//System.out.println(appModel.AdvantageShoppingApplication().SIGNOUTLabel().exists());
     	   SignIn(false);
@@ -395,13 +397,13 @@ public class androidTests extends UnitTestClassBase {
     }
 
 	@Test
-	public void CreateExsitingUser() throws GeneralLeanFtException, InterruptedException{
+	public void CreateExsitingUserTest() throws GeneralLeanFtException, InterruptedException{
 
     	CreateNewUser(true);
 
 	}
 
-    /*@Test
+    @Test
     public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException{
     	
 
@@ -430,8 +432,8 @@ public class androidTests extends UnitTestClassBase {
 */
     	 
     	
-    	
-    	/*SignIn(false);
+    	//todo: run and check
+    	SignIn(false);
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
@@ -465,25 +467,26 @@ public class androidTests extends UnitTestClassBase {
 
 
 
-	}*/
+	}
     
   
     
-    /*@Test
+    @Test
     public void MobileWebTest() throws GeneralLeanFtException, InterruptedException{
     	
+
+
+
+    	waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+    	MobileWeb mobileWeb = new MobileWeb("05157df581dae805",appURL);
+
+    	mobileWeb.signIn(UNAME , PASS);
+
     	
-    	Browser browser = BrowserFactory.launch(BrowserType.CHROME,device);
-    	browser.navigate("http://advantageonlineshopping.com");	
     	
     	
-    	AdvantageAppModel webappmodel = new AdvantageAppModel(browser);
-    	
-    	webappmodel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
-    	
-    	
-    	
-    }*/
+    }
     
     
     
@@ -536,20 +539,38 @@ public class androidTests extends UnitTestClassBase {
     	
     }
 
+	@Test
+	public void NegativeLogin() throws GeneralLeanFtException, InterruptedException {
 
+    	/*
+    	 Try to login with incorrect credentials
+ 		Verify that correct message appears
+    	*/
+
+		if(SignIn(true))
+			SignOut();
+
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().Login().tap();
+		appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
+		appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
+		appModel.AdvantageShoppingApplication().LOGINButton().tap();
+		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
+
+
+	}
 
 	@Test
 	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
     	/*
     	 *
-    	 *  Try to login with incorrect credentials
-���� 		Verify that correct message appears
-������ 		Login with correct credentials
-���� 		Click setting
-����� 		Click change password
-����� 		Change the password
-������ 		Logout and login again with the new password
+    	 *
+ 		Login
+		Click setting
+		Click change password
+		Change the password
+		Logout and login again with the new password
     	 *
     	 *
     	 *
@@ -560,12 +581,7 @@ public class androidTests extends UnitTestClassBase {
 		if(SignIn(true))
 			SignOut();
 
-		appModel.AdvantageShoppingApplication().MainMenu().tap();
-		appModel.AdvantageShoppingApplication().Login().tap();
-		appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
-		appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
-		appModel.AdvantageShoppingApplication().LOGINButton().tap();
-		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Change Password", "Verify that the user NOT login with incorrect password"));
+
 
 
 		//step 1 - change to new pass
@@ -605,16 +621,9 @@ public class androidTests extends UnitTestClassBase {
   	   appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
   	  
      //set the details
-        /*char[] numbers = cardnum.toCharArray();
-        String temp = "";
-		for (char c :numbers){
-			temp = appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().getText();
-			temp  = temp+ c;
-			appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
 
-		}*/
-		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
-		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);//TODO: check the problem with this setText
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
   	  appModel.AdvantageShoppingApplication().CVVMasterCreditEditField().setText(CVV);
   	  appModel.AdvantageShoppingApplication().CardHolderMasterCreditEditField().setText(HolderName);
 
@@ -794,7 +803,7 @@ public class androidTests extends UnitTestClassBase {
    
    public boolean waitUntilElementExists(UiObject appElem) throws GeneralLeanFtException
    {
-   	return WaitUntilTestObjectState.waitUntil(appElem,new WaitUntilEvaluator<UiObject>(){				
+   	return WaitUntilTestObjectState.waitUntil(appElem,new WaitUntilEvaluator<UiObject>(){
    		   public boolean evaluate(UiObject we){				
    		    try{				
    		     return we.exists();

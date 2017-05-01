@@ -1216,6 +1216,20 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="WebElement" technology="Web">
+                    <name>mobile-btn</name>
+                    <codeName>MobileBtnWeb</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">mobile-btn-handler</property>
+                            <property name="TagName" type="string" isRegExp="false">DIV</property>
+                            <property name="InnerText" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MobileWeb</tag>
+                    </tags>
+                </object>
             </children>
         </object>
         <object type="Page" technology="Web">
