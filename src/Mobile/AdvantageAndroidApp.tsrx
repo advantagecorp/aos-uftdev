@@ -187,7 +187,7 @@
                 </object>
                 <object type="UiObject" technology="Mobile">
                     <name>laptop item</name>
-                    <codeName>LaptopItemUiObject</codeName>
+                    <codeName>LaptopItem</codeName>
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">ImageView</property>
@@ -330,6 +330,19 @@
                         <tag>safepay</tag>
                     </tags>
                 </object>
+                <object type="EditField" technology="Mobile">
+                    <name>userNameSignUp</name>
+                    <codeName>UserNameSignUp</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
                 <object type="Button" technology="Mobile">
                     <name>REGISTER</name>
                     <codeName>REGISTERButton</codeName>
@@ -341,6 +354,9 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
                 </object>
                 <object type="UiObject" technology="Mobile">
                     <name>imageView Safe Pay</name>
@@ -508,21 +524,6 @@
                         <tag>login</tag>
                     </tags>
                 </object>
-                <object type="Label" technology="Mobile">
-                    <name>Invalid-user-name-or-pas</name>
-                    <codeName>InvalidUserNameOrPasLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">Invalid user name or password</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFailed</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>login</tag>
-                    </tags>
-                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>Tablet Item</name>
                     <codeName>tabletItem</codeName>
@@ -627,6 +628,9 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
+                    <tags>
+                        <tag>password</tag>
+                    </tags>
                 </object>
                 <object type="UiObject" technology="Mobile">
                     <name>imageViewFilter</name>
@@ -689,38 +693,6 @@
                         <tag>filter</tag>
                     </tags>
                 </object>
-                <object type="Label" technology="Mobile">
-                    <name>BY OPERATING SYSTEM</name>
-                    <codeName>BYOPERATINGSYSTEMLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">BY OPERATING SYSTEM</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][2][0]</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>filter</tag>
-                    </tags>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>Windows 10</name>
-                    <codeName>Windows10Label</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">Windows 10</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][4][0]</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>filter</tag>
-                    </tags>
-                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>laptopFilter2</name>
                     <codeName>LaptopFilter2UiObject</codeName>
@@ -743,16 +715,6 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">ImageView</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">8</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>ZIP</name>
-                    <codeName>ZIPEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
                         </properties>
                     </identification>
                 </object>
@@ -797,9 +759,48 @@
                         <tag>MasterCredit</tag>
                     </tags>
                 </object>
+                <object type="EditField" technology="Mobile">
+                    <name>confirmPassSignUp</name>
+                    <codeName>ConfirmPassSignUp</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>EmailSignUp</name>
+                    <codeName>EmailSignUp</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>PasswordSignUp</name>
+                    <codeName>PasswordSignUp</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">5</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>SignUp</name>
-                    <codeName>SignUpUiObject</codeName>
+                    <codeName>SignUp</codeName>
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
@@ -821,6 +822,332 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
                         </properties>
                     </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>SETTINGS</name>
+                    <codeName>SETTINGSLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">SETTINGS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewMenuSettings</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">8</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>editTextServer</name>
+                    <codeName>EditTextServer</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="ResourceId" type="string" isRegExp="false">editTextServer</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>Connect</name>
+                    <codeName>ConnectButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Connect</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonConnect</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>contentPanel</name>
+                    <codeName>ContentPanelConnection</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ResourceId" type="string" isRegExp="false">contentPanel</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>setting</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK</name>
+                    <codeName>OKButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="ResourceId" type="string" isRegExp="false">button1</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>setting</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Invalid user name or pas</name>
+                    <codeName>InvalidUserNameOrPas</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Invalid user name or password</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFailed</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>SignUPtUiObject</name>
+                    <codeName>SignUPtUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>buttonPanelSetting</name>
+                    <codeName>ButtonPanelSettingUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonPanel</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">8</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>setting</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>SignUpObject</name>
+                    <codeName>SignUpObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">27</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>ChangePasswordObject</name>
+                    <codeName>ChangePasswordObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">26</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>password</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>laptopitemWin10</name>
+                    <codeName>LaptopitemWin10</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][3][0]</property>
+                            <property name="ResourceId" type="string" isRegExp="false">imageViewProduct</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>CardHolderMasterCredit</name>
+                    <codeName>CardHolderMasterCreditEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>AdvantageObject</name>
+                    <codeName>AdvantageObjectUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ResourceId" type="string" isRegExp="false">RelativeLayoutMenu</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">14</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ZIPmyAccaunt</name>
+                    <codeName>ZIPmyAccauntEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>BY OPERATING SYSTEM</name>
+                    <codeName>BYOPERATINGSYSTEMLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">BY OPERATING SYSTEM</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][6][0]</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>filter</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Windows 10</name>
+                    <codeName>Windows10Label</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Windows 10</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][8][0]</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>filter</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>CardNumderMasterCreditEditField</name>
+                    <codeName>CardNumderMasterCreditEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="CheckBox" technology="Mobile">
+                    <name>Save MasterCredit creden</name>
+                    <codeName>SaveMasterCreditCredenCheckBox</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">CheckBox</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="IsCheckable" type="boolean" isRegExp="false">true</property>
+                            <property name="ResourceId" type="string" isRegExp="false">checkBoxPrefferedShipping</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="CheckBox" technology="Mobile">
+                    <name>Use this address as pref</name>
+                    <codeName>ShippingCheckBox</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">CheckBox</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="IsCheckable" type="boolean" isRegExp="false">true</property>
+                            <property name="ResourceId" type="string" isRegExp="false">checkBoxPrefferedShipping</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>shipping</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ZIPshippingDetaild</name>
+                    <codeName>ZIPshippingDetaildEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>shipping</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>StateSignUp</name>
+                    <codeName>StateSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">11</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>AddressSignUp</name>
+                    <codeName>AddressSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>CitySignUp</name>
+                    <codeName>CitySignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ZIPSignUp</name>
+                    <codeName>ZIPSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
                 </object>
             </children>
         </object>

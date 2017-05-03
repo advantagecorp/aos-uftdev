@@ -247,17 +247,6 @@
                         <index>1</index>
                     </identification>
                 </object>
-                <object type="EditField" technology="Web">
-                    <name>Password</name>
-                    <codeName>PasswordLoginEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Type" type="string" isRegExp="false">password</property>
-                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">WebEdit</property>
-                        </properties>
-                    </identification>
-                </object>
                 <object type="Button" technology="Web">
                     <name>NEXT</name>
                     <codeName>NEXTButton</codeName>
@@ -290,10 +279,13 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">WebEdit</property>
+                            <property name="Name" type="string" isRegExp="false">safepay_password</property>
                         </properties>
                         <index>1</index>
                     </identification>
+                    <tags>
+                        <tag>safepay</tag>
+                    </tags>
                 </object>
                 <object type="WebElement" technology="Web">
                     <name>Sign out</name>
@@ -349,9 +341,9 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userName</property>
+                            <property name="Name" type="string" isRegExp="false">username</property>
                         </properties>
-                        <index>2</index>
+                        <index>1</index>
                     </identification>
                 </object>
                 <object type="EditField" technology="Web">
@@ -363,9 +355,9 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userPassword</property>
+                            <property name="Name" type="string" isRegExp="false">password</property>
                         </properties>
-                        <index>0</index>
+                        <index>1</index>
                     </identification>
                 </object>
                 <object type="EditField" technology="Web">
@@ -377,9 +369,9 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userEmail</property>
+                            <property name="Name" type="string" isRegExp="false">email</property>
                         </properties>
-                        <index>3</index>
+                        <index>1</index>
                     </identification>
                 </object>
                 <object type="EditField" technology="Web">
@@ -391,7 +383,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userPassword</property>
+                            <property name="Name" type="string" isRegExp="false">confirm_password</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -403,7 +395,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userFirstName</property>
+                            <property name="Name" type="string" isRegExp="false">first_name</property>
                         </properties>
                     </identification>
                 </object>
@@ -414,7 +406,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userLastName</property>
+                            <property name="Name" type="string" isRegExp="false">last_name</property>
                         </properties>
                     </identification>
                 </object>
@@ -425,7 +417,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userPhone</property>
+                            <property name="Name" type="string" isRegExp="false">phone_number</property>
                         </properties>
                     </identification>
                 </object>
@@ -446,7 +438,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userAdress</property>
+                            <property name="Name" type="string" isRegExp="false">address</property>
                         </properties>
                     </identification>
                 </object>
@@ -457,7 +449,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userPostalCode</property>
+                            <property name="Name" type="string" isRegExp="false">postal_code</property>
                         </properties>
                     </identification>
                 </object>
@@ -468,7 +460,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userCity</property>
+                            <property name="Name" type="string" isRegExp="false">city</property>
                         </properties>
                     </identification>
                 </object>
@@ -480,17 +472,6 @@
                             <property name="Type" type="string" isRegExp="false">checkbox</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
                             <property name="Name" type="string" isRegExp="false">allowOffersPromotion</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="CheckBox" technology="Web">
-                    <name>Create Account Agree To Terms</name>
-                    <codeName>CreateAccountAgreeToTermsCheckBox</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Type" type="string" isRegExp="false">checkbox</property>
-                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">registrationAgreement</property>
                         </properties>
                     </identification>
                 </object>
@@ -885,17 +866,6 @@
                         <index>0</index>
                     </identification>
                 </object>
-                <object type="EditField" technology="Web">
-                    <name>userNameTxtField</name>
-                    <codeName>UsernameLoginEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Type" type="string" isRegExp="false">text</property>
-                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">userNameTxtField</property>
-                        </properties>
-                    </identification>
-                </object>
                 <object type="Button" technology="Web">
                     <name>sign_in_btn</name>
                     <codeName>SIGNINButton</codeName>
@@ -906,19 +876,9 @@
                             <property name="Name" type="string" isRegExp="false">SIGN IN</property>
                         </properties>
                     </identification>
-                </object>
-                <object type="Link" technology="Web">
-                    <name>Order Service Item</name>
-                    <codeName>laptopFororderService</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Role" type="string" isRegExp="false">link</property>
-                            <property name="AccessibilityName" type="string" isRegExp="false"></property>
-                            <property name="TagName" type="string" isRegExp="false">IMG</property>
-                            <property name="InnerText" type="string" isRegExp="false"></property>
-                        </properties>
-                        <index>9</index>
-                    </identification>
+                    <tags>
+                        <tag>signIn</tag>
+                    </tags>
                 </object>
                 <object type="Link" technology="Web">
                     <name>DISPLAY </name>
@@ -1027,7 +987,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">WebEdit</property>
+                            <property name="Name" type="string" isRegExp="false">email</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -1071,22 +1031,6 @@
                         <tag>signIn</tag>
                     </tags>
                 </object>
-                <object type="Link" technology="Web">
-                    <name>BoseSound Image</name>
-                    <codeName>BoseSoundlinkImage</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Role" type="string" isRegExp="false">link</property>
-                            <property name="AccessibilityName" type="string" isRegExp="false"></property>
-                            <property name="TagName" type="string" isRegExp="false">IMG</property>
-                            <property name="InnerText" type="string" isRegExp="false"></property>
-                        </properties>
-                        <index>0</index>
-                    </identification>
-                    <tags>
-                        <tag>purchase</tag>
-                    </tags>
-                </object>
                 <object type="WebElement" technology="Web">
                     <name>LinkCartIcon</name>
                     <codeName>LinkCartIcon</codeName>
@@ -1123,7 +1067,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">WebEdit</property>
+                            <property name="Name" type="string" isRegExp="false">safepay_username</property>
                         </properties>
                         <index>8</index>
                     </identification>
@@ -1212,6 +1156,79 @@
                         </properties>
                         <index>1</index>
                     </identification>
+                </object>
+                <object type="EditField" technology="Web">
+                    <name>username login</name>
+                    <codeName>UsernameLoginEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">text</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">username</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>signIn</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Web">
+                    <name>password</name>
+                    <codeName>PasswordLoginEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">password</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">password</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>signIn</tag>
+                    </tags>
+                </object>
+                <object type="CheckBox" technology="Web">
+                    <name>i_agree check box</name>
+                    <codeName>CreateAccountAgreeToTermsCheckBox</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">checkbox</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">i_agree</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="WebElement" technology="Web">
+                    <name>BoseSoundlinkImage</name>
+                    <codeName>BoseSoundlinkImage</codeName>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">LI</property>
+                            <property name="InnerText" type="string" isRegExp="false">SOLD OUT SHOP NOW Bose SoundLink Wireless Speaker $129.00 </property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="WebElement" technology="Web">
+                    <name>laptopFororderService </name>
+                    <codeName>laptopFororderService</codeName>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">LI</property>
+                            <property name="InnerText" type="string" isRegExp="false">SOLD OUT SHOP NOW HP Pavilion x360 - 11t Touch Laptop $319.99 </property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="WebElement" technology="Web">
+                    <name>mobile-btn</name>
+                    <codeName>MobileBtnWeb</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">mobile-btn-handler</property>
+                            <property name="TagName" type="string" isRegExp="false">DIV</property>
+                            <property name="InnerText" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MobileWeb</tag>
+                    </tags>
                 </object>
             </children>
         </object>

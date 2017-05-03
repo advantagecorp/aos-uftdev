@@ -30,8 +30,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String USERNAME = "johnhpe1";
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
-	//public static String appURL = System.getProperty("url", "defaultvalue");
-	public static String appURL = "http://52.32.172.3:8080";//"http://156.152.164.67:8080"; 
+	public static String appURL = System.getProperty("url", "defaultvalue");
+	//public static String appURL = "http://52.32.172.3:8080";//"http://35.162.69.22:8080";//"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -91,6 +91,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void Print(String msg){
     	System.out.println(msg);
     }
+
+
     
     // This internal method gets the username from the text that appears on the SignOutMainIconWebElement object
     public String getUsernameFromSignOutElement() throws GeneralLeanFtException
@@ -158,7 +160,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	Thread.sleep(2000);
 	    	
 	    	isSignedIn = isSignedIn();
-	    	Assert.assertTrue("Verification - Sign In  Verify that the user " + USERNAME + " signed in properly.",isSignedIn);
+	    	Verify.isTrue(isSignedIn,"Verification - Sign In"  ,"Verify that the user " + USERNAME + " signed in properly.");
 	    	
 	    	
     	}
@@ -246,9 +248,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	// Verify that the product was purchased
     	if(fillCredentials)
-    		Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase", "Verify that the product was purchased successfully");
+
+           Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),"Verification - Product Purchase:"," Verify that the product was purchased successfully"));
+
     	else
-    		Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase - Verify Pay Now remembers the credentials, even when not filled", "Verify that the product was purchased successfully");
+			Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),"Verification - Product Purchase:"," Verify that the product was purchased successfully"));
+
     }
     
     public void checkOutAndPay() throws GeneralLeanFtException
@@ -333,7 +338,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	}
 		
     	waitUntilElementExists(appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit());
+    	Thread.sleep(2000);
     	appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit().setValue(username);
+
     	// Fill the Create Account form
     	
     	if(!isNegativeTest) // Do not fill the mail field in a negative test
@@ -351,11 +358,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().CreateAccountCityEditField().setValue("Yehud");
     	appModel.AdvantageShoppingPage().CreateAccountAddressEditField().setValue("Shabazi 19");
     	appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField().setValue("56100");
-    	appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
+    	//appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
     	appModel.AdvantageShoppingPage().CreateAccountAgreeToTermsCheckBox().set(true);
     	
     	if(!isNegativeTest)
     	{
+
 	    	waitUntilElementExists(appModel.AdvantageShoppingPage().REGISTERButton());
 	    	// Click the Register button
 	    	appModel.AdvantageShoppingPage().REGISTERButton().click();
@@ -366,12 +374,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	waitUntilElementExists(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 	    	
 	    	// Verify that the user name we added now appears in the inner text of the Sign In element
-	    	Verify.areEqual(username, getUsernameFromSignOutElement(), "Verification - Create New Account", "Verify that a new account was created successfully for user name: " + username + ".");
+			Verify.areEqual(username, getUsernameFromSignOutElement(), "Verification - Create New Account", "  Verify that a new account was created successfully for user name: " + username + ".");
+
+			Assert.assertEquals( "Verification - Create New Account:  Verify that a new account was created successfully for user name: " + username + ".",username, getUsernameFromSignOutElement());
     	}
     	else // In a negative test, verify that the Register button is indeed disabled
     	{
     		// Verify that a new account cannot be created successfully
-	    	Verify.isFalse(appModel.AdvantageShoppingPage().CreateAccountREGISTERNotValidWebElement().exists(2), "Verification - Create New Account Negative test", "Verify that a new account cannot be created successfully.");
+	    	Verification(Verify.isFalse(appModel.AdvantageShoppingPage().CreateAccountREGISTERNotValidWebElement().exists(2), "Verification - Create New Account Negative test", "Verify that a new account cannot be created successfully."));
     	}
 
     }
@@ -521,7 +531,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	// Verify that the quantity that was actually added to the cart is 10 and not a 1000
     	int productsQuantityInCart = getCartProductsNumberFromCartObjectInnerText();
-    	Verify.isTrue(productsQuantityInCart == 10,"Verification - Purchase 1000 Speakers negative test", "Verify that you cannot buy a 1000 items. You can only buy 10 max.");
+    	Verification(Verify.isTrue(productsQuantityInCart == 10,"Verification - Purchase 1000 Speakers negative test"," Verify that you cannot buy a 1000 items. You can only buy 10 max."));
     	
     	// Pay for the item
     	checkOutAndPay(); // Verification inside
@@ -563,7 +573,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	shippingCost = getShippingCostFromShippingWebElement();
     	
     	// Verify that the shipping costs are for free    	
-    	Verify.isTrue(shippingCost == 0.0,"Verification - shipping costs", "Verify that the shipping costs for 1 item are free.");
+		Verification(Verify.isTrue(shippingCost == 0.0,"Verification - shipping costs"," Verify that the shipping costs for 1 item are free."));
 
     	
     	// Purchase 4 items
@@ -591,8 +601,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	shippingCost = getShippingCostFromShippingWebElement();
     	
-    	// Verify that the shipping costs are for free    	
-    	Verify.isTrue(shippingCost > 0.0, "Verification - shipping costs", "Verify that the shipping costs for 4 items are NOT free.");
+    	// Verify that the shipping costs are for free
+		Verification(Verify.isTrue(shippingCost > 0.0,"Verification - shipping costs"," Verify that the shipping costs for 4 item are NOT free."));
+
 
     	
     }
@@ -779,7 +790,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement());
     	// Verify that the support request was sent successfully
-    	Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2),"Verification - Contact Us", "Verify that the support request was sent successfully");
+    	Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2),"Verification - Contact Us"," Verify that the support request was sent successfully" ));
     }
     
     // This test purchases the first item in the popular items list
@@ -873,13 +884,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	try{
 	    	chatBrowser = BrowserFactory.attach(chatBrowserDescription);
 	    	String brURL = chatBrowser.getURL();
-	    	Verify.isTrue(brURL.matches(".*/chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
+	    	Verification(Verify.isTrue( brURL.matches(".*/chat\\.html.*"),"Verification - Contact Us Chat"," Verify that the browser navigated to the chat URL"));
 	    	chatBrowser.close();
     	}
     	catch (Exception e)
     	{
-    		Reporter.reportEvent("contactUsChat", "Could not locate the pop up chat browser", Status.Failed);
-    		Verify.isTrue(false,"Verification - Contact Us Chat","The chat window was not created");
+    		Reporter.reportEvent("contact Us Chat", "Could not locate the pop up chat browser", Status.Failed);
+			Assert.assertTrue("Verification - Contact Us Chat: The chat window was not created",false);
     	}
     	
     }
@@ -927,7 +938,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	browser.sync();
     	
 
-    	String brURL="";
+    	String brURL = " ";
+    	String socialLink = " ";
 
     	String Facebooktitle = "HP Application Lifecycle Management | Facebook";
 		String Twittertitle  = "HPE ALM (@HPE_ALM) | Twitter";
@@ -940,38 +952,44 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Clicking te link opens a new browser tab
     		// We attach to it and verify its title and URL are ads expected, then close it
     		appModel.AdvantageShoppingPage().FacebookImage().click();
-			Thread.sleep(2000);
+			browser.sync();
+			Thread.sleep(2500);
+			socialLink = "facebook";
 
 	    	Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
 	    	fbBrowser.sync();
 	    	brURL = fbBrowser.getURL();
-	    	Verify.isTrue(brURL.matches(".*facebook\\.com.*"),"Verification - Verify Social Media","Verify that the Facebook site was launched properly.");
+			Assert.assertTrue("Verification - Verify Social Media: Verify that the Facebook site was launched properly." , brURL.matches(".*facebook\\.com.*"));
 	    	fbBrowser.close();
 	    	
 	    	// Verify the Twitter link
 	    	appModel.AdvantageShoppingPage().TwitterImage().click();
-			Thread.sleep(2000);
+			browser.sync();
+			Thread.sleep(2500);
+			socialLink = "twiiter";
 
 	    	Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
 	    	tweetBrowser.sync();
 	    	brURL = tweetBrowser.getURL();
-	    	Verify.isTrue(brURL.matches(".*twitter\\.com.*"),"Verification - Verify Social Media","Verify that the Twitter site was launched properly.");
+			Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.",brURL.matches(".*twitter\\.com.*"));
 	    	tweetBrowser.close();
 	    	
 	    	// Verify the LinkedIn link
 			appModel.AdvantageShoppingPage().LinkedInImage().click();
-			Thread.sleep(2000);
+			browser.sync();
+			Thread.sleep(2500);
+			socialLink = "linkedin";
 
 	    	Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
 	    	linkedinBrowser.sync();
 	    	brURL = linkedinBrowser.getURL();
-	    	Verify.isTrue(brURL.matches(".*linkedin\\.com.*"),"Verification - Verify Social Media","Verify that the LinkedIn site was launched properly.");
+			Assert.assertTrue("Verification - Verify Social Media: Verify that the LinkedIn site was launched properly." ,brURL.matches(".*linkedin\\.com.*"));
 	    	linkedinBrowser.close();
     	}
     	catch (Exception e)
     	{
-    		Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching title: " + brURL , Status.Failed);
-    		Verify.isTrue(false, "Verification - Verify Social Media", "Could not locate the browser with the matching title - Social Media check failed.");
+    		Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink , Status.Failed);
+			Assert.assertTrue("Verification - Verify Social Media: Could not locate the browser with the  matching URL of the social media: " + socialLink  , false);
     	}
     	
     }
@@ -995,7 +1013,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String copyrightVersion = m.group(1).trim();
         
         Reporter.reportEvent("verifyAdvantageVersionNumber", "The page copyright version is: " + copyrightVersion, Status.Passed);
-        Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly.");
+        Verification(Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly."));
     }
     
     // This test verifies that the main user links work
@@ -1013,13 +1031,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().MyAccountWebElement().click();
     	browser.sync();
     	waitUntilElementExists(appModel.AdvantageShoppingPage().MyAccountHeaderLabelWebElement());
-    	Verify.isTrue(appModel.AdvantageShoppingPage().MyAccountHeaderLabelWebElement().exists(2),"Verification - Verify User Links","Verify that the user links navigations work - My Account.");
+    	Verification(Verify.isTrue(appModel.AdvantageShoppingPage().MyAccountHeaderLabelWebElement().exists(2),"Verification - Verify User Links"," Verify that the user links navigations work - My Account." ));
     	
     	appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     	appModel.AdvantageShoppingPage().MyOrdersWebElement().click();
     	browser.sync();
     	waitUntilElementExists(appModel.AdvantageShoppingPage().MyOrdersHeaderLabelWebElement());
-    	Verify.isTrue(appModel.AdvantageShoppingPage().MyOrdersHeaderLabelWebElement().exists(2),"Verification - Verify User Links","Verify that the user links navigations work - My Orders.");
+		Verification(Verify.isTrue(appModel.AdvantageShoppingPage().MyOrdersHeaderLabelWebElement().exists(2),"Verification - Verify User Links"," Verify that the user links navigations work - My Orders." ));
     	
     	appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     	appModel.AdvantageShoppingPage().SignOutWebElement().click();
@@ -1028,22 +1046,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		browser.sync();
 
 
-    	Verify.isFalse(isSignedIn(),"Verification - Verify User Links","Verify that the user links navigations work - Sign Out.");
+    	Verification(Verify.isTrue(!isSignedIn(),"Verification - Verify User Links"," Verify that the user links navigations work - Sign Out." ));
 
     }
 
 
-    public void socialMedia(){
-
-    	String facebook = "https://www.facebook.com/pages/HP-Application-Lifecycle-Management/142893435778219?fref=ts";
-		String twiter = "https://twitter.com/HPE_ALM";
-		String linkedin = "https://www.linkedin.com/company/1024?trk=tyah&trkInfo=clickedVertical%3Ashowcase%2CclickedEntityId%3A1024%2Cidx%3A2-1-2%2CtarId%3A1454314829327%2Ctas%3Ahewlett%20packard%20enterprise%20software";
-
-
-
-
-
-	}
    
     // This internal method strips the search parameter from the Search result page title and returns it 
     public String getSearchParameterFromSearchResultsTitle() throws GeneralLeanFtException
@@ -1081,19 +1088,19 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	// Go to the Search page as a workaround - search for Laptops
     	browser.navigate(SearchURL + "?viewAll=" + searchParameter);
     	waitUntilElementExists(appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox());
-    	Verify.isTrue(appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox().exists(),"Verification - Verify Search using URL","Verify that the Laptops checkbox element exists.");
+		Verification(Verify.isTrue( appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox().exists(),"Verification - Verify Search using URL"," Verify that the Laptops checkbox element exists." ));
 
     	// Get the actual inner text of the Search Result Title object during runtime
-    	Verify.isTrue(getSearchParameterFromSearchResultsTitle().equals(searchParameter),"Verification - Verify Search using URL","Verify that the title reflects the search parameter: " + searchParameter + ".");
+		Verification(Verify.isTrue(getSearchParameterFromSearchResultsTitle().equals(searchParameter),"Verification - Verify Search using URL"," Verify that the title reflects the search parameter: " + searchParameter + "."  ));
     	
     	searchParameter = "Speakers";
     	// Go to the Search page as a workaround - search for Speakers
     	browser.navigate(SearchURL + "?viewAll=" + searchParameter);
     	waitUntilElementExists(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox());
-    	Verify.isTrue(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox().exists(),"Verification - Verify Search using URL","Verify that the Speakers checkbox element exists.");
+		Verification(Verify.isTrue(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox().exists(),"Verification - Verify Search using URL"," Verify that the Speakers checkbox element exists."  ));
     	
     	// Get the actual inner text of the Search Result Title object during runtime
-    	Verify.isTrue(getSearchParameterFromSearchResultsTitle().equals("Speakers"),"Verification - Verify Search using URL","Verify that the title reflects the search parameter: " + searchParameter + ".");
+		Verification(Verify.isTrue( getSearchParameterFromSearchResultsTitle().equals("Speakers"),"Verification - Verify Search using URL"," Verify that the title reflects the search parameter: " + searchParameter + "."  ));
         
     }
     
@@ -1148,12 +1155,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     		appModel.AdvantageShoppingPage().MyOrdersWebElement().click();
     		appModel.AdvantageShoppingPage().OrderSearchWebElement().click();
-    		appModel.AdvantageShoppingPage().SearchEditField().setValue(ProductName);
+    		appModel.AdvantageShoppingPage().SearchOrderEditField().setValue(ProductName);
     		appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
     		
     		
     		Verify.isTrue(appModel.AdvantageShoppingPage().RemoveFromOrderValidate().exists(),"Verification - Verify Search orders","Verify that the alert window element exists.");
-    		Verify.isTrue(appModel.AdvantageShoppingPage().YesNoButtonsRemoveOrderSearch().exists(),"Verification - Verify Search orders","Verify that the alert window element exists.");
+    		Assert.assertTrue("Verification - Verify Search orders: Verify that the alert window element exists." , appModel.AdvantageShoppingPage().YesNoButtonsRemoveOrderSearch().exists());
     		
     			
     	
@@ -1226,9 +1233,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		Matcher m = r.matcher(checkOutTXT);
     		boolean match  = m.find();
     	    System.out.println(checkOutTXT + " :: " + match);
- 
-    		assertTrue(match);
-    		Verify.isTrue(match,"Verification - Verify CHECKOUT RegEx","Verify that the text in CHECKOUT button start with 'CHECKOUT' .");		
+
+    		Verification(Verify.isTrue(match,"Verification - Verify CHECKOUT RegEx"," Verify that the text in CHECKOUT button start with 'CHECKOUT' ."  ));
     	
     	}
     	catch(Exception e)
@@ -1251,7 +1257,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	browser.sync();
     	signOut();
     	browser.refresh();
-    	Verify.isFalse(isSignedIn(),"Verification - Verify logout","Verify that the is realy logout from the site' .");	
+    	Verification(Verify.isFalse(isSignedIn(),"Verification - Verify logout"," Verify that the is realy logout from the site ."  ));
     	
     	
     }
@@ -1283,8 +1289,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
         	/*Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().exists(),"Verification - Contact Us Chat","The chat window was created");
         	//waitUntilElementExists(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg());
         	browser.sync();
-        	chatBrowser = BrowserFactory.attach(chatBrowserDescription);
-	    	String brURL = chatBrowser.getURL();*/
+
+	    	String brURL = chatBrowser.getURL();
+			chatBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title("Advantage Online Shopping Demo Support Chat").build());
+			Thread.sleep(2000);*/
 	    	//Verify.isTrue(brURL.matches(".*/chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
         	/*Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg().exists() ,"Verification - Contact Us Chat","The 'server concted' massege show up");
         	
@@ -1322,14 +1330,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
 			play with this - select something, go back and try to change it - try to break this feature
     	 * 
     	 */
-    	
+    	//TODO: check if the buttons have the attribute 'isEnabled'
     	
     	//try to send request with just txt in the email field
     	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");
     	Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(),"Verification - Verify contact Us request","Verify that we cant send request with unproper Email.");
     	//try to send request with just email  in the email field
     	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("user@demo.com");
-    	Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(),"Verification - Verify contact Us request","Verify that we cant send request with Email without Subject.");
+    	Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(),"Verification - Verify contact Us request","Verify that we cant send request with Email without Subject."));
     	//try to send request with just txt in the email field and subject (not should be working)
     	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("sometxt");
     	appModel.AdvantageShoppingPage().ContactUsSubject().setValue("I have Problem..");
@@ -1357,8 +1365,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
     
     
-    
-    
+
+    public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
+
+    	if(!VerifyMethod)
+    		throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+	}
     
     
     
