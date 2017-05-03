@@ -103,11 +103,13 @@
 						<configuration>
 							<sources>
 								<source>appmodels</source>
+								<source>src</source>
 							</sources>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.5.4</version>
