@@ -1002,38 +1002,6 @@
                         </properties>
                     </identification>
                 </object>
-                <object type="Label" technology="Mobile">
-                    <name>BY OPERATING SYSTEM</name>
-                    <codeName>BYOPERATINGSYSTEMLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">BY OPERATING SYSTEM</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][6][0]</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>filter</tag>
-                    </tags>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>Windows 10</name>
-                    <codeName>Windows10Label</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">Windows 10</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][8][0]</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>filter</tag>
-                    </tags>
-                </object>
                 <object type="EditField" technology="Mobile">
                     <name>CardNumderMasterCreditEditField</name>
                     <codeName>CardNumderMasterCreditEditField</codeName>
@@ -1147,6 +1115,38 @@
                     </identification>
                     <tags>
                         <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>BY OPERATING SYSTEM</name>
+                    <codeName>BYOPERATINGSYSTEMLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">BY OPERATING SYSTEM</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][2][0]</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>filter</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Windows 10</name>
+                    <codeName>Windows10Label</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Windows 10</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][4][0]</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>filter</tag>
                     </tags>
                 </object>
             </children>

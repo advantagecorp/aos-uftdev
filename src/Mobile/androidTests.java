@@ -259,10 +259,12 @@ public class androidTests extends UnitTestClassBase {
     	
     	 waitUntilElementExists( appModel.AdvantageShoppingApplication().ProductDetail());
     	appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
+		waitUntilElementExists( appModel.AdvantageShoppingApplication().MainMenu());
     	
     	device.back();
     	
     	waitUntilElementExists( appModel.AdvantageShoppingApplication().CartAccess());
+		appModel.AdvantageShoppingApplication().CartAccess().tap();
     	CheckOut();
 	    
     	
@@ -338,6 +340,7 @@ public class androidTests extends UnitTestClassBase {
     	 waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
     	appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
     	appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
     	appModel.AdvantageShoppingApplication().HPLabel().tap();
@@ -377,6 +380,7 @@ public class androidTests extends UnitTestClassBase {
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().HEADPHONESLabel().tap();
+    	waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     	appModel.AdvantageShoppingApplication().SOLDout().tap();
     	
     	/*
@@ -430,6 +434,7 @@ public class androidTests extends UnitTestClassBase {
 � 			Validate shipping details didn�t changed (via my account)
 �			 Validate MasterCredit details didn�t changed (via my account)
 */
+
     	 
     	
     	//todo: run and check
@@ -455,10 +460,10 @@ public class androidTests extends UnitTestClassBase {
         //check out and pay with master credit the card number nedded to 12 digits
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
-		checkOutMasterCredit("123456789123","001",UNAME,false,true);
+		checkOutMasterCredit("123456789123","456",UNAME,false,true);
 
 		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+		
 		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
 
 
@@ -471,22 +476,18 @@ public class androidTests extends UnitTestClassBase {
     
   
     
-    @Test
+    /*@Test
     public void MobileWebTest() throws GeneralLeanFtException, InterruptedException{
     	
-
-
 
     	waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
     	MobileWeb mobileWeb = new MobileWeb("05157df581dae805",appURL);
 
-    	mobileWeb.signIn(UNAME , PASS);
+    	mobileWeb.PurchaseTest(UNAME , PASS);
 
     	
-    	
-    	
-    }
+    }*/
     
     
     
@@ -560,7 +561,7 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-	@Test
+	/*@Test
 	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
     	/*
@@ -574,7 +575,7 @@ public class androidTests extends UnitTestClassBase {
     	 *
     	 *
     	 *
-    	 */
+
 
 		String Oldpass =  PASS;
 
@@ -597,7 +598,7 @@ public class androidTests extends UnitTestClassBase {
 
 
 
-	}
+	}*/
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
@@ -771,7 +772,7 @@ public class androidTests extends UnitTestClassBase {
 	   
 	   appModel.AdvantageShoppingApplication().HOME().tap();
 	   appModel.AdvantageShoppingApplication().CartAccess().tap();
-	   while(appModel.AdvantageShoppingApplication().FirstCartItem().exists()){
+	   while(appModel.AdvantageShoppingApplication().FirstCartItem().exists(3)){
 		   appModel.AdvantageShoppingApplication().FirstCartItem().swipe(SwipeDirection.RIGHT);
 		   //Thread.sleep(1000);
 		   appModel.AdvantageShoppingApplication().CartRemove().tap();

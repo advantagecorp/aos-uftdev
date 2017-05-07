@@ -108,8 +108,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private CardHolderMasterCreditEditField CardHolderMasterCreditEditField;
 	private AdvantageObjectUiObject AdvantageObjectUiObject;
 	private ZIPmyAccauntEditField ZIPmyAccauntEditField;
-	private BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel;
-	private Windows10Label Windows10Label;
 	private CardNumderMasterCreditEditField CardNumderMasterCreditEditField;
 	private SaveMasterCreditCredenCheckBox SaveMasterCreditCredenCheckBox;
 	private ShippingCheckBox ShippingCheckBox;
@@ -118,6 +116,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private AddressSignUpEditField AddressSignUpEditField;
 	private CitySignUpEditField CitySignUpEditField;
 	private ZIPSignUpEditField ZIPSignUpEditField;
+	private BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel;
+	private Windows10Label Windows10Label;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -199,8 +199,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		CardHolderMasterCreditEditField = new CardHolderMasterCreditEditField(this, applicationModel);
 		AdvantageObjectUiObject = new AdvantageObjectUiObject(this, applicationModel);
 		ZIPmyAccauntEditField = new ZIPmyAccauntEditField(this, applicationModel);
-		BYOPERATINGSYSTEMLabel = new BYOPERATINGSYSTEMLabel(this, applicationModel);
-		Windows10Label = new Windows10Label(this, applicationModel);
 		CardNumderMasterCreditEditField = new CardNumderMasterCreditEditField(this, applicationModel);
 		SaveMasterCreditCredenCheckBox = new SaveMasterCreditCredenCheckBox(this, applicationModel);
 		ShippingCheckBox = new ShippingCheckBox(this, applicationModel);
@@ -209,6 +207,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		AddressSignUpEditField = new AddressSignUpEditField(this, applicationModel);
 		CitySignUpEditField = new CitySignUpEditField(this, applicationModel);
 		ZIPSignUpEditField = new ZIPSignUpEditField(this, applicationModel);
+		BYOPERATINGSYSTEMLabel = new BYOPERATINGSYSTEMLabel(this, applicationModel);
+		Windows10Label = new Windows10Label(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -301,8 +301,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public CardHolderMasterCreditEditField CardHolderMasterCreditEditField() { return CardHolderMasterCreditEditField; }
 		public AdvantageObjectUiObject AdvantageObjectUiObject() { return AdvantageObjectUiObject; }
 		public ZIPmyAccauntEditField ZIPmyAccauntEditField() { return ZIPmyAccauntEditField; }
-		public BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel() { return BYOPERATINGSYSTEMLabel; }
-		public Windows10Label Windows10Label() { return Windows10Label; }
 		public CardNumderMasterCreditEditField CardNumderMasterCreditEditField() { return CardNumderMasterCreditEditField; }
 		public SaveMasterCreditCredenCheckBox SaveMasterCreditCredenCheckBox() { return SaveMasterCreditCredenCheckBox; }
 		public ShippingCheckBox ShippingCheckBox() { return ShippingCheckBox; }
@@ -311,6 +309,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public AddressSignUpEditField AddressSignUpEditField() { return AddressSignUpEditField; }
 		public CitySignUpEditField CitySignUpEditField() { return CitySignUpEditField; }
 		public ZIPSignUpEditField ZIPSignUpEditField() { return ZIPSignUpEditField; }
+		public BYOPERATINGSYSTEMLabel BYOPERATINGSYSTEMLabel() { return BYOPERATINGSYSTEMLabel; }
+		public Windows10Label Windows10Label() { return Windows10Label; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -2314,58 +2314,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class BYOPERATINGSYSTEMLabel extends LabelNodeBase
-	{
-
-		
-								public BYOPERATINGSYSTEMLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("BY OPERATING SYSTEM");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.LabelDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("BY OPERATING SYSTEM").className("Label").container("Table[0][6][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class Windows10Label extends LabelNodeBase
-	{
-
-		
-								public Windows10Label(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Windows 10");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.LabelDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][8][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class CardNumderMasterCreditEditField extends EditFieldNodeBase
 	{
 
@@ -2565,6 +2513,58 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").container("").mobileCenterIndex(10).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class BYOPERATINGSYSTEMLabel extends LabelNodeBase
+	{
+
+		
+								public BYOPERATINGSYSTEMLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BY OPERATING SYSTEM");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("BY OPERATING SYSTEM").className("Label").container("Table[0][2][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class Windows10Label extends LabelNodeBase
+	{
+
+		
+								public Windows10Label(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Windows 10");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][4][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

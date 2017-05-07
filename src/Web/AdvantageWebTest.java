@@ -31,7 +31,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	//public static String appURL = "http://52.32.172.3:8080";//"http://35.162.69.22:8080";//"";//"http://156.152.164.67:8080";
+	//public static String appURL = "http://35.162.69.22:8080";//"http://52.32.172.3:8080";//"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -953,7 +953,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		// We attach to it and verify its title and URL are ads expected, then close it
     		appModel.AdvantageShoppingPage().FacebookImage().click();
 			browser.sync();
-			Thread.sleep(2500);
+			Thread.sleep(3000);
 			socialLink = "facebook";
 
 	    	Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
@@ -965,7 +965,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Verify the Twitter link
 	    	appModel.AdvantageShoppingPage().TwitterImage().click();
 			browser.sync();
-			Thread.sleep(2500);
+			Thread.sleep(3000);
 			socialLink = "twiiter";
 
 	    	Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
@@ -977,7 +977,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Verify the LinkedIn link
 			appModel.AdvantageShoppingPage().LinkedInImage().click();
 			browser.sync();
-			Thread.sleep(2500);
+			Thread.sleep(3000);
 			socialLink = "linkedin";
 
 	    	Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
@@ -1316,7 +1316,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     
     
     @Test
-    public void ContactSupportTest() throws GeneralLeanFtException, InterruptedException{   
+    public void ContactSupportTest() throws GeneralLeanFtException, InterruptedException {
     	
     	/*
     	 * validate all the following fields
@@ -1330,31 +1330,32 @@ public class AdvantageWebTest extends UnitTestClassBase {
 			play with this - select something, go back and try to change it - try to break this feature
     	 * 
     	 */
-    	//TODO: check if the buttons have the attribute 'isEnabled'
+		//TODO: check if the buttons have the attribute 'isEnabled'
+
+		//try to send request with just txt in the email field
+		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");
+		Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email.");
+		//try to send request with just email  in the email field
+		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("user@demo.com");
+		Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with Email without Subject."));
+		//try to send request with just txt in the email field and subject (not should be working)
+		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("sometxt");
+		appModel.AdvantageShoppingPage().ContactUsSubject().setValue("I have Problem..");
+
+		appModel.AdvantageShoppingPage().SENDContactUsButton().click();
+
+
+		// Verify that the support request was not sent successfully
+		Verify.isFalse(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email and Subject.");
+
+	}
     	
-    	//try to send request with just txt in the email field
-    	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");
-    	Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(),"Verification - Verify contact Us request","Verify that we cant send request with unproper Email.");
-    	//try to send request with just email  in the email field
-    	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("user@demo.com");
-    	Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(),"Verification - Verify contact Us request","Verify that we cant send request with Email without Subject."));
-    	//try to send request with just txt in the email field and subject (not should be working)
-    	appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("sometxt");
-    	appModel.AdvantageShoppingPage().ContactUsSubject().setValue("I have Problem..");
-    	
-        appModel.AdvantageShoppingPage().SENDContactUsButton().click();
-    	
-    	
-    	// Verify that the support request was not sent successfully
-    	Verify.isFalse(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2),"Verification - Verify contact Us request","Verify that we cant send request with unproper Email and Subject.");
-    	
-    	
-    	
-    }
-    	
-    
-    
-    public void Checkout() throws GeneralLeanFtException{
+
+
+
+
+
+		public void Checkout() throws GeneralLeanFtException{
     	appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
 		
 		appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();

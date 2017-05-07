@@ -11,6 +11,7 @@ import com.hp.lft.sdk.web.BrowserType;
 import com.hp.lft.sdk.web.WebElement;
 import com.hp.lft.verifications.Verify;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -103,12 +104,146 @@ public class MobileWeb {
     }
 
 
-    public void Login() throws GeneralLeanFtException {
+    public void PurchaseTest(String Uname , String Pass) throws GeneralLeanFtException, InterruptedException {
+
+        // Sign in to the store
+        signIn(Uname,Pass);
+
+        // Empty the shopping cart
+        emptyTheShoppingCart();
+
+        // Go to home page
+        appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
+        browser.sync();
+
+        // Select an item to purchase and add it to the cart
+        try{
+            selectItemToPurchase(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement(),appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop(),1);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        // Pay for the item
+        checkOutAndPay(true); // Verification inside
+
+        browser.close();
+
+    }
+    public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) throws GeneralLeanFtException, InterruptedException
+    {
+        // Pick the product's category
+        Thread.sleep(1000);
+        productsCategory.click();
+        Thread.sleep(1000);
+
+        // Pick the specific product
+        product.click();
+        Thread.sleep(1000);
+
+        // Select the first non-selected available color for the product
+        appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement().click();
+        Thread.sleep(1000);
+
+        // If the quantity is more than 1, set this value in the quantity edit-field
+        if(productQuantity!= 1)
+        {
+            appModel.AdvantageShoppingPage().QuantityOfProductWebEdit().setValue(Integer.toString(productQuantity));
+        }
+
+        // Add it to the cart
+        appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
+        Thread.sleep(1000);
+    }
 
 
+    public void checkOutAndPay(boolean fillCredentials) throws GeneralLeanFtException
+    {
+        // Checkout the cart for purchase
+        // Click the cart icon
+        appModel.AdvantageShoppingPage().CartIcon().click();
+        // Click the checkout button
+        appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
+        // Click Next to continue the purchase wizard
+        appModel.AdvantageShoppingPage().NEXTButton().click();
+        // Select the payment method
+        appModel.AdvantageShoppingPage().SafepayImage().click();
 
+        if(fillCredentials)
+        {
+            // Set the payment method user name
+            appModel.AdvantageShoppingPage().SafePayUsernameEditField().setValue("HPE123");
+            // Set the payment method password
+            appModel.AdvantageShoppingPage().SafePayPasswordEditField().setValue("Aaaa1");
 
+            // Set the Remember Me checkbox to true or false
+            appModel.AdvantageShoppingPage().SaveChangesInProfileForFutureUse().set(true);
+        }
 
+        //appModel.AdvantageShoppingPage().NEXTButton().click();
+        // Click the "Pay Now" button
+        appModel.AdvantageShoppingPage().PAYNOWButton().click();
+
+        waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement());
+
+        // Verify that the product was purchased
+        if(fillCredentials)
+
+            Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),"Verification - Product Purchase MobileWEb:"," Verify that the product was purchased successfully"));
+
+        else
+            Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),"Verification - Product Purchase MobileWEb:"," Verify that the product was purchased successfully"));
+
+    }
+
+    // This internal method empties the shopping cart
+    public void emptyTheShoppingCart() throws GeneralLeanFtException
+    {
+        if(!isCartEmpty())
+        {
+            // Navigate to the cart
+            appModel.AdvantageShoppingPage().CartIcon().click();
+            browser.sync();
+
+            // Get the rows number from the cart table
+            int numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            int numberOfRelevantProductRowsInCart = numberOfRowsInCart - 3; // Removing the non-relevant rows number from our counter. These are the title etc.. and rows that do not represent actual products
+
+            // Iterate and click the "Remove" link for all products
+            for(; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--)
+            {
+                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+                appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click(); // Remove the top product from the cart
+            }
+
+        }
+    }
+
+    public boolean isCartEmpty() throws GeneralLeanFtException
+    {
+        if(getCartProductsNumberFromCartObjectInnerText() == 0)
+            return true;
+
+        return false;
+    }
+
+    public int getCartProductsNumberFromCartObjectInnerText() throws GeneralLeanFtException
+    {
+        int productsNunberInCart = 0;
+
+        // Get the regular expression pattern from the Cart icon object design time description
+        //String pattern = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
+
+        // Get the actual inner text of the Cart icon object during runtime
+        String advantageCartIcontInnerText = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
+
+        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
+        String productsNunberInCartString = advantageCartIcontInnerText.split("[ ]+")[0];//m.group(1).trim();
+        if(!productsNunberInCartString.isEmpty())
+            productsNunberInCart = Integer.parseInt(productsNunberInCartString);
+
+        return productsNunberInCart;
     }
 
 
@@ -128,5 +263,15 @@ public class MobileWeb {
             }
         });
     }
+
+    public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
+
+        if(!VerifyMethod)
+            throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+    }
+
+
+
+
 
 }
