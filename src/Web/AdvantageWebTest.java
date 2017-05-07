@@ -31,7 +31,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	//public static String appURL = "http://35.162.69.22:8080";//"http://52.32.172.3:8080";//"";//"http://156.152.164.67:8080";
+	//public static String appURL = "http://35.162.69.22:8080";//"http://16.59.19.163:8080"; //"http://35.162.69.22:8080";//"http://52.32.172.3:8080";//"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -953,7 +953,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		// We attach to it and verify its title and URL are ads expected, then close it
     		appModel.AdvantageShoppingPage().FacebookImage().click();
 			browser.sync();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			socialLink = "facebook";
 
 	    	Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
@@ -965,7 +965,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Verify the Twitter link
 	    	appModel.AdvantageShoppingPage().TwitterImage().click();
 			browser.sync();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			socialLink = "twiiter";
 
 	    	Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
@@ -977,7 +977,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	// Verify the LinkedIn link
 			appModel.AdvantageShoppingPage().LinkedInImage().click();
 			browser.sync();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			socialLink = "linkedin";
 
 	    	Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
@@ -1000,8 +1000,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     {
     	// Get the regular expression pattern from the Copyright object design time description
     	String pattern = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getDescription().getInnerText().toString();
+    	waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement());
     	// Get the actual inner text of the Copyright object during runtime 
-    	String advantageIncCopyrightVersionElementInnerText = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getInnerText();
+    	String advantageIncCopyrightVersionElementInnerText = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getInnerText().toString();
 
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
