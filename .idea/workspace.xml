@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9776a76-5e06-496a-abfd-87467e9af381" name="Default" comment="add maven jar">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RunResults/runresults.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RunResults/runresults.css" afterPath="$PROJECT_DIR$/RunResults/runresults.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RunResults/runresults.html" afterPath="$PROJECT_DIR$/RunResults/runresults.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RunResults/runresults.json" afterPath="$PROJECT_DIR$/RunResults/runresults.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RunResults/runresults.xml" afterPath="$PROJECT_DIR$/RunResults/runresults.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mobile/androidTests.java" afterPath="$PROJECT_DIR$/src/Mobile/androidTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" afterPath="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,8 +42,8 @@
       <file leaf-file-name="AdvantageWebTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state relative-caret-position="764">
+              <caret line="1346" column="8" lean-forward="false" selection-start-line="1346" selection-start-column="8" selection-end-line="1346" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,16 +68,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="androidTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5695">
-              <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdvantageAndroidApp.tsrx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mobile/AdvantageAndroidApp.tsrx">
           <provider editor-type-id="text-editor">
@@ -91,6 +81,18 @@
           </provider>
           <provider selected="true" editor-type-id="appmodels">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="androidTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="771" column="0" lean-forward="false" selection-start-line="771" selection-start-column="0" selection-end-line="771" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -116,6 +118,7 @@
       <find>Checkout()</find>
       <find>laptopFororderService</find>
       <find>device1</find>
+      <find>EmptyCart</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,12 +142,17 @@
         <option value="$PROJECT_DIR$/src/Mobile/AdvantageAndroidApp.tsrx" />
         <option value="$PROJECT_DIR$/src/Mobile/MobileWeb.java" />
         <option value="$PROJECT_DIR$/src/Web/AOS.java" />
-        <option value="$PROJECT_DIR$/src/Mobile/androidTests.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Web/AdvantageStagingAppModel.tsrx" />
+        <option value="$PROJECT_DIR$/src/Mobile/androidTests.java" />
         <option value="$PROJECT_DIR$/src/Web/AdvantageWebTest.java" />
       </list>
     </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="androidTests" />
+    </enabled-run-configurations>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -366,7 +374,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3770115" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="add_unversioned_files" value="true" />
   </component>
   <component name="RunDashboard">
@@ -381,59 +389,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdvantageWebTest.verifyAdvantageVersionNumber">
-    <configuration default="false" name="androidTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Mobile.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AdvantageShoppingTests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Mobile" />
-      <option name="MAIN_CLASS_NAME" value="Mobile.androidTests" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AdvantageWebTest.AddMainUserIfNotExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AdvantageShoppingTests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Web" />
-      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
-      <option name="METHOD_NAME" value="AddMainUserIfNotExists" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.AdvantageWebTest">
     <configuration default="false" name="AdvantageWebTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -460,7 +416,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AdvantageWebTest.verifyAdvantageVersionNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="AdvantageWebTest.contactUsChatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="Web.*" />
@@ -472,7 +428,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="Web" />
       <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
-      <option name="METHOD_NAME" value="verifyAdvantageVersionNumber" />
+      <option name="METHOD_NAME" value="contactUsChatTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -499,6 +455,58 @@
       <option name="PACKAGE_NAME" value="Web" />
       <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
       <option name="METHOD_NAME" value="verifySocialMedia" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="AdvantageWebTest.OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AdvantageShoppingTests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Web" />
+      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
+      <option name="METHOD_NAME" value="OrderServiceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="AdvantageWebTest.verifyAdvantageVersionNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AdvantageShoppingTests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Web" />
+      <option name="MAIN_CLASS_NAME" value="Web.AdvantageWebTest" />
+      <option name="METHOD_NAME" value="verifyAdvantageVersionNumber" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -717,19 +725,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.androidTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.AddMainUserIfNotExists" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyAdvantageVersionNumber" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifySocialMedia" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.contactUsChatTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifySocialMedia" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.OrderServiceTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyAdvantageVersionNumber" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyAdvantageVersionNumber" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.AddMainUserIfNotExists" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifyAdvantageVersionNumber" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.OrderServiceTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.verifySocialMedia" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.androidTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AdvantageWebTest.contactUsChatTest" />
       </list>
     </recent_temporary>
   </component>
@@ -765,34 +773,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 14h 59m 26s.xml">
+    <history-entry file="AdvantageWebTest - 2017.05.08 at 11h 44m 09s.xml">
+      <configuration name="AdvantageWebTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest - 2017.05.08 at 11h 54m 34s.xml">
+      <configuration name="AdvantageWebTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest - 2017.05.08 at 12h 02m 06s.xml">
+      <configuration name="AdvantageWebTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest_OrderServiceTest - 2017.05.08 at 12h 05m 13s.xml">
+      <configuration name="AdvantageWebTest.OrderServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest_OrderServiceTest - 2017.05.08 at 12h 05m 40s.xml">
+      <configuration name="AdvantageWebTest.OrderServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest_OrderServiceTest - 2017.05.08 at 13h 40m 12s.xml">
+      <configuration name="AdvantageWebTest.OrderServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.08 at 13h 40m 43s.xml">
       <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 14h 59m 54s.xml">
+    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.08 at 13h 48m 32s.xml">
       <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 02m 34s.xml">
+    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.08 at 13h 49m 09s.xml">
       <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 03m 59s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 06m 38s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 08m 45s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 10m 40s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 18m 47s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 23m 25s.xml">
-      <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.07 at 15h 23m 58s.xml">
+    <history-entry file="AdvantageWebTest_verifyAdvantageVersionNumber - 2017.05.08 at 13h 52m 06s.xml">
       <configuration name="AdvantageWebTest.verifyAdvantageVersionNumber" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -825,7 +833,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34086445" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21215352" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -922,31 +930,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>1336</line>
+          <line>1339</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>1042</line>
+          <line>1045</line>
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>904</line>
+          <line>905</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>1294</line>
+          <line>1297</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>143</line>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
@@ -958,51 +966,69 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>1155</line>
+          <line>1158</line>
           <properties />
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>486</line>
+          <line>485</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>462</line>
+          <line>461</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>351</line>
+          <line>350</line>
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>383</line>
+          <line>382</line>
           <properties />
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
-          <line>245</line>
+          <line>244</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
-          <line>1004</line>
+          <line>1005</line>
           <properties />
           <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Mobile/androidTests.java</url>
+          <line>522</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java</url>
+          <line>867</line>
+          <properties />
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="99" />
+      <option name="time" value="105" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1011,13 +1037,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appmodels/Web/AdvantageStagingAppModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
-          <caret line="345" column="56" lean-forward="false" selection-start-line="345" selection-start-column="56" selection-end-line="345" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RunResults/runresults.html" />
     <entry file="file://$PROJECT_DIR$/src/Web/AdvantageStagingAppModel.tsrx">
       <provider editor-type-id="text-editor">
@@ -1216,17 +1235,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/rules/TestWatcher.class">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/rules/RunRules.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,13 +1247,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        <state relative-caret-position="452">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+          <folding>
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2181#2182#0" expanded="true" />
+            <element signature="e#5962#6097#0" expanded="true" />
+            <element signature="e#6096#6097#0" expanded="true" />
+            <element signature="e#6495#6659#0" expanded="true" />
+            <element signature="e#6658#6659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/rules/RunRules.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/rules/TestWatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#562#1445#0" expanded="true" />
+            <element signature="e#1444#1445#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1248,6 +1297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,29 +1305,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Mobile/androidTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5695">
-          <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="661">
+          <caret line="771" column="0" lean-forward="false" selection-start-line="771" selection-start-column="0" selection-end-line="771" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,6 +1333,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/statements/RunAfters.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1303,10 +1349,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/statements/RunAfters.class">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1328,8 +1374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Web/AdvantageWebTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="764">
+          <caret line="1346" column="8" lean-forward="false" selection-start-line="1346" selection-start-column="8" selection-end-line="1346" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

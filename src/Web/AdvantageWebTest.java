@@ -30,8 +30,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String USERNAME = "johnhpe1";
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
-	public static String appURL = System.getProperty("url", "defaultvalue");
-	//public static String appURL = "http://35.162.69.22:8080";//"http://16.59.19.163:8080"; //"http://35.162.69.22:8080";//"http://52.32.172.3:8080";//"";//"http://156.152.164.67:8080";
+	//public static String appURL = System.getProperty("url", "defaultvalue");
+	public static String appURL ="52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -873,7 +873,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	// Click the Chat With Us link
     	appModel.AdvantageShoppingPage().ChatLogoImage().click();
-    	
+    	Thread.sleep(2000);
     	// Make sure to enable pop-up messages from this site
     	
     	// Verify that the chat window has opened
@@ -881,6 +881,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	Browser chatBrowser;
     	BrowserDescription chatBrowserDescription = new BrowserDescription();
     	chatBrowserDescription.setTitle("Advantage Online Shopping Demo Support Chat");
+
     	try{
 	    	chatBrowser = BrowserFactory.attach(chatBrowserDescription);
 	    	String brURL = chatBrowser.getURL();
@@ -1002,7 +1003,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	String pattern = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getDescription().getInnerText().toString();
     	waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement());
     	// Get the actual inner text of the Copyright object during runtime 
-    	String advantageIncCopyrightVersionElementInnerText = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getInnerText().toString();
+    	String advantageIncCopyrightVersionElementInnerText = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getInnerText();
 
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
@@ -1014,8 +1015,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String copyrightVersion = m.group(1).trim();
         
         Reporter.reportEvent("verifyAdvantageVersionNumber", "The page copyright version is: " + copyrightVersion, Status.Passed);
-        Verification(Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly."));
-    }
+        //Verification(Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly."));
+		Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly.");
+
+	}
     
     // This test verifies that the main user links work
     @Test
@@ -1172,12 +1175,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	}
     	
     	
+
     	
-    	
-    	
+
     }
     
-   /* @Test
+   /*@Test
     public void OutOfStockTest() throws GeneralLeanFtException, InterruptedException{   
     	
     	
@@ -1186,8 +1189,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	 * - change color to see the different pictures, 
     	 * read the 'more info' section (click and open it in mobile) but, 
     	 * that the user can't change the quantity or add it to cart
-    	 * 
     	 *
+
     	browser.sync();
     	appModel.AdvantageShoppingPage().HEADPHONESShopNowWebElement().click();
     	appModel.AdvantageShoppingPage().SoldOutHeadphonesWebElement().click();
@@ -1199,7 +1202,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	
     	
-    	
+
     }*/
     
     
@@ -1270,7 +1273,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
      * */
     
     
-    /*@Test
+   /* @Test
     public void ChatSupportTest() throws GeneralLeanFtException, InterruptedException{   
     	
     	
@@ -1287,15 +1290,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	try{
     		appModel.AdvantageShoppingPage().ChatLogoImage().click();
         	browser.sync();
-        	/*Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().exists(),"Verification - Contact Us Chat","The chat window was created");
+        	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().exists(),"Verification - Contact Us Chat","The chat window was created");
         	//waitUntilElementExists(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg());
         	browser.sync();
 
-	    	String brURL = chatBrowser.getURL();
+	    	/*String brURL = chatBrowser.getURL();
 			chatBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title("Advantage Online Shopping Demo Support Chat").build());
-			Thread.sleep(2000);*/
-	    	//Verify.isTrue(brURL.matches(".*/chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
-        	/*Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg().exists() ,"Verification - Contact Us Chat","The 'server concted' massege show up");
+			Thread.sleep(2000);
+	    	//Verify.isTrue(brURL.matches(".*//*chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
+        	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg().exists() ,"Verification - Contact Us Chat","The 'server concted' massege show up");
         	
     	}
     	catch (Exception e)
@@ -1329,16 +1332,18 @@ public class AdvantageWebTest extends UnitTestClassBase {
  
 			after clicking OK,  the user will receive a message saying "thank you for contacting Advantage support"
 			play with this - select something, go back and try to change it - try to break this feature
-    	 * 
     	 */
+
 		//TODO: check if the buttons have the attribute 'isEnabled'
 
 		//try to send request with just txt in the email field
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");
-		Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email.");
+		Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email."));
+
 		//try to send request with just email  in the email field
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("user@demo.com");
 		Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with Email without Subject."));
+
 		//try to send request with just txt in the email field and subject (not should be working)
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("sometxt");
 		appModel.AdvantageShoppingPage().ContactUsSubject().setValue("I have Problem..");

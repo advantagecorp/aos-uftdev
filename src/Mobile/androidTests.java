@@ -43,7 +43,8 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser";
 	String         PASS = "Password1";
 	
-    static String appURL = "52.32.172.3:8080";
+    static String appURL = "52.32.172.3:8080";//"35.162.69.22:8080";//
+	//static String appURL = System.getProperty("url", "defaultvalue");
 
 	
 	
@@ -234,8 +235,6 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 */
 
-    	
-    	//System.out.println(appModel.AdvantageShoppingApplication().SIGNOUTLabel().exists());
     	   SignIn(false);
     	
     	//buy a leptop item
@@ -561,7 +560,7 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-	/*@Test
+	@Test
 	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
     	/*
@@ -574,7 +573,7 @@ public class androidTests extends UnitTestClassBase {
 		Logout and login again with the new password
     	 *
     	 *
-    	 *
+    	 */
 
 
 		String Oldpass =  PASS;
@@ -582,23 +581,18 @@ public class androidTests extends UnitTestClassBase {
 		if(SignIn(true))
 			SignOut();
 
-
-
-
 		//step 1 - change to new pass
 		changepassword("Password23");
 		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 1 - change to new pass", "Verify that the user login with the new password"));
 
-
 		//step 2 -  change back to the default pass
-
 		changepassword(Oldpass);
 		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
 
 
 
 
-	}*/
+	}
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
@@ -770,9 +764,11 @@ public class androidTests extends UnitTestClassBase {
 	   
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
 	   
-	   appModel.AdvantageShoppingApplication().HOME().tap();
+	   if (appModel.AdvantageShoppingApplication().HOME().exists(2)) {
+		   appModel.AdvantageShoppingApplication().HOME().tap();
+	   }
 	   appModel.AdvantageShoppingApplication().CartAccess().tap();
-	   while(appModel.AdvantageShoppingApplication().FirstCartItem().exists(3)){
+	   while(appModel.AdvantageShoppingApplication().FirstCartItem().exists(2)){
 		   appModel.AdvantageShoppingApplication().FirstCartItem().swipe(SwipeDirection.RIGHT);
 		   //Thread.sleep(1000);
 		   appModel.AdvantageShoppingApplication().CartRemove().tap();
