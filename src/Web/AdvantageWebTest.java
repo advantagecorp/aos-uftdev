@@ -31,7 +31,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	//public static String appURL ="52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
+	public static String appURL2 ="52.88.236.171:8080";//"52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -266,6 +266,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     	// Launch the browser
     	browser = BrowserFactory.launch(browserType);
+
+
+    	if(appURL.equals("defaultvalue"))
+    		appURL = appURL2;
+
+    	Reporter.addRunInformation("URL",appURL);
 
     	// Navigate to the store site
     	browser.navigate(appURL);

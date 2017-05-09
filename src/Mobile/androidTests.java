@@ -43,8 +43,8 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser";
 	String         PASS = "Password1";
 	
-    static String appURL = "52.32.172.3:8080";//"35.162.69.22:8080";//
-	//static String appURL = System.getProperty("url", "defaultvalue");
+    static String appURL2 = "52.32.172.3:8080";//"35.162.69.22:8080";//
+	static String appURL = System.getProperty("url", "defaultvalue");
 
 	
 	
@@ -65,15 +65,10 @@ public class androidTests extends UnitTestClassBase {
 		//device = MobileLab.lockDeviceById("QHC0216114003497");// ID For Hawawii
 		//device = MobileLab.lockDeviceById("04cbab13");// ID For Nexus 7
 		//device = MobileLab.lockDeviceById("140882a2");// ID For GT-19515
-		device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
+		//device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
+		InitBeforeclass();
+		app.install();
 
-
-		// Describe the AUT.
-		app = device.describe(Application.class, new ApplicationDescription.Builder()
-				.identifier("com.Advantage.aShopping").build());
-
-		//connect between the appModel and the device
-		appModel = new AdvantageAndroidApp(device);
 
 
 
@@ -594,6 +589,13 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
+	@Test
+	public void test() throws GeneralLeanFtException, InterruptedException {
+
+    	InitBeforeclass();
+
+	}
+
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
 
@@ -816,6 +818,35 @@ public class androidTests extends UnitTestClassBase {
 
 		if(!VerifyMethod)
 			throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+	}
+
+
+	public  static  void InitBeforeclass() throws GeneralLeanFtException {
+
+    	String deviceID  = "";
+
+		if(appURL.equals("defaultvalue"))
+			appURL = appURL2;
+
+		for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
+			//System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
+			if (deviceInfo.getOSType().equals("ANDROID"))
+				deviceID  = deviceInfo.getId();
+
+
+		}
+
+		device = MobileLab.lockDeviceById(deviceID);// ID For galaxy S6
+
+
+		// Describe the AUT.
+		app = device.describe(Application.class, new ApplicationDescription.Builder()
+				.identifier("com.Advantage.aShopping").build());
+
+		//connect between the appModel and the device
+		appModel = new AdvantageAndroidApp(device);
+
+
 	}
    
 
