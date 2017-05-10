@@ -1,6 +1,7 @@
 package Mobile;
 
 import Web.AdvantageStagingAppModel;
+import com.google.common.base.Joiner;
 import com.hp.lft.sdk.GeneralLeanFtException;
 import com.hp.lft.sdk.WaitUntilTestObjectState;
 import com.hp.lft.sdk.mobile.Device;
@@ -10,8 +11,10 @@ import com.hp.lft.sdk.web.BrowserFactory;
 import com.hp.lft.sdk.web.BrowserType;
 import com.hp.lft.sdk.web.WebElement;
 import com.hp.lft.verifications.Verify;
+import com.sun.deploy.util.StringUtils;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -271,7 +274,20 @@ public class MobileWeb {
     }
 
 
+public static void main(String[] args){
 
+
+    String[] s = "4.4.4".split("\\.");
+    String join = String.join("",s);
+
+     //String sjoin = StringUtils.join(new Object[](s),"");
+    System.out.println(join);
+
+
+   //float x = Float.parseFloat("4.4.4");
+
+
+}
 
 
 }

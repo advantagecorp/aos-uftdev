@@ -1149,6 +1149,18 @@
                         <tag>filter</tag>
                     </tags>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>CART</name>
+                    <codeName>CARTLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">CART</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewMenuCart</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">17</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

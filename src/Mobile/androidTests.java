@@ -43,7 +43,7 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser";
 	String         PASS = "Password1";
 	
-    static String appURL2 = "52.32.172.3:8080";//"35.162.69.22:8080";//
+    static String appURL2 ="52.88.236.171:8080"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
 	static String appURL = System.getProperty("url", "defaultvalue");
 
 	
@@ -65,10 +65,19 @@ public class androidTests extends UnitTestClassBase {
 		//device = MobileLab.lockDeviceById("QHC0216114003497");// ID For Hawawii
 		//device = MobileLab.lockDeviceById("04cbab13");// ID For Nexus 7
 		//device = MobileLab.lockDeviceById("140882a2");// ID For GT-19515
-		//device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
-		InitBeforeclass();
-		app.install();
 
+
+
+		//uncomment this when you run on LeanFt machine
+
+		if(appURL.equals("defaultvalue")){
+
+			appURL = appURL2;
+			InitBeforeclassLocal();
+
+		}
+		else
+			InitBeforeclass();
 
 
 
@@ -107,7 +116,7 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-    public void setting() throws GeneralLeanFtException, InterruptedException {
+    public  void setting() throws GeneralLeanFtException, InterruptedException {
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
 		appModel.AdvantageShoppingApplication().MainMenu().tap();
@@ -230,7 +239,7 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 */
 
-    	   SignIn(false);
+		SignIn(false);
     	
     	//buy a leptop item
     	BuyLeptop();
@@ -589,12 +598,12 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-	@Test
+	/*@Test
 	public void test() throws GeneralLeanFtException, InterruptedException {
 
     	InitBeforeclass();
 
-	}
+	}*/
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
@@ -660,7 +669,7 @@ public class androidTests extends UnitTestClassBase {
 	    	appModel.AdvantageShoppingApplication().PassEdit().setText(PASS);
 	    	appModel.AdvantageShoppingApplication().LOGINButton().tap();
 
-	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists())
+	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(2))
 			{
 				System.out.println(UNAME + "  Login Success");
 				Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
@@ -721,13 +730,9 @@ public class androidTests extends UnitTestClassBase {
    
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
-	   
-	   /*waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
-	   appModel.AdvantageShoppingApplication().CartAccess().tap();
-	  
-	   waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartItem());*/
+
 	   appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	  
+	   Thread.sleep(2000);
 	   //pay with safepay and don't save details
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   SafePay(false);
@@ -766,10 +771,8 @@ public class androidTests extends UnitTestClassBase {
 	   
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
 	   
-	   if (appModel.AdvantageShoppingApplication().HOME().exists(2)) {
-		   appModel.AdvantageShoppingApplication().HOME().tap();
-	   }
-	   appModel.AdvantageShoppingApplication().CartAccess().tap();
+	   appModel.AdvantageShoppingApplication().MainMenu().tap();
+	   appModel.AdvantageShoppingApplication().CARTLabel().tap();
 	   while(appModel.AdvantageShoppingApplication().FirstCartItem().exists(2)){
 		   appModel.AdvantageShoppingApplication().FirstCartItem().swipe(SwipeDirection.RIGHT);
 		   //Thread.sleep(1000);
@@ -825,14 +828,17 @@ public class androidTests extends UnitTestClassBase {
 
     	String deviceID  = "";
 
-		if(appURL.equals("defaultvalue"))
-			appURL = appURL2;
 
 		for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
 			//System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
-			if (deviceInfo.getOSType().equals("ANDROID"))
-				deviceID  = deviceInfo.getId();
+			String[] s = deviceInfo.getOSVersion().split("\\.");
+			String join =  String.join("",s);
 
+			int version = Integer.parseInt(join);
+			if (deviceInfo.getOSType().equals("ANDROID") && version >= 600) {
+				deviceID = deviceInfo.getId();
+				break;
+			}
 
 		}
 
@@ -846,6 +852,27 @@ public class androidTests extends UnitTestClassBase {
 		//connect between the appModel and the device
 		appModel = new AdvantageAndroidApp(device);
 
+		//app.install();
+
+
+
+	}
+
+	//use this in local testing
+
+	public static void  InitBeforeclassLocal() throws GeneralLeanFtException {
+
+		//set the URL for server if it in the global
+
+
+		device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
+
+		// Describe the AUT.
+		app = device.describe(Application.class, new ApplicationDescription.Builder()
+				.identifier("com.Advantage.aShopping").build());
+
+		//connect between the appModel and the device
+		appModel = new AdvantageAndroidApp(device);
 
 	}
    

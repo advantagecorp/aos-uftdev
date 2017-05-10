@@ -31,7 +31,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	public static String appURL2 ="52.88.236.171:8080";//"52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
+	public static String appURL2 ="52.32.172.3:8080"; //"52.88.236.171:8080";"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -1002,7 +1002,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
     
     // This test gets the site version from the site UI and prints it to the console 
-    @Test
+   /* @Test
     public void verifyAdvantageVersionNumber() throws GeneralLeanFtException, ReportException
     {
     	// Get the regular expression pattern from the Copyright object design time description
@@ -1024,7 +1024,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         //Verification(Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly."));
 		Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly.");
 
-	}
+	}*/
     
     // This test verifies that the main user links work
     @Test
@@ -1274,13 +1274,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
     
     
     /*
-     * the test runs until he needs to set value in the chat support edit field 
+     *todo: the test runs until he needs to set value in the chat support edit field
      * the app model can't recognize the field although the spy find one single match.
      * */
     
     
    /* @Test
-    public void ChatSupportTest() throws GeneralLeanFtException, InterruptedException{   
+    public void ChatSupportTest() throws GeneralLeanFtException, InterruptedException, ReportException {
     	
     	
     	// check if the Chat option for support are work fine and send a respond to user msg.
@@ -1290,27 +1290,24 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	
     	Browser chatBrowser;
-    	BrowserDescription chatBrowserDescription = new BrowserDescription();
-    	chatBrowserDescription.setTitle("Advantage Online Shopping Demo Support Chat");
     	
     	try{
     		appModel.AdvantageShoppingPage().ChatLogoImage().click();
         	browser.sync();
         	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().exists(),"Verification - Contact Us Chat","The chat window was created");
         	//waitUntilElementExists(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg());
-        	browser.sync();
 
-	    	/*String brURL = chatBrowser.getURL();
 			chatBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title("Advantage Online Shopping Demo Support Chat").build());
+			String brURL = chatBrowser.getURL();
 			Thread.sleep(2000);
-	    	//Verify.isTrue(brURL.matches(".*//*chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
+	    	Verify.isTrue(brURL.matches(".*//*chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
         	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg().exists() ,"Verification - Contact Us Chat","The 'server concted' massege show up");
         	
     	}
     	catch (Exception e)
     	{
-    		
-    		Verify.isTrue(false,"Verification - Contact Us Chat","The chat window was not created");
+			Reporter.reportEvent("verify ContactUS  ERROR", "Could not locate the browser with the matching URL"  , Status.Failed);
+			Verify.isTrue(false,"Verification - Contact Us Chat","The chat window was not created");
     	}
     	
     	
