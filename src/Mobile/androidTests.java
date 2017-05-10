@@ -1,5 +1,6 @@
 package Mobile;
 
+import static java.lang.String.*;
 import static org.junit.Assert.*;
 
 import java.util.regex.Matcher;
@@ -832,9 +833,11 @@ public class androidTests extends UnitTestClassBase {
 		for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
 			//System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
 			String[] s = deviceInfo.getOSVersion().split("\\.");
-			String join =  String.join("",s);
+			String Join = "";
+			for (String s1:s)
+				Join += s1;
 
-			int version = Integer.parseInt(join);
+			int version = Integer.parseInt(Join);
 			if (deviceInfo.getOSType().equals("ANDROID") && version >= 600) {
 				deviceID = deviceInfo.getId();
 				break;
