@@ -10,7 +10,7 @@ import com.hp.lft.sdk.web.BrowserFactory;
 import com.hp.lft.sdk.web.BrowserType;
 import com.hp.lft.sdk.web.WebElement;
 import com.hp.lft.verifications.Verify;
-import com.sun.deploy.util.StringUtils;
+
 
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -278,7 +278,7 @@ public static void main(String[] args){
 
 
     String[] s = "4.4.4".split("\\.");
-    String join = join("",s);
+    String join = "";
 
 
      //String sjoin = StringUtils.join(new Object[](s),"");
