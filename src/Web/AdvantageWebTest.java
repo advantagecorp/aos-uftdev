@@ -260,6 +260,49 @@ public class AdvantageWebTest extends UnitTestClassBase {
     {
     	checkOutAndPay(true); // Default value is true - fill credentials
     }
+
+
+	public void checkOutAndPayMasterCredit(String cardnum , String CVV , String holdername, boolean save) throws GeneralLeanFtException
+	{
+		// Checkout the cart for purchase
+		// Click the cart icon
+		appModel.AdvantageShoppingPage().CartIcon().click();
+		// Click the checkout button
+		appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
+		// Click Next to continue the purchase wizard
+		appModel.AdvantageShoppingPage().NEXTButton().click();
+		// Select the payment method
+		appModel.AdvantageShoppingPage().MasterCreditImage().click();
+
+
+		// Set the card number
+		appModel.AdvantageShoppingPage().CardNumberEditField().setValue(cardnum);
+		// Set the CVV number
+		appModel.AdvantageShoppingPage().CvvNumberEditField().setValue(CVV);
+		// Set the card holder name
+		appModel.AdvantageShoppingPage().CardholderNameEditField().setValue(holdername);
+		if(!save)
+		{
+			// Set the Remember Me checkbox to true or false
+			appModel.AdvantageShoppingPage().SaveMasterCreditCheckBox().set(false);
+
+		}
+
+
+		//appModel.AdvantageShoppingPage().NEXTButton().click();
+		// Click the "Pay Now" button
+		appModel.AdvantageShoppingPage().PAYNOWButton().click();
+
+		waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement());
+
+		// Verify that the product was purchased
+
+
+			Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),"Verification - Product Purchase MasterCredit:"," Verify that the product was purchased successfully with MasterCredit "));
+
+
+
+	}
     
 	//This method is an internal function that initializes the tests
     public void initBeforeTest() throws GeneralLeanFtException {
@@ -715,7 +758,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	}
     	
     	// Pay for the item
-    	checkOutAndPay(); // Verification inside
+		checkOutAndPayMasterCredit("123412341234","774",USERNAME,false); // Verification inside
     }
     
     // This test purchases the first item in the Mice category
@@ -742,7 +785,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	}
     	
     	// Pay for the item
-    	checkOutAndPay(); // Verification inside
+		checkOutAndPayMasterCredit("123412341234","774",USERNAME,false); // Verification inside
     }
     
     // This test purchases the first item in the Headphones category

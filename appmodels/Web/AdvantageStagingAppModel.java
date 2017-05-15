@@ -137,6 +137,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private BoseSoundlinkImage BoseSoundlinkImage;
 	private laptopFororderService laptopFororderService;
 	private MobileBtnWeb MobileBtnWeb;
+	private MasterCreditImage MasterCreditImage;
+	private CardNumberEditField CardNumberEditField;
+	private CvvNumberEditField CvvNumberEditField;
+	private CardholderNameEditField CardholderNameEditField;
+	private SaveMasterCreditCheckBox SaveMasterCreditCheckBox;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -243,6 +248,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		BoseSoundlinkImage = new BoseSoundlinkImage(this, applicationModel);
 		laptopFororderService = new laptopFororderService(this, applicationModel);
 		MobileBtnWeb = new MobileBtnWeb(this, applicationModel);
+		MasterCreditImage = new MasterCreditImage(this, applicationModel);
+		CardNumberEditField = new CardNumberEditField(this, applicationModel);
+		CvvNumberEditField = new CvvNumberEditField(this, applicationModel);
+		CardholderNameEditField = new CardholderNameEditField(this, applicationModel);
+		SaveMasterCreditCheckBox = new SaveMasterCreditCheckBox(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -360,6 +370,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public BoseSoundlinkImage BoseSoundlinkImage() { return BoseSoundlinkImage; }
 		public laptopFororderService laptopFororderService() { return laptopFororderService; }
 		public MobileBtnWeb MobileBtnWeb() { return MobileBtnWeb; }
+		public MasterCreditImage MasterCreditImage() { return MasterCreditImage; }
+		public CardNumberEditField CardNumberEditField() { return CardNumberEditField; }
+		public CvvNumberEditField CvvNumberEditField() { return CvvNumberEditField; }
+		public CardholderNameEditField CardholderNameEditField() { return CardholderNameEditField; }
+		public SaveMasterCreditCheckBox SaveMasterCreditCheckBox() { return SaveMasterCreditCheckBox; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -3004,6 +3019,136 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("mobile-btn-handler").tagName("DIV").innerText("").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class MasterCreditImage extends ImageNodeBase
+	{
+
+		
+								public MasterCreditImage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Master credit");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ImageDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().alt("Master credit").type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CardNumberEditField extends EditFieldNodeBase
+	{
+
+		
+								public CardNumberEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("card_number");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("card_number").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CvvNumberEditField extends EditFieldNodeBase
+	{
+
+		
+								public CvvNumberEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("cvv_number");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("cvv_number").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CardholderNameEditField extends EditFieldNodeBase
+	{
+
+		
+								public CardholderNameEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("cardholder_name");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("cardholder_name").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SaveMasterCreditCheckBox extends CheckBoxNodeBase
+	{
+
+		
+								public SaveMasterCreditCheckBox(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("save_master_credit");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.CheckBoxDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.CheckBoxDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.CheckBoxDescription.Builder().type("checkbox").tagName("INPUT").name("save_master_credit").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

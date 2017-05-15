@@ -44,7 +44,7 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser";
 	String         PASS = "Password1";
 	
-    static String appURL2 ="52.88.236.171:8080"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
+    static String appURL2 ="52.32.172.3:8080";//"52.88.236.171:8080"; //"35.162.69.22:8080";//
 	static String appURL = System.getProperty("url", "defaultvalue");
 
 	
@@ -63,13 +63,6 @@ public class androidTests extends UnitTestClassBase {
         instance = new androidTests();
         globalSetup(androidTests.class);
 
-		//device = MobileLab.lockDeviceById("QHC0216114003497");// ID For Hawawii
-		//device = MobileLab.lockDeviceById("04cbab13");// ID For Nexus 7
-		//device = MobileLab.lockDeviceById("140882a2");// ID For GT-19515
-
-
-
-		//uncomment this when you run on LeanFt machine
 
 		if(appURL.equals("defaultvalue")){
 
@@ -467,9 +460,9 @@ public class androidTests extends UnitTestClassBase {
 		checkOutMasterCredit("123456789123","456",UNAME,false,true);
 
 		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
-		
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
 		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
-
+        appModel.AdvantageShoppingApplication().CloseDialog().tap();
 
 
 
@@ -739,8 +732,9 @@ public class androidTests extends UnitTestClassBase {
 	   SafePay(false);
 	   
 	   appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+	   waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
 	   Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success"," verift that the payment success and we recive the order detail window" );
-	    
+	   appModel.AdvantageShoppingApplication().CloseDialog().tap();
    }    
    
    public void SafePay(boolean save) throws GeneralLeanFtException{ 
@@ -749,6 +743,7 @@ public class androidTests extends UnitTestClassBase {
 	   
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 	  
+	   appModel.AdvantageShoppingApplication().PaymentDetails().tap();
 	   appModel.AdvantageShoppingApplication().PaymentDetails().tap();
 	   appModel.AdvantageShoppingApplication().ImageViewSafePay().tap();
 	   appModel.AdvantageShoppingApplication().SafePayUserfieldEditField().setText(UNAME);
@@ -850,12 +845,12 @@ public class androidTests extends UnitTestClassBase {
 
 		// Describe the AUT.
 		app = device.describe(Application.class, new ApplicationDescription.Builder()
-				.identifier("com.Advantage.aShopping").build());
+				.identifier("com.Advantage.aShopping").packaged(true).build());
 
 		//connect between the appModel and the device
 		appModel = new AdvantageAndroidApp(device);
 
-		//app.install();
+		app.install();
 
 
 
@@ -865,17 +860,18 @@ public class androidTests extends UnitTestClassBase {
 
 	public static void  InitBeforeclassLocal() throws GeneralLeanFtException {
 
-		//set the URL for server if it in the global
-
 
 		device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
+		//device = MobileLab.lockDeviceById("06157df623745934");// ID For galaxy S6
 
 		// Describe the AUT.
 		app = device.describe(Application.class, new ApplicationDescription.Builder()
-				.identifier("com.Advantage.aShopping").build());
+				.identifier("com.Advantage.aShopping").packaged(true).build());
 
 		//connect between the appModel and the device
 		appModel = new AdvantageAndroidApp(device);
+
+		app.install();
 
 	}
    

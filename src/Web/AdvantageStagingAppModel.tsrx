@@ -1230,6 +1230,76 @@
                         <tag>MobileWeb</tag>
                     </tags>
                 </object>
+                <object type="Image" technology="Web">
+                    <name>Master credit</name>
+                    <codeName>MasterCreditImage</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Alt" type="string" isRegExp="false">Master credit</property>
+                            <property name="Type" type="enum" isRegExp="false">Normal</property>
+                            <property name="TagName" type="string" isRegExp="false">IMG</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Web">
+                    <name>card_number</name>
+                    <codeName>CardNumberEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">text</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">card_number</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Web">
+                    <name>cvv_number</name>
+                    <codeName>CvvNumberEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">text</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">cvv_number</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Web">
+                    <name>cardholder_name</name>
+                    <codeName>CardholderNameEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">text</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">cardholder_name</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="CheckBox" technology="Web">
+                    <name>save_master_credit</name>
+                    <codeName>SaveMasterCreditCheckBox</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Type" type="string" isRegExp="false">checkbox</property>
+                            <property name="TagName" type="string" isRegExp="false">INPUT</property>
+                            <property name="Name" type="string" isRegExp="false">save_master_credit</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
             </children>
         </object>
         <object type="Page" technology="Web">

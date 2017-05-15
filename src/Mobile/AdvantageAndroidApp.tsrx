@@ -1161,6 +1161,17 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>imageViewCloseDialog</name>
+                    <codeName>CloseDialog</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="ResourceId" type="string" isRegExp="false">imageViewCloseDialog</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

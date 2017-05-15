@@ -32,27 +32,103 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 
 		
 			private MenuButton MenuButton;
-	private LOGIN LOGIN;
+	private HOMELabel HOMELabel;
 	private LAPTOPSLabel LAPTOPSLabel;
 	private HEADPHONESLabel HEADPHONESLabel;
 	private TABLETSLabel TABLETSLabel;
+	private UserSettingsButton UserSettingsButton;
 	private SPEAKERSLabel SPEAKERSLabel;
-	private LOGINObjUiObject LOGINObjUiObject;
-	private UserNameEditField UserNameEditField;
+	private CARTLabel CARTLabel;
+	private SETTINGSLabel SETTINGSLabel;
+	private LoginObj LoginObj;
+	private UserNameLoginditField UserNameLoginditField;
+	private PasswordLoginEditField PasswordLoginEditField;
 	private LOGINButton LOGINButton;
+	private UserNameSignUpEditField UserNameSignUpEditField;
+	private EmailSignUpEditField EmailSignUpEditField;
+	private PasswordSignUpEditField PasswordSignUpEditField;
+	private ConfirnPasswordSignUpEditField ConfirnPasswordSignUpEditField;
+	private StreetSignUpEditField StreetSignUpEditField;
+	private CitySignUpEditField CitySignUpEditField;
+	private ZIPSignUpEditField ZIPSignUpEditField;
+	private REGISTERButton REGISTERButton;
+	private SignUpButton SignUpButton;
+	private InvalidUserNameOrPasLabel InvalidUserNameOrPasLabel;
+	private MenuObjUiObject MenuObjUiObject;
+	private LoginLabel LoginLabel;
+	private YesSignOutButton YesSignOutButton;
+	private UseMylocationUiObject UseMylocationUiObject;
+	private UseMyLocationLabel UseMyLocationLabel;
+	private SpeakerImgUiObject SpeakerImgUiObject;
+	private ColorButton ColorButton;
+	private ADDTOCARTButton ADDTOCARTButton;
+	private ColorObj ColorObj;
+	private CarticonButton CarticonButton;
+	private CHECKOUTButton CHECKOUTButton;
+	private PaymentEditUiObject PaymentEditUiObject;
+	private APPLYButton APPLYButton;
+	private SAFEPAYUSERNAMEEditField SAFEPAYUSERNAMEEditField;
+	private SAFEPAYPASSWORDEditField SAFEPAYPASSWORDEditField;
+	private SaveSafePAyCredentialsLabel SaveSafePAyCredentialsLabel;
+	private PAYNOWButton PAYNOWButton;
+	private OkButton OkButton;
+	private OrderObj OrderObj;
+	private CARDNUMBEREditField CARDNUMBEREditField;
+	private CVVNUMBEREditField CVVNUMBEREditField;
+	private CARDHOLDERNAMEEditField CARDHOLDERNAMEEditField;
+	private SaveMasterCreditCredenLabel SaveMasterCreditCredenLabel;
+	private DoneButton DoneButton;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 					MenuButton = new MenuButton(this, applicationModel);
-		LOGIN = new LOGIN(this, applicationModel);
+		HOMELabel = new HOMELabel(this, applicationModel);
 		LAPTOPSLabel = new LAPTOPSLabel(this, applicationModel);
 		HEADPHONESLabel = new HEADPHONESLabel(this, applicationModel);
 		TABLETSLabel = new TABLETSLabel(this, applicationModel);
+		UserSettingsButton = new UserSettingsButton(this, applicationModel);
 		SPEAKERSLabel = new SPEAKERSLabel(this, applicationModel);
-		LOGINObjUiObject = new LOGINObjUiObject(this, applicationModel);
-		UserNameEditField = new UserNameEditField(this, applicationModel);
+		CARTLabel = new CARTLabel(this, applicationModel);
+		SETTINGSLabel = new SETTINGSLabel(this, applicationModel);
+		LoginObj = new LoginObj(this, applicationModel);
+		UserNameLoginditField = new UserNameLoginditField(this, applicationModel);
+		PasswordLoginEditField = new PasswordLoginEditField(this, applicationModel);
 		LOGINButton = new LOGINButton(this, applicationModel);
+		UserNameSignUpEditField = new UserNameSignUpEditField(this, applicationModel);
+		EmailSignUpEditField = new EmailSignUpEditField(this, applicationModel);
+		PasswordSignUpEditField = new PasswordSignUpEditField(this, applicationModel);
+		ConfirnPasswordSignUpEditField = new ConfirnPasswordSignUpEditField(this, applicationModel);
+		StreetSignUpEditField = new StreetSignUpEditField(this, applicationModel);
+		CitySignUpEditField = new CitySignUpEditField(this, applicationModel);
+		ZIPSignUpEditField = new ZIPSignUpEditField(this, applicationModel);
+		REGISTERButton = new REGISTERButton(this, applicationModel);
+		SignUpButton = new SignUpButton(this, applicationModel);
+		InvalidUserNameOrPasLabel = new InvalidUserNameOrPasLabel(this, applicationModel);
+		MenuObjUiObject = new MenuObjUiObject(this, applicationModel);
+		LoginLabel = new LoginLabel(this, applicationModel);
+		YesSignOutButton = new YesSignOutButton(this, applicationModel);
+		UseMylocationUiObject = new UseMylocationUiObject(this, applicationModel);
+		UseMyLocationLabel = new UseMyLocationLabel(this, applicationModel);
+		SpeakerImgUiObject = new SpeakerImgUiObject(this, applicationModel);
+		ColorButton = new ColorButton(this, applicationModel);
+		ADDTOCARTButton = new ADDTOCARTButton(this, applicationModel);
+		ColorObj = new ColorObj(this, applicationModel);
+		CarticonButton = new CarticonButton(this, applicationModel);
+		CHECKOUTButton = new CHECKOUTButton(this, applicationModel);
+		PaymentEditUiObject = new PaymentEditUiObject(this, applicationModel);
+		APPLYButton = new APPLYButton(this, applicationModel);
+		SAFEPAYUSERNAMEEditField = new SAFEPAYUSERNAMEEditField(this, applicationModel);
+		SAFEPAYPASSWORDEditField = new SAFEPAYPASSWORDEditField(this, applicationModel);
+		SaveSafePAyCredentialsLabel = new SaveSafePAyCredentialsLabel(this, applicationModel);
+		PAYNOWButton = new PAYNOWButton(this, applicationModel);
+		OkButton = new OkButton(this, applicationModel);
+		OrderObj = new OrderObj(this, applicationModel);
+		CARDNUMBEREditField = new CARDNUMBEREditField(this, applicationModel);
+		CVVNUMBEREditField = new CVVNUMBEREditField(this, applicationModel);
+		CARDHOLDERNAMEEditField = new CARDHOLDERNAMEEditField(this, applicationModel);
+		SaveMasterCreditCredenLabel = new SaveMasterCreditCredenLabel(this, applicationModel);
+		DoneButton = new DoneButton(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -61,7 +137,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		protected com.hp.lft.sdk.mobile.ApplicationDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.ApplicationDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.ApplicationDescription.Builder().identifier("com.hpe.advantage").packaged(false).build();
+				description = new com.hp.lft.sdk.mobile.ApplicationDescription.Builder().identifier("com.Advantage.iShopping").packaged(true).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -69,14 +145,52 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		}
 
 				public MenuButton MenuButton() { return MenuButton; }
-		public LOGIN LOGIN() { return LOGIN; }
+		public HOMELabel HOMELabel() { return HOMELabel; }
 		public LAPTOPSLabel LAPTOPSLabel() { return LAPTOPSLabel; }
 		public HEADPHONESLabel HEADPHONESLabel() { return HEADPHONESLabel; }
 		public TABLETSLabel TABLETSLabel() { return TABLETSLabel; }
+		public UserSettingsButton UserSettingsButton() { return UserSettingsButton; }
 		public SPEAKERSLabel SPEAKERSLabel() { return SPEAKERSLabel; }
-		public LOGINObjUiObject LOGINObjUiObject() { return LOGINObjUiObject; }
-		public UserNameEditField UserNameEditField() { return UserNameEditField; }
+		public CARTLabel CARTLabel() { return CARTLabel; }
+		public SETTINGSLabel SETTINGSLabel() { return SETTINGSLabel; }
+		public LoginObj LoginObj() { return LoginObj; }
+		public UserNameLoginditField UserNameLoginditField() { return UserNameLoginditField; }
+		public PasswordLoginEditField PasswordLoginEditField() { return PasswordLoginEditField; }
 		public LOGINButton LOGINButton() { return LOGINButton; }
+		public UserNameSignUpEditField UserNameSignUpEditField() { return UserNameSignUpEditField; }
+		public EmailSignUpEditField EmailSignUpEditField() { return EmailSignUpEditField; }
+		public PasswordSignUpEditField PasswordSignUpEditField() { return PasswordSignUpEditField; }
+		public ConfirnPasswordSignUpEditField ConfirnPasswordSignUpEditField() { return ConfirnPasswordSignUpEditField; }
+		public StreetSignUpEditField StreetSignUpEditField() { return StreetSignUpEditField; }
+		public CitySignUpEditField CitySignUpEditField() { return CitySignUpEditField; }
+		public ZIPSignUpEditField ZIPSignUpEditField() { return ZIPSignUpEditField; }
+		public REGISTERButton REGISTERButton() { return REGISTERButton; }
+		public SignUpButton SignUpButton() { return SignUpButton; }
+		public InvalidUserNameOrPasLabel InvalidUserNameOrPasLabel() { return InvalidUserNameOrPasLabel; }
+		public MenuObjUiObject MenuObjUiObject() { return MenuObjUiObject; }
+		public LoginLabel LoginLabel() { return LoginLabel; }
+		public YesSignOutButton YesSignOutButton() { return YesSignOutButton; }
+		public UseMylocationUiObject UseMylocationUiObject() { return UseMylocationUiObject; }
+		public UseMyLocationLabel UseMyLocationLabel() { return UseMyLocationLabel; }
+		public SpeakerImgUiObject SpeakerImgUiObject() { return SpeakerImgUiObject; }
+		public ColorButton ColorButton() { return ColorButton; }
+		public ADDTOCARTButton ADDTOCARTButton() { return ADDTOCARTButton; }
+		public ColorObj ColorObj() { return ColorObj; }
+		public CarticonButton CarticonButton() { return CarticonButton; }
+		public CHECKOUTButton CHECKOUTButton() { return CHECKOUTButton; }
+		public PaymentEditUiObject PaymentEditUiObject() { return PaymentEditUiObject; }
+		public APPLYButton APPLYButton() { return APPLYButton; }
+		public SAFEPAYUSERNAMEEditField SAFEPAYUSERNAMEEditField() { return SAFEPAYUSERNAMEEditField; }
+		public SAFEPAYPASSWORDEditField SAFEPAYPASSWORDEditField() { return SAFEPAYPASSWORDEditField; }
+		public SaveSafePAyCredentialsLabel SaveSafePAyCredentialsLabel() { return SaveSafePAyCredentialsLabel; }
+		public PAYNOWButton PAYNOWButton() { return PAYNOWButton; }
+		public OkButton OkButton() { return OkButton; }
+		public OrderObj OrderObj() { return OrderObj; }
+		public CARDNUMBEREditField CARDNUMBEREditField() { return CARDNUMBEREditField; }
+		public CVVNUMBEREditField CVVNUMBEREditField() { return CVVNUMBEREditField; }
+		public CARDHOLDERNAMEEditField CARDHOLDERNAMEEditField() { return CARDHOLDERNAMEEditField; }
+		public SaveMasterCreditCredenLabel SaveMasterCreditCredenLabel() { return SaveMasterCreditCredenLabel; }
+		public DoneButton DoneButton() { return DoneButton; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -94,7 +208,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Menu").accessibilityId("Menu").className("Button").mobileCenterIndex(0).build();
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("Menu").className("Button").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -104,23 +218,23 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
-	public class LOGIN extends LabelNodeBase
+	public class HOMELabel extends LabelNodeBase
 	{
 
 		
-								public LOGIN(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public HOMELabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("LOG IN");
+			setDisplayName("HOME");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("LOG IN").accessibilityId("LOG IN").className("Label").container("Table[0][0][0]").mobileCenterIndex(0).build();
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("HOME").accessibilityId("HOME").className("Label").container("Table[0][1][0]").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -146,7 +260,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("LAPTOPS").accessibilityId("LAPTOPS").className("Label").container("Table[0][3][0]").mobileCenterIndex(0).build();
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("LAPTOPS").accessibilityId("LAPTOPS").className("Label").container("Table[0][3][0]").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -208,6 +322,32 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
+	public class UserSettingsButton extends ButtonNodeBase
+	{
+
+		
+								public UserSettingsButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("User settings");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("User settings").className("Button").container("Table[0][0][0]").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
 	public class SPEAKERSLabel extends LabelNodeBase
 	{
 
@@ -234,23 +374,23 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
-	public class LOGINObjUiObject extends UiObjectNodeBase
+	public class CARTLabel extends LabelNodeBase
 	{
 
 		
-								public LOGINObjUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public CARTLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("LOGINObj");
+			setDisplayName("CART");
 		}
 
 		@Override
-		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().accessibilityId("LOG IN").className("TableCell").container("").build();
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("CART").accessibilityId("CART").className("Label").container("Table[0][8][0]").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -260,23 +400,101 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
-	public class UserNameEditField extends EditFieldNodeBase
+	public class SETTINGSLabel extends LabelNodeBase
 	{
 
 		
-								public UserNameEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public SETTINGSLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("UserName");
+			setDisplayName("SETTINGS");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("SETTINGS").accessibilityId("SETTINGS").className("Label").container("Table[0][9][0]").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class LoginObj extends UiObjectNodeBase
+	{
+
+		
+								public LoginObj(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Login Obj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("TableCell").container("").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UserNameLoginditField extends EditFieldNodeBase
+	{
+
+		
+								public UserNameLoginditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("USER NAME login");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(0).accessibilityId("username").text("Username").build();
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("USER NAME").className("Input").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PasswordLoginEditField extends EditFieldNodeBase
+	{
+
+		
+								public PasswordLoginEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("PASSWORD login");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -302,7 +520,891 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("LOGIN").accessibilityId("LOGIN").className("Button").mobileCenterIndex(2).build();
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("LOGIN").accessibilityId("LOGIN").className("Button").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UserNameSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public UserNameSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("UserNameSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("* USER NAME").className("Input").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class EmailSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public EmailSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("EmailSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PasswordSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public PasswordSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("PasswordSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ConfirnPasswordSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public ConfirnPasswordSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("confirnPasswordSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(3).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class StreetSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public StreetSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("StreetSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("STREET").className("Input").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CitySignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public CitySignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CitySignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("CITY").className("Input").resourceId("").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ZIPSignUpEditField extends EditFieldNodeBase
+	{
+
+		
+								public ZIPSignUpEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ZIPSignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("ZIP").className("Input").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class REGISTERButton extends ButtonNodeBase
+	{
+
+		
+								public REGISTERButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("REGISTER");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("REGISTER").accessibilityId("REGISTER").className("Button").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SignUpButton extends ButtonNodeBase
+	{
+
+		
+								public SignUpButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SignUp");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("Don't have an account? SIGN UP TODAY").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class InvalidUserNameOrPasLabel extends LabelNodeBase
+	{
+
+		
+								public InvalidUserNameOrPasLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Invalid user name or pas");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Invalid user name or password").accessibilityId("Invalid user name or password").className("Label").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class MenuObjUiObject extends UiObjectNodeBase
+	{
+
+		
+								public MenuObjUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("MenuObj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(14).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class LoginLabel extends LabelNodeBase
+	{
+
+		
+								public LoginLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("login");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().className("Label").container("Table[0][0][0]").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class YesSignOutButton extends ButtonNodeBase
+	{
+
+		
+								public YesSignOutButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("YesSignOut");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Yes").accessibilityId("Yes").className("Button").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UseMylocationUiObject extends UiObjectNodeBase
+	{
+
+		
+								public UseMylocationUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("UseMylocation");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(22).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UseMyLocationLabel extends LabelNodeBase
+	{
+
+		
+								public UseMyLocationLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Use my location");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Use my location").accessibilityId("Use my location").className("Label").mobileCenterIndex(11).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SpeakerImgUiObject extends UiObjectNodeBase
+	{
+
+		
+								public SpeakerImgUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SpeakerImg");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").container("CollectionView[0][2][0]").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ColorButton extends ButtonNodeBase
+	{
+
+		
+								public ColorButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("color");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ADDTOCARTButton extends ButtonNodeBase
+	{
+
+		
+								public ADDTOCARTButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ADD TO CART");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("ADD TO CART").accessibilityId("ADD TO CART").className("Button").mobileCenterIndex(4).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ColorObj extends UiObjectNodeBase
+	{
+
+		
+								public ColorObj(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("colorObj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").container("CollectionView[0][2][0]").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CarticonButton extends ButtonNodeBase
+	{
+
+		
+								public CarticonButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("carticon");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("cartItem").className("Button").mobileCenterIndex(6).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CHECKOUTButton extends ButtonNodeBase
+	{
+
+		
+								public CHECKOUTButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CHECKOUT");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("CHECKOUT (PAY 224.95)").className("Button").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PaymentEditUiObject extends UiObjectNodeBase
+	{
+
+		
+								public PaymentEditUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("paymentEdit");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class APPLYButton extends ButtonNodeBase
+	{
+
+		
+								public APPLYButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("APPLY");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("APPLY").accessibilityId("APPLY").className("Button").mobileCenterIndex(3).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SAFEPAYUSERNAMEEditField extends EditFieldNodeBase
+	{
+
+		
+								public SAFEPAYUSERNAMEEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("*SAFEPAY USERNAME");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("*SAFEPAY USERNAME").className("Input").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SAFEPAYPASSWORDEditField extends EditFieldNodeBase
+	{
+
+		
+								public SAFEPAYPASSWORDEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("*SAFEPAY PASSWORD");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("*SAFEPAY PASSWORD").className("Input").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SaveSafePAyCredentialsLabel extends LabelNodeBase
+	{
+
+		
+								public SaveSafePAyCredentialsLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Save SafePAy credentials");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Save SafePAy credentials in your profile").accessibilityId("Save SafePAy credentials in your profile").className("Label").mobileCenterIndex(4).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PAYNOWButton extends ButtonNodeBase
+	{
+
+		
+								public PAYNOWButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("PAY NOW");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("PAY NOW").accessibilityId("PAY NOW").className("Button").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class OkButton extends ButtonNodeBase
+	{
+
+		
+								public OkButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Ok");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Ok").accessibilityId("Ok").className("Button").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class OrderObj extends UiObjectNodeBase
+	{
+
+		
+								public OrderObj(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("OrderObj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().accessibilityId("").className("View").mobileCenterIndex(14).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CARDNUMBEREditField extends EditFieldNodeBase
+	{
+
+		
+								public CARDNUMBEREditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("*CARD NUMBER");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("*CARD NUMBER").className("Input").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CVVNUMBEREditField extends EditFieldNodeBase
+	{
+
+		
+								public CVVNUMBEREditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("*CVV NUMBER");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("*CVV NUMBER").className("Input").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CARDHOLDERNAMEEditField extends EditFieldNodeBase
+	{
+
+		
+								public CARDHOLDERNAMEEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("*CARDHOLDER NAME");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("*CARDHOLDER NAME").className("Input").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SaveMasterCreditCredenLabel extends LabelNodeBase
+	{
+
+		
+								public SaveMasterCreditCredenLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Save MasterCredit creden");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Save MasterCredit credentials in your profile").accessibilityId("Save MasterCredit credentials in your profile").className("Label").mobileCenterIndex(9).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class DoneButton extends ButtonNodeBase
+	{
+
+		
+								public DoneButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Done");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Done").accessibilityId("Done").className("Button").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
