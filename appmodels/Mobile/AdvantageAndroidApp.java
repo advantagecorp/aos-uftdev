@@ -120,6 +120,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private Windows10Label Windows10Label;
 	private CARTLabel CARTLabel;
 	private CloseDialog CloseDialog;
+	private LinearLayoutLogin LinearLayoutLogin;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -213,6 +214,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		Windows10Label = new Windows10Label(this, applicationModel);
 		CARTLabel = new CARTLabel(this, applicationModel);
 		CloseDialog = new CloseDialog(this, applicationModel);
+		LinearLayoutLogin = new LinearLayoutLogin(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -317,6 +319,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public Windows10Label Windows10Label() { return Windows10Label; }
 		public CARTLabel CARTLabel() { return CARTLabel; }
 		public CloseDialog CloseDialog() { return CloseDialog; }
+		public LinearLayoutLogin LinearLayoutLogin() { return LinearLayoutLogin; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -2623,6 +2626,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").resourceId("imageViewCloseDialog").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class LinearLayoutLogin extends UiObjectNodeBase
+	{
+
+		
+								public LinearLayoutLogin(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("linearLayoutLogin");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").resourceId("linearLayoutLogin").mobileCenterIndex(31).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

@@ -361,7 +361,7 @@
                         </properties>
                     </identification>
                     <tags>
-                        <tag>SignUP</tag>
+                        <tag>SignUp</tag>
                     </tags>
                 </object>
                 <object type="Label" technology="Mobile">
@@ -448,8 +448,10 @@
                     <codeName>CHECKOUTButton</codeName>
                     <identification>
                         <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">CHECKOUT (PAY 224.95)</property>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="Text" type="string" isRegExp="false"></property>
                         </properties>
                     </identification>
                 </object>
@@ -575,7 +577,6 @@
                     <codeName>CVVNUMBEREditField</codeName>
                     <identification>
                         <properties>
-                            <property name="Hint" type="string" isRegExp="false">*CVV NUMBER</property>
                             <property name="ClassName" type="string" isRegExp="false">Input</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
@@ -589,7 +590,6 @@
                     <codeName>CARDHOLDERNAMEEditField</codeName>
                     <identification>
                         <properties>
-                            <property name="Hint" type="string" isRegExp="false">*CARDHOLDER NAME</property>
                             <property name="ClassName" type="string" isRegExp="false">Input</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
                         </properties>
@@ -624,6 +624,114 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
                     </identification>
+                </object>
+                <object type="DropDown" technology="Mobile">
+                    <name>MobileDropDown</name>
+                    <codeName>CountryDropDown</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ItemSelector</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Country</name>
+                    <codeName>CountryLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Country</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Country</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>Plus</name>
+                    <codeName>PlusButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Plus</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>leptop Item</name>
+                    <codeName>LeptopItem</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="Container" type="string" isRegExp="false">CollectionView[0][0][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="DropDown" technology="Mobile">
+                    <name>YearDropDown</name>
+                    <codeName>YearDropDown</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ItemSelector</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="DropDown" technology="Mobile">
+                    <name>MonthDropDown</name>
+                    <codeName>MonthDropDown</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false"></property>
+                            <property name="ClassName" type="string" isRegExp="false">ItemSelector</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>* mm</name>
+                    <codeName>MmLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">* mm</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">* mm</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">5</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>* yyyy</name>
+                    <codeName>YyyyLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">* yyyy</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">* yyyy</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MasterCredit</tag>
+                    </tags>
                 </object>
             </children>
         </object>

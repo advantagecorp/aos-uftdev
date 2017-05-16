@@ -158,7 +158,12 @@ public class IOSTests extends UnitTestClassBase {
     }
 
     @Test
-    public void PurchseWithMasterCreditTest() throws GeneralLeanFtException {
+    public void PurchseWithMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
+
+        if (!SignIn(true))
+            SignIn(false);
+
+        Buy(appModel.AdvantageShoppingApplication().LAPTOPSLabel() , appModel.AdvantageShoppingApplication().LeptopItem(), "MasterCredit");
 
         //SignIn();
 
@@ -174,13 +179,16 @@ public class IOSTests extends UnitTestClassBase {
     
     //////////////////////////////////////////////        end of tests   ///////////////////////////////////////////////
     
-    public boolean SignIn(boolean quoit) throws GeneralLeanFtException, InterruptedException {
+    public boolean SignIn(boolean quiet) throws GeneralLeanFtException, InterruptedException {
+
+        /*app.restart();
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());*/
     	appModel.AdvantageShoppingApplication().MenuButton().tap();
     	String loginTxt = appModel.AdvantageShoppingApplication().LoginLabel().getText();
 
     	if (loginTxt.equals("LOG IN"))
         {
-              if(!quoit){
+              if(!quiet){
                   appModel.AdvantageShoppingApplication().LoginObj().tap();
                   appModel.AdvantageShoppingApplication().UserNameLoginditField().setText(UNAME);
                   appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText(PASS);
@@ -201,6 +209,7 @@ public class IOSTests extends UnitTestClassBase {
               return false;
 
         }
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
         return  true;
 
 
@@ -294,8 +303,10 @@ public class IOSTests extends UnitTestClassBase {
 
         /*appModel.AdvantageShoppingApplication().StreetSignUpEditField().setText("Altalef 5");
         appModel.AdvantageShoppingApplication().CitySignUpEditField().setText("Yahud");
-        appModel.AdvantageShoppingApplication().ZIPSignUpEditField().setText("454545");*/
+        appModel.AdvantageShoppingApplication().ZIPSignUpEditField().setText("454545");
 
+        appModel.AdvantageShoppingApplication().CountryLabel().tap();
+        appModel.AdvantageShoppingApplication().CountryDropDown().select("Andora");*/
         appModel.AdvantageShoppingApplication().UseMyLocationLabel().tap();
         Thread.sleep(2000);
 
@@ -365,6 +376,15 @@ public class IOSTests extends UnitTestClassBase {
         //appModel.AdvantageShoppingApplication().MasterCredit().tap();
         appModel.AdvantageShoppingApplication().CARDNUMBEREditField().setText(cardnum);
         appModel.AdvantageShoppingApplication().CVVNUMBEREditField().setText(CVV);
+
+        appModel.AdvantageShoppingApplication().MmLabel().tap();
+        appModel.AdvantageShoppingApplication().MonthDropDown().select("07");
+        appModel.AdvantageShoppingApplication().DoneButton().tap();
+
+        appModel.AdvantageShoppingApplication().YyyyLabel().tap();
+        appModel.AdvantageShoppingApplication().YearDropDown().select("2019");
+        appModel.AdvantageShoppingApplication().DoneButton().tap();
+
         appModel.AdvantageShoppingApplication().CARDHOLDERNAMEEditField().setText(holdername);
 
         if(!save)
@@ -373,13 +393,26 @@ public class IOSTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().APPLYButton().tap();
         waitUntilElementExists(appModel.AdvantageShoppingApplication().OrderObj());
 
-        Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().OrderObj().exists(),"Purchase Master Credit" , "verify that user purchased in success using Master Credit"));
+        Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().OrderObj().exists(2),"Purchase Master Credit" , "verify that user purchased in success using Master Credit"));
         appModel.AdvantageShoppingApplication().OkButton().tap();
 
 
 
     }
 
+
+    public void Buy(Label category, UiObject item , String payment ) throws GeneralLeanFtException {
+
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        category.tap();
+        item.tap();
+        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+        CheckOut(payment);
+
+
+
+
+    }
 
     public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
 

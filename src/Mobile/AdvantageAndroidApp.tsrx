@@ -1172,6 +1172,20 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>linearLayoutLogin</name>
+                    <codeName>LinearLayoutLogin</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ResourceId" type="string" isRegExp="false">linearLayoutLogin</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">31</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>login</tag>
+                    </tags>
+                </object>
             </children>
         </object>
     </objects>

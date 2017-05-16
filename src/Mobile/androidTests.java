@@ -88,6 +88,7 @@ public class androidTests extends UnitTestClassBase {
     @Before
     public void setUp() throws Exception {
     	app.restart();
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     }
 
     @After
@@ -648,11 +649,9 @@ public class androidTests extends UnitTestClassBase {
    public boolean SignIn(Boolean quiet ) throws GeneralLeanFtException, InterruptedException{
 
 
-	   app.restart();
-	  
-	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
 	   appModel.AdvantageShoppingApplication().MainMenu().tap();
-	   String innerTxt = appModel.AdvantageShoppingApplication().LoginObj().getVisibleText();
+	   String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
 	   //System.out.println(appModel.AdvantageShoppingApplication().AccountDetails().exists(2))
 	   
 	   if(innerTxt.equals("LOGIN")){
@@ -678,6 +677,8 @@ public class androidTests extends UnitTestClassBase {
 	   }
 	   
 		   System.out.println(UNAME + " allready logged in");
+	       device.back();
+	       waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 		   	return true;
 		
 	   
@@ -871,7 +872,7 @@ public class androidTests extends UnitTestClassBase {
 		//connect between the appModel and the device
 		appModel = new AdvantageAndroidApp(device);
 
-		app.install();
+		//app.install();
 
 	}
    
