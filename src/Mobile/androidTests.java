@@ -662,7 +662,7 @@ public class androidTests extends UnitTestClassBase {
 	    	appModel.AdvantageShoppingApplication().PassEdit().setText(PASS);
 	    	appModel.AdvantageShoppingApplication().LOGINButton().tap();
 
-	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(2))
+	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists())
 			{
 				System.out.println(UNAME + "  Login Success");
 				Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
