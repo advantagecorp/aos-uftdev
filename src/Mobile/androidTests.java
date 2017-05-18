@@ -209,6 +209,60 @@ public class androidTests extends UnitTestClassBase {
     	InitSetUP();
 	}
 
+	@Test
+	public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
+
+		SignOut();
+		SignIn(false);
+		app.launch();
+		Verify.isTrue(SignIn(true),"Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
+
+
+	}
+
+	@Test
+	public void CreateExsitingUserTest() throws GeneralLeanFtException, InterruptedException{
+
+		CreateNewUser(true);
+
+	}
+
+	@Test
+	public void SignOutTest() throws GeneralLeanFtException, InterruptedException{
+		//Perform logout and make sure you are not logged in: in the menu, the option is to login .
+
+		//In Method "SignIn() we make all the validation in the user are logged in- here we use this "
+
+
+		if(!SignIn(true))
+			SignIn(false);
+
+		SignOut();
+
+		Verify.isFalse(SignIn(true),"Verification - Sign Out","Verify that the user sign out correctly");
+	}
+
+	@Test
+	public void NegativeLogin() throws GeneralLeanFtException, InterruptedException {
+
+    	/*
+    	 Try to login with incorrect credentials
+ 		Verify that correct message appears
+    	*/
+
+		if(SignIn(true))
+			SignOut();
+
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().Login().tap();
+		appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
+		appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
+		appModel.AdvantageShoppingApplication().LOGINButton().tap();
+		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
+
+
+	}
+
 
     @Test
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
@@ -271,41 +325,6 @@ public class androidTests extends UnitTestClassBase {
     
 
 
-    public void changepassword(String newpass) throws GeneralLeanFtException, InterruptedException {
-
-		SignIn(false);
-		appModel.AdvantageShoppingApplication().MainMenu().tap();
-		appModel.AdvantageShoppingApplication().AccountDetails().tap();
-		Thread.sleep(2000);
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().ChangePasswordObject());
-
-		//change to another password
-		appModel.AdvantageShoppingApplication().ChangePasswordLabel().tap();
-		appModel.AdvantageShoppingApplication().OldPassEditField().setText(PASS);
-		appModel.AdvantageShoppingApplication().NewPassEditField().setText(newpass);
-		appModel.AdvantageShoppingApplication().ConfirmNewPassEditField().setText(newpass);
-		device.swipe(SwipeDirection.UP);
-		device.swipe(SwipeDirection.UP);
-		appModel.AdvantageShoppingApplication().UPDATEAccountButton().tap();
-
-		PASS = newpass;
-		SignOut();
-
-
-
-	}
-    
-    @Test
-    public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
-    	
-    	SignOut();
-    	SignIn(false);
-    	app.launch();
-        Verify.isTrue(SignIn(true),"Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
-    	 
-    	
-    }
- 	   
 
   
     @Test
@@ -398,12 +417,7 @@ public class androidTests extends UnitTestClassBase {
     	
     }
 
-	@Test
-	public void CreateExsitingUserTest() throws GeneralLeanFtException, InterruptedException{
 
-    	CreateNewUser(true);
-
-	}
 
     @Test
     public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException{
@@ -418,8 +432,6 @@ public class androidTests extends UnitTestClassBase {
 ���� 		Change color
 ��� 		Click Add to Cart
 ���� 		Open cart menu
-� 			Verify price correctness
-� 			Click Checkout, verify shipping cost is not free(?)
 � 			Click 'Edit shipping details'
 � 			Change shipping �postal code�
 �		    Un-Check �Save changes in profile for future use�(?)
@@ -489,20 +501,7 @@ public class androidTests extends UnitTestClassBase {
     
     
     
-    @Test
-    public void SignOutTest() throws GeneralLeanFtException, InterruptedException{
-    	//Perform logout and make sure you are not logged in: in the menu, the option is to login .
-    	
-    	//In Method "SignIn() we make all the validation in the user are logged in- here we use this "
-    	
-    	
-    	if(!SignIn(true))
-    		SignIn(false);
-    	
-    	SignOut();
-    	
-    	Verify.isFalse(SignIn(true),"Verification - Sign Out","Verify that the user sign out correctly");
-    }
+
     
     
     @Test
@@ -538,26 +537,7 @@ public class androidTests extends UnitTestClassBase {
     	
     }
 
-	@Test
-	public void NegativeLogin() throws GeneralLeanFtException, InterruptedException {
 
-    	/*
-    	 Try to login with incorrect credentials
- 		Verify that correct message appears
-    	*/
-
-		if(SignIn(true))
-			SignOut();
-
-		appModel.AdvantageShoppingApplication().MainMenu().tap();
-		appModel.AdvantageShoppingApplication().Login().tap();
-		appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
-		appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
-		appModel.AdvantageShoppingApplication().LOGINButton().tap();
-		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
-
-
-	}
 
 	@Test
 	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
@@ -637,19 +617,37 @@ public class androidTests extends UnitTestClassBase {
 	  appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
 
-
-
-
-
-  	
     	
     }
+	public void changepassword(String newpass) throws GeneralLeanFtException, InterruptedException {
+
+		SignIn(false);
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().AccountDetails().tap();
+		Thread.sleep(2000);
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().ChangePasswordObject());
+
+		//change to another password
+		appModel.AdvantageShoppingApplication().ChangePasswordLabel().tap();
+		appModel.AdvantageShoppingApplication().OldPassEditField().setText(PASS);
+		appModel.AdvantageShoppingApplication().NewPassEditField().setText(newpass);
+		appModel.AdvantageShoppingApplication().ConfirmNewPassEditField().setText(newpass);
+		device.swipe(SwipeDirection.UP);
+		device.swipe(SwipeDirection.UP);
+		appModel.AdvantageShoppingApplication().UPDATEAccountButton().tap();
+
+		PASS = newpass;
+		SignOut();
+
+
+
+	}
     
     
    public boolean SignIn(Boolean quiet ) throws GeneralLeanFtException, InterruptedException{
 
 
-
+	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   appModel.AdvantageShoppingApplication().MainMenu().tap();
 	   String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
 	   //System.out.println(appModel.AdvantageShoppingApplication().AccountDetails().exists(2))
@@ -726,10 +724,15 @@ public class androidTests extends UnitTestClassBase {
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
 
-	   appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   Thread.sleep(2000);
-	   //pay with safepay and don't save details
+	   while(appModel.AdvantageShoppingApplication().CHECKOUT().exists()) // when ta[ing on "CheckOut" the server is very slow and after the taping we need to wait and check ir the request has sanded
+
+	   {
+	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
+	   	Thread.sleep(3000);
+	   }
+
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+	   //pay with safepay and don't save details
 	   SafePay(false);
 	   
 	   appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
