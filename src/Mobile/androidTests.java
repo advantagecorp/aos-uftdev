@@ -724,7 +724,8 @@ public class androidTests extends UnitTestClassBase {
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
 
-	   while(appModel.AdvantageShoppingApplication().CHECKOUT().exists()) // when ta[ing on "CheckOut" the server is very slow and after the taping we need to wait and check ir the request has sanded
+	   while(appModel.AdvantageShoppingApplication().CHECKOUT().exists())
+	   // when taping on "CheckOut" the server is very slow and after the taping we need to wait and check ir the request has sanded
 
 	   {
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();

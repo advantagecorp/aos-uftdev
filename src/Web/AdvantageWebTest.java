@@ -31,7 +31,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	public static String appURL2 ="52.32.172.3:8080"; //"52.88.236.171:8080";"http://16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
+	public static String appURL2 ="52.88.236.171";//52.32.172.3:8080"; //"16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
 	
 	public BrowserType browserType = BrowserType.CHROME;
 	
@@ -1299,8 +1299,31 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     	
     }
-    
-    @Test
+	@Test
+	public void NegativeLoginTest() throws GeneralLeanFtException, InterruptedException{
+
+    	//Try to login with non valid credentials and verify the message "invalid user name or password"
+
+		waitUntilElementExists(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
+		appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+		waitUntilElementExists(appModel.AdvantageShoppingPage().SIGNINButton());
+		// Fill in the user name and password
+		appModel.AdvantageShoppingPage().UsernameLoginEditField().setValue("bla bla");
+		appModel.AdvantageShoppingPage().PasswordLoginEditField().setValue("bla pss");
+		// Check the Remember Me checkbox
+		appModel.AdvantageShoppingPage().RememberMeCheckBox().set(true);
+		// Click on sign in button
+		appModel.AdvantageShoppingPage().SIGNINButton().click();
+
+		Thread.sleep(2000);
+		boolean invalid = appModel.AdvantageShoppingPage().InvalidUserMessageWebElement().exists();
+
+
+		Verification(Verify.isTrue(invalid,"Verification - Negative Sign In"  ,"Verify that the we can't login with non valid credentials" ));
+
+	}
+
+		@Test
     public void LogOutTest() throws GeneralLeanFtException, InterruptedException{   
     	
     	//perform logout and make sure you are not logged in 
