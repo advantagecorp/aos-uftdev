@@ -222,24 +222,34 @@ public class androidTests extends UnitTestClassBase {
 	@Test
 	public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
 
+        Print("-------------------START AddNewUserAndCheckInitials -------------------------");
+
     	InitSetUP();
+
+        Print("\n-------------------END AddNewUserAndCheckInitials -------------------------");
 	}
 
 	@Test
 	public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
+
+        Print("-------------------START SilentLoginTest -------------------------");
 
 		SignOut();
 		SignIn(false);
 		app.launch();
 		Verify.isTrue(SignIn(true),"Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
 
-
+        Print("\n-------------------END SilentLoginTest -------------------------");
 	}
 
 	@Test
 	public void CreateExsitingUserTest() throws GeneralLeanFtException, InterruptedException{
 
+        Print("-------------------START CreateExsitingUserTest -------------------------");
+
 		CreateNewUser(true);
+
+        Print("\n-------------------END CreateExsitingUserTest -------------------------");
 
 	}
 
@@ -249,13 +259,16 @@ public class androidTests extends UnitTestClassBase {
 
 		//In Method "SignIn() we make all the validation in the user are logged in- here we use this "
 
-
+        Print("-------------------START SignOutTest -------------------------");
 		if(!SignIn(true))
 			SignIn(false);
 
 		SignOut();
 
 		Verify.isFalse(SignIn(true),"Verification - Sign Out","Verify that the user sign out correctly");
+
+
+        Print("\n-------------------END SignOutTest -------------------------");
 	}
 
 	@Test
@@ -265,7 +278,7 @@ public class androidTests extends UnitTestClassBase {
     	 Try to login with incorrect credentials
  		Verify that correct message appears
     	*/
-
+        Print("-------------------START NegativeLogin -------------------------");
 		if(SignIn(true))
 			SignOut();
 
@@ -276,7 +289,7 @@ public class androidTests extends UnitTestClassBase {
 		appModel.AdvantageShoppingApplication().LOGINButton().tap();
 		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(),"Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
 
-
+        Print("\n-------------------END NegativeLogin -------------------------");
 	}
 
 
@@ -303,7 +316,7 @@ public class androidTests extends UnitTestClassBase {
     	 * 
     	 * 
     	 */
-
+        Print("-------------------START UpdateCartTest -------------------------");
 		SignIn(false);
 
 			//buy a leptop item
@@ -336,8 +349,9 @@ public class androidTests extends UnitTestClassBase {
 			CheckOut();
 
 
-	    
-    	
+        Print("\n-------------------END UpdateCartTest -------------------------");
+
+
     }
   
     
@@ -364,9 +378,10 @@ public class androidTests extends UnitTestClassBase {
 �			Verify receipt
 � 			Validate safePay details didn�t changed (via my account)
     	 */
-    	
-    	
-    	SignIn(false);
+        Print("-------------------START PurchaseHugeQuantityTest -------------------------");
+
+
+        SignIn(false);
     	
     	EmptyCart();
     	
@@ -403,15 +418,19 @@ public class androidTests extends UnitTestClassBase {
 		appModel.AdvantageShoppingApplication().CartAccess().tap();
     	
     	CheckOut(); // use safepay
-    	
-    	
-    	
+
+        Print("\n-------------------END PurchaseHugeQuantityTest -------------------------");
+
+
     }
     
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException{
-    	
-    	waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+        Print("-------------------START OutOfStockTest -------------------------");
+
+
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().HEADPHONESLabel().tap();
@@ -431,8 +450,9 @@ public class androidTests extends UnitTestClassBase {
     	//verify that we can't change quantity or add to cart
     	Verify.isFalse(appModel.AdvantageShoppingApplication().ProductQuantity().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change quantity.");
     	Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isEnabled(),"Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
-    	
-    	
+
+        Print("\n-------------------END OutOfStockTest -------------------------");
+
     }
 
 
@@ -463,10 +483,11 @@ public class androidTests extends UnitTestClassBase {
 �			 Validate MasterCredit details didn�t changed (via my account)
 */
 
-    	 
-    	
-    	//todo: run and check
-    	SignIn(false);
+
+
+        Print("-------------------START PayMasterCreditTest -------------------------");
+
+        SignIn(false);
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
@@ -496,6 +517,7 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().CloseDialog().tap();
 
 
+        Print("\n-------------------END PayMasterCreditTest -------------------------");
 
 
 
@@ -528,9 +550,10 @@ public class androidTests extends UnitTestClassBase {
     	//The button text always starts with Pay to allow for adding regular expressions in object identification.
     	
     	//In  web the button calls "CHECKOUT ({{RegEx}})"
-    	
-    	
-    	String pattern = "CHECKOUT(.*)(\\d+).(\\d+)[')']";
+        Print("-------------------START PayButtonRegExTest -------------------------");
+
+
+        String pattern = "CHECKOUT(.*)(\\d+).(\\d+)[')']";
 
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
@@ -549,10 +572,11 @@ public class androidTests extends UnitTestClassBase {
 		boolean match  = m.find();
 	    System.out.println("PayButtonRegExTest- "+innerTxt + " :: " + match);
 
-		Verify.isTrue(match,"Verification - Verify CHECKOUT RegEx","Verify that the text in CHECKOUT button start with 'CHECKOUT ({{RegEx}})' .");		
-        
-        
-    	
+		Verify.isTrue(match,"Verification - Verify CHECKOUT RegEx","Verify that the text in CHECKOUT button start with 'CHECKOUT ({{RegEx}})' .");
+
+        Print("\n-------------------END PayButtonRegExTest -------------------------");
+
+
     }
 
 
@@ -572,6 +596,7 @@ public class androidTests extends UnitTestClassBase {
     	 *
     	 */
 
+        Print("-------------------START ChangePasswordTest -------------------------");
 
 		String Oldpass =  PASS;
 
@@ -587,6 +612,7 @@ public class androidTests extends UnitTestClassBase {
 		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
 
 
+        Print("\n-------------------END ChangePasswordTest -------------------------");
 
 
 	}
@@ -899,6 +925,8 @@ public class androidTests extends UnitTestClassBase {
 
 
 	}
+
+    public void Print(String msg){System.out.println(msg);}
    
 
 }

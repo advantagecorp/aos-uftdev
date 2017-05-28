@@ -277,9 +277,7 @@ public class IOSTests extends UnitTestClassBase {
     }
 
 
-    public void Print(String msg){
-    	System.out.println(msg);
-    }
+    public void Print(String msg){System.out.println(msg);}
 
     public  static  void InitBeforeclass() throws GeneralLeanFtException {
 
