@@ -112,15 +112,9 @@ public class androidTests extends UnitTestClassBase {
 	}
 
     public  void setting() throws GeneralLeanFtException, InterruptedException {
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
-		appModel.AdvantageShoppingApplication().MainMenu().tap();
-		appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
-
-		String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
-
-		if(!server.equals(appURL)){ // check if the setting already set up
-
+		if(appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
+			appModel.AdvantageShoppingApplication().OKButton().tap();
 			appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
 
 			appModel.AdvantageShoppingApplication().ConnectButton().tap();
@@ -129,7 +123,29 @@ public class androidTests extends UnitTestClassBase {
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
 
 			appModel.AdvantageShoppingApplication().OKButton().tap();
+		}
 
+
+      else {
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+			appModel.AdvantageShoppingApplication().MainMenu().tap();
+			appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
+
+			String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+
+			if (!server.equals(appURL)) { // check if the setting already set up
+
+				appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
+
+				appModel.AdvantageShoppingApplication().ConnectButton().tap();
+				Thread.sleep(2000);
+
+				waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
+
+				appModel.AdvantageShoppingApplication().OKButton().tap();
+
+			}
 		}
 
 
@@ -859,9 +875,6 @@ public class androidTests extends UnitTestClassBase {
 		appModel = new AdvantageAndroidApp(device);
 
 		app.install();
-		if(appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(3))
-			appModel.AdvantageShoppingApplication().OKButton().tap();
-
 
 
 	}
@@ -882,6 +895,8 @@ public class androidTests extends UnitTestClassBase {
 		appModel = new AdvantageAndroidApp(device);
 
 		//app.install();
+
+
 
 	}
    
