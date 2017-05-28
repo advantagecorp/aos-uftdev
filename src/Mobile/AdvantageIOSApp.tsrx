@@ -733,6 +733,28 @@
                         <tag>MasterCredit</tag>
                     </tags>
                 </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>SoldOut</name>
+                    <codeName>SoldOutUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="Container" type="string" isRegExp="false">CollectionView[0][1][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>quantity button</name>
+                    <codeName>QuantityButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

@@ -86,6 +86,8 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private MonthDropDown MonthDropDown;
 	private MmLabel MmLabel;
 	private YyyyLabel YyyyLabel;
+	private SoldOutUiObject SoldOutUiObject;
+	private QuantityButton QuantityButton;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -145,6 +147,8 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		MonthDropDown = new MonthDropDown(this, applicationModel);
 		MmLabel = new MmLabel(this, applicationModel);
 		YyyyLabel = new YyyyLabel(this, applicationModel);
+		SoldOutUiObject = new SoldOutUiObject(this, applicationModel);
+		QuantityButton = new QuantityButton(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -215,6 +219,8 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public MonthDropDown MonthDropDown() { return MonthDropDown; }
 		public MmLabel MmLabel() { return MmLabel; }
 		public YyyyLabel YyyyLabel() { return YyyyLabel; }
+		public SoldOutUiObject SoldOutUiObject() { return SoldOutUiObject; }
+		public QuantityButton QuantityButton() { return QuantityButton; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -1637,6 +1643,58 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("* yyyy").accessibilityId("* yyyy").className("Label").mobileCenterIndex(6).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SoldOutUiObject extends UiObjectNodeBase
+	{
+
+		
+								public SoldOutUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SoldOut");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").container("CollectionView[0][1][0]").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class QuantityButton extends ButtonNodeBase
+	{
+
+		
+								public QuantityButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("quantity button");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").container("").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

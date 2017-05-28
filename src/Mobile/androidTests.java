@@ -44,7 +44,7 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser";
 	String         PASS = "Password1";
 	
-    static String appURL2 ="52.32.172.3:8080";//"52.88.236.171:8080"; //"35.162.69.22:8080";//
+    static String appURL2 = "52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
 	static String appURL = System.getProperty("url", "defaultvalue");
 
 	
@@ -289,35 +289,37 @@ public class androidTests extends UnitTestClassBase {
     	 */
 
 		SignIn(false);
-    	
-    	//buy a leptop item
-    	BuyLeptop();
-    	//goes to cart and edit details
-    	
-    	 waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
-    	appModel.AdvantageShoppingApplication().CartAccess().tap();
-    	appModel.AdvantageShoppingApplication().FirstCartItem().tap();
-    	
-    	//change color and amount
-    	 waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
-    	
-    	appModel.AdvantageShoppingApplication().ProductColor().tap();
-    	appModel.AdvantageShoppingApplication().colorObject().tap();
-    	 
-    	appModel.AdvantageShoppingApplication().ProductQuantity().tap();
-    	appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("3");
-    	appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-    	
-    	
-    	 waitUntilElementExists( appModel.AdvantageShoppingApplication().ProductDetail());
-    	appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
-		waitUntilElementExists( appModel.AdvantageShoppingApplication().MainMenu());
-    	
-    	device.back();
-    	
-    	waitUntilElementExists( appModel.AdvantageShoppingApplication().CartAccess());
-		appModel.AdvantageShoppingApplication().CartAccess().tap();
-    	CheckOut();
+
+			//buy a leptop item
+			BuyLeptop();
+			//goes to cart and edit details
+
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
+			appModel.AdvantageShoppingApplication().CartAccess().tap();
+			appModel.AdvantageShoppingApplication().FirstCartItem().tap();
+
+			//change color and amount
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+
+			appModel.AdvantageShoppingApplication().ProductColor().tap();
+			appModel.AdvantageShoppingApplication().colorObject().tap();
+
+			appModel.AdvantageShoppingApplication().ProductQuantity().tap();
+			appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("3");
+			appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+
+
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail());
+			appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+
+			device.back();
+
+			waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
+			appModel.AdvantageShoppingApplication().CartAccess().tap();
+			CheckOut();
+
+
 	    
     	
     }
@@ -707,6 +709,7 @@ public class androidTests extends UnitTestClassBase {
 	   appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
 	   appModel.AdvantageShoppingApplication().LaptopitemWin10().tap();
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+	   Thread.sleep(3000);
 	   appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap(); 
 	   
 	   
@@ -724,13 +727,13 @@ public class androidTests extends UnitTestClassBase {
    public void CheckOut() throws GeneralLeanFtException, InterruptedException{
 	   
 
-	   while(appModel.AdvantageShoppingApplication().CHECKOUT().exists())
+	   //while(appModel.AdvantageShoppingApplication().CHECKOUT().exists())
 	   // when taping on "CheckOut" the server is very slow and after the taping we need to wait and check ir the request has sanded
 
-	   {
+	   //{
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   	Thread.sleep(3000);
-	   }
+	   	Thread.sleep(30000);
+	   //}
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   //pay with safepay and don't save details

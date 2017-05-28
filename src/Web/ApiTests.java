@@ -237,7 +237,25 @@ public class ApiTests extends UnitTestClassBase {
     @Test
     public void NegativeUpdateAccountByAPiTest() throws GeneralLeanFtException {
 
-        //Try to update user with non valid parameter
+        //Try to update user with non valid parameter ZIP code (more then 10 characters)
+        Map<String, Object> inParams = new HashMap<String, Object>();
+        inParams.put("URL",appURL+WSDL);
+        inParams.put("name", "API_c");
+        inParams.put("last", "API_c");
+        inParams.put("email", "api@apiupdate.com");
+        inParams.put("city", "");
+        inParams.put("phone", "");
+        inParams.put("ZIP", "1234567894545"); // not valid
+        inParams.put("address", "Altalef 5");
+
+
+        APITestResult res     =  UpdateAccount(UserID, inParams);
+        System.out.println("parameters: " + res.getOutParams());
+        String         msg     =  res.getOutParams().get("message");
+        boolean        status  =  res.getStatus();
+        System.out.println("Status: " +status);
+        if(!Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
+        throw new GeneralLeanFtException("Verification FAILED");
 
     }
     @Test

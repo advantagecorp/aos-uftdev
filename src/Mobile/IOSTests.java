@@ -75,7 +75,18 @@ public class IOSTests extends UnitTestClassBase {
     ///////////////////////////////////////                Start of tests  ////////////////////////////////////////////////
 
     @Test
-    public void InvalidLoginTest() throws GeneralLeanFtException {
+    public void InvalidLoginTest() throws GeneralLeanFtException, InterruptedException {
+
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        appModel.AdvantageShoppingApplication().LoginObj().tap();
+        appModel.AdvantageShoppingApplication().UserNameLoginditField().setText(UNAME);
+        appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText(PASS);
+
+        appModel.AdvantageShoppingApplication().LOGINButton().tap();
+        Thread.sleep(2000);
+       boolean invalid =  appModel.AdvantageShoppingApplication().InvalidUserNameOrPasLabel().exists(3);
+       Verification(Verify.isTrue(invalid,"Invalid Sign in (Test)" , "verify that user can't sign in with invalid user"));
 
         //SignIn();
 
@@ -87,7 +98,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
         if(!SignIn(false)){
-            CreateNewUser();
+            CreateNewUser(false);
 
         }
 
@@ -95,32 +106,43 @@ public class IOSTests extends UnitTestClassBase {
     }
 
     @Test
-    public void CreateExistingUserTest() throws GeneralLeanFtException {
+    public void CreateExistingUserTest() throws GeneralLeanFtException, InterruptedException {
 
-        //SignIn();
+        if(!SignIn(false)){
+            CreateNewUser(true);
+
+        }
 
 
     }
 
     @Test
-    public void SilentLoginTest() throws GeneralLeanFtException {
+    public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
     	
-    	//SignIn();
+    	if(SignIn(false)){
+    	    SignOut();
+        }
+        SignIn(false);
+    	Verification(Verify.isTrue(SignIn(true),"Silent login" , "verify that user sign in success"));
+
     	
     	
     }
     @Test
     public void LogOutTest() throws GeneralLeanFtException, InterruptedException {
 
-        if(SignIn(true))
-            SignOut();
-
+        if(!SignIn(true))
+            SignIn(false);
+        SignOut();
+        Verification(Verify.isTrue(!SignIn(true),"Sign out test" , "verify that user sign out success"));
         //SignIn();
 
 
     }
     @Test
     public void UpdateCartTest() throws GeneralLeanFtException {
+
+        //todo: fix wheel bug
 
         //SignIn();
 
@@ -129,7 +151,17 @@ public class IOSTests extends UnitTestClassBase {
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException {
 
-        //SignIn();
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        appModel.AdvantageShoppingApplication().HEADPHONESLabel().tap();
+        appModel.AdvantageShoppingApplication().SoldOutUiObject().tap();
+
+
+       //all the verification are not working because the attribute "isEnabled" are not include in this version of the app.
+        //Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
+
+        //verify that we can't change quantity or add to cart
+        Verify.isFalse(appModel.AdvantageShoppingApplication().QuantityButton().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change quantity.");
+        Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isEnabled(),"Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
 
 
     }
@@ -152,7 +184,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
 
-        //SignIn();
+
 
 
     }
@@ -165,6 +197,8 @@ public class IOSTests extends UnitTestClassBase {
 
         Buy(appModel.AdvantageShoppingApplication().LAPTOPSLabel() , appModel.AdvantageShoppingApplication().LeptopItem(), "MasterCredit");
 
+        //todo: implement test - fix wheel bug
+
         //SignIn();
 
 
@@ -173,6 +207,7 @@ public class IOSTests extends UnitTestClassBase {
     public void ChangePasswordTest() throws GeneralLeanFtException {
 
         //SignIn();
+        //todo: implement test
 
 
     }
@@ -289,17 +324,18 @@ public class IOSTests extends UnitTestClassBase {
 
     }
 
-    public void CreateNewUser() throws GeneralLeanFtException, InterruptedException {
+    public void CreateNewUser(boolean isTest) throws GeneralLeanFtException, InterruptedException {
 
         //appModel.AdvantageShoppingApplication().LoginObj().tap();
-        appModel.AdvantageShoppingApplication().SignUpButton().tap();
-        appModel.AdvantageShoppingApplication().UserNameSignUpEditField().setText(UNAME);
-        appModel.AdvantageShoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
-        appModel.AdvantageShoppingApplication().PasswordSignUpEditField().setText(PASS);
-        appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(PASS);
+        if(!isTest) {
+            appModel.AdvantageShoppingApplication().SignUpButton().tap();
+            appModel.AdvantageShoppingApplication().UserNameSignUpEditField().setText(UNAME);
+            appModel.AdvantageShoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
+            appModel.AdvantageShoppingApplication().PasswordSignUpEditField().setText(PASS);
+            appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(PASS);
 
-        device.swipe(SwipeDirection.UP);
-        device.swipe(SwipeDirection.UP);
+            device.swipe(SwipeDirection.UP);
+            device.swipe(SwipeDirection.UP);
 
         /*appModel.AdvantageShoppingApplication().StreetSignUpEditField().setText("Altalef 5");
         appModel.AdvantageShoppingApplication().CitySignUpEditField().setText("Yahud");
@@ -307,13 +343,33 @@ public class IOSTests extends UnitTestClassBase {
 
         appModel.AdvantageShoppingApplication().CountryLabel().tap();
         appModel.AdvantageShoppingApplication().CountryDropDown().select("Andora");*/
-        appModel.AdvantageShoppingApplication().UseMyLocationLabel().tap();
-        Thread.sleep(2000);
+            appModel.AdvantageShoppingApplication().UseMyLocationLabel().tap();
+            Thread.sleep(2000);
 
-        appModel.AdvantageShoppingApplication().REGISTERButton().tap();
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
+            appModel.AdvantageShoppingApplication().REGISTERButton().tap();
+            waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
 
-        Verification(Verify.isTrue(SignIn(true),"Create New User" , "verify that user was created in success"));
+            Verification(Verify.isTrue(SignIn(true), "Create New User", "verify that user was created in success"));
+        }
+        else{
+
+            appModel.AdvantageShoppingApplication().SignUpButton().tap();
+            appModel.AdvantageShoppingApplication().UserNameSignUpEditField().setText(UNAME);
+            appModel.AdvantageShoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
+            appModel.AdvantageShoppingApplication().PasswordSignUpEditField().setText(PASS);
+            appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(PASS);
+
+            device.swipe(SwipeDirection.UP);
+            device.swipe(SwipeDirection.UP);
+            appModel.AdvantageShoppingApplication().UseMyLocationLabel().tap();
+            Thread.sleep(2000);
+
+            appModel.AdvantageShoppingApplication().REGISTERButton().tap();
+            waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
+
+            Verification(Verify.isFalse(SignIn(true), "Create New User negative test", "verify that existing user was NOT created "));
+
+        }
 
 
 
