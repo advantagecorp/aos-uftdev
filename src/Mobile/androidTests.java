@@ -859,6 +859,8 @@ public class androidTests extends UnitTestClassBase {
 		appModel = new AdvantageAndroidApp(device);
 
 		app.install();
+		if(appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(3))
+			appModel.AdvantageShoppingApplication().OKButton().tap();
 
 
 

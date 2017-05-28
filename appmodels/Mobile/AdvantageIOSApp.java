@@ -88,6 +88,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private YyyyLabel YyyyLabel;
 	private SoldOutUiObject SoldOutUiObject;
 	private QuantityButton QuantityButton;
+	private UserNameAlreadyExistsLabel UserNameAlreadyExistsLabel;
+	private OKExistingUserButton OKExistingUserButton;
+	private CHANGEPASSWORDButton CHANGEPASSWORDButton;
+	private OLDPASSWORDEditField OLDPASSWORDEditField;
+	private NEWPASSWORDEditField NEWPASSWORDEditField;
+	private CONFIRMNEWPASSWORDEditField CONFIRMNEWPASSWORDEditField;
+	private UPDATEUserSettingButton UPDATEUserSettingButton;
+	private PasswordObjUiObject PasswordObjUiObject;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -149,6 +157,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		YyyyLabel = new YyyyLabel(this, applicationModel);
 		SoldOutUiObject = new SoldOutUiObject(this, applicationModel);
 		QuantityButton = new QuantityButton(this, applicationModel);
+		UserNameAlreadyExistsLabel = new UserNameAlreadyExistsLabel(this, applicationModel);
+		OKExistingUserButton = new OKExistingUserButton(this, applicationModel);
+		CHANGEPASSWORDButton = new CHANGEPASSWORDButton(this, applicationModel);
+		OLDPASSWORDEditField = new OLDPASSWORDEditField(this, applicationModel);
+		NEWPASSWORDEditField = new NEWPASSWORDEditField(this, applicationModel);
+		CONFIRMNEWPASSWORDEditField = new CONFIRMNEWPASSWORDEditField(this, applicationModel);
+		UPDATEUserSettingButton = new UPDATEUserSettingButton(this, applicationModel);
+		PasswordObjUiObject = new PasswordObjUiObject(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -221,6 +237,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public YyyyLabel YyyyLabel() { return YyyyLabel; }
 		public SoldOutUiObject SoldOutUiObject() { return SoldOutUiObject; }
 		public QuantityButton QuantityButton() { return QuantityButton; }
+		public UserNameAlreadyExistsLabel UserNameAlreadyExistsLabel() { return UserNameAlreadyExistsLabel; }
+		public OKExistingUserButton OKExistingUserButton() { return OKExistingUserButton; }
+		public CHANGEPASSWORDButton CHANGEPASSWORDButton() { return CHANGEPASSWORDButton; }
+		public OLDPASSWORDEditField OLDPASSWORDEditField() { return OLDPASSWORDEditField; }
+		public NEWPASSWORDEditField NEWPASSWORDEditField() { return NEWPASSWORDEditField; }
+		public CONFIRMNEWPASSWORDEditField CONFIRMNEWPASSWORDEditField() { return CONFIRMNEWPASSWORDEditField; }
+		public UPDATEUserSettingButton UPDATEUserSettingButton() { return UPDATEUserSettingButton; }
+		public PasswordObjUiObject PasswordObjUiObject() { return PasswordObjUiObject; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -1695,6 +1719,214 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").container("").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UserNameAlreadyExistsLabel extends LabelNodeBase
+	{
+
+		
+								public UserNameAlreadyExistsLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("User name already exists");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("User name already exists").accessibilityId("User name already exists").className("Label").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class OKExistingUserButton extends ButtonNodeBase
+	{
+
+		
+								public OKExistingUserButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("OK");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("OK").accessibilityId("OK").className("Button").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CHANGEPASSWORDButton extends ButtonNodeBase
+	{
+
+		
+								public CHANGEPASSWORDButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CHANGE PASSWORD");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("CHANGE PASSWORD").accessibilityId("CHANGE PASSWORD").className("Button").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class OLDPASSWORDEditField extends EditFieldNodeBase
+	{
+
+		
+								public OLDPASSWORDEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("* OLD PASSWORD");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("* OLD PASSWORD").className("Input").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class NEWPASSWORDEditField extends EditFieldNodeBase
+	{
+
+		
+								public NEWPASSWORDEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("* NEW PASSWORD");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class CONFIRMNEWPASSWORDEditField extends EditFieldNodeBase
+	{
+
+		
+								public CONFIRMNEWPASSWORDEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("* CONFIRM NEW PASSWORD");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().hint("* CONFIRM NEW PASSWORD").className("Input").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UPDATEUserSettingButton extends ButtonNodeBase
+	{
+
+		
+								public UPDATEUserSettingButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("UPDATE userSetting");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("UPDATE").accessibilityId("UPDATE").className("Button").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PasswordObjUiObject extends UiObjectNodeBase
+	{
+
+		
+								public PasswordObjUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("PasswordObj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(12).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

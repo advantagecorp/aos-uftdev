@@ -2,19 +2,19 @@ package Mobile;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import com.hp.lft.sdk.*;
 import com.hp.lft.sdk.mobile.*;
 
 import com.hp.lft.verifications.*;
 
+import org.junit.runners.MethodSorters;
 import unittesting.*;
 
+
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class IOSTests extends UnitTestClassBase {
 	
 	protected static AdvantageIOSApp appModel;
@@ -24,7 +24,7 @@ public class IOSTests extends UnitTestClassBase {
 	
 	static String UNAME = "IosUser";
 	        String PASS = "Password1";
-    static String appURL2 ="52.32.172.3:8080";//"52.88.236.171:8080"; //"35.162.69.22:8080";//
+    static String appURL2 = "52.88.236.171:80"; //"52.32.172.3:8080";//""35.162.69.22:8080";//
     static String appURL = System.getProperty("url", "defaultvalue");
 	
 	
@@ -74,44 +74,52 @@ public class IOSTests extends UnitTestClassBase {
 
     ///////////////////////////////////////                Start of tests  ////////////////////////////////////////////////
 
+
+
+
+    @Test
+    public void AddNewUserTest() throws GeneralLeanFtException, InterruptedException {
+
+        if(!SignIn(false))
+            CreateNewUser(false);
+
+
+    }
+
     @Test
     public void InvalidLoginTest() throws GeneralLeanFtException, InterruptedException {
 
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
         appModel.AdvantageShoppingApplication().MenuButton().tap();
         appModel.AdvantageShoppingApplication().LoginObj().tap();
-        appModel.AdvantageShoppingApplication().UserNameLoginditField().setText(UNAME);
-        appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText(PASS);
+        appModel.AdvantageShoppingApplication().UserNameLoginditField().setText("user");
+        appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText("pass");
 
         appModel.AdvantageShoppingApplication().LOGINButton().tap();
         Thread.sleep(2000);
        boolean invalid =  appModel.AdvantageShoppingApplication().InvalidUserNameOrPasLabel().exists(3);
        Verification(Verify.isTrue(invalid,"Invalid Sign in (Test)" , "verify that user can't sign in with invalid user"));
 
-        //SignIn();
+
+
+
 
 
     }
-    @Test
-    public void AddNewUserTest() throws GeneralLeanFtException, InterruptedException {
 
-
-
-        if(!SignIn(false)){
-            CreateNewUser(false);
-
-        }
-
-
-    }
 
     @Test
     public void CreateExistingUserTest() throws GeneralLeanFtException, InterruptedException {
 
-        if(!SignIn(false)){
-            CreateNewUser(true);
+        if(SignIn(true))
+            SignOut();
 
-        }
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        appModel.AdvantageShoppingApplication().LoginLabel().tap();
+
+        CreateNewUser(true);
+
+
 
 
     }
@@ -133,8 +141,7 @@ public class IOSTests extends UnitTestClassBase {
 
         if(!SignIn(true))
             SignIn(false);
-        SignOut();
-        Verification(Verify.isTrue(!SignIn(true),"Sign out test" , "verify that user sign out success"));
+        SignOut();//verification inside
         //SignIn();
 
 
@@ -165,7 +172,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
     }
-    @Test
+    /*@Test
     public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
 
         SignIn(false);
@@ -187,9 +194,9 @@ public class IOSTests extends UnitTestClassBase {
 
 
 
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void PurchseWithMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
 
         if (!SignIn(true))
@@ -202,15 +209,30 @@ public class IOSTests extends UnitTestClassBase {
         //SignIn();
 
 
-    }
-    @Test
-    public void ChangePasswordTest() throws GeneralLeanFtException {
+    }*/
+    /*@Test
+    public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
         //SignIn();
-        //todo: implement test
+        //todo: implement test - change Password doesn't work yet
+
+        if(!SignIn(true))
+            SignIn(false);
+
+        String oldPass = PASS;
+
+        boolean pass = ChangePassword(PASS,"NewPass8");
+        Verification(Verify.isTrue(pass,"Change Password - step 1" , "verify that Password changed  successfully"));
+
+        pass = ChangePassword("NewPass1" , oldPass);
+        Verification(Verify.isTrue(pass,"Change Password - step 2" , "verify that Password changed back successfully"));
 
 
-    }
+
+
+
+
+    }*/
     
     //////////////////////////////////////////////        end of tests   ///////////////////////////////////////////////
     
@@ -241,6 +263,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
               }
+             appModel.AdvantageShoppingApplication().MenuButton().tap();
               return false;
 
         }
@@ -310,17 +333,20 @@ public class IOSTests extends UnitTestClassBase {
         appModel = new AdvantageIOSApp(device);
 
     }
+
+
     public void SignOut() throws GeneralLeanFtException, InterruptedException {
         if(SignIn(true)){
+            appModel.AdvantageShoppingApplication().MenuButton().tap();
 
             appModel.AdvantageShoppingApplication().LoginLabel().tap();
             appModel.AdvantageShoppingApplication().YesSignOutButton().tap();
             Verification(Verify.isTrue(!SignIn(true),"Sign Out " , "verify that user sign out from app"));
-
-
-
+            //appModel.AdvantageShoppingApplication().MenuButton().tap();
 
         }
+        else
+            Print("no user login");
 
     }
 
@@ -367,8 +393,10 @@ public class IOSTests extends UnitTestClassBase {
             appModel.AdvantageShoppingApplication().REGISTERButton().tap();
             waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
 
-            Verification(Verify.isFalse(SignIn(true), "Create New User negative test", "verify that existing user was NOT created "));
+            boolean existUser = appModel.AdvantageShoppingApplication().UserNameAlreadyExistsLabel().exists(3);
 
+            Verification(Verify.isTrue(existUser, "Create New User negative test", "verify that existing user was NOT created "));
+            appModel.AdvantageShoppingApplication().OKExistingUserButton().tap();
         }
 
 
@@ -470,6 +498,47 @@ public class IOSTests extends UnitTestClassBase {
 
     }
 
+
+    public boolean ChangePassword(String oldPass, String newPass) throws GeneralLeanFtException, InterruptedException {
+
+        PASS = newPass;
+
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        appModel.AdvantageShoppingApplication().UserSettingsButton().tap();
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().PasswordObjUiObject());
+
+        appModel.AdvantageShoppingApplication().CHANGEPASSWORDButton().tap();
+
+        appModel.AdvantageShoppingApplication().OLDPASSWORDEditField().setText(oldPass);
+        appModel.AdvantageShoppingApplication().NEWPASSWORDEditField().setText(newPass);
+        appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(newPass);
+
+        device.swipe(SwipeDirection.UP);
+        device.swipe(SwipeDirection.UP);
+
+
+        appModel.AdvantageShoppingApplication().UPDATEUserSettingButton().tap();
+
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
+
+        SignOut();
+
+        return SignIn(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
 
         if(!VerifyMethod)
@@ -489,6 +558,7 @@ public class IOSTests extends UnitTestClassBase {
             }
         });
     }
+
 
 
 }

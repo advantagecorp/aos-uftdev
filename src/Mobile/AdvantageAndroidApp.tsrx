@@ -1186,6 +1186,18 @@
                         <tag>login</tag>
                     </tags>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>Server not reachable</name>
+                    <codeName>ServerNotReachableLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Server not reachable</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">alertTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

@@ -755,6 +755,113 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>User name already exists</name>
+                    <codeName>UserNameAlreadyExistsLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">User name already exists</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">User name already exists</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK</name>
+                    <codeName>OKExistingUserButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">OK</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>CHANGE PASSWORD</name>
+                    <codeName>CHANGEPASSWORDButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">CHANGE PASSWORD</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">CHANGE PASSWORD</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>* OLD PASSWORD</name>
+                    <codeName>OLDPASSWORDEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Hint" type="string" isRegExp="false">* OLD PASSWORD</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>* NEW PASSWORD</name>
+                    <codeName>NEWPASSWORDEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>* CONFIRM NEW PASSWORD</name>
+                    <codeName>CONFIRMNEWPASSWORDEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Hint" type="string" isRegExp="false">* CONFIRM NEW PASSWORD</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>UPDATE userSetting</name>
+                    <codeName>UPDATEUserSettingButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">UPDATE</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">UPDATE</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>PasswordObj</name>
+                    <codeName>PasswordObjUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">12</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
             </children>
         </object>
     </objects>
