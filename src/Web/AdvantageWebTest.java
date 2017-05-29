@@ -403,7 +403,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().CreateAccountFirstNameEditField().setValue("John");
     	appModel.AdvantageShoppingPage().CreateAccountLastNameEditField().setValue("HPE");
     	appModel.AdvantageShoppingPage().CreateAccountPhoneNumberEditField().setValue("+97235399999");
-    	//appModel.AdvantageShoppingPage().CreateAccountCountrySelectListBox().select("Israel"); // todo: does not replay
     	appModel.AdvantageShoppingPage().CreateAccountCityEditField().setValue("Yehud");
     	appModel.AdvantageShoppingPage().CreateAccountAddressEditField().setValue("Shabazi 19");
     	appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField().setValue("56100");
@@ -1338,16 +1337,16 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     }
     
-    
-    /*
-     *todo: the test runs until he needs to set value in the chat support edit field
-     * the app model can't recognize the field although the spy find one single match.
-     * */
+
     
     
    /* @Test
     public void ChatSupportTest() throws GeneralLeanFtException, InterruptedException, ReportException {
-    	
+
+
+     *todo: the test runs until he needs to set value in the chat support edit field
+     * the app model can't recognize the field although the spy find one single match.
+     *
     	
     	// check if the Chat option for support are work fine and send a respond to user msg.
     	
@@ -1403,7 +1402,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 			play with this - select something, go back and try to change it - try to break this feature
     	 */
 
-		//TODO: check if the buttons have the attribute 'isEnabled'
+
 
 		//try to send request with just txt in the email field
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");

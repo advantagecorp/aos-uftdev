@@ -512,8 +512,9 @@ public class androidTests extends UnitTestClassBase {
 		checkOutMasterCredit("123456789123","456",UNAME,false,true);
 
 		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+		Thread.sleep(3000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
-		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
+		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
         appModel.AdvantageShoppingApplication().CloseDialog().tap();
 
 
@@ -617,12 +618,6 @@ public class androidTests extends UnitTestClassBase {
 
 	}
 
-	/*@Test
-	public void test() throws GeneralLeanFtException, InterruptedException {
-
-    	InitBeforeclass();
-
-	}*/
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
@@ -631,7 +626,7 @@ public class androidTests extends UnitTestClassBase {
     	
     	appModel.AdvantageShoppingApplication().CartAccess().tap();
   	    appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-  	    Thread.sleep(2000);
+  	    Thread.sleep(30000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
   	    //waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 

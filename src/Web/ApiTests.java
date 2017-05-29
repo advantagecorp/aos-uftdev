@@ -22,10 +22,10 @@ public class ApiTests extends UnitTestClassBase {
 
     public static String appURL ="http://52.88.236.171:8081";//"52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";
     public static String WSDL   = "/accountservice/accountservice.wsdl";
-    private        String UserID = "916234070";//341749916
-    private        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cuYWR2YW50YWdlb25saW5lc2hvcHBpbmcuY29tIiwidXNlcklkIjo5MTYyMzQwNzAsInN1YiI6IkxlYW5GdEFQSXVzZXIiLCJyb2xlIjoiVVNFUiJ9.4l2ZZh0v-6FH3-ykS2R6kb6LMeFzmGPqesD5o2wM2Mk";
+    private        String UserID = "629850484";
+    private        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cuYWR2YW50YWdlb25saW5lc2hvcHBpbmcuY29tIiwidXNlcklkIjo2Mjk4NTA0ODQsInN1YiI6IkxlYW5GdEFQSXVzZXIiLCJyb2xlIjoiVVNFUiJ9.1gCsbEe7kswnzX7UGp_DOI48w8dRNSBnAniQ2KlQeO0";
     String Login = "LeanFtAPIuser";
-    String Pass  = "APIpass1";
+    String Pass  = "Password1";
 
     public Browser browser ;
 
@@ -165,7 +165,7 @@ public class ApiTests extends UnitTestClassBase {
 
         APITestResult res     =  CreateNewAccount(inParams);
         String         msg     =  res.getOutParams().get("message");
-        boolean        status  =  res.getStatus();
+        boolean        status  =  res.getStatus();//todo : throw error even staus is false
         System.out.println("Status: " +status);
         if(!Verify.isFalse(status,"Create Account by API no email" + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
             throw new GeneralLeanFtException("Verification FAILED");
@@ -173,7 +173,7 @@ public class ApiTests extends UnitTestClassBase {
     }
     @Test
     public void NegativeCreateAccountByAPiTest_password() throws GeneralLeanFtException {
-        //try to create account with unproper username (less then 5 letters)
+        //try to create account with unproper password (non upper case and number)
 
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
@@ -189,7 +189,7 @@ public class ApiTests extends UnitTestClassBase {
 
         APITestResult res     =  CreateNewAccount(inParams);
         String         msg     =  res.getOutParams().get("message");
-        boolean        status  =  res.getStatus();
+        boolean        status  =  res.getStatus();//todo : throw error even status is false
         System.out.println("Status: " +status);
         if(!Verify.isFalse(status,"Create Account by API non valid password" +msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
         throw new GeneralLeanFtException("Verification FAILED");
@@ -199,8 +199,11 @@ public class ApiTests extends UnitTestClassBase {
     @Test
     public void UpdateAccountByAPiTest() throws GeneralLeanFtException {
 
+
+
         // needed the UserId/accountId from database
         // email is mandatory
+        //todo: throw error even the test passed and do the update
 
 
         /* list of argument that you must pass (even empty):
@@ -252,33 +255,17 @@ public class ApiTests extends UnitTestClassBase {
         APITestResult res     =  UpdateAccount(UserID, inParams);
         System.out.println("parameters: " + res.getOutParams());
         String         msg     =  res.getOutParams().get("message");
-        boolean        status  =  res.getStatus();
+        boolean        status  =  res.getStatus();//todo : throw error even status is false
         System.out.println("Status: " +status);
         if(!Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
         throw new GeneralLeanFtException("Verification FAILED");
 
     }
-    @Test
-    public void DeleteAccountByAPiTest() throws GeneralLeanFtException {
 
-        Map<String, Object> inParams = new HashMap<String, Object>();
-        inParams.put("UserID", Integer.parseInt(UserID));
-        inParams.put("token", "");
-        inParams.put("URL", appURL+WSDL);
-
-        APITestResult result = APITestRunner.run("C:\\UFT tests\\DeleteAccountByApi",inParams);
-
-        String         msg     =  result.getOutParams().get("message");
-        boolean        status  =  result.getStatus();
-        System.out.println("Status: " +status);
-        if(!Verify.isTrue(status,"Delete Account by API" + msg,"validate that the account was delete the user -  " + inParams.get("loginName")));
-        throw new GeneralLeanFtException("Verification FAILED");
-
-    }
 
     @Test
     public void ChangePasswordByAPiTest() throws GeneralLeanFtException {
-
+        //todo: throw error even the test passed and do the change
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("UserID", Integer.parseInt(UserID));
         inParams.put("URL", appURL+WSDL);
@@ -297,7 +284,23 @@ public class ApiTests extends UnitTestClassBase {
     }
 
 
-    ///////////////////////////////////////////////////// End of tests ///////////////////////////////////////////////////////
+    @Test
+    public void DeleteAccountByAPiTest() throws GeneralLeanFtException {
+        //todo: throw error even the test passed and delete the user
+        Map<String, Object> inParams = new HashMap<String, Object>();
+        inParams.put("UserID", Integer.parseInt(UserID));
+        inParams.put("token", "");
+        inParams.put("URL", appURL+WSDL);
+
+        APITestResult result = APITestRunner.run("C:\\UFT tests\\DeleteAccountByApi",inParams);
+
+        String         msg     =  result.getOutParams().get("message");
+        boolean        status  =  result.getStatus();
+        System.out.println("Status: " +status);
+        if(!Verify.isTrue(status,"Delete Account by API" + msg,"validate that the account was delete the user -  " + inParams.get("loginName")));
+        throw new GeneralLeanFtException("Verification FAILED");
+
+    }    ///////////////////////////////////////////////////// End of tests ///////////////////////////////////////////////////////
 
 
     public boolean signIn(String USERNAME , String PASSWORD) throws GeneralLeanFtException, InterruptedException
