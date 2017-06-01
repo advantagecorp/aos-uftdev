@@ -401,6 +401,7 @@ public class androidTests extends UnitTestClassBase {
     	
     	 waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
     	appModel.AdvantageShoppingApplication().tabletItem().tap();
+    	waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
     	appModel.AdvantageShoppingApplication().ProductColor().tap();
     	appModel.AdvantageShoppingApplication().colorObject().tap();
     	
@@ -605,10 +606,12 @@ public class androidTests extends UnitTestClassBase {
 			SignOut();
 
 		//step 1 - change to new pass
+		Print("------------------- ChangePasswordTest step 1 -------------------------");
 		changepassword("Password23");
 		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 1 - change to new pass", "Verify that the user login with the new password"));
 
 		//step 2 -  change back to the default pass
+		Print("------------------- ChangePasswordTest step 2 -------------------------");
 		changepassword(Oldpass);
 		Verification(Verify.isTrue(SignIn(false),"Verification - Change Password step 2 -  change back to the default pass", "Verify that the user login with the new password"));
 
@@ -626,7 +629,7 @@ public class androidTests extends UnitTestClassBase {
     	
     	appModel.AdvantageShoppingApplication().CartAccess().tap();
   	    appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-  	    Thread.sleep(30000);
+  	    Thread.sleep(15000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
   	    //waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 
@@ -769,7 +772,7 @@ public class androidTests extends UnitTestClassBase {
 
 	   //{
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   	Thread.sleep(30000);
+	   	Thread.sleep(15000);
 	   //}
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
