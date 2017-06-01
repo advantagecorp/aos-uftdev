@@ -446,11 +446,11 @@ public class androidTests extends UnitTestClassBase {
     	
     	
     	// all the verification are not working because the attribute "isEnabled" are not include in this version of the app.  
-    	Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
+    	//Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
    
     	//verify that we can't change quantity or add to cart
-    	Verify.isFalse(appModel.AdvantageShoppingApplication().ProductQuantity().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change quantity.");
-    	Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isEnabled(),"Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
+    	Verify.isFalse(appModel.AdvantageShoppingApplication().ProductQuantity().isClickable(),"Verification - Out Of Stock", "Verify that we can't change quantity.");
+    	Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable(),"Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
 
         Print("\n-------------------END OutOfStockTest -------------------------");
 
