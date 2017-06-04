@@ -629,7 +629,7 @@ public class androidTests extends UnitTestClassBase {
     	
     	appModel.AdvantageShoppingApplication().CartAccess().tap();
   	    appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-  	    Thread.sleep(15000);
+  	    Thread.sleep(2000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
   	    //waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 
@@ -772,7 +772,7 @@ public class androidTests extends UnitTestClassBase {
 
 	   //{
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   	Thread.sleep(15000);
+	   	Thread.sleep(2000);
 	   //}
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());

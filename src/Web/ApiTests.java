@@ -91,8 +91,7 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();
 
-        if(!Verify.isTrue(status,"Create Account by API " + msg,"validate that the account was create successfully the user -  " + inParams.get("loginName")))
-            throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isTrue(status,"Create Account by API " + msg,"validate that the account was create successfully the user -  " + inParams.get("loginName")));
         //signIn(Login, Pass);
 
 
@@ -116,9 +115,9 @@ public class ApiTests extends UnitTestClassBase {
         APITestResult res     =  CreateNewAccount(inParams);
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();
+        System.out.println("Status: " +status);
 
-        if(!Verify.isFalse(status,"Create Existing Account by API " + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")))
-            throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isFalse(status,"Create Existing Account by API " + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
         //signIn(Login, Pass);
 
     }
@@ -143,8 +142,7 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();
         System.out.println("Status: " +status);
-        if(!Verify.isFalse(status,"Create Account by API non valid username" + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
-            throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isFalse(status,"Create Account by API non valid username" + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
 
     }
     @Test
@@ -167,8 +165,8 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();//todo : throw error even staus is false
         System.out.println("Status: " +status);
-        if(!Verify.isFalse(status,"Create Account by API no email" + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
-            throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isFalse(status,"Create Account by API no email "+ msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
+
 
     }
     @Test
@@ -191,8 +189,7 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();//todo : throw error even status is false
         System.out.println("Status: " +status);
-        if(!Verify.isFalse(status,"Create Account by API non valid password" +msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
-        throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isFalse(status,"Create Account by API non valid password" +msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
 
     }
 
@@ -232,8 +229,8 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();
         System.out.println("Status: " +status);
-        if(!Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
-        throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
+
 
 
     }
@@ -257,8 +254,7 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();//todo : throw error even status is false
         System.out.println("Status: " +status);
-        if(!Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
-        throw new GeneralLeanFtException("Verification FAILED");
+      Verification(Verify.isTrue(status,"Update Account by API non valid ZIP code" + msg,"validate that the account NOT updated the userId -  " + UserID));
 
     }
 
@@ -278,8 +274,8 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  result.getOutParams().get("message");
         boolean        status  =  result.getStatus();
         System.out.println("Status: " +status);
-        if(!Verify.isTrue(status,"Change Password by API" + msg,"validate that the Password changed in success"));
-        throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isTrue(status,"Change Password by API" + msg,"validate that the Password changed in success"));
+
 
     }
 
@@ -297,8 +293,8 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  result.getOutParams().get("message");
         boolean        status  =  result.getStatus();
         System.out.println("Status: " +status);
-        if(!Verify.isTrue(status,"Delete Account by API" + msg,"validate that the account was delete the user -  " + inParams.get("loginName")));
-        throw new GeneralLeanFtException("Verification FAILED");
+        Verification(Verify.isTrue(status,"Delete Account by API" + msg,"validate that the account was delete the user -  " + inParams.get("loginName")));
+
 
     }    ///////////////////////////////////////////////////// End of tests ///////////////////////////////////////////////////////
 
@@ -367,5 +363,10 @@ public class ApiTests extends UnitTestClassBase {
 
     }
 
+    public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
+
+        if(!VerifyMethod)
+            throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+    }
 
 }
