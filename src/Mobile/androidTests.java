@@ -497,6 +497,7 @@ public class androidTests extends UnitTestClassBase {
 
     	//apply filter- Win 10
 		appModel.AdvantageShoppingApplication().BYOPERATINGSYSTEMLabel().tap();
+		Thread.sleep(2000);
 		appModel.AdvantageShoppingApplication().Windows10Label().tap();
 
 		appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
@@ -583,7 +584,7 @@ public class androidTests extends UnitTestClassBase {
 
 
 
-	@Test
+	/*@Test
 	public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
     	/*
@@ -596,7 +597,7 @@ public class androidTests extends UnitTestClassBase {
 		Logout and login again with the new password
     	 *
     	 *
-    	 */
+    	 *
 
         Print("-------------------START ChangePasswordTest -------------------------");
 
@@ -619,7 +620,7 @@ public class androidTests extends UnitTestClassBase {
         Print("\n-------------------END ChangePasswordTest -------------------------");
 
 
-	}
+	}*/
 
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
