@@ -218,6 +218,242 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Button" technology="WPF">
+                    <name>ADD USER</name>
+                    <codeName>ADDUSERButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">ADD USER</property>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>User Name_UserManage</name>
+                    <codeName>UserNameUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                        <index>1</index>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>Email_UserManage</name>
+                    <codeName>EmailUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                        <index>2</index>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>Confirm password_UserManage</name>
+                    <codeName>ConfirmPasswordUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">PasswordConfirm_Box</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>First Name_UserManage</name>
+                    <codeName>FirstNameUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                        <index>3</index>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>Last Name_UserManage</name>
+                    <codeName>LastNameUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                        <index>4</index>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="WPF">
+                    <name>OK_UserManage</name>
+                    <codeName>OKUserManageButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="ObjectName" type="string" isRegExp="false">btnCreateNewUserOk</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>Password_UserManage</name>
+                    <codeName>PasswordUserManageEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">Password_Box</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="WPF">
+                    <name>ContentControl</name>
+                    <codeName>UsersControlUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">ContentControl</property>
+                            <property name="FullNamePath" type="string" isRegExp="false">ContentControl;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">object</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>UserManage</tag>
+                    </tags>
+                </object>
+                <object type="Table" technology="WPF">
+                    <name>UsersTypesGrid</name>
+                    <codeName>UsersTypesGridTable</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">UsersTypesGrid</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>Search</name>
+                    <codeName>SearchEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="CanFocus" type="boolean" isRegExp="false">true</property>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>WEIGHT</name>
+                    <codeName>WEIGHTEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                        </properties>
+                        <index>3</index>
+                    </identification>
+                </object>
+            </children>
+        </object>
+        <object type="Window" technology="WPF">
+            <name>Reset password for "Dot.NetUser"</name>
+            <codeName>ResetPasswordForDotNetUserWindow</codeName>
+            <identification>
+                <properties>
+                    <property name="ObjectName" type="string" isRegExp="false">resPassWin</property>
+                    <property name="FullType" type="string" isRegExp="false">window</property>
+                    <property name="WindowTitleRegExp" type="string" isRegExp="false"></property>
+                </properties>
+            </identification>
+            <children>
+                <object type="EditField" technology="WPF">
+                    <name>newPass</name>
+                    <codeName>NewPassEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">pasBox</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>rePass</name>
+                    <codeName>RePassEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false">pasRetBox</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="WPF">
+                    <name>OK_Password</name>
+                    <codeName>OKPasswordButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="ObjectName" type="string" isRegExp="false">btnResetPasswordOk</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Password</tag>
+                    </tags>
+                </object>
+            </children>
+        </object>
+        <object type="Window" technology="WPF">
+            <name>Delete User Confirmation</name>
+            <codeName>DeleteUserConfirmationWindow</codeName>
+            <identification>
+                <properties>
+                    <property name="ObjectName" type="string" isRegExp="false">deleteUserWindow</property>
+                    <property name="FullType" type="string" isRegExp="false">window</property>
+                    <property name="WindowTitleRegExp" type="string" isRegExp="false">Delete User Confirmation</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="WPF">
+                    <name>OK_delete</name>
+                    <codeName>OKDeleteButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

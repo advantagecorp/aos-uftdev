@@ -346,7 +346,7 @@ public class androidTests extends UnitTestClassBase {
 
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
 			appModel.AdvantageShoppingApplication().CartAccess().tap();
-			CheckOut();
+			CheckOut("Sefepay");
 
 
         Print("\n-------------------END UpdateCartTest -------------------------");
@@ -418,7 +418,7 @@ public class androidTests extends UnitTestClassBase {
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
 		appModel.AdvantageShoppingApplication().CartAccess().tap();
     	
-    	CheckOut(); // use safepay
+    	CheckOut("Sefepay"); // use safepay
 
         Print("\n-------------------END PurchaseHugeQuantityTest -------------------------");
 
@@ -509,15 +509,11 @@ public class androidTests extends UnitTestClassBase {
 		appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
 
         //check out and pay with master credit the card number nedded to 12 digits
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
+		appModel.AdvantageShoppingApplication().CartAccess().tap();
 
-		checkOutMasterCredit("123456789123","456",UNAME,false,true);
+        CheckOut("MasterCredit");
 
-		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
-		Thread.sleep(3000);
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
-		Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success MasterCredit"," verift that the payment success and we recive the order detail window" );
-        appModel.AdvantageShoppingApplication().CloseDialog().tap();
 
 
         Print("\n-------------------END PayMasterCreditTest -------------------------");
@@ -626,42 +622,7 @@ public class androidTests extends UnitTestClassBase {
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
 
-    public void checkOutMasterCredit(String cardnum ,String CVV,String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException, InterruptedException {
-    	
-    	appModel.AdvantageShoppingApplication().CartAccess().tap();
-  	    appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-  	    Thread.sleep(2000);
-		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-  	    //waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 
-  	    if(changeShipping){
-			appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
-			appModel.AdvantageShoppingApplication().ZIPshippingDetaildEditField().setText("12345");
-			appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();
-			appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-		}
-
-  	   appModel.AdvantageShoppingApplication().PaymentDetails().tap();
-  	   appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
-  	  
-     //set the details
-
-		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
-		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
-  	  appModel.AdvantageShoppingApplication().CVVMasterCreditEditField().setText(CVV);
-  	  appModel.AdvantageShoppingApplication().CardHolderMasterCreditEditField().setText(HolderName);
-
-  	  if(!savedetails){ // by default it save the details
-
-		  appModel.AdvantageShoppingApplication().SaveMasterCreditCredenCheckBox().tap();
-
-	  }
-
-	  appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-
-
-    	
-    }
 	public void changepassword(String newpass) throws GeneralLeanFtException, InterruptedException {
 
 		SignIn(false);
@@ -765,24 +726,23 @@ public class androidTests extends UnitTestClassBase {
 
 	}
    
-   public void CheckOut() throws GeneralLeanFtException, InterruptedException{
-	   
+   public void CheckOut(String payment) throws GeneralLeanFtException, InterruptedException{
 
-	   //while(appModel.AdvantageShoppingApplication().CHECKOUT().exists())
-	   // when taping on "CheckOut" the server is very slow and after the taping we need to wait and check ir the request has sanded
 
-	   //{
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   	Thread.sleep(2000);
-	   //}
+	   	Thread.sleep(10000);
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   //pay with safepay and don't save details
-	   SafePay(false);
+	   if (payment.equals("Sefepay"))
+		   SafePay(false);
+	   else
+		   MasterCredit("123456789123","456",UNAME,false,true);
+
 	   
 	   appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
-	   Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(),"Verify- purchase success"," verift that the payment success and we recive the order detail window" );
+	   Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success with " + payment," verify that the payment success and we receive the order detail window" ));
 	   appModel.AdvantageShoppingApplication().CloseDialog().tap();
    }    
    
@@ -806,6 +766,41 @@ public class androidTests extends UnitTestClassBase {
 	  appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 	   
    }
+
+
+	public void MasterCredit(String cardnum ,String CVV,String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException, InterruptedException {
+
+
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
+
+		if(changeShipping){
+			appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
+			appModel.AdvantageShoppingApplication().ZIPshippingDetaildEditField().setText("12345");
+			appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();
+			appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+		}
+
+		appModel.AdvantageShoppingApplication().PaymentDetails().tap();
+		appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
+
+		//set the details
+
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
+		appModel.AdvantageShoppingApplication().CardNumderMasterCreditEditField().setText(cardnum);
+		appModel.AdvantageShoppingApplication().CVVMasterCreditEditField().setText(CVV);
+		appModel.AdvantageShoppingApplication().CardHolderMasterCreditEditField().setText(HolderName);
+
+		if(!savedetails){ // by default it save the details
+
+			appModel.AdvantageShoppingApplication().SaveMasterCreditCredenCheckBox().tap();
+
+		}
+
+		appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+
+
+
+	}
    
  
   

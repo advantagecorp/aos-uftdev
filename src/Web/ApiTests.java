@@ -36,8 +36,12 @@ public class ApiTests extends UnitTestClassBase {
 
     AdvantageStagingAppModel appModel;
 
-    public ApiTests()  {
+    public ApiTests() throws GeneralLeanFtException {
         //Change this constructor to private if you supply your own public constructor
+
+        browser = BrowserFactory.launch(BrowserType.CHROME);
+
+        appModel = new AdvantageStagingAppModel(browser);
 
     }
 
@@ -56,9 +60,7 @@ public class ApiTests extends UnitTestClassBase {
     public void setUp() throws Exception {
 
 
-        //browser = BrowserFactory.launch(BrowserType.CHROME);
 
-        //appModel = new AdvantageStagingAppModel(browser);
     }
 
     @After
@@ -299,11 +301,11 @@ public class ApiTests extends UnitTestClassBase {
     }    ///////////////////////////////////////////////////// End of tests ///////////////////////////////////////////////////////
 
 
-    public boolean signIn(String USERNAME , String PASSWORD) throws GeneralLeanFtException, InterruptedException
+    public boolean signIn(String USERNAME , String PASSWORD,String url) throws GeneralLeanFtException, InterruptedException
     {
 
 
-            browser.navigate(appURL);
+            browser.navigate(url);
             // Click the sign-in icon
             appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
             //waitUntilElementExists(appModel.AdvantageShoppingPage().SIGNINButton());
