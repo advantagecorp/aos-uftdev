@@ -62,7 +62,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private SpeakerImgUiObject SpeakerImgUiObject;
 	private ColorButton ColorButton;
 	private ADDTOCARTButton ADDTOCARTButton;
-	private ColorObj ColorObj;
 	private CarticonButton CarticonButton;
 	private CHECKOUTButton CHECKOUTButton;
 	private PaymentEditUiObject PaymentEditUiObject;
@@ -77,7 +76,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private CVVNUMBEREditField CVVNUMBEREditField;
 	private CARDHOLDERNAMEEditField CARDHOLDERNAMEEditField;
 	private SaveMasterCreditCredenLabel SaveMasterCreditCredenLabel;
-	private DoneButton DoneButton;
 	private CountryDropDown CountryDropDown;
 	private CountryLabel CountryLabel;
 	private PlusButton PlusButton;
@@ -96,6 +94,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private CONFIRMNEWPASSWORDEditField CONFIRMNEWPASSWORDEditField;
 	private UPDATEUserSettingButton UPDATEUserSettingButton;
 	private PasswordObjUiObject PasswordObjUiObject;
+	private Done Done;
+	private TabletItem TabletItem;
+	private FirstCartElement FirstCartElement;
+	private RemoveButton RemoveButton;
+	private ColorObjectUiObject ColorObjectUiObject;
+	private TabletObjUiObject TabletObjUiObject;
+	private UPDATECARTButton UPDATECARTButton;
+	private NoProductsInCartLabel NoProductsInCartLabel;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -131,7 +137,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		SpeakerImgUiObject = new SpeakerImgUiObject(this, applicationModel);
 		ColorButton = new ColorButton(this, applicationModel);
 		ADDTOCARTButton = new ADDTOCARTButton(this, applicationModel);
-		ColorObj = new ColorObj(this, applicationModel);
 		CarticonButton = new CarticonButton(this, applicationModel);
 		CHECKOUTButton = new CHECKOUTButton(this, applicationModel);
 		PaymentEditUiObject = new PaymentEditUiObject(this, applicationModel);
@@ -146,7 +151,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		CVVNUMBEREditField = new CVVNUMBEREditField(this, applicationModel);
 		CARDHOLDERNAMEEditField = new CARDHOLDERNAMEEditField(this, applicationModel);
 		SaveMasterCreditCredenLabel = new SaveMasterCreditCredenLabel(this, applicationModel);
-		DoneButton = new DoneButton(this, applicationModel);
 		CountryDropDown = new CountryDropDown(this, applicationModel);
 		CountryLabel = new CountryLabel(this, applicationModel);
 		PlusButton = new PlusButton(this, applicationModel);
@@ -165,6 +169,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		CONFIRMNEWPASSWORDEditField = new CONFIRMNEWPASSWORDEditField(this, applicationModel);
 		UPDATEUserSettingButton = new UPDATEUserSettingButton(this, applicationModel);
 		PasswordObjUiObject = new PasswordObjUiObject(this, applicationModel);
+		Done = new Done(this, applicationModel);
+		TabletItem = new TabletItem(this, applicationModel);
+		FirstCartElement = new FirstCartElement(this, applicationModel);
+		RemoveButton = new RemoveButton(this, applicationModel);
+		ColorObjectUiObject = new ColorObjectUiObject(this, applicationModel);
+		TabletObjUiObject = new TabletObjUiObject(this, applicationModel);
+		UPDATECARTButton = new UPDATECARTButton(this, applicationModel);
+		NoProductsInCartLabel = new NoProductsInCartLabel(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -211,7 +223,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public SpeakerImgUiObject SpeakerImgUiObject() { return SpeakerImgUiObject; }
 		public ColorButton ColorButton() { return ColorButton; }
 		public ADDTOCARTButton ADDTOCARTButton() { return ADDTOCARTButton; }
-		public ColorObj ColorObj() { return ColorObj; }
 		public CarticonButton CarticonButton() { return CarticonButton; }
 		public CHECKOUTButton CHECKOUTButton() { return CHECKOUTButton; }
 		public PaymentEditUiObject PaymentEditUiObject() { return PaymentEditUiObject; }
@@ -226,7 +237,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public CVVNUMBEREditField CVVNUMBEREditField() { return CVVNUMBEREditField; }
 		public CARDHOLDERNAMEEditField CARDHOLDERNAMEEditField() { return CARDHOLDERNAMEEditField; }
 		public SaveMasterCreditCredenLabel SaveMasterCreditCredenLabel() { return SaveMasterCreditCredenLabel; }
-		public DoneButton DoneButton() { return DoneButton; }
 		public CountryDropDown CountryDropDown() { return CountryDropDown; }
 		public CountryLabel CountryLabel() { return CountryLabel; }
 		public PlusButton PlusButton() { return PlusButton; }
@@ -245,6 +255,14 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public CONFIRMNEWPASSWORDEditField CONFIRMNEWPASSWORDEditField() { return CONFIRMNEWPASSWORDEditField; }
 		public UPDATEUserSettingButton UPDATEUserSettingButton() { return UPDATEUserSettingButton; }
 		public PasswordObjUiObject PasswordObjUiObject() { return PasswordObjUiObject; }
+		public Done Done() { return Done; }
+		public TabletItem TabletItem() { return TabletItem; }
+		public FirstCartElement FirstCartElement() { return FirstCartElement; }
+		public RemoveButton RemoveButton() { return RemoveButton; }
+		public ColorObjectUiObject ColorObjectUiObject() { return ColorObjectUiObject; }
+		public TabletObjUiObject TabletObjUiObject() { return TabletObjUiObject; }
+		public UPDATECARTButton UPDATECARTButton() { return UPDATECARTButton; }
+		public NoProductsInCartLabel NoProductsInCartLabel() { return NoProductsInCartLabel; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -1052,32 +1070,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
-	public class ColorObj extends UiObjectNodeBase
-	{
-
-		
-								public ColorObj(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("colorObj");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").container("CollectionView[0][2][0]").mobileCenterIndex(2).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class CarticonButton extends ButtonNodeBase
 	{
 
@@ -1433,32 +1425,6 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Save MasterCredit credentials in your profile").accessibilityId("Save MasterCredit credentials in your profile").className("Label").mobileCenterIndex(9).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class DoneButton extends ButtonNodeBase
-	{
-
-		
-								public DoneButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Done");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Done").accessibilityId("Done").className("Button").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1927,6 +1893,214 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(12).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class Done extends LabelNodeBase
+	{
+
+		
+								public Done(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Done");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Done").accessibilityId("Done").className("Label").mobileCenterIndex(10).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class TabletItem extends UiObjectNodeBase
+	{
+
+		
+								public TabletItem(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("tablet Item");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().accessibilityId("").className("ImageView").container("CollectionView[0][0][0]").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class FirstCartElement extends UiObjectNodeBase
+	{
+
+		
+								public FirstCartElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("firstCartElement");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").container("Table[0][0][0]").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class RemoveButton extends ButtonNodeBase
+	{
+
+		
+								public RemoveButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Remove");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Remove").accessibilityId("Remove").className("Button").container("Table[0][0][0]").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ColorObjectUiObject extends UiObjectNodeBase
+	{
+
+		
+								public ColorObjectUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("colorObject");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").container("CollectionView[0][1][0]").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class TabletObjUiObject extends UiObjectNodeBase
+	{
+
+		
+								public TabletObjUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("tabletObj");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(3).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class UPDATECARTButton extends ButtonNodeBase
+	{
+
+		
+								public UPDATECARTButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("UPDATE CART");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("UPDATE CART").accessibilityId("UPDATE CART").className("Button").mobileCenterIndex(4).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class NoProductsInCartLabel extends LabelNodeBase
+	{
+
+		
+								public NoProductsInCartLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("- No products in cart -");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("- No products in cart -").accessibilityId("- No products in cart -").className("Label").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

@@ -147,9 +147,41 @@ public class IOSTests extends UnitTestClassBase {
 
     }
     @Test
-    public void UpdateCartTest() throws GeneralLeanFtException {
+    public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
 
-        //todo: fix wheel bug
+        //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
+
+       if(!SignIn(true))
+           SignIn(false);
+
+       EmptyCart();
+
+        appModel.AdvantageShoppingApplication().MenuButton().tap();
+        appModel.AdvantageShoppingApplication().TABLETSLabel().tap();
+        appModel.AdvantageShoppingApplication().TabletItem().tap();
+        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+
+        appModel.AdvantageShoppingApplication().CarticonButton().tap();
+        appModel.AdvantageShoppingApplication().FirstCartElement().tap();
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().TabletObjUiObject());
+
+        appModel.AdvantageShoppingApplication().ColorButton().tap();
+        appModel.AdvantageShoppingApplication().ColorObjectUiObject().tap();
+
+        appModel.AdvantageShoppingApplication().QuantityButton().tap();
+        for (int i = 0; i <3 ; i++) { //increase quantity
+            appModel.AdvantageShoppingApplication().PlusButton().tap();
+        }
+        appModel.AdvantageShoppingApplication().APPLYButton().tap();
+        appModel.AdvantageShoppingApplication().UPDATECARTButton().tap();
+
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartElement());
+        device.back();
+        CheckOut("MasterCredit");
+
+       //Buy(appModel.AdvantageShoppingApplication().TABLETSLabel(), appModel.AdvantageShoppingApplication().TabletItem(),"MasterCredit");
+
+
 
         //SignIn();
 
@@ -183,7 +215,7 @@ public class IOSTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().ColorObj().tap();
 
         //todo: the quntity need to be EditField
-        //todo: the 'Apply' need to be separate
+
 
         appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
 
@@ -196,7 +228,7 @@ public class IOSTests extends UnitTestClassBase {
 
     }*/
 
-   /* @Test
+    @Test
     public void PurchseWithMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
 
         if (!SignIn(true))
@@ -204,12 +236,11 @@ public class IOSTests extends UnitTestClassBase {
 
         Buy(appModel.AdvantageShoppingApplication().LAPTOPSLabel() , appModel.AdvantageShoppingApplication().LeptopItem(), "MasterCredit");
 
-        //todo: implement test - fix wheel bug
 
         //SignIn();
 
 
-    }*/
+    }
     /*@Test
     public void ChangePasswordTest() throws GeneralLeanFtException, InterruptedException {
 
@@ -277,6 +308,19 @@ public class IOSTests extends UnitTestClassBase {
     }
 
 
+    public void EmptyCart() throws GeneralLeanFtException, InterruptedException {
+
+        appModel.AdvantageShoppingApplication().CarticonButton().tap();
+
+        while (!appModel.AdvantageShoppingApplication().NoProductsInCartLabel().exists(2)){
+            appModel.AdvantageShoppingApplication().FirstCartElement().swipe(SwipeDirection.LEFT);
+            appModel.AdvantageShoppingApplication().RemoveButton().tap();
+           //waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());
+        }
+
+    }
+
+
     public void Print(String msg){System.out.println(msg);}
 
     public  static  void InitBeforeclass() throws GeneralLeanFtException {
@@ -329,6 +373,7 @@ public class IOSTests extends UnitTestClassBase {
 
         //connect between the appModel and the device
         appModel = new AdvantageIOSApp(device);
+        app.install();
 
     }
 
@@ -461,11 +506,11 @@ public class IOSTests extends UnitTestClassBase {
 
         appModel.AdvantageShoppingApplication().MmLabel().tap();
         appModel.AdvantageShoppingApplication().MonthDropDown().select("07");
-        appModel.AdvantageShoppingApplication().DoneButton().tap();
+        appModel.AdvantageShoppingApplication().Done().tap();
 
         appModel.AdvantageShoppingApplication().YyyyLabel().tap();
         appModel.AdvantageShoppingApplication().YearDropDown().select("2019");
-        appModel.AdvantageShoppingApplication().DoneButton().tap();
+        appModel.AdvantageShoppingApplication().Done().tap();
 
         appModel.AdvantageShoppingApplication().CARDHOLDERNAMEEditField().setText(holdername);
 
@@ -473,6 +518,7 @@ public class IOSTests extends UnitTestClassBase {
             appModel.AdvantageShoppingApplication().SaveMasterCreditCredenLabel().tap();
 
         appModel.AdvantageShoppingApplication().APPLYButton().tap();
+        appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
         waitUntilElementExists(appModel.AdvantageShoppingApplication().OrderObj());
 
         Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().OrderObj().exists(2),"Purchase Master Credit" , "verify that user purchased in success using Master Credit"));

@@ -1362,5 +1362,38 @@
                 </object>
             </children>
         </object>
+        <object type="Page" technology="Web">
+            <name>Page</name>
+            <codeName>DownloadPage</codeName>
+            <identification/>
+            <children>
+                <object type="WebElement" technology="Web">
+                    <name>downloadAndroidApp</name>
+                    <codeName>DownloadAndroidAppWebElement</codeName>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">U</property>
+                            <property name="InnerText" type="string" isRegExp="false">Android</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>download</tag>
+                    </tags>
+                </object>
+                <object type="WebElement" technology="Web">
+                    <name>downloadIosApp</name>
+                    <codeName>DownloadIosAppWebElement</codeName>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">U</property>
+                            <property name="InnerText" type="string" isRegExp="false">iOS</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>download</tag>
+                    </tags>
+                </object>
+            </children>
+        </object>
     </objects>
 </applicationModel>

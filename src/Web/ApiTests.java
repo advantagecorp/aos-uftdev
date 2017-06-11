@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class ApiTests extends UnitTestClassBase {
 
-    public static String appURL ="http://52.88.236.171:8081";//"52.32.172.3:8080"; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";
+    public static String appURL ="52.32.172.3:8081";//"http://52.88.236.171:8081";//; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";
     public static String WSDL   = "/accountservice/accountservice.wsdl";
     private        String UserID = "629850484";
     private        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cuYWR2YW50YWdlb25saW5lc2hvcHBpbmcuY29tIiwidXNlcklkIjo2Mjk4NTA0ODQsInN1YiI6IkxlYW5GdEFQSXVzZXIiLCJyb2xlIjoiVVNFUiJ9.1gCsbEe7kswnzX7UGp_DOI48w8dRNSBnAniQ2KlQeO0";
@@ -39,9 +39,9 @@ public class ApiTests extends UnitTestClassBase {
     public ApiTests() throws GeneralLeanFtException {
         //Change this constructor to private if you supply your own public constructor
 
-        browser = BrowserFactory.launch(BrowserType.CHROME);
+        //browser = BrowserFactory.launch(BrowserType.CHROME);
 
-        appModel = new AdvantageStagingAppModel(browser);
+        //appModel = new AdvantageStagingAppModel(browser);
 
     }
 
