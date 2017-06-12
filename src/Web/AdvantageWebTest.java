@@ -452,6 +452,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     {
     	if(!isCartEmpty())
     	{
+    	    Print("Empty the cart....");
     		// Navigate to the cart 
     		appModel.AdvantageShoppingPage().CartIcon().click();
     		browser.sync();
@@ -466,6 +467,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     			waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
     			appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click(); // Remove the top product from the cart
 	    	}
+
+	    	Print("cart is empty");
 
     	}
     }
