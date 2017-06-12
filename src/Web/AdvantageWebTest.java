@@ -1248,7 +1248,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		Verification(Verify.isTrue(appModel.DownloadPage().DownloadIosAppWebElement().exists(),"Download Verification : IOS" , "verift that the IOS link works"));
 		//appModel.DownloadPage().DownloadIosAppWebElement().click();
 		//Thread.sleep(2000);
-		Print("----------------------------START VerifyDownloadPageTest-----------------------------");
+		Print("----------------------------END VerifyDownloadPageTest-----------------------------");
 
 	}
     

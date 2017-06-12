@@ -47,7 +47,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private OrderNumber OrderNumber;
 	private OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement;
 	private SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement;
-	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
 	private CONTACTUSMainWebElement CONTACTUSMainWebElement;
 	private SignOutMainIconWebElement SignOutMainIconWebElement;
 	private SEEOFFERButton SEEOFFERButton;
@@ -145,6 +144,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SaveMasterCreditCheckBox SaveMasterCreditCheckBox;
 	private SelectProductLineContactUsListBox SelectProductLineContactUsListBox;
 	private SelectProductListBox2 SelectProductListBox2;
+	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -158,7 +158,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		OrderNumber = new OrderNumber(this, applicationModel);
 		OURPRODUCTSMainWebElement = new OURPRODUCTSMainWebElement(this, applicationModel);
 		SPECIALOFFERMainWebElement = new SPECIALOFFERMainWebElement(this, applicationModel);
-		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
 		CONTACTUSMainWebElement = new CONTACTUSMainWebElement(this, applicationModel);
 		SignOutMainIconWebElement = new SignOutMainIconWebElement(this, applicationModel);
 		SEEOFFERButton = new SEEOFFERButton(this, applicationModel);
@@ -256,6 +255,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SaveMasterCreditCheckBox = new SaveMasterCreditCheckBox(this, applicationModel);
 		SelectProductLineContactUsListBox = new SelectProductLineContactUsListBox(this, applicationModel);
 		SelectProductListBox2 = new SelectProductListBox2(this, applicationModel);
+		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -280,7 +280,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public OrderNumber OrderNumber() { return OrderNumber; }
 		public OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement() { return OURPRODUCTSMainWebElement; }
 		public SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement() { return SPECIALOFFERMainWebElement; }
-		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
 		public CONTACTUSMainWebElement CONTACTUSMainWebElement() { return CONTACTUSMainWebElement; }
 		public SignOutMainIconWebElement SignOutMainIconWebElement() { return SignOutMainIconWebElement; }
 		public SEEOFFERButton SEEOFFERButton() { return SEEOFFERButton; }
@@ -378,6 +377,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SaveMasterCreditCheckBox SaveMasterCreditCheckBox() { return SaveMasterCreditCheckBox; }
 		public SelectProductLineContactUsListBox SelectProductLineContactUsListBox() { return SelectProductLineContactUsListBox; }
 		public SelectProductListBox2 SelectProductListBox2() { return SelectProductListBox2; }
+		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -604,32 +604,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("A").innerText("SPECIAL OFFER").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class POPULARITEMSMainWebElement extends WebElementNodeBase
-	{
-
-		
-								public POPULARITEMSMainWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("POPULAR ITEMS");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.WebElementDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("A").innerText("POPULAR ITEMS").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3152,6 +3126,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ListBoxDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ListBoxDescription.Builder().tagName("SELECT").name("productListbox").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class POPULARITEMSMainWebElement extends LinkNodeBase
+	{
+
+		
+								public POPULARITEMSMainWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("POPULAR ITEMS");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.LinkDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.LinkDescription.Builder().tagName("A").innerText("POPULAR ITEMS").absoluteLocation(new com.hp.lft.sdk.LocationProperty().setX(3294).setY(136)).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

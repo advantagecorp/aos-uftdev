@@ -112,17 +112,6 @@
                     <image>iVBORw0KGgoAAAANSUhEUgAAAJgAAAA0CAYAAAB2HPG0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAItSURBVHhe7dZRaitBDETRLCnZ/+Ic5kMglGqN2p7qn9wDDc/q0jCGIs9fL8CIgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsGKgsHKUrCf758/J1P3cTJ1H6e6y6hZ1t3f7XZiN59KZeIEdRcnqLs4Qd3FcXi8YOpl60xlLtNcpXJ1pjJZd3+3u6L2prPKnZnsvuPRgnUvme+eyGVPPCvuVeZud2W1U+eT55/ITPZ3HStY1uXyXZcLk8yly+U7lel2V7qdetdlw4nMZH+XpWB3L9ll8l2XC5PMpcvlucp0uyvdTr3rsuFEZrK/68iP/Go6j8/1ZGqmdLk8V7lud6XbqXfxuZ5M3V8nU/fXydTsspp/ylKwEC9dX77O88nUrJpkLqucmqvParfT7dS7LhuezqjjYC1YqF9i+oUmuU+ftZrl+Wq30+3Uuy4b3JmY3+3vOlKwS3756ReZ5D55VsxWJ9TPE91Oveuy4URmsr/L8iNfyXddLtvJKXlfPUvNQp53uc7k2ZfJ809kJvu7Hv8Lpl4yZjFXGeWTXJ2tMis5r3Yn1N50Vp3ITPZ3Wf6LjBfNJ1MzJe/XU91l6kxlsnwf/65nYrK3mmc7GXVC/Zx1d+869hsM/xMFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFgxUFg9Hr9QvPubWSMnwt2QAAAABJRU5ErkJggg==</image>
                 </object>
                 <object type="WebElement" technology="Web">
-                    <name>POPULAR ITEMS</name>
-                    <codeName>POPULARITEMSMainWebElement</codeName>
-                    <identification>
-                        <properties>
-                            <property name="TagName" type="string" isRegExp="false">A</property>
-                            <property name="InnerText" type="string" isRegExp="false">POPULAR ITEMS</property>
-                        </properties>
-                    </identification>
-                    <image>iVBORw0KGgoAAAANSUhEUgAAAJ8AAAA0CAYAAACUwOrNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAI9SURBVHhe7dZRauRQDETRWdJk/4vroA+BEFL5tbud+rkHzMRSyRAoyPx7ASaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzaUDzZfLd/P/5/1mZzkpkw+1TRLfaeyG3WTu+m50nP1dnquMmmadSpTd1vmU4+Ur5vmn8xCn2+58E52o262nbpJKrPt1E3KjMptmdPZp/6kfKHvVK7qd1XdneaCym7yZrpT31O7cOdW3aTMqNyUUTdqd4elfKe5cJo9zQWVndT8dKe+p3bhzq26SZnZstu+vz+J8h3ot536ntqFO7fqJtXM9o38t+7zvc6eYvk/35YLp9nTXHgnO7m63b63zSuV2XY5709VZ30X6m7b1+cJj5Rveqpplvou36enmmap71S2m7LT+/ZcUbltp25SzfR8/7m+d7m/yt3xZ392K5XrO5WtVK7vVLabcqffy/m0S2q/7dRN6hn1c33fZO4ke4ryCZnbntTfK7ULd27VTeqZfN/mJ97JnrCUL2y5Pj/9psr1ncpWKnf6PbULd27VTZoyJ7Mpk9TuDmv5evZ0tjm9n2YTlanfUN9Tu3DnVt2kKfONWZ9/wla+UH+h7Xabb+q3ttspE081zaq6V1m1C3ducz49qb+H01nIeX2+7avlA95B+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WBD+WDyev0CSoTPGRdf1O0AAAAASUVORK5CYII=</image>
-                </object>
-                <object type="WebElement" technology="Web">
                     <name>CONTACT US</name>
                     <codeName>CONTACTUSMainWebElement</codeName>
                     <identification>
@@ -1291,6 +1280,20 @@
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">SELECT</property>
                             <property name="Name" type="string" isRegExp="false">productListbox</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Link" technology="Web">
+                    <name>POPULAR ITEMS</name>
+                    <codeName>POPULARITEMSMainWebElement</codeName>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">A</property>
+                            <property name="InnerText" type="string" isRegExp="false">POPULAR ITEMS</property>
+                            <property name="AbsoluteLocation" type="group" isRegExp="false">
+                                <property name="X" type="int" isRegExp="false">3294</property>
+                                <property name="Y" type="int" isRegExp="false">136</property>
+                            </property>
                         </properties>
                     </identification>
                 </object>
