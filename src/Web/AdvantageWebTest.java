@@ -448,8 +448,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
     
     // This internal method empties the shopping cart
-    public void emptyTheShoppingCart() throws GeneralLeanFtException
-    {
+    public void emptyTheShoppingCart() throws GeneralLeanFtException, InterruptedException {
     	if(!isCartEmpty())
     	{
     	    Print("Empty the cart....");
@@ -465,10 +464,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		for(; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--)
 	    	{
     			waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
-    			appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click(); // Remove the top product from the cart
+    			appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
+    			Thread.sleep(2000);// Remove the top product from the cart
 	    	}
 
 	    	Print("cart is empty");
+    		//browser.refresh();
 
     	}
     }
