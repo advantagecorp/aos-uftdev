@@ -185,7 +185,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) throws GeneralLeanFtException, InterruptedException
     {
     	// Pick the product's category
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	productsCategory.click();
     	Thread.sleep(2000);
     	
@@ -205,7 +205,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	
     	// Add it to the cart
     	appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     }
     
     public void selectItemToPurchase(WebElement productsCategory, WebElement product) throws GeneralLeanFtException, InterruptedException
@@ -495,7 +495,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String productsNunberInCartString = advantageCartIcontInnerText.split("[ ]+")[0];//m.group(1).trim();
         if(!productsNunberInCartString.isEmpty())
         	productsNunberInCart = Integer.parseInt(productsNunberInCartString);
-        
+
+        Print("Product number in cart: "  + productsNunberInCartString);
     	return productsNunberInCart;
     }
     
@@ -904,8 +905,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	browser.sync();
     	
     	try {
-			selectItemToPurchase(appModel.AdvantageShoppingPage().POPULARITEMSMainWebElement(), appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link());
-		} catch (InterruptedException e) {
+			//selectItemToPurchase(appModel.AdvantageShoppingPage().POPULARITEMSMainWebElement(), appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link());
+            appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link().click();
+
+		} catch (GeneralLeanFtException e) {
 			e.printStackTrace();
 		}
     	
