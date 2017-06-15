@@ -33,7 +33,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static String appURL = System.getProperty("url", "defaultvalue");
 	public static String appURL2 = "52.32.172.3"; //"52.88.236.171";//"16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
 	
-	public BrowserType browserType = BrowserType.CHROME;
+	public String browserTypeValue = System.getProperty("browser_type" ,"defaultvalue");
+	public BrowserType browserType;
 	
 	protected static Browser browser;
     
@@ -41,6 +42,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     AdvantageStagingAppModel appModel;
     
     public AdvantageWebTest() {
+
     }
 
     @BeforeClass
@@ -306,9 +308,26 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void initBeforeTest() throws GeneralLeanFtException {
 
     	// Launch the browser
-    	browser = BrowserFactory.launch(browserType);
+		switch (browserTypeValue){
+			case "Chrome":
+				browserType = BrowserType.CHROME;
+				break;
+			case "Firefox":
+				browserType = BrowserType.FIREFOX;
+				break;
+
+			case "IE":
+				browserType = BrowserType.INTERNET_EXPLORER;
+				break;
+
+			default:
+				browserType = BrowserType.CHROME;
+				break;
 
 
+		}
+
+		browser = BrowserFactory.launch(browserType);
     	if(appURL.equals("defaultvalue"))
     		appURL = appURL2;
 

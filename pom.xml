@@ -48,6 +48,28 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<dependency>
 			<groupId>com.hp.lft</groupId>
 			<artifactId>sdk</artifactId>
 			<version>${project.version}</version>
@@ -76,6 +98,11 @@
 			<groupId>pl.pragmatists</groupId>
 			<artifactId>JUnitParams</artifactId>
 			<version>1.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 
