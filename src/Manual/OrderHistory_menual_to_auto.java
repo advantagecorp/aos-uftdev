@@ -39,6 +39,7 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
 
     @After
     public void tearDown() throws Exception {
+        webtests.Close();
     }
 
     @Given("^user is logged in$")
@@ -63,7 +64,7 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
         int numberOfitems = webtests.getCartProductsNumberFromCartObjectInnerText();
         Verify.isTrue(numberOfitems==0, "Buy And CheckOut Success" );//?? throw error
 
-        webtests.Close();
+
 
     }
     @Given("^the user perform checkout in success and still logged in.$")
@@ -93,7 +94,7 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
 
         Verify.isTrue( webtests.appModel.AdvantageShoppingPage().RemoveFromOrderValidate().exists(),"Verification - Verify Search orders","Verify that the alert window element exists.");
        webtests.appModel.AdvantageShoppingPage().YesCANCELButton().click();
-       webtests.Close();
+
     }
 
 

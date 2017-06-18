@@ -15,7 +15,7 @@ import unittesting.*;
 * */
 
 @RunWith(OctaneCucumber.class)
-//@CucumberOptions(features="src/Manual/")
+@CucumberOptions(features="Check_order_history.feature")
 public class ManualRunner extends UnitTestClassBase {
 
     public ManualRunner() {
