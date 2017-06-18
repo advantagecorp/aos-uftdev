@@ -39,7 +39,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	protected static Browser browser;
     
     
-    AdvantageStagingAppModel appModel;
+    public AdvantageStagingAppModel appModel;
     
     public AdvantageWebTest() {
 
@@ -1339,7 +1339,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     		
     		Verify.isTrue(appModel.AdvantageShoppingPage().RemoveFromOrderValidate().exists(),"Verification - Verify Search orders","Verify that the alert window element exists.");
     		Assert.assertTrue("Verification - Verify Search orders: Verify that the alert window element exists." , appModel.AdvantageShoppingPage().YesNoButtonsRemoveOrderSearch().exists());
-    		
+    		appModel.AdvantageShoppingPage().YesCANCELButton().click();
     			
     	
     	}
@@ -1560,6 +1560,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		Print("----------------------------END ContactSupportTest-----------------------------");
 
 	}
+
     	
 
 
@@ -1583,6 +1584,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	if(!VerifyMethod)
     		throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
 	}
+
+	public void Close() throws GeneralLeanFtException {browser.close();}
     
     
     

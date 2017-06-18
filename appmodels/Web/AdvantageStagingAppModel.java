@@ -145,6 +145,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SelectProductLineContactUsListBox SelectProductLineContactUsListBox;
 	private SelectProductListBox2 SelectProductListBox2;
 	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
+	private YesCANCELButton YesCANCELButton;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -256,6 +257,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SelectProductLineContactUsListBox = new SelectProductLineContactUsListBox(this, applicationModel);
 		SelectProductListBox2 = new SelectProductListBox2(this, applicationModel);
 		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
+		YesCANCELButton = new YesCANCELButton(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -378,6 +380,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SelectProductLineContactUsListBox SelectProductLineContactUsListBox() { return SelectProductLineContactUsListBox; }
 		public SelectProductListBox2 SelectProductListBox2() { return SelectProductListBox2; }
 		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
+		public YesCANCELButton YesCANCELButton() { return YesCANCELButton; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -3152,6 +3155,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.LinkDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.LinkDescription.Builder().tagName("A").innerText("POPULAR ITEMS").absoluteLocation(new com.hp.lft.sdk.LocationProperty().setX(3294).setY(136)).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class YesCANCELButton extends ButtonNodeBase
+	{
+
+		
+								public YesCANCELButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("YesCANCEL");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").tagName("BUTTON").name("YES, CANCEL ").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

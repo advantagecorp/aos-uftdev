@@ -1297,6 +1297,17 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Button" technology="Web">
+                    <name>YesCANCEL</name>
+                    <codeName>YesCANCELButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ButtonType" type="string" isRegExp="false">button</property>
+                            <property name="TagName" type="string" isRegExp="false">BUTTON</property>
+                            <property name="Name" type="string" isRegExp="false">YES, CANCEL </property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Page" technology="Web">

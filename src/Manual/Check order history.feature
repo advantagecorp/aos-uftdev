@@ -8,7 +8,7 @@ Feature: order service
 		Then  get a success massege - the purchese success .
        
 
-	#Scenario: check order history.
-	#	Given the user perform checkout in success and still logged in.
-	##	When  navigate to 'my orders' and do search on specific item.
-	#	Then  user see the specific item that he buy
+	Scenario: check order history.
+		Given the user perform checkout in success and still logged in.
+		When  navigate to 'my orders' and do search on specific item.
+		Then  user see the specific item that he buy and delete it

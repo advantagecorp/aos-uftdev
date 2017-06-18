@@ -65,7 +65,14 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 			<scope>test</scope>
+
 		</dependency>
+
+			<dependency>
+				<groupId>com.hpe.alm.octane</groupId>
+				<artifactId>octane-cucumber-jvm</artifactId>
+				<version>12.53.22</version>
+			</dependency>
 
 
 
