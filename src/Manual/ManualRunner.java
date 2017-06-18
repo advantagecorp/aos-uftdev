@@ -1,5 +1,6 @@
 package Manual;
 
+import cucumber.api.CucumberOptions;
 import org.junit.AfterClass;
 
 import org.junit.BeforeClass;
@@ -14,6 +15,7 @@ import unittesting.*;
 * */
 
 @RunWith(OctaneCucumber.class)
+@CucumberOptions(features="src/Manual/")
 public class ManualRunner extends UnitTestClassBase {
 
     public ManualRunner() {
