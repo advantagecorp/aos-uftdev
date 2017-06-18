@@ -15,7 +15,7 @@ import unittesting.*;
 * */
 
 @RunWith(OctaneCucumber.class)
-@CucumberOptions(features="src/Manual/")
+//@CucumberOptions(features="src/Manual/")
 public class ManualRunner extends UnitTestClassBase {
 
     public ManualRunner() {
