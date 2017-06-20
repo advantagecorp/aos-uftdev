@@ -2186,7 +2186,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(27).build();
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(12).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

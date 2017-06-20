@@ -932,7 +932,7 @@
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">27</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">12</property>
                         </properties>
                     </identification>
                     <tags>
