@@ -192,7 +192,8 @@ public class androidTests extends UnitTestClassBase {
 			appModel.AdvantageShoppingApplication().MainMenu().tap();
 			appModel.AdvantageShoppingApplication().Login().tap();
 
-			appModel.AdvantageShoppingApplication().SignUp().tap();
+			//appModel.AdvantageShoppingApplication().SignUp().tap();
+			appModel.AdvantageShoppingApplication().DonTHaveAnAccount().tap();
 
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject());
 
@@ -741,6 +742,7 @@ public class androidTests extends UnitTestClassBase {
 
 	   
 	   appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+	   Thread.sleep(3000);
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
 	   Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success with " + payment," verify that the payment success and we receive the order detail window" ));
 	   appModel.AdvantageShoppingApplication().CloseDialog().tap();

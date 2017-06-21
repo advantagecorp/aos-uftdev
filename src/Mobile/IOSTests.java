@@ -373,7 +373,7 @@ public class IOSTests extends UnitTestClassBase {
 
         //connect between the appModel and the device
         appModel = new AdvantageIOSApp(device);
-        app.install();
+        //app.install();
 
     }
 
