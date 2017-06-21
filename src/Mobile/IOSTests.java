@@ -166,7 +166,7 @@ public class IOSTests extends UnitTestClassBase {
         waitUntilElementExists(appModel.AdvantageShoppingApplication().TabletObjUiObject());
 
         appModel.AdvantageShoppingApplication().ColorButton().tap();
-        appModel.AdvantageShoppingApplication().ColorObjectUiObject().tap();
+        appModel.AdvantageShoppingApplication().ColorObject().tap();
 
         appModel.AdvantageShoppingApplication().QuantityButton().tap();
         for (int i = 0; i <3 ; i++) { //increase quantity
@@ -204,7 +204,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
     }
-    /*@Test
+    @Test
     public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
 
         SignIn(false);
@@ -212,7 +212,7 @@ public class IOSTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
         appModel.AdvantageShoppingApplication().SpeakerImgUiObject().tap();
         appModel.AdvantageShoppingApplication().ColorButton().tap();
-        appModel.AdvantageShoppingApplication().ColorObj().tap();
+        appModel.AdvantageShoppingApplication().ColorObject().tap();
 
         //todo: the quntity need to be EditField
 
@@ -226,7 +226,7 @@ public class IOSTests extends UnitTestClassBase {
 
 
 
-    }*/
+    }
 
     @Test
     public void PurchseWithMasterCreditTest() throws GeneralLeanFtException, InterruptedException {

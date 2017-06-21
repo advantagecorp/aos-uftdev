@@ -98,7 +98,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 	private TabletItem TabletItem;
 	private FirstCartElement FirstCartElement;
 	private RemoveButton RemoveButton;
-	private ColorObjectUiObject ColorObjectUiObject;
+	private ColorObject ColorObject;
 	private TabletObjUiObject TabletObjUiObject;
 	private UPDATECARTButton UPDATECARTButton;
 	private NoProductsInCartLabel NoProductsInCartLabel;
@@ -173,7 +173,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		TabletItem = new TabletItem(this, applicationModel);
 		FirstCartElement = new FirstCartElement(this, applicationModel);
 		RemoveButton = new RemoveButton(this, applicationModel);
-		ColorObjectUiObject = new ColorObjectUiObject(this, applicationModel);
+		ColorObject = new ColorObject(this, applicationModel);
 		TabletObjUiObject = new TabletObjUiObject(this, applicationModel);
 		UPDATECARTButton = new UPDATECARTButton(this, applicationModel);
 		NoProductsInCartLabel = new NoProductsInCartLabel(this, applicationModel);
@@ -259,7 +259,7 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public TabletItem TabletItem() { return TabletItem; }
 		public FirstCartElement FirstCartElement() { return FirstCartElement; }
 		public RemoveButton RemoveButton() { return RemoveButton; }
-		public ColorObjectUiObject ColorObjectUiObject() { return ColorObjectUiObject; }
+		public ColorObject ColorObject() { return ColorObject; }
 		public TabletObjUiObject TabletObjUiObject() { return TabletObjUiObject; }
 		public UPDATECARTButton UPDATECARTButton() { return UPDATECARTButton; }
 		public NoProductsInCartLabel NoProductsInCartLabel() { return NoProductsInCartLabel; }
@@ -2006,11 +2006,11 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 				
 			}
 
-	public class ColorObjectUiObject extends UiObjectNodeBase
+	public class ColorObject extends UiObjectNodeBase
 	{
 
 		
-								public ColorObjectUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public ColorObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 

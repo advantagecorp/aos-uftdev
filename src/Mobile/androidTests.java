@@ -41,7 +41,7 @@ public class androidTests extends UnitTestClassBase {
 	protected static Device device;
 	protected static Application app;
 	
-	static String UNAME = "androidUser";
+	static String UNAME = "androidUser1";
 	String         PASS = "Password1";
 	
     static String appURL2 = "52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//

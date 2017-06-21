@@ -888,7 +888,7 @@
                 </object>
                 <object type="UiObject" technology="Mobile">
                     <name>colorObject</name>
-                    <codeName>ColorObjectUiObject</codeName>
+                    <codeName>ColorObject</codeName>
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
