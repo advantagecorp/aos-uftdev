@@ -122,6 +122,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private CloseDialog CloseDialog;
 	private LinearLayoutLogin LinearLayoutLogin;
 	private ServerNotReachableLabel ServerNotReachableLabel;
+	private DonTHaveAnAccount DonTHaveAnAccount;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -217,6 +218,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		CloseDialog = new CloseDialog(this, applicationModel);
 		LinearLayoutLogin = new LinearLayoutLogin(this, applicationModel);
 		ServerNotReachableLabel = new ServerNotReachableLabel(this, applicationModel);
+		DonTHaveAnAccount = new DonTHaveAnAccount(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -323,6 +325,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public CloseDialog CloseDialog() { return CloseDialog; }
 		public LinearLayoutLogin LinearLayoutLogin() { return LinearLayoutLogin; }
 		public ServerNotReachableLabel ServerNotReachableLabel() { return ServerNotReachableLabel; }
+		public DonTHaveAnAccount DonTHaveAnAccount() { return DonTHaveAnAccount; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -2681,6 +2684,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Server not reachable").className("Label").resourceId("alertTitle").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class DonTHaveAnAccount extends LabelNodeBase
+	{
+
+		
+								public DonTHaveAnAccount(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Don't have an account?1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Don't have an account?").className("Label").resourceId("textViewDontHaveAnAccount").mobileCenterIndex(7).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

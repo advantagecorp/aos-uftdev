@@ -1197,6 +1197,21 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>Don't have an account?1</name>
+                    <codeName>DonTHaveAnAccount</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Don't have an account?</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewDontHaveAnAccount</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
             </children>
         </object>
     </objects>

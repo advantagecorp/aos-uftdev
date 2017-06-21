@@ -160,7 +160,8 @@ public class androidTests extends UnitTestClassBase {
 			if(!SignIn(false)) {
 
 
-				appModel.AdvantageShoppingApplication().SignUp().tap();
+				appModel.AdvantageShoppingApplication().DonTHaveAnAccount().tap();
+				//appModel.AdvantageShoppingApplication().SignUp().tap();
 
 				waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject());
 
