@@ -1212,6 +1212,90 @@
                         <tag>SignUp</tag>
                     </tags>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>You are not connected to</name>
+                    <codeName>YouAreNotConnectedToLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">You are not connected to the internet</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">alertTitle</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>offline</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Note offline mod</name>
+                    <codeName>NoteOfflineModLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Note that in offline mode nothing you do will be saved for future use</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">message</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>offline</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>warningMessage</name>
+                    <codeName>WarningMessageUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ResourceId" type="string" isRegExp="false">warningMessage</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>offline</tag>
+                    </tags>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Settings</name>
+            <codeName>SettingsApplication</codeName>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">MC.Settings</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="UiObject" technology="Mobile">
+                    <name>com.android.settings:id/</name>
+                    <codeName>AirplaneMode</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/icon</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>offline</tag>
+                    </tags>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>airplaine</name>
+                    <codeName>AirplaineToggle</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/switch_widget</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>offline</tag>
+                    </tags>
+                </object>
             </children>
         </object>
     </objects>

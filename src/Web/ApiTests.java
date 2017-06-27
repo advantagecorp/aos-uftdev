@@ -3,28 +3,28 @@ package Web;
 import com.hp.lft.sdk.web.Browser;
 import com.hp.lft.sdk.web.BrowserFactory;
 import com.hp.lft.sdk.web.BrowserType;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import com.hp.lft.sdk.*;
 import com.hp.lft.verifications.*;
 import com.hp.lft.sdk.apitesting.uft.APITestResult;
 import com.hp.lft.sdk.apitesting.uft.APITestRunner;
 
+import org.junit.runners.MethodSorters;
 import unittesting.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ApiTests extends UnitTestClassBase {
 
-    public static String appURL ="52.32.172.3:8081";//"http://52.88.236.171:8081";//; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";
+    public static String appURL ="http://" + System.getProperty("url", "defaultvalue");//52.32.172.3:8081";//"http://52.88.236.171:8081";//; //"http://16.59.19.163:8080"; //"35.162.69.22:8080";
     public static String WSDL   = "/accountservice/accountservice.wsdl";
-    private        String UserID = "629850484";
-    private        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cuYWR2YW50YWdlb25saW5lc2hvcHBpbmcuY29tIiwidXNlcklkIjo2Mjk4NTA0ODQsInN1YiI6IkxlYW5GdEFQSXVzZXIiLCJyb2xlIjoiVVNFUiJ9.1gCsbEe7kswnzX7UGp_DOI48w8dRNSBnAniQ2KlQeO0";
-    String Login = "LeanFtAPIuser";
+    public static String UserID = "";
+    public static String token  = "";
+    String Login = "_APIuser";
     String Pass  = "Password1";
 
     public Browser browser ;
@@ -49,6 +49,9 @@ public class ApiTests extends UnitTestClassBase {
     public static void setUpBeforeClass() throws Exception {
         instance = new ApiTests();
         globalSetup(ApiTests.class);
+
+        if(appURL.equals("http://defaultvalue"))
+            appURL = "http://52.88.236.171:8081";
     }
 
     @AfterClass
@@ -92,6 +95,7 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("userId : " + UserID);
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();
+        System.out.println("Status: " +status);
 
         Verification(Verify.isTrue(status,"Create Account by API " + msg,"validate that the account was create successfully the user -  " + inParams.get("loginName")));
         //signIn(Login, Pass);
@@ -125,7 +129,7 @@ public class ApiTests extends UnitTestClassBase {
     }
 
         @Test
-    public void NegativeCreateAccountByAPiTest_username() throws GeneralLeanFtException {
+    public void negativeCreateAccountByAPiTest_username() throws GeneralLeanFtException {
 
         //try to create account with unproper username (less then 5 letters) TODO: should not return true!
         Map<String, Object> inParams = new HashMap<String, Object>();
@@ -148,7 +152,7 @@ public class ApiTests extends UnitTestClassBase {
 
     }
     @Test
-    public void NegativeCreateAccountByAPiTest_email() throws GeneralLeanFtException {
+    public void negativeCreateAccountByAPiTest_email() throws GeneralLeanFtException {
         //try to create account without email
 
         Map<String, Object> inParams = new HashMap<String, Object>();
@@ -172,7 +176,7 @@ public class ApiTests extends UnitTestClassBase {
 
     }
     @Test
-    public void NegativeCreateAccountByAPiTest_password() throws GeneralLeanFtException {
+    public void negativeCreateAccountByAPiTest_password() throws GeneralLeanFtException {
         //try to create account with unproper password (non upper case and number)
 
         Map<String, Object> inParams = new HashMap<String, Object>();
@@ -237,7 +241,7 @@ public class ApiTests extends UnitTestClassBase {
 
     }
     @Test
-    public void NegativeUpdateAccountByAPiTest() throws GeneralLeanFtException {
+    public void negativeUpdateAccountByAPiTest() throws GeneralLeanFtException {
 
         //Try to update user with non valid parameter ZIP code (more then 10 characters)
         Map<String, Object> inParams = new HashMap<String, Object>();
@@ -256,13 +260,13 @@ public class ApiTests extends UnitTestClassBase {
         String         msg     =  res.getOutParams().get("message");
         boolean        status  =  res.getStatus();//todo : throw error even status is false
         System.out.println("Status: " +status);
-      Verification(Verify.isTrue(status,"Update Account by API non valid ZIP code" + msg,"validate that the account NOT updated the userId -  " + UserID));
+      Verification(Verify.isFalse(status,"Update Account by API non valid ZIP code" + msg,"validate that the account NOT updated the userId -  " + UserID));
 
     }
 
 
     @Test
-    public void ChangePasswordByAPiTest() throws GeneralLeanFtException {
+    public void changePasswordByAPiTest() throws GeneralLeanFtException {
         //todo: throw error even the test passed and do the change
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("UserID", Integer.parseInt(UserID));
@@ -283,7 +287,7 @@ public class ApiTests extends UnitTestClassBase {
 
 
     @Test
-    public void DeleteAccountByAPiTest() throws GeneralLeanFtException {
+    public void z_deleteAccountByAPiTest() throws GeneralLeanFtException {
         //todo: throw error even the test passed and delete the user
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("UserID", Integer.parseInt(UserID));

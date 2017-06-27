@@ -44,7 +44,7 @@ public class androidTests extends UnitTestClassBase {
 	static String UNAME = "androidUser1";
 	String         PASS = "Password1";
 	
-    static String appURL2 = "52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
+    static String appURL2 = "www.advantageonlineshopping.com";//"52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
 	static String appURL = System.getProperty("url", "defaultvalue");
 
 	
@@ -460,7 +460,7 @@ public class androidTests extends UnitTestClassBase {
 
 
 
-    //@Test
+    @Test
     public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException{
     	
 
@@ -615,6 +615,103 @@ public class androidTests extends UnitTestClassBase {
 
 
         Print("\n-------------------END ChangePasswordTest -------------------------");
+
+
+	}
+
+
+
+	//@Test
+    public void OfflineModeTest() throws GeneralLeanFtException, InterruptedException {
+
+    	//todo: IMPORTANT - switch device to airplane mode or turn off the network before you RUN this test
+        /*
+        change to airplane mode
+        validate that:  
+        The indication should be in settings: if the user opens the app w/o internet access, the message should be:
+        "You are not connected to the internet", and when the user clicks OK, 
+        the url should say: Offline Mode, 
+        the "connect" should change to "apply" and the message "connection successful" should be replaced with: "
+        Note that in offline mode nothing you do will be saved for future use"
+
+
+
+		check that there is offline mode indication in the login page
+        check that create account is not available - clicking on it pops up a message "not applicable in offline mode"
+        Allow the user to login without any real authentication,
+        try to edit the user account - validate that you get the message: "not applicable in offline mode"
+
+        add products to the cart and then checkout without any validation.
+        check that the offline mode indication exists in the cart page
+
+         */
+        offlinemode(true);
+        InitBeforeclassLocal();
+		Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(),"Verification - not connected to internet", "Verify that the offline massage appears");
+		appModel.AdvantageShoppingApplication().OKButton().tap();
+
+
+		String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+		Verify.isTrue(server.equals("Offline Mode"),"Verification - server massage", "Verify that the offline massage appears in the server setting");
+		appModel.AdvantageShoppingApplication().ConnectButton().tap();
+		Thread.sleep(2000);
+
+		Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(),"Verification - offline mode note massage", "Verify that the note for offline mode appears");
+		appModel.AdvantageShoppingApplication().OKButton().tap();
+
+
+	}
+
+
+	public void SigninOfflineMode() throws GeneralLeanFtException {
+
+
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+		appModel.AdvantageShoppingApplication().Login().tap();
+
+
+		//validation for offline warning
+		Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(),"Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
+
+		///validation for create account is not available
+		appModel.AdvantageShoppingApplication().DonTHaveAnAccount().tap();
+		Verify.isFalse(appModel.AdvantageShoppingApplication().SignUpObject().exists(),"Verification - sign up offline mode", "Verify that we can create new user in offline mode");
+
+
+		Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(),"Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
+
+		appModel.AdvantageShoppingApplication().UserNameEdit().setText("offline"); //invalid user name & password - should work
+		appModel.AdvantageShoppingApplication().PassEdit().setText("offline");
+		appModel.AdvantageShoppingApplication().LOGINButton().tap();
+
+		//validate that the Offline user appears
+		appModel.AdvantageShoppingApplication().MainMenu().tap();
+
+		String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
+
+		Verify.isTrue(innerTxt.equals("Brown John"),"Verification - offline login", "Verify that we logged in in offline mode");
+
+
+	}
+
+
+	public void BuyAndCheckOutOfflineMode() throws GeneralLeanFtException, InterruptedException {
+    	//do a check out without any edit or changing
+
+		BuyLeptop();
+
+		appModel.AdvantageShoppingApplication().CartAccess().tap();
+		appModel.AdvantageShoppingApplication().CHECKOUT().tap();
+		Thread.sleep(2000);
+
+		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+		Thread.sleep(3000);
+		waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
+		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success offline mode"," verify that the payment success and we receive the order detail window (offline)" ));
+		appModel.AdvantageShoppingApplication().CloseDialog().tap();
+
+
 
 
 	}
@@ -923,6 +1020,19 @@ public class androidTests extends UnitTestClassBase {
 	}
 
     public void Print(String msg){System.out.println(msg);}
+
+
+    public void offlinemode(boolean mode) throws GeneralLeanFtException {
+
+		app = device.describe(Application.class, new ApplicationDescription.Builder()
+				.identifier("MC.Settings").packaged(false).build());
+		app.launch();
+
+		appModel.SettingsApplication().AirplaneMode().tap();
+		appModel.SettingsApplication().AirplaineToggle().set(mode);
+
+
+	}
    
 
 }
