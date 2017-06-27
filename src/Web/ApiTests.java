@@ -52,6 +52,8 @@ public class ApiTests extends UnitTestClassBase {
 
         if(appURL.equals("http://defaultvalue"))
             appURL = "http://52.88.236.171:8081";
+
+        System.out.println("URL: " + appURL+WSDL);
     }
 
     @AfterClass
