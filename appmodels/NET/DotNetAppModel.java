@@ -877,7 +877,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().canFocus(true).objectName("").fullType("edit").build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullType("edit").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

@@ -76,6 +76,8 @@ public class ApiTests extends UnitTestClassBase {
     @Test
     public void CreateAccountByAPiTest() throws GeneralLeanFtException, InterruptedException {
 
+        P("-----------------------------------------CreateAccountByAPiTest--------------------------------------------");
+
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
         inParams.put("name", "API");
@@ -102,12 +104,16 @@ public class ApiTests extends UnitTestClassBase {
         Verification(Verify.isTrue(status,"Create Account by API " + msg,"validate that the account was create successfully the user -  " + inParams.get("loginName")));
         //signIn(Login, Pass);
 
+        P("-----------------------------------------CreateAccountByAPiTest end--------------------------------------------");
 
 
     }
 
     @Test
     public void CreateExistingAccountByAPiTest() throws GeneralLeanFtException, InterruptedException {
+
+        P("-----------------------------------------CreateExistingAccountByAPiTest--------------------------------------------");
+
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
         inParams.put("name", "API");
@@ -128,12 +134,18 @@ public class ApiTests extends UnitTestClassBase {
         Verification(Verify.isFalse(status,"Create Existing Account by API " + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
         //signIn(Login, Pass);
 
+        P("-----------------------------------------CreateExistingAccountByAPiTest end--------------------------------------------");
+
+
     }
 
         @Test
     public void negativeCreateAccountByAPiTest_username() throws GeneralLeanFtException {
 
-        //try to create account with unproper username (less then 5 letters) TODO: should not return true!
+            P("-----------------------------------------negativeCreateAccountByAPiTest_username--------------------------------------------");
+
+
+            //try to create account with unproper username (less then 5 letters) TODO: should not return true!
         Map<String, Object> inParams = new HashMap<String, Object>();
             inParams.put("URL",appURL+WSDL);
             inParams.put("name", "API");
@@ -152,10 +164,14 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("Status: " +status);
         Verification(Verify.isFalse(status,"Create Account by API non valid username" + msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
 
-    }
+            P("-----------------------------------------negativeCreateAccountByAPiTest_username end--------------------------------------------");
+
+
+        }
     @Test
     public void negativeCreateAccountByAPiTest_email() throws GeneralLeanFtException {
         //try to create account without email
+        P("-----------------------------------------negativeCreateAccountByAPiTest_email--------------------------------------------");
 
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
@@ -176,10 +192,16 @@ public class ApiTests extends UnitTestClassBase {
         Verification(Verify.isFalse(status,"Create Account by API no email "+ msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
 
 
+        P("-----------------------------------------negativeCreateAccountByAPiTest_email end--------------------------------------------");
+
+
     }
     @Test
     public void negativeCreateAccountByAPiTest_password() throws GeneralLeanFtException {
         //try to create account with unproper password (non upper case and number)
+
+        P("-----------------------------------------negativeCreateAccountByAPiTest_password--------------------------------------------");
+
 
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
@@ -199,12 +221,16 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("Status: " +status);
         Verification(Verify.isFalse(status,"Create Account by API non valid password" +msg,"validate that the account was NOT create the user -  " + inParams.get("loginName")));
 
+
+        P("-----------------------------------------negativeCreateAccountByAPiTest_password end--------------------------------------------");
+
     }
 
     @Test
     public void UpdateAccountByAPiTest() throws GeneralLeanFtException {
 
 
+        P("-----------------------------------------UpdateAccountByAPiTest--------------------------------------------");
 
         // needed the UserId/accountId from database
         // email is mandatory
@@ -239,6 +265,7 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("Status: " +status);
         Verification(Verify.isTrue(status,"Update Account by API " + msg,"validate that the account updated the userId -  " + UserID));
 
+        P("-----------------------------------------UpdateAccountByAPiTest end--------------------------------------------");
 
 
     }
@@ -246,6 +273,9 @@ public class ApiTests extends UnitTestClassBase {
     public void negativeUpdateAccountByAPiTest() throws GeneralLeanFtException {
 
         //Try to update user with non valid parameter ZIP code (more then 10 characters)
+
+        P("-----------------------------------------negativeUpdateAccountByAPiTest--------------------------------------------");
+
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("URL",appURL+WSDL);
         inParams.put("name", "API_c");
@@ -264,11 +294,17 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("Status: " +status);
       Verification(Verify.isFalse(status,"Update Account by API non valid ZIP code" + msg,"validate that the account NOT updated the userId -  " + UserID));
 
+
+        P("-----------------------------------------negativeUpdateAccountByAPiTest end--------------------------------------------");
+
     }
 
 
     @Test
     public void changePasswordByAPiTest() throws GeneralLeanFtException {
+
+        P("-----------------------------------------changePasswordByAPiTest--------------------------------------------");
+
         //todo: throw error even the test passed and do the change
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("UserID", Integer.parseInt(UserID));
@@ -284,12 +320,16 @@ public class ApiTests extends UnitTestClassBase {
         System.out.println("Status: " +status);
         Verification(Verify.isTrue(status,"Change Password by API" + msg,"validate that the Password changed in success"));
 
+        P("-----------------------------------------changePasswordByAPiTest end--------------------------------------------");
 
     }
 
 
     @Test
     public void z_deleteAccountByAPiTest() throws GeneralLeanFtException {
+
+        P("-----------------------------------------deleteAccountByAPiTest--------------------------------------------");
+
         //todo: throw error even the test passed and delete the user
         Map<String, Object> inParams = new HashMap<String, Object>();
         inParams.put("UserID", Integer.parseInt(UserID));
@@ -302,6 +342,8 @@ public class ApiTests extends UnitTestClassBase {
         boolean        status  =  result.getStatus();
         System.out.println("Status: " +status);
         Verification(Verify.isTrue(status,"Delete Account by API" + msg,"validate that the account was delete the user -  " + inParams.get("loginName")));
+
+        P("-----------------------------------------deleteAccountByAPiTest end--------------------------------------------");
 
 
     }    ///////////////////////////////////////////////////// End of tests ///////////////////////////////////////////////////////
@@ -375,6 +417,10 @@ public class ApiTests extends UnitTestClassBase {
 
         if(!VerifyMethod)
             throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+    }
+
+    public void P(String msg){
+        System.out.println(msg);
     }
 
 }
