@@ -1380,7 +1380,7 @@
                     <codeName>DownloadAndroidAppWebElement</codeName>
                     <identification>
                         <properties>
-                            <property name="TagName" type="string" isRegExp="false">U</property>
+                            <property name="TagName" type="string" isRegExp="false">A</property>
                             <property name="InnerText" type="string" isRegExp="false">Android</property>
                         </properties>
                     </identification>
@@ -1393,7 +1393,7 @@
                     <codeName>DownloadIosAppWebElement</codeName>
                     <identification>
                         <properties>
-                            <property name="TagName" type="string" isRegExp="false">U</property>
+                            <property name="TagName" type="string" isRegExp="false">A</property>
                             <property name="InnerText" type="string" isRegExp="false">iOS</property>
                         </properties>
                     </identification>

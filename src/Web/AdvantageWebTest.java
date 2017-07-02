@@ -1011,7 +1011,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	// Click the Chat With Us link
     	appModel.AdvantageShoppingPage().ChatLogoImage().click();
     	Thread.sleep(2000);
-    	// Make sure to enable pop-up messages from this site
+    	// IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
     	
     	// Verify that the chat window has opened
     	// Close the pop up message browser
