@@ -112,20 +112,19 @@ public class androidTests extends UnitTestClassBase {
 	}
 
     public  void setting() throws GeneralLeanFtException, InterruptedException {
-
+		Print("setting() start");
 		if(appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
 			appModel.AdvantageShoppingApplication().OKButton().tap();
 			appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
 
 			appModel.AdvantageShoppingApplication().ConnectButton().tap();
+			Print("sleep 2000");
 			Thread.sleep(2000);
 
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
 
 			appModel.AdvantageShoppingApplication().OKButton().tap();
 		}
-
-
       else {
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
@@ -139,6 +138,7 @@ public class androidTests extends UnitTestClassBase {
 				appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
 
 				appModel.AdvantageShoppingApplication().ConnectButton().tap();
+				Print("sleep 2000");
 				Thread.sleep(2000);
 
 				waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
@@ -151,15 +151,14 @@ public class androidTests extends UnitTestClassBase {
 
        app.restart();
 
-
+		Print("setting() end");
 	}
 
     public void  CreateNewUser(boolean isTest) throws GeneralLeanFtException , InterruptedException{
+		Print("CreateNewUser(" + isTest + ") start");
     	// create new user if not exists to run all tests
         if (!isTest){ // create a new user
 			if(!SignIn(false)) {
-
-
 				appModel.AdvantageShoppingApplication().DonTHaveAnAccount().tap();
 				//appModel.AdvantageShoppingApplication().SignUp().tap();
 
@@ -182,8 +181,6 @@ public class androidTests extends UnitTestClassBase {
 				waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject());
 
 				Verification(Verify.isTrue(SignIn(true), "New User creation", "verify that the creation of new user for testing  succeeds"));
-
-
 				}
 		}
 		else{ // create existing user test
@@ -208,12 +205,8 @@ public class androidTests extends UnitTestClassBase {
 			waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject());
 
 			Verification(Verify.isFalse(SignIn(true), "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
-
-
-
 		}
-
-
+		Print("CreateNewUser(" + isTest + ") end");
 	}
 
 
@@ -223,11 +216,8 @@ public class androidTests extends UnitTestClassBase {
 
 	@Test
 	public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
-
         Print("-------------------START AddNewUserAndCheckInitials -------------------------");
-
     	InitSetUP();
-
         Print("\n-------------------END AddNewUserAndCheckInitials -------------------------");
 	}
 
@@ -429,14 +419,13 @@ public class androidTests extends UnitTestClassBase {
     
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException{
-
         Print("-------------------START OutOfStockTest -------------------------");
-
-
+        Print("waitUntilElementExist: MainMenu()");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     	
     	appModel.AdvantageShoppingApplication().MainMenu().tap();
     	appModel.AdvantageShoppingApplication().HEADPHONESLabel().tap();
+		Print("waitUntilElementExist: MainMenu()");
     	waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     	appModel.AdvantageShoppingApplication().SOLDout().tap();
     	
@@ -444,9 +433,7 @@ public class androidTests extends UnitTestClassBase {
     	 * verify that we can change color - in web the user can edit the color but here we chack that 
     	 * in not an option
     	 */
-    	
-    	
-    	
+
     	// all the verification are not working because the attribute "isEnabled" are not include in this version of the app.  
     	//Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
    
@@ -455,7 +442,6 @@ public class androidTests extends UnitTestClassBase {
     	Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable(),"Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
 
         Print("\n-------------------END OutOfStockTest -------------------------");
-
     }
 
 
@@ -491,14 +477,22 @@ public class androidTests extends UnitTestClassBase {
         Print("-------------------START PayMasterCreditTest -------------------------");
 
         SignIn(false);
-    	
-    	appModel.AdvantageShoppingApplication().MainMenu().tap();
-    	appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
-    	appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
 
+		Print("sleep 1000");
+		Thread.sleep(1000);
+    	appModel.AdvantageShoppingApplication().MainMenu().tap();
+		Print("sleep 1000");
+		Thread.sleep(1000);
+    	appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
+		Print("sleep 1000");
+		Thread.sleep(1000);
+    	appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
+		Print("sleep 1000");
+		Thread.sleep(1000);
 
     	//apply filter- Win 10
 		appModel.AdvantageShoppingApplication().BYOPERATINGSYSTEMLabel().tap();
+		Print("sleep 2000");
 		Thread.sleep(2000);
 		appModel.AdvantageShoppingApplication().Windows10Label().tap();
 
@@ -645,7 +639,7 @@ public class androidTests extends UnitTestClassBase {
         check that the offline mode indication exists in the cart page
 
          */
-        offlinemode(true);
+        offlinemode(true);   // switch device to airplane mode
         InitBeforeclassLocal();
 		Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(),"Verification - not connected to internet", "Verify that the offline massage appears");
 		appModel.AdvantageShoppingApplication().OKButton().tap();
@@ -654,11 +648,14 @@ public class androidTests extends UnitTestClassBase {
 		String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
 		Verify.isTrue(server.equals("Offline Mode"),"Verification - server massage", "Verify that the offline massage appears in the server setting");
 		appModel.AdvantageShoppingApplication().ConnectButton().tap();
+		Print("sleep 2000");
 		Thread.sleep(2000);
 
 		Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(),"Verification - offline mode note massage", "Verify that the note for offline mode appears");
 		appModel.AdvantageShoppingApplication().OKButton().tap();
 
+
+		// TODO: add all functions that contains OfflineMode
 
 	}
 
@@ -703,9 +700,11 @@ public class androidTests extends UnitTestClassBase {
 
 		appModel.AdvantageShoppingApplication().CartAccess().tap();
 		appModel.AdvantageShoppingApplication().CHECKOUT().tap();
+		Print("sleep 2000");
 		Thread.sleep(2000);
 
 		appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+		Print("sleep 3000");
 		Thread.sleep(3000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
 		Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success offline mode"," verify that the payment success and we receive the order detail window (offline)" ));
@@ -726,6 +725,7 @@ public class androidTests extends UnitTestClassBase {
 		SignIn(false);
 		appModel.AdvantageShoppingApplication().MainMenu().tap();
 		appModel.AdvantageShoppingApplication().AccountDetails().tap();
+		Print("sleep 2000");
 		Thread.sleep(2000);
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().ChangePasswordObject());
 
@@ -747,7 +747,7 @@ public class androidTests extends UnitTestClassBase {
     
     
    public boolean SignIn(Boolean quiet ) throws GeneralLeanFtException, InterruptedException{
-
+	   Print("SignIn() start");
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   appModel.AdvantageShoppingApplication().MainMenu().tap();
@@ -755,53 +755,47 @@ public class androidTests extends UnitTestClassBase {
 	   //System.out.println(appModel.AdvantageShoppingApplication().AccountDetails().exists(2))
 	   
 	   if(innerTxt.equals("LOGIN")){
-		   
 		    if(!quiet){
-   	        appModel.AdvantageShoppingApplication().Login().tap();
-	    	appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
-	    	appModel.AdvantageShoppingApplication().PassEdit().setText(PASS);
-	    	appModel.AdvantageShoppingApplication().LOGINButton().tap();
+				appModel.AdvantageShoppingApplication().Login().tap();
+				appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
+				appModel.AdvantageShoppingApplication().PassEdit().setText(PASS);
+				appModel.AdvantageShoppingApplication().LOGINButton().tap();
 
-	    	if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists())
-			{
-				System.out.println(UNAME + "  Login Success");
-				Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
-				return true;
-			}
+				if (!appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists())
+				{
+					System.out.println(UNAME + "  Login Success");
+					Verify.isTrue(true,"Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
+					Print("SignIn() end");
+					return true;
+				}
+				Print("SignIn() end");
 				return false;
-
 		    }
-	    	
+		    Print("SignIn() end");
 	    	return false;
-		   
 	   }
 	   
 		   System.out.println(UNAME + " allready logged in");
 	       device.back();
 	       waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+	   Print("SignIn() end");
 		   	return true;
-		
-	   
    }
    
    
    public void SignOut() throws GeneralLeanFtException, InterruptedException{
-	   if (SignIn(true)){
-		   
-		   appModel.AdvantageShoppingApplication().MainMenu().tap();
+	   	Print("SignOut() start");
+	   	if (SignIn(true)){
+		   	appModel.AdvantageShoppingApplication().MainMenu().tap();
 		   appModel.AdvantageShoppingApplication().SIGNOUTLabel().tap();
 		   appModel.AdvantageShoppingApplication().YESButton().tap();
-		   
-		   
 		   System.out.println(UNAME + "Signed Out in success");
-		   
 	   }
+	   Print("SignOut() end");
    }
    
-  
-   
    public void BuyLeptop() throws GeneralLeanFtException, InterruptedException{
-	   
+	   Print("BuyLeptop() start");
 	   EmptyCart();
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   appModel.AdvantageShoppingApplication().MainMenu().tap(); 
@@ -809,10 +803,10 @@ public class androidTests extends UnitTestClassBase {
 	   appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
 	   appModel.AdvantageShoppingApplication().LaptopitemWin10().tap();
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+	   Print("sleep 3000");
 	   Thread.sleep(3000);
-	   appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap(); 
-	   
-	   
+	   appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+	   Print("BuyLeptop() end");
    }
 
 	public void EditShipping() throws GeneralLeanFtException, InterruptedException{
@@ -825,10 +819,11 @@ public class androidTests extends UnitTestClassBase {
 	}
    
    public void CheckOut(String payment) throws GeneralLeanFtException, InterruptedException{
-
+	   Print("CheckOut(" + payment + ") start");
 
 	   	appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-	   	Thread.sleep(10000);
+	   Print("sleep 25000");
+	   	Thread.sleep(25000);
 
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 	   //pay with safepay and don't save details
@@ -839,14 +834,16 @@ public class androidTests extends UnitTestClassBase {
 
 	   
 	   appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
+	   Print("sleep 3000");
 	   Thread.sleep(3000);
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject());
 	   Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4),"Verify- purchase success with " + payment," verify that the payment success and we receive the order detail window" ));
 	   appModel.AdvantageShoppingApplication().CloseDialog().tap();
+	   Print("CheckOut(" + payment + ") end");
    }    
    
-   public void SafePay(boolean save) throws GeneralLeanFtException{ 
-	   
+   public void SafePay(boolean save) throws GeneralLeanFtException{
+	   Print("SafePay(" + save + ") start");
 	   //start with edit Safepay details
 	   
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
@@ -863,12 +860,12 @@ public class androidTests extends UnitTestClassBase {
 	   }
 	   
 	  appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-	   
+	   Print("SafePay(" + save + ") end");
    }
 
 
 	public void MasterCredit(String cardnum ,String CVV,String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException, InterruptedException {
-
+		Print("MasterCredit() start");
 
 		waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails());
 
@@ -898,14 +895,14 @@ public class androidTests extends UnitTestClassBase {
 		appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
 
-
+		Print("MasterCredit() start");
 	}
    
  
   
    
    public void EmptyCart() throws NumberFormatException, GeneralLeanFtException, InterruptedException{
-	   
+	   Print("EmptyCart() start");
 	 
 	   
 	   waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess());
@@ -918,7 +915,7 @@ public class androidTests extends UnitTestClassBase {
 		   appModel.AdvantageShoppingApplication().CartRemove().tap();
 	   }
 	   device.back();
-	   
+	   Print("EmptyCart() end");
    }
    
    public void PurchaseTablet(String quantity) throws GeneralLeanFtException, NumberFormatException, InterruptedException{
