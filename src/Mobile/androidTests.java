@@ -85,9 +85,11 @@ public class androidTests extends UnitTestClassBase {
     public void setting() throws GeneralLeanFtException, InterruptedException {
         Print("setting() start");
         if (appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
+            Print("tap OKButton()");
             appModel.AdvantageShoppingApplication().OKButton().tap();
             appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
 
+            Print("tap ConnectButton()");
             appModel.AdvantageShoppingApplication().ConnectButton().tap();
             Print("sleep 2000");
             Thread.sleep(2000);
@@ -98,22 +100,26 @@ public class androidTests extends UnitTestClassBase {
         } else {
             waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
 
+            Print("tap MainMenu()");
             appModel.AdvantageShoppingApplication().MainMenu().tap();
+            Print("tap SETTINGSLabel()");
             appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
 
             String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
 
-            if (!server.equals(appURL)) { // check if the setting already set up
+//            if (!server.equals(appURL)) { // check if the setting already set up
                 appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
 
+                Print("tap ConnectButton()");
                 appModel.AdvantageShoppingApplication().ConnectButton().tap();
                 Print("sleep 2000");
                 Thread.sleep(2000);
 
                 waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
 
+                Print("tap OKButton()");
                 appModel.AdvantageShoppingApplication().OKButton().tap();
-            }
+//            }
         }
         app.restart();
         Print("setting() end");
