@@ -64,6 +64,7 @@ public class androidTests extends UnitTestClassBase {
     @Before
     public void setUp() throws Exception {
         startTimeCurrentTest = System.currentTimeMillis();
+        Print("restarting application...");
         app.restart();
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
     }
@@ -121,7 +122,7 @@ public class androidTests extends UnitTestClassBase {
                 appModel.AdvantageShoppingApplication().OKButton().tap();
 //            }
         }
-        app.restart();
+        //app.restart();
         Print("setting() end");
     }
 
