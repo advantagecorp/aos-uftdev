@@ -92,8 +92,8 @@ public class androidTests extends UnitTestClassBase {
 
             Print("tap ConnectButton()");
             appModel.AdvantageShoppingApplication().ConnectButton().tap();
-            Print("sleep 2000");
-            Thread.sleep(2000);
+            Print("sleep 10000");
+            Thread.sleep(10000);
 
             waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
 
@@ -113,8 +113,8 @@ public class androidTests extends UnitTestClassBase {
 
                 Print("tap ConnectButton()");
                 appModel.AdvantageShoppingApplication().ConnectButton().tap();
-                Print("sleep 2000");
-                Thread.sleep(2000);
+                Print("sleep 10000");
+                Thread.sleep(10000);
 
                 waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject());
 
