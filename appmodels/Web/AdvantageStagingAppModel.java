@@ -1022,7 +1022,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("username").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("usernameRegisterPage").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1048,7 +1048,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("password").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("passwordRegisterPage").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1074,7 +1074,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("email").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("emailRegisterPage").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1100,7 +1100,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("confirm_password").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("password").placeholder("").accessibilityName("").tagName("INPUT").name("confirm_passwordRegisterPage").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1126,7 +1126,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("first_name").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("first_nameRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1152,7 +1152,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("last_name").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("last_nameRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1178,7 +1178,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("phone_number").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("phone_numberRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1204,7 +1204,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ListBoxDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ListBoxDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ListBoxDescription.Builder().tagName("SELECT").name("userCountry").build();
+				description = new com.hp.lft.sdk.web.ListBoxDescription.Builder().tagName("SELECT").name("userCountryRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1230,7 +1230,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("address").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("addressRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1256,7 +1256,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("postal_code").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("postal_codeRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1282,7 +1282,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("city").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").tagName("INPUT").name("cityRegisterPage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2452,7 +2452,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("email").index(1).build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("text").placeholder("").accessibilityName("").tagName("INPUT").name("emailContactUs").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2478,7 +2478,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("textarea").tagName("TEXTAREA").name("subject_textarea").build();
+				description = new com.hp.lft.sdk.web.EditFieldDescription.Builder().type("textarea").tagName("TEXTAREA").name("subjectTextareaContactUs").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3102,7 +3102,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ListBoxDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ListBoxDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ListBoxDescription.Builder().tagName("SELECT").name("categoryListbox").build();
+				description = new com.hp.lft.sdk.web.ListBoxDescription.Builder().tagName("SELECT").name("categoryListboxContactUs").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

@@ -304,7 +304,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">username</property>
+                            <property name="Name" type="string" isRegExp="false">usernameRegisterPage</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -318,7 +318,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">password</property>
+                            <property name="Name" type="string" isRegExp="false">passwordRegisterPage</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -332,7 +332,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">email</property>
+                            <property name="Name" type="string" isRegExp="false">emailRegisterPage</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -346,7 +346,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">confirm_password</property>
+                            <property name="Name" type="string" isRegExp="false">confirm_passwordRegisterPage</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -358,7 +358,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">first_name</property>
+                            <property name="Name" type="string" isRegExp="false">first_nameRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -369,7 +369,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">last_name</property>
+                            <property name="Name" type="string" isRegExp="false">last_nameRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -380,7 +380,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">phone_number</property>
+                            <property name="Name" type="string" isRegExp="false">phone_numberRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -390,7 +390,7 @@
                     <identification>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">SELECT</property>
-                            <property name="Name" type="string" isRegExp="false">userCountry</property>
+                            <property name="Name" type="string" isRegExp="false">userCountryRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -401,7 +401,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">address</property>
+                            <property name="Name" type="string" isRegExp="false">addressRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -412,7 +412,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">postal_code</property>
+                            <property name="Name" type="string" isRegExp="false">postal_codeRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -423,7 +423,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">city</property>
+                            <property name="Name" type="string" isRegExp="false">cityRegisterPage</property>
                         </properties>
                     </identification>
                 </object>
@@ -950,7 +950,7 @@
                             <property name="Placeholder" type="string" isRegExp="false"></property>
                             <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
-                            <property name="Name" type="string" isRegExp="false">email</property>
+                            <property name="Name" type="string" isRegExp="false">emailContactUs</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -962,7 +962,7 @@
                         <properties>
                             <property name="Type" type="string" isRegExp="false">textarea</property>
                             <property name="TagName" type="string" isRegExp="false">TEXTAREA</property>
-                            <property name="Name" type="string" isRegExp="false">subject_textarea</property>
+                            <property name="Name" type="string" isRegExp="false">subjectTextareaContactUs</property>
                         </properties>
                     </identification>
                 </object>
@@ -1269,7 +1269,7 @@
                     <identification>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">SELECT</property>
-                            <property name="Name" type="string" isRegExp="false">categoryListbox</property>
+                            <property name="Name" type="string" isRegExp="false">categoryListboxContactUs</property>
                         </properties>
                     </identification>
                 </object>

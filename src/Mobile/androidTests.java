@@ -29,6 +29,7 @@ public class androidTests extends UnitTestClassBase {
     static String PASS = "Password1";
 
     static String appURL2 = "www.advantageonlineshopping.com";//"52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
+//    static String appURL2 = "16.60.158.84";
     static String appURL = System.getProperty("url", "defaultvalue");
 
     private static long startTimeAllTests;
@@ -58,7 +59,7 @@ public class androidTests extends UnitTestClassBase {
         device.unlock();
         globalTearDown();
         elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
-        Print(String.valueOf(elapsedTimeAllTests/(60*1000F)) + " min /" + String.valueOf(elapsedTimeAllTests/1000F) + " sec /" + String.valueOf(elapsedTimeAllTests) + " millisec");
+        Print("androidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
     }
 
     @Before
@@ -73,7 +74,9 @@ public class androidTests extends UnitTestClassBase {
     public void tearDown() throws Exception {
         //SignOut();
         elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
-        Print(String.valueOf(elapsedTimeCurrentTest/60*1000F) + " min /" + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec /" + String.valueOf(elapsedTimeCurrentTest) + " millisec\n");
+        Print(String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
+                + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
+                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
     }
 
     public void InitSetUP() throws GeneralLeanFtException, InterruptedException {

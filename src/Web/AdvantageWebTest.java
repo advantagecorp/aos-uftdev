@@ -1,13 +1,9 @@
 package Web;
 
-import static org.junit.Assert.*;
-
-
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;
@@ -31,14 +27,23 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	public static final String PASSWORD = "HPEsw123";
 	public static String SearchURL = "";
 	public static String appURL = System.getProperty("url", "defaultvalue");
-	public static String appURL2 = "52.32.172.3"; //"52.88.236.171";//"16.59.19.163:8080"; //"35.162.69.22:8080";//";//"http:////"";//"http://156.152.164.67:8080";
-	
+	public static String appURL2 = "52.32.172.3";
+//	public static String appURL2 = "16.60.158.84";			// CI
+//	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+//	public static String appURL2 = "35.162.69.22:8080";		//
+//	public static String appURL2 = "156.152.164.67:8080";	//
+//	public static String appURL2 = "52.88.236.171";			// PRODUCTION
+
 	public String browserTypeValue = System.getProperty("browser_type" ,"defaultvalue");
 	public BrowserType browserType;
 	
 	protected static Browser browser;
-    
-    
+
+	private static long startTimeAllTests;
+	private long startTimeCurrentTest;
+	private static long elapsedTimeAllTests;
+	private long elapsedTimeCurrentTest;
+
     public AdvantageStagingAppModel appModel;
     
     public AdvantageWebTest() {
@@ -47,6 +52,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
+		startTimeAllTests = System.currentTimeMillis();
     	instance = new AdvantageWebTest();
         globalSetup(AdvantageWebTest.class);
     }
@@ -55,22 +61,24 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static void tearDownAfterClass() throws Exception {
 		//browser.navigate("./RunResults/runresults.html");
         globalTearDown();
-
-
+		elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
+		Print("AdvantageWebTest done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
     }
 
     @Before
     public void setUp() throws Exception {
-
+		startTimeCurrentTest = System.currentTimeMillis();
     	initBeforeTest();
     }
 
     @After
     public void tearDown() throws Exception {
-
     	// Close the browser
     	browser.close();
-
+		elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
+		Print(String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
+				+ String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
+				+ String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
     }
 
     // This internal method checks if a user is already signed in to the web site
@@ -85,15 +93,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
         
     	return true;
     }
-    
-    
-    
-    public void Print(String msg){
+
+    public static void Print(String msg){
     	System.out.println(msg);
     }
 
-
-    
     // This internal method gets the username from the text that appears on the SignOutMainIconWebElement object
     public String getUsernameFromSignOutElement() throws GeneralLeanFtException
     {
@@ -140,10 +144,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	//username - johnhpe1, password - HPEsw123
     public boolean signIn() throws GeneralLeanFtException, InterruptedException
     {
+    	Print("signIn() start");
     	boolean isSignedIn = true;
 
-
-    	
     	if(!isSignedIn())
     	{
 	    	// Click the sign-in icon
@@ -161,10 +164,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 	    	
 	    	isSignedIn = isSignedIn();
 	    	Verify.isTrue(isSignedIn,"Verification - Sign In"  ,"Verify that the user " + USERNAME + " signed in properly.");
-	    	
-	    	
     	}
-    	
+    	Print("signIn() end (isSignedIn = " + isSignedIn + " )");
     	return isSignedIn;
     }
     
@@ -377,9 +378,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	signOut();
     	
     	// Click the Sign in icon
+		Print("click SignOutMainIconWebElement()");
     	appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
     	
     	// Click the Create New Account link
+		Print("click CREATENEWACCOUNTLink");
     	appModel.AdvantageShoppingPage().CREATENEWACCOUNTLink().click();
     	
 		// Set the user name and submit the new account
@@ -405,18 +408,24 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		
     	waitUntilElementExists(appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit());
     	Thread.sleep(2000);
+    	Print("CreateAccountUsernameWebEdit setValue: " + username);
     	appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit().setValue(username);
 
     	// Fill the Create Account form
     	
-    	if(!isNegativeTest) // Do not fill the mail field in a negative test
-    		appModel.AdvantageShoppingPage().CreateAccountEmailEditField().setValue("john@hpe.com");
-    	
+    	if(!isNegativeTest) { // Do not fill the mail field in a negative test
+			Print("CreateAccountEmailEditField setValue: john@hpe.com ");
+			appModel.AdvantageShoppingPage().CreateAccountEmailEditField().setValue("john@hpe.com");
+		}
+
+		Print("CreateAccountPasswordEditField setValue: " + password);
     	appModel.AdvantageShoppingPage().CreateAccountPasswordEditField().setValue(password);
     	
-    	if(!isNegativeTest) // Do not confirm the password in a negative test
-    		appModel.AdvantageShoppingPage().CreateAccountPasswordConfirmEditField().setValue(password);
-    	
+    	if(!isNegativeTest) { // Do not confirm the password in a negative test
+			Print("CreateAccountPasswordConfirmEditField setValue: " + password);
+			appModel.AdvantageShoppingPage().CreateAccountPasswordConfirmEditField().setValue(password);
+		}
+
     	appModel.AdvantageShoppingPage().CreateAccountFirstNameEditField().setValue("John");
     	appModel.AdvantageShoppingPage().CreateAccountLastNameEditField().setValue("HPE");
     	appModel.AdvantageShoppingPage().CreateAccountPhoneNumberEditField().setValue("+97235399999");
@@ -972,12 +981,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void createNewAccount() throws GeneralLeanFtException, ReportException, InterruptedException
     {
 		Print("----------------------------START createNewAccount-----------------------------");
-
 		createNewAccountEx("","", false);
-
 		Print("----------------------------END createNewAccount-----------------------------");
-
-
 	}
     
     // This test makes a negative test for registering a new user 
@@ -985,11 +990,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void createNewAccountNegative() throws GeneralLeanFtException, ReportException, InterruptedException
     {
 		Print("----------------------------START createNewAccountNegative-----------------------------");
-
 		createNewAccountEx("","", true);
-
 		Print("----------------------------END createNewAccountNegative-----------------------------");
-
 	}
         
     // This test starts a chat with the support of the site 
@@ -1261,38 +1263,22 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
 	}
 
-
 	@Test
 	public void VerifyDownloadPageTest() throws GeneralLeanFtException, InterruptedException{
-
 		Print("----------------------------START VerifyDownloadPageTest-----------------------------");
-
 		waitUntilElementExists(appModel.AdvantageShoppingPage().MICEShopNowWebElement());
 
     	browser.navigate(appURL + "/downloads");
+    	Print("sleep 4000");
+		Thread.sleep(4000);
     	Verification(Verify.isTrue(appModel.DownloadPage().DownloadAndroidAppWebElement().exists(),"Download Verification : Android" , "verift that the android link works"));
 		Verification(Verify.isTrue(appModel.DownloadPage().DownloadIosAppWebElement().exists(),"Download Verification : IOS" , "verift that the IOS link works"));
 		//appModel.DownloadPage().DownloadIosAppWebElement().click();
 		//Thread.sleep(2000);
 		Print("----------------------------END VerifyDownloadPageTest-----------------------------");
-
 	}
     
- 
-    
-    
-    
-    
-    
-    
     ////////////////////////////////////////////////// moti gadian Code added on  27/3/17 /////////////////////////////////////////////////////////////
-    
-    
-    
-    
-    
-    
-    
     
     @Test
  public void OrderServiceTest() throws GeneralLeanFtException, InterruptedException{   
@@ -1457,12 +1443,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
 		@Test
     public void LogOutTest() throws GeneralLeanFtException, InterruptedException{   
-    	
-    	//perform logout and make sure you are not logged in 
+    	//perform logout and make sure you are not logged in
 
-			Print("----------------------------START LogOutTest-----------------------------");
+		Print("----------------------------START LogOutTest-----------------------------");
 
-			signIn();
+		signIn();
     	browser.sync();
     	signOut();
     	browser.refresh();
@@ -1524,7 +1509,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
     
     @Test
     public void ContactSupportTest() throws GeneralLeanFtException, InterruptedException {
-    	
     	/*
     	 * validate all the following fields
 			- email address (mandatory)
@@ -1538,36 +1522,33 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	 */
 
 		Print("----------------------------START ContactSupportTest-----------------------------");
-
-
 		//try to send request with just txt in the email field
+		Print("EmailContactUsWebElement().setValue(\"fffff\")");
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("fffff");
 		Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email."));
 
 		//try to send request with just email  in the email field
+		Print("EmailContactUsWebElement().setValue(\"user@demo.com\")");
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("user@demo.com");
 		Verification(Verify.isFalse(appModel.AdvantageShoppingPage().SENDContactUsButton().isEnabled(), "Verification - Verify contact Us request", "Verify that we cant send request with Email without Subject."));
 
 		//try to send request with just txt in the email field and subject (not should be working)
+		Print("EmailContactUsWebElement().setValue(\"sometxt\")");
 		appModel.AdvantageShoppingPage().EmailContactUsWebElement().setValue("sometxt");
+		Print("ContactUsSubject().setValue(\"I have Problem..\")");
 		appModel.AdvantageShoppingPage().ContactUsSubject().setValue("I have Problem..");
 
+		Print("SENDContactUsButton().click()");
 		appModel.AdvantageShoppingPage().SENDContactUsButton().click();
-
 
 		// Verify that the support request was not sent successfully
 		Verify.isFalse(appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2), "Verification - Verify contact Us request", "Verify that we cant send request with unproper Email and Subject.");
 		Print("----------------------------END ContactSupportTest-----------------------------");
-
 	}
 
-    	
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-		public void Checkout() throws GeneralLeanFtException{
+	public void Checkout() throws GeneralLeanFtException{
     	appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
 		
 		appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
@@ -1577,10 +1558,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 		browser.sync();
     }
     
-    
-
     public void Verification(boolean VerifyMethod) throws GeneralLeanFtException{
-
     	if(!VerifyMethod)
     		throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
 	}
@@ -1590,10 +1568,5 @@ public class AdvantageWebTest extends UnitTestClassBase {
     
     
     ///////////////////////////////////////////////////////    End of Moti Gadian Code ////////////////////////////////////////////////////////////////////
-    
-    
-    
-    
-    
-    
+
 }
