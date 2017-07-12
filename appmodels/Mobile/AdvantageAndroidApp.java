@@ -2591,7 +2591,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][4][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Windows 10").className("Label").container("Table[0][8][0]").resourceId("textViewFilterCategoryTitle").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
