@@ -682,7 +682,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // 1st time purchase
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
@@ -699,6 +703,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // 2nd time purchase
 
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
@@ -944,11 +949,16 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Sign in to the store
         signIn();
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
         // Click the Contact Us link
+        Print("CONTACTUSMainWebElement click");
         appModel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
 
         // Click the Chat With Us link
