@@ -27,8 +27,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static final String PASSWORD = "HPEsw123";
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
-//    public static String appURL2 = "52.32.172.3";
-	public static String appURL2 = "16.60.158.84";			// CI
+    public static String appURL2 = "52.32.172.3";
+//	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
