@@ -445,21 +445,46 @@ public class AdvantageWebTest extends UnitTestClassBase {
         });
     }
 
+    public boolean waitUntilElementExists(WebElement webElem, long time) throws GeneralLeanFtException {
+        return WaitUntilTestObjectState.waitUntil(webElem, new WaitUntilEvaluator<WebElement>() {
+            public boolean evaluate(WebElement we) {
+                try {
+                    return we.exists() && we.isVisible();
+                } catch (Exception e) {
+                    return false;
+                }
+            }
+        }, time);
+    }
+
+
     // This internal method empties the shopping cart
     public void emptyTheShoppingCart() throws GeneralLeanFtException, InterruptedException {
         if (!isCartEmpty()) {
+
+            Print("sleep 2000");
+            Thread.sleep(2000);
+
             Print("Empty the cart....");
             // Navigate to the cart
+            Print("CartIcon click");
             appModel.AdvantageShoppingPage().CartIcon().click();
             browser.sync();
 
             // Get the rows number from the cart table
             int numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            Print("nubmerOfRowsInCart = " + numberOfRowsInCart);
             int numberOfRelevantProductRowsInCart = numberOfRowsInCart - 3; // Removing the non-relevant rows number from our counter. These are the title etc.. and rows that do not represent actual products
+            Print("numberOfRelevantProductRowsInCart = " + numberOfRelevantProductRowsInCart);
 
             // Iterate and click the "Remove" link for all products
             for (; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--) {
-                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+//                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement(), 10000);
+
+                Print("sleep 2000");
+                Thread.sleep(2000);
+
+                Print("FirstRemoveItemFromCartLinkWebElement click");
                 appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
                 Thread.sleep(2000);// Remove the top product from the cart
             }
@@ -555,6 +580,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Sign in to the store
         signIn();
+
+        Print("sleep 2000");
+        Thread.sleep(2000);
 
         // Empty the shopping cart
         emptyTheShoppingCart();
@@ -957,12 +985,20 @@ public class AdvantageWebTest extends UnitTestClassBase {
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Click the Contact Us link
         Print("CONTACTUSMainWebElement click");
         appModel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Click the Chat With Us link
         appModel.AdvantageShoppingPage().ChatLogoImage().click();
+
+        Print("sleep 2000");
         Thread.sleep(2000);
         // IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
 
