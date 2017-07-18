@@ -949,8 +949,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Sign in to the store
         signIn();
 
-        Print("sleep 2000");
-        Thread.sleep(2000);
+        Print("sleep 4000");
+        Thread.sleep(4000);
 
         // Go to home page
         Print("AdvantageDEMOHomeLink click");
