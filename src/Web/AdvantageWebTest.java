@@ -445,21 +445,46 @@ public class AdvantageWebTest extends UnitTestClassBase {
         });
     }
 
+    public boolean waitUntilElementExists(WebElement webElem, long time) throws GeneralLeanFtException {
+        return WaitUntilTestObjectState.waitUntil(webElem, new WaitUntilEvaluator<WebElement>() {
+            public boolean evaluate(WebElement we) {
+                try {
+                    return we.exists() && we.isVisible();
+                } catch (Exception e) {
+                    return false;
+                }
+            }
+        }, time);
+    }
+
+
     // This internal method empties the shopping cart
     public void emptyTheShoppingCart() throws GeneralLeanFtException, InterruptedException {
         if (!isCartEmpty()) {
+
+            Print("sleep 2000");
+            Thread.sleep(2000);
+
             Print("Empty the cart....");
             // Navigate to the cart
+            Print("CartIcon click");
             appModel.AdvantageShoppingPage().CartIcon().click();
             browser.sync();
 
             // Get the rows number from the cart table
             int numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            Print("nubmerOfRowsInCart = " + numberOfRowsInCart);
             int numberOfRelevantProductRowsInCart = numberOfRowsInCart - 3; // Removing the non-relevant rows number from our counter. These are the title etc.. and rows that do not represent actual products
+            Print("numberOfRelevantProductRowsInCart = " + numberOfRelevantProductRowsInCart);
 
             // Iterate and click the "Remove" link for all products
             for (; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--) {
-                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+//                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement(), 10000);
+
+                Print("sleep 2000");
+                Thread.sleep(2000);
+
+                Print("FirstRemoveItemFromCartLinkWebElement click");
                 appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
                 Thread.sleep(2000);// Remove the top product from the cart
             }
@@ -556,6 +581,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Sign in to the store
         signIn();
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Empty the shopping cart
         emptyTheShoppingCart();
 
@@ -631,14 +659,18 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         shippingCost = getShippingCostFromShippingWebElement();
 
+        Print("shippingCost = " + shippingCost);
+        Print("shippingCost == 0.0 ?");
         // Verify that the shipping costs are for free
-        // TODO: was Verify.isTrue
-        Verification(Verify.isFalse(shippingCost == 0.0, "Verification - shipping costs", " Verify that the shipping costs for 1 item are free."));
+        Verification(Verify.isTrue(shippingCost == 0.0, "Verification - shipping costs", " Verify that the shipping costs for 1 item are free."));
 
         // Purchase 4 items
 
         // Empty the shopping cart
         emptyTheShoppingCart();
+
+        Print("sleep 2000");
+        Thread.sleep(2000);
 
         // Go to home page
         Print("AdvantageDEMOHomeLink click");
@@ -661,6 +693,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         shippingCost = getShippingCostFromShippingWebElement();
 
+        Print("shippingCost = " + shippingCost);
+        Print("shippingCost > 0.0 ?");
+
         // Verify that the shipping costs are for free
         Verification(Verify.isTrue(shippingCost > 0.0, "Verification - shipping costs", " Verify that the shipping costs for 4 item are NOT free."));
         Print("----- 21 END verifyShippingCostsTest-----------------------------");
@@ -682,7 +717,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // 1st time purchase
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
@@ -699,6 +738,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // 2nd time purchase
 
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
@@ -920,7 +960,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("----- 18 END specialOfferPurchase-----------------------------");
     }
 
-    // This test method creates a random user and adds it to the site 
+    // This test method creates a random user and adds it to the site
     @Test
     public void createNewAccount() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 9 START createNewAccount-----------------------------");
@@ -928,7 +968,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("----- 9 END createNewAccount-----------------------------");
     }
 
-    // This test makes a negative test for registering a new user 
+    // This test makes a negative test for registering a new user
     @Test
     public void createNewAccountNegative() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 10 START createNewAccountNegative-----------------------------");
@@ -936,23 +976,36 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("----- 10 END createNewAccountNegative-----------------------------");
     }
 
-    // This test starts a chat with the support of the site 
-    @Test
+    // This test starts a chat with the support of the site
+//    @Test
     public void contactUsChatTest() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 8 START contactUsChatTest-----------------------------");
 
         // Sign in to the store
         signIn();
 
+        Print("sleep 4000");
+        Thread.sleep(4000);
+
         // Go to home page
+        Print("AdvantageDEMOHomeLink click");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
+        Print("sleep 2000");
+        Thread.sleep(2000);
+
         // Click the Contact Us link
+        Print("CONTACTUSMainWebElement click");
         appModel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
+
+        Print("sleep 2000");
+        Thread.sleep(2000);
 
         // Click the Chat With Us link
         appModel.AdvantageShoppingPage().ChatLogoImage().click();
+
+        Print("sleep 2000");
         Thread.sleep(2000);
         // IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
 
@@ -1001,7 +1054,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         return "";
     }
 
-    // This test verifies that the social media links work properly by clicking them 
+    // This test verifies that the social media links work properly by clicking them
     @Test
     public void verifySocialMedia() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 22 START verifySocialMedia-----------------------------");
@@ -1073,14 +1126,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("----- 22 END verifySocialMedia-----------------------------");
     }
 
-    // This test gets the site version from the site UI and prints it to the console 
+    // This test gets the site version from the site UI and prints it to the console
    /* @Test
     public void verifyAdvantageVersionNumber() throws GeneralLeanFtException, ReportException
     {
     	// Get the regular expression pattern from the Copyright object design time description
     	String pattern = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getDescription().getInnerText().toString();
     	waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement());
-    	// Get the actual inner text of the Copyright object during runtime 
+    	// Get the actual inner text of the Copyright object during runtime
     	String advantageIncCopyrightVersionElementInnerText = appModel.AdvantageShoppingPage().AdvantageIncCopyrightVersionWebElement().getInnerText();
 
         // Create a Pattern object
@@ -1091,7 +1144,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         m.matches();
         // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
         String copyrightVersion = m.group(1).trim();
-        
+
         Reporter.reportEvent("verifyAdvantageVersionNumber", "The page copyright version is: " + copyrightVersion, Status.Passed);
         //Verification(Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly."));
 		Verify.isTrue(!copyrightVersion.isEmpty(),"Verification - Verify Advantage Site Version Number","Verify that the site version: " + copyrightVersion + " was located correctly.");
@@ -1132,7 +1185,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("----- 23 END verifyUserLinks-----------------------------");
     }
 
-    // This internal method strips the search parameter from the Search result page title and returns it 
+    // This internal method strips the search parameter from the Search result page title and returns it
     public String getSearchParameterFromSearchResultsTitle() throws GeneralLeanFtException {
         // Get the regular expression pattern from the Search Result Title object design time description
         String pattern = appModel.AdvantageShoppingPage().SearchResultTitleWebElement().getDescription().getInnerText().toString();
@@ -1250,15 +1303,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
         }
         Print("----- 5 END OrderServiceTest-----------------------------");
     }
-    
+
    /*@Test
-    public void OutOfStockTest() throws GeneralLeanFtException, InterruptedException{   
-    	
-    	
+    public void OutOfStockTest() throws GeneralLeanFtException, InterruptedException{
+
+
     	/*
-    	 * Missing (Quantity=0 in all colors)- validate that the UI is marked correctly and that the user can watch all its details 
-    	 * - change color to see the different pictures, 
-    	 * read the 'more info' section (click and open it in mobile) but, 
+    	 * Missing (Quantity=0 in all colors)- validate that the UI is marked correctly and that the user can watch all its details
+    	 * - change color to see the different pictures,
+    	 * read the 'more info' section (click and open it in mobile) but,
     	 * that the user can't change the quantity or add it to cart
     	 *
 
@@ -1266,13 +1319,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	appModel.AdvantageShoppingPage().HEADPHONESShopNowWebElement().click();
     	appModel.AdvantageShoppingPage().SoldOutHeadphonesWebElement().click();
     	appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement().click();
-    	
-    	
+
+
     	Verify.isFalse(appModel.AdvantageShoppingPage().ADDTOCARTButton().isEnabled(),"Verification - Verify sold out item","Verify that the ADD TO CART button not enabled.");
     	Verify.isTrue(appModel.AdvantageShoppingPage().QuantityOfProductWebEdit().isReadOnly(),"Verification - Verify sold out item","Verify that the Quantity field not enabled to edit.");
-    	
-    	
-    	
+
+
+
 
     }*/
 
@@ -1346,10 +1399,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         Print("----- 3 END LogOutTest-----------------------------");
     }
-    
 
-    
-    
+
+
+
    /* @Test
     public void ChatSupportTest() throws GeneralLeanFtException, InterruptedException, ReportException {
 
@@ -1357,15 +1410,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
      *todo: the test runs until he needs to set value in the chat support edit field
      * the app model can't recognize the field although the spy find one single match.
      *
-    	
+
     	// check if the Chat option for support are work fine and send a respond to user msg.
-    	
-    	
+
+
     	// Make sure to enable pop-up messages from this site
-    	
-    	
+
+
     	Browser chatBrowser;
-    	
+
     	try{
     		appModel.AdvantageShoppingPage().ChatLogoImage().click();
         	browser.sync();
@@ -1377,21 +1430,21 @@ public class AdvantageWebTest extends UnitTestClassBase {
 			Thread.sleep(2000);
 	    	Verify.isTrue(brURL.matches(".*//*chat\\.html.*"),"Verification - Contact Us Chat","Verify that the browser navigated to the chat URL");
             Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().ServerConnectmsg().exists() ,"Verification - Contact Us Chat","The 'server concted' massege show up");
-        	
+
     	}
     	catch (Exception e)
     	{
 			Reporter.reportEvent("verify ContactUS  ERROR", "Could not locate the browser with the matching URL"  , Status.Failed);
 			Verify.isTrue(false,"Verification - Contact Us Chat","The chat window was not created");
     	}
-    	
-    	
+
+
     	appModel.AdvantageOnlineShoppingDemoSupportChatPage().TypeAMessageEditField().setValue("Hello I need Help.");
     	appModel.AdvantageOnlineShoppingDemoSupportChatPage().ChatSendImage().click();
-    	
+
     	browser.sync();
-    	
-    	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().RespondChatWebElement().exists(),"Verification - Verify chat respond","Verify that we get respond to our massege.");	
+
+    	Verify.isTrue(appModel.AdvantageOnlineShoppingDemoSupportChatPage().RespondChatWebElement().exists(),"Verification - Verify chat respond","Verify that we get respond to our massege.");
     	assertNotNull(appModel.AdvantageOnlineShoppingDemoSupportChatPage().RespondChatWebElement().getInnerText());
     }*/
 
@@ -1404,7 +1457,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 			- select product  from the selected category - one product only can be selected (optional)
 			- free text of the issue (mandatory)
 				"Send" option
- 
+
 			after clicking OK,  the user will receive a message saying "thank you for contacting Advantage support"
 			play with this - select something, go back and try to change it - try to break this feature
     	 */
