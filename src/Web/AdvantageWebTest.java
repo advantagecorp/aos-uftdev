@@ -659,14 +659,18 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         shippingCost = getShippingCostFromShippingWebElement();
 
+        Print("shippingCost = " + shippingCost);
+        Print("shippingCost == 0.0 ?");
         // Verify that the shipping costs are for free
-        // TODO: was Verify.isTrue
-        Verification(Verify.isFalse(shippingCost == 0.0, "Verification - shipping costs", " Verify that the shipping costs for 1 item are free."));
+        Verification(Verify.isTrue(shippingCost == 0.0, "Verification - shipping costs", " Verify that the shipping costs for 1 item are free."));
 
         // Purchase 4 items
 
         // Empty the shopping cart
         emptyTheShoppingCart();
+
+        Print("sleep 2000");
+        Thread.sleep(2000);
 
         // Go to home page
         Print("AdvantageDEMOHomeLink click");
@@ -688,6 +692,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
 
         shippingCost = getShippingCostFromShippingWebElement();
+
+        Print("shippingCost = " + shippingCost);
+        Print("shippingCost > 0.0 ?");
 
         // Verify that the shipping costs are for free
         Verification(Verify.isTrue(shippingCost > 0.0, "Verification - shipping costs", " Verify that the shipping costs for 4 item are NOT free."));
