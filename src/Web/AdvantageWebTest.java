@@ -970,7 +970,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This test starts a chat with the support of the site
-    @Test
+//    @Test
     public void contactUsChatTest() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 8 START contactUsChatTest-----------------------------");
 
