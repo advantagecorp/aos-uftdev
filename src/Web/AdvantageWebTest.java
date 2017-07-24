@@ -27,12 +27,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static final String PASSWORD = "HPEsw123";
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
-    public static String appURL2 = "52.32.172.3";
+//    public static String appURL2 = "52.32.172.3";
 //	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
-//	public static String appURL2 = "52.88.236.171";			// PRODUCTION
+	public static String appURL2 = "52.88.236.171";			// PRODUCTION
 
     public String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
     public BrowserType browserType;
@@ -96,6 +96,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This internal method gets the username from the text that appears on the SignOutMainIconWebElement object
     public String getUsernameFromSignOutElement() throws GeneralLeanFtException {
+        Print("getUsernameFromSignOutElement start");
         // Get the regular expression pattern from the Sign in Out object design time description
         String pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
         // Get the actual inner text of the Sign in Out object during runtime
@@ -109,6 +110,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         m.matches();
         // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
         String loggedInUserName = m.group(1).trim();
+        Print("getUsernameFromSignOutElement end return " + loggedInUserName);
         return loggedInUserName;
     }
 
@@ -403,18 +405,26 @@ public class AdvantageWebTest extends UnitTestClassBase {
             appModel.AdvantageShoppingPage().CreateAccountPasswordConfirmEditField().setValue(password);
         }
 
+        Print("CreateAccountFirstNameEditField setValue: " + "John");
         appModel.AdvantageShoppingPage().CreateAccountFirstNameEditField().setValue("John");
+        Print("CreateAccountLastNameEditField setValue: " + "HPE");
         appModel.AdvantageShoppingPage().CreateAccountLastNameEditField().setValue("HPE");
+        Print("CreateAccountPhoneNumberEditField setValue: " + "+97235399999");
         appModel.AdvantageShoppingPage().CreateAccountPhoneNumberEditField().setValue("+97235399999");
+        Print("CreateAccountCityEditField setValue: " + "Yehud");
         appModel.AdvantageShoppingPage().CreateAccountCityEditField().setValue("Yehud");
+        Print("CreateAccountAddressEditField setValue: " + "Shabazi 19");
         appModel.AdvantageShoppingPage().CreateAccountAddressEditField().setValue("Shabazi 19");
+        Print("CreateAccountPostalCodeEditField setValue: " + "56100");
         appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField().setValue("56100");
         //appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
+        Print("CreateAccountAgreeToTermsCheckBox set: " + "true");
         appModel.AdvantageShoppingPage().CreateAccountAgreeToTermsCheckBox().set(true);
 
         if (!isNegativeTest) {
             waitUntilElementExists(appModel.AdvantageShoppingPage().REGISTERButton());
             // Click the Register button
+            Print("REGISTERButton click");
             appModel.AdvantageShoppingPage().REGISTERButton().click();
 
             Thread.sleep(2000);
@@ -537,6 +547,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         signIn();
 
         if (!isSignedIn()) {
+            Print("CloseSignInPopUpBtnWebElement click");
             appModel.AdvantageShoppingPage().CloseSignInPopUpBtnWebElement().click();
             createNewAccountEx(USERNAME, PASSWORD, false);
         }
