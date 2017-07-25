@@ -146,6 +146,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SelectProductListBox2 SelectProductListBox2;
 	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
 	private YesCANCELButton YesCANCELButton;
+	private PAYNOWButtonManualPayment PAYNOWButtonManualPayment;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -258,6 +259,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SelectProductListBox2 = new SelectProductListBox2(this, applicationModel);
 		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
 		YesCANCELButton = new YesCANCELButton(this, applicationModel);
+		PAYNOWButtonManualPayment = new PAYNOWButtonManualPayment(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -381,6 +383,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SelectProductListBox2 SelectProductListBox2() { return SelectProductListBox2; }
 		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
 		public YesCANCELButton YesCANCELButton() { return YesCANCELButton; }
+		public PAYNOWButtonManualPayment PAYNOWButtonManualPayment() { return PAYNOWButtonManualPayment; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -2166,7 +2169,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").role("button").accessibilityName("").tagName("BUTTON").name("PAY NOW").index(0).build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").role("button").tagName("BUTTON").name("PAY NOW").id("pay_now_btn_SAFEPAY").index(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3181,6 +3184,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").tagName("BUTTON").name("YES, CANCEL ").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class PAYNOWButtonManualPayment extends ButtonNodeBase
+	{
+
+		
+								public PAYNOWButtonManualPayment(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("PAYNOWButtonManualPayment");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").role("button").tagName("BUTTON").name("PAY NOW").id("pay_now_btn_MANUALPAYMENT").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

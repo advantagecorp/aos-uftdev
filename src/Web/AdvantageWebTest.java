@@ -29,10 +29,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
 //	public static String appURL2 = "16.60.158.84";			// CI
-//	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
-	public static String appURL2 = "52.88.236.171";			// PRODUCTION
+//	public static String appURL2 = "52.88.236.171";			// PRODUCTION
+//    public static String appURL2 = "52.34.13.179:8080";     // QUALLY
 
     public String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
     public BrowserType browserType;
@@ -262,36 +263,48 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
 
-    public void checkOutAndPayMasterCredit(String cardnum, String CVV, String holdername, boolean save) throws GeneralLeanFtException {
+    public void checkOutAndPayMasterCredit(String cardnum, String CVV, String holdername, boolean save) throws GeneralLeanFtException, InterruptedException {
         Print("checkOutAndPayMasterCredit start");
         // Checkout the cart for purchase
         // Click the cart icon
+        Print("CartIcon().click()");
         appModel.AdvantageShoppingPage().CartIcon().click();
         // Click the checkout button
+        Print("CHECKOUTHoverButton().click()");
         appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
         // Click Next to continue the purchase wizard
+        Print("NEXTButton().click()");
         appModel.AdvantageShoppingPage().NEXTButton().click();
         // Select the payment method
+        Print("MasterCreditImage().click()");
         appModel.AdvantageShoppingPage().MasterCreditImage().click();
 
 
         // Set the card number
+        Print("CardNumberEditField().setValue(" + cardnum);
         appModel.AdvantageShoppingPage().CardNumberEditField().setValue(cardnum);
         // Set the CVV number
+        Print("CvvNumberEditField().setValue(" + CVV);
         appModel.AdvantageShoppingPage().CvvNumberEditField().setValue(CVV);
         // Set the card holder name
+        Print("CardholderNameEditField().setValue(" + holdername);
         appModel.AdvantageShoppingPage().CardholderNameEditField().setValue(holdername);
         if (!save) {
             // Set the Remember Me checkbox to true or false
+            Print("SaveMasterCreditCheckBox().set(false)");
             appModel.AdvantageShoppingPage().SaveMasterCreditCheckBox().set(false);
         }
 
+//        Print("sleep 4000");
+//        Thread.sleep(4000);
 
         //appModel.AdvantageShoppingPage().NEXTButton().click();
         // Click the "Pay Now" button
-        appModel.AdvantageShoppingPage().PAYNOWButton().click();
+        Print("PAYNOWButtonManualPayment().click()");
+        appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
 
-        waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement());
+        Print("ThankYouForBuyingWithAdvantageWebElement()");
+        waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement(), 5000);
 
         // Verify that the product was purchased
         Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase MasterCredit:", " Verify that the product was purchased successfully with MasterCredit "));
@@ -988,7 +1001,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This test starts a chat with the support of the site
-//    @Test
+    @Test
     public void contactUsChatTest() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 8 START contactUsChatTest-----------------------------");
 
@@ -1251,6 +1264,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
     @Test
     public void VerifyDownloadPageTest() throws GeneralLeanFtException, InterruptedException {
         Print("----- 7 START VerifyDownloadPageTest-----------------------------");
+
+        Print("sleep 4000");
+        Thread.sleep(4000);
+
         waitUntilElementExists(appModel.AdvantageShoppingPage().MICEShopNowWebElement());
 
         browser.navigate(appURL + "/downloads");
@@ -1283,31 +1300,40 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         signIn();
 
+        Print("AdvantageDEMOHomeLink().click()");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
+        Print("LAPTOPSWebElement().click()");
         appModel.AdvantageShoppingPage().LAPTOPSWebElement().click();
 
         // Select an item to purchase and add it to the cart
         try {
             //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+            Print("laptopFororderService().click()");
             appModel.AdvantageShoppingPage().laptopFororderService().click();
             String ProductName = appModel.AdvantageShoppingPage().LaptopName().getInnerText();
             Print("ORDER:" + ProductName);
 
+            Print("ADDTOCARTButton().click()");
             appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
 
             Checkout();
 
-
+            Print("SignOutMainIconWebElement().click()");
             appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+            Print("MyOrdersWebElement().click()");
             appModel.AdvantageShoppingPage().MyOrdersWebElement().click();
+            Print("OrderSearchWebElement().click()");
             appModel.AdvantageShoppingPage().OrderSearchWebElement().click();
+            Print("SearchOrderEditField().setValue(" + ProductName);
             appModel.AdvantageShoppingPage().SearchOrderEditField().setValue(ProductName);
+            Print("FirstRemoveItemFromCartLinkWebElement().click()");
             appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
 
 
             Verify.isTrue(appModel.AdvantageShoppingPage().RemoveFromOrderValidate().exists(), "Verification - Verify Search orders", "Verify that the alert window element exists.");
             Assert.assertTrue("Verification - Verify Search orders: Verify that the alert window element exists.", appModel.AdvantageShoppingPage().YesNoButtonsRemoveOrderSearch().exists());
+            Print("YesCANCELButton().click()");
             appModel.AdvantageShoppingPage().YesCANCELButton().click();
         } catch (Exception e) {
             e.printStackTrace();
@@ -1504,6 +1530,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
         appModel.AdvantageShoppingPage().NEXTButton().click();
         appModel.AdvantageShoppingPage().PAYNOWButton().click();
+//        appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
 
         browser.sync();
     }

@@ -822,9 +822,9 @@
                         <properties>
                             <property name="ButtonType" type="string" isRegExp="false">button</property>
                             <property name="Role" type="string" isRegExp="false">button</property>
-                            <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">BUTTON</property>
                             <property name="Name" type="string" isRegExp="false">PAY NOW</property>
+                            <property name="Id" type="string" isRegExp="false">pay_now_btn_SAFEPAY</property>
                         </properties>
                         <index>0</index>
                     </identification>
@@ -1306,6 +1306,20 @@
                             <property name="TagName" type="string" isRegExp="false">BUTTON</property>
                             <property name="Name" type="string" isRegExp="false">YES, CANCEL </property>
                         </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Web">
+                    <name>PAYNOWButtonManualPayment</name>
+                    <codeName>PAYNOWButtonManualPayment</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ButtonType" type="string" isRegExp="false">button</property>
+                            <property name="Role" type="string" isRegExp="false">button</property>
+                            <property name="TagName" type="string" isRegExp="false">BUTTON</property>
+                            <property name="Name" type="string" isRegExp="false">PAY NOW</property>
+                            <property name="Id" type="string" isRegExp="false">pay_now_btn_MANUALPAYMENT</property>
+                        </properties>
+                        <index>1</index>
                     </identification>
                 </object>
             </children>
