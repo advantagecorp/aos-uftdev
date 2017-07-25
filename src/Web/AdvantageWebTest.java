@@ -1017,9 +1017,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
+        Print("sleep 5000");
+        Thread.sleep(5000);
+
         // Click the Contact Us link
         Print("CONTACTUSMainWebElement click");
         appModel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
+
+        Print("sleep 5000");
+        Thread.sleep(5000);
 
         // Click the Chat With Us link
         appModel.AdvantageShoppingPage().ChatLogoImage().click();
