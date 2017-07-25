@@ -29,10 +29,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
 //	public static String appURL2 = "16.60.158.84";			// CI
-	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+//	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
-//	public static String appURL2 = "52.88.236.171";			// PRODUCTION
+	public static String appURL2 = "52.88.236.171";			// PRODUCTION
 //    public static String appURL2 = "52.34.13.179:8080";     // QUALLY
 
     public String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
@@ -1001,6 +1001,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This test starts a chat with the support of the site
+    //TODO: check why this test pass successfully on local LeanFT but crash on CI
     @Test
     public void contactUsChatTest() throws GeneralLeanFtException, ReportException, InterruptedException {
         Print("----- 8 START contactUsChatTest-----------------------------");
@@ -1016,21 +1017,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
-        Print("sleep 2000");
-        Thread.sleep(2000);
-
         // Click the Contact Us link
         Print("CONTACTUSMainWebElement click");
         appModel.AdvantageShoppingPage().CONTACTUSMainWebElement().click();
 
-        Print("sleep 2000");
-        Thread.sleep(2000);
-
         // Click the Chat With Us link
         appModel.AdvantageShoppingPage().ChatLogoImage().click();
 
-        Print("sleep 2000");
-        Thread.sleep(2000);
+        Print("sleep 5000");
+        Thread.sleep(5000);
         // IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
 
         // Verify that the chat window has opened
@@ -1042,6 +1037,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             chatBrowser = BrowserFactory.attach(chatBrowserDescription);
             String brURL = chatBrowser.getURL();
+            Print("sleep 1000");
+            Thread.sleep(1000);
             Verification(Verify.isTrue(brURL.matches(".*/chat\\.html.*"), "Verification - Contact Us Chat", " Verify that the browser navigated to the chat URL"));
             chatBrowser.close();
         } catch (Exception e) {
@@ -1183,23 +1180,35 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Sign in to the store
         signIn();
 
+        Print("sleep 3000");
+        Thread.sleep(3000);
+
         // Go to home page
+        Print("AdvantageDEMOHomeLink().click()");
         appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
         browser.sync();
 
+        Print("SignOutMainIconWebElement().click()");
         appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+        Print("MyAccountWebElement().click()");
         appModel.AdvantageShoppingPage().MyAccountWebElement().click();
         browser.sync();
+        Print("waitUntilElementExists MyAccountHeaderLabelWebElement()");
         waitUntilElementExists(appModel.AdvantageShoppingPage().MyAccountHeaderLabelWebElement());
         Verification(Verify.isTrue(appModel.AdvantageShoppingPage().MyAccountHeaderLabelWebElement().exists(2), "Verification - Verify User Links", " Verify that the user links navigations work - My Account."));
 
+        Print("SignOutMainIconWebElement().click()");
         appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+        Print("MyOrdersWebElement().click()");
         appModel.AdvantageShoppingPage().MyOrdersWebElement().click();
         browser.sync();
+        Print("waitUntilElementExists MyOrdersHeaderLabelWebElement()");
         waitUntilElementExists(appModel.AdvantageShoppingPage().MyOrdersHeaderLabelWebElement());
         Verification(Verify.isTrue(appModel.AdvantageShoppingPage().MyOrdersHeaderLabelWebElement().exists(2), "Verification - Verify User Links", " Verify that the user links navigations work - My Orders."));
 
+        Print("SignOutMainIconWebElement().click()");
         appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+        Print("SignOutWebElement().click()");
         appModel.AdvantageShoppingPage().SignOutWebElement().click();
 
         browser.refresh();
