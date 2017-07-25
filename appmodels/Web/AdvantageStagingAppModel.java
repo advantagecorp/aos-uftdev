@@ -1363,7 +1363,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ImageDescription.Builder().alt("chat logo").type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").build();
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().tagName("IMG").id("chatLogo").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

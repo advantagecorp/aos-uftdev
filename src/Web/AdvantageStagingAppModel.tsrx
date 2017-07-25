@@ -453,9 +453,8 @@
                     <codeName>ChatLogoImage</codeName>
                     <identification>
                         <properties>
-                            <property name="Alt" type="string" isRegExp="false">chat logo</property>
-                            <property name="Type" type="enum" isRegExp="false">Normal</property>
                             <property name="TagName" type="string" isRegExp="false">IMG</property>
+                            <property name="Id" type="string" isRegExp="false">chatLogo</property>
                         </properties>
                     </identification>
                     <image>iVBORw0KGgoAAAANSUhEUgAAAEIAAABRCAYAAABmFnDdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAElSURBVHhe7dlBDgFBFEVRW7IN2zG2EyMbbflyJYWH7jbgy73Jm3VVUmcksdmdjpNNkxAkBAlBQpAQJAQJQUKQECQECUFCkBAkBAlBQpAQJAQJQUKQECQErYbYHvY/vaUJQUKQECQErYb4t4QgIUgIEoKEICFICFoNkX7EfLJvJwQJQUKQELQa4t8SgoQgIUgIEoKEICFICBKChCAhSAgSgoQgIUgIEoKEICFICBKChCAhSAi6QFyX/oGau/GejruBqKVHztn9Pd32AFFLD323dE+nRYhaeuyrpTs67SlELT342dL5TnsJUUuPTktnO+0tRC09/H7pXKfNgqilx49LZzptNkQtAVyXvu+0RRC1hFBL33baYoiaEMOEGCbEMCGG9Yc4TmcEhNgXXSUr+AAAAABJRU5ErkJggg==</image>
