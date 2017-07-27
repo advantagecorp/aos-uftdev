@@ -2221,6 +2221,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		}
 
 		@Override 
+		public void kill() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().kill();
+		}
+
+		@Override 
 		public void launch() throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().launch();
@@ -2236,6 +2242,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		public void setDisplayName(java.lang.String arg0)  
 		{
 			getConcrete().setDisplayName(arg0);
+		}
+
+		@Override 
+		public void uninstall() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().uninstall();
 		}
 
 		@Override 
@@ -2449,6 +2461,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 
 		@Override 
 		public void pan(com.hp.lft.sdk.Location arg0, com.hp.lft.sdk.Location arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().pan(arg0, arg1);
+		}
+
+		@Override 
+		public void pan(java.awt.Point arg0, java.awt.Point arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().pan(arg0, arg1);
 		}
@@ -2729,6 +2747,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		}
 
 		@Override 
+		public void pan(java.awt.Point arg0, java.awt.Point arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().pan(arg0, arg1);
+		}
+
+		@Override 
 		public void pan(java.awt.Point arg0, java.awt.Point arg1, com.hp.lft.sdk.mobile.PanArgs arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().pan(arg0, arg1, arg2);
@@ -2993,6 +3017,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 
 		@Override 
 		public void pan(com.hp.lft.sdk.Location arg0, com.hp.lft.sdk.Location arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().pan(arg0, arg1);
+		}
+
+		@Override 
+		public void pan(java.awt.Point arg0, java.awt.Point arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().pan(arg0, arg1);
 		}
@@ -3279,6 +3309,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 		}
 
 		@Override 
+		public void pan(java.awt.Point arg0, java.awt.Point arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().pan(arg0, arg1);
+		}
+
+		@Override 
 		public void pan(java.awt.Point arg0, java.awt.Point arg1, com.hp.lft.sdk.mobile.PanArgs arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().pan(arg0, arg1, arg2);
@@ -3549,6 +3585,12 @@ public class AdvantageIOSApp extends AppModelBase {		private AdvantageShoppingAp
 
 		@Override 
 		public void pan(com.hp.lft.sdk.Location arg0, com.hp.lft.sdk.Location arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().pan(arg0, arg1);
+		}
+
+		@Override 
+		public void pan(java.awt.Point arg0, java.awt.Point arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().pan(arg0, arg1);
 		}

@@ -5291,6 +5291,12 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		}
 
 		@Override 
+		public void submit() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().submit();
+		}
+
+		@Override 
 		public void swipe(com.hp.lft.sdk.SwipeDirection arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
 		{
 			getConcrete().swipe(arg0);
