@@ -4,27 +4,6 @@
   <artifactId>AdvantageOnlineShoppingTests</artifactId>
   <version>14.1.0-SNAPSHOT</version>
   <name>AdvantageOnlineShoppingTests</name>
-  <distributionManagement>
-		<repository>
-			<id>leanft</id>
-			<name>HP FTMobile nexus repository</name>
-			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/leanft-release/</url>
-		</repository>
-		<snapshotRepository>
-			<id>leanft-snapshot</id>
-			<name>HP FTMobile nexus snapshot repository</name>
-			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/leanft-snapshot/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>nexus</name>
-			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/groups/leanft-public</url>
-		</repository>
-	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
@@ -201,4 +180,28 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>leanft</id>
+			<name>HP FTMobile nexus repository</name>
+			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/leanft-release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>leanft-snapshot</id>
+			<name>HP FTMobile nexus snapshot repository</name>
+			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/leanft-snapshot/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/groups/leanft-public</url>
+		</repository>
+	</repositories>
+	
+	
 </project>
