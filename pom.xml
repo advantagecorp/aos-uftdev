@@ -5,20 +5,6 @@
   <version>14.1.0-SNAPSHOT</version>
   <name>AdvantageOnlineShoppingTests</name>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus-public</id>
-			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -203,5 +189,18 @@
 		</repository>
 	</repositories>
 	
+    <pluginRepositories>
+		<pluginRepository>
+			<id>nexus-public</id>
+			<url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 	
 </project>
