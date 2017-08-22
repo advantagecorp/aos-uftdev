@@ -18,6 +18,8 @@ import com.hp.lft.verifications.Verify;
 
 import unittesting.*;
 
+import static org.junit.Assert.fail;
+
 // Make sure the tests run at the ascending alphabet name order (JUnit 4.11 and above)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
@@ -77,13 +79,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Close the browser
         browser.close();
         elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
-        Print(String.valueOf((elapsedTimeCurrentTest / 1000F) / 60 + " min / "
-                + String.valueOf(elapsedTimeCurrentTest / 1000F) + " sec / "
-                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
+//        Print(String.valueOf((elapsedTimeCurrentTest / 1000F) / 60 + " min / "
+//                + String.valueOf(elapsedTimeCurrentTest / 1000F) + " sec / "
+//                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
     }
 
     // This internal method checks if a user is already signed in to the web site
-    public boolean isSignedIn() throws GeneralLeanFtException {
+    public boolean isSignedIn() {
         waitUntilElementExists(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
         String loggedInUserName = getUsernameFromSignOutElement();
         if (loggedInUserName.isEmpty())
@@ -95,13 +97,30 @@ public class AdvantageWebTest extends UnitTestClassBase {
         System.out.println(msg);
     }
 
+    private String getWebElementInnerText(WebElement webElement) {
+        String result = "";
+        try {
+            result = webElement.getInnerText();
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: " + webElement);
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     // This internal method gets the username from the text that appears on the SignOutMainIconWebElement object
-    public String getUsernameFromSignOutElement() throws GeneralLeanFtException {
+    public String getUsernameFromSignOutElement() {
         Print("getUsernameFromSignOutElement start");
         // Get the regular expression pattern from the Sign in Out object design time description
-        String pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
+        String pattern = null;
+        try {
+            pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: SignOutMainIconWebElement");
+            e.printStackTrace();
+        }
         // Get the actual inner text of the Sign in Out object during runtime
-        String signInOutIconElementInnerText = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getInnerText();
+        String signInOutIconElementInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
@@ -111,7 +130,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         m.matches();
         // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
         String loggedInUserName = m.group(1).trim();
-        Print("getUsernameFromSignOutElement end return " + loggedInUserName);
+        Print("getUsernameFromSignOutElement end loggedInUserName = '" + loggedInUserName + "'");
         return loggedInUserName;
     }
 
@@ -141,23 +160,29 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     //This internal method signs the user in - a user must be in the system:
     //username - johnhpe1, password - HPEsw123
-    public boolean signIn() throws GeneralLeanFtException, InterruptedException {
+
+    /**
+     * Sign in to the store
+     * @return
+     * @throws GeneralLeanFtException
+     */
+    public boolean signIn() {
         Print("signIn() start");
         boolean isSignedIn = true;
 
         if (!isSignedIn()) {
             // Click the sign-in icon
-            appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+            clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
             waitUntilElementExists(appModel.AdvantageShoppingPage().SIGNINButton());
             // Fill in the user name and password
-            appModel.AdvantageShoppingPage().UsernameLoginEditField().setValue(USERNAME);
-            appModel.AdvantageShoppingPage().PasswordLoginEditField().setValue(PASSWORD);
+            setValueEditField(appModel.AdvantageShoppingPage().UsernameLoginEditField(), USERNAME);
+            setValueEditField(appModel.AdvantageShoppingPage().PasswordLoginEditField(), PASSWORD);
             // Check the Remember Me checkbox
-            appModel.AdvantageShoppingPage().RememberMeCheckBox().set(true);
+            setCheckBox(appModel.AdvantageShoppingPage().RememberMeCheckBox(), true);
             // Click on sign in button
-            appModel.AdvantageShoppingPage().SIGNINButton().click();
+            clickWebElement(appModel.AdvantageShoppingPage().SIGNINButton());
 
-            Thread.sleep(2000);
+            threadSleep(2000);
 
             isSignedIn = isSignedIn();
             Verify.isTrue(isSignedIn, "Verification - Sign In", "Verify that the user " + USERNAME + " signed in properly.");
@@ -166,47 +191,82 @@ public class AdvantageWebTest extends UnitTestClassBase {
         return isSignedIn;
     }
 
+    private void setCheckBox(CheckBox checkBox, Boolean value) {
+        try {
+            checkBox.set(value);
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: " + checkBox);
+            e.printStackTrace();
+        }
+    }
+
+    private void setValueEditField(EditField editField, String value) {
+        try {
+            editField.setValue(value);
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: " + editField);
+            e.printStackTrace();
+        }
+    }
+
+    private void clickWebElement(WebElement webElement) {
+        try {
+            webElement.click();
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: " + webElement.toString());
+            e.printStackTrace();
+        }
+    }
+
+    private void threadSleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     //This internal method signs the user out
-    public void signOut() throws GeneralLeanFtException {
+    public void signOut() {
         if (isSignedIn()) {
             // Click the sign-in icon
-            appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+            clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
             // Click the sign out link
-            appModel.AdvantageShoppingPage().SignOutWebElement().click();
+            clickWebElement(appModel.AdvantageShoppingPage().SignOutWebElement());
         }
     }
 
     // This internal method gets a products category object and a product object and adds them to the cart
     // WebElementNodeBase productsCategory - 	the category object
     // ImageNodeBase product - 					the specific product object
-    public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) throws GeneralLeanFtException, InterruptedException {
+    public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) {
         Print("selectItemToPurchase() start");
         // Pick the product's category
-        Thread.sleep(2000);
+        threadSleep(2000);
         Print("productsCategory click");
-        productsCategory.click();
-        Thread.sleep(2000);
+        clickWebElement(productsCategory);
+        threadSleep(2000);
 
         // Pick the specific product
         Print("product click");
-        product.click();
-        Thread.sleep(1000);
+        clickWebElement(product);
+        threadSleep(1000);
 
         // Select the first non-selected available color for the product
         Print("ColorSelectorFirstWebElement click");
-        appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement().click();
-        Thread.sleep(1000);
+        clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
+        threadSleep(1000);
 
         // If the quantity is more than 1, set this value in the quantity edit-field
         if (productQuantity != 1) {
             Print("QuantityOfProductWebEdit setValue" + Integer.toString(productQuantity));
-            appModel.AdvantageShoppingPage().QuantityOfProductWebEdit().setValue(Integer.toString(productQuantity));
+            setValueEditField(appModel.AdvantageShoppingPage().QuantityOfProductWebEdit(), Integer.toString(productQuantity));
         }
 
         // Add it to the cart
         Print("ADDTOCARTButton click");
-        appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
-        Thread.sleep(2000);
+        clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        threadSleep(2000);
         Print("selectItemToPurchase() end");
     }
 
@@ -216,49 +276,53 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This method will checkout to the cart and pay for the cart content
     // The boolean fillCredentials specifies if to fill the credentials in the form or not
-    public void checkOutAndPay(boolean fillCredentials) throws GeneralLeanFtException {
+    public void checkOutAndPay(boolean fillCredentials) {
         Print("checkOutAndPay start");
         // Checkout the cart for purchase
         // Click the cart icon
         Print("CartIcon click");
-        appModel.AdvantageShoppingPage().CartIcon().click();
+        clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
         // Click the checkout button
         Print("CHECKOUTHoverButton click");
-        appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
+        clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         // Click Next to continue the purchase wizard
         Print("NEXTButton click");
-        appModel.AdvantageShoppingPage().NEXTButton().click();
+        clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
         Print("SafepayImage click");
-        appModel.AdvantageShoppingPage().SafepayImage().click();
+        clickWebElement(appModel.AdvantageShoppingPage().SafepayImage());
 
         if (fillCredentials) {
             // Set the payment method user name
             Print("SafePayUsernameEditField setValue HPE123");
-            appModel.AdvantageShoppingPage().SafePayUsernameEditField().setValue("HPE123");
+            setValueEditField(appModel.AdvantageShoppingPage().SafePayUsernameEditField(), "HPE123");
             // Set the payment method password
             Print("SafePayPasswordEditField setValue Aaaa1");
-            appModel.AdvantageShoppingPage().SafePayPasswordEditField().setValue("Aaaa1");
+            setValueEditField(appModel.AdvantageShoppingPage().SafePayPasswordEditField(), "Aaaa1");
             // Set the Remember Me checkbox to true or false
-            appModel.AdvantageShoppingPage().SaveChangesInProfileForFutureUse().set(true);
+            setCheckBox(appModel.AdvantageShoppingPage().SaveChangesInProfileForFutureUse(), true);
         }
 
-        //appModel.AdvantageShoppingPage().NEXTButton().click();
         // Click the "Pay Now" button
         Print("PAYNOWButton click");
-        appModel.AdvantageShoppingPage().PAYNOWButton().click();
+        clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
 
         waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement());
 
-        // Verify that the product was purchased
-        if (fillCredentials)
-            Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
-        else
-            Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
+        try {
+            // Verify that the product was purchased
+            if (fillCredentials)
+                    Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
+            else
+                Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2), "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
+        } catch (GeneralLeanFtException e) {
+            e.printStackTrace();
+        }
+
         Print("checkOutAndPay end");
     }
 
-    public void checkOutAndPay() throws GeneralLeanFtException {
+    public void checkOutAndPay() {
         checkOutAndPay(true); // Default value is true - fill credentials
     }
 
@@ -367,17 +431,17 @@ public class AdvantageWebTest extends UnitTestClassBase {
     // - When it gets any empty value as input, it adds a random username to the site
     // - When it gets a username and password as input, it adds a new user with these values
     // - The boolean isNegativeTest specifies if to perform a negative test or not, meaning, cannot register the user when the Register form is not properly filled
-    public void createNewAccountEx(String pUserName, String pPassword, boolean isNegativeTest) throws GeneralLeanFtException, ReportException, InterruptedException {
+    public void createNewAccountEx(String pUserName, String pPassword, boolean isNegativeTest) {
         // In order to create a new account, we must be signed out
         signOut();
 
         // Click the Sign in icon
         Print("click SignOutMainIconWebElement()");
-        appModel.AdvantageShoppingPage().SignOutMainIconWebElement().click();
+        clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 
         // Click the Create New Account link
         Print("click CREATENEWACCOUNTLink");
-        appModel.AdvantageShoppingPage().CREATENEWACCOUNTLink().click();
+        clickWebElement(appModel.AdvantageShoppingPage().CREATENEWACCOUNTLink());
 
         // Set the user name and submit the new account
         // Make sure that the user name does not exist
@@ -399,50 +463,50 @@ public class AdvantageWebTest extends UnitTestClassBase {
         }
 
         waitUntilElementExists(appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit());
-        Thread.sleep(2000);
+        threadSleep(2000);
         Print("CreateAccountUsernameWebEdit setValue: " + username);
-        appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit().setValue(username);
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountUsernameWebEdit(), username);
 
         // Fill the Create Account form
 
         if (!isNegativeTest) { // Do not fill the mail field in a negative test
             Print("CreateAccountEmailEditField setValue: john@hpe.com ");
-            appModel.AdvantageShoppingPage().CreateAccountEmailEditField().setValue("john@hpe.com");
+            setValueEditField(appModel.AdvantageShoppingPage().CreateAccountEmailEditField(), "john@hpe.com");
         }
 
         Print("CreateAccountPasswordEditField setValue: " + password);
-        appModel.AdvantageShoppingPage().CreateAccountPasswordEditField().setValue(password);
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountPasswordEditField(), password);
 
         if (!isNegativeTest) { // Do not confirm the password in a negative test
             Print("CreateAccountPasswordConfirmEditField setValue: " + password);
-            appModel.AdvantageShoppingPage().CreateAccountPasswordConfirmEditField().setValue(password);
+            setValueEditField(appModel.AdvantageShoppingPage().CreateAccountPasswordConfirmEditField(), password);
         }
 
         Print("CreateAccountFirstNameEditField setValue: " + "John");
-        appModel.AdvantageShoppingPage().CreateAccountFirstNameEditField().setValue("John");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountFirstNameEditField(), "John");
         Print("CreateAccountLastNameEditField setValue: " + "HPE");
-        appModel.AdvantageShoppingPage().CreateAccountLastNameEditField().setValue("HPE");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountLastNameEditField(), "HPE");
         Print("CreateAccountPhoneNumberEditField setValue: " + "+97235399999");
-        appModel.AdvantageShoppingPage().CreateAccountPhoneNumberEditField().setValue("+97235399999");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountPhoneNumberEditField(), "+97235399999");
         Print("CreateAccountCityEditField setValue: " + "Yehud");
-        appModel.AdvantageShoppingPage().CreateAccountCityEditField().setValue("Yehud");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountCityEditField(), "Yehud");
         Print("CreateAccountAddressEditField setValue: " + "Shabazi 19");
-        appModel.AdvantageShoppingPage().CreateAccountAddressEditField().setValue("Shabazi 19");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountAddressEditField(), "Shabazi 19");
         Print("CreateAccountPostalCodeEditField setValue: " + "56100");
-        appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField().setValue("56100");
+        setValueEditField(appModel.AdvantageShoppingPage().CreateAccountPostalCodeEditField(), "56100");
         //appModel.AdvantageShoppingPage().CreateAccountReceiveOffersCheckBox().set(false);
         Print("CreateAccountAgreeToTermsCheckBox set: " + "true");
-        appModel.AdvantageShoppingPage().CreateAccountAgreeToTermsCheckBox().set(true);
+        setCheckBox(appModel.AdvantageShoppingPage().CreateAccountAgreeToTermsCheckBox(), true);
 
         if (!isNegativeTest) {
             waitUntilElementExists(appModel.AdvantageShoppingPage().REGISTERButton());
             // Click the Register button
             Print("REGISTERButton click");
-            appModel.AdvantageShoppingPage().REGISTERButton().click();
+            clickWebElement(appModel.AdvantageShoppingPage().REGISTERButton());
 
-            Thread.sleep(2000);
+            threadSleep(2000);
 
-            browser.sync();
+            browserSync();
             waitUntilElementExists(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 
             // Verify that the user name we added now appears in the inner text of the Sign In element
@@ -451,21 +515,33 @@ public class AdvantageWebTest extends UnitTestClassBase {
             Assert.assertEquals("Verification - Create New Account:  Verify that a new account was created successfully for user name: " + username + ".", username, getUsernameFromSignOutElement());
         } else { // In a negative test, verify that the Register button is indeed disabled
             // Verify that a new account cannot be created successfully
-            Verification(Verify.isFalse(appModel.AdvantageShoppingPage().CreateAccountREGISTERNotValidWebElement().exists(2), "Verification - Create New Account Negative test", "Verify that a new account cannot be created successfully."));
+            try {
+                Verification(Verify.isFalse(appModel.AdvantageShoppingPage().CreateAccountREGISTERNotValidWebElement().exists(2), "Verification - Create New Account Negative test", "Verify that a new account cannot be created successfully."));
+            } catch (GeneralLeanFtException e) {
+                fail("GeneralLeanFtException: createNewAccountEx");
+                e.printStackTrace();
+            }
         }
     }
 
     // This internal method waits until an object exists and visible
-    public boolean waitUntilElementExists(WebElement webElem) throws GeneralLeanFtException {
-        return WaitUntilTestObjectState.waitUntil(webElem, new WaitUntilEvaluator<WebElement>() {
-            public boolean evaluate(WebElement we) {
-                try {
-                    return we.exists() && we.isVisible();
-                } catch (Exception e) {
-                    return false;
+    public boolean waitUntilElementExists(WebElement webElem) {
+        boolean result = false;
+        try {
+            result = WaitUntilTestObjectState.waitUntil(webElem, new WaitUntilEvaluator<WebElement>() {
+                public boolean evaluate(WebElement we) {
+                    try {
+                        return we.exists() && we.isVisible();
+                    } catch (Exception e) {
+                        return false;
+                    }
                 }
-            }
-        });
+            });
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: " + webElem.toString());
+            e.printStackTrace();
+        }
+        return result;
     }
 
     public boolean waitUntilElementExists(WebElement webElem, long time) throws GeneralLeanFtException {
@@ -480,22 +556,30 @@ public class AdvantageWebTest extends UnitTestClassBase {
         }, time);
     }
 
-
-    // This internal method empties the shopping cart
-    public void emptyTheShoppingCart() throws GeneralLeanFtException, InterruptedException {
+    /**
+     * This method empties the shopping cart
+     * @throws GeneralLeanFtException
+     * @throws InterruptedException
+     */
+    public void emptyTheShoppingCart() {
         if (!isCartEmpty()) {
-
             Print("sleep 2000");
-            Thread.sleep(2000);
+            threadSleep(2000);
 
             Print("Empty the cart....");
             // Navigate to the cart
             Print("CartIcon click");
-            appModel.AdvantageShoppingPage().CartIcon().click();
-            browser.sync();
+            clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
+            browserSync();
 
             // Get the rows number from the cart table
-            int numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            int numberOfRowsInCart = 0;
+            try {
+                numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            } catch (GeneralLeanFtException e) {
+                fail("GeneralLeanFtException: emptyTheShoppingCart appModel.AdvantageShoppingPage().CartTable().getRows().size()");
+                e.printStackTrace();
+            }
             Print("nubmerOfRowsInCart = " + numberOfRowsInCart);
             int numberOfRelevantProductRowsInCart = numberOfRowsInCart - 3; // Removing the non-relevant rows number from our counter. These are the title etc.. and rows that do not represent actual products
             Print("numberOfRelevantProductRowsInCart = " + numberOfRelevantProductRowsInCart);
@@ -505,11 +589,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement(), 10000);
 
                 Print("sleep 2000");
-                Thread.sleep(2000);
+                threadSleep(2000);
 
                 Print("FirstRemoveItemFromCartLinkWebElement click");
-                appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement().click();
-                Thread.sleep(2000);// Remove the top product from the cart
+                clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+                threadSleep(2000);// Remove the top product from the cart
             }
 
             Print("cart is empty");
@@ -518,7 +602,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This internal method returns the number of items in the shopping cart by the inner text of the cart icon object
-    public int getCartProductsNumberFromCartObjectInnerText() throws GeneralLeanFtException {
+    public int getCartProductsNumberFromCartObjectInnerText() {
         Print("getCartProductsNumberFromCartObjectInnerText start");
         int productsNunberInCart = 0;
 
@@ -526,7 +610,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         //String pattern = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
 
         // Get the actual inner text of the Cart icon object during runtime
-        String advantageCartIcontInnerText = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
+        String advantageCartIcontInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().LinkCartIcon());
 
         // Create a Pattern object
         //Pattern r = Pattern.compile(pattern);
@@ -545,7 +629,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This internal method checks if the shopping cart is empty or not
-    public boolean isCartEmpty() throws GeneralLeanFtException {
+    public boolean isCartEmpty() {
         if (getCartProductsNumberFromCartObjectInnerText() == 0)
             return true;
         return false;
@@ -553,24 +637,30 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     //This test method creates the default user to be used in the tests, if it already does not exist - a user must be in the system:
     //username - johnhpe1, password - HPEsw123
+
+    /**
+     * Adding main user if not exists
+     * @return true - main user added, false - main user not added
+     * @throws GeneralLeanFtException
+     */
     @Test
-    public void AddMainUserIfNotExists() throws GeneralLeanFtException, ReportException, InterruptedException {
-        Print("----- 1 START AddMainUserIfNotExists-----------------------------");
+    public void addMainUserIfNotExists() {
+        Print("----- 1 START AddMainUserIfNotExists");
         // Sign in to the store
         signIn();
 
         if (!isSignedIn()) {
             Print("CloseSignInPopUpBtnWebElement click");
-            appModel.AdvantageShoppingPage().CloseSignInPopUpBtnWebElement().click();
+            clickWebElement(appModel.AdvantageShoppingPage().CloseSignInPopUpBtnWebElement());
             createNewAccountEx(USERNAME, PASSWORD, false);
         }
-        Print("----- 1 END AddMainUserIfNotExists-----------------------------");
+        Print("----- 1 END AddMainUserIfNotExists");
     }
 
     // This test purchases the first item in the Speakers category
     @Test
     public void purchaseSpeakersTest() throws GeneralLeanFtException, InterruptedException {
-        Print("----- 16 START purchaseSpeakersTest-----------------------------");
+        Print("----- 16 START purchaseSpeakersTest");
         // Sign in to the store
         signIn();
 
@@ -594,53 +684,70 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
-        Print("----- 16 END purchaseSpeakersTest-----------------------------");
+        Print("----- 16 END purchaseSpeakersTest");
     }
 
-    // This test purchases a 1000 of the first item in the Speakers category
-    @Test
-    public void purchase1000SpeakersNegativeTest() throws GeneralLeanFtException, InterruptedException {
-        Print("----- 12 START purchase1000SpeakersNegativeTest-----------------------------");
+    private void browserSync() {
+        try {
+            browser.sync();
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException: browser.sync() error");
+            e.printStackTrace();
+        }
+    }
 
-        // Sign in to the store
-        signIn();
+    /**
+     * This test purchases a 1000 of the first item in the Speakers category
+     * Flow: Trying to purchase 1000 products. Web application shows message that maximum is 10 and continuing with 10
+     * @throws GeneralLeanFtException
+     * @throws InterruptedException
+     */
+    @Test
+    public void purchase1000SpeakersNegativeTest() {
+        Print("----- 12 START purchase1000SpeakersNegativeTest");
+        addMainUserIfNotExists();
+        if (!isSignedIn())
+            signIn();
 
         Print("sleep 2000");
-        Thread.sleep(2000);
+        threadSleep(2000);
 
         // Empty the shopping cart
         emptyTheShoppingCart();
 
         Print("sleep 2000");
-        Thread.sleep(2000);
+        threadSleep(2000);
 
         // Go to home page
         Print("AdvantageDEMOHomeLink click: ");
-        appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink().click();
-        browser.sync();
-
-        Print("sleep 3000");
-        Thread.sleep(3000);
+        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+        browserSync();
 
         // Select an item to purchase and add it to the cart
         try {
             selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 1000);
         } catch (Exception e) {
+            fail("Exception when selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 1000)");
             e.printStackTrace();
         }
 
-        browser.sync();
+        browserSync();
 
         Print("sleep 2000");
-        Thread.sleep(2000);
+        threadSleep(2000);
 
         // Verify that the quantity that was actually added to the cart is 10 and not a 1000
         int productsQuantityInCart = getCartProductsNumberFromCartObjectInnerText();
-        Verification(Verify.isTrue(productsQuantityInCart == 10, "Verification - Purchase 1000 Speakers negative test", " Verify that you cannot buy a 1000 items. You can only buy 10 max."));
+        try {
+            Verification(Verify.isTrue(productsQuantityInCart == 10, "Verification - Purchase 1000 Speakers negative test", " Verify that you cannot buy a 1000 items. You can only buy 10 max."));
+        } catch (GeneralLeanFtException e) {
+            fail("GeneralLeanFtException Verify.isTrue");
+            e.printStackTrace();
+        }
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
-        Print("----- 12 END purchase1000SpeakersNegativeTest-----------------------------");
+        Print("----- 12 END purchase1000SpeakersNegativeTest");
     }
 
     // This test verifies that the shipping costs is free when purchasing 1 item
@@ -1541,10 +1648,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     public void Checkout() throws GeneralLeanFtException {
+        Print("ADDTOCARTButton().click()");
         appModel.AdvantageShoppingPage().ADDTOCARTButton().click();
-
+        Print("CHECKOUTHoverButton().click()");
         appModel.AdvantageShoppingPage().CHECKOUTHoverButton().click();
+        Print("NEXTButton().click()");
         appModel.AdvantageShoppingPage().NEXTButton().click();
+        Print("PAYNOWButton().click()");
         appModel.AdvantageShoppingPage().PAYNOWButton().click();
 //        appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
 
