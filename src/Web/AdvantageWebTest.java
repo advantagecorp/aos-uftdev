@@ -205,8 +205,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             checkBox.set(value);
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: set '" + value + "' to element " + checkBox.getClass().getSimpleName());
             e.printStackTrace();
+            fail("GeneralLeanFtException: set '" + value + "' to element " + checkBox.getClass().getSimpleName());
         }
     }
 
@@ -215,8 +215,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             editField.setValue(value);
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: setValue to element " + editField.getClass().getSimpleName());
             e.printStackTrace();
+            fail("GeneralLeanFtException: setValue to element " + editField.getClass().getSimpleName());
         }
     }
 
@@ -225,14 +225,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             webElement.click();
         } catch (GeneralLeanFtException e) {
+            e.printStackTrace();
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + webElement.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + webElement.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
                 e1.printStackTrace();
             }
-//            fail("GeneralLeanFtException: click on element " + webElement.getClass().getSimpleName());
-//            e.printStackTrace();
+            fail("GeneralLeanFtException: couldn't click on element " + webElement.getClass().getSimpleName());
         }
     }
 
@@ -242,8 +242,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             result = button.isEnabled();
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: is enabled on element " + button.getClass().getSimpleName());
             e.printStackTrace();
+            fail("GeneralLeanFtException: is enabled on element " + button.getClass().getSimpleName());
         }
         return result;
     }
@@ -254,8 +254,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             result = webElement.exists();
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: exists on element " + webElement.getClass().getSimpleName());
             e.printStackTrace();
+            fail("GeneralLeanFtException: exists on element " + webElement.getClass().getSimpleName());
         }
         return result;
     }
@@ -266,8 +266,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             result = webElement.exists(index);
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: exists on element " + webElement.getClass().getSimpleName());
             e.printStackTrace();
+            fail("GeneralLeanFtException: exists on element " + webElement.getClass().getSimpleName());
         }
         return result;
     }
