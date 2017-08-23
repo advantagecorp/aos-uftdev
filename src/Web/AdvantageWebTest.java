@@ -39,6 +39,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //    public static String appURL2 = "52.34.13.179:8080";     // QUALLY
 
     public String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
+    public String envTypeValue = System.getProperty("env_type", "local");
+    //public String osValue = System.getProperty("os", "Windows");
+    //public String versionValue = System.getProperty("version", "Windows");
     public BrowserType browserType;
 
     protected static Browser browser;
@@ -198,19 +201,21 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     private void setCheckBox(CheckBox checkBox, Boolean value) {
+        Print("SET '" + value + "' to " + checkBox.getClass().getSimpleName());
         try {
             checkBox.set(value);
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: " + checkBox);
+            fail("GeneralLeanFtException: set '" + value + "' to element " + checkBox.getClass().getSimpleName());
             e.printStackTrace();
         }
     }
 
     private void setValueEditField(EditField editField, String value) {
+        Print("SET VALUE '" + value + "' to " + editField.getClass().getSimpleName());
         try {
             editField.setValue(value);
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: " + editField);
+            fail("GeneralLeanFtException: setValue to element " + editField.getClass().getSimpleName());
             e.printStackTrace();
         }
     }
@@ -220,7 +225,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             webElement.click();
         } catch (GeneralLeanFtException e) {
-            fail("GeneralLeanFtException: " + webElement.toString());
+            fail("GeneralLeanFtException: click on element " + webElement.getClass().getSimpleName());
             e.printStackTrace();
         }
     }
@@ -400,7 +405,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 break;
         }
 
-        browser = BrowserFactory.launch(browserType);
+        if (envTypeValue == "SRF")
+            browser = SrfLab.launchBrowser(new BrowserDescription.Builder().type(browserType).set("osType", "Windows").set("osVersion", "10").build());
+        else
+            browser = BrowserFactory.launch(browserType);
+
         if (appURL.equals("defaultvalue"))
             appURL = appURL2;
 
