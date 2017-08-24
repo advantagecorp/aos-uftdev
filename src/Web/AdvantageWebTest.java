@@ -400,9 +400,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         //appModel.AdvantageShoppingPage().NEXTButton().click();
         // Click the "Pay Now" button
+        threadSleep(2000);
         clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment());
 
-        waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement(), 5000);
+        threadSleep(1000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement(), 5000);
 
         // Verify that the product was purchased
         try {
