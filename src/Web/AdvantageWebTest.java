@@ -735,6 +735,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     private void browserNavigate(String navigateUrl) {
+        Print("browser navigate to " + navigateUrl);
         try {
             browser.navigate(navigateUrl);
         } catch (GeneralLeanFtException e) {
@@ -918,8 +919,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Empty the shopping cart
         emptyTheShoppingCart();
 
-//        threadSleep(2000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+        threadSleep(2000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
@@ -964,8 +965,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Empty the shopping cart
         emptyTheShoppingCart();
 
-//        threadSleep(2000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+        threadSleep(2000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
@@ -1068,24 +1069,24 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Sign in to the store
         signIn();
 
-//        threadSleep(4000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+        threadSleep(4000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
-        browserSync();
+//        browserSync();
 
-//        threadSleep(5000);
+        threadSleep(5000);
 
         // Click the Contact Us link
         clickWebElement(appModel.AdvantageShoppingPage().CONTACTUSMainWebElement());
 
-//        threadSleep(5000);
+        threadSleep(5000);
 
         // Click the Chat With Us link
         clickWebElement(appModel.AdvantageShoppingPage().ChatLogoImage());
 
-//        threadSleep(5000);
+        threadSleep(5000);
         // IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
 
         // Verify that the chat window has opened
@@ -1097,7 +1098,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         try {
             chatBrowser = BrowserFactory.attach(chatBrowserDescription);
             String brURL = chatBrowser.getURL();
-//            threadSleep(1000);
+            threadSleep(1000);
             Verification(Verify.isTrue(brURL.matches(".*/chat\\.html.*"), "Verification - Contact Us Chat", " Verify that the browser navigated to the chat URL"));
             chatBrowser.close();
         } catch (GeneralLeanFtException e) {
