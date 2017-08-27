@@ -219,7 +219,7 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
                             <property name="ResourceId" type="string" isRegExp="false">linearLayoutProductQuantity</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">24</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
                         </properties>
                     </identification>
                 </object>
@@ -489,7 +489,7 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
                             <property name="ResourceId" type="string" isRegExp="false">linearLayoutFront</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">37</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">38</property>
                         </properties>
                     </identification>
                     <tags>
@@ -503,7 +503,7 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
                             <property name="ResourceId" type="string" isRegExp="false">relativeLayoutCartRemove</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">44</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">45</property>
                         </properties>
                     </identification>
                     <tags>
@@ -551,7 +551,7 @@
                     </tags>
                 </object>
                 <object type="UiObject" technology="Mobile">
-                    <name>Login Object</name>
+                    <name>Login O</name>
                     <codeName>LoginObj</codeName>
                     <identification>
                         <properties>
@@ -1139,7 +1139,6 @@
                         <properties>
                             <property name="Text" type="string" isRegExp="false">Windows 10</property>
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][8][0]</property>
                             <property name="ResourceId" type="string" isRegExp="false">textViewFilterCategoryTitle</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
@@ -1255,6 +1254,17 @@
                     <tags>
                         <tag>offline</tag>
                     </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>LoggedUserName</name>
+                    <codeName>LoggedUserName</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewMenuUser</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
                 </object>
             </children>
         </object>

@@ -16,6 +16,9 @@ import com.hp.lft.verifications.*;
 
 import unittesting.*;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 //Make sure the tests run at the ascending alphabet name order (JUnit 4.11 and above)
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class androidTests extends UnitTestClassBase {
@@ -27,9 +30,10 @@ public class androidTests extends UnitTestClassBase {
     static String UNAME = "androidUser1";
     static String PASS = "Password1";
 
-    static String appURL2 = "www.advantageonlineshopping.com";//"52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
-//    static String appURL2 = "16.60.158.84";
     static String appURL = System.getProperty("url", "defaultvalue");
+        static String appURL2 = "www.advantageonlineshopping.com";//"52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
+//    static String appURL2 = "16.60.158.84";
+//    static String appURL2 = "52.32.172.3:8080";
 
     private static long startTimeAllTests;
     private long startTimeCurrentTest;
@@ -79,12 +83,12 @@ public class androidTests extends UnitTestClassBase {
                 + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
     }
 
-    public void InitSetUP() throws GeneralLeanFtException, InterruptedException {
-        //change the setting of the server
-        setting();
-        //create a new user for testing if not exists
-        CreateNewUser(false);
-    }
+//    public void InitSetUP() throws GeneralLeanFtException, InterruptedException {
+//        //change the setting of the server
+//        setting();
+//        //create a new user for testing if not exists
+//        CreateNewUser(false);
+//    }
 
     public void setting() throws GeneralLeanFtException, InterruptedException {
         Print("setting() start");
@@ -185,7 +189,8 @@ public class androidTests extends UnitTestClassBase {
             Print("waitUntilElementExists AdvantageObjectUiObject");
             waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
 
-            Verification(Verify.isFalse(SignIn(true), "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
+            Boolean isSignedIn = SignIn(true);
+            Verification(Verify.isFalse(isSignedIn, "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
         }
         Print("CreateNewUser(" + isTest + ") end");
     }
@@ -195,7 +200,11 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
         Print("---------- START AddNewUserAndCheckInitials ----------");
-        InitSetUP();
+//        InitSetUP();
+        //change the setting of the server
+        setting();
+        //create a new user for testing if not exists
+        CreateNewUser(false);
         Print("---------- END AddNewUserAndCheckInitials ------------");
     }
 
@@ -210,7 +219,7 @@ public class androidTests extends UnitTestClassBase {
     }
 
     @Test
-    public void CreateExsitingUserTest() throws GeneralLeanFtException, InterruptedException {
+    public void CreateExistingUserTest() throws GeneralLeanFtException, InterruptedException {
         Print("---------- START CreateExsitingUserTest ----------");
         CreateNewUser(true);
         Print("---------- END CreateExsitingUserTest ------------");
@@ -331,11 +340,11 @@ public class androidTests extends UnitTestClassBase {
         //make  a filter
 
         Print("waitUntilElementExists MainMenu");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
         Print("waitUntilElementExists tabletItem");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem(), 5000);
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
         appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
         appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
         appModel.AdvantageShoppingApplication().HPLabel().tap();
@@ -344,10 +353,10 @@ public class androidTests extends UnitTestClassBase {
         //choose item and change his color
 
         Print("waitUntilElementExists tabletItem");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem(), 5000);
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
         appModel.AdvantageShoppingApplication().tabletItem().tap();
         Print("waitUntilElementExists ProductColor");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
+        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
         appModel.AdvantageShoppingApplication().ProductColor().tap();
         appModel.AdvantageShoppingApplication().colorObject().tap();
 
@@ -371,15 +380,19 @@ public class androidTests extends UnitTestClassBase {
     }
 
     @Test
-    public void OutOfStockTest() throws GeneralLeanFtException {
+    public void OutOfStockTest() throws GeneralLeanFtException, InterruptedException {
         Print("---------- START OutOfStockTest ----------");
         Print("waitUntilElementExist: MainMenu()");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-
+        Print("MainMenu().tap");
         appModel.AdvantageShoppingApplication().MainMenu().tap();
+        Print("HEADPHONESLabel().tap");
         appModel.AdvantageShoppingApplication().HEADPHONESLabel().tap();
         Print("waitUntilElementExist: MainMenu()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        Print("sleep 5000");
+        Thread.sleep(5000);
+        Print("SOLDout().tap()");
         appModel.AdvantageShoppingApplication().SOLDout().tap();
     	
     	/*
@@ -391,8 +404,19 @@ public class androidTests extends UnitTestClassBase {
         //Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
 
         //verify that we can't change quantity or add to cart
-        Verify.isFalse(appModel.AdvantageShoppingApplication().ProductQuantity().isClickable(), "Verification - Out Of Stock", "Verify that we can't change quantity.");
-        Verify.isFalse(appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable(), "Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
+        Boolean isClickableProductQuantity = appModel.AdvantageShoppingApplication().ProductQuantity().isClickable();
+        Print("isClickableProductQuantity: " + isClickableProductQuantity);
+
+        Boolean isClickableADDTOCARTButton = appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable();
+        Print("isClickableADDTOCARTButton: " + isClickableADDTOCARTButton);
+
+        Verification(Verify.isFalse(isClickableProductQuantity, "Verification - Out Of Stock", "Verify that we can't change quantity."));
+//        Verification(Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART."));
+        Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
+
+//        assertFalse(isClickableProductQuantity);
+//        assertFalse(isClickableADDTOCARTButton);
+
         Print("---------- END OutOfStockTest ------------");
     }
 
@@ -646,11 +670,18 @@ public class androidTests extends UnitTestClassBase {
 
     public boolean SignIn(Boolean quiet) throws GeneralLeanFtException, InterruptedException {
         Print("SignIn() start");
-        Print("waitUntilElementExists MainMenu()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
+        //Print("waitUntilElementExists MainMenu()");
+        //waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
+
+        Print("sleep 5000");
+        Thread.sleep(5000);
+        
         Print("tap MainMenu()");
         appModel.AdvantageShoppingApplication().MainMenu().tap();
-        String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
+//        String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
+//        String innerTxt = appModel.AdvantageShoppingApplication().LoginObj().getVisibleText();
+//        String innerTxt = appModel.AdvantageShoppingApplication().Login().getText();
+        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
         //System.out.println(appModel.AdvantageShoppingApplication().AccountDetails().exists(2))
 
         if (innerTxt.equals("LOGIN")) {
@@ -666,30 +697,34 @@ public class androidTests extends UnitTestClassBase {
                     System.out.println(UNAME + "  Login Success");
                     Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
                     Print("SignIn() end");
+                    device.back();
                     return true;
                 }
                 Print("SignIn() end");
+                device.back();
                 return false;
             }
-            Print("SignIn() end");
-            return false;
         }
-
         System.out.println(UNAME + " allready logged in");
         device.back();
-        Print("waitUntilElementExists MainMenu()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        Print("waitUntilElementExists MainMenu()");
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
         Print("SignIn() end");
-        return true;
+        return false;
     }
 
     public void SignOut() throws GeneralLeanFtException, InterruptedException {
         Print("SignOut() start");
-        if (SignIn(true)) {
-            appModel.AdvantageShoppingApplication().MainMenu().tap();
-            appModel.AdvantageShoppingApplication().SIGNOUTLabel().tap();
-            appModel.AdvantageShoppingApplication().YESButton().tap();
-            System.out.println(UNAME + "Signed Out in success");
+        appModel.AdvantageShoppingApplication().MainMenu().tap();
+        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
+        if (!innerTxt.equals("LOGIN")) {
+            if (SignIn(true)) {
+                appModel.AdvantageShoppingApplication().SIGNOUTLabel().tap();
+                appModel.AdvantageShoppingApplication().YESButton().tap();
+                System.out.println(UNAME + "Signed Out in success");
+            }
+        } else {
+            Print("Already signed out");
         }
         Print("SignOut() end");
     }
@@ -815,14 +850,14 @@ public class androidTests extends UnitTestClassBase {
 
     public void EmptyCart() throws NumberFormatException, GeneralLeanFtException, InterruptedException {
         Print("EmptyCart() start");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+        Thread.sleep(5000);
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().CARTLabel().tap();
         while (appModel.AdvantageShoppingApplication().FirstCartItem().exists(2)) {
             waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
             appModel.AdvantageShoppingApplication().FirstCartItem().swipe(SwipeDirection.RIGHT);
-            //Thread.sleep(1000);
+            Thread.sleep(2000);
             appModel.AdvantageShoppingApplication().CartRemove().tap();
         }
         device.back();
@@ -868,7 +903,7 @@ public class androidTests extends UnitTestClassBase {
 
     public void Verification(boolean VerifyMethod) throws GeneralLeanFtException {
         if (!VerifyMethod)
-            throw new GeneralLeanFtException("varfication ERORR - verification of test fails! check runresults.html");
+            throw new GeneralLeanFtException("Verification ERORR - verification of test fails! check runresults.html");
     }
 
     public static void InitBeforeclass() throws GeneralLeanFtException {
