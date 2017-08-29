@@ -65,7 +65,7 @@ public class androidTests extends UnitTestClassBase {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-        device.unlock();
+//        device.unlock();
         globalTearDown();
         elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
 //        Print("androidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
