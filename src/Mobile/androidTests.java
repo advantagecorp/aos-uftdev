@@ -36,8 +36,8 @@ public class androidTests extends UnitTestClassBase {
     static String appURL = System.getProperty("url", "defaultvalue");
 //    static String appURL2 = "www.advantageonlineshopping.com";
     //"52.88.236.171"; //"35.162.69.22:8080";//
-//    static String appURL2 = "16.60.158.84";       // CI
-    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
+    static String appURL2 = "16.60.158.84";       // CI
+//    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
     private static long startTimeAllTests;
@@ -101,45 +101,28 @@ public class androidTests extends UnitTestClassBase {
 //        CreateNewUser(false);
 //    }
 
-    public void setting() throws GeneralLeanFtException, InterruptedException {
+    public void setting() throws GeneralLeanFtException {
         Print("setting() start");
         if (appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
-            Print("tap OKButton()");
-            appModel.AdvantageShoppingApplication().OKButton().tap();
-            appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
-
-            Print("tap ConnectButton()");
-            appModel.AdvantageShoppingApplication().ConnectButton().tap();
-            Print("sleep 10000");
-            Thread.sleep(10000);
-
-            Print("waitUntilElementExists ButtonPanelSettingUiObject");
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+            setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+            threadSleep(10000);
             waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 5000);
-
-            appModel.AdvantageShoppingApplication().OKButton().tap();
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
         } else {
-//            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-            Print("waitUntilElementExists MainMenu");
-            boolean isMainMenuExist = waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-
-            Print("tap MainMenu()");
-            appModel.AdvantageShoppingApplication().MainMenu().tap();
-            Print("tap SETTINGSLabel()");
-            appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
+//            boolean isMainMenuExist = waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+            tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
 
             String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
 
 //            if (!server.equals(appURL)) { // check if the setting already set up
-                appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL);
-
-                Print("tap ConnectButton()");
-                appModel.AdvantageShoppingApplication().ConnectButton().tap();
-
-                Print("waitUntilElementExists ButtonPanelSettingUiObject");
+                setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
+                tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
                 waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 10000);
-
-                Print("tap OKButton()");
-                appModel.AdvantageShoppingApplication().OKButton().tap();
+                tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
 //            }
         }
         app.restart();
@@ -437,7 +420,7 @@ public class androidTests extends UnitTestClassBase {
     }
 
     @Test
-    public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
+    public void PayMasterCreditTest() throws GeneralLeanFtException {
 /*    	    Login if not logged in
 ���         Select Laptops category
 ����        Select Operating system filter - Win 10
@@ -463,47 +446,30 @@ public class androidTests extends UnitTestClassBase {
 
         SignIn(false);
 
-        Print("sleep 2000");
-        Thread.sleep(2000);
-        Print("tap MainMenu()");
-        appModel.AdvantageShoppingApplication().MainMenu().tap();
-        Print("sleep 2000");
-        Thread.sleep(2000);
-        Print("tap LAPTOPSLabel()");
-        appModel.AdvantageShoppingApplication().LAPTOPSLabel().tap();
-        Print("sleep 15000");
-        Thread.sleep(15000);
-        Print("tap ImageViewFilter()");
-        appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
-        Print("sleep 4000");
-        Thread.sleep(4000);
+        threadSleep(2000);
+        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+        threadSleep(2000);
+        tapUiObjectLabel(appModel.AdvantageShoppingApplication().LAPTOPSLabel());
+        threadSleep(15000);
+        tapUiObject(appModel.AdvantageShoppingApplication().ImageViewFilter());
+        threadSleep(4000);
 
         //apply filter- Win 10
-        Print("tap BYOPERATINGSYSTEMLabel()");
-        appModel.AdvantageShoppingApplication().BYOPERATINGSYSTEMLabel().tap();
-        Print("sleep 2000");
-        Thread.sleep(2000);
-        appModel.AdvantageShoppingApplication().Windows10Label().tap();
+        tapUiObjectLabel(appModel.AdvantageShoppingApplication().BYOPERATINGSYSTEMLabel());
+        threadSleep(2000);
+        tapUiObjectLabel(appModel.AdvantageShoppingApplication().Windows10Label());
 
-        Print("tap APPLYChangeLabel()");
-        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-        Print("tap LaptopitemWin10()");
-        appModel.AdvantageShoppingApplication().LaptopitemWin10().tap();
+        tapUiObjectLabel(appModel.AdvantageShoppingApplication().APPLYChangeLabel());
+        tapUiObject(appModel.AdvantageShoppingApplication().LaptopitemWin10());
 
-        Print("waitUntilElementExists ProductColor");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
-        Print("tap ProductColor()");
-        appModel.AdvantageShoppingApplication().ProductColor().tap();
-        Print("tap colorObject()");
-        appModel.AdvantageShoppingApplication().colorObject().tap();
-        Print("tap ADDTOCARTButton");
-        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+        tapUiObject(appModel.AdvantageShoppingApplication().ProductColor());
+        tapUiObject(appModel.AdvantageShoppingApplication().colorObject());
+        tapUiObjectButton(appModel.AdvantageShoppingApplication().ADDTOCARTButton());
 
         //check out and pay with master credit the card number nedded to 12 digits
-        Print("waitUntilElementExists CartAccess");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-        Print("tap CartAccess()");
-        appModel.AdvantageShoppingApplication().CartAccess().tap();
+        tapUiObject(appModel.AdvantageShoppingApplication().CartAccess());
 
         CheckOut("MasterCredit");
     }
@@ -791,14 +757,12 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
     }
 
-    public void CheckOut(String payment) throws GeneralLeanFtException, InterruptedException {
+    public void CheckOut(String payment) throws GeneralLeanFtException {
         Print("CheckOut (" + payment + ") start");
         tapUiObjectButton(appModel.AdvantageShoppingApplication().CHECKOUT());
 
-        Print("sleep 25000");
-        Thread.sleep(25000);
+        threadSleep(25000);
 
-        Print("waitUntilElementExists MainMenu()");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
 
         //pay with safepay and don't save details
@@ -807,16 +771,12 @@ public class androidTests extends UnitTestClassBase {
         else
             MasterCredit("123456789123", "456", UNAME, false, true);
 
-        Print("sleep 10000");
-        Thread.sleep(10000);
+        threadSleep(10000);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().PAYNOWButton());
-        Print("sleep 10000");
-        Thread.sleep(10000);
-        Print("waitUntilElementExists VerifyReceiptWindowUiObject()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
+        threadSleep(10000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
         Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4), "Verify- purchase success with " + payment, " verify that the payment success and we receive the order detail window"));
-        Print("sleep 2000");
-        Thread.sleep(2000);
+        threadSleep(2000);
         tapUiObject(appModel.AdvantageShoppingApplication().CloseDialog());
         Print("CheckOut (" + payment + ") end");
     }
@@ -842,7 +802,7 @@ public class androidTests extends UnitTestClassBase {
         Print("SafePay(" + save + ") end");
     }
 
-    public void MasterCredit(String cardnum, String CVV, String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException, InterruptedException {
+    public void MasterCredit(String cardnum, String CVV, String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException {
         Print("MasterCredit() start");
         Print("waitUntilElementExists PaymentDetails");
         waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails(), 10000);
