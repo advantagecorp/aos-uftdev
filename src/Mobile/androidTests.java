@@ -29,13 +29,15 @@ public class androidTests extends UnitTestClassBase {
     protected static Device device;
     protected static Application app;
 
-    static String UNAME = "androidUser9";
+    static String UNAME = "androidUser1";
     static String PASS = "Password1";
     static String PASSNEW = "Password23";
 
     static String appURL = System.getProperty("url", "defaultvalue");
-        static String appURL2 = "www.advantageonlineshopping.com";//"52.88.236.171"; //"52.32.172.3:8080";//"35.162.69.22:8080";//
-//    static String appURL2 = "16.60.158.84";
+    static String appURL2 = "www.advantageonlineshopping.com";
+    //"52.88.236.171"; //"35.162.69.22:8080";//
+//    static String appURL2 = "16.60.158.84";       // CI
+//    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
     private static long startTimeAllTests;
@@ -65,7 +67,7 @@ public class androidTests extends UnitTestClassBase {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-//        device.unlock();
+        device.unlock();
         globalTearDown();
         elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
 //        Print("androidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
@@ -434,7 +436,7 @@ public class androidTests extends UnitTestClassBase {
 //        assertFalse(isClickableADDTOCARTButton);
     }
 
-//    @Test
+    @Test
     public void PayMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
 /*    	    Login if not logged in
 ���         Select Laptops category
@@ -456,6 +458,9 @@ public class androidTests extends UnitTestClassBase {
 � 			Validate shipping details didn�t changed (via my account)
 �			 Validate MasterCredit details didn�t changed (via my account)
 */
+        if (isSignedIn())
+            SignOut();
+
         SignIn(false);
 
         Print("sleep 2000");
@@ -920,7 +925,7 @@ public class androidTests extends UnitTestClassBase {
                 }
             });
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() +  "\n");
+            printError(e);
             fail("GeneralLeanFtException: " + appElem.toString());
         }
         return result;
@@ -940,7 +945,7 @@ public class androidTests extends UnitTestClassBase {
                 }
             }, time);
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() +  "\n");
+            printError(e);
             fail("GeneralLeanFtException: " + appElem.toString());
         }
         return result;
@@ -1013,12 +1018,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             uiObject.tap();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + uiObject.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + uiObject.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + uiObject.getClass().getSimpleName());
         }
@@ -1029,12 +1034,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             label.tap();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + label.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + label.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + label.getClass().getSimpleName());
         }
@@ -1045,12 +1050,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             button.tap();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + button.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + button.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + button.getClass().getSimpleName());
         }
@@ -1062,12 +1067,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             result = uiObject.getText();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + uiObject.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + uiObject.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + uiObject.getClass().getSimpleName());
         }
@@ -1079,12 +1084,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             editField.setText(value);
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + editField.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + editField.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + editField.getClass().getSimpleName());
         }
@@ -1096,12 +1101,12 @@ public class androidTests extends UnitTestClassBase {
         try {
             result = label.exists();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() + "\n");
+            printError(e);
             try {
                 Reporter.reportEvent("Error clicking on element", "Could not click on element: " + label.getClass().getSimpleName(), Status.Failed);
                 Assert.assertTrue("Could not click on element: " + label.getClass().getSimpleName(), false);
             } catch (ReportException e1) {
-                Print("\nERROR: " + e1.getMessage() +  "\n");
+                printError(e1);
             }
             fail("GeneralLeanFtException: couldn't click on element " + label.getClass().getSimpleName());
         }
@@ -1127,7 +1132,7 @@ public class androidTests extends UnitTestClassBase {
             Print("sleep " + millis);
             Thread.sleep(millis);
         } catch (InterruptedException e) {
-            Print("\nERROR: " + e.getMessage() +  "\n");
+            printError(e);
             fail("InterruptedException: failed to sleep for " + millis + " sec");
         }
     }
@@ -1137,7 +1142,7 @@ public class androidTests extends UnitTestClassBase {
         try {
             device.back();
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() +  "\n");
+            printError(e);
             fail("GeneralLeanFtException: failed to device.back");
         }
     }
@@ -1147,9 +1152,14 @@ public class androidTests extends UnitTestClassBase {
         try {
             device.swipe(swipeDirection);
         } catch (GeneralLeanFtException e) {
-            Print("\nERROR: " + e.getMessage() +  "\n");
+            printError(e);
             fail("GeneralLeanFtException: failed to device.swipe " + swipeDirection.toString());
         }
+    }
+
+    private static void printError(Exception e) {
+        System.out.println("\n##################################################");
+        System.out.println("ERROR: " + e.getMessage() +  "\n");
     }
 
 }

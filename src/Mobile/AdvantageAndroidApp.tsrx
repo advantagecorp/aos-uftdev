@@ -822,6 +822,9 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
                         </properties>
                     </identification>
+                    <tags>
+                        <tag>MainMenu</tag>
+                    </tags>
                 </object>
                 <object type="Label" technology="Mobile">
                     <name>SETTINGS</name>
