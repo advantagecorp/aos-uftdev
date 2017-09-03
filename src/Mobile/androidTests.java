@@ -922,7 +922,9 @@ public class androidTests extends UnitTestClassBase {
     public static void InitBeforeclass() throws GeneralLeanFtException {
         String deviceID = "";
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
-            System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
+            String curDeviceName = deviceInfo.getName();
+            String curDeviceID = deviceInfo.getId();
+            System.out.printf("The device ID is: %s, and its name is: %s\n\n", curDeviceID, curDeviceName);
             String[] s = deviceInfo.getOSVersion().split("\\.");
             String Join = "";
             for (String s1 : s)
@@ -930,12 +932,12 @@ public class androidTests extends UnitTestClassBase {
 
             int version = Integer.parseInt(Join);
             if (deviceInfo.getOSType().equals("ANDROID") && version >= 600) {
-                deviceID = deviceInfo.getId();
+                deviceID = curDeviceID;
                 break;
             }
         }
 
-        Print("MobileLab.lockDeviceById(" + deviceID + ")");
+        Print("Trying to lock device with ID:\nMobileLab.lockDeviceById(" + deviceID + ")");
         device = MobileLab.lockDeviceById(deviceID);// ID For galaxy S6
 
         // Describe the AUT.
