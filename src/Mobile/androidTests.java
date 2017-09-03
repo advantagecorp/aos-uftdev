@@ -924,14 +924,16 @@ public class androidTests extends UnitTestClassBase {
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
             String curDeviceName = deviceInfo.getName();
             String curDeviceID = deviceInfo.getId();
-            System.out.printf("The device ID is: %s, and its name is: %s\n\n", curDeviceID, curDeviceName);
+            String curDeviceOSType = deviceInfo.getOSType();
+            System.out.printf("The device ID is: %s, and its name is: %s, and its OS is: %s\n\n", curDeviceID, curDeviceName, curDeviceOSType);
             String[] s = deviceInfo.getOSVersion().split("\\.");
-            String Join = "";
-            for (String s1 : s)
-                Join += s1;
+//            String Join = "";
+//            for (String s1 : s)
+//                Join += s1;
 
-            int version = Integer.parseInt(Join);
-            if (deviceInfo.getOSType().equals("ANDROID") && version >= 600) {
+//            int version = Integer.parseInt(Join);
+//            if (curDeviceOSType.equals("ANDROID") && version >= 600) {
+            if (curDeviceOSType.equals("ANDROID")) {
                 deviceID = curDeviceID;
                 break;
             }
