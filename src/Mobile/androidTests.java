@@ -932,6 +932,7 @@ public class androidTests extends UnitTestClassBase {
             }
         }
 
+        Print("MobileLab.lockDeviceById(" + deviceID + ")");
         device = MobileLab.lockDeviceById(deviceID);// ID For galaxy S6
 
         // Describe the AUT.
