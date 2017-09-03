@@ -392,6 +392,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Set the card number
         setValueEditField(appModel.AdvantageShoppingPage().CardNumberEditField(), cardnum);
         // Set the CVV number
+        threadSleep(4000);
         setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
         // Set the card holder name
         setValueEditField(appModel.AdvantageShoppingPage().CardholderNameEditField(), holdername);
@@ -629,8 +630,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
             // Iterate and click the "Remove" link for all products
             for (; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--) {
-//                threadSleep(2000);
-                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement(), 5000);
+                threadSleep(5000);
+//                waitUntilElementExists(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement(), 5000);
                 clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
 //                threadSleep(2000);// Remove the top product from the cart
             }
