@@ -919,7 +919,7 @@ public class androidTests extends UnitTestClassBase {
     public static void InitBeforeclass() throws GeneralLeanFtException {
         String deviceID = "";
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
-            //System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
+            System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
             String[] s = deviceInfo.getOSVersion().split("\\.");
             String Join = "";
             for (String s1 : s)
