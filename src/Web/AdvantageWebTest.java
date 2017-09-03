@@ -394,6 +394,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Set the CVV number
         threadSleep(4000);
         setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
+        threadSleep(4000);
+        setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
+        threadSleep(4000);
         // Set the card holder name
         setValueEditField(appModel.AdvantageShoppingPage().CardholderNameEditField(), holdername);
         if (!save) {
