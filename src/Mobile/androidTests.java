@@ -108,11 +108,12 @@ public class androidTests extends UnitTestClassBase {
             setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
             tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
             threadSleep(10000);
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 5000);
             tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
         } else {
 //            boolean isMainMenuExist = waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+            threadSleep(5000);
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
 
@@ -121,7 +122,8 @@ public class androidTests extends UnitTestClassBase {
 //            if (!server.equals(appURL)) { // check if the setting already set up
                 setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-                waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 10000);
+//                waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 10000);
+                threadSleep(10000);
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
 //            }
         }
@@ -139,7 +141,8 @@ public class androidTests extends UnitTestClassBase {
                 tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
                 //appModel.AdvantageShoppingApplication().SignUp().tap();
 
-                waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject(), 5000);
+//                waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject(), 5000);
+                threadSleep(5000);
 
                 //Set up private details
                 setTextEditField(appModel.AdvantageShoppingApplication().UserNameSignUp(), UNAME);
@@ -155,7 +158,8 @@ public class androidTests extends UnitTestClassBase {
                 setTextEditField(appModel.AdvantageShoppingApplication().ZIPSignUpEditField(), "454545");
 
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
-                waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
+//                waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
+                threadSleep(5000);
 
 //                Boolean isSignedIn = SignIn(true);
                 Boolean isSignedIn = isSignedIn();
@@ -165,14 +169,16 @@ public class androidTests extends UnitTestClassBase {
         } else { // create existing user test
             if (isSignedIn())
                 SignOut();
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+            threadSleep(5000);
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
 
             //appModel.AdvantageShoppingApplication().SignUp().tap();
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
 
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().SignUpObject(), 5000);
+            threadSleep(5000);
 
             setTextEditField(appModel.AdvantageShoppingApplication().UserNameSignUp(), UNAME);
             setTextEditField(appModel.AdvantageShoppingApplication().EmailSignUp(), UNAME + "@default.com");
@@ -183,7 +189,8 @@ public class androidTests extends UnitTestClassBase {
             deviceSwipe(SwipeDirection.UP);
 
             tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
+            threadSleep(5000);
 
             Boolean isSignedIn = SignIn(true);
             Print("isSignedIn " + isSignedIn);
@@ -286,14 +293,14 @@ public class androidTests extends UnitTestClassBase {
         BuyLaptop();
         //goes to cart and edit details
 
-        Print("waitUntilElementExists CartAccess");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().CartAccess().tap();
         appModel.AdvantageShoppingApplication().FirstCartItem().tap();
 
         //change color and amount
-        Print("waitUntilElementExists ProductColor");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
+        threadSleep(5000);
 
         appModel.AdvantageShoppingApplication().ProductColor().tap();
         appModel.AdvantageShoppingApplication().colorObject().tap();
@@ -302,16 +309,16 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("3");
         appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
-        Print("waitUntilElementExists ProductDetail");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
-        Print("waitUntilElementExists MainMenu");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        threadSleep(5000);
 
         device.back();
 
-        Print("waitUntilElementExists CartAccess");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().CartAccess().tap();
         CheckOut("Sefepay");
     }
@@ -344,11 +351,11 @@ public class androidTests extends UnitTestClassBase {
         EmptyCart();
 
         //make  a filter
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        Print("sleep 10000");
         threadSleep(10000);
         appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
         appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
@@ -356,11 +363,9 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
         //choose item and change his color
-        Print("sleep 4000");
         threadSleep(4000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
         appModel.AdvantageShoppingApplication().tabletItem().tap();
-        Print("sleep 10000");
         threadSleep(10000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
         appModel.AdvantageShoppingApplication().ProductColor().tap();
@@ -373,14 +378,11 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
         /// need to verify an error msg - not support
-//        Print("waitUntilElementExists ProductDetail");
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
-        Print("sleep 4000");
         threadSleep(4000);
         appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
 
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-        Print("sleep 4000");
         threadSleep(4000);
         appModel.AdvantageShoppingApplication().CartAccess().tap();
 
@@ -389,7 +391,8 @@ public class androidTests extends UnitTestClassBase {
 
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException {
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        threadSleep(5000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().HEADPHONESLabel());
         threadSleep(10000);
@@ -462,13 +465,15 @@ public class androidTests extends UnitTestClassBase {
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().APPLYChangeLabel());
         tapUiObject(appModel.AdvantageShoppingApplication().LaptopitemWin10());
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 5000);
+        threadSleep(5000);
         tapUiObject(appModel.AdvantageShoppingApplication().ProductColor());
         tapUiObject(appModel.AdvantageShoppingApplication().colorObject());
         tapUiObjectButton(appModel.AdvantageShoppingApplication().ADDTOCARTButton());
 
         //check out and pay with master credit the card number nedded to 12 digits
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+        threadSleep(5000);
         tapUiObject(appModel.AdvantageShoppingApplication().CartAccess());
 
         CheckOut("MasterCredit");
@@ -504,10 +509,12 @@ public class androidTests extends UnitTestClassBase {
         SignIn(false);
         BuyLaptop();
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().CartAccess().tap();
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartItem(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().FirstCartItem(), 5000);
+        threadSleep(5000);
 
         String innerTxt = appModel.AdvantageShoppingApplication().CHECKOUT().getText();
 
@@ -596,7 +603,8 @@ public class androidTests extends UnitTestClassBase {
     }
 
     public void SigninOfflineMode() throws GeneralLeanFtException {
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().Login().tap();
 
@@ -627,13 +635,11 @@ public class androidTests extends UnitTestClassBase {
 
         appModel.AdvantageShoppingApplication().CartAccess().tap();
         appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-        Print("sleep 2000");
         Thread.sleep(2000);
 
         appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
-        Print("sleep 3000");
-        Thread.sleep(3000);
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
+        Thread.sleep(5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
         Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4), "Verify- purchase success offline mode", " verify that the payment success and we receive the order detail window (offline)"));
         appModel.AdvantageShoppingApplication().CloseDialog().tap();
     }
@@ -645,7 +651,6 @@ public class androidTests extends UnitTestClassBase {
         SignIn(false);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObject(appModel.AdvantageShoppingApplication().AccountDetails());
-        Print("sleep 5000");
         threadSleep(5000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ChangePasswordObject(), 5000);
 //        waitUntilElementExists((UiObject) appModel.AdvantageShoppingApplication().ChangePasswordLabel());
@@ -670,7 +675,8 @@ public class androidTests extends UnitTestClassBase {
     public boolean isSignedIn() {
         Print("isSignedIn start");
         boolean result = false;
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+        threadSleep(5000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
 //        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
         String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
@@ -684,11 +690,9 @@ public class androidTests extends UnitTestClassBase {
     public boolean SignIn(Boolean quiet) {
         Print("SignIn() start");
         //Print("waitUntilElementExists MainMenu()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+        threadSleep(5000);
 
-//        Print("sleep 5000");
-//        Thread.sleep(5000);
-        
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
 //        String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
 
@@ -723,7 +727,8 @@ public class androidTests extends UnitTestClassBase {
      */
     public void SignOut() {
         Print("\nSignOut() start");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
+        threadSleep(10000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().SIGNOUTLabel());
         tapUiObjectButton(appModel.AdvantageShoppingApplication().YESButton());
@@ -733,18 +738,14 @@ public class androidTests extends UnitTestClassBase {
     public void BuyLaptop() throws GeneralLeanFtException {
         Print("BuyLaptop() start");
         EmptyCart();
-        Print("waitUntilElementExists MainMenu()");
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
-        Print("sleep 10000");
         threadSleep(10000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
 
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().LAPTOPSLabel());
-        Print("sleep 10000");
         threadSleep(10000);
         tapUiObject(appModel.AdvantageShoppingApplication().LaptopitemWin10());
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor(), 10000);
-        Print("sleep 10000");
         threadSleep(10000);
 //        waitUntilElementExists((UiObject) appModel.AdvantageShoppingApplication().ADDTOCARTButton(), 10000);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().ADDTOCARTButton());
@@ -752,8 +753,8 @@ public class androidTests extends UnitTestClassBase {
     }
 
     public void EditShipping() throws GeneralLeanFtException, InterruptedException {
-        Print("waitUntilElementExists EditShippingUiObject()");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().EditShippingUiObject(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().EditShippingUiObject(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
     }
 
@@ -763,7 +764,7 @@ public class androidTests extends UnitTestClassBase {
 
         threadSleep(25000);
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
 
         //pay with safepay and don't save details
         if (payment.equals("Sefepay"))
@@ -785,7 +786,8 @@ public class androidTests extends UnitTestClassBase {
         Print("SafePay(" + save + ") start");
         //start with edit Safepay details
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails(), 5000);
+        threadSleep(5000);
 
         appModel.AdvantageShoppingApplication().PaymentDetails().tap();
         appModel.AdvantageShoppingApplication().PaymentDetails().tap();
@@ -804,10 +806,8 @@ public class androidTests extends UnitTestClassBase {
 
     public void MasterCredit(String cardnum, String CVV, String HolderName, boolean savedetails, boolean changeShipping) throws GeneralLeanFtException {
         Print("MasterCredit() start");
-        Print("waitUntilElementExists PaymentDetails");
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails(), 10000);
-        //Print("sleep 10000");
-        //Thread.sleep(10000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().PaymentDetails(), 10000);
+        threadSleep(10000);
 
         Print("changeShipping = " + changeShipping);
         if (changeShipping) {
@@ -849,7 +849,8 @@ public class androidTests extends UnitTestClassBase {
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().CARTLabel());
         while (appModel.AdvantageShoppingApplication().FirstCartItem().exists(2)) {
-            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+            threadSleep(5000);
             appModel.AdvantageShoppingApplication().FirstCartItem().swipe(SwipeDirection.RIGHT);
             threadSleep(2000);
             tapUiObject(appModel.AdvantageShoppingApplication().CartRemove());
@@ -860,12 +861,14 @@ public class androidTests extends UnitTestClassBase {
 
     public void PurchaseTablet(String quantity) throws GeneralLeanFtException, NumberFormatException, InterruptedException {
         EmptyCart();
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().TABLETSLabel().tap();
         appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
 
-        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductQuantity(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductQuantity(), 5000);
+        threadSleep(5000);
 
         appModel.AdvantageShoppingApplication().ProductQuantity().tap();
         appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText(quantity);
