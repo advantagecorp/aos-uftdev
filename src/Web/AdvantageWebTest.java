@@ -303,15 +303,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) {
         Print("selectItemToPurchase() start");
         // Pick the product's category
-        threadSleep(2000);
+        threadSleep(4000);
         clickWebElement(productsCategory);
 
         // Pick the specific product
-        threadSleep(2000);
+        threadSleep(4000);
         clickWebElement(product);
 
         // Select the first non-selected available color for the product
-        threadSleep(2000);
+        threadSleep(4000);
         clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
         threadSleep(1000);
 
@@ -322,7 +322,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
-        threadSleep(2000);
+        threadSleep(4000);
         Print("selectItemToPurchase() end");
     }
 
@@ -385,6 +385,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         // Click Next to continue the purchase wizard
+        threadSleep(4000);
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
         clickWebElement(appModel.AdvantageShoppingPage().MasterCreditImage());
@@ -768,8 +769,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Empty the shopping cart
         emptyTheShoppingCart();
 
-//        threadSleep(2000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+        threadSleep(5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
@@ -1426,6 +1427,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Pattern r = Pattern.compile(pattern);
 
         signIn();
+        threadSleep(4000);
         clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
 
         // Select an item to purchase and add it to the cart
