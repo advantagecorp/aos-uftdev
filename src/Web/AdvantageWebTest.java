@@ -1303,13 +1303,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     // This test verifies that the social media links work properly by clicking them
+    //    TODO: change facebook and twitter to Micro Focus pages
     @Test
     public void verifySocialMedia() throws ReportException, GeneralLeanFtException {
         // Sign in to the store
         signIn();
 
 //        threadSleep(2000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
@@ -1320,7 +1321,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         String Facebooktitle = "HP Application Lifecycle Management | Facebook";
         String Twittertitle = "HPE ALM (@HPE_ALM) | Twitter";
-        String Linkedintitle = "HPE Software | LinkedIn";
+        String Linkedintitle = "Micro Focus Software | LinkedIn";
 
         try {
             // Verify the Facebook link
@@ -1331,10 +1332,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //            browserSync();
             threadSleep(5000);
             socialLink = "facebook";
-
+            Print("facebook title: " + Facebooktitle);
             Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
             fbBrowser.sync();
             brURL = fbBrowser.getURL();
+            Print("facebook url:\n" + brURL);
             Assert.assertTrue("Verification - Verify Social Media: Verify that the Facebook site was launched properly.", brURL.matches(".*facebook\\.com.*"));
             fbBrowser.close();
 
@@ -1343,10 +1345,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //            browserSync();
             threadSleep(5000);
             socialLink = "twiiter";
-
+            Print("twitter title: " + Twittertitle);
             Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
             tweetBrowser.sync();
             brURL = tweetBrowser.getURL();
+            Print("twitter url:\n" + brURL);
             Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.", brURL.matches(".*twitter\\.com.*"));
             tweetBrowser.close();
 
@@ -1355,10 +1358,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //            browserSync();
             threadSleep(5000);
             socialLink = "linkedin";
-
+            Print("linkedIn title: " + Linkedintitle);
             Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
             linkedinBrowser.sync();
             brURL = linkedinBrowser.getURL();
+            Print("linkedIn url:\n" + brURL);
             Assert.assertTrue("Verification - Verify Social Media: Verify that the LinkedIn site was launched properly.", brURL.matches(".*linkedin\\.com.*"));
             linkedinBrowser.close();
         } catch (GeneralLeanFtException e) {
