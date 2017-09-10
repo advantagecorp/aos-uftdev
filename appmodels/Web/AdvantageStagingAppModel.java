@@ -60,7 +60,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SignOutWebElement SignOutWebElement;
 	private AdvantageDEMOHomeLink AdvantageDEMOHomeLink;
 	private SpecialOfferImageItem1 SpecialOfferImageItem1;
-	private SpecialOfferViewDetailsItem1Link SpecialOfferViewDetailsItem1Link;
+	private PopularItemViewDetails PopularItemViewDetails;
 	private CreateAccountUsernameWebEdit CreateAccountUsernameWebEdit;
 	private CreateAccountPasswordEditField CreateAccountPasswordEditField;
 	private CreateAccountEmailEditField CreateAccountEmailEditField;
@@ -89,7 +89,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private ThankYouForContactingAdvantageSupportWebElement ThankYouForContactingAdvantageSupportWebElement;
 	private TabletHPElite1011G1 TabletHPElite1011G1;
 	private HPChromebookEnergyStarImage HPChromebookEnergyStarImage;
-	private HPUsbOpticalMouseImage HPUsbOpticalMouseImage;
+	private MiceHPUsbOptical MiceHPUsbOptical;
 	private HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage;
 	private ColorSelectorFirstWebElement ColorSelectorFirstWebElement;
 	private InvalidUserMessageWebElement InvalidUserMessageWebElement;
@@ -145,7 +145,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
 	private YesCANCELButton YesCANCELButton;
 	private PAYNOWButtonManualPayment PAYNOWButtonManualPayment;
-	private MouseLogitechG502Img MouseLogitechG502Img;
+	private MiceLogitechG502Img MiceLogitechG502Img;
 	private TabletHPPro608G1 TabletHPPro608G1;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
@@ -173,7 +173,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SignOutWebElement = new SignOutWebElement(this, applicationModel);
 		AdvantageDEMOHomeLink = new AdvantageDEMOHomeLink(this, applicationModel);
 		SpecialOfferImageItem1 = new SpecialOfferImageItem1(this, applicationModel);
-		SpecialOfferViewDetailsItem1Link = new SpecialOfferViewDetailsItem1Link(this, applicationModel);
+		PopularItemViewDetails = new PopularItemViewDetails(this, applicationModel);
 		CreateAccountUsernameWebEdit = new CreateAccountUsernameWebEdit(this, applicationModel);
 		CreateAccountPasswordEditField = new CreateAccountPasswordEditField(this, applicationModel);
 		CreateAccountEmailEditField = new CreateAccountEmailEditField(this, applicationModel);
@@ -202,7 +202,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		ThankYouForContactingAdvantageSupportWebElement = new ThankYouForContactingAdvantageSupportWebElement(this, applicationModel);
 		TabletHPElite1011G1 = new TabletHPElite1011G1(this, applicationModel);
 		HPChromebookEnergyStarImage = new HPChromebookEnergyStarImage(this, applicationModel);
-		HPUsbOpticalMouseImage = new HPUsbOpticalMouseImage(this, applicationModel);
+		MiceHPUsbOptical = new MiceHPUsbOptical(this, applicationModel);
 		HPBeatsStudioHeadphonesImage = new HPBeatsStudioHeadphonesImage(this, applicationModel);
 		ColorSelectorFirstWebElement = new ColorSelectorFirstWebElement(this, applicationModel);
 		InvalidUserMessageWebElement = new InvalidUserMessageWebElement(this, applicationModel);
@@ -258,7 +258,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
 		YesCANCELButton = new YesCANCELButton(this, applicationModel);
 		PAYNOWButtonManualPayment = new PAYNOWButtonManualPayment(this, applicationModel);
-		MouseLogitechG502Img = new MouseLogitechG502Img(this, applicationModel);
+		MiceLogitechG502Img = new MiceLogitechG502Img(this, applicationModel);
 		TabletHPPro608G1 = new TabletHPPro608G1(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
@@ -297,7 +297,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SignOutWebElement SignOutWebElement() { return SignOutWebElement; }
 		public AdvantageDEMOHomeLink AdvantageDEMOHomeLink() { return AdvantageDEMOHomeLink; }
 		public SpecialOfferImageItem1 SpecialOfferImageItem1() { return SpecialOfferImageItem1; }
-		public SpecialOfferViewDetailsItem1Link SpecialOfferViewDetailsItem1Link() { return SpecialOfferViewDetailsItem1Link; }
+		public PopularItemViewDetails PopularItemViewDetails() { return PopularItemViewDetails; }
 		public CreateAccountUsernameWebEdit CreateAccountUsernameWebEdit() { return CreateAccountUsernameWebEdit; }
 		public CreateAccountPasswordEditField CreateAccountPasswordEditField() { return CreateAccountPasswordEditField; }
 		public CreateAccountEmailEditField CreateAccountEmailEditField() { return CreateAccountEmailEditField; }
@@ -326,7 +326,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public ThankYouForContactingAdvantageSupportWebElement ThankYouForContactingAdvantageSupportWebElement() { return ThankYouForContactingAdvantageSupportWebElement; }
 		public TabletHPElite1011G1 TabletHPElite1011G1() { return TabletHPElite1011G1; }
 		public HPChromebookEnergyStarImage HPChromebookEnergyStarImage() { return HPChromebookEnergyStarImage; }
-		public HPUsbOpticalMouseImage HPUsbOpticalMouseImage() { return HPUsbOpticalMouseImage; }
+		public MiceHPUsbOptical MiceHPUsbOptical() { return MiceHPUsbOptical; }
 		public HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage() { return HPBeatsStudioHeadphonesImage; }
 		public ColorSelectorFirstWebElement ColorSelectorFirstWebElement() { return ColorSelectorFirstWebElement; }
 		public InvalidUserMessageWebElement InvalidUserMessageWebElement() { return InvalidUserMessageWebElement; }
@@ -382,7 +382,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
 		public YesCANCELButton YesCANCELButton() { return YesCANCELButton; }
 		public PAYNOWButtonManualPayment PAYNOWButtonManualPayment() { return PAYNOWButtonManualPayment; }
-		public MouseLogitechG502Img MouseLogitechG502Img() { return MouseLogitechG502Img; }
+		public MiceLogitechG502Img MiceLogitechG502Img() { return MiceLogitechG502Img; }
 		public TabletHPPro608G1 TabletHPPro608G1() { return TabletHPPro608G1; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
@@ -817,7 +817,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("NEXT").attribute("name", "next_btn").build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").id("next_btn").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -957,23 +957,23 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class SpecialOfferViewDetailsItem1Link extends WebElementNodeBase
+	public class PopularItemViewDetails extends WebElementNodeBase
 	{
 
 		
-								public SpecialOfferViewDetailsItem1Link(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public PopularItemViewDetails(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("View Details Item 1");
+			setDisplayName("PopularItemViewDetails");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().accessibilityName("").className("shop_nowSub viewDetail ng-scope").tagName("LABEL").innerText("View Details").index(0).build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LABEL").id("details_16").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1711,23 +1711,23 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class HPUsbOpticalMouseImage extends ImageNodeBase
+	public class MiceHPUsbOptical extends ImageNodeBase
 	{
 
 		
-								public HPUsbOpticalMouseImage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public MiceHPUsbOptical(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("HP USB 3 BUTTON OPTICAL MOUSE");
+			setDisplayName("MiceHPUsbOptical");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ImageDescription.Builder().alt("").type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(1).build();
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").id("29").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3167,16 +3167,16 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class MouseLogitechG502Img extends ImageNodeBase
+	public class MiceLogitechG502Img extends ImageNodeBase
 	{
 
 		
-								public MouseLogitechG502Img(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public MiceLogitechG502Img(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("MouseLogitechG502Img");
+			setDisplayName("MiceLogitechG502Img");
 		}
 
 		@Override

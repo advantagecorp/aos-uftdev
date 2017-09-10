@@ -30,8 +30,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
-	public static String appURL2 = "16.60.158.84";			// CI
-//	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+//	public static String appURL2 = "16.60.158.84";			// CI
+	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
@@ -206,7 +206,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             setCheckBox(appModel.AdvantageShoppingPage().RememberMeCheckBox(), true);
             // Click on sign in button
             clickWebElement(appModel.AdvantageShoppingPage().SIGNINButton());
-            threadSleep(1000);      // wait for closing login popup window
+//            threadSleep(1000);      // wait for closing login popup window
             isSignedIn = isSignedIn();
         }
 
@@ -975,19 +975,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
 
         shippingCost = getShippingCostFromShippingWebElement();
-
         Print("shippingCost = " + shippingCost);
-        Print("shippingCost > 0.0 ?");
 
+        img = browser.getPage().getSnapshot();        // Take screenshot
         // Verify that the shipping costs are for free
-
         if (shippingCost > 0.0) {
-            img = browser.getPage().getSnapshot();        // Take screenshot
             Reporter.reportEvent("Verify shipping costs", "Verify that the shipping costs for 4 items are are NOT free", Status.Passed, img);
         } else {
-            img = browser.getPage().getSnapshot();        // Take screenshot
             Reporter.reportEvent("Verify shipping costs", "Verify that the shipping costs for 4 items are are NOT free", Status.Failed, img);
-            fail("Shipping costs must be");
+            fail("Shipping costs = " + shippingCost + " but must be > 0.0");
         }
 
 //        Verification(Verify.isTrue(shippingCost > 0.0, "Verification - shipping costs", " Verify that the shipping costs for 4 item are NOT free."));
@@ -1097,8 +1093,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Select an item to purchase and add it to the cart
         // TODO: find other places where is used LogitechG502ProteusCore7 and remove element from model
-//        selectItemToPurchase(appModel.AdvantageShoppingPage().MICEShopNowWebElement(), appModel.AdvantageShoppingPage().LogitechG502ProteusCore7());
-        selectItemToPurchase(appModel.AdvantageShoppingPage().MICEShopNowWebElement(), appModel.AdvantageShoppingPage().MouseLogitechG502Img());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().MICEShopNowWebElement(), appModel.AdvantageShoppingPage().MiceLogitechG502Img());
 
         // Pay for the item
         checkOutAndPayMasterCredit("123412341234", "774", USERNAME, false); // Verification inside
@@ -1175,10 +1170,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
 //        browserSync();
 
-        //selectItemToPurchase(appModel.AdvantageShoppingPage().POPULARITEMSMainWebElement(), appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link());
-//        waitUntilElementExists(appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link(), 5000);
+        //selectItemToPurchase(appModel.AdvantageShoppingPage().POPULARITEMSMainWebElement(), appModel.AdvantageShoppingPage().PopularItemViewDetails());
 //        threadSleep(2000);
-        clickWebElement(appModel.AdvantageShoppingPage().SpecialOfferViewDetailsItem1Link());
+        clickWebElement(appModel.AdvantageShoppingPage().PopularItemViewDetails());
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
@@ -1335,7 +1329,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             // We attach to it and verify its title and URL are ads expected, then close it
             clickWebElement(appModel.AdvantageShoppingPage().FacebookImage());
 //            browserSync();
-            threadSleep(3000);
+            threadSleep(5000);
             socialLink = "facebook";
 
             Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
@@ -1347,7 +1341,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             // Verify the Twitter link
             clickWebElement(appModel.AdvantageShoppingPage().TwitterImage());
 //            browserSync();
-            threadSleep(3000);
+            threadSleep(5000);
             socialLink = "twiiter";
 
             Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
@@ -1359,7 +1353,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             // Verify the LinkedIn link
             clickWebElement(appModel.AdvantageShoppingPage().LinkedInImage());
 //            browserSync();
-            threadSleep(3000);
+            threadSleep(5000);
             socialLink = "linkedin";
 
             Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
@@ -1406,7 +1400,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         signIn();
 
 //        threadSleep(3000);
-        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
+//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
@@ -1817,6 +1811,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         threadSleep(5000); // wait for page to bee loaded
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
+        // if SafePay userName and pass are empty will be error
         clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
         // appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
         browserSync();
@@ -1838,6 +1833,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     private static void printCaptionTest(String nameOfTest) {
         System.out.println("\n--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
         System.out.println("START " + nameOfTest);
     }
 
