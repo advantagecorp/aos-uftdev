@@ -147,6 +147,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private POPULARITEMSMainWebElement POPULARITEMSMainWebElement;
 	private YesCANCELButton YesCANCELButton;
 	private PAYNOWButtonManualPayment PAYNOWButtonManualPayment;
+	private MouseLogitechG502Img MouseLogitechG502Img;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -260,6 +261,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		POPULARITEMSMainWebElement = new POPULARITEMSMainWebElement(this, applicationModel);
 		YesCANCELButton = new YesCANCELButton(this, applicationModel);
 		PAYNOWButtonManualPayment = new PAYNOWButtonManualPayment(this, applicationModel);
+		MouseLogitechG502Img = new MouseLogitechG502Img(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -384,6 +386,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public POPULARITEMSMainWebElement POPULARITEMSMainWebElement() { return POPULARITEMSMainWebElement; }
 		public YesCANCELButton YesCANCELButton() { return YesCANCELButton; }
 		public PAYNOWButtonManualPayment PAYNOWButtonManualPayment() { return PAYNOWButtonManualPayment; }
+		public MouseLogitechG502Img MouseLogitechG502Img() { return MouseLogitechG502Img; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -427,7 +430,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("SpeaakersImg categoryCell").tagName("DIV").innerText("SPEAKERS Shop Now ").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("DIV").id("SpeakersImg").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -453,7 +456,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("categoryCell").tagName("DIV").innerText("TABLETS Shop Now ").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("DIV").id("TabletsImg").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -843,7 +846,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("NEXT").build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("NEXT").attribute("name", "next_btn").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1831,7 +1834,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("or  center invalid").tagName("LABEL").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LABEL").id("signInResultMessage").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1857,7 +1860,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("A").innerText("REGISTER").className("sec-sender-a ng-scope").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("BUTTON").name("REGISTER").id("register_btnundefined").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3210,6 +3213,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("button").role("button").tagName("BUTTON").name("PAY NOW").id("pay_now_btn_MANUALPAYMENT").index(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class MouseLogitechG502Img extends ImageNodeBase
+	{
+
+		
+								public MouseLogitechG502Img(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("MouseLogitechG502Img");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ImageDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(8).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

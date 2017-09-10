@@ -2,6 +2,7 @@ package Manual;
 
 
 import Web.AdvantageWebTest;
+import com.hp.lft.report.ReportException;
 import com.hp.lft.report.Reporter;
 import com.hp.lft.sdk.*;
 
@@ -43,14 +44,14 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
     }
 
     @Given("^user is logged in$")
-    public void Login() throws GeneralLeanFtException, InterruptedException {
+    public void Login() throws GeneralLeanFtException, InterruptedException, ReportException {
 
         webtests.signIn();
 
     }
 
     @When("^user buy an item and preform checkout.$")
-    public void BuyAndCheckOut() throws GeneralLeanFtException, InterruptedException {
+    public void BuyAndCheckOut() throws GeneralLeanFtException, InterruptedException, ReportException {
 
         webtests.selectItemToPurchase(webtests.appModel.AdvantageShoppingPage().LAPTOPSWebElement(),webtests.appModel.AdvantageShoppingPage().laptopFororderService());
         webtests.checkOutAndPay();
@@ -68,7 +69,7 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
 
     }
     @Given("^the user perform checkout in success and still logged in.$")
-    public void isLogin() throws GeneralLeanFtException, InterruptedException {
+    public void isLogin() throws GeneralLeanFtException, InterruptedException, ReportException {
 
 
         webtests.signIn();
