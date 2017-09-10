@@ -822,7 +822,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
@@ -879,7 +879,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 1000);
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 1000);
 
 //        browserSync();
 
@@ -929,7 +929,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
 
         // Navigate to the shopping cart table
         clickWebElement(appModel.AdvantageShoppingPage().LinkCartIcon());
@@ -967,7 +967,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 4);
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 4);
 
         // Navigate to the shopping cart table
         clickWebElement(appModel.AdvantageShoppingPage().LinkCartIcon());
@@ -1015,7 +1015,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
 
         // Pay for the item
         checkOutAndPay(); // Fill credentials. Verification inside
@@ -1027,7 +1027,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
 
         // Pay for the item
         checkOutAndPay(false); // Do not fill credentials. Verification inside
@@ -1050,7 +1050,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().TabletsImgWebElement(), appModel.AdvantageShoppingPage().HPProTablet608G1());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().TabletsImgWebElement(), appModel.AdvantageShoppingPage().TabletHPPro608G1());
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
@@ -1121,7 +1121,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().HEADPHONESShopNowWebElement(), appModel.AdvantageShoppingPage().HPH2310InEarHeadset());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().HeadphonesImg(), appModel.AdvantageShoppingPage().HPH2310InEarHeadset());
         // Pay for the item
         checkOutAndPay(); // Verification inside
     }
@@ -1589,7 +1589,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
 
         // Select an item to purchase and add it to the cart
-        //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImgWebElement(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().BoseSoundlinkImage());
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());
         String ProductName = getWebElementInnerText(appModel.AdvantageShoppingPage().LaptopName());
         Print("ORDER:" + ProductName);
@@ -1631,7 +1631,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     	 *
 
     	browser.sync();
-    	appModel.AdvantageShoppingPage().HEADPHONESShopNowWebElement().click();
+    	appModel.AdvantageShoppingPage().HeadphonesImg().click();
     	appModel.AdvantageShoppingPage().SoldOutHeadphonesWebElement().click();
     	appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement().click();
 

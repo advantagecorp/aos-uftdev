@@ -39,11 +39,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 
 		
 			private SearchIconWebElement SearchIconWebElement;
-	private SpeakersImgWebElement SpeakersImgWebElement;
+	private SpeakersImg SpeakersImg;
 	private TabletsImgWebElement TabletsImgWebElement;
 	private LAPTOPSShopNowWebElement LAPTOPSShopNowWebElement;
 	private MICEShopNowWebElement MICEShopNowWebElement;
-	private HEADPHONESShopNowWebElement HEADPHONESShopNowWebElement;
+	private HeadphonesImg HeadphonesImg;
 	private OrderNumber OrderNumber;
 	private OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement;
 	private SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement;
@@ -54,7 +54,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private GOUPImage GOUPImage;
 	private ADDTOCARTButton ADDTOCARTButton;
 	private CHECKOUTHoverButton CHECKOUTHoverButton;
-	private HEADPHONESShopNowWebElement1 HEADPHONESShopNowWebElement1;
 	private NEXTButton NEXTButton;
 	private SafepayImage SafepayImage;
 	private SafePayPasswordEditField SafePayPasswordEditField;
@@ -128,7 +127,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private HPENVY17tTouchLaptop HPENVY17tTouchLaptop;
 	private LogitechG502ProteusCore7 LogitechG502ProteusCore7;
 	private HPH2310InEarHeadset HPH2310InEarHeadset;
-	private HPProTablet608G1 HPProTablet608G1;
 	private LaptopFilterSearchCheckbox LaptopFilterSearchCheckbox;
 	private SpeakersFilterSearchCheckbox SpeakersFilterSearchCheckbox;
 	private UsernameLoginEditField UsernameLoginEditField;
@@ -148,16 +146,17 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private YesCANCELButton YesCANCELButton;
 	private PAYNOWButtonManualPayment PAYNOWButtonManualPayment;
 	private MouseLogitechG502Img MouseLogitechG502Img;
+	private TabletHPPro608G1 TabletHPPro608G1;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 					SearchIconWebElement = new SearchIconWebElement(this, applicationModel);
-		SpeakersImgWebElement = new SpeakersImgWebElement(this, applicationModel);
+		SpeakersImg = new SpeakersImg(this, applicationModel);
 		TabletsImgWebElement = new TabletsImgWebElement(this, applicationModel);
 		LAPTOPSShopNowWebElement = new LAPTOPSShopNowWebElement(this, applicationModel);
 		MICEShopNowWebElement = new MICEShopNowWebElement(this, applicationModel);
-		HEADPHONESShopNowWebElement = new HEADPHONESShopNowWebElement(this, applicationModel);
+		HeadphonesImg = new HeadphonesImg(this, applicationModel);
 		OrderNumber = new OrderNumber(this, applicationModel);
 		OURPRODUCTSMainWebElement = new OURPRODUCTSMainWebElement(this, applicationModel);
 		SPECIALOFFERMainWebElement = new SPECIALOFFERMainWebElement(this, applicationModel);
@@ -168,7 +167,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		GOUPImage = new GOUPImage(this, applicationModel);
 		ADDTOCARTButton = new ADDTOCARTButton(this, applicationModel);
 		CHECKOUTHoverButton = new CHECKOUTHoverButton(this, applicationModel);
-		HEADPHONESShopNowWebElement1 = new HEADPHONESShopNowWebElement1(this, applicationModel);
 		NEXTButton = new NEXTButton(this, applicationModel);
 		SafepayImage = new SafepayImage(this, applicationModel);
 		SafePayPasswordEditField = new SafePayPasswordEditField(this, applicationModel);
@@ -242,7 +240,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		HPENVY17tTouchLaptop = new HPENVY17tTouchLaptop(this, applicationModel);
 		LogitechG502ProteusCore7 = new LogitechG502ProteusCore7(this, applicationModel);
 		HPH2310InEarHeadset = new HPH2310InEarHeadset(this, applicationModel);
-		HPProTablet608G1 = new HPProTablet608G1(this, applicationModel);
 		LaptopFilterSearchCheckbox = new LaptopFilterSearchCheckbox(this, applicationModel);
 		SpeakersFilterSearchCheckbox = new SpeakersFilterSearchCheckbox(this, applicationModel);
 		UsernameLoginEditField = new UsernameLoginEditField(this, applicationModel);
@@ -262,6 +259,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		YesCANCELButton = new YesCANCELButton(this, applicationModel);
 		PAYNOWButtonManualPayment = new PAYNOWButtonManualPayment(this, applicationModel);
 		MouseLogitechG502Img = new MouseLogitechG502Img(this, applicationModel);
+		TabletHPPro608G1 = new TabletHPPro608G1(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -278,11 +276,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		}
 
 				public SearchIconWebElement SearchIconWebElement() { return SearchIconWebElement; }
-		public SpeakersImgWebElement SpeakersImgWebElement() { return SpeakersImgWebElement; }
+		public SpeakersImg SpeakersImg() { return SpeakersImg; }
 		public TabletsImgWebElement TabletsImgWebElement() { return TabletsImgWebElement; }
 		public LAPTOPSShopNowWebElement LAPTOPSShopNowWebElement() { return LAPTOPSShopNowWebElement; }
 		public MICEShopNowWebElement MICEShopNowWebElement() { return MICEShopNowWebElement; }
-		public HEADPHONESShopNowWebElement HEADPHONESShopNowWebElement() { return HEADPHONESShopNowWebElement; }
+		public HeadphonesImg HeadphonesImg() { return HeadphonesImg; }
 		public OrderNumber OrderNumber() { return OrderNumber; }
 		public OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement() { return OURPRODUCTSMainWebElement; }
 		public SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement() { return SPECIALOFFERMainWebElement; }
@@ -293,7 +291,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public GOUPImage GOUPImage() { return GOUPImage; }
 		public ADDTOCARTButton ADDTOCARTButton() { return ADDTOCARTButton; }
 		public CHECKOUTHoverButton CHECKOUTHoverButton() { return CHECKOUTHoverButton; }
-		public HEADPHONESShopNowWebElement1 HEADPHONESShopNowWebElement1() { return HEADPHONESShopNowWebElement1; }
 		public NEXTButton NEXTButton() { return NEXTButton; }
 		public SafepayImage SafepayImage() { return SafepayImage; }
 		public SafePayPasswordEditField SafePayPasswordEditField() { return SafePayPasswordEditField; }
@@ -367,7 +364,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public HPENVY17tTouchLaptop HPENVY17tTouchLaptop() { return HPENVY17tTouchLaptop; }
 		public LogitechG502ProteusCore7 LogitechG502ProteusCore7() { return LogitechG502ProteusCore7; }
 		public HPH2310InEarHeadset HPH2310InEarHeadset() { return HPH2310InEarHeadset; }
-		public HPProTablet608G1 HPProTablet608G1() { return HPProTablet608G1; }
 		public LaptopFilterSearchCheckbox LaptopFilterSearchCheckbox() { return LaptopFilterSearchCheckbox; }
 		public SpeakersFilterSearchCheckbox SpeakersFilterSearchCheckbox() { return SpeakersFilterSearchCheckbox; }
 		public UsernameLoginEditField UsernameLoginEditField() { return UsernameLoginEditField; }
@@ -387,6 +383,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public YesCANCELButton YesCANCELButton() { return YesCANCELButton; }
 		public PAYNOWButtonManualPayment PAYNOWButtonManualPayment() { return PAYNOWButtonManualPayment; }
 		public MouseLogitechG502Img MouseLogitechG502Img() { return MouseLogitechG502Img; }
+		public TabletHPPro608G1 TabletHPPro608G1() { return TabletHPPro608G1; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -414,11 +411,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class SpeakersImgWebElement extends WebElementNodeBase
+	public class SpeakersImg extends WebElementNodeBase
 	{
 
 		
-								public SpeakersImgWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public SpeakersImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -518,16 +515,16 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class HEADPHONESShopNowWebElement extends WebElementNodeBase
+	public class HeadphonesImg extends WebElementNodeBase
 	{
 
 		
-								public HEADPHONESShopNowWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public HeadphonesImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("HEADPHONES Shop Now ");
+			setDisplayName("HeadphonesImg");
 		}
 
 		@Override
@@ -690,7 +687,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("SEE OFFER").build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("SEE OFFER").attribute("name", "see_offer_btn").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -795,32 +792,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").role("button").accessibilityName("").tagName("BUTTON").name(new RegExpProperty("CHECKOUT\\s+\\(.+\\)")).index(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class HEADPHONESShopNowWebElement1 extends WebElementNodeBase
-	{
-
-		
-								public HEADPHONESShopNowWebElement1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("HEADPHONES Shop Now 1");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.WebElementDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("twoRows categoryCell").tagName("DIV").innerText("HEADPHONES Shop Now ").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2728,32 +2699,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class HPProTablet608G1 extends WebElementNodeBase
-	{
-
-		
-								public HPProTablet608G1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("HP Pro Tablet 608 G1");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.WebElementDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LI").innerText("SOLD OUT SHOP NOW HP Pro Tablet 608 G1 $479.00 ").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class LaptopFilterSearchCheckbox extends CheckBoxNodeBase
 	{
 
@@ -3239,6 +3184,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(8).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class TabletHPPro608G1 extends ImageNodeBase
+	{
+
+		
+								public TabletHPPro608G1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("TabletHPPro608G1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ImageDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(3).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
