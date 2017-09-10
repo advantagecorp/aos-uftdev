@@ -132,7 +132,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private UsernameLoginEditField UsernameLoginEditField;
 	private PasswordLoginEditField PasswordLoginEditField;
 	private CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox;
-	private BoseSoundlinkImage BoseSoundlinkImage;
+	private SpeakerBoseSoundlinkWS SpeakerBoseSoundlinkWS;
 	private laptopFororderService laptopFororderService;
 	private MobileBtnWeb MobileBtnWeb;
 	private MasterCreditImage MasterCreditImage;
@@ -245,7 +245,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		UsernameLoginEditField = new UsernameLoginEditField(this, applicationModel);
 		PasswordLoginEditField = new PasswordLoginEditField(this, applicationModel);
 		CreateAccountAgreeToTermsCheckBox = new CreateAccountAgreeToTermsCheckBox(this, applicationModel);
-		BoseSoundlinkImage = new BoseSoundlinkImage(this, applicationModel);
+		SpeakerBoseSoundlinkWS = new SpeakerBoseSoundlinkWS(this, applicationModel);
 		laptopFororderService = new laptopFororderService(this, applicationModel);
 		MobileBtnWeb = new MobileBtnWeb(this, applicationModel);
 		MasterCreditImage = new MasterCreditImage(this, applicationModel);
@@ -369,7 +369,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public UsernameLoginEditField UsernameLoginEditField() { return UsernameLoginEditField; }
 		public PasswordLoginEditField PasswordLoginEditField() { return PasswordLoginEditField; }
 		public CreateAccountAgreeToTermsCheckBox CreateAccountAgreeToTermsCheckBox() { return CreateAccountAgreeToTermsCheckBox; }
-		public BoseSoundlinkImage BoseSoundlinkImage() { return BoseSoundlinkImage; }
+		public SpeakerBoseSoundlinkWS SpeakerBoseSoundlinkWS() { return SpeakerBoseSoundlinkWS; }
 		public laptopFororderService laptopFororderService() { return laptopFororderService; }
 		public MobileBtnWeb MobileBtnWeb() { return MobileBtnWeb; }
 		public MasterCreditImage MasterCreditImage() { return MasterCreditImage; }
@@ -687,7 +687,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("SEE OFFER").attribute("name", "see_offer_btn").build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").name("SEE OFFER").id("see_offer_btn").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -1857,7 +1857,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("SPAN").innerText("LAPTOPS").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("SPAN").innerText("LAPTOPS").id("laptopsTxt").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2829,23 +2829,23 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class BoseSoundlinkImage extends WebElementNodeBase
+	public class SpeakerBoseSoundlinkWS extends WebElementNodeBase
 	{
 
 		
-								public BoseSoundlinkImage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public SpeakerBoseSoundlinkWS(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("BoseSoundlinkImage");
+			setDisplayName("SpeakerBoseSoundlinkWS");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("LI").innerText("SOLD OUT SHOP NOW Bose SoundLink Wireless Speaker $129.00 ").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("IMG").id("25").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

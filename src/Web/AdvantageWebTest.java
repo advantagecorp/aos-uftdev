@@ -822,7 +822,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
         checkOutAndPay(); // Verification inside
@@ -879,7 +879,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 1000);
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS(), 1000);
 
 //        browserSync();
 
@@ -929,7 +929,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Navigate to the shopping cart table
         clickWebElement(appModel.AdvantageShoppingPage().LinkCartIcon());
@@ -967,7 +967,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage(), 4);
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS(), 4);
 
         // Navigate to the shopping cart table
         clickWebElement(appModel.AdvantageShoppingPage().LinkCartIcon());
@@ -1011,7 +1011,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
         checkOutAndPay(); // Fill credentials. Verification inside
@@ -1023,7 +1023,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
         checkOutAndPay(false); // Do not fill credentials. Verification inside
@@ -1587,7 +1587,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
 
         // Select an item to purchase and add it to the cart
-        //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().BoseSoundlinkImage());
+        //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());
         String ProductName = getWebElementInnerText(appModel.AdvantageShoppingPage().LaptopName());
         Print("ORDER:" + ProductName);
@@ -1651,6 +1651,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Pattern r = Pattern.compile(pattern);
 
         signIn();
+        browserSync();
 //        threadSleep(4000);
         clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
 

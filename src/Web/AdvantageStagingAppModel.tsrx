@@ -143,9 +143,7 @@
                             <property name="ButtonType" type="string" isRegExp="false">submit</property>
                             <property name="TagName" type="string" isRegExp="false">BUTTON</property>
                             <property name="Name" type="string" isRegExp="false">SEE OFFER</property>
-                            <property name="Attributes" type="dictionary" isRegExp="false">
-                                <property name="name" type="string" isRegExp="false">see_offer_btn</property>
-                            </property>
+                            <property name="Id" type="string" isRegExp="false">see_offer_btn</property>
                         </properties>
                     </identification>
                     <image>iVBORw0KGgoAAAANSUhEUgAAAIUAAAAnCAYAAAAhDovZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAFwSURBVHhe7dZBbsMwDETRHie+/wGTcqGC5VCmLUGOFv8BBFpRCrmYhX/ev47XQVF/RSgoqX+hAAgFBKGAIBQQhAKCUEAQCghCAUEoIAgFBKGAIBQQhAJiq1C0HXq7xH6rJutZnanu+b6vJutZNVnPqsl6Vt9k87cIRTY/nlX7Vf0omxfNzhzp21n1biWbvU0oMv682u/O/lfmmdmZo/3q3Uo2e+tQeNWdO/v37sbz2Zmj/erdSjZ7y2+KjO9n96q+1+vF87PfMFf6sbz4v8nuPclmbxOKpu0S96n2u7N/7242M5Z3pX8mvm31TTZ/u1B4fqdqvzv79+7G89mZo/3q3Uo2mw9NJ57PzhztV+9WstnbhCLOj2fVflU/yuZFszNH+9W7lWz2lh+a2T5Z36rJelZnqntX3p/xv++r8X97vfMn2OytvynwPEIBQSggCAUEoYAgFBCEAoJQQBAKCEIBQSggCAWEhIKirAgFFep4fwBiPKmFi2gqzAAAAABJRU5ErkJggg==</image>
@@ -700,6 +698,7 @@ View details link</description>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">SPAN</property>
                             <property name="InnerText" type="string" isRegExp="false">LAPTOPS</property>
+                            <property name="Id" type="string" isRegExp="false">laptopsTxt</property>
                         </properties>
                     </identification>
                 </object>
@@ -1156,14 +1155,17 @@ View details link</description>
                     </identification>
                 </object>
                 <object type="WebElement" technology="Web">
-                    <name>BoseSoundlinkImage</name>
-                    <codeName>BoseSoundlinkImage</codeName>
+                    <name>SpeakerBoseSoundlinkWS</name>
+                    <codeName>SpeakerBoseSoundlinkWS</codeName>
                     <identification>
                         <properties>
-                            <property name="TagName" type="string" isRegExp="false">LI</property>
-                            <property name="InnerText" type="string" isRegExp="false">SOLD OUT SHOP NOW Bose SoundLink Wireless Speaker $129.00 </property>
+                            <property name="TagName" type="string" isRegExp="false">IMG</property>
+                            <property name="Id" type="string" isRegExp="false">25</property>
                         </properties>
                     </identification>
+                    <tags>
+                        <tag>SPEAKERS</tag>
+                    </tags>
                 </object>
                 <object type="WebElement" technology="Web">
                     <name>laptopFororderService </name>
