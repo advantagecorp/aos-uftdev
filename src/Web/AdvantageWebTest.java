@@ -355,7 +355,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
 //        browserSync();  // wait for window to be loaded
-        threadSleep(5000);  // wait for window to be loaded
+        threadSleep(10000);  // wait for window to be loaded
         // Click Next to continue the purchase wizard
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
@@ -417,7 +417,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         // Click Next to continue the purchase wizard
-        threadSleep(5000);  // wait for window to be loaded
+        threadSleep(10000);  // wait for window to be loaded
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
         clickWebElement(appModel.AdvantageShoppingPage().MasterCreditImage());
@@ -1814,7 +1814,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public void Checkout() {
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
-        threadSleep(5000); // wait for page to bee loaded
+        threadSleep(10000); // wait for page to bee loaded
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // if SafePay userName and pass are empty will be error
         clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
