@@ -87,7 +87,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SearchEditField SearchEditField;
 	private ThankYouForBuyingWithAdvantageWebElement ThankYouForBuyingWithAdvantageWebElement;
 	private ThankYouForContactingAdvantageSupportWebElement ThankYouForContactingAdvantageSupportWebElement;
-	private HPEliteTablet1011Image HPEliteTablet1011Image;
+	private TabletHPElite1011G1 TabletHPElite1011G1;
 	private HPChromebookEnergyStarImage HPChromebookEnergyStarImage;
 	private HPUsbOpticalMouseImage HPUsbOpticalMouseImage;
 	private HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage;
@@ -200,7 +200,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SearchEditField = new SearchEditField(this, applicationModel);
 		ThankYouForBuyingWithAdvantageWebElement = new ThankYouForBuyingWithAdvantageWebElement(this, applicationModel);
 		ThankYouForContactingAdvantageSupportWebElement = new ThankYouForContactingAdvantageSupportWebElement(this, applicationModel);
-		HPEliteTablet1011Image = new HPEliteTablet1011Image(this, applicationModel);
+		TabletHPElite1011G1 = new TabletHPElite1011G1(this, applicationModel);
 		HPChromebookEnergyStarImage = new HPChromebookEnergyStarImage(this, applicationModel);
 		HPUsbOpticalMouseImage = new HPUsbOpticalMouseImage(this, applicationModel);
 		HPBeatsStudioHeadphonesImage = new HPBeatsStudioHeadphonesImage(this, applicationModel);
@@ -324,7 +324,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SearchEditField SearchEditField() { return SearchEditField; }
 		public ThankYouForBuyingWithAdvantageWebElement ThankYouForBuyingWithAdvantageWebElement() { return ThankYouForBuyingWithAdvantageWebElement; }
 		public ThankYouForContactingAdvantageSupportWebElement ThankYouForContactingAdvantageSupportWebElement() { return ThankYouForContactingAdvantageSupportWebElement; }
-		public HPEliteTablet1011Image HPEliteTablet1011Image() { return HPEliteTablet1011Image; }
+		public TabletHPElite1011G1 TabletHPElite1011G1() { return TabletHPElite1011G1; }
 		public HPChromebookEnergyStarImage HPChromebookEnergyStarImage() { return HPChromebookEnergyStarImage; }
 		public HPUsbOpticalMouseImage HPUsbOpticalMouseImage() { return HPUsbOpticalMouseImage; }
 		public HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage() { return HPBeatsStudioHeadphonesImage; }
@@ -1659,23 +1659,23 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class HPEliteTablet1011Image extends ImageNodeBase
+	public class TabletHPElite1011G1 extends ImageNodeBase
 	{
 
 		
-								public HPEliteTablet1011Image(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public TabletHPElite1011G1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 			
-			setDisplayName("HP Elite Tablet 1011");
+			setDisplayName("TabletHPElite1011G1");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ImageDescription.Builder().alt("").type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(1).build();
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").id("17").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3183,7 +3183,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(8).build();
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").id("31").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3209,7 +3209,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ImageDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").index(3).build();
+				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").id("18").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
