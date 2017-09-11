@@ -456,6 +456,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         if (appURL.equals("defaultvalue"))
             appURL = appURL2;
 
+
         Reporter.addRunInformation("URL", appURL);
 
         // Navigate to the store site
