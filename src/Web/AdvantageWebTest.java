@@ -307,8 +307,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
-        Print("Wait for adding product to cart");
-        threadSleep(4000);
+//        Print("Wait for adding product to cart");
+//        threadSleep(4000);
         Print("selectItemToPurchase() end");
     }
 
@@ -324,9 +324,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the cart icon
         clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
         // Click the checkout button
-        clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
-//        Print("Wait for window to be loaded");
-//        threadSleep(15000);
+        clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
+        Print("Wait for window to be loaded");
+        threadSleep(5000);
         // Click Next to continue the purchase wizard
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
@@ -386,8 +386,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         // Click Next to continue the purchase wizard
-//        Print("Wait for window to be loaded");
-//        threadSleep(15000);
+        Print("Wait for window to be loaded");
+        threadSleep(5000);
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
         clickWebElement(appModel.AdvantageShoppingPage().MasterCreditImage());
@@ -461,13 +461,18 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Navigate to the store site
         browserNavigate(appURL);
 
+        // Formulate the search URL
+        if (SearchURL.isEmpty()) {
+            SearchURL = browser.getURL();
+            if (!SearchURL.endsWith("/")) {
+                SearchURL = SearchURL + "/";
+            }
+            SearchURL = SearchURL + "search/";
+        }
+
         if (curTestName.getMethodName().equals("verifySearchUsingURL")) {
             Print("Without this sleep url will be without '/#/' => error in verifySearchUsingURL");
             threadSleep(5000);
-        }
-
-        // Formulate the search URL
-        if (SearchURL.isEmpty()) {
             SearchURL = browser.getURL();
             if (!SearchURL.endsWith("/")) {
                 SearchURL = SearchURL + "/";
@@ -697,10 +702,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         return false;
     }
 
-    // Tests list
-
     /**
-     *
+     * List of all tests
+     * Test tests in random order
      *
      * @throws GeneralLeanFtException
      * @throws ReportException
@@ -708,37 +712,31 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
 //    @Test
     public void testNew() throws GeneralLeanFtException, ReportException {
-        addMainUserIfNotExists();
-        contactSupportTest();
-
+//        addMainUserIfNotExists();
+//        contactSupportTest();
 //        contactUsChatTest
-//                * createNewAccount
-//                * createNewAccountNegative
-//                * logOutTest
-//                * negativeLoginTest
-//                * orderServiceTest
-//                * payButtonRegExTest
-//                * popularItemPurchaseFirst
-//                * purchase1000SpeakersNegativeTest
-//                * purchaseHeadphonesTest
-//                * purchaseLaptopTest
-//                * purchaseMouseTest
-//                * purchaseSpeakersTest
-//                * purchaseTabletTest
-//                * specialOfferPurchase
-//                * verifyDownloadPageTest
-//                * verifySaveChangesInProfilePaymentTest
-//                * verifySearchUsingURL
-//                * verifyShippingCostsTest
-//                * verifySocialMedia
-//                * verifyUserLinks
-    }
+//        createNewAccount
+//        createNewAccountNegative
+//        logOutTest
+//        negativeLoginTest
+//        orderServiceTest
+//        payButtonRegExTest
+//        popularItemPurchaseFirst
+//        purchase1000SpeakersNegativeTest
+//        purchaseHeadphonesTest
+//        purchaseLaptopTest
+//        purchaseMouseTest
+//        purchaseSpeakersTest
+//        purchaseTabletTest
+//        specialOfferPurchase
+//        verifyDownloadPageTest
+//        verifySaveChangesInProfilePaymentTest
+//        verifySearchUsingURL
+//        verifyShippingCostsTest
+//        verifySocialMedia
+//        verifyUserLinks
 
-//    @Test
-    public void testCISerer() throws GeneralLeanFtException, ReportException {
-        addMainUserIfNotExists();
-        negativeLoginTest();
-        purchaseLaptopTest();
+        // TODO: run tests in random order
     }
 
     //This test method creates the default user to be used in the tests, if it already does not exist - a user must be in the system:
@@ -1056,6 +1054,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
 
         selectItemToPurchase(appModel.AdvantageShoppingPage().POPULARITEMSMainWebElement(), appModel.AdvantageShoppingPage().PopularItemViewDetails());
+
+        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
         clickWebElement(appModel.AdvantageShoppingPage().PopularItemViewDetails());
 
         // Pay for the item
@@ -1135,15 +1135,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         Boolean isUrlRight =  brURL.matches(".*/chat\\.html.*");
         checkWithReporterIsTrue(isUrlRight, "Verify Contact Us Chat", "Verify that the browser navigated to the chat URL");
-
-//        if (isUrlRight) {
-//            img = browser.getPage().getSnapshot();
-//            Reporter.reportEvent("Verify Contact Us Chat", "Verify that the browser navigated to the chat URL", Status.Passed, img);
-//        } else {
-//            img = browser.getPage().getSnapshot();
-//            Reporter.reportEvent("Verify Contact Us Chat", "Verify that the browser navigated to the chat URL", Status.Failed, img);
-//        }
-//        Verification(Verify.isTrue(brURL.matches(".*/chat\\.html.*"), "Verification - Contact Us Chat", " Verify that the browser navigated to the chat URL"));
         chatBrowser.close();
     }
 
@@ -1346,79 +1337,37 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Go to the Search page as a workaround - search for Laptops
         browserNavigate(SearchURL + "?viewAll=" + searchParameter);
+        browserSync();
 //        Boolean isSuccessfullContacting = appModel.AdvantageShoppingPage().ThankYouForContactingAdvantageSupportWebElement().exists(2);
-        if (existsWebElement(appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox())) {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that the Laptops checkbox element exists.", Status.Passed, img);
-        } else {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that the Laptops checkbox element exists.", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(existsWebElement(appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox()),
-//                "Verification - Verify Search using URL", " Verify that the Laptops checkbox element exists."));
+        checkWithReporterIsTrue(existsWebElement(appModel.AdvantageShoppingPage().LaptopFilterSearchCheckbox()),
+                "Verify Search using URL", "Verify that the Laptops checkbox element exists.");
 
         // Get the actual inner text of the Search Result Title object during runtime
-        if (getSearchParameterFromSearchResultsTitle().equals(searchParameter)) {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that title reflects the search parameter: " + searchParameter + ".", Status.Passed, img);
-        } else {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that title reflects the search parameter: " + searchParameter + ".", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(getSearchParameterFromSearchResultsTitle().equals(searchParameter),
-//                "Verification - Verify Search using URL", " Verify that the title reflects the search parameter: " + searchParameter + "."));
+        checkWithReporterIsTrue(getSearchParameterFromSearchResultsTitle().equals(searchParameter),
+                "Verify Search using URL", "Verify that title reflects the search parameter: " + searchParameter + ".");
 
         searchParameter = "Speakers";
         // Go to the Search page as a workaround - search for Speakers
         browserNavigate(SearchURL + "?viewAll=" + searchParameter);
         browserSync();
-//        waitUntilElementExists(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox());
-        if (existsWebElement(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox())) {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that the Speakers checkbox element exists.", Status.Passed, img);
-        } else {
-            img = browser.getPage().getSnapshot();
-            Reporter.reportEvent("Verify Search using URL", "Verify that the Speakers checkbox element exists.", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(existsWebElement(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox()),
-//                "Verification - Verify Search using URL", " Verify that the Speakers checkbox element exists."));
+        checkWithReporterIsTrue(existsWebElement(appModel.AdvantageShoppingPage().SpeakersFilterSearchCheckbox()),
+                "Verify Search using URL", "Verify that the Speakers checkbox element exists.");
 
         // Get the actual inner text of the Search Result Title object during runtime
-        img = browser.getPage().getSnapshot();
-        if (getSearchParameterFromSearchResultsTitle().equals("Speakers")) {
-            Reporter.reportEvent("Verify Search using URL", "Verify that the title reflects the search parameter: " + searchParameter + ".", Status.Passed, img);
-        } else {
-            Reporter.reportEvent("Verify Search using URL", "Verify that the title reflects the search parameter: " + searchParameter + ".", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(getSearchParameterFromSearchResultsTitle().equals("Speakers"),
-//                "Verification - Verify Search using URL", " Verify that the title reflects the search parameter: " + searchParameter + "."));
+        checkWithReporterIsTrue(getSearchParameterFromSearchResultsTitle().equals("Speakers"),
+                "Verify Search using URL", "Verify that the title reflects the search parameter: " + searchParameter + ".");
     }
 
     @Test
     public void verifyDownloadPageTest() throws GeneralLeanFtException, ReportException {
-//        waitUntilElementExists(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink(), 5000);
-//        waitUntilElementExists(appModel.AdvantageShoppingPage().MICEShopNowWebElement(), 10000);
-
+        Print("Wait for main page loading...");
+        threadSleep(5000);
         browserNavigate(appURL + "/downloads");
         browserSync();
-
-        img = browser.getPage().getSnapshot();
-        if (existsWebElement(appModel.DownloadPage().DownloadAndroidAppWebElement())) {
-            Reporter.reportEvent("Verify Download Verification : Android", "Verify that the android link works", Status.Passed, img);
-        } else {
-            Reporter.reportEvent("Verify Download Verification : Android", "Verify that the android link works", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(existsWebElement(appModel.DownloadPage().DownloadAndroidAppWebElement()),
-//                "Download Verification : Android", "verift that the android link works"));
-        img = browser.getPage().getSnapshot();
-        if (existsWebElement(appModel.DownloadPage().DownloadIosAppWebElement())) {
-            Reporter.reportEvent("Verify Download Verification : IOS", "Verify that the IOS link works", Status.Passed, img);
-        } else {
-            Reporter.reportEvent("Verify Download Verification : IOS", "Verify that the IOS link works", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(existsWebElement(appModel.DownloadPage().DownloadIosAppWebElement()),
-//                "Download Verification : IOS", "verift that the IOS link works"));
-        //appModel.DownloadPage().DownloadIosAppWebElement().click();
+        checkWithReporterIsTrue(existsWebElement(appModel.DownloadPage().DownloadAndroidAppWebElement()),
+                "Verify Download page", "Verify that the android link works");
+        checkWithReporterIsTrue(existsWebElement(appModel.DownloadPage().DownloadIosAppWebElement()),
+                "Verify Download page", "Verify that the iOS link works");
     }
 
     ////////////////////////////////////////////////// moti gadian Code added on  27/3/17 /////////////////////////////////////////////////////////////
@@ -1450,6 +1399,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("ORDER:" + ProductName);
 
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        Print("Wait while product adding to the shopping cart");
+        threadSleep(4000);
 
         Checkout();
 
@@ -1532,15 +1483,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
         setCheckBox(appModel.AdvantageShoppingPage().RememberMeCheckBox(), true);
         // Click on sign in button
         clickWebElement(appModel.AdvantageShoppingPage().SIGNINButton());
+        Print("Wait for message");
 
-        boolean isInvalid = existsWebElement(appModel.AdvantageShoppingPage().InvalidUserMessageWebElement());
-        img = browser.getPage().getSnapshot();
-        if (isInvalid) {
-            Reporter.reportEvent("Verify Negative Sign In", "Verify that we can't login with non valid credentials", Status.Failed, img);
-        } else {
-            Reporter.reportEvent("Verify Negative Sign In", "Verify that we can't login with non valid credentials", Status.Passed, img);
-        }
-//        Verification(Verify.isTrue(invalid, "Verification - Negative Sign In", "Verify that the we can't login with non valid credentials"));
+//        Boolean isInvalidUserMessageElement = existsWebElement(appModel.AdvantageShoppingPage().InvalidUserMessageWebElement());
+//        Print("isInvalidUserMessageElement " + isInvalidUserMessageElement);
+        checkWithReporterIsTrue(existsWebElement(appModel.AdvantageShoppingPage().InvalidUserMessageWebElement()),
+                "Verify Negative Sign In", "Verify that we can't login with non valid credentials");
     }
 
     /**
@@ -1553,7 +1501,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         signIn();
         browserSync();
         signOut();
-        threadSleep(5000);  // wait for user will sign out
+        Print("Wait for user will sign out");
+        threadSleep(5000);
         checkWithReporterIsFalse(isSignedIn(), "Verify logout", "Verify if the user really signed out from site");
     }
 
