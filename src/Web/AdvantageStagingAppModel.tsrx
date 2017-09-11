@@ -189,15 +189,14 @@
                 <object type="Button" technology="Web">
                     <name>CHECKOUTHover</name>
                     <codeName>CHECKOUTHoverButton</codeName>
+                    <description>Hover on Shopping Cart at Main Page opens popup window with this button</description>
                     <identification>
                         <properties>
                             <property name="ButtonType" type="string" isRegExp="false">submit</property>
                             <property name="Role" type="string" isRegExp="false">button</property>
-                            <property name="AccessibilityName" type="string" isRegExp="false"></property>
                             <property name="TagName" type="string" isRegExp="false">BUTTON</property>
-                            <property name="Name" type="string" isRegExp="true">CHECKOUT\s+\(.+\)</property>
+                            <property name="Id" type="string" isRegExp="false">check_out_btn</property>
                         </properties>
-                        <index>0</index>
                     </identification>
                     <image>iVBORw0KGgoAAAANSUhEUgAAAR0AAAAqCAYAAACOYo/aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAKOSURBVHhe7dRhjlsxCEXhLqfZ/wKn4gcVugVsv3Foo55PQorheqZyM/x4/Xx9URRFTRVLh6Ko0fq9dADgnVg6AEaxdACMYukAGMXSATCKpQNgFEsHwCiWDoBRLB0Ao1g6AEaxdACMYukAGMXSATCKpYO/hu/c/8n/31k6l/l76rvq2cW+f9ZS1VzPpspo3+z0/Ky14pnuXjcz1Sz2daa6bDbTDJ7zd2XpXKRvGc86czuZSDPxrDPTzVdnk/VM1c94Tu/Eczczena7OdNlVzN8n78pS+eS7B1jL5ubnYzL5rGn827mVpmsZ6q+ijm9o+coznZz5mn2ZIZn/B1ZOpes3rGax36Vcadz/Zzdjf0sk/VM1Y80s3PHxWx3T2dPs93M6Bnn/A1ZOpes3tHnVVWZKOtFca5ZPbvYzzJZz1T9KMt47+RuvBP7ZnWOumw3M3rGOX9Dls4lq3es5rFfZdzuPMtlPRP7WSbrmaofre5W93W2e45V6bI7Mzznb8jSuWT1jtU89quMO5lrVs8u9rNM1jNVP1plsvlOL8u4bqZOfk6XxR5/Q5bOJdk7xl42NzsZl81jT+fdzK0yWc9U/Ugzq7PZ6WUZ183Uyc/pstjjb8jSuUjfMp515nYykWbiWWemm6/OJuuZqh9p5vQcPcmtdFmddb8Te/wNWTqX+Xvqu+rZxb5/1lLVXM8uy3TZVcZ0s0gzfi+7rzOvbBZVMz2bmDud4Xv8XVk6eKvs+/Vp37lP+/f+q/wdWTp4u0//fvH3cYfvGpYORnzqd4y/jXt817B0AIxg6QAYxdIBMIqlA2AUSwfAKJYOgFEsHQCjWDoARrF0AIxi6QAYxdIBMOqPpUNRFDVRLB2Kogbr9fULcGZ+AHZGKFgAAAAASUVORK5CYII=</image>
                 </object>
@@ -1011,11 +1010,12 @@ View details link</description>
                 <object type="Link" technology="Web">
                     <name>cart icon</name>
                     <codeName>CartIcon</codeName>
+                    <description>Shopping Cart on Main Page at the top of page</description>
                     <identification>
                         <properties>
                             <property name="Role" type="string" isRegExp="false">link</property>
                             <property name="TagName" type="string" isRegExp="false">A</property>
-                            <property name="XPath" type="string" isRegExp="false">//HEADER[1]/NAV[1]/UL[1]/LI[1]/A[@role="link"][1]</property>
+                            <property name="Id" type="string" isRegExp="false">shoppingCartLink</property>
                         </properties>
                     </identification>
                     <tags>
@@ -1348,6 +1348,17 @@ View details link</description>
                     <tags>
                         <tag>TABLET</tag>
                     </tags>
+                </object>
+                <object type="WebElement" technology="Web">
+                    <name>shippingCost</name>
+                    <codeName>ShippingCost</codeName>
+                    <description>Order Payment page, shipping cost</description>
+                    <identification>
+                        <properties>
+                            <property name="TagName" type="string" isRegExp="false">SPAN</property>
+                            <property name="Id" type="string" isRegExp="false">shippingCost</property>
+                        </properties>
+                    </identification>
                 </object>
             </children>
         </object>

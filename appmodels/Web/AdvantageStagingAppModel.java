@@ -147,6 +147,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private PAYNOWButtonManualPayment PAYNOWButtonManualPayment;
 	private MiceLogitechG502Img MiceLogitechG502Img;
 	private TabletHPPro608G1 TabletHPPro608G1;
+	private ShippingCost ShippingCost;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -260,6 +261,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		PAYNOWButtonManualPayment = new PAYNOWButtonManualPayment(this, applicationModel);
 		MiceLogitechG502Img = new MiceLogitechG502Img(this, applicationModel);
 		TabletHPPro608G1 = new TabletHPPro608G1(this, applicationModel);
+		ShippingCost = new ShippingCost(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -384,6 +386,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public PAYNOWButtonManualPayment PAYNOWButtonManualPayment() { return PAYNOWButtonManualPayment; }
 		public MiceLogitechG502Img MiceLogitechG502Img() { return MiceLogitechG502Img; }
 		public TabletHPPro608G1 TabletHPPro608G1() { return TabletHPPro608G1; }
+		public ShippingCost ShippingCost() { return ShippingCost; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -791,7 +794,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").role("button").accessibilityName("").tagName("BUTTON").name(new RegExpProperty("CHECKOUT\\s+\\(.+\\)")).index(0).build();
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").role("button").tagName("BUTTON").id("check_out_btn").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2559,7 +2562,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.LinkDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.LinkDescription.Builder().role("link").tagName("A").xpath("//HEADER[1]/NAV[1]/UL[1]/LI[1]/A[@role=\"link\"][1]").build();
+				description = new com.hp.lft.sdk.web.LinkDescription.Builder().role("link").tagName("A").id("shoppingCartLink").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3210,6 +3213,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ImageDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ImageDescription.Builder().type(com.hp.lft.sdk.web.ImageType.NORMAL).tagName("IMG").id("18").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ShippingCost extends WebElementNodeBase
+	{
+
+		
+								public ShippingCost(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("shippingCost");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("SPAN").id("shippingCost").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
