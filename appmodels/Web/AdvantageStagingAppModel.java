@@ -3108,7 +3108,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.LinkDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.LinkDescription.Builder().tagName("A").innerText("POPULAR ITEMS").absoluteLocation(new com.hp.lft.sdk.LocationProperty().setX(3294).setY(136)).build();
+				description = new com.hp.lft.sdk.web.LinkDescription.Builder().tagName("A").innerText("POPULAR ITEMS").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

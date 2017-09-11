@@ -1288,10 +1288,6 @@ View details link</description>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">A</property>
                             <property name="InnerText" type="string" isRegExp="false">POPULAR ITEMS</property>
-                            <property name="AbsoluteLocation" type="group" isRegExp="false">
-                                <property name="X" type="int" isRegExp="false">3294</property>
-                                <property name="Y" type="int" isRegExp="false">136</property>
-                            </property>
                         </properties>
                     </identification>
                 </object>
