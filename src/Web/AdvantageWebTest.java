@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.hp.lft.report.*;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
@@ -77,9 +78,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         instance = new AdvantageWebTest();
         globalSetup(AdvantageWebTest.class);
 
-        Print("browserTypeValue" + browserTypeValue);
-        Print("envTypeValue" + envTypeValue);
-        Print("appURL" + appURL);
+        Print("browserTypeValue: " + browserTypeValue);
+        Print("envTypeValue: " + envTypeValue);
+        Print("appURL: " + appURL);
     }
 
     @AfterClass
@@ -1637,11 +1638,17 @@ public class AdvantageWebTest extends UnitTestClassBase {
         System.out.println("ERROR: " + objName + "\n" + e.getMessage() +  "\n");
     }
 
+    private static void printError(String errorMessage) {
+        System.out.println("\n##################################################");
+        System.out.println(errorMessage);
+    }
+
     private void checkWithReporterIsTrue(Boolean isValue, String stepName, String description) throws ReportException, GeneralLeanFtException {
         img = browser.getPage().getSnapshot();
         if (isValue) {
             Reporter.reportEvent(stepName, description, Status.Passed, img);
         } else {
+            printError(stepName + ". " + description);
             Reporter.reportEvent(stepName, description, Status.Failed, img);
             fail("Should be " + !isValue);
         }
@@ -1650,6 +1657,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     private void checkWithReporterIsFalse(Boolean isValue, String stepName, String description) throws ReportException, GeneralLeanFtException {
         img = browser.getPage().getSnapshot();
         if (isValue) {
+            printError(stepName + ". " + description);
             Reporter.reportEvent(stepName, description, Status.Failed, img);
             fail("Should be " + !isValue);
         } else {
