@@ -448,6 +448,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 break;
         }
 
+        Print("browserType: " + browserType);
+        Print("envType = " + envTypeValue);
+        Print("appURL = " + appURL);
+
         if (envTypeValue == "SRF")
             browser = SrfLab.launchBrowser(new BrowserDescription.Builder().type(browserType).set("osType", "Windows").set("osVersion", "10").build());
         else
