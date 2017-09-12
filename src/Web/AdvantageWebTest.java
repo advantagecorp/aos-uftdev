@@ -81,6 +81,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("browserTypeValue: " + browserTypeValue);
         Print("envTypeValue: " + envTypeValue);
         Print("appURL: " + appURL);
+
+        Print("Wait for CI to be ready... 5 min");
+        Thread.sleep(300000);
     }
 
     @AfterClass
@@ -311,8 +314,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
-//        Print("Wait for adding product to cart");
-//        threadSleep(4000);
         Print("selectItemToPurchase() end");
     }
 
