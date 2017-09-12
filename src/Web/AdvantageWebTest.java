@@ -37,8 +37,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
 //    public static String appURL2 = "52.34.13.179:8080";     // QUALLY
 
-    public String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
-    public String envTypeValue = System.getProperty("env_type", "local");
+    public static String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
+    public static String envTypeValue = System.getProperty("env_type", "local");
     //public String osValue = System.getProperty("os", "Windows");
     //public String versionValue = System.getProperty("version", "Windows");
     public BrowserType browserType;
@@ -76,6 +76,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
         startTimeAllTests = System.currentTimeMillis();
         instance = new AdvantageWebTest();
         globalSetup(AdvantageWebTest.class);
+
+        Print("browserTypeValue" + browserTypeValue);
+        Print("envTypeValue" + envTypeValue);
+        Print("appURL" + appURL);
     }
 
     @AfterClass
@@ -189,7 +193,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
             isSignedIn = isSignedIn();
         }
 
-        checkWithReporterIsTrue(isSignedIn, "Verify signed in", "If a user signed in");
         Print("signIn() end (isSignedIn = " + isSignedIn + " )");
         return isSignedIn;
     }
@@ -447,10 +450,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 browserType = BrowserType.CHROME;
                 break;
         }
-
-        Print("browserType: " + browserType);
-        Print("envType = " + envTypeValue);
-        Print("appURL = " + appURL);
 
         if (envTypeValue == "SRF")
             browser = SrfLab.launchBrowser(new BrowserDescription.Builder().type(browserType).set("osType", "Windows").set("osVersion", "10").build());
@@ -1466,13 +1465,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         boolean match = m.find();
         Print(checkOutTXT + " :: " + match);
 
-        img = browser.getPage().getSnapshot();
-        if (match) {
-            Reporter.reportEvent("Verify CHECKOUT RegEx", "Verify that the text in CHECKOUT button start with 'CHECKOUT'.", Status.Passed, img);
-        } else {
-            Reporter.reportEvent("Verify CHECKOUT RegEx", "Verify that the text in CHECKOUT button start with 'CHECKOUT'.", Status.Failed, img);
-        }
-//        Verification(Verify.isTrue(match, "Verification - Verify CHECKOUT RegEx", " Verify that the text in CHECKOUT button start with 'CHECKOUT' ."));
+        checkWithReporterIsTrue(match, "Verify CHECKOUT RegEx", "Verify that the text in CHECKOUT button start with 'CHECKOUT'.");
     }
 
     @Test
