@@ -388,7 +388,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the cart icon
         clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
         // Click the checkout button
-        clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
+        clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
         // Click Next to continue the purchase wizard
         Print("Wait for window to be loaded");
         threadSleep(5000);
