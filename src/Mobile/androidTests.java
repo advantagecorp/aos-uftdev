@@ -59,21 +59,19 @@ public class androidTests extends UnitTestClassBase {
         instance = new androidTests();
         globalSetup(androidTests.class);
 
-        Print("appURL: " + appURL);
-        Print(appURL.substring(0,6));
-        if (appURL.substring(0,6).equals("http://"))
+        if (appURL.substring(0,7).equals("http://"))
             appURL = appURL.substring(7);
-        Print("appURL: " + appURL);
+
 
         if (appURL.equals("defaultvalue")) {
             appURL = appURL2;
-            Print(appURL.substring(0,7));
             if (appURL.substring(0,7).equals("http://"))
                 appURL = appURL.substring(7);
-            Print("appURL: " + appURL);
             InitBeforeclassLocal();
         } else
             InitBeforeclass();
+
+        Print("appURL: " + appURL);
     }
 
     @AfterClass
