@@ -34,7 +34,8 @@ public class androidTests extends UnitTestClassBase {
     static String PASSNEW = "Password23";
 
     static String appURL = System.getProperty("url", "defaultvalue");
-    static String appURL2 = "www.advantageonlineshopping.com";
+//    static String appURL2 = "www.advantageonlineshopping.com";
+    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
 //    static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
@@ -58,8 +59,18 @@ public class androidTests extends UnitTestClassBase {
         instance = new androidTests();
         globalSetup(androidTests.class);
 
+        Print("appURL: " + appURL);
+        Print(appURL.substring(0,6));
+        if (appURL.substring(0,6).equals("http://"))
+            appURL = appURL.substring(7);
+        Print("appURL: " + appURL);
+
         if (appURL.equals("defaultvalue")) {
             appURL = appURL2;
+            Print(appURL.substring(0,7));
+            if (appURL.substring(0,7).equals("http://"))
+                appURL = appURL.substring(7);
+            Print("appURL: " + appURL);
             InitBeforeclassLocal();
         } else
             InitBeforeclass();
@@ -1086,6 +1097,7 @@ public class androidTests extends UnitTestClassBase {
 
     private static void printCaptionTest(String nameOfTest) {
         System.out.println("\n--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
         System.out.println("START " + nameOfTest);
     }
 
@@ -1134,3 +1146,6 @@ public class androidTests extends UnitTestClassBase {
     }
 
 }
+
+// TODO: add to tests
+// - Settings Page. Server url can contain xxx.xxx.xxx.xxx and http://xxx.xxx.xxx.xxx (after that remove checking for http:// at starting url)
