@@ -236,6 +236,7 @@ public class androidTests extends UnitTestClassBase {
         SignIn(false);
         app.launch();
         Verify.isTrue(SignIn(true), "Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
+        SignOut();
     }
 
     @Test
