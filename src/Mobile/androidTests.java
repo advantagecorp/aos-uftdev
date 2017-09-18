@@ -15,6 +15,7 @@ import com.hp.lft.sdk.mobile.*;
 import com.hp.lft.verifications.*;
 
 import org.junit.rules.TestName;
+import org.junit.runners.MethodSorters;
 import unittesting.*;
 
 import static org.junit.Assert.assertFalse;
@@ -22,7 +23,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 //Make sure the tests run at the ascending alphabet name order (JUnit 4.11 and above)
-//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class androidTests extends UnitTestClassBase {
 
     static AdvantageAndroidApp appModel;
@@ -35,9 +37,9 @@ public class androidTests extends UnitTestClassBase {
 
     static String appURL = System.getProperty("url", "defaultvalue");
 //    static String appURL2 = "www.advantageonlineshopping.com";
-    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
+//    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-//    static String appURL2 = "16.60.158.84";       // CI
+    static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
@@ -296,6 +298,9 @@ public class androidTests extends UnitTestClassBase {
 					14.� Click Pay Now
 					15.� Verify receipt 
     	 */
+    	if (isSignedIn())
+            SignOut();
+
         SignIn(false);
 
         //buy a leptop item
