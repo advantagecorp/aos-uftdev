@@ -12,11 +12,11 @@
 			<version>4.11</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.8</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
@@ -30,16 +30,13 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 			<scope>test</scope>
-
 		</dependency>
 
-			<dependency>
-				<groupId>com.hpe.alm.octane</groupId>
-				<artifactId>octane-cucumber-jvm</artifactId>
-				<version>12.53.22</version>
-			</dependency>
-
-
+		<dependency>
+			<groupId>com.hpe.alm.octane</groupId>
+			<artifactId>octane-cucumber-jvm</artifactId>
+			<version>12.53.22</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.hp.lft</groupId>
@@ -78,8 +75,30 @@
 		</dependency>
 	</dependencies>
 
+	<properties>
+	  <test.src.dir>src/test/java</test.src.dir>
+    </properties>
+	
+	<profiles>
+		<profile>
+		<id>leanft-test</id>
+			<properties>
+				<test.src.dir>src</test.src.dir>
+			</properties>		
+		</profile>
+    </profiles>
+	
 	<build>
+	<testSourceDirectory>${test.src.dir}</testSourceDirectory>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<runOrder>alphabetical</runOrder>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
