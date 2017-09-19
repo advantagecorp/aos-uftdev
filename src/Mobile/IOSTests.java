@@ -2,6 +2,7 @@ package Mobile;
 
 import static org.junit.Assert.*;
 
+import gherkin.lexer.Th;
 import org.junit.*;
 
 import com.hp.lft.sdk.*;
@@ -24,7 +25,8 @@ public class IOSTests extends UnitTestClassBase {
 	
 	static String UNAME = "IosUser";
 	        String PASS = "Password1";
-    static String appURL2 = "52.88.236.171:80"; //"52.32.172.3:8080";//""35.162.69.22:8080";//
+//    static String appURL2 = "52.88.236.171:80"; //"52.32.172.3:8080";//""35.162.69.22:8080";//
+    static String appURL2 = "16.60.158.84:80";
     static String appURL = System.getProperty("url", "defaultvalue");
 	
 	
@@ -271,18 +273,35 @@ public class IOSTests extends UnitTestClassBase {
 
         /*app.restart();
         waitUntilElementExists(appModel.AdvantageShoppingApplication().MenuObjUiObject());*/
+        print("tap MenuButton");
     	appModel.AdvantageShoppingApplication().MenuButton().tap();
     	String loginTxt = appModel.AdvantageShoppingApplication().LoginLabel().getText();
+        Print("current loginTxt = '" + loginTxt + "'");
 
     	if (loginTxt.equals("LOG IN"))
         {
               if(!quiet){
+                  print("tap LoginObj");
                   appModel.AdvantageShoppingApplication().LoginObj().tap();
-                  appModel.AdvantageShoppingApplication().UserNameLoginditField().setText(UNAME);
-                  appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText(PASS);
+//                  threadSleep(3000);
+                  print("tap UserNameLoginditField");
+                  appModel.AdvantageShoppingApplication().UserNameLoginditField().tap();
+//                  threadSleep(3000);
+                  print("setText UserNameLoginditField " + UNAME);
+//                  appModel.AdvantageShoppingApplication().UserNameLoginditField().setText(UNAME);
+                  appModel.AdvantageShoppingApplication().UserNameLabelEditField().setText(UNAME);
+//                  threadSleep(3000);
+                  print("tap PasswordLogin");
+                  appModel.AdvantageShoppingApplication().PasswordLogin().tap();
+//                  threadSleep(3000);
+                  print("setText PasswordLogin " + PASS);
+//                  appModel.AdvantageShoppingApplication().PasswordLoginEditField().setText(PASS);
+                  appModel.AdvantageShoppingApplication().PasswordLogin().setText(PASS);
 
+                  print("tap LOGINButton");
                   appModel.AdvantageShoppingApplication().LOGINButton().tap();
-                  Thread.sleep(2000);
+
+                  threadSleep(2000);
                   if(!appModel.AdvantageShoppingApplication().InvalidUserNameOrPasLabel().exists(3)){
                       Print(UNAME + " - Login success");
                       Verify.isTrue(true,"Sign in" , "verify that user sign in success");
@@ -291,20 +310,14 @@ public class IOSTests extends UnitTestClassBase {
                   }
                   Verify.isTrue(true,"Invalid Sign in" , "verify that user can't sign in with invalid user");
                   return false;
-
-
               }
+              print("tap MenuButton");
              appModel.AdvantageShoppingApplication().MenuButton().tap();
               return false;
-
         }
+        print("tap MenuButton");
         appModel.AdvantageShoppingApplication().MenuButton().tap();
         return  true;
-
-
-
-
-
     }
 
 
@@ -398,16 +411,23 @@ public class IOSTests extends UnitTestClassBase {
         //appModel.AdvantageShoppingApplication().LoginObj().tap();
         if(!isTest) {
             appModel.AdvantageShoppingApplication().SignUpButton().tap();
+            Thread.sleep(5000);
+            appModel.AdvantageShoppingApplication().UserNameSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().UserNameSignUpEditField().setText(UNAME);
+            appModel.AdvantageShoppingApplication().EmailSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
+            appModel.AdvantageShoppingApplication().PasswordSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().PasswordSignUpEditField().setText(PASS);
+            appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField() .tap();
             appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(PASS);
 
             device.swipe(SwipeDirection.UP);
             device.swipe(SwipeDirection.UP);
 
         /*appModel.AdvantageShoppingApplication().StreetSignUpEditField().setText("Altalef 5");
+        appModel.AdvantageShoppingApplication().CitySignUpEditField() .tap();
         appModel.AdvantageShoppingApplication().CitySignUpEditField().setText("Yahud");
+        appModel.AdvantageShoppingApplication().ZIPSignUpEditField() .tap();
         appModel.AdvantageShoppingApplication().ZIPSignUpEditField().setText("454545");
 
         appModel.AdvantageShoppingApplication().CountryLabel().tap();
@@ -423,9 +443,13 @@ public class IOSTests extends UnitTestClassBase {
         else{
 
             appModel.AdvantageShoppingApplication().SignUpButton().tap();
+            appModel.AdvantageShoppingApplication().UserNameSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().UserNameSignUpEditField().setText(UNAME);
+            appModel.AdvantageShoppingApplication().EmailSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
+            appModel.AdvantageShoppingApplication().PasswordSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().PasswordSignUpEditField().setText(PASS);
+            appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().tap();
             appModel.AdvantageShoppingApplication().ConfirnPasswordSignUpEditField().setText(PASS);
 
             device.swipe(SwipeDirection.UP);
@@ -603,6 +627,23 @@ public class IOSTests extends UnitTestClassBase {
         });
     }
 
+    private void print(String string) {
+        System.out.println(string);
+    }
 
+    private static void printError(Exception e) {
+        System.out.println("\n##################################################");
+        System.out.println("ERROR: " + e.getMessage() +  "\n");
+    }
+
+    private void threadSleep(long millis) {
+        try {
+            Print("sleep " + millis);
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            printError(e);
+            fail("InterruptedException: failed to sleep for " + millis + " sec");
+        }
+    }
 
 }
