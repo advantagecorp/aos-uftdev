@@ -1,5 +1,5 @@
 package Web;
-
+ 
 import java.awt.image.RenderedImage;
 import java.math.BigInteger;
 import java.security.SecureRandom;
