@@ -1111,7 +1111,7 @@ public class androidTests extends UnitTestClassBase {
 
     private static void printTimeWholeTests(Long millis) {
         System.out.println("\n--------------------------------------------------");
-        Print("AdvantageWebTest done in: " + String.valueOf((elapsedTimeAllTests / 1000F) / 60 + " min"));
+        Print("AndroidTests done in: " + String.valueOf((elapsedTimeAllTests / 1000F) / 60 + " min\n"));
     }
 
     private void threadSleep(long millis) {
