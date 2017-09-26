@@ -1402,7 +1402,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
         browserSync();
-        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement());
 
         // Select an item to purchase and add it to the cart
         //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
@@ -1461,7 +1461,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         signIn();
         browserRefresh();
-        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement());
 
         // Select an item to purchase and add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());

@@ -511,7 +511,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("micesImg categoryCell").tagName("DIV").innerText("MICE Shop Now ").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("DIV").id("micesImg").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
