@@ -31,8 +31,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
-//	public static String appURL2 = "16.60.158.84";			// CI
-	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+	public static String appURL2 = "16.60.158.84";			// CI
+//	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
@@ -323,8 +323,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This method will checkout to the cart and pay for the cart content
     // The boolean fillCredentials specifies if to fill the credentials in the form or not
-    public void checkOutAndPay(boolean fillCredentials) throws ReportException {
-        Print("checkOutAndPay start");
+    public void checkOutAndPaySafePay(boolean fillCredentials) throws ReportException {
+        Print("checkOutAndPaySafePay start");
         // Checkout the cart for purchase
         // Click the cart icon
         clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
@@ -376,11 +376,11 @@ public class AdvantageWebTest extends UnitTestClassBase {
             printError(e, "appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
             fail("GeneralLeanFtException: appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
         }
-        Print("checkOutAndPay end");
+        Print("checkOutAndPaySafePay end");
     }
 
-    public void checkOutAndPay() throws ReportException {
-        checkOutAndPay(true); // Default value is true - fill credentials
+    public void checkOutAndPaySafePay() throws ReportException {
+        checkOutAndPaySafePay(true); // Default value is true - fill credentials
     }
 
     public void checkOutAndPayMasterCredit(String cardnum, String CVV, String holdername, boolean save) throws ReportException {
@@ -770,7 +770,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test purchases the first item in the Speakers category
     @Test
-    public void purchaseSpeakersTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePaySpeakersTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -785,7 +785,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     private void browserSync() {
@@ -821,7 +821,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
      * Flow: Trying to purchase 1000 products. Web application shows message that maximum is 10 and continuing with 10
      */
     @Test
-    public void purchase1000SpeakersNegativeTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePay1000SpeakersNegativeTest() throws GeneralLeanFtException, ReportException {
         signIn();
 
         // Empty the shopping cart
@@ -843,7 +843,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         checkWithReporterIsTrue(productsQuantityInCart == 10, "Verify products quantity", "There are 10 products as expected");
 
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     // This test verifies that the shipping costs is free when purchasing 1 item
@@ -925,7 +925,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
-        checkOutAndPay(); // Fill credentials. Verification inside
+        checkOutAndPaySafePay(); // Fill credentials. Verification inside
 
         // 2nd time purchase
 
@@ -937,12 +937,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
         selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg(), appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
 
         // Pay for the item
-        checkOutAndPay(false); // Do not fill credentials. Verification inside
+        checkOutAndPaySafePay(false); // Do not fill credentials. Verification inside
     }
 
     // This test purchases the first item in the Tablets category
     @Test
-    public void purchaseTabletTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePayTabletTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -957,12 +957,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
         selectItemToPurchase(appModel.AdvantageShoppingPage().TabletsImgWebElement(), appModel.AdvantageShoppingPage().TabletHPPro608G1());
 
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     // This test purchases the first item in the Laptops category
     @Test
-    public void purchaseLaptopTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseMasterCreditLaptopTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -982,7 +982,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test purchases the first item in the Mice category
     @Test
-    public void purchaseMouseTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseMasterCreditMouseTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -1003,7 +1003,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test purchases the first item in the Headphones category
     @Test
-    public void purchaseHeadphonesTest() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePayHeadphonesTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -1017,7 +1017,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Select an item to purchase and add it to the cart
         selectItemToPurchase(appModel.AdvantageShoppingPage().HeadphonesImg(), appModel.AdvantageShoppingPage().HPH2310InEarHeadset());
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     // This test verifies that the Contact Us form filling and sending works
@@ -1055,7 +1055,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test purchases the first item in the popular items list
     @Test
-    public void popularItemPurchaseFirst() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePayPopularItemFirst() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -1071,12 +1071,12 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().PopularItemViewDetails());
 
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     // This test purchases the first item in the special offer items list
     @Test
-    public void specialOfferPurchase() throws GeneralLeanFtException, ReportException {
+    public void purchaseSafePaySpecialOffer() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
 
@@ -1090,7 +1090,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         selectItemToPurchase(appModel.AdvantageShoppingPage().SPECIALOFFERMainWebElement(), appModel.AdvantageShoppingPage().SEEOFFERButton());
 
         // Pay for the item
-        checkOutAndPay(); // Verification inside
+        checkOutAndPaySafePay(); // Verification inside
     }
 
     // This test method creates a random user and adds it to the site
