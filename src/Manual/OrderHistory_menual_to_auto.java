@@ -54,7 +54,7 @@ public class OrderHistory_menual_to_auto extends UnitTestClassBase {
     public void BuyAndCheckOut() throws GeneralLeanFtException, InterruptedException, ReportException {
 
         webtests.selectItemToPurchase(webtests.appModel.AdvantageShoppingPage().LAPTOPSWebElement(),webtests.appModel.AdvantageShoppingPage().laptopFororderService());
-        webtests.checkOutAndPay();
+        webtests.checkOutAndPaySafePay();
         //ProductName = webtests.appModel.AdvantageShoppingPage().LaptopName().getInnerText();
     }
 
