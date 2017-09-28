@@ -121,7 +121,7 @@ public class MobileWeb {
 
         // Select an item to purchase and add it to the cart
         try{
-            selectItemToPurchase(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement(),appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop(),1);
+            selectItemToPurchase(appModel.AdvantageShoppingPage().LaptopsImg(),appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop(),1);
         }
         catch(Exception e)
         {
