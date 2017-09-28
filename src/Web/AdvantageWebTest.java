@@ -31,7 +31,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
-	public static String appURL2 = "16.60.158.84";			// CI
+    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
+//	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
@@ -82,8 +83,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("envTypeValue: " + envTypeValue);
         Print("appURL: " + appURL);
 
-        Print("Wait for CI to be ready... 2 min");
-        Thread.sleep(120000);
+//        Print("Wait for CI to be ready... 2 min");
+//        Thread.sleep(120000);
     }
 
     @AfterClass
@@ -974,7 +975,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         browserSync();
 
         // Select an item to purchase and add it to the cart
-        selectItemToPurchase(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement(), appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().LaptopsImg(), appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop());
 
         // Pay for the item
         checkOutAndPayMasterCredit("123412341234", "774", USERNAME, false); // Verification inside
@@ -995,7 +996,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Select an item to purchase and add it to the cart
         // TODO: find other places where is used LogitechG502ProteusCore7 and remove element from model
-        selectItemToPurchase(appModel.AdvantageShoppingPage().MICEShopNowWebElement(), appModel.AdvantageShoppingPage().MiceLogitechG502Img());
+        selectItemToPurchase(appModel.AdvantageShoppingPage().MicesImg(), appModel.AdvantageShoppingPage().MiceLogitechG502Img());
 
         // Pay for the item
         checkOutAndPayMasterCredit("123412341234", "774", USERNAME, false); // Verification inside
@@ -1402,7 +1403,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
         browserSync();
-        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().LaptopsImg());
 
         // Select an item to purchase and add it to the cart
         //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
@@ -1461,7 +1462,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         signIn();
         browserRefresh();
-        clickWebElement(appModel.AdvantageShoppingPage().LAPTOPSShopNowWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().LaptopsImg());
 
         // Select an item to purchase and add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());

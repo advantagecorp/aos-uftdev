@@ -41,8 +41,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			private SearchIconWebElement SearchIconWebElement;
 	private SpeakersImg SpeakersImg;
 	private TabletsImgWebElement TabletsImgWebElement;
-	private LAPTOPSShopNowWebElement LAPTOPSShopNowWebElement;
-	private MICEShopNowWebElement MICEShopNowWebElement;
+	private LaptopsImg LaptopsImg;
+	private MicesImg MicesImg;
 	private HeadphonesImg HeadphonesImg;
 	private OrderNumber OrderNumber;
 	private OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement;
@@ -156,8 +156,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 					SearchIconWebElement = new SearchIconWebElement(this, applicationModel);
 		SpeakersImg = new SpeakersImg(this, applicationModel);
 		TabletsImgWebElement = new TabletsImgWebElement(this, applicationModel);
-		LAPTOPSShopNowWebElement = new LAPTOPSShopNowWebElement(this, applicationModel);
-		MICEShopNowWebElement = new MICEShopNowWebElement(this, applicationModel);
+		LaptopsImg = new LaptopsImg(this, applicationModel);
+		MicesImg = new MicesImg(this, applicationModel);
 		HeadphonesImg = new HeadphonesImg(this, applicationModel);
 		OrderNumber = new OrderNumber(this, applicationModel);
 		OURPRODUCTSMainWebElement = new OURPRODUCTSMainWebElement(this, applicationModel);
@@ -282,8 +282,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				public SearchIconWebElement SearchIconWebElement() { return SearchIconWebElement; }
 		public SpeakersImg SpeakersImg() { return SpeakersImg; }
 		public TabletsImgWebElement TabletsImgWebElement() { return TabletsImgWebElement; }
-		public LAPTOPSShopNowWebElement LAPTOPSShopNowWebElement() { return LAPTOPSShopNowWebElement; }
-		public MICEShopNowWebElement MICEShopNowWebElement() { return MICEShopNowWebElement; }
+		public LaptopsImg LaptopsImg() { return LaptopsImg; }
+		public MicesImg MicesImg() { return MicesImg; }
 		public HeadphonesImg HeadphonesImg() { return HeadphonesImg; }
 		public OrderNumber OrderNumber() { return OrderNumber; }
 		public OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement() { return OURPRODUCTSMainWebElement; }
@@ -469,11 +469,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class LAPTOPSShopNowWebElement extends WebElementNodeBase
+	public class LaptopsImg extends WebElementNodeBase
 	{
 
 		
-								public LAPTOPSShopNowWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public LaptopsImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -495,11 +495,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class MICEShopNowWebElement extends WebElementNodeBase
+	public class MicesImg extends WebElementNodeBase
 	{
 
 		
-								public MICEShopNowWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public MicesImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
