@@ -454,16 +454,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 break;
         }
 
-        if (envTypeValue.equals("SRF"))
-	{
-	    System.out.println("Starting to run Tests in SRF");
+        if (envTypeValue.equals("SRF")) {
+            System.out.println("Starting to run Tests in SRF");
             browser = SrfLab.launchBrowser(new BrowserDescription.Builder().type(browserType).set("osType", "Windows").set("osVersion", "10").build());
-	}
-        else
-	{
-		System.out.println("Starting to run Tests in local env.");
-		browser = BrowserFactory.launch(browserType);
-	}
+        } else {
+            System.out.println("Starting to run Tests in local env.");
+            browser = BrowserFactory.launch(browserType);
+        }
 
         if (appURL.equals("defaultvalue"))
             appURL = appURL2;
