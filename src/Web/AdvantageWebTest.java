@@ -83,8 +83,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("envTypeValue: " + envTypeValue);
         Print("appURL: " + appURL);
 
-//        Print("Wait for CI to be ready... 2 min");
-//        Thread.sleep(120000);
+        Print("Wait for CI to be ready... 2 min");
+        Thread.sleep(120000);
     }
 
     @AfterClass
