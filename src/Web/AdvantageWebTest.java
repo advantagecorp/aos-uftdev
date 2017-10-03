@@ -1604,6 +1604,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         threadSleep(10000);
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // if SafePay userName and pass are empty will be error
+        Print("Wait for page to bee loaded");
+        threadSleep(10000);
         clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
         // appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
         browserSync();
