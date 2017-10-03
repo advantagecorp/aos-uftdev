@@ -1603,7 +1603,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("Wait for page to bee loaded");
         threadSleep(10000);
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
+
         // if SafePay userName and pass are empty will be error
+        // Set the payment method user name
+        setValueEditField(appModel.AdvantageShoppingPage().SafePayUsernameEditField(), "HPE123");
+        // Set the payment method password
+        setValueEditField(appModel.AdvantageShoppingPage().SafePayPasswordEditField(), "Aaaa1");
+
         Print("Wait for page to bee loaded");
         threadSleep(10000);
         clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
