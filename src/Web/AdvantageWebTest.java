@@ -82,7 +82,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("browserTypeValue: " + browserTypeValue);
         Print("envTypeValue: " + envTypeValue);
         Print("appURL: " + appURL);
-        Print("appURL2:" + appURL2);
+//        Print("appURL2: " + appURL2);
 
         Print("Wait for CI to be ready... 2 min");
         Thread.sleep(120000);
@@ -1419,11 +1419,17 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().MyOrdersWebElement());
         clickWebElement(appModel.AdvantageShoppingPage().OrderSearchWebElement());
         setValueEditField(appModel.AdvantageShoppingPage().SearchOrderEditField(), ProductName);
-        clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
 
-        checkWithReporterIsTrueOnly(existsWebElement(appModel.AdvantageShoppingPage().RemoveFromOrderValidate()),
-                "Verify Search orders", "Verify that the alert window element exists.");
-        clickWebElement(appModel.AdvantageShoppingPage().YesCANCELButton());
+        // TODO: check if previously purchased product in this list
+        if (existsWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement())) {
+            clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+
+            checkWithReporterIsTrueOnly(existsWebElement(appModel.AdvantageShoppingPage().RemoveFromOrderValidate()),
+                    "Verify Search orders", "Verify that the alert window element exists.");
+            clickWebElement(appModel.AdvantageShoppingPage().YesCANCELButton());
+        } else {
+            printError("Empty list of orders");
+        }
     }
 
    /*@Test
