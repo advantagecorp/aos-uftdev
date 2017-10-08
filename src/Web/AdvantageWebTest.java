@@ -1660,7 +1660,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     private static void printError(String errorMessage) {
         System.out.println("\n##################################################");
-        System.out.println(errorMessage);
+        System.out.println("ERROR: " + errorMessage);
     }
 
     private void checkWithReporterIsTrue(Boolean isValue, String stepName, String description) throws ReportException, GeneralLeanFtException {
