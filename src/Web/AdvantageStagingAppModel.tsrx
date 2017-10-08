@@ -1003,7 +1003,7 @@ View details link</description>
                     <identification>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">LI</property>
-                            <property name="XPath" type="string" isRegExp="false">//HEADER[1]/NAV[1]/UL[1]/LI[1]</property>
+                            <property name="XPath" type="string" isRegExp="false">//HEADER[1]/NAV[1]/UL[1]/LI[2]</property>
                         </properties>
                     </identification>
                     <tags>
