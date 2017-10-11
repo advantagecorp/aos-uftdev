@@ -44,6 +44,7 @@ public class androidTests extends UnitTestClassBase {
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
+    private int currentNumberOfTest = 0;
     private static long startTimeAllTests;
     private long startTimeCurrentTest;
     private static long elapsedTimeAllTests;
@@ -89,7 +90,7 @@ public class androidTests extends UnitTestClassBase {
     @Before
     public void setUp() throws Exception {
         startTimeCurrentTest = System.currentTimeMillis();
-        printCaptionTest(curTestName.getMethodName());
+        printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         Print("restarting application...");
         app.restart();
     }
@@ -98,10 +99,10 @@ public class androidTests extends UnitTestClassBase {
     public void tearDown() throws Exception {
         //SignOut();
         printEndOfTest(curTestName.getMethodName());
-//        elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
-//        Print(String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
-//                + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
-//                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
+        elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
+        Print(String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
+                + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
+                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
     }
 
 //    public void InitSetUP() throws GeneralLeanFtException, InterruptedException {
@@ -1197,10 +1198,10 @@ public class androidTests extends UnitTestClassBase {
         return result;
     }
 
-    private static void printCaptionTest(String nameOfTest) {
+    private static void printCaptionTest(String nameOfTest, int curNumberOfTest) {
         System.out.println("\n--------------------------------------------------");
         System.out.println("--------------------------------------------------");
-        System.out.println("START " + nameOfTest);
+        System.out.println(curNumberOfTest + " START " + nameOfTest);
     }
 
     private static void printEndOfTest(String nameOfTest) {
