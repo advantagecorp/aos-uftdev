@@ -44,7 +44,7 @@ public class androidTests extends UnitTestClassBase {
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
-    private int currentNumberOfTest = 0;
+    private static int currentNumberOfTest = 0;
     private static long startTimeAllTests;
     private long startTimeCurrentTest;
     private static long elapsedTimeAllTests;
@@ -98,11 +98,11 @@ public class androidTests extends UnitTestClassBase {
     @After
     public void tearDown() throws Exception {
         //SignOut();
-        printEndOfTest(curTestName.getMethodName());
         elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
-        Print(String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
+        String passingTime = String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
                 + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
-                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n"));
+                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n");
+        printEndOfTest(curTestName.getMethodName(), passingTime);
     }
 
 //    public void InitSetUP() throws GeneralLeanFtException, InterruptedException {
@@ -1204,8 +1204,8 @@ public class androidTests extends UnitTestClassBase {
         System.out.println(curNumberOfTest + " START " + nameOfTest);
     }
 
-    private static void printEndOfTest(String nameOfTest) {
-        System.out.println("END " + nameOfTest);
+    private static void printEndOfTest(String nameOfTest, String time) {
+        System.out.println("END " + nameOfTest + " in " + time);
     }
 
     private static void printTimeWholeTests(Long millis) {
