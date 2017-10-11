@@ -32,7 +32,7 @@ public class androidTests extends UnitTestClassBase {
     protected static Application app;
     protected static Application appSettings;
 
-    static String UNAME = "androidUser1";
+    static String UNAME = "androidUser3";
     static String PASS = "Password1";
     static String PASSNEW = "Password23";
 
