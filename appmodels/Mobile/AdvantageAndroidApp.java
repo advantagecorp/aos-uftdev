@@ -130,6 +130,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private NoteOfflineModLabel NoteOfflineModLabel;
 	private WarningMessageUiObject WarningMessageUiObject;
 	private LoggedUserName LoggedUserName;
+	private ApplyButton ApplyButton;
+	private SignedInUserName SignedInUserName;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -230,6 +232,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		NoteOfflineModLabel = new NoteOfflineModLabel(this, applicationModel);
 		WarningMessageUiObject = new WarningMessageUiObject(this, applicationModel);
 		LoggedUserName = new LoggedUserName(this, applicationModel);
+		ApplyButton = new ApplyButton(this, applicationModel);
+		SignedInUserName = new SignedInUserName(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -341,6 +345,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public NoteOfflineModLabel NoteOfflineModLabel() { return NoteOfflineModLabel; }
 		public WarningMessageUiObject WarningMessageUiObject() { return WarningMessageUiObject; }
 		public LoggedUserName LoggedUserName() { return LoggedUserName; }
+		public ApplyButton ApplyButton() { return ApplyButton; }
+		public SignedInUserName SignedInUserName() { return SignedInUserName; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -2672,7 +2678,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").resourceId("linearLayoutLogin").mobileCenterIndex(31).build();
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").resourceId("linearLayoutLogin").mobileCenterIndex(28).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2776,7 +2782,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Note that in offline mode nothing you do will be saved for future use").className("Label").resourceId("message").mobileCenterIndex(1).build();
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("You are working in offline mode. Data is not retained for future use").className("Label").resourceId("message").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2838,6 +2844,58 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
+	public class ApplyButton extends ButtonNodeBase
+	{
+
+		
+								public ApplyButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("APPLY");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("APPLY").className("Button").resourceId("buttonConnect").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SignedInUserName extends LabelNodeBase
+	{
+
+		
+								public SignedInUserName(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SignedInUserName");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().className("Label").resourceId("textViewMenuUser").mobileCenterIndex(8).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
 	}
 
 	public class SettingsApplication extends ApplicationNodeBase
@@ -2846,12 +2904,16 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		
 			private AirplaneMode AirplaneMode;
 	private AirplaineToggle AirplaineToggle;
+	private SettingsConnections SettingsConnections;
+	private ConnectionsAirplaneModeToggle ConnectionsAirplaneModeToggle;
 						public SettingsApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 					AirplaneMode = new AirplaneMode(this, applicationModel);
 		AirplaineToggle = new AirplaineToggle(this, applicationModel);
+		SettingsConnections = new SettingsConnections(this, applicationModel);
+		ConnectionsAirplaneModeToggle = new ConnectionsAirplaneModeToggle(this, applicationModel);
 
 			setDisplayName("Settings");
 		}
@@ -2869,6 +2931,8 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 
 				public AirplaneMode AirplaneMode() { return AirplaneMode; }
 		public AirplaineToggle AirplaineToggle() { return AirplaineToggle; }
+		public SettingsConnections SettingsConnections() { return SettingsConnections; }
+		public ConnectionsAirplaneModeToggle ConnectionsAirplaneModeToggle() { return ConnectionsAirplaneModeToggle; }
 		
 			public class AirplaneMode extends UiObjectNodeBase
 	{
@@ -2913,6 +2977,58 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").resourceId("com.android.settings:id/switch_widget").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SettingsConnections extends LabelNodeBase
+	{
+
+		
+								public SettingsConnections(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SettingsConnections");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Connections").className("Label").resourceId("android:id/title").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ConnectionsAirplaneModeToggle extends ToggleNodeBase
+	{
+
+		
+								public ConnectionsAirplaneModeToggle(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ConnectionsAirplaneModeToggle");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ToggleDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").resourceId("android:id/switch_widget").mobileCenterIndex(3).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

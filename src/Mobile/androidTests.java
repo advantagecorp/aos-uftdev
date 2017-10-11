@@ -30,6 +30,7 @@ public class androidTests extends UnitTestClassBase {
     static AdvantageAndroidApp appModel;
     protected static Device device;
     protected static Application app;
+    protected static Application appSettings;
 
     static String UNAME = "androidUser1";
     static String PASS = "Password1";
@@ -81,7 +82,7 @@ public class androidTests extends UnitTestClassBase {
         device.unlock();
         globalTearDown();
         elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
-//        Print("androidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
+        Print("\nandroidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
         printTimeWholeTests(elapsedTimeAllTests);
     }
 
@@ -91,8 +92,6 @@ public class androidTests extends UnitTestClassBase {
         printCaptionTest(curTestName.getMethodName());
         Print("restarting application...");
         app.restart();
-//        Print("waitUntilElementExists MainMenu ");
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 10000);
     }
 
     @After
@@ -128,7 +127,7 @@ public class androidTests extends UnitTestClassBase {
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
 
-            String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+//            String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
 
 //            if (!server.equals(appURL)) { // check if the setting already set up
                 setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
@@ -577,85 +576,172 @@ public class androidTests extends UnitTestClassBase {
         SignOut();
     }
 
-    // TODO: Finish this test
-//    @Test
-    public void OfflineModeTest() throws GeneralLeanFtException, InterruptedException {
-        //todo: IMPORTANT - switch device to airplane mode or turn off the network before you RUN this test
-        /*
-        change to airplane mode
-        validate that:  
-        The indication should be in settings: if the user opens the app w/o internet access, the message should be:
-        "You are not connected to the internet", and when the user clicks OK, 
-        the url should say: Offline Mode, 
-        the "connect" should change to "apply" and the message "connection successful" should be replaced with: "
-        Note that in offline mode nothing you do will be saved for future use"
+    /**
+     * Tests that checks Offline Mode
+     *
+     * MC requires a full support in offline mode in all mobile apps, including catalog,
+     * and full flow - from login to checkout (no prev. connection is required), no user creation or edit account.
+     *
+     * Setting Offline Mode by switching device to airplane mode.
+     * Valicate that:
+     * The indication should be in settings: if the user opens the app without internet access,
+     * the message should be: "You are not connected to the internet" and when the user clicks OK,
+     * the url should say: Offline Mode.
+     * The "connect" button at Settings Page should be changed to "apply" and the message "connection successful"
+     * should be replaced with: "Note that in offline mode nothing you do will be saved for future use"
+     *
+     * Allow the user to login without any real authentication, check that there is an offline mode indication in the login page
+     * Check that create account is not available - clicking on it pops up a message "not applicable in offline mode"
+     * Add products to the cart and then checkout without any validation.
+     * Check that the offline mode indication exists in the cart page
+     * Try to edit the user account - validate that you get the message: "not applicable in offline mode"
+     *
+     * Offline mode user details:
+     *                                           @"accountType" : @10,
+     *                                           @"allowOffersPromotion" : @YES,
+     *                                           @"cityName" : @"Newton",
+     *                                           @"countryId" : @40,
+     *                                           @"countryIsoName" : @"us",
+     *                                           @"countryName" : @"United States",
+     *                                           @"defaultPaymentMethodId" : @10,
+     *                                           @"email" : @"demo@aos.ad",
+     *                                           @"firstName" : @"John",
+     *                                           @"homeAddress" : @"952 Morseland Ave.",
+     *                                           @"id" : @177635799, 
+     *                                           @"internalLastSuccesssulLogin" : @0,
+     *                                           @"internalUnsuccessfulLoginAttempts" : @0,
+     *                                           @"internalUserBlockedFromLoginUntil" : @0,
+     *                                           @"lastName" : @"Brown",
+     *                                           @"loginName" : @"___",- what the user entered
+     *                                           @"mobilePhone" : @"+1-617-527-5555",
+     *                                           @"stateProvince" : @"MA",
+     *                                           @"zipcode" : @02458
+     *
+     * @throws GeneralLeanFtException
+     * @throws InterruptedException
+     */
+    @Test
+    public void OfflineModeTest() throws GeneralLeanFtException {
+        threadSleep(5000);      // wait for application loading
 
+        // init Adnroid Settings application
+        appSettings = device.describe(Application.class, new ApplicationDescription.Builder()
+                .identifier("MC.Settings").packaged(false).build());
 
+        toggleAirplaneMode(true);   // enable airplane mode
 
-		check that there is offline mode indication in the login page
-        check that create account is not available - clicking on it pops up a message "not applicable in offline mode"
-        Allow the user to login without any real authentication,
-        try to edit the user account - validate that you get the message: "not applicable in offline mode"
+//        InitBeforeclassLocal();
 
-        add products to the cart and then checkout without any validation.
-        check that the offline mode indication exists in the cart page
-         */
-        offlinemode(true);   // switch device to airplane mode
-        InitBeforeclassLocal();
+//        setting();      // update server name to actual and not to use default
+
+//        Print("wait until application finish installing");
+//        threadSleep(10000);
+//        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+//        tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
+//        setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
+//        tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+//        threadSleep(10000);
+//        tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+
+        app.restart();      // need for application to enable Offline Mode
+
+        // Check first message on start application that You are not connected to internet
         Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
+        Print("TAP OKButton");
         appModel.AdvantageShoppingApplication().OKButton().tap();
+        threadSleep(5000);
 
+        // Check that default server setted to "Offline Mode"
         String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+        Print("cur server in EditTextServer: " + server);
         Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting");
-        appModel.AdvantageShoppingApplication().ConnectButton().tap();
-        Print("sleep 2000");
-        Thread.sleep(2000);
+        Print("TAP ApplyButton");
+        appModel.AdvantageShoppingApplication().ApplyButton().tap();
+        threadSleep(2000);
 
+        // Check that right message appeared after clicking on APPLY button
         Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(), "Verification - offline mode note massage", "Verify that the note for offline mode appears");
+        Print("TAP OKButton");
         appModel.AdvantageShoppingApplication().OKButton().tap();
 
         // TODO: add all functions that contains OfflineMode
+
+        signinInOfflineMode();
+
+        buyAndCheckOutInOfflineMode();
+
+        // TODO:
+        // try to edit the user account - validate that you get the message: "not applicable in offline mode"
+
+        toggleAirplaneMode(false);      // disable airplane mode
+
+        // back to normal state in application
+        // If some user already signed in do sign out
+        if (isSignedIn())
+            SignOut();
+
+        // disable Offline Mode and set default server
+        app.restart();
+        setting();
     }
 
-    public void SigninOfflineMode() throws GeneralLeanFtException {
+    private void signinInOfflineMode() throws GeneralLeanFtException {
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(5000);
+//        threadSleep(5000);
+
+        Print("TAP MainMenu");
         appModel.AdvantageShoppingApplication().MainMenu().tap();
+        Print("TAP Login");
         appModel.AdvantageShoppingApplication().Login().tap();
 
         //validation for offline warning
         Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(), "Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
 
-        ///validation for create account is not available
+        ///validation that SIGN UP is not available
+        Print("TAP DonTHaveAnAccount");
         appModel.AdvantageShoppingApplication().DonTHaveAnAccount().tap();
-        Verify.isFalse(appModel.AdvantageShoppingApplication().SignUpObject().exists(), "Verification - sign up offline mode", "Verify that we can create new user in offline mode");
+        Verify.isTrue(appModel.AdvantageShoppingApplication().SignUpObject().exists(), "Verification - sign up offline mode", "Verify that we can create new user in offline mode");
 
-        Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(), "Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
+        //TODO: check popup message "not applicable in offline mode"
 
+//        Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(), "Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
+
+        Print("SET to UserNameEdit() offline");
         appModel.AdvantageShoppingApplication().UserNameEdit().setText("offline"); //invalid user name & password - should work
+        Print("SET to PassEdit() offline");
         appModel.AdvantageShoppingApplication().PassEdit().setText("offline");
+        Print("TAP LOGINButton");
         appModel.AdvantageShoppingApplication().LOGINButton().tap();
 
         //validate that the Offline user appears
+        Print("TAP MainMenu");
         appModel.AdvantageShoppingApplication().MainMenu().tap();
 
-        String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
-
+//        String innerTxt = appModel.AdvantageShoppingApplication().LinearLayoutLogin().getVisibleText();
+        String innerTxt = appModel.AdvantageShoppingApplication().SignedInUserName().getText();
+        Print("current user is " + innerTxt);
         Verify.isTrue(innerTxt.equals("Brown John"), "Verification - offline login", "Verify that we logged in in offline mode");
     }
 
-    public void BuyAndCheckOutOfflineMode() throws GeneralLeanFtException, InterruptedException {
+    private void buyAndCheckOutInOfflineMode() throws GeneralLeanFtException {
         //do a check out without any edit or changing
         BuyLaptop();
 
+        Print("TAP CartAccess");
         appModel.AdvantageShoppingApplication().CartAccess().tap();
-        appModel.AdvantageShoppingApplication().CHECKOUT().tap();
-        Thread.sleep(2000);
 
+        //validation for offline warning
+        Verify.isTrue(appModel.AdvantageShoppingApplication().WarningMessageUiObject().exists(), "Verification - offline mode login warning", "Verify that the warning  for offline mode appears in login");
+
+        Print("TAP CHECKOUT");
+        appModel.AdvantageShoppingApplication().CHECKOUT().tap();
+        threadSleep(2000);
+
+        Print("TAP PAYNOWButton");
         appModel.AdvantageShoppingApplication().PAYNOWButton().tap();
-        Thread.sleep(5000);
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
+        threadSleep(5000);
         Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4), "Verify- purchase success offline mode", " verify that the payment success and we receive the order detail window (offline)"));
+        Print("TAP CloseDialog");
         appModel.AdvantageShoppingApplication().CloseDialog().tap();
     }
 
@@ -937,25 +1023,23 @@ public class androidTests extends UnitTestClassBase {
         }
     }
 
-    public static void InitBeforeclass() throws GeneralLeanFtException {
-        String deviceID = "";
+    private static String getAndroidDeviceId() throws GeneralLeanFtException {
+        String result = "";
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
             String curDeviceName = deviceInfo.getName();
             String curDeviceID = deviceInfo.getId();
             String curDeviceOSType = deviceInfo.getOSType();
             System.out.printf("The device ID is: %s, and its name is: %s, and its OS is: %s\n\n", curDeviceID, curDeviceName, curDeviceOSType);
-            String[] s = deviceInfo.getOSVersion().split("\\.");
-//            String Join = "";
-//            for (String s1 : s)
-//                Join += s1;
-
-//            int version = Integer.parseInt(Join);
-//            if (curDeviceOSType.equals("ANDROID") && version >= 600) {
             if (curDeviceOSType.equals("ANDROID")) {
-                deviceID = curDeviceID;
+                result = curDeviceID;
                 break;
             }
         }
+        return result;
+    }
+
+    public static void InitBeforeclass() throws GeneralLeanFtException {
+        String deviceID = getAndroidDeviceId();
 
         Print("Trying to lock device with ID:\nMobileLab.lockDeviceById(" + deviceID + ")");
         device = MobileLab.lockDeviceById(deviceID);// ID For galaxy S6
@@ -972,8 +1056,7 @@ public class androidTests extends UnitTestClassBase {
     //use this in local testing
 
     public static void InitBeforeclassLocal() throws GeneralLeanFtException {
-        device = MobileLab.lockDeviceById("05157df581dae805");// ID For galaxy S6
-        //device = MobileLab.lockDeviceById("06157df623745934");// ID For galaxy S6
+        device = MobileLab.lockDeviceById(getAndroidDeviceId());// ID For galaxy S6
 
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
@@ -982,21 +1065,36 @@ public class androidTests extends UnitTestClassBase {
         //connect between the appModel and the device
         appModel = new AdvantageAndroidApp(device);
 
-        //app.install();
+//        Print("Install application");
+//        app.install();
     }
 
     private static void Print(String msg) {
         System.out.println(msg);
     }
 
-    // TODO: refactor for Android 7
-    public void offlinemode(boolean mode) throws GeneralLeanFtException {
-        app = device.describe(Application.class, new ApplicationDescription.Builder()
-                .identifier("MC.Settings").packaged(false).build());
-        app.launch();
+    public void toggleAirplaneMode(boolean onOffValue) throws GeneralLeanFtException {
+        Print("\ntoggle airplane mode to " + onOffValue);
+        Print("Open Android Settings");
+        appSettings.launch();
 
-        appModel.SettingsApplication().AirplaneMode().tap();
-        appModel.SettingsApplication().AirplaineToggle().set(mode);
+        threadSleep(2000);
+
+        Print("TAP CONNECTIONS option");
+        appModel.SettingsApplication().SettingsConnections().tap();
+
+        Print("SET Airplane Mode Toggle to " + onOffValue);
+        appModel.SettingsApplication().ConnectionsAirplaneModeToggle().set(onOffValue);
+
+        Print("Back to Settings from Connections");
+        device.back();
+        threadSleep(2000);
+        Print("Close Settings");
+        device.back();
+//        appSettings.kill();
+
+//        appModel.SettingsApplication().AirplaneMode().tap();
+//        appModel.SettingsApplication().AirplaineToggle().set(onOffValue);
     }
 
     private void tapUiObject(UiObject uiObject) {

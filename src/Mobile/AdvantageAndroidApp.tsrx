@@ -852,6 +852,7 @@
                 <object type="Button" technology="Mobile">
                     <name>Connect</name>
                     <codeName>ConnectButton</codeName>
+                    <description>Settings Page, Connect Button</description>
                     <identification>
                         <properties>
                             <property name="Text" type="string" isRegExp="false">Connect</property>
@@ -1180,7 +1181,7 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
                             <property name="ResourceId" type="string" isRegExp="false">linearLayoutLogin</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">31</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">28</property>
                         </properties>
                     </identification>
                     <tags>
@@ -1232,9 +1233,10 @@
                 <object type="Label" technology="Mobile">
                     <name>Note offline mod</name>
                     <codeName>NoteOfflineModLabel</codeName>
+                    <description>Message appears in Settings Page after click on Apply button in Offline Mode</description>
                     <identification>
                         <properties>
-                            <property name="Text" type="string" isRegExp="false">Note that in offline mode nothing you do will be saved for future use</property>
+                            <property name="Text" type="string" isRegExp="false">You are working in offline mode. Data is not retained for future use</property>
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
                             <property name="ResourceId" type="string" isRegExp="false">message</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
@@ -1266,6 +1268,31 @@
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
                             <property name="ResourceId" type="string" isRegExp="false">textViewMenuUser</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>APPLY</name>
+                    <codeName>ApplyButton</codeName>
+                    <description>Settings Page, Apply button in Offline Mode</description>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">APPLY</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonConnect</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>SignedInUserName</name>
+                    <codeName>SignedInUserName</codeName>
+                    <description>In Menu signed In user name</description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewMenuUser</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">8</property>
                         </properties>
                     </identification>
                 </object>
@@ -1307,6 +1334,37 @@
                     </identification>
                     <tags>
                         <tag>offline</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>SettingsConnections</name>
+                    <codeName>SettingsConnections</codeName>
+                    <description>Settings -&gt; Connections</description>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Connections</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/title</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Settings</tag>
+                    </tags>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>ConnectionsAirplaneModeToggle</name>
+                    <codeName>ConnectionsAirplaneModeToggle</codeName>
+                    <description>Settings -&gt; Connections -&gt; Airplane Mode  toggle</description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/switch_widget</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>Settings</tag>
                     </tags>
                 </object>
             </children>
