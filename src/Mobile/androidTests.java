@@ -676,14 +676,14 @@ public class androidTests extends UnitTestClassBase {
 
         toggleAirplaneMode(false);      // disable airplane mode
 
-        // back to normal state in application
-        // If some user already signed in do sign out
-        if (isSignedIn())
-            SignOut();
-
-        // disable Offline Mode and set default server
-        app.restart();
-        setting();
+//        // back to normal state in application
+//        // If some user already signed in do sign out
+//        if (isSignedIn())
+//            SignOut();
+//
+//        // disable Offline Mode and set default server
+//        app.restart();
+//        setting();
     }
 
     private void signinInOfflineMode() throws GeneralLeanFtException {
