@@ -91,7 +91,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private HPChromebookEnergyStarImage HPChromebookEnergyStarImage;
 	private MiceHPUsbOptical MiceHPUsbOptical;
 	private HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage;
-	private ColorSelectorFirstWebElement ColorSelectorFirstWebElement;
 	private InvalidUserMessageWebElement InvalidUserMessageWebElement;
 	private CreateAccountREGISTERNotValidWebElement CreateAccountREGISTERNotValidWebElement;
 	private LAPTOPSWebElement LAPTOPSWebElement;
@@ -113,7 +112,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SearchOrderEditField SearchOrderEditField;
 	private RemoveFromOrderValidate RemoveFromOrderValidate;
 	private YesNoButtonsRemoveOrderSearch YesNoButtonsRemoveOrderSearch;
-	private WebElement WebElement;
+	private ColorSelectorFirstWebElement ColorSelectorFirstWebElement;
 	private SoldOutHeadphonesWebElement SoldOutHeadphonesWebElement;
 	private QuantityOfProductWebEdit QuantityOfProductWebEdit;
 	private EmailContactUsWebElement EmailContactUsWebElement;
@@ -206,7 +205,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		HPChromebookEnergyStarImage = new HPChromebookEnergyStarImage(this, applicationModel);
 		MiceHPUsbOptical = new MiceHPUsbOptical(this, applicationModel);
 		HPBeatsStudioHeadphonesImage = new HPBeatsStudioHeadphonesImage(this, applicationModel);
-		ColorSelectorFirstWebElement = new ColorSelectorFirstWebElement(this, applicationModel);
 		InvalidUserMessageWebElement = new InvalidUserMessageWebElement(this, applicationModel);
 		CreateAccountREGISTERNotValidWebElement = new CreateAccountREGISTERNotValidWebElement(this, applicationModel);
 		LAPTOPSWebElement = new LAPTOPSWebElement(this, applicationModel);
@@ -228,7 +226,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SearchOrderEditField = new SearchOrderEditField(this, applicationModel);
 		RemoveFromOrderValidate = new RemoveFromOrderValidate(this, applicationModel);
 		YesNoButtonsRemoveOrderSearch = new YesNoButtonsRemoveOrderSearch(this, applicationModel);
-		WebElement = new WebElement(this, applicationModel);
+		ColorSelectorFirstWebElement = new ColorSelectorFirstWebElement(this, applicationModel);
 		SoldOutHeadphonesWebElement = new SoldOutHeadphonesWebElement(this, applicationModel);
 		QuantityOfProductWebEdit = new QuantityOfProductWebEdit(this, applicationModel);
 		EmailContactUsWebElement = new EmailContactUsWebElement(this, applicationModel);
@@ -332,7 +330,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public HPChromebookEnergyStarImage HPChromebookEnergyStarImage() { return HPChromebookEnergyStarImage; }
 		public MiceHPUsbOptical MiceHPUsbOptical() { return MiceHPUsbOptical; }
 		public HPBeatsStudioHeadphonesImage HPBeatsStudioHeadphonesImage() { return HPBeatsStudioHeadphonesImage; }
-		public ColorSelectorFirstWebElement ColorSelectorFirstWebElement() { return ColorSelectorFirstWebElement; }
 		public InvalidUserMessageWebElement InvalidUserMessageWebElement() { return InvalidUserMessageWebElement; }
 		public CreateAccountREGISTERNotValidWebElement CreateAccountREGISTERNotValidWebElement() { return CreateAccountREGISTERNotValidWebElement; }
 		public LAPTOPSWebElement LAPTOPSWebElement() { return LAPTOPSWebElement; }
@@ -354,7 +351,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SearchOrderEditField SearchOrderEditField() { return SearchOrderEditField; }
 		public RemoveFromOrderValidate RemoveFromOrderValidate() { return RemoveFromOrderValidate; }
 		public YesNoButtonsRemoveOrderSearch YesNoButtonsRemoveOrderSearch() { return YesNoButtonsRemoveOrderSearch; }
-		public WebElement WebElement() { return WebElement; }
+		public ColorSelectorFirstWebElement ColorSelectorFirstWebElement() { return ColorSelectorFirstWebElement; }
 		public SoldOutHeadphonesWebElement SoldOutHeadphonesWebElement() { return SoldOutHeadphonesWebElement; }
 		public QuantityOfProductWebEdit QuantityOfProductWebEdit() { return QuantityOfProductWebEdit; }
 		public EmailContactUsWebElement EmailContactUsWebElement() { return EmailContactUsWebElement; }
@@ -1769,32 +1766,6 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class ColorSelectorFirstWebElement extends WebElementNodeBase
-	{
-
-		
-								public ColorSelectorFirstWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Color Selector First");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.web.WebElementDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("productColor ng-scope").tagName("SPAN").innerText("").index(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class InvalidUserMessageWebElement extends WebElementNodeBase
 	{
 
@@ -2341,11 +2312,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class WebElement extends WebElementNodeBase
+	public class ColorSelectorFirstWebElement extends WebElementNodeBase
 	{
 
 		
-								public WebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public ColorSelectorFirstWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -2357,7 +2328,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("productColor ng-scope colorSelected").tagName("SPAN").innerText("").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className(new RegExpProperty("productColor ng-scope colorSelected.*")).tagName("SPAN").innerText("").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
