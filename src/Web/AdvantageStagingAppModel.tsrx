@@ -660,7 +660,7 @@ View details link</description>
                     <description>The first non selected available color selection for the product</description>
                     <identification>
                         <properties>
-                            <property name="ClassName" type="string" isRegExp="false">productColor ng-scope</property>
+                            <property name="ClassName" type="string" isRegExp="false">productColor ng-scope colorSelected BLACK</property>
                             <property name="TagName" type="string" isRegExp="false">SPAN</property>
                             <property name="InnerText" type="string" isRegExp="false"></property>
                         </properties>

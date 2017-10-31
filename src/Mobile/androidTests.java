@@ -537,7 +537,7 @@ public class androidTests extends UnitTestClassBase {
         boolean match = m.find();
         System.out.println("PayButtonRegExTest- " + innerTxt + " :: " + match);
 
-        Verify.isTrue(match, "Verification - Verify CHECKOUT RegEx", "Verify that the text in CHECKOUT button start with 'CHECKOUT ({{RegEx}})' .");
+        Verification(Verify.isTrue(match, "Verification - Verify CHECKOUT RegEx", "Verify that the text in CHECKOUT button start with 'CHECKOUT ({{RegEx}})' ."));
     }
 
     @Test
@@ -655,7 +655,7 @@ public class androidTests extends UnitTestClassBase {
         // Check that default server setted to "Offline Mode"
         String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
         Print("cur server in EditTextServer: " + server);
-        Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting");
+        Verification(Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting"));
         Print("TAP ApplyButton");
         appModel.AdvantageShoppingApplication().ApplyButton().tap();
         threadSleep(2000);
@@ -915,6 +915,9 @@ public class androidTests extends UnitTestClassBase {
         if (changeShipping) {
             Print("tap EditShippingUiObject()");
             appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
+            Print("Check first name editField isEmpty");
+            if(appModel.AdvantageShoppingApplication().ShippingDetailsFirstNameEditField().getText().isEmpty())
+                appModel.AdvantageShoppingApplication().ShippingDetailsFirstNameEditField().setText(UNAME);
             appModel.AdvantageShoppingApplication().ZIPshippingDetaildEditField().setText("12345");
             Print("tap ShippingCheckBox()");
             appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();

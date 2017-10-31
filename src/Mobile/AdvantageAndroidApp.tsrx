@@ -1296,6 +1296,19 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="EditField" technology="Mobile">
+                    <name>MobileEdit</name>
+                    <codeName>ShippingDetailsFirstNameEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>shipping</tag>
+                    </tags>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
@@ -1366,6 +1379,34 @@
                     <tags>
                         <tag>Settings</tag>
                     </tags>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Advantage Shopping1</name>
+            <codeName>AdvantageShoppingApplication1</codeName>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+        </object>
+        <object type="Page" technology="Web">
+            <name> Advantage Shopping</name>
+            <codeName>AdvantageShoppingPage</codeName>
+            <identification/>
+            <children>
+                <object type="WebElement" technology="Web">
+                    <name>WebElement</name>
+                    <codeName>WebElement</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">productColor ng-scope colorSelected BLACK</property>
+                            <property name="TagName" type="string" isRegExp="false">SPAN</property>
+                            <property name="InnerText" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
                 </object>
             </children>
         </object>
