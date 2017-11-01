@@ -1357,6 +1357,17 @@ View details link</description>
                         </properties>
                     </identification>
                 </object>
+                <object type="WebElement" technology="Web">
+                    <name>WebElementSelectedColor</name>
+                    <codeName>SelectedColorForEnv17</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="true">productColor ng-scope.*</property>
+                            <property name="TagName" type="string" isRegExp="false">SPAN</property>
+                            <property name="InnerText" type="string" isRegExp="false"></property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Page" technology="Web">

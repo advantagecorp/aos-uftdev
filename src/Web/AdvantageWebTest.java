@@ -307,7 +307,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(product);
 
         // Select the first non-selected available color for the product
-        clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
+        try {
+            if(appModel.AdvantageShoppingPage().SelectedColorForEnv17().exists())
+                clickWebElement(appModel.AdvantageShoppingPage().SelectedColorForEnv17());
+            else
+                clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
+        } catch (GeneralLeanFtException e) {
+            e.printStackTrace();
+        }
 
         // If the quantity is more than 1, set this value in the quantity edit-field
         if (productQuantity != 1) {
@@ -357,6 +364,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 if (appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)) {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Passed, img);
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
                 } else {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
@@ -367,6 +375,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 if (appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)) {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Passed, img);
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Failed, img);
                 } else {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Failed, img);

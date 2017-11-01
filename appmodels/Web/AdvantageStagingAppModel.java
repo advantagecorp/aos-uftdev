@@ -148,6 +148,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private TabletHPPro608G1 TabletHPPro608G1;
 	private ShippingCost ShippingCost;
 	private CheckOutButton CheckOutButton;
+	private SelectedColorForEnv17 SelectedColorForEnv17;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -262,6 +263,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		TabletHPPro608G1 = new TabletHPPro608G1(this, applicationModel);
 		ShippingCost = new ShippingCost(this, applicationModel);
 		CheckOutButton = new CheckOutButton(this, applicationModel);
+		SelectedColorForEnv17 = new SelectedColorForEnv17(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -387,6 +389,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public TabletHPPro608G1 TabletHPPro608G1() { return TabletHPPro608G1; }
 		public ShippingCost ShippingCost() { return ShippingCost; }
 		public CheckOutButton CheckOutButton() { return CheckOutButton; }
+		public SelectedColorForEnv17 SelectedColorForEnv17() { return SelectedColorForEnv17; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -3239,6 +3242,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").tagName("BUTTON").id("checkOutButton").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SelectedColorForEnv17 extends WebElementNodeBase
+	{
+
+		
+								public SelectedColorForEnv17(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("WebElementSelectedColor");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className(new RegExpProperty("productColor ng-scope.*")).tagName("SPAN").innerText("").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
