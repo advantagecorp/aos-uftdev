@@ -916,6 +916,7 @@ public class androidTests extends UnitTestClassBase {
             Print("tap EditShippingUiObject()");
             appModel.AdvantageShoppingApplication().EditShippingUiObject().tap();
             Print("Check first name editField isEmpty");
+            threadSleep(2000);
             if(appModel.AdvantageShoppingApplication().ShippingDetailsFirstNameEditField().getText().isEmpty())
                 appModel.AdvantageShoppingApplication().ShippingDetailsFirstNameEditField().setText(UNAME);
             appModel.AdvantageShoppingApplication().ZIPshippingDetaildEditField().setText("12345");

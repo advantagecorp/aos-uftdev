@@ -1305,9 +1305,6 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
-                    <tags>
-                        <tag>shipping</tag>
-                    </tags>
                 </object>
             </children>
         </object>
