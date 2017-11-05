@@ -407,7 +407,7 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException {
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(5000);
+        threadSleep(7000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().HEADPHONESLabel());
         threadSleep(10000);
