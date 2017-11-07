@@ -90,6 +90,14 @@
 	
 	<build>
 	<testSourceDirectory>${test.src.dir}</testSourceDirectory>
+	
+	    <resources>
+            <resource>
+                <directory>${basedir}/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
 		<plugins>
 
 			<!--<plugin>-->
