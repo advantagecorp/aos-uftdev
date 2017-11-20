@@ -404,38 +404,38 @@ public class androidTests extends UnitTestClassBase {
         CheckOut("Sefepay"); // use safepay
     }
 
-    @Test
-    public void OutOfStockTest() throws GeneralLeanFtException {
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(20000);
-        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-        tapUiObjectLabel(appModel.AdvantageShoppingApplication().HEADPHONESLabel());
-        threadSleep(10000);
-        tapUiObjectLabel(appModel.AdvantageShoppingApplication().SOLDout());
-
-    	/*
-    	 * verify that we can change color - in web the user can edit the color but here we chack that 
-    	 * in not an option
-    	 */
-
-        // all the verification are not working because the attribute "isEnabled" are not include in this version of the app.
-        //Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
-
-        //verify that we can't change quantity or add to cart
-        threadSleep(10000);
-        Boolean isClickableProductQuantity = appModel.AdvantageShoppingApplication().ProductQuantity().isClickable();
-        Print("isClickableProductQuantity: " + isClickableProductQuantity);
-
-        Boolean isClickableADDTOCARTButton = appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable();
-        Print("isClickableADDTOCARTButton: " + isClickableADDTOCARTButton);
-
-        Verification(Verify.isFalse(isClickableProductQuantity, "Verification - Out Of Stock", "Verify that we can't change quantity."));
-//        Verification(Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART."));
-        Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
-
-//        assertFalse(isClickableProductQuantity);
-//        assertFalse(isClickableADDTOCARTButton);
-    }
+//    @Test
+//    public void OutOfStockTest() throws GeneralLeanFtException {
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
+//        threadSleep(20000);
+//        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+//        tapUiObjectLabel(appModel.AdvantageShoppingApplication().HEADPHONESLabel());
+//        threadSleep(10000);
+//        tapUiObjectLabel(appModel.AdvantageShoppingApplication().SOLDout());
+//
+//    	/*
+//    	 * verify that we can change color - in web the user can edit the color but here we chack that
+//    	 * in not an option
+//    	 */
+//
+//        // all the verification are not working because the attribute "isEnabled" are not include in this version of the app.
+//        //Verify.isFalse(appModel.AdvantageShoppingApplication().ProductColor().isEnabled(),"Verification - Out Of Stock", "Verify that we can't change color.");
+//
+//        //verify that we can't change quantity or add to cart
+//        threadSleep(10000);
+//        Boolean isClickableProductQuantity = appModel.AdvantageShoppingApplication().ProductQuantity().isClickable();
+//        Print("isClickableProductQuantity: " + isClickableProductQuantity);
+//
+//        Boolean isClickableADDTOCARTButton = appModel.AdvantageShoppingApplication().ADDTOCARTButton().isClickable();
+//        Print("isClickableADDTOCARTButton: " + isClickableADDTOCARTButton);
+//
+//        Verification(Verify.isFalse(isClickableProductQuantity, "Verification - Out Of Stock", "Verify that we can't change quantity."));
+////        Verification(Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART."));
+//        Verify.isFalse(isClickableADDTOCARTButton, "Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
+//
+////        assertFalse(isClickableProductQuantity);
+////        assertFalse(isClickableADDTOCARTButton);
+//    }
 
     @Test
     public void PayMasterCreditTest() throws GeneralLeanFtException {
