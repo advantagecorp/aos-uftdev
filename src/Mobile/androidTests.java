@@ -407,7 +407,7 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException {
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(10000);
+        threadSleep(20000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().HEADPHONESLabel());
         threadSleep(10000);
@@ -684,6 +684,11 @@ public class androidTests extends UnitTestClassBase {
 //        // disable Offline Mode and set default server
 //        app.restart();
 //        setting();
+    }
+
+    @Test
+    public void uploadNewImageToProductTest() throws GeneralLeanFtException{
+
     }
 
     private void signinInOfflineMode() throws GeneralLeanFtException {
