@@ -688,6 +688,7 @@ public class androidTests extends UnitTestClassBase {
 
     @Test
     public void uploadNewImageToProductTest() throws GeneralLeanFtException{
+        
 
     }
 
@@ -783,7 +784,7 @@ public class androidTests extends UnitTestClassBase {
         Print("isSignedIn start");
         boolean result = false;
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-        threadSleep(5000);
+        threadSleep(10000);
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
 //        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
         String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
