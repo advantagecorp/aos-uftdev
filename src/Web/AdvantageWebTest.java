@@ -856,7 +856,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test verifies that the shipping costs is free when purchasing 1 item
     // 	and that the shipping cost for 4 items is not free
-    @Test
+    //@Test
     public void verifyShippingCostsTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
