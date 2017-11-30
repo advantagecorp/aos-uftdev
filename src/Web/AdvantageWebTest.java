@@ -1220,6 +1220,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             fbBrowser.close();
 
             // Verify the Twitter link
+			/*
             clickWebElement(appModel.AdvantageShoppingPage().TwitterImage());
             threadSleep(5000);
             socialLink = "twiiter";
@@ -1229,7 +1230,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             brURL = tweetBrowser.getURL();
             Print("twitter url:\n" + brURL);
             Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.", brURL.matches(".*twitter\\.com.*"));
-            tweetBrowser.close();
+            tweetBrowser.close();*/
 
             // Verify the LinkedIn link
             clickWebElement(appModel.AdvantageShoppingPage().LinkedInImage());
