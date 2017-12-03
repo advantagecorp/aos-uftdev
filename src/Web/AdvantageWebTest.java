@@ -1379,6 +1379,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 "Verify Search using URL", "Verify that the title reflects the search parameter: " + searchParameter + ".");
     }
 
+	/*
     @Test
     public void verifyDownloadPageTest() throws GeneralLeanFtException, ReportException {
         Print("Wait for main page loading...");
@@ -1390,7 +1391,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         checkWithReporterIsTrue(existsWebElement(appModel.DownloadPage().DownloadIosAppWebElement()),
                 "Verify Download page", "Verify that the iOS link works");
     }
-
+*/
     ////////////////////////////////////////////////// moti gadian Code added on  27/3/17 /////////////////////////////////////////////////////////////
 
     /**
