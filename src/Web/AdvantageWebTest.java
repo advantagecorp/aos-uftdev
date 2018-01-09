@@ -856,7 +856,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test verifies that the shipping costs is free when purchasing 1 item
     // 	and that the shipping cost for 4 items is not free
-    @Test
+    //@Test
     public void verifyShippingCostsTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();
@@ -1220,6 +1220,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             fbBrowser.close();
 
             // Verify the Twitter link
+			/*
             clickWebElement(appModel.AdvantageShoppingPage().TwitterImage());
             threadSleep(5000);
             socialLink = "twiiter";
@@ -1229,7 +1230,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             brURL = tweetBrowser.getURL();
             Print("twitter url:\n" + brURL);
             Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.", brURL.matches(".*twitter\\.com.*"));
-            tweetBrowser.close();
+            tweetBrowser.close();*/
 
             // Verify the LinkedIn link
             clickWebElement(appModel.AdvantageShoppingPage().LinkedInImage());
@@ -1378,6 +1379,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 "Verify Search using URL", "Verify that the title reflects the search parameter: " + searchParameter + ".");
     }
 
+	/*
     @Test
     public void verifyDownloadPageTest() throws GeneralLeanFtException, ReportException {
         Print("Wait for main page loading...");
@@ -1389,7 +1391,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         checkWithReporterIsTrue(existsWebElement(appModel.DownloadPage().DownloadIosAppWebElement()),
                 "Verify Download page", "Verify that the iOS link works");
     }
-
+*/
     ////////////////////////////////////////////////// moti gadian Code added on  27/3/17 /////////////////////////////////////////////////////////////
 
     /**

@@ -21,12 +21,10 @@ public class DotNetTests extends UnitTestClassBase {
     private static DotNetAppModel appModel;
     private static ProcessBuilder window;
 
-    //    private static String applocation = "C:\\AOS\\AdvancedOnlineShopping1.1.2\\AdvantageShopAdministrator.exe";   // Path on LeanFT Dev virtual machine
-    private static String applocation = "C:\\LeanFTJavaRunner\\dotnet_release\\AdvantageShopAdministrator.exe";     // Path on CI
+    //private static String applocation = "C:\\LeanFTJavaRunner\\dotnet_release\\AdvantageShopAdministrator.exe";     // Path on CI
+    private static String DEFAULT_APPLICATION_PATH = "C:\\LeanFTJavaRunner\\dotnet_release\\AdvantageShopAdministrator.exe";     // Path on CI
+    private static String application = System.getProperty("application_path",DEFAULT_APPLICATION_PATH);    // Path on CI
     private static String SERVER_DEFAULT = "http://16.60.158.84:80"; // CI
-    //    private static String SERVER_DEFAULT = "http://52.88.236.171:8080"; // PRODUCTION
-    //        private static String SERVER_DEFAULT = "http://52.32.172.3:8080";
-    //    private static String SERVER_DEFAULT = "http://16.59.19.163:8080"; // LOCALHOST
     public static String SERVER = System.getProperty("url", SERVER_DEFAULT);
 
     private static String UNAME = "Dot.NetUser";
@@ -187,7 +185,7 @@ public class DotNetTests extends UnitTestClassBase {
     public static void InitBeforeClass() throws IOException, GeneralLeanFtException {
         print("CURRENT SERVER: " + SERVER);
         appModel = new DotNetAppModel();
-        window = new ProcessBuilder(applocation);
+        window = new ProcessBuilder(application);
         window.start();
         SignIn();
     }
