@@ -12,7 +12,307 @@
                     <property name="IsPackaged" type="boolean" isRegExp="false">true</property>
                 </properties>
             </identification>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Advantage Shopping1</name>
+            <codeName>AdvantageShoppingApplication1</codeName>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Ishopping</name>
+            <codeName>IshoppingApplication</codeName>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.mf.iShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
             <children>
+                <object type="Button" technology="Mobile">
+                    <name>Menu</name>
+                    <codeName>MenuButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Menu</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MAIN WINDOW</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>LAPTOPS</name>
+                    <codeName>LAPTOPSLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">LAPTOPS</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">LAPTOPS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][0][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MAIN WINDOW</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>MainMenuHeadphones</name>
+                    <codeName>MainMenuHeadphones</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">HEADPHONES</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">HEADPHONES</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][4][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MAIN WINDOW</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>TABLETS</name>
+                    <codeName>TABLETSLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">TABLETS</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">TABLETS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][2][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MAIN WINDOW</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>SPEAKERS</name>
+                    <codeName>SPEAKERSLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">SPEAKERS</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">SPEAKERS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][3][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>UserNameSignUp</name>
+                    <codeName>UserNameSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">userNameTextFieldID</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>EmailSignUp</name>
+                    <codeName>EmailSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>PasswordSignUpEditField</name>
+                    <codeName>PasswordSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">passwordTextFieldID</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ConfirmPasswordSignUpEditField</name>
+                    <codeName>ConfirmPasswordSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">confirmPasswordTextFieldLabel</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>PhoneNumberTextFieldLabe</name>
+                    <codeName>PhoneNumberTextFieldLabeEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">phoneNumberTextFieldLabel</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>StreetSignUpEditField</name>
+                    <codeName>StreetSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">streetTextFieldID</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>CitySignUpEditField</name>
+                    <codeName>CitySignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">cityTextFieldID</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>CountryPickerDone</name>
+                    <codeName>CountryPickerDone</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Done</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">countryPickerDone</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ZipSignUpEditField</name>
+                    <codeName>ZipSignUpEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">zipTextFieldLabel</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">17</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>KeyboardNext</name>
+                    <codeName>KeyboardNext</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Next</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Next:</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>KEYBOARD</tag>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>KeyboardDone</name>
+                    <codeName>KeyboardDone</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Done</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Done</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>KEYBOARD</tag>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>User name already exists1</name>
+                    <codeName>UserNameAlreadyExistsLabel1</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">User name already exists</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">User name already exists</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MESSAGE</tag>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>CreateAccountOkButton</name>
+                    <codeName>CreateAccountOkButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">OK</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">6</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>BUTTON</tag>
+                        <tag>MESSAGE</tag>
+                        <tag>CREATE ACCOUNT</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>- No products in cart -</name>
+                    <codeName>NoProductsInCartLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">- No products in cart -</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">- No products in cart -</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
                 <object type="Button" technology="Mobile">
                     <name>UseMyLocationLabel</name>
                     <codeName>UseMyLocationLabel</codeName>
@@ -28,11 +328,11 @@
                     </tags>
                 </object>
                 <object type="EditField" technology="Mobile">
-                    <name>StreetSignUpEditField</name>
-                    <codeName>StreetSignUpEditField</codeName>
+                    <name>DEL_ConfirnPasswordSignUpEditField</name>
+                    <codeName>DEL_ConfirnPasswordSignUpEditField</codeName>
                     <identification>
                         <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">streetTextFieldID</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">confirmPasswordTextFieldID</property>
                             <property name="ClassName" type="string" isRegExp="false">Input</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
@@ -40,97 +340,6 @@
                     <tags>
                         <tag>SignUp</tag>
                     </tags>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>ConfirnPasswordSignUpEditField</name>
-                    <codeName>ConfirnPasswordSignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">confirmPasswordTextFielD</property>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>PasswordSignUpEditField</name>
-                    <codeName>PasswordSignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">passwordTextFieldID</property>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
-                <object type="Button" technology="Mobile">
-                    <name>Menu</name>
-                    <codeName>MenuButton</codeName>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">Menu</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>HOME</name>
-                    <codeName>HOMELabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">HOME</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">HOME</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][1][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>LAPTOPS</name>
-                    <codeName>LAPTOPSLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">LAPTOPS</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">LAPTOPS</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][3][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>HEADPHONES</name>
-                    <codeName>HEADPHONESLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">HEADPHONES</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">HEADPHONES</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][4][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>TABLETS</name>
-                    <codeName>TABLETSLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">TABLETS</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">TABLETS</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][5][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
                 </object>
                 <object type="Button" technology="Mobile">
                     <name>User settings</name>
@@ -148,17 +357,20 @@
                     </tags>
                 </object>
                 <object type="Label" technology="Mobile">
-                    <name>SPEAKERS</name>
-                    <codeName>SPEAKERSLabel</codeName>
+                    <name>MainMenuHome</name>
+                    <codeName>MainMenuHome</codeName>
                     <identification>
                         <properties>
-                            <property name="Text" type="string" isRegExp="false">SPEAKERS</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">SPEAKERS</property>
+                            <property name="Text" type="string" isRegExp="false">HOME</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">HOME</property>
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][6][0]</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][1][0]</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
+                    <tags>
+                        <tag>MAIN MENU</tag>
+                    </tags>
                 </object>
                 <object type="Label" technology="Mobile">
                     <name>CART</name>
@@ -226,55 +438,28 @@
                         <tag>login</tag>
                     </tags>
                 </object>
-                <object type="EditField" technology="Mobile">
-                    <name>UserNameSignUp</name>
-                    <codeName>UserNameSignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">userNameTextFieldID</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>EmailSignUp</name>
-                    <codeName>EmailSignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>ZIPSignUp</name>
-                    <codeName>ZIPSignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Hint" type="string" isRegExp="false">ZIP</property>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
                 <object type="Button" technology="Mobile">
-                    <name>REGISTER</name>
-                    <codeName>REGISTERButton</codeName>
+                    <name>RegisterButton</name>
+                    <codeName>RegisterButton</codeName>
                     <identification>
                         <properties>
                             <property name="Text" type="string" isRegExp="false">REGISTER</property>
                             <property name="AccessibilityId" type="string" isRegExp="false">REGISTER</property>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>UseMylocation</name>
+                    <codeName>UseMylocationUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">22</property>
                         </properties>
                     </identification>
                     <tags>
@@ -340,19 +525,6 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
-                </object>
-                <object type="UiObject" technology="Mobile">
-                    <name>UseMylocation</name>
-                    <codeName>UseMylocationUiObject</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">View</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">22</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
                 </object>
                 <object type="UiObject" technology="Mobile">
                     <name>SpeakerImg</name>
@@ -443,20 +615,6 @@
                             <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
                         </properties>
                     </identification>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>CitySignUpEditField</name>
-                    <codeName>CitySignUpEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">cityTextFieldID</property>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
                 </object>
                 <object type="EditField" technology="Mobile">
                     <name>*SAFEPAY USERNAME</name>
@@ -550,6 +708,34 @@
                         <tag>MasterCredit</tag>
                     </tags>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>Country</name>
+                    <codeName>CountryLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Country</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Country</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
+                <object type="DropDown" technology="Mobile">
+                    <name>MobileDropDown</name>
+                    <codeName>CountryDropDown</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ItemSelector</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>SignUp</tag>
+                    </tags>
+                </object>
                 <object type="EditField" technology="Mobile">
                     <name>*CVV NUMBER</name>
                     <codeName>CVVNUMBEREditField</codeName>
@@ -589,34 +775,6 @@
                     </identification>
                     <tags>
                         <tag>MasterCredit</tag>
-                    </tags>
-                </object>
-                <object type="DropDown" technology="Mobile">
-                    <name>MobileDropDown</name>
-                    <codeName>CountryDropDown</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">ItemSelector</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
-                    </tags>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>Country</name>
-                    <codeName>CountryLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">Country</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">Country</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>SignUp</tag>
                     </tags>
                 </object>
                 <object type="Button" technology="Mobile">
@@ -702,11 +860,12 @@
                 <object type="UiObject" technology="Mobile">
                     <name>SoldOut</name>
                     <codeName>SoldOutUiObject</codeName>
+                    <description>ImageView</description>
                     <identification>
                         <properties>
-                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="ClassName" type="string" isRegExp="false">TableCell</property>
                             <property name="Container" type="string" isRegExp="false">CollectionView[0][1][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
                     </identification>
                 </object>
@@ -717,7 +876,8 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="Container" type="string" isRegExp="false"></property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">quantityButtonId</property>
                         </properties>
                     </identification>
                 </object>
@@ -927,9 +1087,9 @@
                     <codeName>PasswordLoginEditField</codeName>
                     <identification>
                         <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">passwordTextFieldID</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">passwordLabel</property>
                             <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
                     </identification>
                 </object>
@@ -949,28 +1109,30 @@
                     </tags>
                 </object>
                 <object type="Label" technology="Mobile">
-                    <name>- No products in cart -</name>
-                    <codeName>NoProductsInCartLabel</codeName>
+                    <name>LoggedUserName</name>
+                    <codeName>LoggedUserName</codeName>
+                    <description>Main Menu Logged user Name text</description>
                     <identification>
                         <properties>
-                            <property name="Text" type="string" isRegExp="false">- No products in cart -</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">- No products in cart -</property>
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][0][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>Back</name>
+                    <codeName>BackButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Back</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Back</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
                 </object>
             </children>
-        </object>
-        <object type="Application" technology="Mobile">
-            <name>Advantage Shopping1</name>
-            <codeName>AdvantageShoppingApplication1</codeName>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.iShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
-                </properties>
-            </identification>
         </object>
     </objects>
 </applicationModel>
