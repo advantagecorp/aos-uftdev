@@ -18,9 +18,7 @@ public class IOSTests extends UnitTestClassBase {
     protected static AdvantageIOSApp appModel;
     protected static Device device;
     protected static Application app;
-
     static String DEVICE_ID = "98b098dc0c6c797784460d811cffc6de7b887c8d";       // ID iPhone S6
-
 
     // TODO: remove IosUser1
 //    static String UNAME = "IosUser1";
@@ -28,6 +26,8 @@ public class IOSTests extends UnitTestClassBase {
 //    static String UNAME = "IosUser3";
 //    static String UNAME = "IosUser4";
     static String UNAME = "IosUser5";
+
+
     static String PASS = "Password1";
     static String UNAME_WRONG = "user";
     static String PASS_WRONG = "pass";
@@ -35,6 +35,7 @@ public class IOSTests extends UnitTestClassBase {
     //static String appURL2 = "16.60.158.84:80";  // CI
     static String appURL2 = "http://advantageonlineshopping.com:8080";  // production new
     static String appURL = System.getProperty("url", "defaultvalue");
+    private static final String HUGE_QUANTITY = "999";
 
     public IOSTests() {
         //Change this constructor to private if you supply your own public constructor
@@ -74,15 +75,24 @@ public class IOSTests extends UnitTestClassBase {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //    WORK
+
+    // TODO: decide how to check. If user already exist in database test failed or not?
     @Test
     public void AddNewUserTest() throws GeneralLeanFtException, InterruptedException {
         print("\nStarting " + this.getTestName() + "...");
         if (isSignedIn())
             SignOut();
-//        CreateNewUser(false);
-        boolean isNewUserCreated = CreateNewUser();
-        Verification(Verify.isTrue(isNewUserCreated, "Create New User", "Verify that the user was created successfully"));
-        Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user just created is logged in"));
+
+        boolean isSignedIn = SignIn();
+        if (isSignedIn) {
+            print("USER ALREADY EXIST");
+            SignOut();
+            return;
+        } else {
+            boolean isNewUserCreated = CreateNewUser();
+            Verification(Verify.isTrue(isNewUserCreated, "Create New User", "Verify that the user was created successfully"));
+            Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user just created is logged in"));
+        }
         print("FINISH " + this.getTestName());
     }
 
@@ -148,7 +158,7 @@ public class IOSTests extends UnitTestClassBase {
         SignOut();
     }
 
-    @Test
+//    @Test
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
@@ -221,19 +231,45 @@ public class IOSTests extends UnitTestClassBase {
         print("\nStarting " + this.getTestName() + "...");
         if (!isSignedIn())
             SignIn();
+
+        print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
+        print("TAP SPEAKERSLabel");
         appModel.IshoppingApplication().SPEAKERSLabel().tap();
+        print("TAP SpeakerImgUiObject");
         appModel.IshoppingApplication().SpeakerImgUiObject().tap();
+        print("TAP ColorButton");
         appModel.IshoppingApplication().ColorButton().tap();
+        print("TAP ColorObject");
         appModel.IshoppingApplication().ColorObject().tap();
-
-        //todo: the quantity need to be EditField
-
+        print("TAP QuantityButton");
+        appModel.IshoppingApplication().QuantityButton().tap();
+        print("TAP QuantityEditField");
+        appModel.IshoppingApplication().QuantityEditField().tap();
+        print("SET QuantityEditField: " + HUGE_QUANTITY);
+        appModel.IshoppingApplication().QuantityEditField().setText(HUGE_QUANTITY);
+        print("TAP ApplyQuantity");
+        appModel.IshoppingApplication().ApplyQuantity().tap();
+        print("TAP ADDTOCARTButton");
         appModel.IshoppingApplication().ADDTOCARTButton().tap();
+
+        boolean isAddProductMessageExist = appModel.IshoppingApplication().AddProductMessage().exists();
+        Verify.isTrue(isAddProductMessageExist, "Verification - Purchase huge quantity", "Verify that message appeared. In message told about existing limit");
+        if (isAddProductMessageExist) {
+            print("TAP AddProductMessageOkButton");
+            appModel.IshoppingApplication().AddProductMessageOkButton().tap();
+        }
+
+        print("TAP BackButton");
+        appModel.IshoppingApplication().BackButton().tap();
+        print("TAP MenuButton");
+        appModel.IshoppingApplication().MenuButton().tap();
+        print("TAP MainMenuHome");
+        appModel.IshoppingApplication().MainMenuHome().tap();
         print("FINISH " + this.getTestName());
     }
 
-    @Test
+//    @Test
     public void PurchseWithMasterCreditTest() throws GeneralLeanFtException, InterruptedException {
 //        if (!SignIn(true))
 //            SignIn(false);
@@ -385,6 +421,10 @@ public class IOSTests extends UnitTestClassBase {
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
                 .identifier("com.mf.iShopping").packaged(true).build());
+
+        print("app version: " + app.getVersion());
+        print("app get name: " + app.getName());
+        print("app get display name: " + app.getDisplayName());
 
         //connect between the appModel and the device
         appModel = new AdvantageIOSApp(device);
@@ -643,10 +683,12 @@ public class IOSTests extends UnitTestClassBase {
     public boolean isSignedIn() throws GeneralLeanFtException {
         Print("isSignedIn start");
         boolean result = false;
+        print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         String innerTxt = appModel.IshoppingApplication().LoggedUserName().getText();
         if (!innerTxt.equals("LOG IN"))
             result = true;
+        print("TAP MainMenuHome");
         appModel.IshoppingApplication().MainMenuHome().tap();
         Print("isSignedIn end (isSignedIn ? " + result + ") " + (result ? innerTxt : ""));
         return result;

@@ -4,26 +4,6 @@
     <className>AdvantageIOSApp</className>
     <objects>
         <object type="Application" technology="Mobile">
-            <name>Advantage Shopping</name>
-            <codeName>AdvantageShoppingApplication</codeName>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.iShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">true</property>
-                </properties>
-            </identification>
-        </object>
-        <object type="Application" technology="Mobile">
-            <name>Advantage Shopping1</name>
-            <codeName>AdvantageShoppingApplication1</codeName>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
-                </properties>
-            </identification>
-        </object>
-        <object type="Application" technology="Mobile">
             <name>Ishopping</name>
             <codeName>IshoppingApplication</codeName>
             <identification>
@@ -40,7 +20,7 @@
                         <properties>
                             <property name="AccessibilityId" type="string" isRegExp="false">Menu</property>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
                     <tags>
@@ -94,19 +74,6 @@
                     <tags>
                         <tag>MAIN WINDOW</tag>
                     </tags>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>SPEAKERS</name>
-                    <codeName>SPEAKERSLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">SPEAKERS</property>
-                            <property name="AccessibilityId" type="string" isRegExp="false">SPEAKERS</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="Container" type="string" isRegExp="false">Table[0][3][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
                 </object>
                 <object type="EditField" technology="Mobile">
                     <name>UserNameSignUp</name>
@@ -373,6 +340,22 @@
                     </tags>
                 </object>
                 <object type="Label" technology="Mobile">
+                    <name>SPEAKERS</name>
+                    <codeName>SPEAKERSLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">SPEAKERS</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">SPEAKERS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][6][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                    <tags>
+                        <tag>MAIN MENU</tag>
+                    </tags>
+                </object>
+                <object type="Label" technology="Mobile">
                     <name>CART</name>
                     <codeName>CARTLabel</codeName>
                     <identification>
@@ -531,9 +514,9 @@
                     <codeName>SpeakerImgUiObject</codeName>
                     <identification>
                         <properties>
-                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="ClassName" type="string" isRegExp="false">TableCell</property>
                             <property name="Container" type="string" isRegExp="false">CollectionView[0][2][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
                         </properties>
                     </identification>
                     <tags>
@@ -546,7 +529,8 @@
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">5</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">ColorButtonId</property>
                         </properties>
                     </identification>
                     <tags>
@@ -603,6 +587,18 @@
                     <tags>
                         <tag>safepay</tag>
                     </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>ApplyQuantity</name>
+                    <codeName>ApplyQuantity</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">APPLY</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">APPLY</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
                 </object>
                 <object type="Button" technology="Mobile">
                     <name>APPLY</name>
@@ -1054,9 +1050,9 @@
                     <codeName>ColorObject</codeName>
                     <identification>
                         <properties>
-                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="Container" type="string" isRegExp="false">CollectionView[0][1][0]</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                         </properties>
                     </identification>
                 </object>
@@ -1079,6 +1075,16 @@
                             <property name="AccessibilityId" type="string" isRegExp="false">UPDATE CART</property>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>QuantityEditField</name>
+                    <codeName>QuantityEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
                         </properties>
                     </identification>
                 </object>
@@ -1129,6 +1135,30 @@
                             <property name="AccessibilityId" type="string" isRegExp="false">Back</property>
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>AddProductMessage</name>
+                    <codeName>AddProductMessage</codeName>
+                    <description>Window add product</description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Add product</property>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>AddProductMessageOkButton</name>
+                    <codeName>AddProductMessageOkButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Ok</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Ok</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
                         </properties>
                     </identification>
                 </object>
