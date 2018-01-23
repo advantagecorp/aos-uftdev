@@ -46,14 +46,14 @@ public class IOSTests extends UnitTestClassBase {
         instance = new IOSTests();
         globalSetup(IOSTests.class);
 
-
-
         if (appURL.equals("defaultvalue")) {
             appURL = appURL2;
             System.out.println("appURL: " + appURL);
             InitBeforeclassLocal();
-        } else
+        } else {
+            System.out.println("appURL: " + appURL);
             InitBeforeclass();
+        }
     }
 
     @AfterClass
