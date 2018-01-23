@@ -1334,7 +1334,7 @@
                 </object>
                 <object type="Toggle" technology="Mobile">
                     <name>airplaine</name>
-                    <codeName>AirplaineToggle</codeName>
+                    <codeName>AirplaneToggleONSwitch</codeName>
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">Switch</property>
@@ -1376,6 +1376,53 @@
                     <tags>
                         <tag>Settings</tag>
                     </tags>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>SettingsSearchButton</name>
+                    <codeName>SettingsSearchButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Search</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/search</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>SettingsSearchTextEditField</name>
+                    <codeName>SettingsSearchTextEditField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/search_src_text</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>AirplaneModeSettingsButton</name>
+                    <codeName>AirplaneModeSettingsButtonLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Airplane mode</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Airplane mode</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/title</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>AirplaneToggleOffSwitch</name>
+                    <codeName>AirplaneToggleOffSwitchToggle</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/switch_widget</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
                 </object>
             </children>
         </object>

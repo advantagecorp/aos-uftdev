@@ -1091,11 +1091,23 @@ public class androidTests extends UnitTestClassBase {
 
         threadSleep(2000);
 
-        Print("TAP CONNECTIONS option");
-        appModel.SettingsApplication().SettingsConnections().tap();
+        Print("TAP Search button");
+        appModel.SettingsApplication().SettingsSearchButton().tap();
+        //appModel.SettingsApplication().SettingsConnections().tap();
 
+        Print("Search for airplane");
+        appModel.SettingsApplication().SettingsSearchTextEditField().setText("Airplane");
+        //appModel.SettingsApplication().SettingsConnections().tap();
+
+        Print("Click on Airplane settings");
+        appModel.SettingsApplication().AirplaneModeSettingsButtonLabel().tap();
         Print("SET Airplane Mode Toggle to " + onOffValue);
-        appModel.SettingsApplication().ConnectionsAirplaneModeToggle().set(onOffValue);
+        if(onOffValue && appModel.SettingsApplication().AirplaneToggleOffSwitchToggle().exists())
+            appModel.SettingsApplication().AirplaneToggleOffSwitchToggle().tap();
+        else if(!onOffValue && appModel.SettingsApplication().AirplaneToggleONSwitch().exists())
+            appModel.SettingsApplication().AirplaneToggleONSwitch().tap();
+
+//        appModel.SettingsApplication().ConnectionsAirplaneModeToggle().set(onOffValue);
 
         Print("Back to Settings from Connections");
         device.back();

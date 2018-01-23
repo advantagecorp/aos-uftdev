@@ -2939,17 +2939,25 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 
 		
 			private AirplaneMode AirplaneMode;
-	private AirplaineToggle AirplaineToggle;
+	private AirplaneToggleONSwitch AirplaneToggleONSwitch;
 	private SettingsConnections SettingsConnections;
 	private ConnectionsAirplaneModeToggle ConnectionsAirplaneModeToggle;
+	private SettingsSearchButton SettingsSearchButton;
+	private SettingsSearchTextEditField SettingsSearchTextEditField;
+	private AirplaneModeSettingsButtonLabel AirplaneModeSettingsButtonLabel;
+	private AirplaneToggleOffSwitchToggle AirplaneToggleOffSwitchToggle;
 						public SettingsApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
 					AirplaneMode = new AirplaneMode(this, applicationModel);
-		AirplaineToggle = new AirplaineToggle(this, applicationModel);
+		AirplaneToggleONSwitch = new AirplaneToggleONSwitch(this, applicationModel);
 		SettingsConnections = new SettingsConnections(this, applicationModel);
 		ConnectionsAirplaneModeToggle = new ConnectionsAirplaneModeToggle(this, applicationModel);
+		SettingsSearchButton = new SettingsSearchButton(this, applicationModel);
+		SettingsSearchTextEditField = new SettingsSearchTextEditField(this, applicationModel);
+		AirplaneModeSettingsButtonLabel = new AirplaneModeSettingsButtonLabel(this, applicationModel);
+		AirplaneToggleOffSwitchToggle = new AirplaneToggleOffSwitchToggle(this, applicationModel);
 
 			setDisplayName("Settings");
 		}
@@ -2966,9 +2974,13 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		}
 
 				public AirplaneMode AirplaneMode() { return AirplaneMode; }
-		public AirplaineToggle AirplaineToggle() { return AirplaineToggle; }
+		public AirplaneToggleONSwitch AirplaneToggleONSwitch() { return AirplaneToggleONSwitch; }
 		public SettingsConnections SettingsConnections() { return SettingsConnections; }
 		public ConnectionsAirplaneModeToggle ConnectionsAirplaneModeToggle() { return ConnectionsAirplaneModeToggle; }
+		public SettingsSearchButton SettingsSearchButton() { return SettingsSearchButton; }
+		public SettingsSearchTextEditField SettingsSearchTextEditField() { return SettingsSearchTextEditField; }
+		public AirplaneModeSettingsButtonLabel AirplaneModeSettingsButtonLabel() { return AirplaneModeSettingsButtonLabel; }
+		public AirplaneToggleOffSwitchToggle AirplaneToggleOffSwitchToggle() { return AirplaneToggleOffSwitchToggle; }
 		
 			public class AirplaneMode extends MobileUiObjectNodeBase
 	{
@@ -2996,11 +3008,11 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class AirplaineToggle extends MobileToggleNodeBase
+	public class AirplaneToggleONSwitch extends MobileToggleNodeBase
 	{
 
 		
-								public AirplaineToggle(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public AirplaneToggleONSwitch(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -3065,6 +3077,110 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").resourceId("android:id/switch_widget").mobileCenterIndex(3).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SettingsSearchButton extends MobileButtonNodeBase
+	{
+
+		
+								public SettingsSearchButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SettingsSearchButton");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("Search").className("Button").resourceId("com.android.settings:id/search").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SettingsSearchTextEditField extends MobileEditFieldNodeBase
+	{
+
+		
+								public SettingsSearchTextEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SettingsSearchTextEditField");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").resourceId("android:id/search_src_text").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class AirplaneModeSettingsButtonLabel extends MobileLabelNodeBase
+	{
+
+		
+								public AirplaneModeSettingsButtonLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("AirplaneModeSettingsButton");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("Airplane mode").accessibilityId("Airplane mode").className("Label").resourceId("com.android.settings:id/title").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class AirplaneToggleOffSwitchToggle extends MobileToggleNodeBase
+	{
+
+		
+								public AirplaneToggleOffSwitchToggle(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("AirplaneToggleOffSwitch");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ToggleDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").resourceId("com.android.settings:id/switch_widget").mobileCenterIndex(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
