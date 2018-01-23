@@ -71,7 +71,7 @@ public class IOSTests extends UnitTestClassBase {
         device.unlock();
         globalTearDown();
         elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
-        print("\nandroidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
+        print("\niOSTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
         printTimeWholeTests(elapsedTimeAllTests);
     }
 
@@ -99,7 +99,6 @@ public class IOSTests extends UnitTestClassBase {
     // TODO: decide how to check. If user already exist in database test failed or not?
     @Test
     public void AddNewUserTest() throws GeneralLeanFtException, InterruptedException {
-        print("\nStarting " + this.getTestName() + "...");
         if (isSignedIn())
             SignOut();
 
@@ -119,7 +118,6 @@ public class IOSTests extends UnitTestClassBase {
 //    WORK
     @Test
     public void InvalidLoginTest() throws GeneralLeanFtException, InterruptedException {
-        print("\nStarting " + this.getTestName() + "...");
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         print("TAP LoginObj");
@@ -218,7 +216,6 @@ public class IOSTests extends UnitTestClassBase {
 //    WORK
     @Test
     public void OutOfStockTest() throws GeneralLeanFtException {
-        print("\nStarting " + this.getTestName() + "...");
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         print("TAP HEADPHONESLabel");
@@ -248,7 +245,6 @@ public class IOSTests extends UnitTestClassBase {
 
     @Test
     public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
-        print("\nStarting " + this.getTestName() + "...");
         if (!isSignedIn())
             SignIn();
 
@@ -770,7 +766,7 @@ public class IOSTests extends UnitTestClassBase {
 
     private static void printTimeWholeTests(Long millis) {
         System.out.println("\n--------------------------------------------------");
-        print("AndroidTests done in: " + String.valueOf((elapsedTimeAllTests / 1000F) / 60 + " min\n"));
+        print("iOSTests done in: " + String.valueOf((elapsedTimeAllTests / 1000F) / 60 + " min\n"));
     }
 
 }
