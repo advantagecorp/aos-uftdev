@@ -9,6 +9,7 @@ import com.hp.lft.sdk.mobile.*;
 
 import com.hp.lft.verifications.*;
 
+import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 import unittesting.*;
 
@@ -37,9 +38,18 @@ public class IOSTests extends UnitTestClassBase {
     static String appURL = System.getProperty("url", "defaultvalue");
     private static final String HUGE_QUANTITY = "999";
 
+    private static int currentNumberOfTest = 0;
+    private static long startTimeAllTests;
+    private long startTimeCurrentTest;
+    private static long elapsedTimeAllTests;
+    private long elapsedTimeCurrentTest;
+
     public IOSTests() {
         //Change this constructor to private if you supply your own public constructor
     }
+
+    @Rule
+    public TestName curTestName = new TestName();
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -60,16 +70,26 @@ public class IOSTests extends UnitTestClassBase {
     public static void tearDownAfterClass() throws Exception {
         device.unlock();
         globalTearDown();
+        elapsedTimeAllTests = System.currentTimeMillis() - startTimeAllTests;
+        print("\nandroidTests done in: " + String.valueOf((elapsedTimeAllTests/1000F)/60 + " min"));
+        printTimeWholeTests(elapsedTimeAllTests);
     }
 
     @Before
     public void setUp() throws Exception {
+        startTimeCurrentTest = System.currentTimeMillis();
+        printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         app.restart();
-        waitUntilElementExists(appModel.IshoppingApplication().MenuObjUiObject());
+//        waitUntilElementExists(appModel.IshoppingApplication().MenuObjUiObject());
     }
 
     @After
     public void tearDown() throws Exception {
+        elapsedTimeCurrentTest = System.currentTimeMillis() - startTimeCurrentTest;
+        String passingTime = String.valueOf((elapsedTimeCurrentTest/1000F)/60 + " min / "
+                + String.valueOf(elapsedTimeCurrentTest/1000F) + " sec / "
+                + String.valueOf(elapsedTimeCurrentTest) + " millisec\n");
+        printEndOfTest(curTestName.getMethodName(), passingTime);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -736,6 +756,21 @@ public class IOSTests extends UnitTestClassBase {
             printError(e);
             fail("InterruptedException: failed to sleep for " + millis + " sec");
         }
+    }
+
+    private static void printCaptionTest(String nameOfTest, int curNumberOfTest) {
+        System.out.println("\n--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
+        System.out.println(curNumberOfTest + " START " + nameOfTest);
+    }
+
+    private static void printEndOfTest(String nameOfTest, String time) {
+        System.out.println("END " + nameOfTest + " in " + time);
+    }
+
+    private static void printTimeWholeTests(Long millis) {
+        System.out.println("\n--------------------------------------------------");
+        print("AndroidTests done in: " + String.valueOf((elapsedTimeAllTests / 1000F) / 60 + " min\n"));
     }
 
 }
