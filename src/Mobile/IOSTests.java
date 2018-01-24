@@ -118,6 +118,8 @@ public class IOSTests extends UnitTestClassBase {
 //    WORK
     @Test
     public void InvalidLoginTest() throws GeneralLeanFtException, InterruptedException {
+        if (isSignedIn())
+            SignOut();
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         print("TAP LoginObj");
@@ -215,7 +217,8 @@ public class IOSTests extends UnitTestClassBase {
 
 //    WORK
     @Test
-    public void OutOfStockTest() throws GeneralLeanFtException {
+    public void OutOfStockTest() throws GeneralLeanFtException, InterruptedException {
+        LogOutTest();
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         print("TAP HEADPHONESLabel");
@@ -245,9 +248,9 @@ public class IOSTests extends UnitTestClassBase {
 
     @Test
     public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
+        LogOutTest();
         if (!isSignedIn())
             SignIn();
-
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
         print("TAP SPEAKERSLabel");
