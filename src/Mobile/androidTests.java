@@ -624,7 +624,8 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void OfflineModeTest() throws GeneralLeanFtException {
         threadSleep(5000);      // wait for application loading
-
+        if (isSignedIn())
+            SignOut();
         // init Adnroid Settings application
         appSettings = device.describe(Application.class, new ApplicationDescription.Builder()
                 .identifier("MC.Settings").packaged(false).build());
@@ -688,7 +689,8 @@ public class androidTests extends UnitTestClassBase {
 
     @Test
     public void uploadNewImageToProductTest() throws GeneralLeanFtException{
-        
+        if (isSignedIn())
+            SignOut();
 
     }
 
