@@ -1435,6 +1435,29 @@
                     <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
                 </properties>
             </identification>
+            <children>
+                <object type="Label" technology="Mobile">
+                    <name>ShippingDetailsAddressTextField</name>
+                    <codeName>ShippingDetailsAddressTextFieldLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">ADDRESS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ShippingDetailsAddressTextField</name>
+                    <codeName>ShippingDetailsAddressTextField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
         </object>
         <object type="Page" technology="Web">
             <name> Advantage Shopping</name>

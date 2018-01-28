@@ -3196,11 +3196,15 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	{
 
 		
-								public AdvantageShoppingApplication1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+			private ShippingDetailsAddressTextFieldLabel ShippingDetailsAddressTextFieldLabel;
+	private ShippingDetailsAddressTextField ShippingDetailsAddressTextField;
+						public AdvantageShoppingApplication1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
-			
+					ShippingDetailsAddressTextFieldLabel = new ShippingDetailsAddressTextFieldLabel(this, applicationModel);
+		ShippingDetailsAddressTextField = new ShippingDetailsAddressTextField(this, applicationModel);
+
 			setDisplayName("Advantage Shopping1");
 		}
 
@@ -3215,8 +3219,62 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			return description;
 		}
 
+				public ShippingDetailsAddressTextFieldLabel ShippingDetailsAddressTextFieldLabel() { return ShippingDetailsAddressTextFieldLabel; }
+		public ShippingDetailsAddressTextField ShippingDetailsAddressTextField() { return ShippingDetailsAddressTextField; }
+		
+			public class ShippingDetailsAddressTextFieldLabel extends MobileLabelNodeBase
+	{
+
+		
+								public ShippingDetailsAddressTextFieldLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ShippingDetailsAddressTextField");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("ADDRESS").className("Label").mobileCenterIndex(9).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
 				
 			}
+
+	public class ShippingDetailsAddressTextField extends MobileEditFieldNodeBase
+	{
+
+		
+								public ShippingDetailsAddressTextField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ShippingDetailsAddressTextField");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().className("Input").mobileCenterIndex(4).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	}
 
 	public class AdvantageShoppingPage extends WebPageNodeBase
 	{

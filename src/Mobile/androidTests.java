@@ -931,6 +931,11 @@ public class androidTests extends UnitTestClassBase {
             Print("tap ShippingCheckBox()");
             appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();
             Print("tap APPLYChangeLabel()");
+            if(appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().getText() == null ||
+                    appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().getText().isEmpty()) {
+                appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextFieldLabel().tap();
+                appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().setText("Address");
+            }
             appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
         }
         Print("tap PaymentDetails()");
