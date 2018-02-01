@@ -1200,6 +1200,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String socialLink = " ";
 
         String Facebooktitle = "HP Application Lifecycle Management - Software, Interest | Facebook";
+        String Facebooktitle1 = "HP Application Lifecycle Management | Facebook";
         String Twittertitle = "HPE ALM (@HPE_ALM) | Twitter";
         String Linkedintitle = "Micro Focus Software | LinkedIn";
 
@@ -1212,7 +1213,19 @@ public class AdvantageWebTest extends UnitTestClassBase {
             threadSleep(5000);
             socialLink = "facebook";
             Print("facebook title: " + Facebooktitle);
-            Browser fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
+            Browser fbBrowser = null;
+            try{
+                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
+            }
+            catch (GeneralLeanFtException e1){
+                printError(e1, "BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build())");
+                Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink, Status.Failed);
+
+            }
+            if(fbBrowser == null){
+                Print("Trying facebook alternate title " + Facebooktitle1);
+                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle1).build());
+            }
             fbBrowser.sync();
             brURL = fbBrowser.getURL();
             Print("facebook url:\n" + brURL);
