@@ -1120,43 +1120,43 @@ public class AdvantageWebTest extends UnitTestClassBase {
      * IMPORTANT: Make sure to enable pop-up messages from this site in BROWSER
      * @throws ReportException
      */
-    @Test
-    public void contactUsChatTest() throws ReportException, GeneralLeanFtException {
-        // Sign in to the store
-        signIn();
-
-        // Go to home page
-        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
-
-        // Click the Contact Us link
-        clickWebElement(appModel.AdvantageShoppingPage().CONTACTUSMainWebElement());
-
-        // Click the Chat With Us link
-        clickWebElement(appModel.AdvantageShoppingPage().ChatLogoImage());
-
-        Print("Wait for window with chat loading");
-        threadSleep(5000);
-
-        // Verify that the chat window has opened
-        // Close the pop up message browser
-        Browser chatBrowser = null;
-        BrowserDescription chatBrowserDescription = new BrowserDescription();
-        chatBrowserDescription.setTitle("Advantage Online Shopping Demo Support Chat");
-
-        String brURL = "";
-        try {
-            chatBrowser = BrowserFactory.attach(chatBrowserDescription);
-            brURL = chatBrowser.getURL();
-        } catch (GeneralLeanFtException e) {
-            printError(e, "BrowserFactory.attach(chatBrowserDescription)");
-            Reporter.reportEvent("contact Us Chat", "Could not locate the pop up chat browser", Status.Failed);
-            Assert.assertTrue("Verification - Contact Us Chat: The chat window was not created", false);
-        }
-
-        Boolean isUrlRight =  brURL.matches(".*/chat\\.html.*");
-        checkWithReporterIsTrue(isUrlRight, "Verify Contact Us Chat", "Verify that the browser navigated to the chat URL");
-        chatBrowser.close();
-    }
+//    @Test
+//    public void contactUsChatTest() throws ReportException, GeneralLeanFtException {
+//        // Sign in to the store
+//        signIn();
+//
+//        // Go to home page
+//        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+//
+//        // Click the Contact Us link
+//        clickWebElement(appModel.AdvantageShoppingPage().CONTACTUSMainWebElement());
+//
+//        // Click the Chat With Us link
+//        clickWebElement(appModel.AdvantageShoppingPage().ChatLogoImage());
+//
+//        Print("Wait for window with chat loading");
+//        threadSleep(5000);
+//
+//        // Verify that the chat window has opened
+//        // Close the pop up message browser
+//        Browser chatBrowser = null;
+//        BrowserDescription chatBrowserDescription = new BrowserDescription();
+//        chatBrowserDescription.setTitle("Advantage Online Shopping Demo Support Chat");
+//
+//        String brURL = "";
+//        try {
+//            chatBrowser = BrowserFactory.attach(chatBrowserDescription);
+//            brURL = chatBrowser.getURL();
+//        } catch (GeneralLeanFtException e) {
+//            printError(e, "BrowserFactory.attach(chatBrowserDescription)");
+//            Reporter.reportEvent("contact Us Chat", "Could not locate the pop up chat browser", Status.Failed);
+//            Assert.assertTrue("Verification - Contact Us Chat: The chat window was not created", false);
+//        }
+//
+//        Boolean isUrlRight =  brURL.matches(".*/chat\\.html.*");
+//        checkWithReporterIsTrue(isUrlRight, "Verify Contact Us Chat", "Verify that the browser navigated to the chat URL");
+//        chatBrowser.close();
+//    }
 
     // This internal method gets a regular expression pattern and tries to match it to any title of the current open browsers
     // The browsers are from the type defined in the test
