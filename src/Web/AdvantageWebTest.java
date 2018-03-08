@@ -1187,81 +1187,81 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This test verifies that the social media links work properly by clicking them
     //    TODO: change facebook and twitter to Micro Focus pages
-    @Test
-    public void verifySocialMedia() throws ReportException, GeneralLeanFtException {
-        // Sign in to the store
-        signIn();
-
-        // Go to home page
-        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
-        browserSync();
-
-        String brURL = " ";
-        String socialLink = " ";
-
-        String Facebooktitle = "HP Application Lifecycle Management - Software, Interest | Facebook";
-        String Facebooktitle1 = "HP Application Lifecycle Management | Facebook";
-        String Twittertitle = "HPE ALM (@HPE_ALM) | Twitter";
-        String Linkedintitle = "Micro Focus Software | LinkedIn";
-
-        try {
-            // Verify the Facebook link
-
-            // Clicking te link opens a new browser tab
-            // We attach to it and verify its title and URL are ads expected, then close it
-            clickWebElement(appModel.AdvantageShoppingPage().FacebookImage());
-            threadSleep(5000);
-            socialLink = "facebook";
-            Print("facebook title: " + Facebooktitle);
-            Browser fbBrowser = null;
-            try{
-                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
-            }
-            catch (GeneralLeanFtException e1){
-                printError(e1, "BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build())");
-                Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink, Status.Failed);
-
-            }
-            if(fbBrowser == null){
-                Print("Trying facebook alternate title " + Facebooktitle1);
-                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle1).build());
-            }
-            fbBrowser.sync();
-            brURL = fbBrowser.getURL();
-            Print("facebook url:\n" + brURL);
-            Assert.assertTrue("Verification - Verify Social Media: Verify that the Facebook site was launched properly.", brURL.matches(".*facebook\\.com.*"));
-            fbBrowser.close();
-
-            // Verify the Twitter link
-			/*
-            clickWebElement(appModel.AdvantageShoppingPage().TwitterImage());
-            threadSleep(5000);
-            socialLink = "twiiter";
-            Print("twitter title: " + Twittertitle);
-            Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
-            tweetBrowser.sync();
-            brURL = tweetBrowser.getURL();
-            Print("twitter url:\n" + brURL);
-            Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.", brURL.matches(".*twitter\\.com.*"));
-            tweetBrowser.close();*/
-
-            // Verify the LinkedIn link
-            clickWebElement(appModel.AdvantageShoppingPage().LinkedInImage());
-            threadSleep(5000);
-            socialLink = "linkedin";
-            Print("linkedIn title: " + Linkedintitle);
-            Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
-            linkedinBrowser.sync();
-            brURL = linkedinBrowser.getURL();
-            Print("linkedIn url:\n" + brURL);
-            Assert.assertTrue("Verification - Verify Social Media: Verify that the LinkedIn site was launched properly.", brURL.matches(".*linkedin\\.com.*"));
-            linkedinBrowser.close();
-        } catch (GeneralLeanFtException e) {
-            printError(e, "BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build())");
-            Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink, Status.Failed);
-            Assert.assertTrue("Verification - Verify Social Media: Could not locate the browser with the  matching URL of the social media: " + socialLink, false);
-        }
-    }
+//    @Test
+//    public void verifySocialMedia() throws ReportException, GeneralLeanFtException {
+//        // Sign in to the store
+//        signIn();
+//
+//        // Go to home page
+//        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+//        browserSync();
+//
+//        String brURL = " ";
+//        String socialLink = " ";
+//
+//        String Facebooktitle = "HP Application Lifecycle Management - Software, Interest | Facebook";
+//        String Facebooktitle1 = "HP Application Lifecycle Management | Facebook";
+//        String Twittertitle = "HPE ALM (@HPE_ALM) | Twitter";
+//        String Linkedintitle = "Micro Focus Software | LinkedIn";
+//
+//        try {
+//            // Verify the Facebook link
+//
+//            // Clicking te link opens a new browser tab
+//            // We attach to it and verify its title and URL are ads expected, then close it
+//            clickWebElement(appModel.AdvantageShoppingPage().FacebookImage());
+//            threadSleep(5000);
+//            socialLink = "facebook";
+//            Print("facebook title: " + Facebooktitle);
+//            Browser fbBrowser = null;
+//            try{
+//                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build());
+//            }
+//            catch (GeneralLeanFtException e1){
+//                printError(e1, "BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle).build())");
+//                Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink, Status.Failed);
+//
+//            }
+//            if(fbBrowser == null){
+//                Print("Trying facebook alternate title " + Facebooktitle1);
+//                fbBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Facebooktitle1).build());
+//            }
+//            fbBrowser.sync();
+//            brURL = fbBrowser.getURL();
+//            Print("facebook url:\n" + brURL);
+//            Assert.assertTrue("Verification - Verify Social Media: Verify that the Facebook site was launched properly.", brURL.matches(".*facebook\\.com.*"));
+//            fbBrowser.close();
+//
+//            // Verify the Twitter link
+//			/*
+//            clickWebElement(appModel.AdvantageShoppingPage().TwitterImage());
+//            threadSleep(5000);
+//            socialLink = "twiiter";
+//            Print("twitter title: " + Twittertitle);
+//            Browser tweetBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Twittertitle).build());
+//            tweetBrowser.sync();
+//            brURL = tweetBrowser.getURL();
+//            Print("twitter url:\n" + brURL);
+//            Assert.assertTrue("Verification - Verify Social Media: Verify that the Twitter site was launched properly.", brURL.matches(".*twitter\\.com.*"));
+//            tweetBrowser.close();*/
+//
+//            // Verify the LinkedIn link
+//            clickWebElement(appModel.AdvantageShoppingPage().LinkedInImage());
+//            threadSleep(5000);
+//            socialLink = "linkedin";
+//            Print("linkedIn title: " + Linkedintitle);
+//            Browser linkedinBrowser = BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build());
+//            linkedinBrowser.sync();
+//            brURL = linkedinBrowser.getURL();
+//            Print("linkedIn url:\n" + brURL);
+//            Assert.assertTrue("Verification - Verify Social Media: Verify that the LinkedIn site was launched properly.", brURL.matches(".*linkedin\\.com.*"));
+//            linkedinBrowser.close();
+//        } catch (GeneralLeanFtException e) {
+//            printError(e, "BrowserFactory.attach(new BrowserDescription.Builder().title(Linkedintitle).build())");
+//            Reporter.reportEvent("verify Social Media ERROR", "Could not locate the browser with the matching URL of : " + socialLink, Status.Failed);
+//            Assert.assertTrue("Verification - Verify Social Media: Could not locate the browser with the  matching URL of the social media: " + socialLink, false);
+//        }
+//    }
 
     // This test gets the site version from the site UI and prints it to the console
    /* @Test
