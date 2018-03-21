@@ -40,7 +40,7 @@ public class androidTests extends UnitTestClassBase {
 //    static String appURL2 = "www.advantageonlineshopping.com";
 //    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-    static String appURL2 = "http://52.34.90.37";       // CI
+    static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
