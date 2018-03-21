@@ -891,18 +891,6 @@
                         <tag>setting</tag>
                     </tags>
                 </object>
-                <object type="Label" technology="Mobile">
-                    <name>Invalid user name or pas</name>
-                    <codeName>InvalidUserNameOrPas</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">Invalid user name or password</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="ResourceId" type="string" isRegExp="false">textViewFailed</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                        </properties>
-                    </identification>
-                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>SignUPtUiObject</name>
                     <codeName>SignUPtUiObject</codeName>
@@ -1306,6 +1294,39 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>ShippingDetailsAddressTextField</name>
+                    <codeName>ShippingDetailsAddressTextFieldLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">ADDRESS</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>ShippingDetailsAddressTextField</name>
+                    <codeName>ShippingDetailsAddressTextField</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Incorrect user name or p1</name>
+                    <codeName>IncorrectUserNameOrPLabel1</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Incorrect user name or password.</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="ResourceId" type="string" isRegExp="false">textViewFailed</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
@@ -1421,39 +1442,6 @@
                             <property name="ClassName" type="string" isRegExp="false">Switch</property>
                             <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/switch_widget</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                </object>
-            </children>
-        </object>
-        <object type="Application" technology="Mobile">
-            <name>Advantage Shopping1</name>
-            <codeName>AdvantageShoppingApplication1</codeName>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
-                </properties>
-            </identification>
-            <children>
-                <object type="Label" technology="Mobile">
-                    <name>ShippingDetailsAddressTextField</name>
-                    <codeName>ShippingDetailsAddressTextFieldLabel</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">ADDRESS</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">9</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="EditField" technology="Mobile">
-                    <name>ShippingDetailsAddressTextField</name>
-                    <codeName>ShippingDetailsAddressTextField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
                         </properties>
                     </identification>
                 </object>

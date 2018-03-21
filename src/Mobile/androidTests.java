@@ -40,7 +40,7 @@ public class androidTests extends UnitTestClassBase {
 //    static String appURL2 = "www.advantageonlineshopping.com";
 //    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-    static String appURL2 = "16.60.158.84";       // CI
+    static String appURL2 = "http://52.34.90.37";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
@@ -278,7 +278,7 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().UserNameEdit().setText(UNAME);
         appModel.AdvantageShoppingApplication().PassEdit().setText("some pass");
         appModel.AdvantageShoppingApplication().LOGINButton().tap();
-        Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas().exists(), "Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
+        Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1().exists(), "Verification - Negative Login", "Verify that the user NOT login with incorrect password"));
     }
 
     @Test
@@ -812,8 +812,7 @@ public class androidTests extends UnitTestClassBase {
                 setTextEditField(appModel.AdvantageShoppingApplication().UserNameEdit(), UNAME);
                 setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
-
-                if (!existsLabel(appModel.AdvantageShoppingApplication().InvalidUserNameOrPas())) {
+                if (!existsLabel(appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1())) {
                     System.out.println(UNAME + "  Login Success");
                     Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
                     Print("SignIn() end");
@@ -931,10 +930,10 @@ public class androidTests extends UnitTestClassBase {
             Print("tap ShippingCheckBox()");
             appModel.AdvantageShoppingApplication().ShippingCheckBox().tap();
             Print("tap APPLYChangeLabel()");
-            if(appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().getText() == null ||
-                    appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().getText().isEmpty()) {
-                appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextFieldLabel().tap();
-                appModel.AdvantageShoppingApplication1().ShippingDetailsAddressTextField().setText("Address");
+            if(appModel.AdvantageShoppingApplication().ShippingDetailsAddressTextField().getText() == null ||
+                    appModel.AdvantageShoppingApplication().ShippingDetailsAddressTextField().getText().isEmpty()) {
+                appModel.AdvantageShoppingApplication().ShippingDetailsAddressTextFieldLabel().tap();
+                appModel.AdvantageShoppingApplication().ShippingDetailsAddressTextField().setText("Address");
             }
             appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
         }
