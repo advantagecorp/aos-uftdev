@@ -1162,6 +1162,42 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Button" technology="Mobile">
+                    <name>ProductsPageFilter</name>
+                    <codeName>ProductsPageFilterButton</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">Filter</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Filter</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>FilterByPriceTab</name>
+                    <codeName>FilterByPriceTabLabel</codeName>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">BY PRICE</property>
+                            <property name="AccessibilityId" type="string" isRegExp="false">BY PRICE</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false"></property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>MobileObjectFilterPriceSlider</name>
+                    <codeName>MobileObjectFilterPriceSliderUiObject</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">TableCell</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][0][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
     </objects>

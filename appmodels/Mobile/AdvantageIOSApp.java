@@ -117,6 +117,9 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 	private BackButton BackButton;
 	private AddProductMessage AddProductMessage;
 	private AddProductMessageOkButton AddProductMessageOkButton;
+	private ProductsPageFilterButton ProductsPageFilterButton;
+	private FilterByPriceTabLabel FilterByPriceTabLabel;
+	private MobileObjectFilterPriceSliderUiObject MobileObjectFilterPriceSliderUiObject;
 						public IshoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -207,6 +210,9 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		BackButton = new BackButton(this, applicationModel);
 		AddProductMessage = new AddProductMessage(this, applicationModel);
 		AddProductMessageOkButton = new AddProductMessageOkButton(this, applicationModel);
+		ProductsPageFilterButton = new ProductsPageFilterButton(this, applicationModel);
+		FilterByPriceTabLabel = new FilterByPriceTabLabel(this, applicationModel);
+		MobileObjectFilterPriceSliderUiObject = new MobileObjectFilterPriceSliderUiObject(this, applicationModel);
 
 			setDisplayName("Ishopping");
 		}
@@ -308,6 +314,9 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		public BackButton BackButton() { return BackButton; }
 		public AddProductMessage AddProductMessage() { return AddProductMessage; }
 		public AddProductMessageOkButton AddProductMessageOkButton() { return AddProductMessageOkButton; }
+		public ProductsPageFilterButton ProductsPageFilterButton() { return ProductsPageFilterButton; }
+		public FilterByPriceTabLabel FilterByPriceTabLabel() { return FilterByPriceTabLabel; }
+		public MobileObjectFilterPriceSliderUiObject MobileObjectFilterPriceSliderUiObject() { return MobileObjectFilterPriceSliderUiObject; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -2536,6 +2545,84 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Ok").accessibilityId("Ok").className("Button").mobileCenterIndex(10).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ProductsPageFilterButton extends ButtonNodeBase
+	{
+
+		
+								public ProductsPageFilterButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ProductsPageFilter");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().text("Filter").accessibilityId("Filter").className("Button").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class FilterByPriceTabLabel extends LabelNodeBase
+	{
+
+		
+								public FilterByPriceTabLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("FilterByPriceTab");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().text("BY PRICE").accessibilityId("BY PRICE").className("Label").container("").mobileCenterIndex(0).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class MobileObjectFilterPriceSliderUiObject extends UiObjectNodeBase
+	{
+
+		
+								public MobileObjectFilterPriceSliderUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("MobileObjectFilterPriceSlider");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("TableCell").container("Table[0][0][0]").mobileCenterIndex(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
