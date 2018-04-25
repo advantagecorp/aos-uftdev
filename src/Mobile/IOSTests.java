@@ -178,7 +178,7 @@ public class IOSTests extends UnitTestClassBase {
         SignOut();
     }
 
-//    @Test
+    @Test
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
@@ -187,20 +187,29 @@ public class IOSTests extends UnitTestClassBase {
 
         EmptyCart();
 
+        print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
+        print("TAP TABLETSLabel");
         appModel.IshoppingApplication().TABLETSLabel().tap();
+        print("TAP TabletItem");
         appModel.IshoppingApplication().TabletItem().tap();
+        print("TAP ADDTOCARTButton");
         appModel.IshoppingApplication().ADDTOCARTButton().tap();
-
+        print("TAP CarticonButton");
         appModel.IshoppingApplication().CarticonButton().tap();
+        print("TAP FirstCartElement");
         appModel.IshoppingApplication().FirstCartElement().tap();
         waitUntilElementExists(appModel.IshoppingApplication().TabletObjUiObject());
 
+        print("TAP ColorButton");
         appModel.IshoppingApplication().ColorButton().tap();
+        print("TAP ColorObject");
         appModel.IshoppingApplication().ColorObject().tap();
 
+        print("TAP QuantityButton");
         appModel.IshoppingApplication().QuantityButton().tap();
         for (int i = 0; i < 3; i++) { //increase quantity
+            print("TAP ");
             appModel.IshoppingApplication().PlusButton().tap();
         }
         appModel.IshoppingApplication().APPLYButton().tap();
@@ -244,6 +253,22 @@ public class IOSTests extends UnitTestClassBase {
         print("Check if ADD TO CART BUTTON is disabled: " + !isAddToCartButtonenabled);
         Verify.isFalse(isAddToCartButtonenabled, "Verification - Out Of Stock", "Verify that we can't ADD TO CART.");
         print("FINISH " + this.getTestName());
+    }
+
+    @Test
+    public void priceRangeElement() throws GeneralLeanFtException, InterruptedException{
+        if (!isSignedIn())
+            SignIn();
+        print("TAP MenuButton");
+        appModel.IshoppingApplication().MenuButton().tap();
+        print("TAP SPEAKERSLabel");
+        appModel.IshoppingApplication().SPEAKERSLabel().tap();
+        print("TAP SpeakerImgUiObject");
+        appModel.IshoppingApplication().ProductsPageFilterButton().tap();
+        appModel.IshoppingApplication().FilterByPriceTabLabel().tap();
+        appModel.IshoppingApplication().MobileObjectFilterPriceSliderUiObject().swipe(SwipeDirection.RIGHT);
+
+
     }
 
     @Test
@@ -439,7 +464,7 @@ public class IOSTests extends UnitTestClassBase {
 
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
-                .identifier("com.mf.iShopping").packaged(false).build());
+                .identifier("com.mf.iShopping").packaged(true).build());
 
         print("app version: " + app.getVersion());
         print("app get name: " + app.getName());
