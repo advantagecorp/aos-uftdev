@@ -444,6 +444,7 @@ public class IOSTests extends UnitTestClassBase {
         String deviceID = "";
 
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
+            print(deviceInfo.getOSType());
             //System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
             String[] s = deviceInfo.getOSVersion().split("\\.");
             String Join = "";
@@ -464,7 +465,7 @@ public class IOSTests extends UnitTestClassBase {
 
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
-                .identifier("com.mf.iShopping").packaged(false).build());
+                .identifier("com.mf.iShopping").packaged(true).build());
 
         print("app version: " + app.getVersion());
         print("app get name: " + app.getName());
@@ -487,7 +488,7 @@ public class IOSTests extends UnitTestClassBase {
 
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
-                .identifier("com.mf.iShopping").packaged(false).build());
+                .identifier("com.mf.iShopping").packaged(true).build());
 
         print("app version: " + app.getVersion());
         print("app get name: " + app.getName());
