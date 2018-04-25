@@ -59,7 +59,7 @@ public class IOSTests extends UnitTestClassBase {
         if (appURL.equals("defaultvalue")) {
             appURL = appURL2;
             System.out.println("appURL: " + appURL);
-            InitBeforeclassLocal();
+            InitBeforeclass();
         } else {
             System.out.println("appURL: " + appURL);
             InitBeforeclass();
@@ -442,7 +442,7 @@ public class IOSTests extends UnitTestClassBase {
 
     public static void InitBeforeclass() throws GeneralLeanFtException {
         String deviceID = "";
-
+        print("Num of devices = " + MobileLab.getDeviceList().length);
         for (DeviceInfo deviceInfo : MobileLab.getDeviceList()) {
             print(deviceInfo.getOSType());
             //System.out.printf("The device ID is: %s, and its name is: %s\n\n", deviceInfo.getId(), deviceInfo.getName());
@@ -452,7 +452,7 @@ public class IOSTests extends UnitTestClassBase {
                 Join += s1;
 
             int version = Integer.parseInt(Join);
-            if (deviceInfo.getOSType().equals("IOS") && version >= 900) {
+            if (deviceInfo.getOSType().equals("IOS")) {
                 deviceID = deviceInfo.getId();
                 break;
             }
