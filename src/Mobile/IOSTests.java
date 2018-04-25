@@ -464,7 +464,7 @@ public class IOSTests extends UnitTestClassBase {
 
         // Describe the AUT.
         app = device.describe(Application.class, new ApplicationDescription.Builder()
-                .identifier("com.mf.iShopping").packaged(true).build());
+                .identifier("com.mf.iShopping").packaged(false).build());
 
         print("app version: " + app.getVersion());
         print("app get name: " + app.getName());
