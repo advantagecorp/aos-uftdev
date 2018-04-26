@@ -1413,7 +1413,7 @@ View details link</description>
                             <property name="Type" type="string" isRegExp="false">text</property>
                             <property name="TagName" type="string" isRegExp="false">INPUT</property>
                             <property name="Name" type="string" isRegExp="false">WebEdit</property>
-                            <property name="XPath" type="string" isRegExp="false">//INPUT[@id="textMessage"]</property>
+                            <property name="XPath" type="string" isRegExp="false">//INPUT[@id=textMessage]</property>
                         </properties>
                     </identification>
                 </object>

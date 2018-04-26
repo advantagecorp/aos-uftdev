@@ -362,7 +362,6 @@
                     <codeName>SearchEditField</codeName>
                     <identification>
                         <properties>
-                            <!--property name="CanFocus" type="boolean" isRegExp="false">true</property-->
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
                         </properties>
@@ -384,7 +383,7 @@
             </children>
         </object>
         <object type="Window" technology="WPF">
-            <name>Reset password for "Dot.NetUser"</name>
+            <name>Reset password for 'Dot.NetUser'</name>
             <codeName>ResetPasswordForDotNetUserWindow</codeName>
             <identification>
                 <properties>
