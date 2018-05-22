@@ -1542,5 +1542,43 @@
                 </object>
             </children>
         </object>
+        <object type="Application" technology="Mobile">
+            <name>Advantage Shopping1</name>
+            <codeName>advantageShoppingApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="Mobile">
+                    <name>OK</name>
+                    <codeName>oKButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/button1</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>editTextServer</name>
+                    <codeName>editTextServerEditField</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.Advantage.aShopping:id/editTextServer</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
+        </object>
     </objects>
 </applicationModel>

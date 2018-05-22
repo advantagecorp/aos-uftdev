@@ -38,10 +38,10 @@ public class androidTests extends UnitTestClassBase {
     static String PASSNEW = "Password24";
 
     static String appURL = System.getProperty("url", "defaultvalue");
-//    static String appURL2 = "www.advantageonlineshopping.com";
+    static String appURL2 = "www.advantageonlineshopping.com";
 //    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-      static String appURL2 = "16.60.158.84";       // CI
+//      static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //        static String appURL2 = "16.59.19.123:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
@@ -163,9 +163,26 @@ public class androidTests extends UnitTestClassBase {
 
         try {
             if (appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists()) {
-                Print("False");
-                return false;
-            } else {
+                threadSleep(2000);
+                appModel.advantageShoppingApplication().oKButton().tap();
+                threadSleep(1000);
+                //checking if offline mode is the reason for the 'no connection message.
+                    Print("Switching servers url to  " + appURL );
+                    setTextEditField(appModel.advantageShoppingApplication().editTextServerEditField(),appURL);
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+                    threadSleep(10000);
+                    if (appModel.AdvantageShoppingApplication().OKButton().exists()){
+                        tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                        Print("True");
+                        return true;
+                    }
+
+                    else{
+                        Print("False");
+                        return false;
+                    }
+                }
+                 else {
                 Print("True");
                 return true;
             }
