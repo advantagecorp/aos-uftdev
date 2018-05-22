@@ -29,7 +29,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		rebuildDescriptions();
 	}	
 
-			public AdvantageShoppingApplication AdvantageShoppingApplication() { return AdvantageShoppingApplication; }
+		public AdvantageShoppingApplication AdvantageShoppingApplication() { return AdvantageShoppingApplication; }
 		public SettingsApplication SettingsApplication() { return SettingsApplication; }
 		public AdvantageShoppingPage AdvantageShoppingPage() { return AdvantageShoppingPage; }
 		public advantageShoppingApplication advantageShoppingApplication() { return advantageShoppingApplication; }

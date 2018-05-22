@@ -166,7 +166,7 @@ public class androidTests extends UnitTestClassBase {
                 threadSleep(2000);
                 appModel.advantageShoppingApplication().oKButton().tap();
                 threadSleep(1000);
-                //checking if offline mode is the reason for the 'no connection message.
+                //checking if offline mode is the reason for the 'no connection' message.
                     Print("Switching servers url to  " + appURL );
                     setTextEditField(appModel.advantageShoppingApplication().editTextServerEditField(),appURL);
                     tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
