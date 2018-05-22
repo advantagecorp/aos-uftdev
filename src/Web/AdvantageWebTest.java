@@ -37,7 +37,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
-//    public static String appURL2 = "52.34.13.179:8080";     // QUALLY //for  push
+//    public static String appURL2 = "52.34.13.179:8080";     // QUALLY
 
     public static String browserTypeValue = System.getProperty("browser_type", "defaultvalue");
     public static String envTypeValue = System.getProperty("env_type", "local");
