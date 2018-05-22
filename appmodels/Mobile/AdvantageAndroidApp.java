@@ -136,6 +136,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private ShippingDetailsAddressTextFieldLabel ShippingDetailsAddressTextFieldLabel;
 	private ShippingDetailsAddressTextField ShippingDetailsAddressTextField;
 	private IncorrectUserNameOrPLabel1 IncorrectUserNameOrPLabel1;
+	private mobileEditEditField mobileEditEditField;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -241,6 +242,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		ShippingDetailsAddressTextFieldLabel = new ShippingDetailsAddressTextFieldLabel(this, applicationModel);
 		ShippingDetailsAddressTextField = new ShippingDetailsAddressTextField(this, applicationModel);
 		IncorrectUserNameOrPLabel1 = new IncorrectUserNameOrPLabel1(this, applicationModel);
+		mobileEditEditField = new mobileEditEditField(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -357,6 +359,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public ShippingDetailsAddressTextFieldLabel ShippingDetailsAddressTextFieldLabel() { return ShippingDetailsAddressTextFieldLabel; }
 		public ShippingDetailsAddressTextField ShippingDetailsAddressTextField() { return ShippingDetailsAddressTextField; }
 		public IncorrectUserNameOrPLabel1 IncorrectUserNameOrPLabel1() { return IncorrectUserNameOrPLabel1; }
+		public mobileEditEditField mobileEditEditField() { return mobileEditEditField; }
 		
 			public class LAPTOPSLabel extends MobileLabelNodeBase
 	{
@@ -2984,6 +2987,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
+	public class mobileEditEditField extends MobileEditFieldNodeBase
+	{
+
+		
+								public mobileEditEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("MobileEdit1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.EditFieldDescription.Builder().accessibilityId("Keyboard").className("Input").mobileCenterIndex(11).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
 	}
 
 	public class SettingsApplication extends MobileApplicationNodeBase
@@ -2998,6 +3027,11 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private SettingsSearchTextEditField SettingsSearchTextEditField;
 	private AirplaneModeSettingsButtonLabel AirplaneModeSettingsButtonLabel;
 	private AirplaneToggleOffSwitchToggle AirplaneToggleOffSwitchToggle;
+	private wiFiLabel wiFiLabel;
+	private sFTInternetLabel sFTInternetLabel;
+	private connectedLabel connectedLabel;
+	private fORGETButton fORGETButton;
+	private oNToggle oNToggle;
 						public SettingsApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -3010,6 +3044,11 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		SettingsSearchTextEditField = new SettingsSearchTextEditField(this, applicationModel);
 		AirplaneModeSettingsButtonLabel = new AirplaneModeSettingsButtonLabel(this, applicationModel);
 		AirplaneToggleOffSwitchToggle = new AirplaneToggleOffSwitchToggle(this, applicationModel);
+		wiFiLabel = new wiFiLabel(this, applicationModel);
+		sFTInternetLabel = new sFTInternetLabel(this, applicationModel);
+		connectedLabel = new connectedLabel(this, applicationModel);
+		fORGETButton = new fORGETButton(this, applicationModel);
+		oNToggle = new oNToggle(this, applicationModel);
 
 			setDisplayName("Settings");
 		}
@@ -3033,6 +3072,11 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public SettingsSearchTextEditField SettingsSearchTextEditField() { return SettingsSearchTextEditField; }
 		public AirplaneModeSettingsButtonLabel AirplaneModeSettingsButtonLabel() { return AirplaneModeSettingsButtonLabel; }
 		public AirplaneToggleOffSwitchToggle AirplaneToggleOffSwitchToggle() { return AirplaneToggleOffSwitchToggle; }
+		public wiFiLabel wiFiLabel() { return wiFiLabel; }
+		public sFTInternetLabel sFTInternetLabel() { return sFTInternetLabel; }
+		public connectedLabel connectedLabel() { return connectedLabel; }
+		public fORGETButton fORGETButton() { return fORGETButton; }
+		public oNToggle oNToggle() { return oNToggle; }
 		
 			public class AirplaneMode extends MobileUiObjectNodeBase
 	{
@@ -3233,6 +3277,136 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").resourceId("com.android.settings:id/switch_widget").mobileCenterIndex(1).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class wiFiLabel extends MobileLabelNodeBase
+	{
+
+		
+								public wiFiLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Wi-Fi");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("Wi-Fi").className("Label").mobileCenterIndex(1).resourceId("com.android.settings:id/title").text("Wi-Fi").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class sFTInternetLabel extends MobileLabelNodeBase
+	{
+
+		
+								public sFTInternetLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SFT-Internet");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().className("Label").mobileCenterIndex(4).resourceId("android:id/title").text("SFT-Internet").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class connectedLabel extends MobileLabelNodeBase
+	{
+
+		
+								public connectedLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Connected");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().className("Label").mobileCenterIndex(5).resourceId("android:id/summary").text("Connected").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class fORGETButton extends MobileButtonNodeBase
+	{
+
+		
+								public fORGETButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("FORGET");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(1).resourceId("android:id/button1").text("FORGET").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class oNToggle extends MobileToggleNodeBase
+	{
+
+		
+								public oNToggle(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("ON");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ToggleDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").mobileCenterIndex(0).resourceId("android:id/switch_widget").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

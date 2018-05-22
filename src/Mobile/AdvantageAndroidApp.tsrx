@@ -1327,6 +1327,18 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="EditField" technology="Mobile">
+                    <name>MobileEdit1</name>
+                    <codeName>mobileEditEditField</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Keyboard</property>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">11</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
@@ -1442,6 +1454,71 @@
                             <property name="ClassName" type="string" isRegExp="false">Switch</property>
                             <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/switch_widget</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Wi-Fi</name>
+                    <codeName>wiFiLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Wi-Fi</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.android.settings:id/title</property>
+                            <property name="Text" type="string" isRegExp="false">Wi-Fi</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>SFT-Internet</name>
+                    <codeName>sFTInternetLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/title</property>
+                            <property name="Text" type="string" isRegExp="false">SFT-Internet</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Connected</name>
+                    <codeName>connectedLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">5</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/summary</property>
+                            <property name="Text" type="string" isRegExp="false">Connected</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>FORGET</name>
+                    <codeName>fORGETButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/button1</property>
+                            <property name="Text" type="string" isRegExp="false">FORGET</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>ON</name>
+                    <codeName>oNToggle</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/switch_widget</property>
                         </properties>
                     </identification>
                 </object>
