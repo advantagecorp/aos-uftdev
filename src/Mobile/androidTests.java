@@ -317,9 +317,6 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
 
-        if(!isBundleTesting){
-            StandAloneTest();
-        }
 
         Print("AddNewUserAndCheckInitials");
 //        InitSetUP();
