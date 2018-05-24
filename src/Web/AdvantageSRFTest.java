@@ -483,6 +483,274 @@ public class AdvantageSRFTest extends UnitTestClassBase {
         }
     }
 
+    public void Checkout() {
+        clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
+        Print("Wait for page to bee loaded");
+        threadSleep(10000);
+        clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
+
+        // if SafePay userName and pass are empty will be error
+        // Set the payment method user name
+        setValueEditField(appModel.AdvantageShoppingPage().SafePayUsernameEditField(), "HPE123");
+        // Set the payment method password
+        setValueEditField(appModel.AdvantageShoppingPage().SafePayPasswordEditField(), "Aaaa1");
+
+        Print("Wait for page to bee loaded");
+        threadSleep(10000);
+        clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
+        // appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment().click();
+        browserSync();
+    }
+
+    private boolean existsWebElement(WebElement webElement) {
+        boolean result = false;
+        Print("EXISTS " + webElement.getClass().getSimpleName());
+        try {
+            result = webElement.exists();
+        } catch (GeneralLeanFtException e) {
+            printError(e, webElement.getClass().getSimpleName());
+            fail("GeneralLeanFtException: exists on element " + webElement.getClass().getSimpleName());
+        }
+        return result;
+    }
+
+    private void checkWithReporterIsTrueOnly(Boolean isValue, String stepName, String description) throws ReportException, GeneralLeanFtException {
+        img = browser.getPage().getSnapshot();
+        if (isValue) {
+            Reporter.reportEvent(stepName, description, Status.Passed, img);
+        } else {
+            Reporter.reportEvent(stepName, description, Status.Failed, img);
+        }
+    }
+
+    /**
+     * This method empties the shopping cart
+     */
+    public void emptyTheShoppingCart() {
+        if (!isCartEmpty()) {
+            Print("Empty the cart....");
+            // Navigate to the cart
+            clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
+            Print("Wait for cart to be loaded");
+            threadSleep(4000);
+
+            // Get the rows number from the cart table
+            int numberOfRowsInCart = 0;
+            try {
+                numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+            } catch (GeneralLeanFtException e) {
+                printError(e, "appModel.AdvantageShoppingPage().CartTable().getRows().size()");
+                fail("GeneralLeanFtException: emptyTheShoppingCart appModel.AdvantageShoppingPage().CartTable().getRows().size()");
+            }
+            int numberOfRelevantProductRowsInCart = numberOfRowsInCart - 3; // Removing the non-relevant rows number from our counter. These are the title etc.. and rows that do not represent actual products
+            Print("numberOfRelevantProductRowsInCart = " + numberOfRelevantProductRowsInCart);
+
+            // Iterate and click the "Remove" link for all products
+            for (; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--) {
+                clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+            }
+            Print("cart is empty");
+        }
+    }
+
+    // This internal method checks if the shopping cart is empty or not
+    public boolean isCartEmpty() {
+        if (getCartProductsNumberFromCartObjectInnerText() == 0)
+            return true;
+        return false;
+    }
+
+    // This internal method gets a products category object and a product object and adds them to the cart
+    // WebElementNodeBase productsCategory - 	the category object
+    // ImageNodeBase product - 					the specific product object
+    public void selectItemToPurchase(WebElement productsCategory, WebElement product, int productQuantity) {
+        Print("selectItemToPurchase() start");
+        // Pick the product's category
+        clickWebElement(productsCategory);
+
+        // Pick the specific product
+        clickWebElement(product);
+
+        // Select the first non-selected available color for the product
+        try {
+            if(appModel.AdvantageShoppingPage().SelectedColorForEnv17().exists())
+                clickWebElement(appModel.AdvantageShoppingPage().SelectedColorForEnv17());
+            else
+                clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
+        } catch (GeneralLeanFtException e) {
+            e.printStackTrace();
+        }
+
+        // If the quantity is more than 1, set this value in the quantity edit-field
+        if (productQuantity != 1) {
+            setValueEditField(appModel.AdvantageShoppingPage().QuantityOfProductWebEdit(), Integer.toString(productQuantity));
+        }
+
+        // Add it to the cart
+        clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        Print("selectItemToPurchase() end");
+    }
+
+    public void selectItemToPurchase(WebElement productsCategory, WebElement product) {
+        selectItemToPurchase(productsCategory, product, 1); // The default product quantity is 1
+    }
+
+    public void checkOutAndPayMasterCredit(String cardnum, String CVV, String holdername, boolean save) throws ReportException {
+        Print("checkOutAndPayMasterCredit start");
+        // Checkout the cart for purchase
+        // Click the cart icon
+        clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
+        // Click the checkout button
+        clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
+        // Click Next to continue the purchase wizard
+        Print("Wait for window to be loaded");
+        threadSleep(5000);
+        clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
+        // Select the payment method
+        clickWebElement(appModel.AdvantageShoppingPage().MasterCreditImage());
+
+        // Set the card number
+        setValueEditField(appModel.AdvantageShoppingPage().CardNumberEditField(), cardnum);
+        setValueEditField(appModel.AdvantageShoppingPage().CardNumberEditField(), cardnum);
+        // Set the CVV number
+        setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
+        setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
+        // Set the card holder name
+        setValueEditField(appModel.AdvantageShoppingPage().CardholderNameEditField(), holdername);
+        if (!save) {
+            // Set the Remember Me checkbox to true or false
+            setCheckBox(appModel.AdvantageShoppingPage().SaveMasterCreditCheckBox(), false);
+        }
+
+        //appModel.AdvantageShoppingPage().NEXTButton().click();
+        // Click the "Pay Now" button
+        clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButtonManualPayment());
+
+        // Verify that the product was purchased
+        try {
+            Boolean isProductPurchased = appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2);
+            // Take screenshot
+
+            if (isProductPurchased) {
+                img = browser.getPage().getSnapshot();
+                Reporter.reportEvent("Verify if product purchased", "Product successfully purchased", Status.Passed, img);
+            } else {
+                img = browser.getPage().getSnapshot();
+                Reporter.reportEvent("Verify if product purchased", "Product didn't purchase", Status.Failed, img);
+            }
+
+            //Verification(Verify.isTrue(isProductPurchased, "Verification - Product Purchase MasterCredit:", " Verify that the product was purchased successfully with MasterCredit "));
+        } catch (GeneralLeanFtException e) {
+            printError(e, "appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
+            fail("GeneralLeanFtException: appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
+        }
+        Print("checkOutAndPayMasterCredit end");
+    }
+
+    // This internal method returns the number of items in the shopping cart by the inner text of the cart icon object
+    public int getCartProductsNumberFromCartObjectInnerText() {
+        Print("getCartProductsNumberFromCartObjectInnerText start");
+        int productsNumberInCart = 0;
+
+        // Get the regular expression pattern from the Cart icon object design time description
+        //String pattern = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
+
+        // Get the actual inner text of the Cart icon object during runtime
+        String advantageCartIcontInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().LinkCartIcon());
+        Print("advantageCartIcontInnerText: " + advantageCartIcontInnerText);
+
+        // Create a Pattern object
+        //Pattern r = Pattern.compile(pattern);
+
+        // Now create matcher object
+        //Matcher m = r.matcher(advantageCartIcontInnerText);
+        //m.matches();
+        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
+        String productsNumberInCartString = advantageCartIcontInnerText.split("[ ]+")[0];//m.group(1).trim();
+        Print("productsNunberInCartString: " + productsNumberInCartString);
+        if (!productsNumberInCartString.isEmpty())
+            productsNumberInCart = Integer.parseInt(productsNumberInCartString);
+
+        Print("getCartProductsNumberFromCartObjectInnerText end (products in cart: " + productsNumberInCart);
+        return productsNumberInCart;
+    }
+
+    // This method will checkout to the cart and pay for the cart content
+    // The boolean fillCredentials specifies if to fill the credentials in the form or not
+    public void checkOutAndPaySafePay(boolean fillCredentials) throws ReportException {
+        Print("checkOutAndPaySafePay start");
+        // Checkout the cart for purchase
+        // Click the cart icon
+        clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
+        // Click the checkout button
+        clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
+        Print("Wait for window to be loaded");
+        threadSleep(5000);
+        // Click Next to continue the purchase wizard
+        clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
+        // Select the payment method
+        clickWebElement(appModel.AdvantageShoppingPage().SafepayImage());
+
+        if (fillCredentials) {
+            // Set the payment method user name
+            setValueEditField(appModel.AdvantageShoppingPage().SafePayUsernameEditField(), "HPE123");
+            // Set the payment method password
+            setValueEditField(appModel.AdvantageShoppingPage().SafePayPasswordEditField(), "Aaaa1");
+            // Set the Remember Me checkbox to true or false
+            setCheckBox(appModel.AdvantageShoppingPage().SaveChangesInProfileForFutureUse(), true);
+        }
+
+        // Click the "Pay Now" button
+        clickWebElement(appModel.AdvantageShoppingPage().PAYNOWButton());
+
+        try {
+            // Verify that the product was purchased
+            if (fillCredentials) {
+                if (appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)) {
+                    img = browser.getPage().getSnapshot();
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Passed, img);
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
+                } else {
+                    img = browser.getPage().getSnapshot();
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
+                }
+//                Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),
+//                        "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
+            } else {
+                if (appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)) {
+                    img = browser.getPage().getSnapshot();
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Passed, img);
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Failed, img);
+                } else {
+                    img = browser.getPage().getSnapshot();
+                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Failed, img);
+                }
+//                Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),
+//                        "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
+            }
+        } catch (GeneralLeanFtException e) {
+            printError(e, "appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
+            fail("GeneralLeanFtException: appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)");
+        }
+        Print("checkOutAndPaySafePay end");
+    }
+
+    public void checkOutAndPaySafePay() throws ReportException {
+        checkOutAndPaySafePay(true); // Default value is true - fill credentials
+    }
+
+    private void checkWithReporterIsFalse(Boolean isValue, String stepName, String description) throws ReportException, GeneralLeanFtException {
+        img = browser.getPage().getSnapshot();
+        if (isValue) {
+            printError(stepName + ". " + description);
+            Reporter.reportEvent(stepName, description, Status.Failed, img);
+            fail("Should be " + !isValue);
+        } else {
+            Reporter.reportEvent(stepName, description, Status.Passed, img);
+        }
+    }
+
     /**
      * Adding main user if not exists
      * @return true - main user added, false - main user not added
@@ -498,12 +766,108 @@ public class AdvantageSRFTest extends UnitTestClassBase {
     }
 
     /**
-     * This test purchases a 1000 of the first item in the Speakers category
-     * Flow: Trying to purchase 1000 products. Web application shows message that maximum is 10 and continuing with 10
+     * login
+     purchase�a product - remember it's name
+     goto orders history page:
+     Search by name�- look for the number you just created
+     => the search result shall show all relevant entries
+
+     Delete an order =>delete the order you just created, when the user clicks delete validate that the application informs the user�that his order will be cancelled, and ask him to approve.�
+
+     Validate that the following was added to the order grid:
+     Order time
      */
+    @Test
+    public void orderServiceTest() throws GeneralLeanFtException, ReportException {
+        signIn();
+
+        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+        browserSync();
+        clickWebElement(appModel.AdvantageShoppingPage().LaptopsImg());
+
+        // Select an item to purchase and add it to the cart
+        //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
+        clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());
+        String ProductName = getWebElementInnerText(appModel.AdvantageShoppingPage().LaptopName());
+        Print("ORDER:" + ProductName);
+
+        clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        Print("Wait while product adding to the shopping cart");
+        threadSleep(4000);
+
+        Checkout();
+
+        clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().MyOrdersWebElement());
+        clickWebElement(appModel.AdvantageShoppingPage().OrderSearchWebElement());
+        setValueEditField(appModel.AdvantageShoppingPage().SearchOrderEditField(), ProductName);
+
+        // TODO: check if previously purchased product in this list
+        if (existsWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement())) {
+            clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
+
+            checkWithReporterIsTrueOnly(existsWebElement(appModel.AdvantageShoppingPage().RemoveFromOrderValidate()),
+                    "Verify Search orders", "Verify that the alert window element exists.");
+            clickWebElement(appModel.AdvantageShoppingPage().YesCANCELButton());
+        } else {
+            printError("Empty list of orders");
+        }
+    }
 
     @Test
-    public void test() throws GeneralLeanFtException {
+    public void purchaseMasterCreditLaptopTest() throws GeneralLeanFtException, ReportException {
+        // Sign in to the store
+        signIn();
+
+        // Empty the shopping cart
+        emptyTheShoppingCart();
+
+        // Go to home page
+        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+        browserSync();
+
+        // Select an item to purchase and add it to the cart
+        selectItemToPurchase(appModel.AdvantageShoppingPage().LaptopsImg(), appModel.AdvantageShoppingPage().HPENVY17tTouchLaptop());
+
+        // Pay for the item
+        checkOutAndPayMasterCredit("123412341234", "774", USERNAME, false); // Verification inside
     }
+
+    // This test purchases the first item in the Tablets category
+    @Test
+    public void purchaseSafePayTabletTest() throws GeneralLeanFtException, ReportException {
+        // Sign in to the store
+        signIn();
+
+        // Empty the shopping cart
+        emptyTheShoppingCart();
+
+        // Go to home page
+        clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+        browserSync();
+
+        // Select an item to purchase and add it to the cart
+        selectItemToPurchase(appModel.AdvantageShoppingPage().TabletsImgWebElement(), appModel.AdvantageShoppingPage().TabletHPPro608G1());
+
+        // Pay for the item
+        checkOutAndPaySafePay(); // Verification inside
+    }
+
+    /**
+     * Perform logout and make sure you are not logged in
+     * @throws GeneralLeanFtException
+     * @throws ReportException
+     */
+    @Test
+    public void logOutTest() throws GeneralLeanFtException, ReportException {
+        signIn();
+        browserSync();
+        signOut();
+        Print("Wait for user will sign out");
+        threadSleep(5000);
+        checkWithReporterIsFalse(isSignedIn(), "Verify logout", "Verify if the user really signed out from site");
+    }
+
+
 
 }
