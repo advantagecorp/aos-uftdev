@@ -155,7 +155,7 @@ public class androidTests extends UnitTestClassBase {
 
 //    @Test
 //    public void testTheTest() throws GeneralLeanFtException{
-//
+//        isConnectedToTheInternet();
 //    }
     public boolean isConnectedToTheInternet() throws GeneralLeanFtException {
 
@@ -163,8 +163,28 @@ public class androidTests extends UnitTestClassBase {
 
         try {
             if (appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists()) {
-                Print("False");
-                return false;
+                Print("Not connected label exists ");
+                connectToInternet();
+                app.restart();
+                if (appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists()) {
+                    appModel.AdvantageShoppingApplication().OKButton().tap();
+                    threadSleep(1000);
+                    Print("trying to connect");
+                    appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL2);
+                    appModel.AdvantageShoppingApplication().ApplyButton().tap();
+                    threadSleep(3000);
+                    appModel.AdvantageShoppingApplication().OKButton().tap();
+                    threadSleep(3000);
+                    if(appModel.AdvantageShoppingApplication().CartAccess().exists()){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return true;
+                }
             } else {
                 Print("True");
                 return true;
@@ -178,6 +198,7 @@ public class androidTests extends UnitTestClassBase {
     }
     public void connectToInternet() throws GeneralLeanFtException{
 
+        Print("connectToInternet starts");
         //Close app so after connecting we won't get choose network window.
         app.kill();
 
@@ -192,22 +213,27 @@ public class androidTests extends UnitTestClassBase {
         appModel.SettingsApplication().wiFiLabel().tap();
         threadSleep(1000);
         Print("Enable Wi-Fi");
-        appModel.SettingsApplication().AirplaneToggleOffSwitchToggle().tap();
-        threadSleep(4000);
-        Print("Checking is connected");
-        if(appModel.SettingsApplication().connectedLabel().exists()){
+        if(appModel.SettingsApplication().AirplaneToggleONSwitch().isChecked()){
+            Print("wi-fi is on");
+            return;
+        }
+        else if (!appModel.SettingsApplication().AirplaneToggleOffSwitchToggle().isChecked()){
+            Print("wi-fi is off");
+            Print("Tapping toggle to on");
+            appModel.SettingsApplication().AirplaneToggleONSwitch().tap();
+            threadSleep(4000);
+            Print("Checking is connected");
+        if(appModel.SettingsApplication().connectedLabel().exists()) {
 
             Print("Connected to Wi-Fi");
+        }
+        else{
+            Print("Could not connected to Wi-Fi");
+        }
         }else {
 
-            if(appModel.SettingsApplication().fORGETButton().exists()){
-
-                Print("Already connected to Wi-Fi");
-            }else{
-                Print("Could not connected to Wi-Fi");
-            }
+             Print("unclear state of wi-fi");
         }
-
     }
     public void CreateNewUserUserIsNotLoggedIn(Boolean isCreateNewUserTest) throws GeneralLeanFtException {
         Print("Creating new user");
