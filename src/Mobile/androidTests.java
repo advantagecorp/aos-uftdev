@@ -212,7 +212,7 @@ public class androidTests extends UnitTestClassBase {
         Print("Tap Wi-Fi");
         appModel.SettingsApplication().wiFiLabel().tap();
         threadSleep(1000);
-        Print("Enable Wi-Fi");
+        Print("Checking is wi-fi label is checked to on ");
         if(appModel.SettingsApplication().AirplaneToggleONSwitch().isChecked()){
             Print("wi-fi is on");
             return;
