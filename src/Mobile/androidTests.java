@@ -143,10 +143,18 @@ public class androidTests extends UnitTestClassBase {
 
 //            if (!server.equals(appURL)) { // check if the setting already set up
                 setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
-                tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-//                waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 10000);
-                threadSleep(10000);
-                tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+                    threadSleep(10000);
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                }
+                else {
+                    deviceBack();
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+                    threadSleep(10000);
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                }
+
 //            }
         }
         app.restart();
@@ -348,7 +356,7 @@ public class androidTests extends UnitTestClassBase {
         Print("AddNewUserAndCheckInitials");
 //        InitSetUP();
         //change the setting of the server
-        setting();
+        //setting();
 
         // If some user already signed in do sign out
         if (isSignedIn())
