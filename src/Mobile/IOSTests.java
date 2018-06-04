@@ -17,6 +17,7 @@ import unittesting.*;
 public class IOSTests extends UnitTestClassBase {
 
     protected static AdvantageIOSApp appModel;
+    protected static AdvantageAndroidApp appModel2;
     protected static Device device;
     protected static Application app;
     static String DEVICE_ID = "98b098dc0c6c797784460d811cffc6de7b887c8d";       // ID iPhone S6
@@ -77,9 +78,14 @@ public class IOSTests extends UnitTestClassBase {
 
     @Before
     public void setUp() throws Exception {
+        Print("set up start ");
         startTimeCurrentTest = System.currentTimeMillis();
         printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         app.restart();
+        if(!isConnectedToServer()){
+            connectToInternet();
+            app.restart();
+        }
 //        waitUntilElementExists(appModel.IshoppingApplication().MenuObjUiObject());
     }
 
@@ -92,13 +98,16 @@ public class IOSTests extends UnitTestClassBase {
         printEndOfTest(curTestName.getMethodName(), passingTime);
     }
 
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //    WORK
 
     // TODO: decide how to check. If user already exist in database test failed or not?
     @Test
-    public void AddNewUserTest() throws GeneralLeanFtException, InterruptedException {
+    public void AddNewUserTest() throws Exception {
+
         if (isSignedIn())
             SignOut();
 
@@ -113,6 +122,61 @@ public class IOSTests extends UnitTestClassBase {
             Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user just created is logged in"));
         }
         print("FINISH " + this.getTestName());
+    }
+
+    public Boolean isConnectedToServer()throws Exception {
+        Print("isConnectedToInternet start");
+        threadSleep(3000);
+        if(!appModel.IshoppingApplication().MenuButton().exists()){
+
+            Print("Not connected to server");
+                return false;
+        }
+        else{
+            Print("Connected to server ");
+            return true;
+        }
+    }
+    public void connectToInternet() throws Exception{
+
+        Print("connectToInternet starts");
+        device.home();
+        threadSleep(1000);
+
+        if(appModel.homeApplication().settingsButton().exists()){
+            Print("Tap setting");
+            appModel.homeApplication().settingsButton().tap();
+        }
+        else{
+            device.home();
+            Print("Back and tap setting");
+            appModel.homeApplication().settingsButton().tap();
+        }
+        Print("Tap Wi-fi");
+        threadSleep(1000);
+        appModel.settingsApplication().wiFiLabel().tap();
+        if(!appModel.settingsApplication().wiFiToggle().isChecked()){
+            Print("Toggle Wi-fi switch to on ");
+            appModel.settingsApplication().wiFiToggle().tap();
+            threadSleep(22500);
+            if(appModel.websheetApplication().doneButton().exists()){
+                Print("Connected to internet");
+                device.home();
+                return;
+            }
+            if(!appModel.settingsApplication().wiFiToggle().isChecked()){
+                Print("Toggle Wi-fi switch to second try ");
+                appModel.settingsApplication().wiFiToggle().tap();
+                threadSleep(22500);
+                if(appModel.websheetApplication().doneButton().exists()){
+                    Print("Connected to internet");
+                    device.home();
+                    return;
+                }
+            }
+            Print("wi-fi switch is on according to leanFT ");
+            device.home();
+        }
     }
 
 //    WORK
@@ -133,9 +197,9 @@ public class IOSTests extends UnitTestClassBase {
 
         Thread.sleep(2000);
 
-        boolean invalidUserNameOrPassMessage = appModel.IshoppingApplication().InvalidUserNameOrPasLabel().exists(3);
+        boolean invalidUserNameOrPassMessage = appModel.IshoppingApplication().LOGINButton().exists(3);
         if (invalidUserNameOrPassMessage)
-                print("INVALID user name or password message detected!");
+                print("Could not login");
 
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
@@ -182,6 +246,7 @@ public class IOSTests extends UnitTestClassBase {
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
+
         if (!isSignedIn())
             SignIn();
 
@@ -216,7 +281,7 @@ public class IOSTests extends UnitTestClassBase {
         appModel.IshoppingApplication().UPDATECARTButton().tap();
 
         waitUntilElementExists(appModel.IshoppingApplication().FirstCartElement());
-        device.back();
+        //device.back();
         CheckOut("MasterCredit");
 
         //Buy(appModel.IshoppingApplication().TABLETSLabel(), appModel.IshoppingApplication().TabletItem(),"MasterCredit");
@@ -289,9 +354,9 @@ public class IOSTests extends UnitTestClassBase {
         print("TAP QuantityButton");
         appModel.IshoppingApplication().QuantityButton().tap();
         print("TAP QuantityEditField");
-        appModel.IshoppingApplication().QuantityEditField().tap();
+        appModel.IshoppingApplication().mobileEditEditField().tap();
         print("SET QuantityEditField: " + HUGE_QUANTITY);
-        appModel.IshoppingApplication().QuantityEditField().setText(HUGE_QUANTITY);
+        appModel.IshoppingApplication().mobileEditEditField().setText(HUGE_QUANTITY);
         print("TAP ApplyQuantity");
         appModel.IshoppingApplication().ApplyQuantity().tap();
         print("TAP ADDTOCARTButton");
@@ -344,19 +409,6 @@ public class IOSTests extends UnitTestClassBase {
 
     //////////////////////////////////////////////        end of tests   ///////////////////////////////////////////////
 
-    public boolean IsLoggedIn() throws GeneralLeanFtException {
-        print("\nSTART IsLoggedIn()");
-        boolean result = true;
-        print("tap MenuButton");
-        appModel.IshoppingApplication().MenuButton().tap();
-        String loginTxt = appModel.IshoppingApplication().LoginLabel().getText();
-        Print("current login = '" + loginTxt + "'");
-        if (loginTxt.equals("LOG IN")) {
-            result = false;
-        }
-        print("END IsLoggedIn()");
-        return result;
-    }
 
     public boolean IsLoggedInUser(String userName) throws GeneralLeanFtException {
         print("\nSTART IsLoggedInUser()");
@@ -427,13 +479,20 @@ public class IOSTests extends UnitTestClassBase {
     }
 
     public void EmptyCart() throws GeneralLeanFtException, InterruptedException {
-        appModel.IshoppingApplication().CarticonButton().tap();
+        Print("EmptyCart start");
+
+        print("tap MenuButton");
+        appModel.IshoppingApplication().MenuButton().tap();
+        Print("Tap cart label");
+        appModel.IshoppingApplication().CARTLabel().tap();
+        threadSleep(1000);
 
         while (!appModel.IshoppingApplication().NoProductsInCartLabel().exists(2)) {
             appModel.IshoppingApplication().FirstCartElement().swipe(SwipeDirection.LEFT);
             appModel.IshoppingApplication().RemoveButton().tap();
             //waitUntilElementExists(appModel.IshoppingApplication().MenuObjUiObject());
         }
+
     }
 
     public void Print(String msg) {
@@ -474,8 +533,6 @@ public class IOSTests extends UnitTestClassBase {
         //connect between the appModel and the device
         appModel = new AdvantageIOSApp(device);
 
-        print("Install application...");
-        app.install();
     }
 
     //use this in local testing
@@ -543,13 +600,6 @@ public class IOSTests extends UnitTestClassBase {
         System.out.println("SET ConfirmPasswordSignUpEditField: " + PASS);
         appModel.IshoppingApplication().ConfirmPasswordSignUpEditField().setText(PASS);
 
-//            print("SWIPE UP");
-//            TODO: CHECK WHY device.swipe not working
-//            device.swipe(SwipeDirection.UP);
-//            device.swipe(SwipeDirection.UP);
-//            appModel.IshoppingApplication().ConfirmPasswordSignUpEditField().swipe(SwipeDirection.UP);
-//            appModel.IshoppingApplication().PhoneNumberTextFieldLabeEditField().swipe(SwipeDirection.UP);
-
         print("Go to First Name");
         appModel.IshoppingApplication().KeyboardNext().tap();
         print("Go to Last Name");
@@ -579,30 +629,6 @@ public class IOSTests extends UnitTestClassBase {
 
         print("TAP RegisterButton()");
         appModel.IshoppingApplication().RegisterButton().tap();
-
-//        if (!isTest) {
-//            if (appModel.IshoppingApplication().UserNameAlreadyExistsLabel1().exists()) {
-//                print("TAP CreateAccountOkButton");
-//                appModel.IshoppingApplication().CreateAccountOkButton().tap();
-//                print("TAP MenuButton");
-//                appModel.IshoppingApplication().MenuButton().tap();
-//                print("TAP MainMenuHome");
-//                appModel.IshoppingApplication().MainMenuHome().tap();
-//                print("USER ALREADY EXIST");
-//                Verification(Verify.isTrue(false, "Create New User", "Verify if received message that user already exist"));
-//            }
-//            Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user was created successfully"));
-//        } else {
-//            boolean existUser = appModel.IshoppingApplication().UserNameAlreadyExistsLabel1().exists(3);
-//            print("TAP CreateAccountOkButton");
-//            appModel.IshoppingApplication().CreateAccountOkButton().tap();
-//            print("TAP MenuButton");
-//            appModel.IshoppingApplication().MenuButton().tap();
-//            print("TAP MainMenuHome");
-//            appModel.IshoppingApplication().MainMenuHome().tap();
-//            print("USER ALREADY EXIST");
-//            Verification(Verify.isTrue(existUser, "Create New User negative test", "Verify that existing user wasn't created "));
-//        }
 
         boolean isUserExistMessage = appModel.IshoppingApplication().UserNameAlreadyExistsLabel1().exists();
 //        boolean existUser = appModel.IshoppingApplication().UserNameAlreadyExistsLabel1().exists(3);

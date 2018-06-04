@@ -1079,16 +1079,6 @@
                     </identification>
                 </object>
                 <object type="EditField" technology="Mobile">
-                    <name>QuantityEditField</name>
-                    <codeName>QuantityEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Input</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="EditField" technology="Mobile">
                     <name>PasswordLoginEditField</name>
                     <codeName>PasswordLoginEditField</codeName>
                     <identification>
@@ -1195,6 +1185,211 @@
                             <property name="ClassName" type="string" isRegExp="false">TableCell</property>
                             <property name="Container" type="string" isRegExp="false">Table[0][0][0]</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>MobileEdit</name>
+                    <codeName>mobileEditEditField</codeName>
+                    <description>Quantity field</description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>22</name>
+                    <codeName>button</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Advantage Shopping</name>
+            <codeName>advantageShoppingApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.mf.iShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">true</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="Mobile">
+                    <name>APPLY</name>
+                    <codeName>aPPLYButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">APPLY</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">APPLY</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="Mobile">
+                    <name>Server URL</name>
+                    <codeName>serverURLEditField</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Input</property>
+                            <property name="Hint" type="string" isRegExp="false">Server URL</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>Ok</name>
+                    <codeName>okButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Ok</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Ok</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>You are not connected to the internet</name>
+                    <codeName>youAreNotConnectedToTheInternetLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">You are not connected to the internet</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">You are not connected to the internet</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Incorrect user name or password.</name>
+                    <codeName>incorrectUserNameOrPasswordLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Incorrect user name or password.</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Incorrect user name or password.</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Home</name>
+            <codeName>homeApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">MC.Home</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="Mobile">
+                    <name>Settings</name>
+                    <codeName>settingsButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Settings</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">16</property>
+                            <property name="Text" type="string" isRegExp="false">Settings</property>
+                        </properties>
+                    </identification>
+                    <children>
+                        <object type="Button" technology="Mobile">
+                            <name>settingBtn</name>
+                            <codeName>settingBtn</codeName>
+                            <identification>
+                                <properties>
+                                    <property name="ClassName" type="string" isRegExp="false">Button</property>
+                                    <property name="MobileCenterIndex" type="int" isRegExp="false">16</property>
+                                    <property name="AccessibilityId" type="string" isRegExp="false">Setting</property>
+                                    <property name="Text" type="string" isRegExp="false">Setting</property>
+                                </properties>
+                            </identification>
+                        </object>
+                    </children>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Settings</name>
+            <codeName>settingsApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">MC.Settings</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Label" technology="Mobile">
+                    <name>Wi-Fi</name>
+                    <codeName>wiFiLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Wi-Fi</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][4][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Wi-Fi</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>Wi-Fi</name>
+                    <codeName>wiFiToggle</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Wi-Fi</property>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="Container" type="string" isRegExp="false">Table[0][0][0]</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
+        </object>
+        <object type="Application" technology="Mobile">
+            <name>Websheet</name>
+            <codeName>websheetApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.apple.WebSheet</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="Mobile">
+                    <name>Done</name>
+                    <codeName>doneButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Done</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="Text" type="string" isRegExp="false">Done</property>
                         </properties>
                     </identification>
                 </object>

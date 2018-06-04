@@ -1542,5 +1542,57 @@
                 </object>
             </children>
         </object>
+        <object type="Application" technology="Mobile">
+            <name>Advantage Shopping1</name>
+            <codeName>advantageShoppingApplication</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="Identifier" type="string" isRegExp="false">com.mf.iShopping</property>
+                    <property name="IsPackaged" type="boolean" isRegExp="false">true</property>
+                </properties>
+            </identification>
+            <children>
+                <object type="Button" technology="Mobile">
+                    <name>CONNECT</name>
+                    <codeName>cONNECTButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">CONNECT</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">CONNECT</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>You are not connected to internet</name>
+                    <codeName>youAreNotConnectedToInternetLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">You are not connected to internet</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">You are not connected to internet</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>Ok</name>
+                    <codeName>okButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Ok</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Ok</property>
+                        </properties>
+                    </identification>
+                </object>
+            </children>
+        </object>
     </objects>
 </applicationModel>

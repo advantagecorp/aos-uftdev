@@ -184,17 +184,20 @@ public class androidTests extends UnitTestClassBase {
                     appModel.AdvantageShoppingApplication().OKButton().tap();
                     threadSleep(3000);
                     if(appModel.AdvantageShoppingApplication().CartAccess().exists()){
+                        Print("isConnected to internet returned true");
                         return true;
                     }
                     else{
+                        Print("isConnected to internet returned false");
                         return false;
                     }
                 }
                 else{
+                    Print("isConnected to internet returned true");
                     return true;
                 }
             } else {
-                Print("True");
+                Print("isConnected to internet returned true");
                 return true;
             }
         }

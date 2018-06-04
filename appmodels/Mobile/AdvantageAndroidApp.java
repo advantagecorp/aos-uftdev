@@ -17,6 +17,7 @@ import com.hp.lft.sdk.web.*;
 public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppingApplication AdvantageShoppingApplication;
 	private SettingsApplication SettingsApplication;
 	private AdvantageShoppingPage AdvantageShoppingPage;
+	private advantageShoppingApplication advantageShoppingApplication;
 	
 	public AdvantageAndroidApp(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -24,12 +25,14 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				AdvantageShoppingApplication = new AdvantageShoppingApplication(contextTestObject, this);
 		SettingsApplication = new SettingsApplication(contextTestObject, this);
 		AdvantageShoppingPage = new AdvantageShoppingPage(contextTestObject, this);
+		advantageShoppingApplication = new advantageShoppingApplication(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
 			public AdvantageShoppingApplication AdvantageShoppingApplication() { return AdvantageShoppingApplication; }
 		public SettingsApplication SettingsApplication() { return SettingsApplication; }
 		public AdvantageShoppingPage AdvantageShoppingPage() { return AdvantageShoppingPage; }
+		public advantageShoppingApplication advantageShoppingApplication() { return advantageShoppingApplication; }
 
 		public class AdvantageShoppingApplication extends MobileApplicationNodeBase
 	{
@@ -3462,6 +3465,119 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("productColor ng-scope colorSelected BLACK").tagName("SPAN").innerText("").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	}
+
+	public class advantageShoppingApplication extends MobileApplicationNodeBase
+	{
+
+		
+			private cONNECTButton cONNECTButton;
+	private youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel;
+	private okButton okButton;
+						public advantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+					cONNECTButton = new cONNECTButton(this, applicationModel);
+		youAreNotConnectedToInternetLabel = new youAreNotConnectedToInternetLabel(this, applicationModel);
+		okButton = new okButton(this, applicationModel);
+
+			setDisplayName("Advantage Shopping1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ApplicationDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ApplicationDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ApplicationDescription.Builder().identifier("com.mf.iShopping").packaged(true).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				public cONNECTButton cONNECTButton() { return cONNECTButton; }
+		public youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel() { return youAreNotConnectedToInternetLabel; }
+		public okButton okButton() { return okButton; }
+		
+			public class cONNECTButton extends MobileButtonNodeBase
+	{
+
+		
+								public cONNECTButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CONNECT");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("CONNECT").className("Button").mobileCenterIndex(0).text("CONNECT").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class youAreNotConnectedToInternetLabel extends MobileLabelNodeBase
+	{
+
+		
+								public youAreNotConnectedToInternetLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("You are not connected to internet");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("You are not connected to internet").className("Label").mobileCenterIndex(0).text("You are not connected to internet").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class okButton extends MobileButtonNodeBase
+	{
+
+		
+								public okButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Ok");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("Ok").className("Button").mobileCenterIndex(0).text("Ok").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
