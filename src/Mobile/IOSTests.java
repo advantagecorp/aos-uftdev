@@ -102,7 +102,7 @@ public class IOSTests extends UnitTestClassBase {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//    WORK
+//    git
 
     // TODO: decide how to check. If user already exist in database test failed or not?
     @Test
