@@ -101,9 +101,9 @@ public class androidTests extends UnitTestClassBase {
         printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         Print("restarting application...");
         app.restart();
-        if(!isConnectedToTheInternet()){
-            connectToInternet();
-        }
+//        if(!isConnectedToTheInternet()){
+//            connectToInternet();
+//        }
     }
 
     @After
@@ -818,12 +818,12 @@ public class androidTests extends UnitTestClassBase {
         // Check first message on start application that You are not connected to internet
         Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
         Print("TAP OKButton");
-        //appModel.AdvantageShoppingApplication().okButton().tap();
+        appModel.AdvantageShoppingApplication().oKButton1().tap();
         threadSleep(5000);
 
         // Check that default server setted to "Offline Mode"
         String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
-        Print("cur server in EditTextServer: " + server);
+        Print("Server in EditTextServer: " + server);
         Verification(Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting"));
         Print("TAP ApplyButton");
         appModel.AdvantageShoppingApplication().ApplyButton().tap();
@@ -832,7 +832,7 @@ public class androidTests extends UnitTestClassBase {
         // Check that right message appeared after clicking on APPLY button
         Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(), "Verification - offline mode note massage", "Verify that the note for offline mode appears");
         Print("TAP OKButton");
-        //appModel.AdvantageShoppingApplication().okButton().tap();
+        appModel.AdvantageShoppingApplication().oKButton1().tap();
 
         // TODO: add all functions that contains OfflineMode
 
@@ -861,8 +861,10 @@ public class androidTests extends UnitTestClassBase {
 
 //    @Test
 //    public void uploadNewImageToProductTest() throws GeneralLeanFtException{
-//        if (isSignedIn())
-//            SignOut();
+//        Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
+//        Print("TAP OKButton");
+//        appModel.AdvantageShoppingApplication().oKButton1().tap();
+//        threadSleep(5000);
 //
 //    }
 

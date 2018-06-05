@@ -138,6 +138,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private mobileEditEditField mobileEditEditField;
 	private youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel;
 	private oKButton oKButton;
+	private oKButton1 oKButton1;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -245,6 +246,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		mobileEditEditField = new mobileEditEditField(this, applicationModel);
 		youAreNotConnectedToInternetLabel = new youAreNotConnectedToInternetLabel(this, applicationModel);
 		oKButton = new oKButton(this, applicationModel);
+		oKButton1 = new oKButton1(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -363,6 +365,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public mobileEditEditField mobileEditEditField() { return mobileEditEditField; }
 		public youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel() { return youAreNotConnectedToInternetLabel; }
 		public oKButton oKButton() { return oKButton; }
+		public oKButton1 oKButton1() { return oKButton1; }
 		
 			public class LAPTOPSLabel extends MobileLabelNodeBase
 	{
@@ -3033,6 +3036,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(0).resourceId("android:id/button1").text("OK").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class oKButton1 extends MobileButtonNodeBase
+	{
+
+		
+								public oKButton1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("OK1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).resourceId("button1").text("OK").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

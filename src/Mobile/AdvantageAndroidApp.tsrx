@@ -1350,6 +1350,19 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK1</name>
+                    <codeName>oKButton1</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="ResourceId" type="string" isRegExp="false">button1</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
