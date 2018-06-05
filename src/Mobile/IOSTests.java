@@ -462,11 +462,17 @@ public class IOSTests extends UnitTestClassBase {
                 if (!appModel.IshoppingApplication().InvalidUserNameOrPasLabel().exists(3)) {
                     Print(UNAME + " - Login success");
                     Verify.isTrue(true, "Sign in", "verify that user sign in success");
-
                     return true;
                 }
                 Verify.isTrue(true, "Invalid Sign in", "verify that user can't sign in with invalid user");
-                return false;
+                Print("Assuming the user was'nt created yet");
+                if(CreateNewUser()){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+
 //            }
 //            print("tap MenuButton");
 //            appModel.IshoppingApplication().MenuButton().tap();
