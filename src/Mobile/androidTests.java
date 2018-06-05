@@ -101,9 +101,9 @@ public class androidTests extends UnitTestClassBase {
         printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         Print("restarting application...");
         app.restart();
-//        if(!isConnectedToTheInternet()){
-//            connectToInternet();
-//        }
+        if(!isConnectedToTheInternet()){
+            connectToInternet();
+        }
     }
 
     @After
