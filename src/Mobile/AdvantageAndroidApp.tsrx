@@ -876,21 +876,6 @@
                         <tag>setting</tag>
                     </tags>
                 </object>
-                <object type="Button" technology="Mobile">
-                    <name>OK</name>
-                    <codeName>OKButton</codeName>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">OK</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="ResourceId" type="string" isRegExp="false">button1</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                        </properties>
-                    </identification>
-                    <tags>
-                        <tag>setting</tag>
-                    </tags>
-                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>SignUPtUiObject</name>
                     <codeName>SignUPtUiObject</codeName>
@@ -1339,6 +1324,32 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="Label" technology="Mobile">
+                    <name>You are not connected to internet</name>
+                    <codeName>youAreNotConnectedToInternetLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">You are not connected to internet</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">You are not connected to internet</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK</name>
+                    <codeName>oKButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/button1</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
@@ -1537,58 +1548,6 @@
                             <property name="ClassName" type="string" isRegExp="false">productColor ng-scope colorSelected BLACK</property>
                             <property name="TagName" type="string" isRegExp="false">SPAN</property>
                             <property name="InnerText" type="string" isRegExp="false"></property>
-                        </properties>
-                    </identification>
-                </object>
-            </children>
-        </object>
-        <object type="Application" technology="Mobile">
-            <name>Advantage Shopping1</name>
-            <codeName>advantageShoppingApplication</codeName>
-            <description></description>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.mf.iShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">true</property>
-                </properties>
-            </identification>
-            <children>
-                <object type="Button" technology="Mobile">
-                    <name>CONNECT</name>
-                    <codeName>cONNECTButton</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">CONNECT</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                            <property name="Text" type="string" isRegExp="false">CONNECT</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>You are not connected to internet</name>
-                    <codeName>youAreNotConnectedToInternetLabel</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">You are not connected to internet</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                            <property name="Text" type="string" isRegExp="false">You are not connected to internet</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Button" technology="Mobile">
-                    <name>Ok</name>
-                    <codeName>okButton</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">Ok</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                            <property name="Text" type="string" isRegExp="false">Ok</property>
                         </properties>
                     </identification>
                 </object>

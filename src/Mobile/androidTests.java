@@ -126,12 +126,12 @@ public class androidTests extends UnitTestClassBase {
     public void setting() throws GeneralLeanFtException {
         Print("setting() start");
         if (appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
             setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
             tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
             threadSleep(15000);
 //            waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 5000);
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
         } else {
 //            boolean isMainMenuExist = waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
 //            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
@@ -146,13 +146,13 @@ public class androidTests extends UnitTestClassBase {
                 if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
                     tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
                     threadSleep(10000);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
                 }
                 else {
                     deviceBack();
                     tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
                     threadSleep(10000);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
                 }
 
 //            }
@@ -175,13 +175,13 @@ public class androidTests extends UnitTestClassBase {
                 connectToInternet();
                 app.restart();
                 if (appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists()) {
-                    appModel.AdvantageShoppingApplication().OKButton().tap();
+                    appModel.AdvantageShoppingApplication().oKButton().tap();
                     threadSleep(1000);
                     Print("trying to connect");
                     appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL2);
                     appModel.AdvantageShoppingApplication().ApplyButton().tap();
                     threadSleep(3000);
-                    appModel.AdvantageShoppingApplication().OKButton().tap();
+                    appModel.AdvantageShoppingApplication().oKButton().tap();
                     threadSleep(3000);
                     if(appModel.AdvantageShoppingApplication().CartAccess().exists()){
                         Print("isConnected to internet returned true");
@@ -818,7 +818,7 @@ public class androidTests extends UnitTestClassBase {
         // Check first message on start application that You are not connected to internet
         Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
         Print("TAP OKButton");
-        appModel.AdvantageShoppingApplication().OKButton().tap();
+        //appModel.AdvantageShoppingApplication().okButton().tap();
         threadSleep(5000);
 
         // Check that default server setted to "Offline Mode"
@@ -832,7 +832,7 @@ public class androidTests extends UnitTestClassBase {
         // Check that right message appeared after clicking on APPLY button
         Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(), "Verification - offline mode note massage", "Verify that the note for offline mode appears");
         Print("TAP OKButton");
-        appModel.AdvantageShoppingApplication().OKButton().tap();
+        //appModel.AdvantageShoppingApplication().okButton().tap();
 
         // TODO: add all functions that contains OfflineMode
 
