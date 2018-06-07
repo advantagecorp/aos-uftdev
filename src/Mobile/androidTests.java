@@ -283,22 +283,15 @@ public class androidTests extends UnitTestClassBase {
         threadSleep(1000);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
 
-        threadSleep(2000);
+        threadSleep(3000);
 
         //If the register button still there the registration failed.
         if (appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
-            Print("New user wasn't created. Checking if test user was created earlier");
-            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-            tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
-            setTextEditField(appModel.AdvantageShoppingApplication().UserNameEdit(), UNAME);
-            setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
-            threadSleep(1000);
+            Print("New user wasn't created. probably already exist creating a different one ");
             //If a test user was already, we want to make sure a new user is created.
             if(isCreateNewUserTest){
                 Print("creating user with different values");
 
-                //In days of heavy use of this test we will have to create several new users.
                 Random rand = new Random();
                 int  randomNumber = rand.nextInt(100) + 1;
 
@@ -331,14 +324,10 @@ public class androidTests extends UnitTestClassBase {
                             deviceSwipe(SwipeDirection.UP);
                         }
                     }
-
                 }
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
             }
-            //If the test user doesn't exists at this point the test should fail.
-
         }
-//                waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
         threadSleep(5000);
 
         Boolean isSignedIn = isSignedIn();
