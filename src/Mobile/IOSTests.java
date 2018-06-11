@@ -250,14 +250,16 @@ public class IOSTests extends UnitTestClassBase {
         if (!isSignedIn())
             SignIn();
 
-        EmptyCart();
+        //EmptyCart();
 
         print("TAP MenuButton");
         appModel.IshoppingApplication().MenuButton().tap();
+        print("TAP MainMenuHome");
+        appModel.IshoppingApplication().MainMenuHome().tap();
         print("TAP TABLETSLabel");
-        appModel.IshoppingApplication().TABLETSLabel().tap();
+        appModel.IshoppingApplication().tABLETSLabel().tap();
         print("TAP TabletItem");
-        appModel.IshoppingApplication().TabletItem().tap();
+        appModel.IshoppingApplication().hPElitePad1000G2TabletLabel().tap();
         print("TAP ADDTOCARTButton");
         appModel.IshoppingApplication().ADDTOCARTButton().tap();
         print("TAP CarticonButton");
@@ -487,18 +489,8 @@ public class IOSTests extends UnitTestClassBase {
     public void EmptyCart() throws GeneralLeanFtException, InterruptedException {
         Print("EmptyCart start");
 
-        print("tap MenuButton");
-        appModel.IshoppingApplication().MenuButton().tap();
-        Print("Tap cart label");
-        appModel.IshoppingApplication().CARTLabel().tap();
-        threadSleep(1000);
 
-        while (!appModel.IshoppingApplication().NoProductsInCartLabel().exists(2)) {
-            appModel.IshoppingApplication().FirstCartElement().swipe(SwipeDirection.LEFT);
-            appModel.IshoppingApplication().RemoveButton().tap();
-            //waitUntilElementExists(appModel.IshoppingApplication().MenuObjUiObject());
-        }
-
+        CheckOut("safepay");
     }
 
     public void Print(String msg) {
@@ -590,13 +582,13 @@ public class IOSTests extends UnitTestClassBase {
         appModel.IshoppingApplication().SignUpButton().tap();
         Thread.sleep(5000);
 
-        appModel.IshoppingApplication().UserNameSignUpEditField().tap();
+        appModel.IshoppingApplication().userNameTextFieldLabelEditField().tap();
         System.out.println("SET UserNameSignUpEditField: " + UNAME);
-        appModel.IshoppingApplication().UserNameSignUpEditField().setText(UNAME);
+        appModel.IshoppingApplication().userNameTextFieldLabelEditField().setText(UNAME);
 
-        appModel.IshoppingApplication().EmailSignUpEditField().tap();
+        appModel.IshoppingApplication().emailTextFieldLabelEditField().tap();
         System.out.println("SET EmailSignUpEditField: " + UNAME + "@default.com");
-        appModel.IshoppingApplication().EmailSignUpEditField().setText(UNAME + "@default.com");
+        appModel.IshoppingApplication().emailTextFieldLabelEditField().setText(UNAME + "@default.com");
 
         appModel.IshoppingApplication().PasswordSignUpEditField().tap();
         System.out.println("SET PasswordSignUpEditField: " + PASS);
@@ -658,24 +650,39 @@ public class IOSTests extends UnitTestClassBase {
     }
 
     public void CheckOut(String paymethod) throws GeneralLeanFtException {
-        appModel.IshoppingApplication().CarticonButton().tap();
-        appModel.IshoppingApplication().CHECKOUTButton().tap();
-
-        waitUntilElementExists(appModel.IshoppingApplication().PaymentEditUiObject());
-        appModel.IshoppingApplication().PaymentEditUiObject().tap();
-
-        if (paymethod.equals("safepay")) {
-            // pay with safepay
-
-            SafePay(false);
+        if(appModel.IshoppingApplication().CarticonButton().exists()){
+            appModel.IshoppingApplication().CarticonButton().tap();
         }
-
-        // todo: need to separate the images of safepay and master credit
-        else {
-            // pay with master credit
-
-            MasterCredit("1234567812347894", "458", UNAME, false);
+        else{
+            System.out.println("TAP MenuButton");
+            appModel.IshoppingApplication().MenuButton().tap();
+            System.out.println("TAP Cart Button");
+            appModel.IshoppingApplication().CARTLabel().tap();
         }
+        Print("Tap checkout");
+        appModel.IshoppingApplication().cHECKOUTPAY4036Button().tap();
+
+        threadSleep(1000);
+        appModel.IshoppingApplication().PAYNOWButton().tap();
+        threadSleep(2000);
+
+        Verification(Verify.isTrue(appModel.IshoppingApplication().OkButton().exists(), "Purchase safepay", "verify that user purchased in success using safepay"));
+        appModel.IshoppingApplication().OkButton().tap();
+
+//        appModel.IshoppingApplication().mobileObjectUiObject1().tap();
+//
+//        if (paymethod.equals("safepay")) {
+//            // pay with safepay
+//
+//            SafePay(false);
+//        }
+//
+//        // todo: need to separate the images of safepay and master credit
+//        else {
+//            // pay with master credit
+//
+//            MasterCredit("1234567812347894", "458", UNAME, false);
+//        }
     }
 
     public void SafePay(boolean save) throws GeneralLeanFtException {
