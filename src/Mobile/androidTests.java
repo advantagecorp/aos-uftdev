@@ -957,6 +957,7 @@ public class androidTests extends UnitTestClassBase {
         }
         Print("signed in with right user True");
     }
+    //git
     /**
      * Function checks if any user signed in
      * @return true if signed in
