@@ -465,11 +465,7 @@ public class androidTests extends UnitTestClassBase {
 					14.� Click Pay Now
 					15.� Verify receipt 
     	 */
-    	if (!isSignedInWithRightCredential(UNAME)){
-    	    
-            SignOut();
-            SignIn(false);
-        }
+        checkIsSignedInWithRightUserSignInIfNot();
 
         //buy a leptop item
         BuyLaptop();
@@ -950,6 +946,8 @@ public class androidTests extends UnitTestClassBase {
     }
     public void checkIsSignedInWithRightUserSignInIfNot() throws GeneralLeanFtException{
 
+        Print("checkIsSignedInWithRightUserSignInIfNot start");
+
         if (!isSignedInWithRightCredential(UNAME)){
             if(isSignedIn()){
                 SignOut();
@@ -957,6 +955,7 @@ public class androidTests extends UnitTestClassBase {
             }
             SignIn(false);
         }
+        Print("signed in with right user True");
     }
     /**
      * Function checks if any user signed in
