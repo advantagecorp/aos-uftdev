@@ -7,7 +7,6 @@ import java.util.Random;
 import com.hp.lft.report.ReportException;
 import com.hp.lft.report.Reporter;
 import com.hp.lft.report.Status;
-import com.hp.lft.sdk.internal.mobile.MobileUiObjectBase;
 import org.junit.*;
 
 import com.hp.lft.sdk.*;
@@ -246,7 +245,7 @@ public class androidTests extends UnitTestClassBase {
              Print("unclear state of wi-fi");
         }
     }
-    public void CreateNewUserUserIsNotLoggedIn(Boolean isCreateNewUserTest) throws GeneralLeanFtException {
+    public void CreateNewUserUserIsNotLoggedIn() throws GeneralLeanFtException {
         Print("Creating new user");
         //Check for right screen
         if(!appModel.AdvantageShoppingApplication().DonTHaveAnAccount().exists()){
@@ -259,7 +258,7 @@ public class androidTests extends UnitTestClassBase {
 
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
 
-        threadSleep(5000);
+        threadSleep(3000);
         //Set up private details
         setTextEditField(appModel.AdvantageShoppingApplication().UserNameSignUp(), UNAME);
         setTextEditField(appModel.AdvantageShoppingApplication().EmailSignUp(), UNAME+ "@default.com");
@@ -283,52 +282,16 @@ public class androidTests extends UnitTestClassBase {
         threadSleep(1000);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
 
-        threadSleep(3000);
+        threadSleep(2000);
 
         //If the register button still there the registration failed.
         if (appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
             Print("New user wasn't created. probably already exist creating a different one ");
             //If a test user was already, we want to make sure a new user is created.
-            if(isCreateNewUserTest){
-                Print("creating user with different values");
-
-                Random rand = new Random();
-                int  randomNumber = rand.nextInt(100) + 1;
-
-                if (isSignedIn())
-                    SignOut();
-                tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-                tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
-                tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
-
-                threadSleep(3000);
-                //Set up private details
-                setTextEditField(appModel.AdvantageShoppingApplication().UserNameSignUp(), UNAME+randomNumber);
-                setTextEditField(appModel.AdvantageShoppingApplication().EmailSignUp(), UNAME+randomNumber+ "@default.com");
-                setTextEditField(appModel.AdvantageShoppingApplication().PasswordSignUp(), PASS+randomNumber);
-                setTextEditField(appModel.AdvantageShoppingApplication().ConfirmPassSignUp(), PASS+randomNumber);
-                deviceSwipe(SwipeDirection.UP);
-                deviceSwipe(SwipeDirection.UP);
-                threadSleep(1000);
-                //set up address details
-                setTextEditField(appModel.AdvantageShoppingApplication().AddressSignUpEditField(), "Altalef 6");
-                setTextEditField(appModel.AdvantageShoppingApplication().CitySignUpEditField(), "Kiryat Akron");
-                setTextEditField(appModel.AdvantageShoppingApplication().ZIPSignUpEditField(), "343434");
-                threadSleep(1000);
-                if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
-                    deviceSwipe(SwipeDirection.UP);
-                    if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
-                        deviceSwipe(SwipeDirection.UP);
-                        if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
-                            deviceBack();
-                            deviceSwipe(SwipeDirection.UP);
-                        }
-                    }
-                }
-                tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
-            }
+            createDifferentUser();
+            return;
         }
-        threadSleep(5000);
+        threadSleep(1000);
 
         Boolean isSignedIn = isSignedIn();
         Print("isSignedIn " + isSignedIn);
@@ -336,26 +299,72 @@ public class androidTests extends UnitTestClassBase {
         Verification(Verify.isTrue(isSignedIn, "New User creation", "verify that the creation of new user for testing  succeeds"));
     }
 
-    public void StandAloneTest() throws GeneralLeanFtException{
-        Print("StandAloneTest killing app");
-        app.kill();
-    }
+    public void createDifferentUser() throws GeneralLeanFtException{
+
+            Print("creating user with different values");
+
+            Random rand = new Random();
+            int  randomNumber = rand.nextInt(100) + 1;
+
+            if (isSignedIn()) {
+                SignOut();
+            }
+            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+            tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
+            tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
+
+            threadSleep(3000);
+            //Set up private details
+            setTextEditField(appModel.AdvantageShoppingApplication().UserNameSignUp(), UNAME+randomNumber);
+            setTextEditField(appModel.AdvantageShoppingApplication().EmailSignUp(), UNAME+randomNumber+ "@default.com");
+            setTextEditField(appModel.AdvantageShoppingApplication().PasswordSignUp(), PASS+randomNumber);
+            setTextEditField(appModel.AdvantageShoppingApplication().ConfirmPassSignUp(), PASS+randomNumber);
+            deviceSwipe(SwipeDirection.UP);
+            deviceSwipe(SwipeDirection.UP);
+            threadSleep(1000);
+            //set up address details
+            setTextEditField(appModel.AdvantageShoppingApplication().AddressSignUpEditField(), "Altalef 6");
+            setTextEditField(appModel.AdvantageShoppingApplication().CitySignUpEditField(), "Kiryat Akron");
+            setTextEditField(appModel.AdvantageShoppingApplication().ZIPSignUpEditField(), "343434");
+            threadSleep(1000);
+            if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
+                deviceSwipe(SwipeDirection.UP);
+                if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
+                    deviceSwipe(SwipeDirection.UP);
+                    if (!appModel.AdvantageShoppingApplication().REGISTERButton().exists()){
+                        deviceBack();
+                        deviceSwipe(SwipeDirection.UP);
+                    }
+                }
+            }
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().REGISTERButton());
+            threadSleep(3000);
+
+        Boolean isSignedIn = isSignedIn();
+        Print("isSignedIn " + isSignedIn);
+
+        Verification(Verify.isTrue(isSignedIn, "New User creation", "verify that the creation of new user for testing  succeeds"));
+        }
 
     @Test
     public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
 
-
         Print("AddNewUserAndCheckInitials");
+
 //        InitSetUP();
         //change the setting of the server
         //setting();
 
-        // If some user already signed in do sign out
-        if (isSignedIn())
+        if (isSignedInWithRightCredential(UNAME)) {
+            createDifferentUser();
+            return;
+        }
+        else{
+            isSignedIn();
             SignOut();
-
+        }
         //create a new user for testing if not exists
-        CreateNewUserUserIsNotLoggedIn(true);
+        CreateNewUserUserIsNotLoggedIn();
 
     }
 
@@ -977,23 +986,23 @@ public class androidTests extends UnitTestClassBase {
         return result;
     }
 
-    public boolean isSignedInWithRightCredential(String credential) throws GeneralLeanFtException{
+    public boolean isSignedInWithRightCredential(String userName) throws GeneralLeanFtException{
         Print("isSignedInWithRightCredential start");
         boolean result = false;
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-        threadSleep(4000);
+        threadSleep(1000);
         if(!appModel.AdvantageShoppingApplication().MainMenu().exists()){
             getToScreenWithMainMenu();
         }
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-//        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
-        String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
-        Print("innerText"+innerTxt);
-        if (innerTxt.equals(credential))
+
+        String loggedUserName = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
+        Print("innerText"+loggedUserName);
+        if (loggedUserName.equals(userName))
             result = true;
         threadSleep(1000);
        tapUiObjectLabel(appModel.AdvantageShoppingApplication().HOME());
-        Print("isSignedInWithRightCredential end (isSignedIn ? " + result + ") " + (result ? innerTxt: "" ));
+        Print("isSignedInWithRightCredential end (isSignedIn ? " + result + ") " + (result ? loggedUserName: "" ));
         return result;
     }
 
@@ -1001,7 +1010,7 @@ public class androidTests extends UnitTestClassBase {
         Print("SignIn() start");
         //Print("waitUntilElementExists MainMenu()");
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-        threadSleep(4000);
+        threadSleep(2000);
         if (!appModel.AdvantageShoppingApplication().MainMenu().exists()){
             getToScreenWithMainMenu();
         }
@@ -1016,7 +1025,7 @@ public class androidTests extends UnitTestClassBase {
                 setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
                 if (existsLabel(appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1())) {
-                    CreateNewUserUserIsNotLoggedIn(false);
+                    CreateNewUserUserIsNotLoggedIn();
                     Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
                     Print("Logged in");
                 }else {
