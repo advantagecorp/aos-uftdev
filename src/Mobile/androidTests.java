@@ -465,10 +465,11 @@ public class androidTests extends UnitTestClassBase {
 					14.� Click Pay Now
 					15.� Verify receipt 
     	 */
-    	if (isSignedIn())
+    	if (!isSignedInWithRightCredential(UNAME)){
+    	    
             SignOut();
-
-        SignIn(false);
+            SignIn(false);
+        }
 
         //buy a leptop item
         BuyLaptop();
@@ -713,19 +714,12 @@ public class androidTests extends UnitTestClassBase {
     	String savedOriginalPass = PASS;
     	Boolean isLoggedInWithCorrectUser = false;
 
-        if (isSignedIn()) {
-            Print("Checking login details at change password test ");
-            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-            String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
-            //The test assumes the user is the test user 'androidUser3', if it is not 'androidUser3' we signOut, if it is we continue.
-            if (innerTxt.equals(UNAME)) {
-                Print("LoggedIn with right credentials");
-                isLoggedInWithCorrectUser=true;
-            }else{
-                SignOut();
-            }
-        }
+        if (isSignedInWithRightCredential(UNAME)) {
 
+                isLoggedInWithCorrectUser=true;
+            }else {
+            SignOut();
+        }
         // step 1 - change to new pass
         changepassword(PASSNEW, PASS, isLoggedInWithCorrectUser);
         Boolean isChangedToNewPass = SignIn(false);
