@@ -130,11 +130,13 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 	private emailTextFieldLabelEditField emailTextFieldLabelEditField;
 	private tABLETSLabel tABLETSLabel;
 	private hPElitePad1000G2TabletLabel hPElitePad1000G2TabletLabel;
-	private cHECKOUTPAY4036Button cHECKOUTPAY4036Button;
 	private mobileObjectUiObject mobileObjectUiObject;
 	private mobileObjectUiObject1 mobileObjectUiObject1;
 	private mobileObjectUiObject2 mobileObjectUiObject2;
 	private orderBox orderBox;
+	private cHECKOUT cHECKOUT;
+	private cHECKOUT1 cHECKOUT1;
+	private cHECKOUT11 cHECKOUT11;
 						public IshoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -229,11 +231,13 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		emailTextFieldLabelEditField = new emailTextFieldLabelEditField(this, applicationModel);
 		tABLETSLabel = new tABLETSLabel(this, applicationModel);
 		hPElitePad1000G2TabletLabel = new hPElitePad1000G2TabletLabel(this, applicationModel);
-		cHECKOUTPAY4036Button = new cHECKOUTPAY4036Button(this, applicationModel);
 		mobileObjectUiObject = new mobileObjectUiObject(this, applicationModel);
 		mobileObjectUiObject1 = new mobileObjectUiObject1(this, applicationModel);
 		mobileObjectUiObject2 = new mobileObjectUiObject2(this, applicationModel);
 		orderBox = new orderBox(this, applicationModel);
+		cHECKOUT = new cHECKOUT(this, applicationModel);
+		cHECKOUT1 = new cHECKOUT1(this, applicationModel);
+		cHECKOUT11 = new cHECKOUT11(this, applicationModel);
 
 			setDisplayName("Ishopping");
 		}
@@ -339,11 +343,13 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		public emailTextFieldLabelEditField emailTextFieldLabelEditField() { return emailTextFieldLabelEditField; }
 		public tABLETSLabel tABLETSLabel() { return tABLETSLabel; }
 		public hPElitePad1000G2TabletLabel hPElitePad1000G2TabletLabel() { return hPElitePad1000G2TabletLabel; }
-		public cHECKOUTPAY4036Button cHECKOUTPAY4036Button() { return cHECKOUTPAY4036Button; }
 		public mobileObjectUiObject mobileObjectUiObject() { return mobileObjectUiObject; }
 		public mobileObjectUiObject1 mobileObjectUiObject1() { return mobileObjectUiObject1; }
 		public mobileObjectUiObject2 mobileObjectUiObject2() { return mobileObjectUiObject2; }
 		public orderBox orderBox() { return orderBox; }
+		public cHECKOUT cHECKOUT() { return cHECKOUT; }
+		public cHECKOUT1 cHECKOUT1() { return cHECKOUT1; }
+		public cHECKOUT11 cHECKOUT11() { return cHECKOUT11; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -1297,7 +1303,7 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).container("").text("CHECKOUT").build();
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).container("").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2685,32 +2691,6 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 				
 			}
 
-	public class cHECKOUTPAY4036Button extends ButtonNodeBase
-	{
-
-		
-								public cHECKOUTPAY4036Button(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("CHECKOUT (PAY 4,036)");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("CHECKOUT (PAY 4,036)").className("Button").mobileCenterIndex(2).text("CHECKOUT (PAY 4,036)").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	public class mobileObjectUiObject extends UiObjectNodeBase
 	{
 
@@ -2806,6 +2786,84 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(14).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class cHECKOUT extends ButtonNodeBase
+	{
+
+		
+								public cHECKOUT(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BtnCheckout");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(3).resourceId("buttonCheckOut").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class cHECKOUT1 extends ButtonNodeBase
+	{
+
+		
+								public cHECKOUT1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BtnCheckout1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(5).resourceId("buttonCheckOut").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class cHECKOUT11 extends ButtonNodeBase
+	{
+
+		
+								public cHECKOUT11(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("BtnCheckout11");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(7).resourceId("buttonCheckOut").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

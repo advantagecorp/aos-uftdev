@@ -528,7 +528,6 @@
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
                             <property name="Container" type="string" isRegExp="false"></property>
-                            <property name="Text" type="string" isRegExp="false">CHECKOUT</property>
                         </properties>
                     </identification>
                 </object>
@@ -1210,19 +1209,6 @@
                         </properties>
                     </identification>
                 </object>
-                <object type="Button" technology="Mobile">
-                    <name>CHECKOUT (PAY 4,036)</name>
-                    <codeName>cHECKOUTPAY4036Button</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">CHECKOUT (PAY 4,036)</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                            <property name="Text" type="string" isRegExp="false">CHECKOUT (PAY 4,036)</property>
-                        </properties>
-                    </identification>
-                </object>
                 <object type="UiObject" technology="Mobile">
                     <name>MobileObject</name>
                     <codeName>mobileObjectUiObject</codeName>
@@ -1264,6 +1250,39 @@
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">14</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>BtnCheckout</name>
+                    <codeName>cHECKOUT</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonCheckOut</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>BtnCheckout1</name>
+                    <codeName>cHECKOUT1</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">5</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonCheckOut</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>BtnCheckout11</name>
+                    <codeName>cHECKOUT11</codeName>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonCheckOut</property>
                         </properties>
                     </identification>
                 </object>

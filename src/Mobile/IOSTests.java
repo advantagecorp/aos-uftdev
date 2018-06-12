@@ -246,7 +246,6 @@ public class IOSTests extends UnitTestClassBase {
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
-
         if (!isSignedIn())
             SignIn();
 
@@ -282,7 +281,7 @@ public class IOSTests extends UnitTestClassBase {
         appModel.IshoppingApplication().APPLYButton().tap();
         appModel.IshoppingApplication().UPDATECARTButton().tap();
 
-        waitUntilElementExists(appModel.IshoppingApplication().FirstCartElement());
+        threadSleep(1500);
         //device.back();
         CheckOut("MasterCredit");
 
@@ -659,8 +658,8 @@ public class IOSTests extends UnitTestClassBase {
             System.out.println("TAP Cart Button");
             appModel.IshoppingApplication().CARTLabel().tap();
         }
-        Print("Tap checkout");
-        appModel.IshoppingApplication().cHECKOUTPAY4036Button().tap();
+
+        tapRightCheckoutButton();
 
         threadSleep(1000);
         appModel.IshoppingApplication().PAYNOWButton().tap();
@@ -683,6 +682,27 @@ public class IOSTests extends UnitTestClassBase {
 //
 //            MasterCredit("1234567812347894", "458", UNAME, false);
 //        }
+    }
+    public void tapRightCheckoutButton()throws GeneralLeanFtException{
+        Print("Checking for right checkout button");
+        if(appModel.IshoppingApplication().cHECKOUT1().exists()){
+            Print("Tap checkout-1");
+            appModel.IshoppingApplication().cHECKOUT1().tap();
+            return;
+        }
+        if(appModel.IshoppingApplication().cHECKOUT().exists()){
+            Print("Tap checkout-2");
+            appModel.IshoppingApplication().cHECKOUT().tap();
+            return;
+        }
+        if(appModel.IshoppingApplication().cHECKOUT11().exists()){
+            Print("Tap checkout-3");
+            appModel.IshoppingApplication().cHECKOUT11().tap();
+            return;
+        }else{
+            Print("couldn't find checkout button");
+        }
+
     }
 
     public void SafePay(boolean save) throws GeneralLeanFtException {
