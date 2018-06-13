@@ -359,12 +359,12 @@ public class androidTests extends UnitTestClassBase {
             return;
         }
         else{
-            isSignedIn();
-            SignOut();
+            if(isSignedIn()){
+                SignOut();
+            }
         }
         //create a new user for testing if not exists
         CreateNewUserUserIsNotLoggedIn();
-
     }
 
     @Test
@@ -707,21 +707,19 @@ public class androidTests extends UnitTestClassBase {
 
         Print("Start ChangePasswordTest");
     	String savedOriginalPass = PASS;
-    	Boolean isLoggedInWithCorrectUser = false;
 
         checkIsSignedInWithRightUserSignInIfNot();
 
         // step 1 - change to new pass
-        changepassword(PASSNEW, PASS, isLoggedInWithCorrectUser);
+        changepassword(PASSNEW, PASS);
         Boolean isChangedToNewPass = SignIn(false);
         Print("isChangedToNewPass " + PASSNEW + " " + isChangedToNewPass);
         Verification(Verify.isTrue(isChangedToNewPass,
                 "Verification - Change Password step 1 - change to new pass",
                 "Verify that the user login with the new password"));
-        isLoggedInWithCorrectUser=true;
 
         // step 2 -  change back to the default pass
-        changepassword(savedOriginalPass, PASSNEW, isLoggedInWithCorrectUser);
+        changepassword(savedOriginalPass, PASSNEW);
         Boolean isChangedToDefaultPass = SignIn(false);
         Print("isChangedToDefaultPass " + savedOriginalPass + " " + isChangedToDefaultPass);
         Verification(Verify.isTrue(isChangedToDefaultPass,
@@ -913,11 +911,9 @@ public class androidTests extends UnitTestClassBase {
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
-    public void changepassword(String newPass, String oldPass,Boolean isLoggedInWithCorrectUser)throws GeneralLeanFtException {
-        Print("\nCHANGE PASS to " + newPass +"\nisLoggedInWithCorrectUser-"+isLoggedInWithCorrectUser);
-        if(!isLoggedInWithCorrectUser){
-            SignIn(false);
-        }
+    public void changepassword(String newPass, String oldPass)throws GeneralLeanFtException {
+        Print("\nCHANGE PASS to " + newPass );
+
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         tapUiObject(appModel.AdvantageShoppingApplication().AccountDetails());
         threadSleep(4000);
@@ -948,7 +944,9 @@ public class androidTests extends UnitTestClassBase {
                 SignOut();
                 SignIn(false);
             }
-            SignIn(false);
+            else{
+                SignIn(false);
+            }
         }
         Print("signed in with right user True");
     }
@@ -961,7 +959,7 @@ public class androidTests extends UnitTestClassBase {
         Print("isSignedIn start");
         boolean result = false;
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-        threadSleep(4000);
+        threadSleep(3000);
         if(!appModel.AdvantageShoppingApplication().MainMenu().exists()){
             getToScreenWithMainMenu();
         }
@@ -1013,7 +1011,7 @@ public class androidTests extends UnitTestClassBase {
                 setTextEditField(appModel.AdvantageShoppingApplication().UserNameEdit(), UNAME);
                 setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
                 tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
-                if (existsLabel(appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1())) {
+                if (appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1().exists()) {
                     CreateNewUserUserIsNotLoggedIn();
                     Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
                     Print("Logged in");
