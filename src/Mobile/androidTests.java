@@ -306,9 +306,7 @@ public class androidTests extends UnitTestClassBase {
             Random rand = new Random();
             int  randomNumber = rand.nextInt(100) + 1;
 
-            if (isSignedIn()) {
-                SignOut();
-            }
+
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
             tapUiObjectLabel(appModel.AdvantageShoppingApplication().DonTHaveAnAccount());
@@ -356,6 +354,7 @@ public class androidTests extends UnitTestClassBase {
         //setting();
 
         if (isSignedInWithRightCredential(UNAME)) {
+            SignOut();
             createDifferentUser();
             return;
         }
@@ -710,12 +709,8 @@ public class androidTests extends UnitTestClassBase {
     	String savedOriginalPass = PASS;
     	Boolean isLoggedInWithCorrectUser = false;
 
-        if (isSignedInWithRightCredential(UNAME)) {
+        checkIsSignedInWithRightUserSignInIfNot();
 
-                isLoggedInWithCorrectUser=true;
-            }else {
-            SignOut();
-        }
         // step 1 - change to new pass
         changepassword(PASSNEW, PASS, isLoggedInWithCorrectUser);
         Boolean isChangedToNewPass = SignIn(false);
