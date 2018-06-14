@@ -826,6 +826,8 @@ public class androidTests extends UnitTestClassBase {
 
         toggleAirplaneMode(false);      // disable airplane mode
 
+        app.restart();
+
 
 
 //        // back to normal state in application
