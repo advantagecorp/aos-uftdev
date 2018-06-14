@@ -32,15 +32,15 @@ public class androidTests extends UnitTestClassBase {
     protected static Application app;
     protected static Application appSettings;
 
-    static String UNAME = "androidUser4";
-    static String PASS = "Password2";
+    static String UNAME = "androidUser5";
+    static String PASS = "Password5";
     static String PASSNEW = "Password24";
 
     static String appURL = System.getProperty("url", "defaultvalue");
-    static String appURL2 = "www.advantageonlineshopping.com";
-//    static String appURL2 = "http://52.34.90.37";      // STAGING NEW
+    //static String appURL2 = "www.advantageonlineshopping.com";
+  //  static String appURL2 = "http://52.34.90.37";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-//      static String appURL2 = "16.60.158.84";       // CI
+      static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //        static String appURL2 = "16.59.19.123:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
@@ -304,7 +304,7 @@ public class androidTests extends UnitTestClassBase {
             Print("creating user with different values");
 
             Random rand = new Random();
-            int  randomNumber = rand.nextInt(100) + 1;
+            int  randomNumber = rand.nextInt(1000) + 1;
 
 
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
@@ -347,11 +347,9 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
 
-        Print("AddNewUserAndCheckInitials");
-
-//        InitSetUP();
-        //change the setting of the server
         //setting();
+
+        Print("AddNewUserAndCheckInitials");
 
         if (isSignedInWithRightCredential(UNAME)) {
             SignOut();
