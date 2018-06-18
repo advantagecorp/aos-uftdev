@@ -253,7 +253,6 @@ public class IOSTests extends UnitTestClassBase {
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
-        SignOut();
         if (!isSignedIn())
             SignIn();
 
@@ -640,13 +639,9 @@ public class IOSTests extends UnitTestClassBase {
             print("TAP MainMenuHome");
             appModel.IshoppingApplication().MainMenuHome().tap();
             print("USER ALREADY EXIST!");
-//            Verification(Verify.isTrue(isUserExistMessage, "Create New User", "Verify if received message that user already exist"));
+            return !isUserExistMessage;
         }
-//        else {
-//            Verification(Verify.isFalse(isUserExistMessage, "Create New User", "Verify if received message that user already exist"));
-//            Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user was created successfully"));
-//        }
-//        If not received error message that tells that user already exists that means that user created successfully
+//      If not received error message that tells that user already exists that means that user created successfully
         Verification(Verify.isFalse(isUserExistMessage, "Create New User", "Verify if received message that user already exist"));
         Print("Registration completed successfully ");
         return !isUserExistMessage;
