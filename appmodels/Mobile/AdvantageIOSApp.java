@@ -137,6 +137,11 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 	private cHECKOUT cHECKOUT;
 	private cHECKOUT1 cHECKOUT1;
 	private cHECKOUT11 cHECKOUT11;
+	private preferredPaymentWasNotSpecifiedLabel preferredPaymentWasNotSpecifiedLabel;
+	private mobileObjectUiObject3 mobileObjectUiObject3;
+	private SafePayOption SafePayOption;
+	private incorrectUserNameOrPasswordLabel incorrectUserNameOrPasswordLabel;
+	private OKBtnPayment OKBtnPayment;
 						public IshoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -238,6 +243,11 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		cHECKOUT = new cHECKOUT(this, applicationModel);
 		cHECKOUT1 = new cHECKOUT1(this, applicationModel);
 		cHECKOUT11 = new cHECKOUT11(this, applicationModel);
+		preferredPaymentWasNotSpecifiedLabel = new preferredPaymentWasNotSpecifiedLabel(this, applicationModel);
+		mobileObjectUiObject3 = new mobileObjectUiObject3(this, applicationModel);
+		SafePayOption = new SafePayOption(this, applicationModel);
+		incorrectUserNameOrPasswordLabel = new incorrectUserNameOrPasswordLabel(this, applicationModel);
+		OKBtnPayment = new OKBtnPayment(this, applicationModel);
 
 			setDisplayName("Ishopping");
 		}
@@ -350,6 +360,11 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		public cHECKOUT cHECKOUT() { return cHECKOUT; }
 		public cHECKOUT1 cHECKOUT1() { return cHECKOUT1; }
 		public cHECKOUT11 cHECKOUT11() { return cHECKOUT11; }
+		public preferredPaymentWasNotSpecifiedLabel preferredPaymentWasNotSpecifiedLabel() { return preferredPaymentWasNotSpecifiedLabel; }
+		public mobileObjectUiObject3 mobileObjectUiObject3() { return mobileObjectUiObject3; }
+		public SafePayOption SafePayOption() { return SafePayOption; }
+		public incorrectUserNameOrPasswordLabel incorrectUserNameOrPasswordLabel() { return incorrectUserNameOrPasswordLabel; }
+		public OKBtnPayment OKBtnPayment() { return OKBtnPayment; }
 		
 			public class MenuButton extends ButtonNodeBase
 	{
@@ -2778,14 +2793,14 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 			super(parent, applicationModel);
 
 			
-			setDisplayName("MobileObject3");
+			setDisplayName("Change payment Method");
 		}
 
 		@Override
 		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(14).build();
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(10).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -2873,6 +2888,136 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 				
 			}
 
+	public class preferredPaymentWasNotSpecifiedLabel extends LabelNodeBase
+	{
+
+		
+								public preferredPaymentWasNotSpecifiedLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Preferred payment was not specified");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("Preferred payment was not specified").className("Label").mobileCenterIndex(0).text("Preferred payment was not specified").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class mobileObjectUiObject3 extends UiObjectNodeBase
+	{
+
+		
+								public mobileObjectUiObject3(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("MobileObject4");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(2).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class SafePayOption extends UiObjectNodeBase
+	{
+
+		
+								public SafePayOption(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("SafePayOption");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("View").mobileCenterIndex(10).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class incorrectUserNameOrPasswordLabel extends LabelNodeBase
+	{
+
+		
+								public incorrectUserNameOrPasswordLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Incorrect user name or password.");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.LabelDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("Incorrect user name or password.").className("Label").mobileCenterIndex(0).text("Incorrect user name or password.").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class OKBtnPayment extends ButtonNodeBase
+	{
+
+		
+								public OKBtnPayment(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("OKBtnPayment");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().accessibilityId("OK").className("Button").mobileCenterIndex(0).text("OK").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
 	}
 
 	public class advantageShoppingApplication extends ApplicationNodeBase
@@ -2883,7 +3028,6 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 	private serverURLEditField serverURLEditField;
 	private okButton okButton;
 	private youAreNotConnectedToTheInternetLabel youAreNotConnectedToTheInternetLabel;
-	private incorrectUserNameOrPasswordLabel incorrectUserNameOrPasswordLabel;
 	private pAYNOWButton pAYNOWButton;
 						public advantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
@@ -2893,7 +3037,6 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		serverURLEditField = new serverURLEditField(this, applicationModel);
 		okButton = new okButton(this, applicationModel);
 		youAreNotConnectedToTheInternetLabel = new youAreNotConnectedToTheInternetLabel(this, applicationModel);
-		incorrectUserNameOrPasswordLabel = new incorrectUserNameOrPasswordLabel(this, applicationModel);
 		pAYNOWButton = new pAYNOWButton(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
@@ -2914,7 +3057,6 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 		public serverURLEditField serverURLEditField() { return serverURLEditField; }
 		public okButton okButton() { return okButton; }
 		public youAreNotConnectedToTheInternetLabel youAreNotConnectedToTheInternetLabel() { return youAreNotConnectedToTheInternetLabel; }
-		public incorrectUserNameOrPasswordLabel incorrectUserNameOrPasswordLabel() { return incorrectUserNameOrPasswordLabel; }
 		public pAYNOWButton pAYNOWButton() { return pAYNOWButton; }
 		
 			public class aPPLYButton extends ButtonNodeBase
@@ -3012,32 +3154,6 @@ public class AdvantageIOSApp extends AppModelBase {		private IshoppingApplicatio
 			com.hp.lft.sdk.mobile.LabelDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("You are not connected to the internet").className("Label").mobileCenterIndex(0).text("You are not connected to the internet").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class incorrectUserNameOrPasswordLabel extends LabelNodeBase
-	{
-
-		
-								public incorrectUserNameOrPasswordLabel(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Incorrect user name or password.");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.LabelDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.LabelDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.LabelDescription.Builder().accessibilityId("Incorrect user name or password.").className("Label").mobileCenterIndex(0).text("Incorrect user name or password.").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

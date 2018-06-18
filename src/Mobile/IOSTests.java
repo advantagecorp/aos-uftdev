@@ -219,8 +219,15 @@ public class IOSTests extends UnitTestClassBase {
         appModel.IshoppingApplication().LoginLabel().tap();
 
 //        CreateNewUser(true);
-        boolean isNewUserCreated = CreateNewUser();
-        Verification(Verify.isFalse(isNewUserCreated, "Create New User", "Verify if user already exist"));
+        boolean isUserExistMessage = CreateNewUser();
+        threadSleep(1000);
+        if(isUserExistMessage){
+            Print("No user exist message was displayed \n Most likely the user wasn't created yet. Let's check ");
+            SignOut();
+            threadSleep(1000);
+            isUserExistMessage = CreateNewUser();
+        }
+        Verification(Verify.isFalse(isUserExistMessage, "Create New User", "Verify if user already exist"));
 
     }
 
@@ -246,6 +253,7 @@ public class IOSTests extends UnitTestClassBase {
     public void UpdateCartTest() throws GeneralLeanFtException, InterruptedException {
         //todo:need to pay with safepay but for now we use MasterCredit until fixing the bug
 
+        SignOut();
         if (!isSignedIn())
             SignIn();
 
@@ -437,52 +445,47 @@ public class IOSTests extends UnitTestClassBase {
         appModel.IshoppingApplication().MenuButton().tap();
         String loginTxt = appModel.IshoppingApplication().LoginLabel().getText();
         Print("current loginTxt = '" + loginTxt + "'");
-        if (loginTxt.equals("LOG IN")) {
-//            if (!quiet) {
-                print("tap LoginObj");
-                appModel.IshoppingApplication().LoginObj().tap();
-//                  threadSleep(3000);
-                print("tap UserNameLoginditField");
-                appModel.IshoppingApplication().UserNameLoginditField().tap();
-//                  threadSleep(3000);
-                print("setText UserNameLoginditField " + UNAME);
-//                  appModel.IshoppingApplication().UserNameLoginditField().setText(UNAME);
-                appModel.IshoppingApplication().UserNameLabelEditField().setText(UNAME);
-//                  threadSleep(3000);
-                print("tap PasswordLogin");
-                appModel.IshoppingApplication().PasswordLogin().tap();
-//                  threadSleep(3000);
-                print("setText PasswordLogin " + PASS);
-//                  appModel.IshoppingApplication().PasswordLoginEditField().setText(PASS);
-                appModel.IshoppingApplication().PasswordLogin().setText(PASS);
+        if (!loginTxt.equals("LOG IN")) {
 
-                print("tap LOGINButton");
-                appModel.IshoppingApplication().LOGINButton().tap();
-
-                threadSleep(2000);
-                if (!appModel.IshoppingApplication().InvalidUserNameOrPasLabel().exists(3)) {
-                    Print(UNAME + " - Login success");
-                    Verify.isTrue(true, "Sign in", "verify that user sign in success");
-                    return true;
-                }
-                Verify.isTrue(true, "Invalid Sign in", "verify that user can't sign in with invalid user");
-                Print("Assuming the user was'nt created yet");
-                if(CreateNewUser()){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-
-//            }
-//            print("tap MenuButton");
-//            appModel.IshoppingApplication().MenuButton().tap();
-//            return false;
+            Print("Seems there is a user logged in-  "+loginTxt);
+            return true;
         }
-        print("tap MenuButton");
-        appModel.IshoppingApplication().MenuButton().tap();
-        print("FINISH SignIn");
-        return true;
+        else {
+            print("tap LoginObj");
+            appModel.IshoppingApplication().LoginObj().tap();
+//                  threadSleep(3000);
+            print("tap UserNameLoginditField");
+            appModel.IshoppingApplication().UserNameLoginditField().tap();
+//                  threadSleep(3000);
+            print("setText UserNameLoginditField " + UNAME);
+//                  appModel.IshoppingApplication().UserNameLoginditField().setText(UNAME);
+            appModel.IshoppingApplication().UserNameLabelEditField().setText(UNAME);
+//                  threadSleep(3000);
+            print("tap PasswordLogin");
+            appModel.IshoppingApplication().PasswordLogin().tap();
+//                  threadSleep(3000);
+            print("setText PasswordLogin " + PASS);
+//                  appModel.IshoppingApplication().PasswordLoginEditField().setText(PASS);
+            appModel.IshoppingApplication().PasswordLogin().setText(PASS);
+
+            print("tap LOGINButton");
+            appModel.IshoppingApplication().LOGINButton().tap();
+
+            threadSleep(2000);
+            Print("Checking if incorrectUserNameOrPasswordLabel exists");
+            if (!appModel.IshoppingApplication().incorrectUserNameOrPasswordLabel().exists()) {
+                Print(UNAME + " - Login success");
+                Verify.isTrue(true, "Sign in", "verify that user sign in success");
+                return true;
+            }
+            Verify.isTrue(true, "Invalid Sign in", "verify that user can't sign in with invalid user");
+            Print("Assuming the user was'nt created yet");
+            if (CreateNewUser()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     public void EmptyCart() throws GeneralLeanFtException, InterruptedException {
@@ -643,8 +646,9 @@ public class IOSTests extends UnitTestClassBase {
 //            Verification(Verify.isFalse(isUserExistMessage, "Create New User", "Verify if received message that user already exist"));
 //            Verification(Verify.isTrue(IsLoggedInUser(UNAME), "Create New User", "Verify that the user was created successfully"));
 //        }
-
 //        If not received error message that tells that user already exists that means that user created successfully
+        Verification(Verify.isFalse(isUserExistMessage, "Create New User", "Verify if received message that user already exist"));
+        Print("Registration completed successfully ");
         return !isUserExistMessage;
     }
 
@@ -662,7 +666,22 @@ public class IOSTests extends UnitTestClassBase {
         tapRightCheckoutButton();
 
         threadSleep(1000);
+        Print("Tapping payBtn");
         appModel.IshoppingApplication().PAYNOWButton().tap();
+        Print("Checking is preferredPaymentWasNotSpecifiedLabel exists");
+        if(appModel.IshoppingApplication().preferredPaymentWasNotSpecifiedLabel().exists()){
+            Print("No prefered payment label exists");
+            appModel.IshoppingApplication().OKBtnPayment().tap();
+            Print("Tap change payment method");
+            appModel.IshoppingApplication().orderBox().tap();
+            Print("Taping safepay");
+            appModel.IshoppingApplication().SafePayOption().tap();
+            appModel.IshoppingApplication().SAFEPAYUSERNAMEEditField().setText(UNAME);
+            appModel.IshoppingApplication().SAFEPAYPASSWORDEditField().setText(PASS);
+            threadSleep(1000);
+            appModel.IshoppingApplication().APPLYButton().tap();
+            appModel.IshoppingApplication().PAYNOWButton().tap();
+        }
         threadSleep(2000);
 
         Verification(Verify.isTrue(appModel.IshoppingApplication().OkButton().exists(), "Purchase safepay", "verify that user purchased in success using safepay"));

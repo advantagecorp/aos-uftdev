@@ -1243,13 +1243,13 @@
                     </identification>
                 </object>
                 <object type="UiObject" technology="Mobile">
-                    <name>MobileObject3</name>
+                    <name>Change payment Method</name>
                     <codeName>orderBox</codeName>
                     <description></description>
                     <identification>
                         <properties>
                             <property name="ClassName" type="string" isRegExp="false">View</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">14</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
                         </properties>
                     </identification>
                 </object>
@@ -1283,6 +1283,67 @@
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">7</property>
                             <property name="ResourceId" type="string" isRegExp="false">buttonCheckOut</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Preferred payment was not specified</name>
+                    <codeName>preferredPaymentWasNotSpecifiedLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Preferred payment was not specified</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Preferred payment was not specified</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>MobileObject4</name>
+                    <codeName>mobileObjectUiObject3</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>SafePayOption</name>
+                    <codeName>SafePayOption</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">View</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">10</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Incorrect user name or password.</name>
+                    <codeName>incorrectUserNameOrPasswordLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">Incorrect user name or password.</property>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">Incorrect user name or password.</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OKBtnPayment</name>
+                    <codeName>OKBtnPayment</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="AccessibilityId" type="string" isRegExp="false">OK</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
                         </properties>
                     </identification>
                 </object>
@@ -1347,19 +1408,6 @@
                             <property name="ClassName" type="string" isRegExp="false">Label</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                             <property name="Text" type="string" isRegExp="false">You are not connected to the internet</property>
-                        </properties>
-                    </identification>
-                </object>
-                <object type="Label" technology="Mobile">
-                    <name>Incorrect user name or password.</name>
-                    <codeName>incorrectUserNameOrPasswordLabel</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="AccessibilityId" type="string" isRegExp="false">Incorrect user name or password.</property>
-                            <property name="ClassName" type="string" isRegExp="false">Label</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                            <property name="Text" type="string" isRegExp="false">Incorrect user name or password.</property>
                         </properties>
                     </identification>
                 </object>
