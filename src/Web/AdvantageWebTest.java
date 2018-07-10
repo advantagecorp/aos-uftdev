@@ -150,7 +150,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             Print(pattern);
         } catch (GeneralLeanFtException e) {
 //            printError(e);
-//            Print("\nERROR: " + e.getMessage() +  "\n");
+            Print("\nERROR: " + e.getMessage() +  "\n");
 //            fail("GeneralLeanFtException: getUsernameFromSignOutElement");
             pattern = null;
         }
