@@ -1474,5 +1474,17 @@ View details link</description>
                 </properties>
             </identification>
         </object>
+        <object type="WebElement" technology="Web">
+            <name>SIGN IN WITH FACEBOOK OR Username Password Email REMEMBER ME SIGN IN Forgot your password? CREATE NEW ACCOUNT </name>
+            <codeName>sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="ClassName" type="string" isRegExp="false"></property>
+                    <property name="InnerText" type="string" isRegExp="false">SIGN IN WITH FACEBOOK OR Username Password Email REMEMBER ME SIGN IN Forgot your password? CREATE NEW ACCOUNT </property>
+                    <property name="TagName" type="string" isRegExp="false">DIV</property>
+                </properties>
+            </identification>
+        </object>
     </objects>
 </applicationModel>
