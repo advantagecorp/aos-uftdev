@@ -85,7 +85,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 //        Print("appURL2: " + appURL2);
 
         Print("Wait for CI to be ready... 2 min");
-        Thread.sleep(120000);
+        Thread.sleep(3000);
     }
 
     @AfterClass
