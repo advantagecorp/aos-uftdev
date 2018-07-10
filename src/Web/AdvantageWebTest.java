@@ -156,15 +156,20 @@ public class AdvantageWebTest extends UnitTestClassBase {
         }
         // Get the actual inner text of the Sign in Out object during runtime
         String signInOutIconElementInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
+        Print(signInOutIconElementInnerText);
 
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
 
+        Print("something");
         // Now create matcher object
         Matcher m = r.matcher(signInOutIconElementInnerText);
+        Print("2222");
         m.matches();
+        Print("333");
         // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
         String loggedInUserName = m.group(1).trim();
+        Print("4444");
         Print("getUsernameFromSignOutElement end loggedInUserName = '" + loggedInUserName + "'");
         return loggedInUserName;
     }
