@@ -186,7 +186,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         if (!isSignedIn()) {
             // Click the sign-in icon
-            clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
+            clickWebElement(appModel.myAccountMyOrdersSignOutLink());
             // Fill in the user name and password
             setValueEditField(appModel.AdvantageShoppingPage().UsernameLoginEditField(), USERNAME);
             setValueEditField(appModel.AdvantageShoppingPage().PasswordLoginEditField(), PASSWORD);
@@ -768,6 +768,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
      */
     @Test
     public void addMainUserIfNotExists() throws GeneralLeanFtException, ReportException {
+
+        clickWebElement(appModel.myAccountMyOrdersSignOutLink());
+        //threadSleep(100000);
         signIn();       // Sign in to the store
 
         if (!isSignedIn()) {

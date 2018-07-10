@@ -346,7 +346,7 @@ public class IOSTests extends UnitTestClassBase {
 
     @Test
     public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
-        LogOutTest();
+
         if (!isSignedIn())
             SignIn();
         print("TAP MenuButton");

@@ -17,6 +17,7 @@ import com.hp.lft.sdk.web.*;
 public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageShoppingPage AdvantageShoppingPage;
 	private AdvantageOnlineShoppingDemoSupportChatPage AdvantageOnlineShoppingDemoSupportChatPage;
 	private DownloadPage DownloadPage;
+	private myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink;
 	
 	public AdvantageStagingAppModel(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -24,12 +25,14 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				AdvantageShoppingPage = new AdvantageShoppingPage(contextTestObject, this);
 		AdvantageOnlineShoppingDemoSupportChatPage = new AdvantageOnlineShoppingDemoSupportChatPage(contextTestObject, this);
 		DownloadPage = new DownloadPage(contextTestObject, this);
+		myAccountMyOrdersSignOutLink = new myAccountMyOrdersSignOutLink(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
 			public AdvantageShoppingPage AdvantageShoppingPage() { return AdvantageShoppingPage; }
 		public AdvantageOnlineShoppingDemoSupportChatPage AdvantageOnlineShoppingDemoSupportChatPage() { return AdvantageOnlineShoppingDemoSupportChatPage; }
 		public DownloadPage DownloadPage() { return DownloadPage; }
+		public myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink() { return myAccountMyOrdersSignOutLink; }
 
 		public class AdvantageShoppingPage extends PageNodeBase
 	{
@@ -3530,6 +3533,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			}
 
 	}
+
+	public class myAccountMyOrdersSignOutLink extends LinkNodeBase
+	{
+
+		
+								public myAccountMyOrdersSignOutLink(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("My account My Orders Sign out ");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.LinkDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.LinkDescription.Builder().innerText("My account My Orders Sign out ").tagName("A").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
 
 
 			
