@@ -1486,5 +1486,16 @@ View details link</description>
                 </properties>
             </identification>
         </object>
+        <object type="Link" technology="Web">
+            <name>My account My Orders Sign out</name>
+            <codeName>ttMyAccountMyOrdersSignOutLink</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="InnerText" type="string" isRegExp="false">My account My Orders Sign out </property>
+                    <property name="TagName" type="string" isRegExp="false">A</property>
+                </properties>
+            </identification>
+        </object>
     </objects>
 </applicationModel>

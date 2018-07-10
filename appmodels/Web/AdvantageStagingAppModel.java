@@ -19,6 +19,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private DownloadPage DownloadPage;
 	private myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink;
 	private sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement;
+	private ttMyAccountMyOrdersSignOutLink ttMyAccountMyOrdersSignOutLink;
 	
 	public AdvantageStagingAppModel(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -28,6 +29,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		DownloadPage = new DownloadPage(contextTestObject, this);
 		myAccountMyOrdersSignOutLink = new myAccountMyOrdersSignOutLink(contextTestObject, this);
 		sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement = new sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement(contextTestObject, this);
+		ttMyAccountMyOrdersSignOutLink = new ttMyAccountMyOrdersSignOutLink(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
@@ -36,6 +38,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public DownloadPage DownloadPage() { return DownloadPage; }
 		public myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink() { return myAccountMyOrdersSignOutLink; }
 		public sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement() { return sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement; }
+		public ttMyAccountMyOrdersSignOutLink ttMyAccountMyOrdersSignOutLink() { return ttMyAccountMyOrdersSignOutLink; }
 
 		public class AdvantageShoppingPage extends PageNodeBase
 	{
@@ -3580,6 +3583,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("").innerText("SIGN IN WITH FACEBOOK OR Username Password Email REMEMBER ME SIGN IN Forgot your password? CREATE NEW ACCOUNT ").tagName("DIV").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class ttMyAccountMyOrdersSignOutLink extends LinkNodeBase
+	{
+
+		
+								public ttMyAccountMyOrdersSignOutLink(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("My account My Orders Sign out");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.LinkDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.LinkDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.LinkDescription.Builder().innerText("My account My Orders Sign out ").tagName("A").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

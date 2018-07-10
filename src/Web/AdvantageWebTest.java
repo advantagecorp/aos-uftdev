@@ -147,6 +147,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String pattern = null;
         try {
             pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
+            Print(pattern);
         } catch (GeneralLeanFtException e) {
 //            printError(e);
 //            Print("\nERROR: " + e.getMessage() +  "\n");
