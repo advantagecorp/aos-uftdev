@@ -3,6 +3,7 @@ package Web;
 import java.awt.image.RenderedImage;
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -116,12 +117,22 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     // This internal method checks if a user is already signed in to the web site
     public boolean isSignedIn() {
+        Print("isSignedIn starts");
         String loggedInUserName = getUsernameFromSignOutElement();
         if (loggedInUserName.isEmpty()) {
             Print("isSignedIn FALSE");
             return false;
         }
-        Print("isSignedIn TRUE");
+        Boolean isNotUserName = loggedInUserName.equals("My");
+
+        if(isNotUserName){
+            Print("isSignedIn FALSE");
+            return false;
+        }
+
+        Print(String.valueOf(isNotUserName));
+        Print("isSignedIn TRUE. Signed in as - "+ loggedInUserName);
+
         return true;
     }
 
@@ -143,36 +154,48 @@ public class AdvantageWebTest extends UnitTestClassBase {
     // This internal method gets the username from the text that appears on the SignOutMainIconWebElement object
     public String getUsernameFromSignOutElement() {
         Print("getUsernameFromSignOutElement start");
-        // Get the regular expression pattern from the Sign in Out object design time description
-        String pattern = null;
-        try {
-            pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
-            Print(pattern);
-        } catch (GeneralLeanFtException e) {
-//            printError(e);
-            Print("\nERROR: " + e.getMessage() +  "\n");
-//            fail("GeneralLeanFtException: getUsernameFromSignOutElement");
-            pattern = null;
-        }
-        // Get the actual inner text of the Sign in Out object during runtime
-        String signInOutIconElementInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
-        Print(signInOutIconElementInnerText);
 
-        // Create a Pattern object
-        Pattern r = Pattern.compile(pattern);
+        String fullStringFromWebElement = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 
-        Print("something");
-        // Now create matcher object
-        Matcher m = r.matcher(signInOutIconElementInnerText);
-        Print("2222");
-        m.matches();
-        Print("333");
-        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
-        String loggedInUserName = m.group(1).trim();
-        Print("4444");
-        Print("getUsernameFromSignOutElement end loggedInUserName = '" + loggedInUserName + "'");
-        return loggedInUserName;
+        //Print("fullStringFromWebElement " + fullStringFromWebElement);
+
+        String [] words = fullStringFromWebElement.split("\\s+");
+
+        Print("words[0] " + words[0]);
+
+        return words[0];
+
     }
+        // Get the regular expression pattern from the Sign in Out object design time description
+//        String pattern = null;
+//        try {
+//            pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
+//            Print(pattern);
+//        } catch (GeneralLeanFtException e) {
+////            printError(e);
+//            Print("\nERROR: " + e.getMessage() +  "\n");
+////            fail("GeneralLeanFtException: getUsernameFromSignOutElement");
+//            pattern = null;
+//        }
+//        // Get the actual inner text of the Sign in Out object during runtime
+//        String signInOutIconElementInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
+//        Print(signInOutIconElementInnerText);
+//
+//        // Create a Pattern object
+//        Pattern r = Pattern.compile(pattern);
+//
+//        Print("something");
+//        // Now create matcher object
+//        Matcher m = r.matcher(signInOutIconElementInnerText);
+//        Print("2222");
+//        m.matches();
+//        Print("333");
+//        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
+//        String loggedInUserName = m.group(1).trim();
+//        Print("4444");
+//        Print("getUsernameFromSignOutElement end loggedInUserName = '" + loggedInUserName + "'");
+//        return loggedInUserName;
+//    }
 
     /**
      * Function return Shipping Cost from WebElement in Order Payment page
