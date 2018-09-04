@@ -341,6 +341,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             if(appModel.AdvantageShoppingPage().SelectedColorForEnv17().exists())
                 clickWebElement(appModel.AdvantageShoppingPage().SelectedColorForEnv17());
             else
+                threadSleep(15000);
                 clickWebElement(appModel.AdvantageShoppingPage().ColorSelectorFirstWebElement());
         } catch (GeneralLeanFtException e) {
             e.printStackTrace();
