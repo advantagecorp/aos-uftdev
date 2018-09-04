@@ -32,9 +32,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
-    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
+//    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
 //	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
+	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
@@ -211,9 +212,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
      */
     public boolean signIn() throws GeneralLeanFtException, ReportException {
         Print("signIn() start");
-        boolean isSignedIn = false;
+        boolean isSignedIn = isSignedIn();
 
-        if (!isSignedIn()) {
+        if (!isSignedIn) {
             // Click the sign-in icon
             clickWebElement(appModel.myAccountMyOrdersSignOutLink());
             // Fill in the user name and password
@@ -701,6 +702,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             int numberOfRowsInCart = 0;
             try {
                 numberOfRowsInCart = appModel.AdvantageShoppingPage().CartTable().getRows().size();
+                threadSleep(1000);
             } catch (GeneralLeanFtException e) {
                 printError(e, "appModel.AdvantageShoppingPage().CartTable().getRows().size()");
                 fail("GeneralLeanFtException: emptyTheShoppingCart appModel.AdvantageShoppingPage().CartTable().getRows().size()");
@@ -710,9 +712,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
             // Iterate and click the "Remove" link for all products
             for (; numberOfRelevantProductRowsInCart > 0; numberOfRelevantProductRowsInCart--) {
+                threadSleep(1000);
                 clickWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement());
             }
-            Print("cart is empty");
+            if (!isCartEmpty()) {
+                Print("cart is not empty");
+            }
+            else {
+                Print("Cart is empty");
+            }
         }
     }
 
@@ -720,6 +728,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public int getCartProductsNumberFromCartObjectInnerText() {
         Print("getCartProductsNumberFromCartObjectInnerText start");
         int productsNumberInCart = 0;
+        threadSleep(1000);
 
         // Get the regular expression pattern from the Cart icon object design time description
         //String pattern = appModel.AdvantageShoppingPage().LinkCartIcon().getInnerText();
@@ -798,6 +807,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     @Test
     public void addMainUserIfNotExists() throws GeneralLeanFtException, ReportException {
         Print("taping new item");
+        threadSleep(1000);
         clickWebElement(appModel.myAccountMyOrdersSignOutLink());
         Boolean isSignInBoxThere = appModel.sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement().exists();
         Print( String.valueOf(isSignInBoxThere));
@@ -1485,6 +1495,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
             checkWithReporterIsTrueOnly(existsWebElement(appModel.AdvantageShoppingPage().RemoveFromOrderValidate()),
                     "Verify Search orders", "Verify that the alert window element exists.");
             clickWebElement(appModel.AdvantageShoppingPage().YesCANCELButton());
+            threadSleep(1000);
+            signOut();
+            threadSleep(1000);
         } else {
             printError("Empty list of orders");
         }
@@ -1524,11 +1537,13 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         signIn();
         browserRefresh();
+        threadSleep(1000);
         clickWebElement(appModel.AdvantageShoppingPage().LaptopsImg());
 
         // Select an item to purchase and add it to the cart
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
+        threadSleep(1000);
 
 
         String checkOutTXT = getWebElementInnerText(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
