@@ -346,6 +346,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         } catch (GeneralLeanFtException e) {
             e.printStackTrace();
         }
+        //comment
 
         // If the quantity is more than 1, set this value in the quantity edit-field
         if (productQuantity != 1) {
