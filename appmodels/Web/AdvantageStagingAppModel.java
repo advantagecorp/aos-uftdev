@@ -20,6 +20,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink;
 	private sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement;
 	private ttMyAccountMyOrdersSignOutLink ttMyAccountMyOrdersSignOutLink;
+	private deleteAccountButton deleteAccountButton;
+	private yesWebElement yesWebElement;
 	
 	public AdvantageStagingAppModel(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -30,6 +32,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		myAccountMyOrdersSignOutLink = new myAccountMyOrdersSignOutLink(contextTestObject, this);
 		sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement = new sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement(contextTestObject, this);
 		ttMyAccountMyOrdersSignOutLink = new ttMyAccountMyOrdersSignOutLink(contextTestObject, this);
+		deleteAccountButton = new deleteAccountButton(contextTestObject, this);
+		yesWebElement = new yesWebElement(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
@@ -39,6 +43,8 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public myAccountMyOrdersSignOutLink myAccountMyOrdersSignOutLink() { return myAccountMyOrdersSignOutLink; }
 		public sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement() { return sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement; }
 		public ttMyAccountMyOrdersSignOutLink ttMyAccountMyOrdersSignOutLink() { return ttMyAccountMyOrdersSignOutLink; }
+		public deleteAccountButton deleteAccountButton() { return deleteAccountButton; }
+		public yesWebElement yesWebElement() { return yesWebElement; }
 
 		public class AdvantageShoppingPage extends PageNodeBase
 	{
@@ -54,6 +60,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement;
 	private SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement;
 	private CONTACTUSMainWebElement CONTACTUSMainWebElement;
+	private accountDeletedSuccessfullyWebElement accountDeletedSuccessfullyWebElement;
 	private SignOutMainIconWebElement SignOutMainIconWebElement;
 	private SEEOFFERButton SEEOFFERButton;
 	private EXPLORENOWButton EXPLORENOWButton;
@@ -169,6 +176,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		OURPRODUCTSMainWebElement = new OURPRODUCTSMainWebElement(this, applicationModel);
 		SPECIALOFFERMainWebElement = new SPECIALOFFERMainWebElement(this, applicationModel);
 		CONTACTUSMainWebElement = new CONTACTUSMainWebElement(this, applicationModel);
+		accountDeletedSuccessfullyWebElement = new accountDeletedSuccessfullyWebElement(this, applicationModel);
 		SignOutMainIconWebElement = new SignOutMainIconWebElement(this, applicationModel);
 		SEEOFFERButton = new SEEOFFERButton(this, applicationModel);
 		EXPLORENOWButton = new EXPLORENOWButton(this, applicationModel);
@@ -295,6 +303,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement() { return OURPRODUCTSMainWebElement; }
 		public SPECIALOFFERMainWebElement SPECIALOFFERMainWebElement() { return SPECIALOFFERMainWebElement; }
 		public CONTACTUSMainWebElement CONTACTUSMainWebElement() { return CONTACTUSMainWebElement; }
+		public accountDeletedSuccessfullyWebElement accountDeletedSuccessfullyWebElement() { return accountDeletedSuccessfullyWebElement; }
 		public SignOutMainIconWebElement SignOutMainIconWebElement() { return SignOutMainIconWebElement; }
 		public SEEOFFERButton SEEOFFERButton() { return SEEOFFERButton; }
 		public EXPLORENOWButton EXPLORENOWButton() { return EXPLORENOWButton; }
@@ -648,6 +657,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("A").innerText("CONTACT US").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class accountDeletedSuccessfullyWebElement extends WebElementNodeBase
+	{
+
+		
+								public accountDeletedSuccessfullyWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Account deleted successfully ");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className("successfulDeleteMessage closeDelete").innerText("Account deleted successfully ").tagName("DIV").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -3609,6 +3644,58 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.LinkDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.LinkDescription.Builder().innerText("My account My Orders Sign out ").tagName("A").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class deleteAccountButton extends ButtonNodeBase
+	{
+
+		
+								public deleteAccountButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("                                                                                                                 Delete Account                                            ");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().buttonType("submit").name("                                                                                                                 Delete Account                                            ").tagName("BUTTON").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class yesWebElement extends WebElementNodeBase
+	{
+
+		
+								public yesWebElement(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("yes");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.WebElementDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().innerText("yes").tagName("DIV").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

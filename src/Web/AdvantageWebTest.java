@@ -1679,6 +1679,22 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 "Verify that we cant send request with unproper Email and Subject.");
     }
 
+    @Test
+    public void deleteAccountTest() throws GeneralLeanFtException, ReportException {
+        boolean isSignedIn = signIn();
+        if(!isSignedIn){
+            createNewAccount();
+        }
+        clickWebElement(appModel.AdvantageShoppingPage().MyAccountWebElement());
+        clickWebElement(appModel.deleteAccountButton());
+        clickWebElement(appModel.yesWebElement());
+        boolean deletedSuccessfullyElement = appModel.AdvantageShoppingPage().accountDeletedSuccessfullyWebElement().isVisible();
+        Print("Wait for user will sign out");
+        threadSleep(5000);
+        checkWithReporterIsFalse(deletedSuccessfullyElement, "Verify logout", "Verify if the user really signed out from site");
+    }
+
+
     public void Checkout() {
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());

@@ -123,6 +123,18 @@
                     <image>iVBORw0KGgoAAAANSUhEUgAAAIIAAAA0CAYAAABGkOCVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAHTSURBVHhe7dLRasRQCIThPlL7/g+3XQcEsWpOsicXof8HgUbHsIX5egFvFAFCESAUAUIRIBQBQhEgFAFCESAUAUIRIBQBQhEgFAFCESAUAUIRIBQBQhEgFAFySxF+vn/+PJWVXDc3eefv3RNVsyzeVvlqH5/KlZ3P47Pb9iJUP3THLM9NNzfTzlzZTzfTLjr7jdXZp24pQiX/+CkX+V2V7+Zm2hnfT/eV7mb6VjTl8u5M9lNbi7D646Zc3vl7nptq5lZ3VWa67azeTLm8m7K7PaYI/neUs9HRzlWZ6bazejPl8s7fu/xOjyqCmXbR0c5Vuem2s3oz5bqdz7v9Dv+uCNW8eq9uJ6s3U+7oG74/yl3xuCIYf692rtt1szjvbierN1Pu7DdWsqseW4T4VKpdvKkel99XrN5MudVvmDPZFVuLYFb/ySkX5Tvn82pnqt1RPppy1a6bZ1Mu785kP3VLEfIP3D0zPq92ptp1WZPz3X2euWmXVdnufspW+au2F8HEHzr94JVcNzdndlPWVHufxadztM/iN49uz2SvuqUIeB6KAKEIEIoAoQgQigChCBCKAKEIEIoAoQgQigChCBCKAKEIEIoAoQgQigChCBCKgLfX6xcEyLs7h65WDQAAAABJRU5ErkJggg==</image>
                 </object>
                 <object type="WebElement" technology="Web">
+                    <name>Account deleted successfully </name>
+                    <codeName>accountDeletedSuccessfullyWebElement</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">successfulDeleteMessage closeDelete</property>
+                            <property name="InnerText" type="string" isRegExp="false">Account deleted successfully </property>
+                            <property name="TagName" type="string" isRegExp="false">DIV</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="WebElement" technology="Web">
                     <name>SingInOutIcon</name>
                     <codeName>SignOutMainIconWebElement</codeName>
                     <identification>
@@ -1494,6 +1506,29 @@ View details link</description>
                 <properties>
                     <property name="InnerText" type="string" isRegExp="false">My account My Orders Sign out </property>
                     <property name="TagName" type="string" isRegExp="false">A</property>
+                </properties>
+            </identification>
+        </object>
+        <object type="Button" technology="Web">
+            <name>                                                                                                                 Delete Account                                            </name>
+            <codeName>deleteAccountButton</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="ButtonType" type="string" isRegExp="false">submit</property>
+                    <property name="Name" type="string" isRegExp="false">                                                                                                                 Delete Account                                            </property>
+                    <property name="TagName" type="string" isRegExp="false">BUTTON</property>
+                </properties>
+            </identification>
+        </object>
+        <object type="WebElement" technology="Web">
+            <name>yes</name>
+            <codeName>yesWebElement</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="InnerText" type="string" isRegExp="false">yes</property>
+                    <property name="TagName" type="string" isRegExp="false">DIV</property>
                 </properties>
             </identification>
         </object>
