@@ -33,9 +33,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
 //    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
-//	public static String appURL2 = "16.60.158.84";			// CI
+	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
-	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
+//	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
 //	public static String appURL2 = "52.88.236.171";			// PRODUCTION
@@ -1681,10 +1681,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     @Test
     public void deleteAccountTest() throws GeneralLeanFtException, ReportException {
-        boolean isSignedIn = signIn();
-        if(!isSignedIn){
-            createNewAccount();
-        }
+
+        createNewAccountEx("deleteUser", "Delete123",false);
+        threadSleep(2000);
         clickWebElement(appModel.AdvantageShoppingPage().MyAccountWebElement());
         clickWebElement(appModel.deleteAccountButton());
         clickWebElement(appModel.yesWebElement());
