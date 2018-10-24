@@ -233,6 +233,29 @@ public class AdvantageWebTest extends UnitTestClassBase {
         return isSignedIn;
     }
 
+    public boolean signInWithCredentials(String userName, String password) throws GeneralLeanFtException, ReportException {
+        Print("signIn() start");
+        boolean isSignedIn = isSignedIn();
+
+        if (!isSignedIn) {
+            // Click the sign-in icon
+            clickWebElement(appModel.myAccountMyOrdersSignOutLink());
+            // Fill in the user name and password
+            setValueEditField(appModel.AdvantageShoppingPage().UsernameLoginEditField(), userName);
+            setValueEditField(appModel.AdvantageShoppingPage().PasswordLoginEditField(), password);
+            // Check the Remember Me checkbox
+            setCheckBox(appModel.AdvantageShoppingPage().RememberMeCheckBox(), true);
+            // Click on sign in button
+            clickWebElement(appModel.AdvantageShoppingPage().SIGNINButton());
+            Print("Wait for closing login popup window");
+            threadSleep(2000);
+            isSignedIn = isSignedIn();
+        }
+
+        Print("signIn() end (isSignedIn = " + isSignedIn + " )");
+        return isSignedIn;
+    }
+
     private void setCheckBox(CheckBox checkBox, Boolean value) {
         Print("SET '" + value + "' to " + checkBox.getClass().getSimpleName());
         try {
@@ -1690,7 +1713,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         boolean deletedSuccessfullyElement = appModel.AdvantageShoppingPage().accountDeletedSuccessfullyWebElement().isVisible();
         Print("Wait for user will sign out");
         threadSleep(5000);
-        checkWithReporterIsFalse(deletedSuccessfullyElement, "Verify logout", "Verify if the user really signed out from site");
+        checkWithReporterIsTrue(deletedSuccessfullyElement, "Verify logout", "Verify if the user really signed out from site");
     }
 
 
