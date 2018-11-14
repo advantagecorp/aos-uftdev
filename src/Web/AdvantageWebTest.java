@@ -27,7 +27,7 @@ import static org.junit.Assert.fail;
 
 public class AdvantageWebTest extends UnitTestClassBase {
 
-    public static final String USERNAME = "WebUser7771";
+    public static final String USERNAME = "WebUser1";
     public static final String PASSWORD = "HPEsw123";
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
@@ -1048,7 +1048,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         if(!isSignedIn()){
             signIn();
         }
-        
+
         // Empty the shopping cart
         emptyTheShoppingCart();
 
