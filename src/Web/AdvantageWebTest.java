@@ -831,7 +831,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
      */
     @Test
     public void addMainUserIfNotExists() throws GeneralLeanFtException, ReportException {
-        Print("taping new item");
+        Print("TTTTTTTT,taping new item");
         threadSleep(1000);
         clickWebElement(appModel.myAccountMyOrdersSignOutLink());
         Boolean isSignInBoxThere = appModel.sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement().exists();
