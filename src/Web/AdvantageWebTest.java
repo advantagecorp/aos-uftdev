@@ -27,13 +27,13 @@ import static org.junit.Assert.fail;
 
 public class AdvantageWebTest extends UnitTestClassBase {
 
-    public static final String USERNAME = "WebUser1";
+    public static final String USERNAME = "WebUser7771";
     public static final String PASSWORD = "HPEsw123";
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //    public static String appURL2 = "52.32.172.3";
-//    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
-	public static String appURL2 = "16.60.158.84";			// CI
+    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
+//	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
 //	public static String appURL2 = "35.162.69.22:8080";		//
@@ -395,7 +395,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
         Print("Wait for window to be loaded");
-        threadSleep(5000);
+        threadSleep(3000);
+        waitUntilElementExists(appModel.AdvantageShoppingPage().NEXTButton());
         // Click Next to continue the purchase wizard
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
         // Select the payment method
@@ -721,7 +722,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             // Navigate to the cart
             clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
             Print("Wait for cart to be loaded");
-            threadSleep(4000);
+            threadSleep(2000);
 
             // Get the rows number from the cart table
             int numberOfRowsInCart = 0;
@@ -831,11 +832,14 @@ public class AdvantageWebTest extends UnitTestClassBase {
      */
     @Test
     public void addMainUserIfNotExists() throws GeneralLeanFtException, ReportException {
-        Print("TTTTTTTT,taping new item");
-        threadSleep(1000);
-        clickWebElement(appModel.myAccountMyOrdersSignOutLink());
-        Boolean isSignInBoxThere = appModel.sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement().exists();
-        Print( String.valueOf(isSignInBoxThere));
+//        Print("taping new item");
+//        threadSleep(1000);
+//        clickWebElement(appModel.myAccountMyOrdersSignOutLink());
+//        Boolean isSignInBoxThere = appModel.sIGNINWITHFACEBOOKORUsernamePasswordEmailREMEMBERMESIGNINForgotYourPasswordCREATENEWACCOUNTWebElement().exists();
+//        Print( String.valueOf(isSignInBoxThere));
+        if(isSignedIn()){
+            signOut();
+        }
         //threadSleep(100000);
         signIn();       // Sign in to the store
 
@@ -1041,8 +1045,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
     @Test
     public void purchaseMasterCreditLaptopTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
-        signIn();
-
+        if(!isSignedIn()){
+            signIn();
+        }
+        
         // Empty the shopping cart
         emptyTheShoppingCart();
 
@@ -1721,7 +1727,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().ADDTOCARTButton());
         clickWebElement(appModel.AdvantageShoppingPage().CHECKOUTHoverButton());
         Print("Wait for page to bee loaded");
-        threadSleep(10000);
+        threadSleep(5000);
+        waitUntilElementExists(appModel.AdvantageShoppingPage().NEXTButton());
         clickWebElement(appModel.AdvantageShoppingPage().NEXTButton());
 
         // if SafePay userName and pass are empty will be error
