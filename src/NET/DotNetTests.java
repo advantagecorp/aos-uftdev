@@ -26,6 +26,7 @@ public class DotNetTests extends UnitTestClassBase {
     private static String DEFAULT_APPLICATION_PATH = "C:\\AOS\\AdvancedOnlineShopping1.1.2\\AdvantageShopAdministrator.exe";     // Path on CI
     private static String application = System.getProperty("application_path",DEFAULT_APPLICATION_PATH);    // Path on CI
     private static String SERVER_DEFAULT = "http://16.60.158.84:80"; // CI
+//    private static String SERVER_DEFAULT = "http://16.59.19.38:8080"; // Tamir localhost
     public static String SERVER = System.getProperty("url", SERVER_DEFAULT);
 
     private static String UNAME = "Dot.NetUser";

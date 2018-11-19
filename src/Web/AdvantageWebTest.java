@@ -31,9 +31,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static final String PASSWORD = "HPEsw123";
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
-//    public static String appURL2 = "52.32.172.3";
-    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
-//	public static String appURL2 = "16.60.158.84";			// CI
+//  public static String appURL2 = "52.32.172.3";
+	public static String appURL2 = "16.60.158.84";			// CI
+// 	public static String appURL2 = "34.228.54.91";			// production-ngix
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
 //	public static String appURL2 = "35.162.69.22:8080";		//
@@ -452,8 +452,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     public void checkOutAndPayMasterCredit(String cardnum, String CVV, String holdername, boolean save) throws ReportException {
         Print("checkOutAndPayMasterCredit start");
+        threadSleep(7000);
         // Checkout the cart for purchase
         // Click the cart icon
+        waitUntilElementExists(appModel.AdvantageShoppingPage().CartIcon());
         clickWebElement(appModel.AdvantageShoppingPage().CartIcon());
         // Click the checkout button
         clickWebElement(appModel.AdvantageShoppingPage().CheckOutButton());
@@ -472,6 +474,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         setValueEditField(appModel.AdvantageShoppingPage().CvvNumberEditField(), CVV);
         // Set the card holder name
         setValueEditField(appModel.AdvantageShoppingPage().CardholderNameEditField(), holdername);
+
         if (!save) {
             // Set the Remember Me checkbox to true or false
             setCheckBox(appModel.AdvantageShoppingPage().SaveMasterCreditCheckBox(), false);
@@ -1067,18 +1070,23 @@ public class AdvantageWebTest extends UnitTestClassBase {
     @Test
     public void purchaseMasterCreditMouseTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
-        signIn();
+        if(!isSignedIn()){
+            signIn();
+        }
 
         // Empty the shopping cart
         emptyTheShoppingCart();
+        threadSleep(1000);
 
         // Go to home page
         clickWebElement(appModel.AdvantageShoppingPage().AdvantageDEMOHomeLink());
+        threadSleep(1000);
         browserSync();
 
         // Select an item to purchase and add it to the cart
         // TODO: find other places where is used LogitechG502ProteusCore7 and remove element from model
         selectItemToPurchase(appModel.AdvantageShoppingPage().MicesImg(), appModel.AdvantageShoppingPage().MiceLogitechG502Img());
+        threadSleep(2000);
 
         // Pay for the item
         checkOutAndPayMasterCredit("123412341234", "774", USERNAME, false); // Verification inside
@@ -1716,6 +1724,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().MyAccountWebElement());
         clickWebElement(appModel.deleteAccountButton());
         clickWebElement(appModel.yesWebElement());
+        threadSleep(1000);
         boolean deletedSuccessfullyElement = appModel.AdvantageShoppingPage().accountDeletedSuccessfullyWebElement().isVisible();
         Print("Wait for user will sign out");
         threadSleep(5000);
