@@ -16,6 +16,8 @@ import unittesting.*;
 
 import java.io.IOException;
 
+import static org.junit.Assert.fail;
+
 public class DotNetTests extends UnitTestClassBase {
 
     private static DotNetAppModel appModel;
@@ -23,7 +25,8 @@ public class DotNetTests extends UnitTestClassBase {
 
     //private static String applocation = "C:\\LeanFTJavaRunner\\dotnet_release\\AdvantageShopAdministrator.exe";     // Path on CI
 //    private static String DEFAULT_APPLICATION_PATH = "C:\\LeanFTJavaRunner\\dotnet_release\\AdvantageShopAdministrator.exe";     // Path on CI
-    private static String DEFAULT_APPLICATION_PATH = "C:\\AOS\\AdvancedOnlineShopping1.1.2\\AdvantageShopAdministrator.exe";     // Path on CI
+//    private static String DEFAULT_APPLICATION_PATH = "C:\\AOS\\AdvancedOnlineShopping1.1.2\\AdvantageShopAdministrator.exe";     // Path on CI
+    private static String DEFAULT_APPLICATION_PATH = "C:\\admin_client\\AdvantageShopAdministrator.exe";     
     private static String application = System.getProperty("application_path",DEFAULT_APPLICATION_PATH);    // Path on CI
     private static String SERVER_DEFAULT = "http://16.60.158.84:80"; // CI
 //    private static String SERVER_DEFAULT = "http://16.59.19.38:8080"; // Tamir localhost
@@ -129,7 +132,6 @@ public class DotNetTests extends UnitTestClassBase {
        change its password
         delete the user
          */
-        print("sleep 3000");
         Thread.sleep(3000);
         print(".SideList().select(\"USERS MANAGEMENT\")");
         appModel.AdvantageShopAdministrator().SideList().select("USERS MANAGEMENT");
@@ -153,6 +155,7 @@ public class DotNetTests extends UnitTestClassBase {
         appModel.AdvantageShopAdministrator().FirstNameUserManageEditField().setText("Dot");
         print("LastNameUserManageEditField().setText(\"Net\")");
         appModel.AdvantageShopAdministrator().LastNameUserManageEditField().setText("Net");
+        threadSleep(1500);
         print("OKUserManageButton().click()");
         appModel.AdvantageShopAdministrator().OKUserManageButton().click();
 
@@ -194,6 +197,7 @@ public class DotNetTests extends UnitTestClassBase {
 
     public static void SignIn() throws GeneralLeanFtException {
         print("SignIn() start");
+        threadSleep(1000);
         print("UserNameEditField().setText(\"admin\")");
         appModel.AdvantageShopAdministrator().UserNameEditField().setText("admin");
         print("PasswordEditField().setText(\"adm1n\");");
@@ -235,6 +239,16 @@ public class DotNetTests extends UnitTestClassBase {
 
     public static void print(String message) {
         System.out.println(message);
+    }
+
+    private static void threadSleep(long millis) {
+        try {
+            print("sleep " + millis);
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            print("\nERROR: " + e.getMessage() +  "\n");
+            fail("InterruptedException: failed to sleep for " + millis + " sec");
+        }
     }
 
     private static void printCaptionTest(String nameOfTest) {
