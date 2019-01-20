@@ -138,7 +138,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private mobileEditEditField mobileEditEditField;
 	private youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel;
 	private oKButton oKButton;
-	private oKButton1 oKButton1;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -246,7 +245,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		mobileEditEditField = new mobileEditEditField(this, applicationModel);
 		youAreNotConnectedToInternetLabel = new youAreNotConnectedToInternetLabel(this, applicationModel);
 		oKButton = new oKButton(this, applicationModel);
-		oKButton1 = new oKButton1(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -365,7 +363,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public mobileEditEditField mobileEditEditField() { return mobileEditEditField; }
 		public youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel() { return youAreNotConnectedToInternetLabel; }
 		public oKButton oKButton() { return oKButton; }
-		public oKButton1 oKButton1() { return oKButton1; }
 		
 			public class LAPTOPSLabel extends MobileLabelNodeBase
 	{
@@ -3045,32 +3042,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class oKButton1 extends MobileButtonNodeBase
-	{
-
-		
-								public oKButton1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("OK1");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.ButtonDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).resourceId("button1").text("OK").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	}
 
 	public class SettingsApplication extends MobileApplicationNodeBase
@@ -3090,6 +3061,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private connectedLabel connectedLabel;
 	private fORGETButton fORGETButton;
 	private oNToggle oNToggle;
+	private imageViewProductUiObject imageViewProductUiObject;
 						public SettingsApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -3107,6 +3079,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		connectedLabel = new connectedLabel(this, applicationModel);
 		fORGETButton = new fORGETButton(this, applicationModel);
 		oNToggle = new oNToggle(this, applicationModel);
+		imageViewProductUiObject = new imageViewProductUiObject(this, applicationModel);
 
 			setDisplayName("Settings");
 		}
@@ -3135,6 +3108,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public connectedLabel connectedLabel() { return connectedLabel; }
 		public fORGETButton fORGETButton() { return fORGETButton; }
 		public oNToggle oNToggle() { return oNToggle; }
+		public imageViewProductUiObject imageViewProductUiObject() { return imageViewProductUiObject; }
 		
 			public class AirplaneMode extends MobileUiObjectNodeBase
 	{
@@ -3465,6 +3439,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").mobileCenterIndex(0).resourceId("android:id/switch_widget").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class imageViewProductUiObject extends MobileUiObjectNodeBase
+	{
+
+		
+								public imageViewProductUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("imageViewProduct");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(4).resourceId("com.Advantage.aShopping:id/imageViewProduct").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

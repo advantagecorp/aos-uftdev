@@ -498,67 +498,67 @@ public class androidTests extends UnitTestClassBase {
         CheckOut("Sefepay");
     }
 
-    @Test
-    public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
-    	/*
-    	 * �Login
-���� 		Select Speakers tile
-����� 		Select Manufacture filter � HP
-�� 			Select a Speaker
-����� 		Change Color
-�� 			add +1000 speakers
-��� 		Click on Add to Cart
-���� 		Check quantity message warning
- 			Open cart menu and click checkout
-� 			Select SafePay as Payment method
-� 			Fill in SafePay user & pass
-� 			Un-Check �Save changes in profile for future use�
-� 			Click Pay Now
-�			Verify receipt
-� 			Validate safePay details didn�t changed (via my account)
-    	 */
-
-        checkIsSignedInWithRightUserSignInIfNot();
-        EmptyCart();
-
-        //make  a filter
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
-        threadSleep(5000);
-        appModel.AdvantageShoppingApplication().MainMenu().tap();
-        appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        threadSleep(10000);
-        appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
-        appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
-        appModel.AdvantageShoppingApplication().HPLabel().tap();
-        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-
-        //choose item and change his color
-        threadSleep(4000);
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        appModel.AdvantageShoppingApplication().tabletItem().tap();
-        threadSleep(10000);
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
-        appModel.AdvantageShoppingApplication().ProductColor().tap();
-        appModel.AdvantageShoppingApplication().colorObject().tap();
-
-        //set quantity
-
-        appModel.AdvantageShoppingApplication().ProductQuantity().tap();
-        appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("1000");
-        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-
-        /// need to verify an error msg - not support
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
-        threadSleep(4000);
-        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
-
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-        threadSleep(4000);
-        appModel.AdvantageShoppingApplication().CartAccess().tap();
-
-        CheckOut("Sefepay"); // use safepay
-    }
+//    @Test
+//    public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
+//    	/*
+//    	 * �Login
+//���� 		Select Speakers tile
+//����� 		Select Manufacture filter � HP
+//�� 			Select a Speaker
+//����� 		Change Color
+//�� 			add +1000 speakers
+//��� 		Click on Add to Cart
+//���� 		Check quantity message warning
+// 			Open cart menu and click checkout
+//� 			Select SafePay as Payment method
+//� 			Fill in SafePay user & pass
+//� 			Un-Check �Save changes in profile for future use�
+//� 			Click Pay Now
+//�			Verify receipt
+//� 			Validate safePay details didn�t changed (via my account)
+//    	 */
+//
+//        checkIsSignedInWithRightUserSignInIfNot();
+//        EmptyCart();
+//
+//        //make  a filter
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+//        threadSleep(5000);
+//        appModel.AdvantageShoppingApplication().MainMenu().tap();
+//        appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
+//        threadSleep(10000);
+//        appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
+//        appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
+//        appModel.AdvantageShoppingApplication().HPLabel().tap();
+//        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+//
+//        //choose item and change his color
+//        threadSleep(4000);
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
+//        appModel.SettingsApplication().imageViewProductUiObject().tap();
+//        threadSleep(10000);
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+//        appModel.AdvantageShoppingApplication().ProductColor().tap();
+//        appModel.AdvantageShoppingApplication().colorObject().tap();
+//
+//        //set quantity
+//
+//        appModel.AdvantageShoppingApplication().ProductQuantity().tap();
+//        appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("1000");
+//        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+//
+//        /// need to verify an error msg - not support
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
+//        threadSleep(4000);
+//        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+//
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        threadSleep(4000);
+//        appModel.AdvantageShoppingApplication().CartAccess().tap();
+//
+//        CheckOut("Sefepay"); // use safepay
+//    }
 
 //    @Test
 //    public void OutOfStockTest() throws GeneralLeanFtException {
@@ -771,74 +771,75 @@ public class androidTests extends UnitTestClassBase {
      * @throws GeneralLeanFtException
      * @throws InterruptedException
      */
-    @Test
-    public void OfflineModeTest() throws GeneralLeanFtException {
-        threadSleep(5000);      // wait for application loading
-        if (isSignedIn())
-            SignOut();
-
-        toggleAirplaneMode(true);   // enable airplane mode
-
-//        InitBeforeclassLocal();
-
-//        setting();      // update server name to actual and not to use default
-
-//        Print("wait until application finish installing");
-//        threadSleep(10000);
-//        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-//        tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
-//        setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
-//        tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-//        threadSleep(10000);
-//        tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
-
-        app.restart();      // need for application to enable Offline Mode
-
-        // Check first message on start application that You are not connected to internet
-        Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
-        Print("TAP OKButton");
-        appModel.AdvantageShoppingApplication().oKButton1().tap();
-        threadSleep(5000);
-
-        // Check that default server setted to "Offline Mode"
-        String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
-        Print("Server in EditTextServer: " + server);
-        Verification(Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting"));
-        Print("TAP ApplyButton");
-        appModel.AdvantageShoppingApplication().ApplyButton().tap();
-        threadSleep(2000);
-
-        // Check that right message appeared after clicking on APPLY button
-        Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(), "Verification - offline mode note massage", "Verify that the note for offline mode appears");
-        Print("TAP OKButton");
-        appModel.AdvantageShoppingApplication().oKButton1().tap();
-
-        // TODO: add all functions that contains OfflineMode
-
-        signinInOfflineMode();
-
-        buyAndCheckOutInOfflineMode();
-
-        // TODO:
-        // try to edit the user account - validate that you get the message: "not applicable in offline mode"
-
-        SignOut(); //clear offline user.
-
-        toggleAirplaneMode(false);      // disable airplane mode
-
-        app.restart();
-
-
-
-//        // back to normal state in application
-//        // If some user already signed in do sign out
+    //Comment out untill device setting issue is resolved by MC
+//    @Test
+//    public void OfflineModeTest() throws GeneralLeanFtException {
+//        threadSleep(5000);      // wait for application loading
 //        if (isSignedIn())
 //            SignOut();
 //
-//        // disable Offline Mode and set default server
+//        toggleAirplaneMode(true);   // enable airplane mode
+//
+////        InitBeforeclassLocal();
+//
+////        setting();      // update server name to actual and not to use default
+//
+////        Print("wait until application finish installing");
+////        threadSleep(10000);
+////        tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+////        tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
+////        setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
+////        tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+////        threadSleep(10000);
+////        tapUiObjectButton(appModel.AdvantageShoppingApplication().OKButton());
+//
+//        app.restart();      // need for application to enable Offline Mode
+//
+//        // Check first message on start application that You are not connected to internet
+//        Verify.isTrue(appModel.AdvantageShoppingApplication().YouAreNotConnectedToLabel().exists(), "Verification - not connected to internet", "Verify that the offline massage appears");
+//        Print("TAP OKButton");
+//        appModel.AdvantageShoppingApplication().oKButton1().tap();
+//        threadSleep(5000);
+//
+//        // Check that default server setted to "Offline Mode"
+//        String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
+//        Print("Server in EditTextServer: " + server);
+//        Verification(Verify.isTrue(server.equals("Offline Mode"), "Verification - server massage", "Verify that the offline massage appears in the server setting"));
+//        Print("TAP ApplyButton");
+//        appModel.AdvantageShoppingApplication().ApplyButton().tap();
+//        threadSleep(2000);
+//
+//        // Check that right message appeared after clicking on APPLY button
+//        Verify.isTrue(appModel.AdvantageShoppingApplication().NoteOfflineModLabel().exists(), "Verification - offline mode note massage", "Verify that the note for offline mode appears");
+//        Print("TAP OKButton");
+//        appModel.AdvantageShoppingApplication().oKButton1().tap();
+//
+//        // TODO: add all functions that contains OfflineMode
+//
+//        signinInOfflineMode();
+//
+//        buyAndCheckOutInOfflineMode();
+//
+//        // TODO:
+//        // try to edit the user account - validate that you get the message: "not applicable in offline mode"
+//
+//        SignOut(); //clear offline user.
+//
+//        toggleAirplaneMode(false);      // disable airplane mode
+//
 //        app.restart();
-//        setting();
-    }
+//
+//
+//
+////        // back to normal state in application
+////        // If some user already signed in do sign out
+////        if (isSignedIn())
+////            SignOut();
+////
+////        // disable Offline Mode and set default server
+////        app.restart();
+////        setting();
+//    }
 
 //    @Test
 //    public void uploadNewImageToProductTest() throws GeneralLeanFtException{

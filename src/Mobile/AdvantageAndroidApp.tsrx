@@ -1350,19 +1350,6 @@
                         </properties>
                     </identification>
                 </object>
-                <object type="Button" technology="Mobile">
-                    <name>OK1</name>
-                    <codeName>oKButton1</codeName>
-                    <description></description>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
-                            <property name="ResourceId" type="string" isRegExp="false">button1</property>
-                            <property name="Text" type="string" isRegExp="false">OK</property>
-                        </properties>
-                    </identification>
-                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">
@@ -1543,6 +1530,18 @@
                             <property name="ClassName" type="string" isRegExp="false">Switch</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                             <property name="ResourceId" type="string" isRegExp="false">android:id/switch_widget</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>imageViewProduct</name>
+                    <codeName>imageViewProductUiObject</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
+                            <property name="ResourceId" type="string" isRegExp="false">com.Advantage.aShopping:id/imageViewProduct</property>
                         </properties>
                     </identification>
                 </object>
