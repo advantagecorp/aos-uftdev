@@ -17,6 +17,7 @@ import com.hp.lft.sdk.web.*;
 public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppingApplication AdvantageShoppingApplication;
 	private SettingsApplication SettingsApplication;
 	private AdvantageShoppingPage AdvantageShoppingPage;
+	private advantageShoppingApplication advantageShoppingApplication;
 	
 	public AdvantageAndroidApp(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -24,12 +25,14 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				AdvantageShoppingApplication = new AdvantageShoppingApplication(contextTestObject, this);
 		SettingsApplication = new SettingsApplication(contextTestObject, this);
 		AdvantageShoppingPage = new AdvantageShoppingPage(contextTestObject, this);
+		advantageShoppingApplication = new advantageShoppingApplication(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
 			public AdvantageShoppingApplication AdvantageShoppingApplication() { return AdvantageShoppingApplication; }
 		public SettingsApplication SettingsApplication() { return SettingsApplication; }
 		public AdvantageShoppingPage AdvantageShoppingPage() { return AdvantageShoppingPage; }
+		public advantageShoppingApplication advantageShoppingApplication() { return advantageShoppingApplication; }
 
 		public class AdvantageShoppingApplication extends MobileApplicationNodeBase
 	{
@@ -138,7 +141,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private mobileEditEditField mobileEditEditField;
 	private youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel;
 	private oKButton oKButton;
-	private enableFingerprintAuthenticationOFFToggle enableFingerprintAuthenticationOFFToggle;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -246,7 +248,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		mobileEditEditField = new mobileEditEditField(this, applicationModel);
 		youAreNotConnectedToInternetLabel = new youAreNotConnectedToInternetLabel(this, applicationModel);
 		oKButton = new oKButton(this, applicationModel);
-		enableFingerprintAuthenticationOFFToggle = new enableFingerprintAuthenticationOFFToggle(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -365,7 +366,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public mobileEditEditField mobileEditEditField() { return mobileEditEditField; }
 		public youAreNotConnectedToInternetLabel youAreNotConnectedToInternetLabel() { return youAreNotConnectedToInternetLabel; }
 		public oKButton oKButton() { return oKButton; }
-		public enableFingerprintAuthenticationOFFToggle enableFingerprintAuthenticationOFFToggle() { return enableFingerprintAuthenticationOFFToggle; }
 		
 			public class LAPTOPSLabel extends MobileLabelNodeBase
 	{
@@ -3045,32 +3045,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				
 			}
 
-	public class enableFingerprintAuthenticationOFFToggle extends MobileToggleNodeBase
-	{
-
-		
-								public enableFingerprintAuthenticationOFFToggle(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Enable fingerprint authentication OFF");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.ToggleDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.ToggleDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.ToggleDescription.Builder().className("Switch").mobileCenterIndex(0).resourceId("com.Advantage.aShopping:id/fingerprintSwitch").build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
 	}
 
 	public class SettingsApplication extends MobileApplicationNodeBase
@@ -3559,6 +3533,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			}
 
 	}
+
+	public class advantageShoppingApplication extends MobileApplicationNodeBase
+	{
+
+		
+								public advantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("Advantage Shopping1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.ApplicationDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.ApplicationDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.ApplicationDescription.Builder().identifier("com.Advantage.aShopping").packaged(false).build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
 
 
 			

@@ -82,20 +82,6 @@ public class androidTests extends UnitTestClassBase {
             InitBeforeclass();
 
         Print("appURL: " + appURL);
-        Print("verifying fingerprint off");
-        app.launch();
-        try {
-            Print("sleep 4000");
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            printError(e);
-            fail("InterruptedException: failed to sleep for " + 4000 + " sec");
-        }
-        appModel.AdvantageShoppingApplication().MainMenu().tap();
-        appModel.AdvantageShoppingApplication().SETTINGSLabel();
-        if(appModel.AdvantageShoppingApplication().enableFingerprintAuthenticationOFFToggle().isChecked()){
-            appModel.AdvantageShoppingApplication().enableFingerprintAuthenticationOFFToggle().tap();
-        }
 
     }
 
