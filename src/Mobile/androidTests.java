@@ -959,7 +959,7 @@ public class androidTests extends UnitTestClassBase {
             result = true;
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().HOME());
         Print("isSignedIn end (isSignedIn ? " + result + ") " + (result ? innerTxt: "" ));
-        return result;
+        return result;//git
     }
 
     public boolean isSignedInWithRightCredential(String userName) throws GeneralLeanFtException{
