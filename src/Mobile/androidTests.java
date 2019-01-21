@@ -164,7 +164,7 @@ public class androidTests extends UnitTestClassBase {
 //    @Test
 //    public void testTheTest() throws GeneralLeanFtException{
 //        isConnectedToTheInternet();
-//    }
+//    }//git push
     public boolean isConnectedToTheInternet() throws GeneralLeanFtException {
         return true;
 //        Print("is connected to the internet");
