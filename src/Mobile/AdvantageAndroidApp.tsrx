@@ -1352,6 +1352,18 @@
                 </object>
             </children>
         </object>
+        <object type="Toggle" technology="Mobile">
+            <name>Enable fingerprint authentication OFF</name>
+            <codeName>enableFingerprintAuthenticationOFFToggle</codeName>
+            <description></description>
+            <identification>
+                <properties>
+                    <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                    <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                    <property name="ResourceId" type="string" isRegExp="false">com.Advantage.aShopping:id/fingerprintSwitch</property>
+                </properties>
+            </identification>
+        </object>
         <object type="Application" technology="Mobile">
             <name>Settings</name>
             <codeName>SettingsApplication</codeName>

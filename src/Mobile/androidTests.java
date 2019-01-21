@@ -82,6 +82,21 @@ public class androidTests extends UnitTestClassBase {
             InitBeforeclass();
 
         Print("appURL: " + appURL);
+        Print("verifying fingerprint off");
+        app.launch();
+        try {
+            Print("sleep 4000");
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            printError(e);
+            fail("InterruptedException: failed to sleep for " + 4000 + " sec");
+        }
+        appModel.AdvantageShoppingApplication().MainMenu().tap();
+        appModel.AdvantageShoppingApplication().SETTINGSLabel();
+        if(appModel.enableFingerprintAuthenticationOFFToggle().isChecked()){
+            appModel.enableFingerprintAuthenticationOFFToggle().tap();
+        }
+
     }
 
     @AfterClass
@@ -366,16 +381,6 @@ public class androidTests extends UnitTestClassBase {
     }
 
     @Test
-    public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
-        if (isSignedIn())
-            SignOut();
-        SignIn();
-        app.launch();
-        Verify.isTrue(SignIn(), "Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
-        SignOut();
-    }
-
-    @Test
     public void CreateExistingUserTest() throws GeneralLeanFtException, InterruptedException {
         if (isSignedIn())
             SignOut();
@@ -401,7 +406,7 @@ public class androidTests extends UnitTestClassBase {
 //            waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
         threadSleep(5000);
 
-        Boolean isSignedIn = SignIn();
+        Boolean isSignedIn = isSignedIn();
         Print("isSignedIn " + isSignedIn);
         Verification(Verify.isFalse(isSignedIn, "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
         Print("CreateNewUser end");
