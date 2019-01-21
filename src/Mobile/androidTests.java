@@ -475,15 +475,15 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
-        threadSleep(5000);
+        threadSleep(4000);
         appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(5000);
+        threadSleep(4000);
 
         device.back();
 
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-        threadSleep(5000);
+        threadSleep(4000);
         appModel.AdvantageShoppingApplication().CartAccess().tap();
         CheckOut("Sefepay");
     }
@@ -707,6 +707,7 @@ public class androidTests extends UnitTestClassBase {
         Verification(Verify.isTrue(isChangedToDefaultPass,
                 "Verification - Change Password step 2 -  change back to the default pass",
                 "Verify that the user login with the new password"));
+        PASS = "Password5";
 
         SignOut();
     }
