@@ -369,9 +369,9 @@ public class androidTests extends UnitTestClassBase {
     public void SilentLoginTest() throws GeneralLeanFtException, InterruptedException {
         if (isSignedIn())
             SignOut();
-        SignIn(false);
+        SignIn();
         app.launch();
-        Verify.isTrue(SignIn(true), "Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
+        Verify.isTrue(SignIn(), "Verification - Sign In", "Verify that the user " + UNAME + " In still sign in.");
         SignOut();
     }
 
@@ -401,7 +401,7 @@ public class androidTests extends UnitTestClassBase {
 //            waitUntilElementExists(appModel.AdvantageShoppingApplication().AdvantageObjectUiObject(), 5000);
         threadSleep(5000);
 
-        Boolean isSignedIn = SignIn(true);
+        Boolean isSignedIn = SignIn();
         Print("isSignedIn " + isSignedIn);
         Verification(Verify.isFalse(isSignedIn, "Existing new User creation", "verify that the creation of Existing user NOT succeed"));
         Print("CreateNewUser end");
@@ -417,7 +417,7 @@ public class androidTests extends UnitTestClassBase {
     public void SignOutTest() throws GeneralLeanFtException {
         // Check if any user already signed in. If any, do sign in
         if (!isSignedIn())
-            SignIn(false);
+            SignIn();
 
         // Do sign out to signed in user
         SignOut();
@@ -700,11 +700,11 @@ public class androidTests extends UnitTestClassBase {
     	String savedOriginalPass = PASS;
 
         SignOut();
-        SignIn(false);
+        SignIn();
 
         // step 1 - change to new pass
         changepassword(PASSNEW, PASS);
-        Boolean isChangedToNewPass = SignIn(false);
+        Boolean isChangedToNewPass = SignIn();
         Print("isChangedToNewPass " + PASSNEW + " " + isChangedToNewPass);
         Verification(Verify.isTrue(isChangedToNewPass,
                 "Verification - Change Password step 1 - change to new pass",
@@ -712,7 +712,7 @@ public class androidTests extends UnitTestClassBase {
 
         // step 2 -  change back to the default pass
         changepassword(savedOriginalPass, PASSNEW);
-        Boolean isChangedToDefaultPass = SignIn(false);
+        Boolean isChangedToDefaultPass = SignIn();
         Print("isChangedToDefaultPass " + savedOriginalPass + " " + isChangedToDefaultPass);
         Verification(Verify.isTrue(isChangedToDefaultPass,
                 "Verification - Change Password step 2 -  change back to the default pass",
@@ -937,14 +937,14 @@ public class androidTests extends UnitTestClassBase {
         if (!isSignedInWithRightCredential(UNAME)){
             if(isSignedIn()){
                 SignOut();
-                SignIn(false);
+                SignIn();
                 if(isSignedIn()){
                     Print("signed in with right user True");
                 }else{
                     Print("signed in failed");
                 }
             }else{
-                SignIn(false);
+                SignIn();
             }
         }
 
@@ -992,7 +992,7 @@ public class androidTests extends UnitTestClassBase {
         return result;
     }
 
-    public boolean SignIn(Boolean quiet) throws GeneralLeanFtException{
+    public boolean SignIn() throws GeneralLeanFtException{
         Print("SignIn() start");
         //Print("waitUntilElementExists MainMenu()");
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
@@ -1001,30 +1001,17 @@ public class androidTests extends UnitTestClassBase {
             getToScreenWithMainMenu();
         }
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-//        String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
-
-//        if (innerTxt.equals("LOGIN")) {
-            if (!quiet) {
-                threadSleep(1000);
-                tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
-                setTextEditField(appModel.AdvantageShoppingApplication().UserNameEdit(), UNAME);
-                setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
-                tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
-                if (appModel.AdvantageShoppingApplication().IncorrectUserNameOrPLabel1().exists()) {
-                    CreateNewUserUserIsNotLoggedIn();
-                    Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
-                    Print("Logged in");
-                }else {
-                    System.out.println(UNAME + "  Logged in successfully");
-                    Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
-                    Print("SignIn() end");
-                    return true;
-                }
-                Print("SignIn() end");
-            }
-//        }
-        System.out.println(UNAME + " already logged in");
-//        deviceBack();
+        threadSleep(1000);
+        tapUiObjectLabel(appModel.AdvantageShoppingApplication().Login());
+        setTextEditField(appModel.AdvantageShoppingApplication().UserNameEdit(), UNAME);
+        setTextEditField(appModel.AdvantageShoppingApplication().PassEdit(), PASS);
+        tapUiObjectButton(appModel.AdvantageShoppingApplication().LOGINButton());
+        if (isSignedIn()) {
+            System.out.println(UNAME + "  Logged in successfully");
+            Verify.isTrue(true, "Verification - Sign In", "Verify that the user " + UNAME + " signed in properly.");
+            Print("SignIn() end");
+            return true;
+        }
         Print("SignIn() end");
         return false;
     }
