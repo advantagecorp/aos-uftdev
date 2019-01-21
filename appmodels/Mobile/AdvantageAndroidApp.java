@@ -17,7 +17,6 @@ import com.hp.lft.sdk.web.*;
 public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppingApplication AdvantageShoppingApplication;
 	private SettingsApplication SettingsApplication;
 	private AdvantageShoppingPage AdvantageShoppingPage;
-	private advantageShoppingApplication advantageShoppingApplication;
 	
 	public AdvantageAndroidApp(TestObject contextTestObject) throws GeneralLeanFtException
 	{
@@ -25,14 +24,12 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 				AdvantageShoppingApplication = new AdvantageShoppingApplication(contextTestObject, this);
 		SettingsApplication = new SettingsApplication(contextTestObject, this);
 		AdvantageShoppingPage = new AdvantageShoppingPage(contextTestObject, this);
-		advantageShoppingApplication = new advantageShoppingApplication(contextTestObject, this);
 		rebuildDescriptions();
 	}	
 
 			public AdvantageShoppingApplication AdvantageShoppingApplication() { return AdvantageShoppingApplication; }
 		public SettingsApplication SettingsApplication() { return SettingsApplication; }
 		public AdvantageShoppingPage AdvantageShoppingPage() { return AdvantageShoppingPage; }
-		public advantageShoppingApplication advantageShoppingApplication() { return advantageShoppingApplication; }
 
 		public class AdvantageShoppingApplication extends MobileApplicationNodeBase
 	{
@@ -3533,32 +3530,6 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			}
 
 	}
-
-	public class advantageShoppingApplication extends MobileApplicationNodeBase
-	{
-
-		
-								public advantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("Advantage Shopping1");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.mobile.ApplicationDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.mobile.ApplicationDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.mobile.ApplicationDescription.Builder().identifier("com.Advantage.aShopping").packaged(false).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
 
 
 			
