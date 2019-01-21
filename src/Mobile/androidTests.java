@@ -45,7 +45,6 @@ public class androidTests extends UnitTestClassBase {
 //        static String appURL2 = "16.59.19.123:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
 
-    //for  push
 
     private static int currentNumberOfTest = 0;
     private static long startTimeAllTests;
