@@ -1565,16 +1565,5 @@
                 </object>
             </children>
         </object>
-        <object type="Application" technology="Mobile">
-            <name>Advantage Shopping1</name>
-            <codeName>advantageShoppingApplication</codeName>
-            <description></description>
-            <identification>
-                <properties>
-                    <property name="Identifier" type="string" isRegExp="false">com.Advantage.aShopping</property>
-                    <property name="IsPackaged" type="boolean" isRegExp="false">false</property>
-                </properties>
-            </identification>
-        </object>
     </objects>
 </applicationModel>
