@@ -517,7 +517,7 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        threadSleep(10000);
+        threadSleep(5000);
         appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
         appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
         appModel.AdvantageShoppingApplication().HPLabel().tap();
@@ -527,7 +527,7 @@ public class androidTests extends UnitTestClassBase {
         threadSleep(4000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
         appModel.AdvantageShoppingApplication().tabletItem().tap();
-        threadSleep(10000);
+        threadSleep(5000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
         appModel.AdvantageShoppingApplication().ProductColor().tap();
         appModel.AdvantageShoppingApplication().colorObject().tap();
