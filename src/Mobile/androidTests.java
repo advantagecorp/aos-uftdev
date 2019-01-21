@@ -526,7 +526,7 @@ public class androidTests extends UnitTestClassBase {
         //choose item and change his color
         threadSleep(4000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        appModel.SettingsApplication().imageViewProductUiObject().tap();
+        appModel.AdvantageShoppingApplication().tabletItem().tap();
         threadSleep(10000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
         appModel.AdvantageShoppingApplication().ProductColor().tap();
