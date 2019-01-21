@@ -93,8 +93,8 @@ public class androidTests extends UnitTestClassBase {
         }
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().SETTINGSLabel();
-        if(appModel.enableFingerprintAuthenticationOFFToggle().isChecked()){
-            appModel.enableFingerprintAuthenticationOFFToggle().tap();
+        if(appModel.AdvantageShoppingApplication().enableFingerprintAuthenticationOFFToggle().isChecked()){
+            appModel.AdvantageShoppingApplication().enableFingerprintAuthenticationOFFToggle().tap();
         }
 
     }
