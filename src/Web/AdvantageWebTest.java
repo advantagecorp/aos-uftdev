@@ -1514,6 +1514,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
         // Select an item to purchase and add it to the cart
         //selectItemToPurchase(appModel.AdvantageShoppingPage().SpeakersImg, appModel.AdvantageShoppingPage().SpeakerBoseSoundlinkWS());
+        threadSleep(1000);
         clickWebElement(appModel.AdvantageShoppingPage().laptopFororderService());
         String ProductName = getWebElementInnerText(appModel.AdvantageShoppingPage().LaptopName());
         Print("ORDER:" + ProductName);
