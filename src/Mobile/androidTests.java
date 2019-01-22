@@ -512,7 +512,7 @@ public class androidTests extends UnitTestClassBase {
         EmptyCart();
 
         //make  a filter
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());
+//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());//build
         threadSleep(5000);
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
