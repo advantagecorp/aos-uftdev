@@ -488,67 +488,67 @@ public class androidTests extends UnitTestClassBase {
         CheckOut("Sefepay");
     }
 
-    @Test
-    public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
-    	/*
-    	 * �Login
-���� 		Select Speakers tile
-����� 		Select Manufacture filter � HP
-�� 			Select a Speaker
-����� 		Change Color
-�� 			add +1000 speakers
-��� 		Click on Add to Cart
-���� 		Check quantity message warning
- 			Open cart menu and click checkout
-� 			Select SafePay as Payment method
-� 			Fill in SafePay user & pass
-� 			Un-Check �Save changes in profile for future use�
-� 			Click Pay Now
-�			Verify receipt
-� 			Validate safePay details didn�t changed (via my account)
-    	 */
-
-        checkIsSignedInWithRightUserSignInIfNot();
-        EmptyCart();
-
-        //make  a filter
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());//build
-        threadSleep(5000);
-        appModel.AdvantageShoppingApplication().MainMenu().tap();
-        appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        threadSleep(5000);
-        appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
-        appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
-        appModel.AdvantageShoppingApplication().HPLabel().tap();
-        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-
-        //choose item and change his color
-        threadSleep(4000);
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
-        appModel.AdvantageShoppingApplication().tabletItem().tap();
-        threadSleep(5000);
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
-        appModel.AdvantageShoppingApplication().ProductColor().tap();
-        appModel.AdvantageShoppingApplication().colorObject().tap();
-
-        //set quantity
-
-        appModel.AdvantageShoppingApplication().ProductQuantity().tap();
-        appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("1000");
-        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
-
-        /// need to verify an error msg - not support
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
-        threadSleep(4000);
-        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
-
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
-        threadSleep(4000);
-        appModel.AdvantageShoppingApplication().CartAccess().tap();
-
-        CheckOut("Sefepay"); // use safepay
-    }
+//    @Test
+//    public void PurchaseHugeQuantityTest() throws GeneralLeanFtException, InterruptedException {
+//    	/*
+//    	 * �Login
+//���� 		Select Speakers tile
+//����� 		Select Manufacture filter � HP
+//�� 			Select a Speaker
+//����� 		Change Color
+//�� 			add +1000 speakers
+//��� 		Click on Add to Cart
+//���� 		Check quantity message warning
+// 			Open cart menu and click checkout
+//� 			Select SafePay as Payment method
+//� 			Fill in SafePay user & pass
+//� 			Un-Check �Save changes in profile for future use�
+//� 			Click Pay Now
+//�			Verify receipt
+//� 			Validate safePay details didn�t changed (via my account)
+//    	 */
+//
+//        checkIsSignedInWithRightUserSignInIfNot();
+//        EmptyCart();
+//
+//        //make  a filter
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu());//build
+//        threadSleep(5000);
+//        appModel.AdvantageShoppingApplication().MainMenu().tap();
+//        appModel.AdvantageShoppingApplication().SPEAKERSLabel().tap();
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
+////        threadSleep(5000);
+////        appModel.AdvantageShoppingApplication().ImageViewFilter().tap();
+////        appModel.AdvantageShoppingApplication().BYMANUFACTURERLabel().tap();
+////        appModel.AdvantageShoppingApplication().HPLabel().tap();
+////        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+//
+//        //choose item and change his color
+//        threadSleep(4000);
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().tabletItem());
+//        appModel.AdvantageShoppingApplication().tabletItem().tap();
+//        threadSleep(5000);
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductColor());
+//        appModel.AdvantageShoppingApplication().ProductColor().tap();
+//        appModel.AdvantageShoppingApplication().colorObject().tap();
+//
+//        //set quantity
+//
+//        appModel.AdvantageShoppingApplication().ProductQuantity().tap();
+//        appModel.AdvantageShoppingApplication().ProductQuantityEditField().setText("1000");
+//        appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
+//
+//        /// need to verify an error msg - not support
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
+//        threadSleep(4000);
+//        appModel.AdvantageShoppingApplication().ADDTOCARTButton().tap();
+//
+////        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);
+//        threadSleep(4000);
+//        appModel.AdvantageShoppingApplication().CartAccess().tap();
+//
+//        CheckOut("Sefepay"); // use safepay
+//    }
 
 //    @Test
 //    public void OutOfStockTest() throws GeneralLeanFtException {
