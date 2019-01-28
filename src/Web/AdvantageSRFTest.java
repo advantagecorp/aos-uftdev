@@ -27,8 +27,8 @@ public class AdvantageSRFTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
     //    public static String appURL2 = "52.32.172.3";
-    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
-//	public static String appURL2 = "16.60.158.84";			// CI
+//    public static String appURL2 = "52.38.138.5:8080";      // PRODUCTION updated
+	public static String appURL2 = "16.60.158.84";			// CI
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "35.162.69.22:8080";		//
 //	public static String appURL2 = "156.152.164.67:8080";	//
@@ -113,13 +113,18 @@ public class AdvantageSRFTest extends UnitTestClassBase {
 
     // This internal method checks if a user is already signed in to the web site
     public boolean isSignedIn() {
+
         String loggedInUserName = getUsernameFromSignOutElement();
-        if (loggedInUserName.isEmpty()) {
-            Print("isSignedIn FALSE");
+
+        if(loggedInUserName.contains("My account") || loggedInUserName.isEmpty()){
+            Print(" User is not logged in. Get name is " + loggedInUserName);
             return false;
+        }else{
+
+            Print("isSignedIn end with true and loggedInUserName = '" + loggedInUserName + "'");
+            return true;
         }
-        Print("isSignedIn TRUE");
-        return true;
+
     }
 
     public static void Print(String msg) {
@@ -216,25 +221,35 @@ public class AdvantageSRFTest extends UnitTestClassBase {
         String pattern = null;
         try {
             pattern = appModel.AdvantageShoppingPage().SignOutMainIconWebElement().getDescription().getInnerText().toString();
-        } catch (GeneralLeanFtException e) {
-//            printError(e);
-//            Print("\nERROR: " + e.getMessage() +  "\n");
-//            fail("GeneralLeanFtException: getUsernameFromSignOutElement");
-            pattern = null;
-        }
+            pattern = pattern.substring(4,14);
+
         // Get the actual inner text of the Sign in Out object during runtime
         String signInOutIconElementInnerText = getWebElementInnerText(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
 
-        // Create a Pattern object
-        Pattern r = Pattern.compile(pattern);
+        if (signInOutIconElementInnerText.indexOf(pattern)== 0){
+            Print("No user is logged in, get element is - " + signInOutIconElementInnerText);
+            return "";
+        }
+        signInOutIconElementInnerText = signInOutIconElementInnerText.substring(0,signInOutIconElementInnerText.indexOf(pattern)).trim();
+        Print("User name - "+ signInOutIconElementInnerText);
 
-        // Now create matcher object
-        Matcher m = r.matcher(signInOutIconElementInnerText);
-        m.matches();
-        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
-        String loggedInUserName = m.group(1).trim();
-        Print("getUsernameFromSignOutElement end loggedInUserName = '" + loggedInUserName + "'");
-        return loggedInUserName;
+//      //Former code
+        // Create a Pattern object
+//        Pattern r = Pattern.compile(pattern);
+//+
+//        // Now create matcher object
+//        Matcher m = r.matcher(signInOutIconElementInnerText);
+//        m.matches();
+//        // Extracting the user name from the object's text. It is concatenated to the beginning of the text.
+//        String loggedInUserName = m.group(1).trim();
+
+            return signInOutIconElementInnerText;
+        } catch (GeneralLeanFtException e) {
+        e.printStackTrace();
+        return "";
+        }
+
+
     }
 
     private void browserNavigate(String navigateUrl) {
