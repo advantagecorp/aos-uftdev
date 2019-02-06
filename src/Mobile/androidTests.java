@@ -158,7 +158,7 @@ public class androidTests extends UnitTestClassBase {
         }
         app.restart();
         Print("setting() end");
-    }
+    }//Git
 
 //    @Test
 //    public void testTheTest() throws GeneralLeanFtException{
