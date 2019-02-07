@@ -28,7 +28,8 @@ public class DotNetTests extends UnitTestClassBase {
 //    private static String DEFAULT_APPLICATION_PATH = "C:\\AOS\\AdvancedOnlineShopping1.1.2\\AdvantageShopAdministrator.exe";     // Path on CI
     private static String DEFAULT_APPLICATION_PATH = "C:\\admin_client\\AdvantageShopAdministrator.exe";     
     private static String application = System.getProperty("application_path",DEFAULT_APPLICATION_PATH);    // Path on CI
-    private static String SERVER_DEFAULT = "http://16.60.158.84:80"; // CI
+    //private static String SERVER_DEFAULT = "http://16.60.158.84:80"; // CI
+    private static String SERVER_DEFAULT = "http://18.212.178.84"; // Staging
 //    private static String SERVER_DEFAULT = "http://16.59.19.38:8080"; // Tamir localhost
     public static String SERVER = System.getProperty("url", SERVER_DEFAULT);
 
@@ -196,6 +197,7 @@ public class DotNetTests extends UnitTestClassBase {
     }
 
     public static void SignIn() throws GeneralLeanFtException {
+
         print("SignIn() start");
         threadSleep(1000);
         print("UserNameEditField().setText(\"admin\")");
@@ -211,7 +213,48 @@ public class DotNetTests extends UnitTestClassBase {
         //appModel.AdvantageShopAdministrator().SIGNINButton().click();
         print("waitUntilElementExists PRODUCTSUiObject(");
         waitUntilElementExists(appModel.AdvantageShopAdministrator().PRODUCTSUiObject());
+        if (checkIsSignIn()){
+            print("Successful login");
+        }else{
+            print("Did not login");
+            print("Trying to click signIn again ");
+            appModel.AdvantageShopAdministrator().SIGNINButton().click();
+            if(checkIsSignIn ()){
+                print("Successful login");
+            }else {
+                print("Did not login");
+                print("Trying to click signIn again ");
+                appModel.AdvantageShopAdministrator().SIGNINButton().click();
+                if(checkIsSignIn ()){
+                    print("Successful login");
+                }else {
+                    print("Fail at login");
+                }
+            }
+        }
+        threadSleep(1000);
         print("SignIn() end");
+    }
+
+    public static boolean checkIsSignIn (){
+
+        print("isSignIn starts");
+        boolean isSignIn = false;
+        threadSleep(2000);
+        try{
+
+            if(appModel.AdvantageShopAdministrator().LogoutButton().exists()){
+                isSignIn = true;
+                print("isSignIn = true");
+            }else{
+                print("isSignIn = false");
+            }
+            return isSignIn;
+        }catch (Exception e){
+            e.printStackTrace();
+            isSignIn = false;
+            return isSignIn;
+        }
     }
 
     public void ChangePass() throws GeneralLeanFtException {
