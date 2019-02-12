@@ -217,6 +217,8 @@ public class DotNetTests extends UnitTestClassBase {
             print("Successful login");
         }else{
             print("Did not login");
+            print("error message" + appModel.AdvantageShopAdministrator().AdminUiObject().getText());
+            print(appModel.AdvantageShopAdministrator().AdminUiObject().getText());
             print("Trying to click signIn again ");
             appModel.AdvantageShopAdministrator().SIGNINButton().click();
             if(checkIsSignIn ()){
