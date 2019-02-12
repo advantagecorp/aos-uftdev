@@ -210,7 +210,7 @@ public class DotNetTests extends UnitTestClassBase {
         print("SIGNINButton().click()");
         appModel.AdvantageShopAdministrator().SIGNINButton().click();
         //print("SIGNINButton().click()");
-        //appModel.AdvantageShopAdministrator().SIGNINButton().click();
+        //appModel.AdvantageShopAdministrator().SIGNINButton().click();Push
         print("waitUntilElementExists PRODUCTSUiObject(");
         waitUntilElementExists(appModel.AdvantageShopAdministrator().PRODUCTSUiObject());
         if (checkIsSignIn()){
