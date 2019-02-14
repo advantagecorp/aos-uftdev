@@ -380,6 +380,43 @@
                         <index>3</index>
                     </identification>
                 </object>
+                <object type="Dialog" technology="Standard Windows">
+                    <name>create user failed</name>
+                    <codeName>createUserFailedDialog</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="IsChildWindow" type="boolean" isRegExp="false">false</property>
+                            <property name="IsOwnedWindow" type="boolean" isRegExp="false">true</property>
+                            <property name="NativeClass" type="string" isRegExp="false">#32770</property>
+                            <property name="Text" type="string" isRegExp="false">create user failed</property>
+                        </properties>
+                    </identification>
+                    <children>
+                        <object type="Button" technology="Standard Windows">
+                            <name>OK</name>
+                            <codeName>oKButton</codeName>
+                            <description></description>
+                            <identification>
+                                <properties>
+                                    <property name="NativeClass" type="string" isRegExp="false">Button</property>
+                                    <property name="Text" type="string" isRegExp="false">OK</property>
+                                </properties>
+                            </identification>
+                        </object>
+                    </children>
+                </object>
+                <object type="Button" technology="WPF">
+                    <name>CANCEL</name>
+                    <codeName>cANCELButton</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="Text" type="string" isRegExp="false">CANCEL</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Window" technology="WPF">

@@ -1,9 +1,9 @@
 package NET;
 
 import Web.ApiTests;
-//import Web.ApiTests.*;
-//import com.hp.lft.sdk.wpf.*;
-//import com.hp.lft.sdk.wpf.TableCell;
+
+import com.hp.lft.sdk.web.*;
+
 import com.hp.lft.sdk.wpf.TableRow;
 import com.hp.lft.sdk.wpf.UiObject;
 import org.junit.*;
@@ -159,8 +159,16 @@ public class DotNetTests extends UnitTestClassBase {
         threadSleep(1500);
         print("OKUserManageButton().click()");
         appModel.AdvantageShopAdministrator().OKUserManageButton().click();
+        print("Checking for 'user already exist' box" );
+        if (appModel.AdvantageShopAdministrator().createUserFailedDialog().exists()){
+            print("User already exist");
+            threadSleep(1000);
+            appModel.AdvantageShopAdministrator().createUserFailedDialog().oKButton().click();
+            appModel.AdvantageShopAdministrator().cANCELButton().click();
+            threadSleep(1000);
+        }
 
-        System.out.println("vlidate user via web login... ");
+        System.out.println("validate user via web login... ");
         ApiTests test = new ApiTests();
         // TODO: verify in browser
         Verification(Verify.isTrue(test.signIn(UNAME, PASSWORD, SERVER), "Sign In .Net New user via web", "verify that user created  by .Net app and can login via web"));

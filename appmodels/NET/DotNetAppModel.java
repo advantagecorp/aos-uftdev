@@ -39,7 +39,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		public ResetPasswordForDotNetUserWindow ResetPasswordForDotNetUserWindow() { return ResetPasswordForDotNetUserWindow; }
 		public DeleteUserConfirmationWindow DeleteUserConfirmationWindow() { return DeleteUserConfirmationWindow; }
 
-		public class AdvantageShopAdministrator extends WindowNodeBase
+		public class AdvantageShopAdministrator extends WpfWindowNodeBase
 	{
 
 		
@@ -71,6 +71,8 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 	private UsersTypesGridTable UsersTypesGridTable;
 	private SearchEditField SearchEditField;
 	private WEIGHTEditField WEIGHTEditField;
+	private createUserFailedDialog createUserFailedDialog;
+	private cANCELButton cANCELButton;
 						public AdvantageShopAdministrator(AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(applicationModel);
@@ -103,6 +105,8 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		UsersTypesGridTable = new UsersTypesGridTable(this, applicationModel);
 		SearchEditField = new SearchEditField(this, applicationModel);
 		WEIGHTEditField = new WEIGHTEditField(this, applicationModel);
+		createUserFailedDialog = new createUserFailedDialog(this, applicationModel);
+		cANCELButton = new cANCELButton(this, applicationModel);
 			
 			setDisplayName("Advantage Shop Administrator");
 		}
@@ -138,6 +142,8 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		UsersTypesGridTable = new UsersTypesGridTable(this, applicationModel);
 		SearchEditField = new SearchEditField(this, applicationModel);
 		WEIGHTEditField = new WEIGHTEditField(this, applicationModel);
+		createUserFailedDialog = new createUserFailedDialog(this, applicationModel);
+		cANCELButton = new cANCELButton(this, applicationModel);
 
 			setDisplayName("Advantage Shop Administrator");
 		}
@@ -181,8 +187,10 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		public UsersTypesGridTable UsersTypesGridTable() { return UsersTypesGridTable; }
 		public SearchEditField SearchEditField() { return SearchEditField; }
 		public WEIGHTEditField WEIGHTEditField() { return WEIGHTEditField; }
+		public createUserFailedDialog createUserFailedDialog() { return createUserFailedDialog; }
+		public cANCELButton cANCELButton() { return cANCELButton; }
 		
-			public class TopBarList extends ListNodeBase
+			public class TopBarList extends WpfListNodeBase
 	{
 
 		
@@ -208,7 +216,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class UserNameEditField extends EditFieldNodeBase
+	public class UserNameEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -234,7 +242,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class PasswordEditField extends EditFieldNodeBase
+	public class PasswordEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -260,7 +268,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ServerEditField extends EditFieldNodeBase
+	public class ServerEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -286,7 +294,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class RememberMeCheckBox extends CheckBoxNodeBase
+	public class RememberMeCheckBox extends WpfCheckBoxNodeBase
 	{
 
 		
@@ -312,7 +320,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class SIGNINButton extends ButtonNodeBase
+	public class SIGNINButton extends WpfButtonNodeBase
 	{
 
 		
@@ -338,7 +346,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class AdminUiObject extends UiObjectNodeBase
+	public class AdminUiObject extends WpfUiObjectNodeBase
 	{
 
 		
@@ -364,7 +372,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class LogoutButton extends ButtonNodeBase
+	public class LogoutButton extends WpfButtonNodeBase
 	{
 
 		
@@ -390,7 +398,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class PRODUCTSUiObject extends UiObjectNodeBase
+	public class PRODUCTSUiObject extends WpfUiObjectNodeBase
 	{
 
 		
@@ -416,7 +424,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class SideList extends ListNodeBase
+	public class SideList extends WpfListNodeBase
 	{
 
 		
@@ -442,7 +450,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ProductsDataGridTable extends TableNodeBase
+	public class ProductsDataGridTable extends WpfTableNodeBase
 	{
 
 		
@@ -468,7 +476,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ProductsWpfTabStrip extends TabStripNodeBase
+	public class ProductsWpfTabStrip extends WpfTabStripNodeBase
 	{
 
 		
@@ -494,7 +502,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ADDCOLORSButton extends ButtonNodeBase
+	public class ADDCOLORSButton extends WpfButtonNodeBase
 	{
 
 		
@@ -520,7 +528,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class YelloeCheckBox extends CheckBoxNodeBase
+	public class YelloeCheckBox extends WpfCheckBoxNodeBase
 	{
 
 		
@@ -546,7 +554,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class SAVEButton extends ButtonNodeBase
+	public class SAVEButton extends WpfButtonNodeBase
 	{
 
 		
@@ -572,7 +580,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ProductsColorsGridTable extends TableNodeBase
+	public class ProductsColorsGridTable extends WpfTableNodeBase
 	{
 
 		
@@ -598,7 +606,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ADDUSERButton extends ButtonNodeBase
+	public class ADDUSERButton extends WpfButtonNodeBase
 	{
 
 		
@@ -624,7 +632,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class UserNameUserManageEditField extends EditFieldNodeBase
+	public class UserNameUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -650,7 +658,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class EmailUserManageEditField extends EditFieldNodeBase
+	public class EmailUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -676,7 +684,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class ConfirmPasswordUserManageEditField extends EditFieldNodeBase
+	public class ConfirmPasswordUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -702,7 +710,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class FirstNameUserManageEditField extends EditFieldNodeBase
+	public class FirstNameUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -728,7 +736,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class LastNameUserManageEditField extends EditFieldNodeBase
+	public class LastNameUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -754,7 +762,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class OKUserManageButton extends ButtonNodeBase
+	public class OKUserManageButton extends WpfButtonNodeBase
 	{
 
 		
@@ -780,7 +788,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class PasswordUserManageEditField extends EditFieldNodeBase
+	public class PasswordUserManageEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -806,7 +814,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class UsersControlUiObject extends UiObjectNodeBase
+	public class UsersControlUiObject extends WpfUiObjectNodeBase
 	{
 
 		
@@ -832,7 +840,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class UsersTypesGridTable extends TableNodeBase
+	public class UsersTypesGridTable extends WpfTableNodeBase
 	{
 
 		
@@ -858,7 +866,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class SearchEditField extends EditFieldNodeBase
+	public class SearchEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -884,7 +892,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class WEIGHTEditField extends EditFieldNodeBase
+	public class WEIGHTEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -910,9 +918,98 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
+	public class createUserFailedDialog extends StdDialogNodeBase
+	{
+
+		
+			private oKButton oKButton;
+						public createUserFailedDialog(AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(applicationModel);
+
+					oKButton = new oKButton(this, applicationModel);
+			
+			setDisplayName("create user failed");
+		}
+				public createUserFailedDialog(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+					oKButton = new oKButton(this, applicationModel);
+
+			setDisplayName("create user failed");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.stdwin.DialogDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.stdwin.DialogDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.stdwin.DialogDescription.Builder().childWindow(false).ownedWindow(true).nativeClass("#32770").text("create user failed").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				public oKButton oKButton() { return oKButton; }
+		
+			public class oKButton extends StdButtonNodeBase
+	{
+
+		
+								public oKButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("OK");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.stdwin.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.stdwin.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.stdwin.ButtonDescription.Builder().nativeClass("Button").text("OK").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
 	}
 
-	public class ResetPasswordForDotNetUserWindow extends WindowNodeBase
+	public class cANCELButton extends WpfButtonNodeBase
+	{
+
+		
+								public cANCELButton(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("CANCEL");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.wpf.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.wpf.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.wpf.ButtonDescription.Builder().objectName("").text("CANCEL").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	}
+
+	public class ResetPasswordForDotNetUserWindow extends WpfWindowNodeBase
 	{
 
 		
@@ -955,7 +1052,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		public RePassEditField RePassEditField() { return RePassEditField; }
 		public OKPasswordButton OKPasswordButton() { return OKPasswordButton; }
 		
-			public class NewPassEditField extends EditFieldNodeBase
+			public class NewPassEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -981,7 +1078,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class RePassEditField extends EditFieldNodeBase
+	public class RePassEditField extends WpfEditFieldNodeBase
 	{
 
 		
@@ -1007,7 +1104,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 				
 			}
 
-	public class OKPasswordButton extends ButtonNodeBase
+	public class OKPasswordButton extends WpfButtonNodeBase
 	{
 
 		
@@ -1035,7 +1132,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 
 	}
 
-	public class DeleteUserConfirmationWindow extends WindowNodeBase
+	public class DeleteUserConfirmationWindow extends WpfWindowNodeBase
 	{
 
 		
@@ -1070,7 +1167,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 
 				public OKDeleteButton OKDeleteButton() { return OKDeleteButton; }
 		
-			public class OKDeleteButton extends ButtonNodeBase
+			public class OKDeleteButton extends WpfButtonNodeBase
 	{
 
 		
@@ -1100,14 +1197,821 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 
 
 			
-	public abstract class WindowNodeBase extends TopLevelObjectNodeBase<com.hp.lft.sdk.wpf.Window, com.hp.lft.sdk.wpf.WindowDescription> implements com.hp.lft.sdk.wpf.Window
+	public abstract class StdDialogNodeBase extends TopLevelObjectNodeBase<com.hp.lft.sdk.stdwin.Dialog, com.hp.lft.sdk.stdwin.DialogDescription> implements com.hp.lft.sdk.stdwin.Dialog
 	{
-		public WindowNodeBase(AppModelBase applicationModel) throws GeneralLeanFtException
+		public StdDialogNodeBase(AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(applicationModel);
 		}
 
-		public WindowNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public StdDialogNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+		}
+
+		
+
+
+		@Override 
+		public void activate() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().activate();
+		}
+
+		@Override 
+		public void activate(com.hp.lft.sdk.MouseButton arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().activate(arg0);
+		}
+
+		@Override 
+		public void click() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click();
+		}
+
+		@Override 
+		public void click(com.hp.lft.sdk.ClickArgs arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click(arg0);
+		}
+
+		@Override 
+		public void click(com.hp.lft.sdk.MouseButton arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click(arg0);
+		}
+
+		@Override 
+		public void close() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().close();
+		}
+
+		@Override 
+		public <TChild extends TestObject> TChild describe(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().describe(arg0, arg1);
+		}
+
+		@Override 
+		public void doubleClick() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick();
+		}
+
+		@Override 
+		public void doubleClick(com.hp.lft.sdk.ClickArgs arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick(arg0);
+		}
+
+		@Override 
+		public void doubleClick(com.hp.lft.sdk.MouseButton arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick(arg0);
+		}
+
+		@Override 
+		public void dragAndDropOn(com.hp.lft.sdk.SupportDragAndDrop arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().dragAndDropOn(arg0);
+		}
+
+		@Override 
+		public void dragAndDropOn(com.hp.lft.sdk.SupportDragAndDrop arg0, com.hp.lft.sdk.DragAndDropArgs arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().dragAndDropOn(arg0, arg1);
+		}
+
+		@Override 
+		public boolean exists() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().exists();
+		}
+
+		@Override 
+		public boolean exists(java.lang.Integer arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().exists(arg0);
+		}
+
+		@Override 
+		public <TChild extends TestObject> TChild[] findChildren(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException, java.lang.CloneNotSupportedException 
+		{
+			return getConcrete().findChildren(arg0, arg1);
+		}
+
+		@Override 
+		public java.awt.Point getAbsoluteLocation() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAbsoluteLocation();
+		}
+
+		@Override 
+		public java.lang.String getAccessibleName() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAccessibleName();
+		}
+
+		@Override 
+		public java.lang.String getAttachedText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAttachedText();
+		}
+
+		@Override 
+		public java.lang.String getDisplayName()  
+		{
+			return getConcrete().getDisplayName();
+		}
+
+		@Override 
+		public int getHandle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getHandle();
+		}
+
+		@Override 
+		public java.awt.Point getLocation() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getLocation();
+		}
+
+		@Override 
+		public java.lang.String getNativeClass() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getNativeClass();
+		}
+
+		@Override 
+		public java.awt.Dimension getSize() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getSize();
+		}
+
+		@Override 
+		public java.awt.image.RenderedImage getSnapshot() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getSnapshot();
+		}
+
+		@Override 
+		public java.lang.String getText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getText();
+		}
+
+		@Override 
+		public java.awt.Rectangle[] getTextLocations(java.lang.String arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getTextLocations(arg0);
+		}
+
+		@Override 
+		public java.awt.Rectangle[] getTextLocations(java.lang.String arg0, java.awt.Rectangle arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getTextLocations(arg0, arg1);
+		}
+
+		@Override 
+		public java.lang.String getVisibleText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getVisibleText();
+		}
+
+		@Override 
+		public java.lang.String getVisibleText(java.awt.Rectangle arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getVisibleText(arg0);
+		}
+
+		@Override 
+		public java.lang.String getWindowClassRegExp() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowClassRegExp();
+		}
+
+		@Override 
+		public java.util.EnumSet<com.hp.lft.sdk.WindowExtendedStyles> getWindowExtendedStyle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowExtendedStyle();
+		}
+
+		@Override 
+		public long getWindowExtendedStyleAsLong() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowExtendedStyleAsLong();
+		}
+
+		@Override 
+		public int getWindowId() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowId();
+		}
+
+		@Override 
+		public com.hp.lft.sdk.WindowState getWindowState() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowState();
+		}
+
+		@Override 
+		public java.util.EnumSet<com.hp.lft.sdk.WindowStyles> getWindowStyle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowStyle();
+		}
+
+		@Override 
+		public long getWindowStyleAsLong() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowStyleAsLong();
+		}
+
+		@Override 
+		public java.lang.String getWindowTitleRegExp() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowTitleRegExp();
+		}
+
+		@Override 
+		public boolean hasBorder() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().hasBorder();
+		}
+
+		@Override 
+		public boolean hasCaption() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().hasCaption();
+		}
+
+		@Override 
+		public boolean hasSizebox() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().hasSizebox();
+		}
+
+		@Override 
+		public boolean hasSystemMenu() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().hasSystemMenu();
+		}
+
+		@Override 
+		public void highlight() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().highlight();
+		}
+
+		@Override 
+		public <TChild extends TestObject> int highlightMatches(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException, java.lang.CloneNotSupportedException 
+		{
+			return getConcrete().highlightMatches(arg0, arg1);
+		}
+
+		@Override 
+		public boolean isActive() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isActive();
+		}
+
+		@Override 
+		public boolean isChildWindow() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isChildWindow();
+		}
+
+		@Override 
+		public boolean isEnabled() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isEnabled();
+		}
+
+		@Override 
+		public boolean isFocused() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isFocused();
+		}
+
+		@Override 
+		public boolean isMaximizable() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isMaximizable();
+		}
+
+		@Override 
+		public boolean isMdiChildWindow() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isMdiChildWindow();
+		}
+
+		@Override 
+		public boolean isMinimizable() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isMinimizable();
+		}
+
+		@Override 
+		public boolean isOwnedWindow() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isOwnedWindow();
+		}
+
+		@Override 
+		public boolean isPopupWindow() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isPopupWindow();
+		}
+
+		@Override 
+		public boolean isRightAligned() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightAligned();
+		}
+
+		@Override 
+		public boolean isRightToLeftLayout() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightToLeftLayout();
+		}
+
+		@Override 
+		public boolean isRightToLeftReading() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightToLeftReading();
+		}
+
+		@Override 
+		public boolean isToolWindow() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isToolWindow();
+		}
+
+		@Override 
+		public boolean isTopmost() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isTopmost();
+		}
+
+		@Override 
+		public boolean isVisible() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isVisible();
+		}
+
+		@Override 
+		public void maximize() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().maximize();
+		}
+
+		@Override 
+		public void minimize() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().minimize();
+		}
+
+		@Override 
+		public void mouseMove(com.hp.lft.sdk.Location arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().mouseMove(arg0);
+		}
+
+		@Override 
+		public void move(java.awt.Point arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().move(arg0);
+		}
+
+		@Override 
+		public void move(int arg0, int arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().move(arg0, arg1);
+		}
+
+		@Override 
+		public void resize(java.awt.Dimension arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().resize(arg0);
+		}
+
+		@Override 
+		public void resize(int arg0, int arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().resize(arg0, arg1);
+		}
+
+		@Override 
+		public void restore() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().restore();
+		}
+
+		@Override 
+		public void sendKeys(java.lang.String arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().sendKeys(arg0);
+		}
+
+		@Override 
+		public void sendKeys(java.lang.String arg0, java.util.EnumSet<com.hp.lft.sdk.KeyModifier> arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().sendKeys(arg0, arg1);
+		}
+
+		@Override 
+		public void setDisplayName(java.lang.String arg0)  
+		{
+			getConcrete().setDisplayName(arg0);
+		}
+
+		@Override 
+		public java.awt.Point verifyImageExists(java.awt.image.RenderedImage arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageExists(arg0);
+		}
+
+		@Override 
+		public java.awt.Point verifyImageExists(java.awt.image.RenderedImage arg0, byte arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageExists(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, byte arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, byte arg1, byte arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1, byte arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1, byte arg2, byte arg3) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2, arg3);
+		}
+	}
+	
+	public abstract class StdButtonNodeBase extends AppModelNodeBase<com.hp.lft.sdk.stdwin.Button, com.hp.lft.sdk.stdwin.ButtonDescription> implements com.hp.lft.sdk.stdwin.Button
+	{		
+		public StdButtonNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+		}
+
+		
+
+
+		@Override 
+		public void click() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click();
+		}
+
+		@Override 
+		public void click(com.hp.lft.sdk.ClickArgs arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click(arg0);
+		}
+
+		@Override 
+		public void click(com.hp.lft.sdk.MouseButton arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().click(arg0);
+		}
+
+		@Override 
+		public <TChild extends TestObject> TChild describe(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().describe(arg0, arg1);
+		}
+
+		@Override 
+		public void doubleClick() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick();
+		}
+
+		@Override 
+		public void doubleClick(com.hp.lft.sdk.ClickArgs arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick(arg0);
+		}
+
+		@Override 
+		public void doubleClick(com.hp.lft.sdk.MouseButton arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().doubleClick(arg0);
+		}
+
+		@Override 
+		public void dragAndDropOn(com.hp.lft.sdk.SupportDragAndDrop arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().dragAndDropOn(arg0);
+		}
+
+		@Override 
+		public void dragAndDropOn(com.hp.lft.sdk.SupportDragAndDrop arg0, com.hp.lft.sdk.DragAndDropArgs arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().dragAndDropOn(arg0, arg1);
+		}
+
+		@Override 
+		public boolean exists() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().exists();
+		}
+
+		@Override 
+		public boolean exists(java.lang.Integer arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().exists(arg0);
+		}
+
+		@Override 
+		public <TChild extends TestObject> TChild[] findChildren(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException, java.lang.CloneNotSupportedException 
+		{
+			return getConcrete().findChildren(arg0, arg1);
+		}
+
+		@Override 
+		public java.awt.Point getAbsoluteLocation() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAbsoluteLocation();
+		}
+
+		@Override 
+		public java.lang.String getAccessibleName() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAccessibleName();
+		}
+
+		@Override 
+		public java.lang.String getAttachedText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getAttachedText();
+		}
+
+		@Override 
+		public java.lang.String getDisplayName()  
+		{
+			return getConcrete().getDisplayName();
+		}
+
+		@Override 
+		public int getHandle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getHandle();
+		}
+
+		@Override 
+		public java.awt.Point getLocation() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getLocation();
+		}
+
+		@Override 
+		public java.lang.String getNativeClass() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getNativeClass();
+		}
+
+		@Override 
+		public java.awt.Dimension getSize() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getSize();
+		}
+
+		@Override 
+		public java.awt.image.RenderedImage getSnapshot() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getSnapshot();
+		}
+
+		@Override 
+		public java.lang.String getText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getText();
+		}
+
+		@Override 
+		public java.awt.Rectangle[] getTextLocations(java.lang.String arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getTextLocations(arg0);
+		}
+
+		@Override 
+		public java.awt.Rectangle[] getTextLocations(java.lang.String arg0, java.awt.Rectangle arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getTextLocations(arg0, arg1);
+		}
+
+		@Override 
+		public java.lang.String getVisibleText() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getVisibleText();
+		}
+
+		@Override 
+		public java.lang.String getVisibleText(java.awt.Rectangle arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getVisibleText(arg0);
+		}
+
+		@Override 
+		public java.lang.String getWindowClassRegExp() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowClassRegExp();
+		}
+
+		@Override 
+		public java.util.EnumSet<com.hp.lft.sdk.WindowExtendedStyles> getWindowExtendedStyle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowExtendedStyle();
+		}
+
+		@Override 
+		public long getWindowExtendedStyleAsLong() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowExtendedStyleAsLong();
+		}
+
+		@Override 
+		public int getWindowId() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowId();
+		}
+
+		@Override 
+		public java.util.EnumSet<com.hp.lft.sdk.WindowStyles> getWindowStyle() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowStyle();
+		}
+
+		@Override 
+		public long getWindowStyleAsLong() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowStyleAsLong();
+		}
+
+		@Override 
+		public java.lang.String getWindowTitleRegExp() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().getWindowTitleRegExp();
+		}
+
+		@Override 
+		public void highlight() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().highlight();
+		}
+
+		@Override 
+		public <TChild extends TestObject> int highlightMatches(java.lang.Class<TChild> arg0, com.hp.lft.sdk.Description arg1) throws com.hp.lft.sdk.GeneralLeanFtException, java.lang.CloneNotSupportedException 
+		{
+			return getConcrete().highlightMatches(arg0, arg1);
+		}
+
+		@Override 
+		public boolean isEnabled() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isEnabled();
+		}
+
+		@Override 
+		public boolean isFocused() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isFocused();
+		}
+
+		@Override 
+		public boolean isRightAligned() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightAligned();
+		}
+
+		@Override 
+		public boolean isRightToLeftLayout() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightToLeftLayout();
+		}
+
+		@Override 
+		public boolean isRightToLeftReading() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isRightToLeftReading();
+		}
+
+		@Override 
+		public boolean isVisible() throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().isVisible();
+		}
+
+		@Override 
+		public void mouseMove(com.hp.lft.sdk.Location arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().mouseMove(arg0);
+		}
+
+		@Override 
+		public void sendKeys(java.lang.String arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().sendKeys(arg0);
+		}
+
+		@Override 
+		public void sendKeys(java.lang.String arg0, java.util.EnumSet<com.hp.lft.sdk.KeyModifier> arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			getConcrete().sendKeys(arg0, arg1);
+		}
+
+		@Override 
+		public void setDisplayName(java.lang.String arg0)  
+		{
+			getConcrete().setDisplayName(arg0);
+		}
+
+		@Override 
+		public java.awt.Point verifyImageExists(java.awt.image.RenderedImage arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageExists(arg0);
+		}
+
+		@Override 
+		public java.awt.Point verifyImageExists(java.awt.image.RenderedImage arg0, byte arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageExists(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, byte arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, byte arg1, byte arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1, byte arg2) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2);
+		}
+
+		@Override 
+		public boolean verifyImageMatch(java.awt.image.RenderedImage arg0, com.hp.lft.sdk.ImageMaskArea arg1, byte arg2, byte arg3) throws com.hp.lft.sdk.GeneralLeanFtException 
+		{
+			return getConcrete().verifyImageMatch(arg0, arg1, arg2, arg3);
+		}
+	}
+		
+	public abstract class WpfWindowNodeBase extends TopLevelObjectNodeBase<com.hp.lft.sdk.wpf.Window, com.hp.lft.sdk.wpf.WindowDescription> implements com.hp.lft.sdk.wpf.Window
+	{
+		public WpfWindowNodeBase(AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(applicationModel);
+		}
+
+		public WpfWindowNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -1500,9 +2404,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class ListNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.List, com.hp.lft.sdk.wpf.ListDescription> implements com.hp.lft.sdk.wpf.List
+	public abstract class WpfListNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.List, com.hp.lft.sdk.wpf.ListDescription> implements com.hp.lft.sdk.wpf.List
 	{		
-		public ListNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfListNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -1883,9 +2787,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class EditFieldNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.EditField, com.hp.lft.sdk.wpf.EditFieldDescription> implements com.hp.lft.sdk.wpf.EditField
+	public abstract class WpfEditFieldNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.EditField, com.hp.lft.sdk.wpf.EditFieldDescription> implements com.hp.lft.sdk.wpf.EditField
 	{		
-		public EditFieldNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfEditFieldNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -2242,9 +3146,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class CheckBoxNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.CheckBox, com.hp.lft.sdk.wpf.CheckBoxDescription> implements com.hp.lft.sdk.wpf.CheckBox
+	public abstract class WpfCheckBoxNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.CheckBox, com.hp.lft.sdk.wpf.CheckBoxDescription> implements com.hp.lft.sdk.wpf.CheckBox
 	{		
-		public CheckBoxNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfCheckBoxNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -2595,9 +3499,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class ButtonNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.Button, com.hp.lft.sdk.wpf.ButtonDescription> implements com.hp.lft.sdk.wpf.Button
+	public abstract class WpfButtonNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.Button, com.hp.lft.sdk.wpf.ButtonDescription> implements com.hp.lft.sdk.wpf.Button
 	{		
-		public ButtonNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfButtonNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -2936,9 +3840,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class UiObjectNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.UiObject, com.hp.lft.sdk.wpf.UiObjectDescription> implements com.hp.lft.sdk.wpf.UiObject
+	public abstract class WpfUiObjectNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.UiObject, com.hp.lft.sdk.wpf.UiObjectDescription> implements com.hp.lft.sdk.wpf.UiObject
 	{		
-		public UiObjectNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfUiObjectNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -3265,9 +4169,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class TableNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.Table, com.hp.lft.sdk.wpf.TableDescription> implements com.hp.lft.sdk.wpf.Table
+	public abstract class WpfTableNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.Table, com.hp.lft.sdk.wpf.TableDescription> implements com.hp.lft.sdk.wpf.Table
 	{		
-		public TableNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfTableNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
@@ -3654,9 +4558,9 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 	}
 	
-	public abstract class TabStripNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.TabStrip, com.hp.lft.sdk.wpf.TabStripDescription> implements com.hp.lft.sdk.wpf.TabStrip
+	public abstract class WpfTabStripNodeBase extends AppModelNodeBase<com.hp.lft.sdk.wpf.TabStrip, com.hp.lft.sdk.wpf.TabStripDescription> implements com.hp.lft.sdk.wpf.TabStrip
 	{		
-		public TabStripNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		public WpfTabStripNodeBase(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 		}
