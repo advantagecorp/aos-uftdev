@@ -233,18 +233,31 @@ public class DotNetTests extends UnitTestClassBase {
                 print("Successful login");
             }else {
                 print("Did not login");
+                threadSleep(1000);
+                print("UserNameEditField().setText(\"Mercury\")");
+                appModel.AdvantageShopAdministrator().UserNameEditField().setText("Mercury");
+                print("PasswordEditField().setText(\"Mercury\");");
+                appModel.AdvantageShopAdministrator().PasswordEditField().setText("Mercury");
                 print("Trying to click signIn again ");
                 appModel.AdvantageShopAdministrator().SIGNINButton().click();
                 if(checkIsSignIn ()){
                     print("Successful login");
                 }else {
                     print("Did not login");
-                    print("Trying to log with different user");
+                    print("Trying to log with different server");
                     threadSleep(1000);
                     print("UserNameEditField().setText(\"Mercury\")");
                     appModel.AdvantageShopAdministrator().UserNameEditField().setText("Mercury");
                     print("PasswordEditField().setText(\"Mercury\");");
                     appModel.AdvantageShopAdministrator().PasswordEditField().setText("Mercury");
+                    print("ServerEditField().setText(http://18.212.178.84)");
+                    if(SERVER.contains("158")){
+                        appModel.AdvantageShopAdministrator().ServerEditField().setText("http://18.212.178.84");
+                    }else{
+                        print("ServerEditField().setText(http://16.60.158.84:80)");
+                        appModel.AdvantageShopAdministrator().ServerEditField().setText("://16.60.158.84:80");
+                    }
+                    appModel.AdvantageShopAdministrator().SIGNINButton().click();
                     if(checkIsSignIn ()){
                         print("Successful login");
                     }else {
