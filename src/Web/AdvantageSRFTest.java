@@ -830,6 +830,37 @@ public class AdvantageSRFTest extends UnitTestClassBase {
     }
 
     @Test
+    public void alvaro() throws GeneralLeanFtException, ReportException{
+
+
+        BrowserDescription bd = new BrowserDescription();
+
+      //  bd.setType(BrowserType.INTERNET_EXPLORER);
+        bd.set("type", BrowserType.INTERNET_EXPLORER) ;
+        //bd.set("type", "INTERNET_EXPLORER")
+
+        bd.set("version", "11");
+
+        bd.set("osType", "Windows");
+
+        bd.set("osVersion", "10");
+
+        bd.set("testName", "My LeanFT web test");
+
+        Browser browser = SrfLab.launchBrowser(bd);
+
+        browser.navigate("http://www.advantageonlineshopping.com/");
+        Link tabletsTxtLink = browser.describe(Link.class, new LinkDescription.Builder()
+                .innerText("TABLETS")
+                .tagName("SPAN").build());
+        tabletsTxtLink.click();
+        browser.back();
+        tabletsTxtLink.click();
+        browser.back();
+
+    }
+
+    @Test
     public void purchaseMasterCreditLaptopTest() throws GeneralLeanFtException, ReportException {
         // Sign in to the store
         signIn();

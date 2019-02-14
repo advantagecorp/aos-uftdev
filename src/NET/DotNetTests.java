@@ -148,6 +148,7 @@ public class DotNetTests extends UnitTestClassBase {
         appModel.AdvantageShopAdministrator().UserNameUserManageEditField().setText(UNAME);
         print("EmailUserManageEditField().setText(\"Dot@Net.com\")");
         appModel.AdvantageShopAdministrator().EmailUserManageEditField().setText("Dot@Net.com");
+        threadSleep(1500);
         print("PasswordUserManageEditField().setText(" + PASSWORD);
         appModel.AdvantageShopAdministrator().PasswordUserManageEditField().setText(PASSWORD);
         print("ConfirmPasswordUserManageEditField().setText(" + PASSWORD);

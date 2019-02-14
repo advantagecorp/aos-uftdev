@@ -32,8 +32,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
     public static String SearchURL = "";
     public static String appURL = System.getProperty("url", "defaultvalue");
 //  public static String appURL2 = "52.32.172.3";
-//	public static String appURL2 = "16.60.158.84";			// CI
- 	public static String appURL2 = "34.228.54.91";			// production-ngix
+	public static String appURL2 = "16.60.158.84";			// CI
+// 	public static String appURL2 = "34.228.54.91";			// production-ngix
 //	public static String appURL2 = "16.59.19.163:8080";		// LOCALHOST
 //	public static String appURL2 = "16.59.19.38:8080";		// LOCALHOST Tamir
 //	public static String appURL2 = "35.162.69.22:8080";		//
@@ -801,31 +801,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
 //    @Test
     public void testNew() throws GeneralLeanFtException, ReportException {
-//        addMainUserIfNotExists();
-//        contactSupportTest();
-//        contactUsChatTest
-//        createNewAccount
-//        createNewAccountNegative
-//        logOutTest
-//        negativeLoginTest
-//        orderServiceTest
-//        payButtonRegExTest
-//        popularItemPurchaseFirst
-//        purchase1000SpeakersNegativeTest
-//        purchaseHeadphonesTest
-//        purchaseLaptopTest
-//        purchaseMouseTest
-//        purchaseSpeakersTest
-//        purchaseTabletTest
-//        specialOfferPurchase
-//        verifyDownloadPageTest
-//        verifySaveChangesInProfilePaymentTest
-//        verifySearchUsingURL
-//        verifyShippingCostsTest
-//        verifySocialMedia
-//        verifyUserLinks
 
-        // TODO: run tests in random order
+
     }
 
     //This test method creates the default user to be used in the tests, if it already does not exist - a user must be in the system:

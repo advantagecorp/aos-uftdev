@@ -1380,6 +1380,23 @@ View details link</description>
                         </properties>
                     </identification>
                 </object>
+                <object type="Button" technology="Web">
+                    <name>check_out_btn1</name>
+                    <codeName>checkOutBtnButton1</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="Attributes" type="dictionary" isRegExp="false">
+                                <property name="Class" type="string" isRegExp="false">roboto-medium ng-binding</property>
+                                <property name="Data-ng-click" type="string" isRegExp="false">checkout()</property>
+                                <property name="Name" type="string" isRegExp="false">check_out_btn</property>
+                                <property name="Role" type="string" isRegExp="false">button</property>
+                            </property>
+                            <property name="ButtonType" type="string" isRegExp="false">submit</property>
+                            <property name="TagName" type="string" isRegExp="false">BUTTON</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Page" technology="Web">
