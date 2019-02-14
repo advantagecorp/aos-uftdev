@@ -238,14 +238,13 @@ public class DotNetTests extends UnitTestClassBase {
                 if(checkIsSignIn ()){
                     print("Successful login");
                 }else {
-                    print("Fail at login");
+                    print("Did not login");
                     print("Trying to log with different user");
                     threadSleep(1000);
-                    print("UserNameEditField().setText(\"admin\")");
+                    print("UserNameEditField().setText(\"Mercury\")");
                     appModel.AdvantageShopAdministrator().UserNameEditField().setText("Mercury");
-                    print("PasswordEditField().setText(\"adm1n\");");
+                    print("PasswordEditField().setText(\"Mercury\");");
                     appModel.AdvantageShopAdministrator().PasswordEditField().setText("Mercury");
-
                     if(checkIsSignIn ()){
                         print("Successful login");
                     }else {
