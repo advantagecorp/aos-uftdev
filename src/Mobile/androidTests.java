@@ -32,15 +32,15 @@ public class androidTests extends UnitTestClassBase {
     protected static Application app;
     protected static Application appSettings;
 
-    static String UNAME = "androidUser5";
-    static String PASS = "Password5";
+    static String UNAME = "androidUser6";
+    static String PASS = "Password6";
     static String PASSNEW = "Password24";
 
     static String appURL = System.getProperty("url", "defaultvalue");
     //static String appURL2 = "www.advantageonlineshopping.com";
-  //  static String appURL2 = "http://52.34.90.37";      // STAGING NEW
+    static String appURL2 = "http://18.212.178.84";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-      static String appURL2 = "16.60.158.84";       // CI
+//      static String appURL2 = "16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //        static String appURL2 = "16.59.19.123:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
@@ -81,7 +81,6 @@ public class androidTests extends UnitTestClassBase {
             InitBeforeclass();
 
         Print("appURL: " + appURL);
-
     }
 
     @AfterClass
@@ -100,9 +99,10 @@ public class androidTests extends UnitTestClassBase {
         printCaptionTest(curTestName.getMethodName(), ++currentNumberOfTest);
         Print("restarting application...");
         app.restart();
-        if(!isConnectedToTheInternet()){
-            connectToInternet();
-        }
+//        if(!isConnectedToTheInternet()){
+//            connectToInternet();
+//        }
+        setting();
     }
 
     @After
@@ -122,43 +122,113 @@ public class androidTests extends UnitTestClassBase {
 //        CreateNewUser(false);
 //    }
 
-    public void setting() throws GeneralLeanFtException {
+    public static void setting() throws GeneralLeanFtException {
+
         Print("setting() start");
-        if (appModel.AdvantageShoppingApplication().ServerNotReachableLabel().exists(5)) {
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
-            setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-            threadSleep(15000);
-//            waitUntilElementExists(appModel.AdvantageShoppingApplication().ButtonPanelSettingUiObject(), 5000);
-            tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
-        } else {
-//            boolean isMainMenuExist = waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-//            waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-            threadSleep(5000);
-            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
-            tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
-
-//            String server = appModel.AdvantageShoppingApplication().EditTextServer().getText();
-
-//            if (!server.equals(appURL)) { // check if the setting already set up
-                setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
-                if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-                    threadSleep(10000);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
-                }
-                else {
-                    deviceBack();
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-                    threadSleep(10000);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
-                }
-
-//            }
+        app.launch();
+        Print("sleep " + 2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        app.restart();
+        if(appModel.AdvantageShoppingApplication().MainMenu().exists()){
+            Print("Main menu exist");
+        }else{Print("Main menu does not exist");}
+
+        Print("MainMenu()");
+        appModel.AdvantageShoppingApplication().MainMenu().tap();
+        Print("SETTINGSLabel()");
+        appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
+        Print(".setText(appURL)");
+        appModel.AdvantageShoppingApplication().EditTextServer().setText("http://18.212.178.84");
+        Print("is connect button exist?");
+            if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
+                Print("ConnectButton()");
+                appModel.AdvantageShoppingApplication().ConnectButton().tap();
+                Print("sleep " + 5000);
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Print("Is successful?");
+                if(appModel.AdvantageShoppingApplication().connectedSuccessfullyLabel().exists()){
+                    Print("Connected successfully to server");
+                    appModel.AdvantageShoppingApplication().oKButton1().tap();
+                }else{
+                    Print("Failed to connect to server");
+                }
+
+            }
+            else {
+                Print("Trying Apply and Back (known issues)");
+                if(appModel.AdvantageShoppingApplication().ApplyButton().exists()){
+                    Print("ConnectButton()");
+                    appModel.AdvantageShoppingApplication().ApplyButton().tap();
+                    Print("sleep " + 5000);
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }Print("Is success label exist");
+                    if(appModel.AdvantageShoppingApplication().connectedSuccessfullyLabel().exists()){
+                        Print("Connected successfully to server");
+                        appModel.AdvantageShoppingApplication().oKButton1().tap();
+                    }else{
+                        Print("Failed to connect to server");
+                    }
+                    Print("setting() end");
+                    return;
+                }
+                try {
+                    device.back();
+                } catch (GeneralLeanFtException e) {
+                    printError(e);
+                    fail("GeneralLeanFtException: failed to device.back");
+                }
+                if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
+                    Print("ConnectButton()");
+                    appModel.AdvantageShoppingApplication().ConnectButton().tap();
+                    Print("sleep " + 5000);
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Print("Is success label exist");
+                    if(appModel.AdvantageShoppingApplication().connectedSuccessfullyLabel().exists()){
+                        Print("Connected successfully to server");
+                        appModel.AdvantageShoppingApplication().oKButton1().tap();
+                    }else{
+                        Print("Failed to connect to server");
+                    }
+                    Print("setting() end");
+                    return;
+                }
+                if(appModel.AdvantageShoppingApplication().ApplyButton().exists()){
+                    Print("ConnectButton()");
+                    appModel.AdvantageShoppingApplication().ConnectButton();
+                    Print("sleep " + 3000);
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Print("oKButton()");
+                    Print("Is success label exist");
+                    if(appModel.AdvantageShoppingApplication().connectedSuccessfullyLabel().exists()){
+                        Print("Connected successfully to server");
+                        appModel.AdvantageShoppingApplication().oKButton1();
+                    }else{
+                        Print("Failed to connect to server");
+                    }
+                    Print("setting() end");
+                    return;
+                }
+            }
         Print("setting() end");
-    }//Git
+    }
 
 //    @Test
 //    public void testTheTest() throws GeneralLeanFtException{
@@ -689,8 +759,28 @@ public class androidTests extends UnitTestClassBase {
         Print("Start ChangePasswordTest");
     	String savedOriginalPass = PASS;
 
-        SignOut();
-        SignIn();
+    	if(isSignedIn()){
+            if(!appModel.AdvantageShoppingApplication().MainMenu().exists()){
+                getToScreenWithMainMenu();
+            }
+            tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
+//        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
+            String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
+            if(!innerTxt.equals("androidUser5")){
+                SignOut();
+                if(!SignIn()){
+                    getToScreenWithMainMenu();
+                    tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
+                    setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
+                    threadSleep(10000);
+                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
+                    SignIn();
+                }
+            }
+        }else{
+            SignIn();
+        }
 
         // step 1 - change to new pass
         changepassword(PASSNEW, PASS);
@@ -1009,6 +1099,11 @@ public class androidTests extends UnitTestClassBase {
 
     private void getToScreenWithMainMenu() throws GeneralLeanFtException {
         Print("Trying to get to main menu");
+        Print("Is main menu exist");
+        if(appModel.AdvantageShoppingApplication().MainMenu().exists()){
+            Print("Main menu exist");
+            return;
+        }
         device.back();
         if (!appModel.AdvantageShoppingApplication().MainMenu().exists()){
             device.back();

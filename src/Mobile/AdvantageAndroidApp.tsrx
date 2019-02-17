@@ -1244,19 +1244,6 @@
                         </properties>
                     </identification>
                 </object>
-                <object type="Button" technology="Mobile">
-                    <name>APPLY</name>
-                    <codeName>ApplyButton</codeName>
-                    <description>Settings Page, Apply button in Offline Mode</description>
-                    <identification>
-                        <properties>
-                            <property name="Text" type="string" isRegExp="false">APPLY</property>
-                            <property name="ClassName" type="string" isRegExp="false">Button</property>
-                            <property name="ResourceId" type="string" isRegExp="false">buttonConnect</property>
-                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
-                        </properties>
-                    </identification>
-                </object>
                 <object type="Label" technology="Mobile">
                     <name>SignedInUserName</name>
                     <codeName>SignedInUserName</codeName>
@@ -1346,6 +1333,70 @@
                             <property name="ClassName" type="string" isRegExp="false">Button</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
                             <property name="ResourceId" type="string" isRegExp="false">android:id/button1</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Toggle" technology="Mobile">
+                    <name>Enable fingerprint authentication</name>
+                    <codeName>enableFingerprintAuthenticationToggle</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Switch</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">fingerprintSwitch</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>APPLY</name>
+                    <codeName>ApplyButton</codeName>
+                    <description>Settings Page, Apply button in Offline Mode</description>
+                    <identification>
+                        <properties>
+                            <property name="Text" type="string" isRegExp="false">APPLY</property>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="ResourceId" type="string" isRegExp="false">buttonConnect</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK1</name>
+                    <codeName>oKButtonServer</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">0</property>
+                            <property name="ResourceId" type="string" isRegExp="false">android:id/button1</property>
+                            <property name="Text" type="string" isRegExp="false">OK</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Label" technology="Mobile">
+                    <name>Connected successfully</name>
+                    <codeName>connectedSuccessfullyLabel</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Label</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">1</property>
+                            <property name="ResourceId" type="string" isRegExp="false">message</property>
+                            <property name="Text" type="string" isRegExp="false">Connected successfully</property>
+                        </properties>
+                    </identification>
+                </object>
+                <object type="Button" technology="Mobile">
+                    <name>OK2</name>
+                    <codeName>oKButton1</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">Button</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">2</property>
+                            <property name="ResourceId" type="string" isRegExp="false">button1</property>
                             <property name="Text" type="string" isRegExp="false">OK</property>
                         </properties>
                     </identification>
@@ -1542,24 +1593,6 @@
                             <property name="ClassName" type="string" isRegExp="false">ImageView</property>
                             <property name="MobileCenterIndex" type="int" isRegExp="false">4</property>
                             <property name="ResourceId" type="string" isRegExp="false">com.Advantage.aShopping:id/imageViewProduct</property>
-                        </properties>
-                    </identification>
-                </object>
-            </children>
-        </object>
-        <object type="Page" technology="Web">
-            <name> Advantage Shopping</name>
-            <codeName>AdvantageShoppingPage</codeName>
-            <identification/>
-            <children>
-                <object type="WebElement" technology="Web">
-                    <name>WebElement</name>
-                    <codeName>WebElement</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ClassName" type="string" isRegExp="false">productColor ng-scope colorSelected BLACK</property>
-                            <property name="TagName" type="string" isRegExp="false">SPAN</property>
-                            <property name="InnerText" type="string" isRegExp="false"></property>
                         </properties>
                     </identification>
                 </object>

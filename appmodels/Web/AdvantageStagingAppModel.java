@@ -162,6 +162,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private ShippingCost ShippingCost;
 	private CheckOutButton CheckOutButton;
 	private SelectedColorForEnv17 SelectedColorForEnv17;
+	private checkOutBtnButton1 checkOutBtnButton1;
 						public AdvantageShoppingPage(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -278,6 +279,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		ShippingCost = new ShippingCost(this, applicationModel);
 		CheckOutButton = new CheckOutButton(this, applicationModel);
 		SelectedColorForEnv17 = new SelectedColorForEnv17(this, applicationModel);
+		checkOutBtnButton1 = new checkOutBtnButton1(this, applicationModel);
 
 			setDisplayName(" Advantage Shopping");
 		}
@@ -405,6 +407,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public ShippingCost ShippingCost() { return ShippingCost; }
 		public CheckOutButton CheckOutButton() { return CheckOutButton; }
 		public SelectedColorForEnv17 SelectedColorForEnv17() { return SelectedColorForEnv17; }
+		public checkOutBtnButton1 checkOutBtnButton1() { return checkOutBtnButton1; }
 		
 			public class SearchIconWebElement extends WebElementNodeBase
 	{
@@ -3309,6 +3312,32 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().className(new RegExpProperty("productColor ng-scope.*")).tagName("SPAN").innerText("").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class checkOutBtnButton1 extends ButtonNodeBase
+	{
+
+		
+								public checkOutBtnButton1(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("check_out_btn1");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.web.ButtonDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.web.ButtonDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.web.ButtonDescription.Builder().attribute("Role", "button").attribute("Class", "roboto-medium ng-binding").attribute("Data-ng-click", "checkout()").attribute("Name", "check_out_btn").buttonType("submit").tagName("BUTTON").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
