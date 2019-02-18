@@ -686,7 +686,7 @@ public class androidTests extends UnitTestClassBase {
         tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
         threadSleep(2000);
         tapUiObjectLabel(appModel.AdvantageShoppingApplication().LAPTOPSLabel());
-        threadSleep(10000);
+        threadSleep(5000);
         tapUiObject(appModel.AdvantageShoppingApplication().ImageViewFilter());
         threadSleep(4000);
 
@@ -1187,7 +1187,7 @@ public class androidTests extends UnitTestClassBase {
         Print("CheckOut (" + payment + ") start");
         tapUiObjectButton(appModel.AdvantageShoppingApplication().CHECKOUT());
 
-        threadSleep(15000);
+        threadSleep(5000);
 
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
 
@@ -1195,11 +1195,11 @@ public class androidTests extends UnitTestClassBase {
         if (payment.equals("Sefepay"))
             SafePay(false);
         else
-            MasterCredit("123456789123", "456", UNAME, false, true);
+            MasterCredit("123456789123", "456", UNAME, false, false);
 
-        threadSleep(10000);
+        threadSleep(5000);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().PAYNOWButton());
-        threadSleep(10000);
+        threadSleep(5000);
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject(), 5000);
         Verification(Verify.isTrue(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists(4), "Verify- purchase success with " + payment, " verify that the payment success and we receive the order detail window"));
         threadSleep(2000);
@@ -1255,6 +1255,10 @@ public class androidTests extends UnitTestClassBase {
         }
         Print("tap PaymentDetails()");
         appModel.AdvantageShoppingApplication().PaymentDetails().tap();
+        if(appModel.AdvantageShoppingApplication().VerifyReceiptWindowUiObject().exists()){
+            Print("The phone image is cut in half.. it really is .. ");
+
+        }
         Print("tap ImageViewMasterCredit()");
         appModel.AdvantageShoppingApplication().ImageViewMasterCredit().tap();
 
