@@ -32,15 +32,15 @@ public class androidTests extends UnitTestClassBase {
     protected static Application app;
     protected static Application appSettings;
 
-    static String UNAME = "androidUser6";
-    static String PASS = "Password6";
-    static String PASSNEW = "Password24";
+    static String UNAME = "androidUser7";
+    static String PASS = "Password7";
+    static String PASSNEW = "Password25";
 
     static String appURL = System.getProperty("url", "defaultvalue");
     //static String appURL2 = "www.advantageonlineshopping.com";
     static String appURL2 = "http://18.212.178.84";      // STAGING NEW
     //"52.88.236.171"; //"35.162.69.22:8080";//
-//      static String appURL2 = "16.60.158.84";       // CI
+      //static String appURL2 = "http://16.60.158.84";       // CI
 //    static String appURL2 = "16.59.19.163:8080";       // DEV localhost
 //        static String appURL2 = "16.59.19.123:8080";       // DEV localhost
 //    static String appURL2 = "52.32.172.3:8080";
@@ -81,6 +81,7 @@ public class androidTests extends UnitTestClassBase {
             InitBeforeclass();
 
         Print("appURL: " + appURL);
+        setting();
     }
 
     @AfterClass
@@ -102,7 +103,6 @@ public class androidTests extends UnitTestClassBase {
 //        if(!isConnectedToTheInternet()){
 //            connectToInternet();
 //        }
-        setting();
     }
 
     @After
@@ -140,8 +140,16 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().MainMenu().tap();
         Print("SETTINGSLabel()");
         appModel.AdvantageShoppingApplication().SETTINGSLabel().tap();
-        Print(".setText(appURL)");
-        appModel.AdvantageShoppingApplication().EditTextServer().setText("http://18.212.178.84");
+        Print("Making sure fingerprint auth is off");
+        appModel.AdvantageShoppingApplication().enableFingerprintAuthenticationToggle().set(false);
+        Print("sleep " + 2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Print("setText - "+ appURL2);
+        appModel.AdvantageShoppingApplication().EditTextServer().setText(appURL2);
         Print("is connect button exist?");
             if(appModel.AdvantageShoppingApplication().ConnectButton().exists()){
                 Print("ConnectButton()");
@@ -416,8 +424,6 @@ public class androidTests extends UnitTestClassBase {
 
     @Test
     public void AddNewUserAndCheckInitials() throws GeneralLeanFtException, InterruptedException {
-
-        //setting();
 
         Print("AddNewUserAndCheckInitials");
 
@@ -756,6 +762,7 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void ChangePasswordTest() throws GeneralLeanFtException {
 
+        app.restart();
         Print("Start ChangePasswordTest");
     	String savedOriginalPass = PASS;
 
@@ -766,22 +773,13 @@ public class androidTests extends UnitTestClassBase {
             tapUiObject(appModel.AdvantageShoppingApplication().MainMenu());
 //        String innerTxt = appModel.AdvantageShoppingApplication().LoggedUserName().getText();
             String innerTxt = getTextUiObject(appModel.AdvantageShoppingApplication().LoggedUserName());
-            if(!innerTxt.equals("androidUser5")){
+            if(!innerTxt.equals(UNAME)){
                 SignOut();
-                if(!SignIn()){
-                    getToScreenWithMainMenu();
-                    tapUiObjectLabel(appModel.AdvantageShoppingApplication().SETTINGSLabel());
-                    setTextEditField(appModel.AdvantageShoppingApplication().EditTextServer(), appURL);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().ConnectButton());
-                    threadSleep(10000);
-                    tapUiObjectButton(appModel.AdvantageShoppingApplication().oKButton());
-                    SignIn();
-                }
+                SignIn();
             }
         }else{
             SignIn();
         }
-
         // step 1 - change to new pass
         changepassword(PASSNEW, PASS);
         Boolean isChangedToNewPass = SignIn();
@@ -797,8 +795,6 @@ public class androidTests extends UnitTestClassBase {
         Verification(Verify.isTrue(isChangedToDefaultPass,
                 "Verification - Change Password step 2 -  change back to the default pass",
                 "Verify that the user login with the new password"));
-        PASS = "Password5";
-
         SignOut();
     }
 
@@ -987,6 +983,17 @@ public class androidTests extends UnitTestClassBase {
 
     /////////////////////////////////////  End of tests  //////////////////////////////////////////////////////
 
+    public boolean isHomeScreen() throws GeneralLeanFtException {
+
+        Print("IsHomeScreen start");
+        if(appModel.AdvantageShoppingApplication().LAPTOPSLabel().exists()){
+            Print("Home screen ");
+            return true;
+        }else{
+            Print("Not home screen ");
+            return false;
+        }
+    }
     public void changepassword(String newPass, String oldPass)throws GeneralLeanFtException {
         Print("\nCHANGE PASS to " + newPass );
 
@@ -1005,6 +1012,17 @@ public class androidTests extends UnitTestClassBase {
         deviceSwipe(SwipeDirection.UP);
         deviceSwipe(SwipeDirection.UP);
         tapUiObjectButton(appModel.AdvantageShoppingApplication().UPDATEAccountButton());
+        Print("Checking if update password had work by chcking is laptop label exist");
+        if(isHomeScreen()){
+            Print("Update is successful");
+        }else {
+            Print("Update failed probably wi-fi network error");
+            Print("Trying to tap again on update");
+            tapUiObjectButton(appModel.AdvantageShoppingApplication().UPDATEAccountButton());
+            if (isHomeScreen()) {
+                Print("Update is successful");
+            }else {Print("Update failed");}
+        }
 
         PASS = newPass;
 
