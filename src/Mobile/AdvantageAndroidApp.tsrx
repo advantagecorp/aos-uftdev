@@ -1401,6 +1401,18 @@
                         </properties>
                     </identification>
                 </object>
+                <object type="UiObject" technology="Mobile">
+                    <name>imageViewCategory</name>
+                    <codeName>imageViewCategoryUiObject</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="ClassName" type="string" isRegExp="false">ImageView</property>
+                            <property name="MobileCenterIndex" type="int" isRegExp="false">3</property>
+                            <property name="ResourceId" type="string" isRegExp="false">imageViewCategory</property>
+                        </properties>
+                    </identification>
+                </object>
             </children>
         </object>
         <object type="Application" technology="Mobile">

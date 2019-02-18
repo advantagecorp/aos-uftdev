@@ -138,6 +138,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 	private oKButtonServer oKButtonServer;
 	private connectedSuccessfullyLabel connectedSuccessfullyLabel;
 	private oKButton1 oKButton1;
+	private imageViewCategoryUiObject imageViewCategoryUiObject;
 						public AdvantageShoppingApplication(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
@@ -249,6 +250,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		oKButtonServer = new oKButtonServer(this, applicationModel);
 		connectedSuccessfullyLabel = new connectedSuccessfullyLabel(this, applicationModel);
 		oKButton1 = new oKButton1(this, applicationModel);
+		imageViewCategoryUiObject = new imageViewCategoryUiObject(this, applicationModel);
 
 			setDisplayName("Advantage Shopping");
 		}
@@ -371,6 +373,7 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 		public oKButtonServer oKButtonServer() { return oKButtonServer; }
 		public connectedSuccessfullyLabel connectedSuccessfullyLabel() { return connectedSuccessfullyLabel; }
 		public oKButton1 oKButton1() { return oKButton1; }
+		public imageViewCategoryUiObject imageViewCategoryUiObject() { return imageViewCategoryUiObject; }
 		
 			public class LAPTOPSLabel extends LabelNodeBase
 	{
@@ -3145,6 +3148,32 @@ public class AdvantageAndroidApp extends AppModelBase {		private AdvantageShoppi
 			com.hp.lft.sdk.mobile.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.mobile.ButtonDescription.Builder().className("Button").mobileCenterIndex(2).resourceId("button1").text("OK").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class imageViewCategoryUiObject extends UiObjectNodeBase
+	{
+
+		
+								public imageViewCategoryUiObject(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("imageViewCategory");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.mobile.UiObjectDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.mobile.UiObjectDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.mobile.UiObjectDescription.Builder().className("ImageView").mobileCenterIndex(3).resourceId("imageViewCategory").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}

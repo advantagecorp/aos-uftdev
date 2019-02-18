@@ -32,8 +32,8 @@ public class androidTests extends UnitTestClassBase {
     protected static Application app;
     protected static Application appSettings;
 
-    static String UNAME = "androidUser7";
-    static String PASS = "Password7";
+    static String UNAME = "androidUser2";
+    static String PASS = "Password2";
     static String PASSNEW = "Password25";
 
     static String appURL = System.getProperty("url", "defaultvalue");
@@ -431,8 +431,7 @@ public class androidTests extends UnitTestClassBase {
             SignOut();
             createDifferentUser();
             return;
-        }
-        else{
+        }else{
             if(isSignedIn()){
                 SignOut();
             }
@@ -762,7 +761,6 @@ public class androidTests extends UnitTestClassBase {
     @Test
     public void ChangePasswordTest() throws GeneralLeanFtException {
 
-        app.restart();
         Print("Start ChangePasswordTest");
     	String savedOriginalPass = PASS;
 
@@ -986,7 +984,8 @@ public class androidTests extends UnitTestClassBase {
     public boolean isHomeScreen() throws GeneralLeanFtException {
 
         Print("IsHomeScreen start");
-        if(appModel.AdvantageShoppingApplication().LAPTOPSLabel().exists()){
+        threadSleep(4000);
+        if(appModel.AdvantageShoppingApplication().imageViewCategoryUiObject().exists()){
             Print("Home screen ");
             return true;
         }else{
@@ -1009,10 +1008,16 @@ public class androidTests extends UnitTestClassBase {
         setTextEditField(appModel.AdvantageShoppingApplication().NewPassEditField(), newPass);
         setTextEditField(appModel.AdvantageShoppingApplication().ConfirmNewPassEditField(), newPass);
         threadSleep(2000);
+        deviceBack();
         deviceSwipe(SwipeDirection.UP);
         deviceSwipe(SwipeDirection.UP);
+        if(!appModel.AdvantageShoppingApplication().UPDATEAccountButton().exists()){
+            deviceSwipe(SwipeDirection.UP);
+        }        if(!appModel.AdvantageShoppingApplication().UPDATEAccountButton().exists()){
+            deviceSwipe(SwipeDirection.UP);
+        }
         tapUiObjectButton(appModel.AdvantageShoppingApplication().UPDATEAccountButton());
-        Print("Checking if update password had work by chcking is laptop label exist");
+        Print("Checking if update password had work by checking is laptop label exist");
         if(isHomeScreen()){
             Print("Update is successful");
         }else {
