@@ -550,16 +550,11 @@ public class androidTests extends UnitTestClassBase {
         appModel.AdvantageShoppingApplication().APPLYChangeLabel().tap();
 
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().ProductDetail(), 5000);
-        threadSleep(4000);
+        threadSleep(2000);
         appModel.AdvantageShoppingApplication().UPDATEPRODUCTButton().tap();
 //        waitUntilElementExists(appModel.AdvantageShoppingApplication().MainMenu(), 5000);
-        threadSleep(4000);
+        threadSleep(2000);
 
-        device.back();
-
-//        waitUntilElementExists(appModel.AdvantageShoppingApplication().CartAccess(), 5000);//push for build
-        threadSleep(4000);
-        appModel.AdvantageShoppingApplication().CartAccess().tap();
         CheckOut("Sefepay");
     }
 
