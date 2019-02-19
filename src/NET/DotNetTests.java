@@ -15,6 +15,9 @@ import org.junit.rules.TestName;
 import unittesting.*;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 import static org.junit.Assert.fail;
 
@@ -226,8 +229,10 @@ public class DotNetTests extends UnitTestClassBase {
             print("Successful login");
         }else{
             print("Did not login");
-            print("error message" + appModel.AdvantageShopAdministrator().AdminUiObject().getText());
+            print("error message is -" + appModel.AdvantageShopAdministrator().AdminUiObject().getText());
             print(appModel.AdvantageShopAdministrator().AdminUiObject().getText());
+            print("Checking is there internet connection");
+            print(" isNetAvailable returned - " + netIsAvailable());
             print("Trying to click signIn again ");
             appModel.AdvantageShopAdministrator().SIGNINButton().click();
             if(checkIsSignIn ()){
@@ -269,6 +274,20 @@ public class DotNetTests extends UnitTestClassBase {
         }
         threadSleep(1000);
         print("SignIn() end");
+    }
+
+    private static boolean netIsAvailable() {
+        try {
+            final URL url = new URL("http://www.google.com");
+            final URLConnection conn = url.openConnection();
+            conn.connect();
+            conn.getInputStream().close();
+            return true;
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     public static boolean checkIsSignIn (){
