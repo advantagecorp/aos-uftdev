@@ -57,7 +57,7 @@
                 </object>
                 <object type="WebElement" technology="Web">
                     <name>MICE Shop Now </name>
-                    <codeName>MicesImg</codeName>
+                    <codeName>MiceImg</codeName>
                     <identification>
                         <properties>
                             <property name="TagName" type="string" isRegExp="false">DIV</property>
