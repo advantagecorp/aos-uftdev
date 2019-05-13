@@ -54,7 +54,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 	private SpeakersImg SpeakersImg;
 	private TabletsImgWebElement TabletsImgWebElement;
 	private LaptopsImg LaptopsImg;
-	private MicesImg MicesImg;
+	private MiceImg MiceImg;
 	private HeadphonesImg HeadphonesImg;
 	private OrderNumber OrderNumber;
 	private OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement;
@@ -171,7 +171,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		SpeakersImg = new SpeakersImg(this, applicationModel);
 		TabletsImgWebElement = new TabletsImgWebElement(this, applicationModel);
 		LaptopsImg = new LaptopsImg(this, applicationModel);
-		MicesImg = new MicesImg(this, applicationModel);
+		MiceImg = new MiceImg(this, applicationModel);
 		HeadphonesImg = new HeadphonesImg(this, applicationModel);
 		OrderNumber = new OrderNumber(this, applicationModel);
 		OURPRODUCTSMainWebElement = new OURPRODUCTSMainWebElement(this, applicationModel);
@@ -299,7 +299,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		public SpeakersImg SpeakersImg() { return SpeakersImg; }
 		public TabletsImgWebElement TabletsImgWebElement() { return TabletsImgWebElement; }
 		public LaptopsImg LaptopsImg() { return LaptopsImg; }
-		public MicesImg MicesImg() { return MicesImg; }
+		public MiceImg MiceImg() { return MiceImg; }
 		public HeadphonesImg HeadphonesImg() { return HeadphonesImg; }
 		public OrderNumber OrderNumber() { return OrderNumber; }
 		public OURPRODUCTSMainWebElement OURPRODUCTSMainWebElement() { return OURPRODUCTSMainWebElement; }
@@ -513,11 +513,11 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 				
 			}
 
-	public class MicesImg extends WebElementNodeBase
+	public class MiceImg extends WebElementNodeBase
 	{
 
 		
-								public MicesImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+								public MiceImg(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(parent, applicationModel);
 
@@ -529,7 +529,7 @@ public class AdvantageStagingAppModel extends AppModelBase {		private AdvantageS
 		protected com.hp.lft.sdk.web.WebElementDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.web.WebElementDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("DIV").id("micesImg").build();
+				description = new com.hp.lft.sdk.web.WebElementDescription.Builder().tagName("DIV").id("miceImg").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
