@@ -8,9 +8,9 @@
             <codeName>AdvantageShopAdministrator</codeName>
             <identification>
                 <properties>
-                    <property name="ObjectName" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                    <property name="ObjectName" type="string" isRegExp="false">AOS Managment Console</property>
                     <property name="FullType" type="string" isRegExp="false">window</property>
-                    <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                    <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                 </properties>
             </identification>
             <children>
@@ -22,7 +22,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">list view</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>0</index>
                     </identification>
@@ -38,7 +38,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>0</index>
                     </identification>
@@ -66,7 +66,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -108,7 +108,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;</property>
                             <property name="FullType" type="string" isRegExp="false">object</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -134,7 +134,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
                             <property name="FullType" type="string" isRegExp="false">object</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -150,7 +150,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
                             <property name="FullType" type="string" isRegExp="false">list view</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                     </identification>
                 </object>
@@ -194,7 +194,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">check box</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>5</index>
                     </identification>
@@ -239,7 +239,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>1</index>
                     </identification>
@@ -255,7 +255,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>2</index>
                     </identification>
@@ -283,7 +283,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>3</index>
                     </identification>
@@ -299,7 +299,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>4</index>
                     </identification>
@@ -341,7 +341,7 @@
                             <property name="ObjectName" type="string" isRegExp="false">ContentControl</property>
                             <property name="FullNamePath" type="string" isRegExp="false">ContentControl;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">object</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                     </identification>
                     <tags>
@@ -375,7 +375,7 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="FullNamePath" type="string" isRegExp="false">;;;;;;</property>
                             <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">Advantage Shop Administrator</property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
                         </properties>
                         <index>3</index>
                     </identification>
