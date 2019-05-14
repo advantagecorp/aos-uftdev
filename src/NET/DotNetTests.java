@@ -213,7 +213,7 @@ public class DotNetTests extends UnitTestClassBase {
         print("SignIn() start");
         threadSleep(1000);
         print("UserNameEditField().setText(\"admin\")");
-        appModel.AdvantageShopAdministrator().UserNameEditField().setText("admin");
+        appModel.AdvantageShopAdministrator().userNameEditField().setText("admin");
         print("PasswordEditField().setText(\"adm1n\");");
         appModel.AdvantageShopAdministrator().PasswordEditField().setText("adm1n");
         print("ServerEditField().setText(SERVER)");
@@ -241,7 +241,7 @@ public class DotNetTests extends UnitTestClassBase {
                 print("Did not login");
                 threadSleep(1000);
                 print("UserNameEditField().setText(\"Mercury\")");
-                appModel.AdvantageShopAdministrator().UserNameEditField().setText("Mercury");
+                appModel.AdvantageShopAdministrator().userNameEditField().setText("Mercury");
                 print("PasswordEditField().setText(\"Mercury\");");
                 appModel.AdvantageShopAdministrator().PasswordEditField().setText("Mercury");
                 print("Trying to click signIn again ");
@@ -253,7 +253,7 @@ public class DotNetTests extends UnitTestClassBase {
                     print("Trying to log with different server");
                     threadSleep(1000);
                     print("UserNameEditField().setText(\"Mercury\")");
-                    appModel.AdvantageShopAdministrator().UserNameEditField().setText("Mercury");
+                    appModel.AdvantageShopAdministrator().userNameEditField().setText("Mercury");
                     print("PasswordEditField().setText(\"Mercury\");");
                     appModel.AdvantageShopAdministrator().PasswordEditField().setText("Mercury");
                     print("ServerEditField().setText(http://18.212.178.84)");

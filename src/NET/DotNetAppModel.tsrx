@@ -31,22 +31,6 @@
                     </tags>
                 </object>
                 <object type="EditField" technology="WPF">
-                    <name>User Name</name>
-                    <codeName>UserNameEditField</codeName>
-                    <identification>
-                        <properties>
-                            <property name="ObjectName" type="string" isRegExp="false"></property>
-                            <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
-                            <property name="FullType" type="string" isRegExp="false">edit</property>
-                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
-                        </properties>
-                        <index>0</index>
-                    </identification>
-                    <tags>
-                        <tag>login</tag>
-                    </tags>
-                </object>
-                <object type="EditField" technology="WPF">
                     <name>Password</name>
                     <codeName>PasswordEditField</codeName>
                     <identification>
@@ -415,6 +399,20 @@
                             <property name="ObjectName" type="string" isRegExp="false"></property>
                             <property name="Text" type="string" isRegExp="false">CANCEL</property>
                         </properties>
+                    </identification>
+                </object>
+                <object type="EditField" technology="WPF">
+                    <name>User Name</name>
+                    <codeName>userNameEditField</codeName>
+                    <description></description>
+                    <identification>
+                        <properties>
+                            <property name="FullNamePath" type="string" isRegExp="false">;;;</property>
+                            <property name="FullType" type="string" isRegExp="false">edit</property>
+                            <property name="ObjectName" type="string" isRegExp="false"></property>
+                            <property name="WindowTitleRegExp" type="string" isRegExp="false">AOS Managment Console</property>
+                        </properties>
+                        <index>0</index>
                     </identification>
                 </object>
             </children>

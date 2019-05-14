@@ -44,7 +44,6 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 
 		
 			private TopBarList TopBarList;
-	private UserNameEditField UserNameEditField;
 	private PasswordEditField PasswordEditField;
 	private ServerEditField ServerEditField;
 	private RememberMeCheckBox RememberMeCheckBox;
@@ -73,12 +72,12 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 	private WEIGHTEditField WEIGHTEditField;
 	private createUserFailedDialog createUserFailedDialog;
 	private cANCELButton cANCELButton;
+	private userNameEditField userNameEditField;
 						public AdvantageShopAdministrator(AppModelBase applicationModel) throws GeneralLeanFtException
 		{
 			super(applicationModel);
 
 					TopBarList = new TopBarList(this, applicationModel);
-		UserNameEditField = new UserNameEditField(this, applicationModel);
 		PasswordEditField = new PasswordEditField(this, applicationModel);
 		ServerEditField = new ServerEditField(this, applicationModel);
 		RememberMeCheckBox = new RememberMeCheckBox(this, applicationModel);
@@ -107,6 +106,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		WEIGHTEditField = new WEIGHTEditField(this, applicationModel);
 		createUserFailedDialog = new createUserFailedDialog(this, applicationModel);
 		cANCELButton = new cANCELButton(this, applicationModel);
+		userNameEditField = new userNameEditField(this, applicationModel);
 			
 			setDisplayName("Advantage Shop Administrator");
 		}
@@ -115,7 +115,6 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 			super(parent, applicationModel);
 
 					TopBarList = new TopBarList(this, applicationModel);
-		UserNameEditField = new UserNameEditField(this, applicationModel);
 		PasswordEditField = new PasswordEditField(this, applicationModel);
 		ServerEditField = new ServerEditField(this, applicationModel);
 		RememberMeCheckBox = new RememberMeCheckBox(this, applicationModel);
@@ -144,6 +143,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		WEIGHTEditField = new WEIGHTEditField(this, applicationModel);
 		createUserFailedDialog = new createUserFailedDialog(this, applicationModel);
 		cANCELButton = new cANCELButton(this, applicationModel);
+		userNameEditField = new userNameEditField(this, applicationModel);
 
 			setDisplayName("Advantage Shop Administrator");
 		}
@@ -152,7 +152,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.WindowDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.WindowDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.WindowDescription.Builder().objectName("Advantage Shop Administrator").fullType("window").windowTitleRegExp("Advantage Shop Administrator").build();
+				description = new com.hp.lft.sdk.wpf.WindowDescription.Builder().objectName("AOS Managment Console").fullType("window").windowTitleRegExp("AOS Managment Console").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -160,7 +160,6 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		}
 
 				public TopBarList TopBarList() { return TopBarList; }
-		public UserNameEditField UserNameEditField() { return UserNameEditField; }
 		public PasswordEditField PasswordEditField() { return PasswordEditField; }
 		public ServerEditField ServerEditField() { return ServerEditField; }
 		public RememberMeCheckBox RememberMeCheckBox() { return RememberMeCheckBox; }
@@ -189,6 +188,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		public WEIGHTEditField WEIGHTEditField() { return WEIGHTEditField; }
 		public createUserFailedDialog createUserFailedDialog() { return createUserFailedDialog; }
 		public cANCELButton cANCELButton() { return cANCELButton; }
+		public userNameEditField userNameEditField() { return userNameEditField; }
 		
 			public class TopBarList extends WpfListNodeBase
 	{
@@ -206,33 +206,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.ListDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.ListDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.ListDescription.Builder().objectName("").fullNamePath(";;;;").fullType("list view").windowTitleRegExp("Advantage Shop Administrator").index(0).build();
-			}catch(Exception e){
-				throw new GeneralLeanFtException(e.getMessage(), e);
-			}
-			return description;
-		}
-
-				
-			}
-
-	public class UserNameEditField extends WpfEditFieldNodeBase
-	{
-
-		
-								public UserNameEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
-		{
-			super(parent, applicationModel);
-
-			
-			setDisplayName("User Name");
-		}
-
-		@Override
-		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
-			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
-			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(0).build();
+				description = new com.hp.lft.sdk.wpf.ListDescription.Builder().objectName("").fullNamePath(";;;;").fullType("list view").windowTitleRegExp("AOS Managment Console").index(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -284,7 +258,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(1).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -362,7 +336,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("").fullNamePath(";;").fullType("object").windowTitleRegExp("Advantage Shop Administrator").index(1).build();
+				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("").fullNamePath(";;").fullType("object").windowTitleRegExp("AOS Managment Console").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -414,7 +388,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("").fullNamePath(";;;").fullType("object").windowTitleRegExp("Advantage Shop Administrator").index(1).build();
+				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("").fullNamePath(";;;").fullType("object").windowTitleRegExp("AOS Managment Console").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -440,7 +414,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.ListDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.ListDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.ListDescription.Builder().objectName("").fullNamePath(";;;").fullType("list view").windowTitleRegExp("Advantage Shop Administrator").build();
+				description = new com.hp.lft.sdk.wpf.ListDescription.Builder().objectName("").fullNamePath(";;;").fullType("list view").windowTitleRegExp("AOS Managment Console").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -544,7 +518,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.CheckBoxDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.CheckBoxDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.CheckBoxDescription.Builder().parentText("").text("").objectName("").fullNamePath(";;;;;;").fullType("check box").windowTitleRegExp("Advantage Shop Administrator").index(5).build();
+				description = new com.hp.lft.sdk.wpf.CheckBoxDescription.Builder().parentText("").text("").objectName("").fullNamePath(";;;;;;").fullType("check box").windowTitleRegExp("AOS Managment Console").index(5).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -648,7 +622,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(1).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(1).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -674,7 +648,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(2).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(2).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -726,7 +700,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(3).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(3).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -752,7 +726,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(4).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(4).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -830,7 +804,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.UiObjectDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.UiObjectDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("ContentControl").fullNamePath("ContentControl;;;;").fullType("object").windowTitleRegExp("Advantage Shop Administrator").build();
+				description = new com.hp.lft.sdk.wpf.UiObjectDescription.Builder().objectName("ContentControl").fullNamePath("ContentControl;;;;").fullType("object").windowTitleRegExp("AOS Managment Console").build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -908,7 +882,7 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
 			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
 			try{
-				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;;").fullType("edit").windowTitleRegExp("Advantage Shop Administrator").index(3).build();
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().objectName("").fullNamePath(";;;;;;").fullType("edit").windowTitleRegExp("AOS Managment Console").index(3).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
@@ -998,6 +972,32 @@ public class DotNetAppModel extends AppModelBase {		private AdvantageShopAdminis
 			com.hp.lft.sdk.wpf.ButtonDescription description = null; 
 			try{
 				description = new com.hp.lft.sdk.wpf.ButtonDescription.Builder().objectName("").text("CANCEL").build();
+			}catch(Exception e){
+				throw new GeneralLeanFtException(e.getMessage(), e);
+			}
+			return description;
+		}
+
+				
+			}
+
+	public class userNameEditField extends WpfEditFieldNodeBase
+	{
+
+		
+								public userNameEditField(TestObject parent, AppModelBase applicationModel) throws GeneralLeanFtException
+		{
+			super(parent, applicationModel);
+
+			
+			setDisplayName("User Name");
+		}
+
+		@Override
+		protected com.hp.lft.sdk.wpf.EditFieldDescription createDescription() throws GeneralLeanFtException{
+			com.hp.lft.sdk.wpf.EditFieldDescription description = null; 
+			try{
+				description = new com.hp.lft.sdk.wpf.EditFieldDescription.Builder().fullNamePath(";;;").fullType("edit").objectName("").windowTitleRegExp("AOS Managment Console").index(0).build();
 			}catch(Exception e){
 				throw new GeneralLeanFtException(e.getMessage(), e);
 			}
