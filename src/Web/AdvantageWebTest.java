@@ -1506,7 +1506,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         clickWebElement(appModel.AdvantageShoppingPage().SignOutMainIconWebElement());
         clickWebElement(appModel.AdvantageShoppingPage().MyOrdersWebElement());
         clickWebElement(appModel.AdvantageShoppingPage().OrderSearchWebElement());
-        setValueEditField(appModel.AdvantageShoppingPage().SearchOrderEditField(), ProductName);
+        //setValueEditField(appModel.AdvantageShoppingPage().SearchOrderEditField(), ProductName);
 
         // TODO: check if previously purchased product in this list
         if (existsWebElement(appModel.AdvantageShoppingPage().FirstRemoveItemFromCartLinkWebElement())) {
