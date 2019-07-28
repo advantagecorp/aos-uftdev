@@ -211,6 +211,11 @@ public class DotNetTests extends UnitTestClassBase {
     public static void SignIn() throws GeneralLeanFtException {
 
         print("SignIn() start");
+        if(appModel.AdvantageShopAdministrator().exists()){
+            print("yes");
+        }else{
+            print("no");
+        }
         threadSleep(1000);
         print("UserNameEditField().setText(\"admin\")");
         appModel.AdvantageShopAdministrator().userNameEditField().setText("admin");
