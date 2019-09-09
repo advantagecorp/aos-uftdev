@@ -87,8 +87,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("appURL: " + appURL);
 //        Print("appURL2: " + appURL2);
 
-        Print("Wait for CI to be ready... 2 min");
-        Thread.sleep(3000);
+        Print("Wait for CI to be ready... 8 min");
+        Thread.sleep(480000);
     }
 
     @AfterClass
@@ -1711,6 +1711,16 @@ public class AdvantageWebTest extends UnitTestClassBase {
         threadSleep(5000);
         checkWithReporterIsTrue(deletedSuccessfullyElement, "Verify logout", "Verify if the user really signed out from site");
     }
+
+//    public boolean isWorngCategoryForProduct() throws Exception {
+//        setUpBeforeClass();
+//
+//        setUp();
+//        appModel = new AdvantageStagingAppModel(browser);
+//        browser.sync();
+//
+//        return false;
+//    }
 
 
     public void Checkout() {
