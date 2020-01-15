@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hp.lft.tests</groupId>
   <artifactId>AdvantageOnlineShoppingTests</artifactId>
-  <version>14.3.0-SNAPSHOT</version>
+  <version>15.0.0</version>
   <name>AdvantageOnlineShoppingTests</name>
 
 	<dependencies>
@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
+			<version>RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 

@@ -423,10 +423,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 if (appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2)) {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Passed, img);
-                    Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
                 } else {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully", Status.Failed, img);
+                    fail("Fail to verify that the product was purchased successfully: No ThankYouForBuyingWithAdvantage element");
                 }
 //                Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),
 //                        "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
@@ -438,6 +438,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 } else {
                     img = browser.getPage().getSnapshot();
                     Reporter.reportEvent("Verify Product Purchase:", "Verify that the product was purchased successfully.", Status.Failed, img);
+                    fail("Fail to verify that the product was purchased successfully: No ThankYouForBuyingWithAdvantage element");
                 }
 //                Verification(Verify.isTrue(appModel.AdvantageShoppingPage().ThankYouForBuyingWithAdvantageWebElement().exists(2),
 //                        "Verification - Product Purchase:", " Verify that the product was purchased successfully"));
@@ -498,6 +499,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
             } else {
                 img = browser.getPage().getSnapshot();
                 Reporter.reportEvent("Verify if product purchased", "Product didn't purchase", Status.Failed, img);
+                fail("Fail to verify that the product was purchased successfully: No ThankYouForBuyingWithAdvantage element");
             }
 
             //Verification(Verify.isTrue(isProductPurchased, "Verification - Product Purchase MasterCredit:", " Verify that the product was purchased successfully with MasterCredit "));
