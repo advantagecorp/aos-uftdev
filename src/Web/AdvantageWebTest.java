@@ -108,7 +108,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
 
     private static boolean WaitForAOS() throws IOException, InterruptedException{
         URL url = new URL("http://" + appURL + "/order/api/v1/healthcheck");
-        Print("healthcheck endpoint " + appURL);
+        Print("healthcheck endpoint " + url);
         String returnValue = "";
         int numOfWait = 0;
         do{
