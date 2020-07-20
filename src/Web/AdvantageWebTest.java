@@ -119,6 +119,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 e.printStackTrace();
                 Print(e.getStackTrace().toString());
             }
+            Print("Return code " + returnValue);
             Print("healthcheck failed... Sleeping");
             Thread.sleep(60000);
         }while(!returnValue.equalsIgnoreCase("\"SUCCESS\"") && numOfWait < 10);
