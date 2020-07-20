@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.net.HttpURLConnection;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.util.Arrays;
@@ -129,7 +131,19 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     private static String httpGet(URL url) throws IOException{
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        Proxy proxy = null;
+        try{
+            proxy = getProxyFromProperties();
+        } catch (Exception e){
+            logger.error("Unable to build proxy", e);
+        }
+
+        HttpURLConnection conn = null;
+        if(proxy == null){
+            conn = (HttpURLConnection) url.openConnection();
+        }
+        else
+            conn = (HttpURLConnection) url.openConnection(proxy);
         logger.debug("HttpURLConnection = " + conn.getURL().toString());
         conn.setRequestProperty(HttpHeaders.USER_AGENT, "AdvantageService/order");
         logger.debug("waiting for AOS to be ready");
@@ -139,6 +153,15 @@ public class AdvantageWebTest extends UnitTestClassBase {
         conn.disconnect();
         return returnValue;
 
+    }
+
+    private static Proxy getProxyFromProperties() {
+        String host = System.getProperty("aos.proxy.host");
+        String port = System.getProperty("aos.proxy.port");
+
+        if(host == null || port == null)
+            return null;
+        return new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, Integer.parseInt(port)));
     }
 
     private static String responseSolver (int responseCode, HttpURLConnection conn) throws IOException{
