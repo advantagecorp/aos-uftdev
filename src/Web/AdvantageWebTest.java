@@ -113,7 +113,9 @@ public class AdvantageWebTest extends UnitTestClassBase {
             try{
                 returnValue = httpGet(url);
             }catch (Exception e){
-                Print("healthcheck exception" + e.getMessage());
+                Print("healthcheck exception");
+                e.printStackTrace();
+                Print(e.getStackTrace().toString());
             }
             Print("healthcheck failed... Sleeping");
             Thread.sleep(60000);
