@@ -1,12 +1,18 @@
 package Web;
  
 import java.awt.image.RenderedImage;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.google.common.net.HttpHeaders;
 import com.hp.lft.report.*;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import org.junit.*;
@@ -86,11 +92,88 @@ public class AdvantageWebTest extends UnitTestClassBase {
         Print("envTypeValue: " + envTypeValue);
         Print("appURL: " + appURL);
 //        Print("appURL2: " + appURL2);
+        if (appURL.equals("defaultvalue"))
+            appURL = appURL2;
 
-        Print("Wait for CI to be ready... 8 min");
-        Thread.sleep(480000);
+
+        Reporter.addRunInformation("URL", appURL);
+
+        Print("Wait for " + appURL + "  to be ready...");
+        if(!WaitForAOS()){
+            throw new GeneralLeanFtException("App at " + appURL + " is not ready");
+        }
     }
 
+    private static boolean WaitForAOS() throws IOException, InterruptedException{
+        URL url = new URL("http://" + appURL + "/order/api/v1/healthcheck");
+        String returnValue = "";
+        int numOfWait = 0;
+        do{
+            Thread.sleep(3);
+            numOfWait++;
+            try{
+                returnValue = httpGet(url);
+            }catch (Exception e){
+                Print("healthcheck failed");
+            }
+        }while(!returnValue.equalsIgnoreCase("\"SUCCESS\"") && numOfWait < 10);
+
+        if(numOfWait == 10 && !returnValue.equalsIgnoreCase("\"SUCCESS\""))
+            return false;
+
+
+        return true;
+    }
+
+    private static String httpGet(URL url) throws IOException{
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        logger.debug("HttpURLConnection = " + conn.getURL().toString());
+        conn.setRequestProperty(HttpHeaders.USER_AGENT, "AdvantageService/order");
+        logger.debug("waiting for AOS to be ready");
+
+        int responseCode = conn.getResponseCode();
+        String returnValue = responseSolver(responseCode, conn);
+        conn.disconnect();
+        return returnValue;
+
+    }
+
+    private static String responseSolver (int responseCode, HttpURLConnection conn) throws IOException{
+
+        String returnValue;
+        switch (responseCode) {
+            case HttpURLConnection.HTTP_OK:
+                // Buffer the result into a string
+                InputStreamReader inputStream = new InputStreamReader(conn.getInputStream());
+                BufferedReader bufferedReader = new BufferedReader(inputStream);
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
+                bufferedReader.close();
+                returnValue = sb.toString();
+                break;
+            case HttpURLConnection.HTTP_CONFLICT:
+                //  Product not found
+                returnValue = "CONFLICT";
+                break;
+            case HttpURLConnection.HTTP_NOT_FOUND:
+                returnValue = "NOT FOUND";
+                break;
+            case HttpURLConnection.HTTP_FORBIDDEN:
+                returnValue = "FORBIDDEN";
+                break;
+            case HttpURLConnection.HTTP_UNAUTHORIZED:
+                returnValue = "UNAUTHORIZED";
+                break;
+            default:
+                IOException e = new IOException(conn.getResponseMessage());
+                throw e;
+        }
+
+        return returnValue;
+    }
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
         //browser.navigate("./RunResults/runresults.html");
@@ -511,7 +594,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
     }
 
     //This method is an internal function that initializes the tests
-    public void initBeforeTest() throws GeneralLeanFtException {
+    public void initBeforeTest() throws GeneralLeanFtException, InterruptedException, IOException {
         // Launch the browser
         switch (browserTypeValue) {
             case "Chrome":
@@ -535,9 +618,6 @@ public class AdvantageWebTest extends UnitTestClassBase {
             System.out.println("Starting to run Tests in local env.");
             browser = BrowserFactory.launch(browserType);
         }
-
-        if (appURL.equals("defaultvalue"))
-            appURL = appURL2;
 
 
         Reporter.addRunInformation("URL", appURL);
