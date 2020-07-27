@@ -112,6 +112,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String returnValue = "";
         int numOfWait = 0;
         do{
+            Thread.sleep(60000);
             numOfWait++;
             try{
                 returnValue = httpGet(url);
@@ -120,9 +121,10 @@ public class AdvantageWebTest extends UnitTestClassBase {
                 e.printStackTrace();
                 Print(e.getStackTrace().toString());
             }
-            Print("Return code " + returnValue);
-            Print("healthcheck failed... Sleeping");
-            Thread.sleep(60000);
+            Print("returnValue " + returnValue);
+            if(!returnValue.equalsIgnoreCase("\"SUCCESS\"")){
+                Print("healthcheck failed... sleeping");
+            }
         }while(!returnValue.equalsIgnoreCase("\"SUCCESS\"") && numOfWait < 10);
 
         if(numOfWait == 10 && !returnValue.equalsIgnoreCase("\"SUCCESS\""))
