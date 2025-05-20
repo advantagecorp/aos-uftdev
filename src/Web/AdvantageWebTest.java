@@ -1700,7 +1700,8 @@ public class AdvantageWebTest extends UnitTestClassBase {
         // Click on sign in button
         clickWebElement(appModel.AdvantageShoppingPage().SIGNINButton());
         Print("Wait for message");
-
+	Print("Wait for message1");
+	    setCheckBox(appModel.AdvantageShoppingPage().RememberMeCheckBox(), true);
 //        Boolean isInvalidUserMessageElement = existsWebElement(appModel.AdvantageShoppingPage().InvalidUserMessageWebElement());
 //        Print("isInvalidUserMessageElement " + isInvalidUserMessageElement);
         checkWithReporterIsTrue(existsWebElement(appModel.AdvantageShoppingPage().InvalidUserMessageWebElement()),
