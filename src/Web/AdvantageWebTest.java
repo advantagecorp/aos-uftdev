@@ -112,7 +112,7 @@ public class AdvantageWebTest extends UnitTestClassBase {
         String returnValue = "";
         int numOfWait = 0;
         do{
-            Thread.sleep(60000);
+            Thread.sleep(5000);
             numOfWait++;
             try{
                 returnValue = httpGet(url);
