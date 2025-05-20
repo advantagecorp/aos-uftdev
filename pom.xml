@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hp.lft.tests</groupId>
   <artifactId>AdvantageOnlineShoppingTests</artifactId>
-  <version>15.0.0</version>
+  <version>RELEASE</version>
   <name>AdvantageOnlineShoppingTests</name>
 
 	<dependencies>
