@@ -193,7 +193,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+	<!--
 	<distributionManagement>
 		<repository>
 			<id>leanft</id>
@@ -228,6 +228,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+-->
 	
 </project>
